@@ -8,11 +8,11 @@
     <UseWPF>true</UseWPF>
 	<UseWindowsForms>true</UseWindowsForms>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <ApplicationIcon>applicationIcon.ico</ApplicationIcon>
+    <ApplicationIcon>Assets\256.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="applicationIcon.ico" />
+    <Content Include="Assets\256.ico" />
   </ItemGroup>
 
   <ItemGroup>
