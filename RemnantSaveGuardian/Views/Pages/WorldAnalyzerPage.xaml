@@ -1,0 +1,63 @@
+﻿<ui:UiPage
+    x:Class="RemnantSaveGuardian.Views.Pages.WorldAnalyzerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:RemnantSaveGuardian.Views.Pages"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    lex:LocalizeDictionary.DesignCulture="en"
+    lex:ResxLocalizationProvider.DefaultAssembly="RemnantSaveGuardian"
+    lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800"
+    d:Background="{DynamicResource ApplicationBackgroundBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    Title="{lex:Loc World Analyzer}"
+    Scrollable="False">
+
+    <Grid Margin="23,0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <WrapPanel Grid.Column="0" >
+                <TextBlock FontWeight="Medium" Text="{lex:Loc Character}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <ComboBox Name="CharacterControl" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto"/>
+                <Button Name="SavePlaintextButton">
+                    <ui:SymbolIcon Symbol="SaveEdit24" ToolTip="Save plaintext data"/>
+                </Button>
+            </WrapPanel>
+            <WrapPanel Grid.Column="2" VerticalAlignment="Center" Visibility="Collapsed">
+                <TextBlock FontWeight="Medium" Text="{lex:Loc Zoom}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <ui:SymbolIcon Symbol="ZoomOut24"/>
+                <Slider Name="FontSizeSlider" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Minimum="6" Value="18" Maximum="30" SmallChange="6" LargeChange="6" TickFrequency="6" TickPlacement="BottomRight" IsSnapToTickEnabled="True"/>
+                <ui:SymbolIcon Symbol="ZoomIn24"/>
+            </WrapPanel>
+        </Grid>
+        <TabControl Name="tabAnalyzer" Grid.Row="1">
+            <TabItem Header="{lex:Loc Campaign}">
+                <Grid>
+                    <DataGrid Name="CampaignData" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabAdventure" Header="{lex:Loc Adventure}">
+                <Grid>
+                    <DataGrid Name="AdventureData"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{lex:Loc Missing Items}">
+                <Grid>
+                    <TreeView Name="treeMissingItems"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</ui:UiPage>

@@ -1,0 +1,83 @@
+﻿<ui:UiPage 
+    x:Class="RemnantSaveGuardian.Views.Pages.BackupsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:RemnantSaveGuardian.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    lex:LocalizeDictionary.DesignCulture="en"
+    lex:ResxLocalizationProvider.DefaultAssembly="RemnantSaveGuardian"
+    lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+    Title="{lex:Loc Save Backups}"
+    d:DataContext="{d:DesignInstance local:BackupsPage, IsDesignTimeCreatable=False}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    d:Background="{DynamicResource ApplicationBackgroundBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+
+    <Grid Margin="23,0" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0">
+            <ToolBar Height="Auto" Width="200">
+                <Button Name="btnBackup" ToolTip="{lex:Loc}">
+                    <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Save24" />
+                </Button>
+                <Button Name="btnOpenBackupsFolder" ToolTip="{lex:Loc}">
+                    <ui:SymbolIcon HorizontalAlignment="Left" Symbol="FolderOpen24" />
+                </Button>
+                <Button Name="btnStartGame" ToolTip="{lex:Loc}">
+                    <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Play24" />
+                </Button>
+            </ToolBar>
+        </WrapPanel>
+        <DataGrid Grid.Row="1" Name="dataBackups" AutoGeneratingColumn="dataBackups_AutoGeneratingColumn" SelectionMode="Single" IsReadOnly="False">
+            <DataGrid.ContextMenu>
+                <ContextMenu Name="contextBackups">
+                    <ui:MenuItem Name="menuRestore" Header="{lex:Loc}">
+                        <MenuItem.Icon>
+                            <ui:SymbolIcon HorizontalAlignment="Left" Symbol="ArrowBounce24" />
+                        </MenuItem.Icon>
+                        <Menu>
+                            <ui:MenuItem Name="menuRestoreAll" Header="{lex:Loc}">
+                                <MenuItem.Icon>
+                                    <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Star24" />
+                                </MenuItem.Icon>
+                            </ui:MenuItem>
+                            <ui:MenuItem Name="menuRestoreWorlds" Header="{lex:Loc}">
+                                <MenuItem.Icon>
+                                    <ui:SymbolIcon HorizontalAlignment="Left" Symbol="GlobeAdd24" />
+                                </MenuItem.Icon>
+                            </ui:MenuItem>
+                            <ui:MenuItem Name="menuRestoreCharacters" Header="{lex:Loc}">
+                                <MenuItem.Icon>
+                                    <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Person24" />
+                                </MenuItem.Icon>
+                            </ui:MenuItem>
+                        </Menu>
+                    </ui:MenuItem>
+                    <ui:MenuItem Name="menuAnalyze" Header="{lex:Loc World Analyzer}" Visibility="Collapsed">
+                        <MenuItem.Icon>
+                            <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Globe24" />
+                        </MenuItem.Icon>
+                    </ui:MenuItem>
+                    <ui:MenuItem Name="menuOpenBackup" Header="{lex:Loc Open Folder}">
+                        <MenuItem.Icon>
+                            <ui:SymbolIcon HorizontalAlignment="Left" Symbol="FolderOpen24" />
+                        </MenuItem.Icon>
+                    </ui:MenuItem>
+                    <ui:MenuItem Name="menuDelete" Header="{lex:Loc Delete}">
+                        <MenuItem.Icon>
+                            <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Delete24" />
+                        </MenuItem.Icon>
+                    </ui:MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+    </Grid>
+</ui:UiPage>

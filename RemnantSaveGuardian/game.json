@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "events": {
+    "Amulet_ChainsOfAmplification": {
+      "items": [
+        "ChainsOfAmplification"
+      ]
+    },
+    "BoosterRing": {
+      "items": [
+        "BoosterRing"
+      ]
+    },
+    "ClockTower": {
+      "items": [
+        "ModTimeLapse"
+      ]
+    },
+    "FaelinFaerlin_POI": {
+      "items": [
+        "Deceit",
+        "Godsplitter"
+      ]
+    },
+    "IndignantFetish": {
+      "items": [
+        "IndignantFetish"
+      ]
+    },
+    "NimueDream": {
+      "items": [
+        "OneTrueKingSigil",
+        "RunePistol",
+        "TranquilHeart",
+        "NimuesRibbon",
+        "AssassinsDagger",
+        "HexWard"
+      ]
+    },
+    "Ring_FaeShamanRing": {
+      "items": [
+        "FaeShamanRing"
+      ]
+    },
+    "Ring_FaeWarriorRing": {
+      "items": [
+        "FaeWarriorRing"
+      ]
+    },
+    "Ring_StreamCoupler": {
+      "items": [
+        "StreamCoupler"
+      ]
+    },
+    "Remnant1": {
+      "items": [
+        "Armor_Head_Elder",
+        "Armor_Body_Elder",
+        "Armor_Gloves_Elder",
+        "Armor_Legs_Elder",
+        "Armor_Head_Radiant",
+        "Armor_Body_Radiant",
+        "Armor_Gloves_Radiant",
+        "Armor_Legs_Radiant",
+        "Armor_Head_Void",
+        "Armor_Body_Void",
+        "Armor_Gloves_Void",
+        "Armor_Legs_Void"
+      ]
+    },
+    "SoulLink": {
+      "items": [
+        "SoulLink"
+      ]
+    },
+    "Archetype_Gunslinger": {
+      "items": [
+        "AmmoReserves",
+        "QuickDraw",
+        "Armor_Head_Gunslinger",
+        "Armor_Body_Gunslinger",
+        "Armor_Gloves_Gunslinger",
+        "Armor_Legs_Gunslinger",
+        "Leadbringer"
+      ]
+    }
+  }
+}

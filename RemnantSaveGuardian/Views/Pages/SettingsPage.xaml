@@ -1,0 +1,94 @@
+﻿<ui:UiPage
+    x:Class="RemnantSaveGuardian.Views.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:RemnantSaveGuardian.Helpers"
+    xmlns:local="clr-namespace:RemnantSaveGuardian.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="SettingsPage"
+    d:DataContext="{d:DesignInstance local:SettingsPage,
+                                     IsDesignTimeCreatable=False}"
+    d:DesignHeight="600"
+    d:DesignWidth="800"
+    d:Background="{DynamicResource ApplicationBackgroundBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    lex:LocalizeDictionary.DesignCulture="en"
+    lex:ResxLocalizationProvider.DefaultAssembly="RemnantSaveGuardian"
+    lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
+    Scrollable="True"
+    xmlns:properties="clr-namespace:RemnantSaveGuardian.Properties">
+    <ui:UiPage.Resources>
+        <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    </ui:UiPage.Resources>
+
+    <StackPanel Margin="23,0" DataContext="{Binding Path=(properties:Settings.Default)}">
+        <TextBlock
+            FontSize="20"
+            FontWeight="Medium"
+            Text="{lex:Loc Saves}" />
+        <ui:ToggleSwitch Name="chkAutoBackup" Content="{lex:Loc}" IsChecked="{Binding AutoBackup}"/>
+        <WrapPanel>
+            <ui:NumberBox Name="numBackupMins"  TextWrapping="Wrap" Text="{Binding BackupMinutes}" Width="110" DecimalPlaces="0" ClearButtonEnabled="False"/>
+            <TextBlock Name="lblBackupMins" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+        </WrapPanel>
+        <WrapPanel>
+            <ui:NumberBox Name="numBackupLimit"  TextWrapping="Wrap" Text="{Binding BackupLimit}" Width="110" DecimalPlaces="0" ClearButtonEnabled="False"/>
+            <TextBlock x:Name="lblBackupLimit" TextWrapping="Wrap" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+        </WrapPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnSaveFolder" Content="{lex:Loc}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="0" Grid.Column="0"/>
+            <TextBox Name="txtSaveFolder"  TextWrapping="Wrap" Text="{Binding SaveFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Margin="5,0,5,0"/>
+            <Button x:Name="btnBackupFolder" Content="{lex:Loc}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="1" Grid.Column="0"/>
+            <TextBox Name="txtBackupFolder" TextWrapping="Wrap" Text="{Binding BackupFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Margin="5,0,5,0"/>
+            <Button x:Name="btnGameFolder" Content="{lex:Loc}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="2" Grid.Column="0"/>
+            <TextBox Name="txtGameFolder" TextWrapping="Wrap" Text="{Binding GameFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Margin="5,0,5,0"/>
+        </Grid>
+        <TextBlock
+            FontSize="20"
+            FontWeight="Medium"
+            Text="{lex:Loc Preferences}" Margin="0,8,0,0" />
+        <WrapPanel>
+            <ui:ToggleSwitch Name="chkShowPossibleItems" Content="{lex:Loc}" IsChecked="{Binding ShowPossibleItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+        </WrapPanel>
+        <WrapPanel>
+            <ComboBox Name="cmbMissingItemColor" VerticalAlignment="Top" Width="120"/>
+            <TextBlock Name="lblMissingItemColor" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+        </WrapPanel>
+        <WrapPanel>
+            <ui:ToggleSwitch Name="chkAutoCheckUpdate" Content="{lex:Loc}" IsChecked="{Binding AutoCheckUpdate}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <Button Name="btnCheckUpdate" Content="{lex:Loc}" VerticalAlignment="Top"/>
+        </WrapPanel>
+        <ui:ToggleSwitch Name="chkCreateLogFile" IsChecked="{Binding CreateLogFile}" Content="{lex:Loc}"/>
+        <TextBlock Margin="0,12,0,0" Text="{lex:Loc Theme}" />
+        <RadioButton
+            Name="radThemeLight"
+            Margin="0,12,0,0"
+            Content="{lex:Loc Light}"
+            GroupName="themeSelect" />
+        <RadioButton
+            Name="radThemeDark"
+            Margin="0,8,0,0"
+            Content="{lex:Loc Dark}"
+            GroupName="themeSelect" />
+
+        <TextBlock
+            Margin="0,24,0,0"
+            FontSize="20"
+            FontWeight="Medium"
+            Text="{lex:Loc AboutRSG}" />
+        <TextBlock Margin="0,12,0,0" Name="lblVersion" />
+    </StackPanel>
+</ui:UiPage>
