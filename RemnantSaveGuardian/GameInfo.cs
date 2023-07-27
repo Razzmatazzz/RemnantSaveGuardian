@@ -7,6 +7,7 @@ using System.Xml;
 using System.Net;
 using System.IO;
 using System.Text.Json.Nodes;
+using System.Net.Http;
 
 namespace RemnantSaveGuardian
 {
@@ -115,82 +116,39 @@ namespace RemnantSaveGuardian
             }
         }
 
-        public static void CheckForNewGameInfo()
+        public static async void CheckForNewGameInfo()
         {
-            GameInfoUpdateEventArgs args = new GameInfoUpdateEventArgs();
+            GameInfoUpdateEventArgs args = new GameInfoUpdateEventArgs()
+            {
+                Result = GameInfoUpdateResult.NoUpdate,
+            };
             try
             {
-                WebClient client = new WebClient();
-                client.DownloadFile("https://raw.githubusercontent.com/Razzmatazzz/RemnantSaveGuardian/master/game.json", "tempgame.json");
+                var request = new HttpRequestMessage(HttpMethod.Get, $"https://raw.githubusercontent.com/Razzmatazzz/RemnantSaveGuardian/main/RemnantSaveGuardian/game.json");
+                HttpClient client = new();
+                var response = await client.SendAsync(request);
+                response.EnsureSuccessStatusCode();
+                JsonNode gameJson = JsonNode.Parse(await response.Content.ReadAsStringAsync());
+                args.RemoteVersion = int.Parse(gameJson["version"].ToString());
 
-                XmlTextReader reader = new XmlTextReader("TempGameInfo.xml");
-                reader.WhitespaceHandling = WhitespaceHandling.None;
-                int remoteversion = 0;
-                int localversion = 0;
-                while (reader.Read())
-                {
-                    if (reader.NodeType == XmlNodeType.Element)
-                    {
-                        if (reader.Name.Equals("GameInfo"))
-                        {
-                            remoteversion = int.Parse(reader.GetAttribute("version"));
-                            break;
-                        }
-                    }
-                }
-                args.RemoteVersion = remoteversion;
-                reader.Close();
-                if (File.Exists("GameInfo.xml"))
-                {
-                    reader = new XmlTextReader("GameInfo.xml");
-                    while (reader.Read())
-                    {
-                        if (reader.NodeType == XmlNodeType.Element)
-                        {
-                            if (reader.Name.Equals("GameInfo"))
-                            {
-                                localversion = int.Parse(reader.GetAttribute("version"));
-                                break;
-                            }
-                        }
-                    }
-                    reader.Close();
-                    args.LocalVersion = localversion;
+                var json = JsonNode.Parse(File.ReadAllText("game.json"));
+                args.LocalVersion = int.Parse(json["version"].ToString());
 
-                    if (remoteversion > localversion)
-                    {
-                        File.Delete("GameInfo.xml");
-                        File.Move("TempGameInfo.xml", "GameInfo.xml");
-                        RefreshGameInfo();
-                        args.Result = GameInfoUpdateResult.Updated;
-                        args.Message = "Game info updated from v" + localversion + " to v" + remoteversion + ".";
-                    }
-                    else
-                    {
-                        File.Delete("TempGameInfo.xml");
-                    }
-                }
-                else
+                if (args.RemoteVersion > args.LocalVersion)
                 {
-                    File.Move("TempGameInfo.xml", "GameInfo.xml");
+                    File.WriteAllText("game.json", gameJson.ToJsonString());
                     RefreshGameInfo();
                     args.Result = GameInfoUpdateResult.Updated;
-                    args.Message = "No local game info found; updated to v" + remoteversion + ".";
+                    args.Message = Loc.T("Game info updated.");
                 }
             }
             catch (Exception ex)
             {
                 args.Result = GameInfoUpdateResult.Failed;
-                args.Message = "Error checking for new game info: " + ex.Message;
+                args.Message = $"{Loc.T("Error checking for new game info")}: {ex.Message}";
             }
 
-            OnGameInfoUpdate(args);
-        }
-
-        protected static void OnGameInfoUpdate(GameInfoUpdateEventArgs e)
-        {
-            EventHandler<GameInfoUpdateEventArgs> handler = GameInfoUpdate;
-            handler?.Invoke(typeof(GameInfo), e);
+            GameInfoUpdate?.Invoke(typeof(GameInfo), args);
         }
     }
     public class GameInfoUpdateEventArgs : EventArgs

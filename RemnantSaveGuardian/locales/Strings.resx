@@ -204,8 +204,17 @@
   <data name="Do you want to move your backups to this new folder?" xml:space="preserve">
     <value>Do you want to move your backups to this new folder?</value>
   </data>
+  <data name="Error checking for new game info" xml:space="preserve">
+    <value>Error checking for new game info</value>
+  </data>
+  <data name="Error checking for new version" xml:space="preserve">
+    <value>Error checking for new version</value>
+  </data>
   <data name="Exit the game before restoring a save backup." xml:space="preserve">
     <value>Exit the game before restoring a save backup.</value>
+  </data>
+  <data name="Game info updated." xml:space="preserve">
+    <value>Game info updated.</value>
   </data>
   <data name="Hardcore" xml:space="preserve">
     <value>Hardcore</value>
@@ -266,6 +275,9 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>New version available!</value>
   </data>
   <data name="Normal" xml:space="preserve">
     <value>Normal</value>
@@ -338,6 +350,9 @@
   </data>
   <data name="World Analyzer" xml:space="preserve">
     <value>World Analyzer</value>
+  </data>
+  <data name="You must wait 5 minutes between update checks" xml:space="preserve">
+    <value>You must wait 5 minutes between update checks</value>
   </data>
   <data name="Zoom" xml:space="preserve">
     <value>Zoom</value>

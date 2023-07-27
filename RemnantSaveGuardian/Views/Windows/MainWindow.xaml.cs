@@ -1,8 +1,14 @@
 ﻿using RemnantSaveGuardian.ViewModels;
 using RemnantSaveGuardian.Views.Pages;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Text.Json.Nodes;
+using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 //using System.Windows.Forms;
@@ -102,6 +108,26 @@ namespace RemnantSaveGuardian.Views.Windows
             BackupsPage.BackupSaveViewed += BackupsPage_BackupSaveViewed;
 
             RootNavigation.Navigated += RootNavigation_Navigated;
+
+            UpdateCheck.NewVersion += UpdateCheck_NewVersion;
+            UpdateCheck.Error += UpdateCheck_Error;
+            if (Properties.Settings.Default.AutoCheckUpdate)
+            {
+                UpdateCheck.CheckForNewVersion();
+            }
+        }
+
+        private void UpdateCheck_Error(object? sender, UpdateCheckErrorEventArgs e)
+        {
+            Logger.Error($"{Loc.T("Error checking for new version")}: {e.Exception.Message}");
+        }
+
+        private void UpdateCheck_NewVersion(object? sender, NewVersionEventArgs e)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                Logger.Log(Loc.T("New version available!"));
+            });
         }
 
         private void RootNavigation_Navigated([System.Diagnostics.CodeAnalysis.NotNull] INavigation sender, RoutedNavigationEventArgs e)

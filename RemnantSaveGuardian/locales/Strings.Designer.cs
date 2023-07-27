@@ -322,11 +322,38 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error checking for new game info.
+        /// </summary>
+        public static string Error_checking_for_new_game_info {
+            get {
+                return ResourceManager.GetString("Error checking for new game info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error checking for new version.
+        /// </summary>
+        public static string Error_checking_for_new_version {
+            get {
+                return ResourceManager.GetString("Error checking for new version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit the game before restoring a save backup..
         /// </summary>
         public static string Exit_the_game_before_restoring_a_save_backup_ {
             get {
                 return ResourceManager.GetString("Exit the game before restoring a save backup.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game info updated..
+        /// </summary>
+        public static string Game_info_updated_ {
+            get {
+                return ResourceManager.GetString("Game info updated.", resourceCulture);
             }
         }
         
@@ -507,6 +534,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New version available!.
+        /// </summary>
+        public static string New_version_available_ {
+            get {
+                return ResourceManager.GetString("New version available!", resourceCulture);
             }
         }
         
@@ -723,6 +759,15 @@ namespace RemnantSaveGuardian.locales {
         public static string World_Analyzer {
             get {
                 return ResourceManager.GetString("World Analyzer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must wait 5 minutes between update checks.
+        /// </summary>
+        public static string You_must_wait_5_minutes_between_update_checks {
+            get {
+                return ResourceManager.GetString("You must wait 5 minutes between update checks", resourceCulture);
             }
         }
         

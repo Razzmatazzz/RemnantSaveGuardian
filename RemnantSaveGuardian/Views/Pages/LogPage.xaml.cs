@@ -43,7 +43,6 @@ namespace RemnantSaveGuardian.Views.Pages
                     Message = message,
                     IsOpen = true,
                     Title = DateTime.Now.ToString(),
-
                 };
                 if (logType == LogType.Error)
                 {

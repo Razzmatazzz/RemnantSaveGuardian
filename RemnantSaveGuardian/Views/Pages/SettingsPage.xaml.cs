@@ -65,6 +65,8 @@ namespace RemnantSaveGuardian.Views.Pages
             cmbMissingItemColor.SelectionChanged += CmbMissingItemColor_SelectionChanged;
             cmbMissingItemColor.Visibility = Visibility.Collapsed;
 
+            btnCheckUpdate.Click += BtnCheckUpdate_Click;
+
             radThemeLight.IsChecked = Properties.Settings.Default.Theme == "Light";
             radThemeLight.Checked += RadThemeLight_Checked;
 
@@ -74,6 +76,11 @@ namespace RemnantSaveGuardian.Views.Pages
             lblVersion.Text = $"Remnant Save Guardian - {GetAssemblyVersion()}";
 
             Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
+        }
+
+        private void BtnCheckUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateCheck.CheckForNewVersion();
         }
 
         private void BackupFolderOpen_Click(object sender, RoutedEventArgs e)
