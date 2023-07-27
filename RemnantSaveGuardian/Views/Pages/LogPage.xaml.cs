@@ -56,7 +56,8 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     infoBar.Severity = InfoBarSeverity.Success;
                 }
-                stackLogs.Children.Insert(0, infoBar);
+                //stackLogs.Children.Insert(0, infoBar);
+                stackLogs.Children.Add(infoBar);
             });
         }
     }

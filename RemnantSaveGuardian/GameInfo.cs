@@ -125,6 +125,7 @@ namespace RemnantSaveGuardian
             try
             {
                 var request = new HttpRequestMessage(HttpMethod.Get, $"https://raw.githubusercontent.com/Razzmatazzz/RemnantSaveGuardian/main/RemnantSaveGuardian/game.json");
+                request.Headers.Add("user-agent", "remnant-save-guardian");
                 HttpClient client = new();
                 var response = await client.SendAsync(request);
                 response.EnsureSuccessStatusCode();

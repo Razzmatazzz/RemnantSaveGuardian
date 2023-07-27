@@ -18,7 +18,7 @@ namespace RemnantSaveGuardian
         public static event EventHandler<NewVersionEventArgs> NewVersion;
         public static event EventHandler<UpdateCheckErrorEventArgs> Error;
 
-        public static bool OpenDownloadPage { get; set; }
+        public static bool OpenDownloadPage { get; set; } = true;
 
         public static async void CheckForNewVersion()
         {
@@ -31,19 +31,19 @@ namespace RemnantSaveGuardian
                 lastUpdateCheck = DateTime.Now;
                 GameInfo.CheckForNewGameInfo();
                 var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.github.com/repos/{repo}/releases/latest");
+                request.Headers.Add("user-agent", "remnant-save-guardian");
                 var response = await client.SendAsync(request);
                 response.EnsureSuccessStatusCode();
                 JsonNode latestRelease = JsonNode.Parse(await response.Content.ReadAsStringAsync());
 
                 Version remoteVersion = new Version(latestRelease["tag_name"].ToString());
                 Version localVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-                Process.Start("https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/latest");
                 if (localVersion.CompareTo(remoteVersion) == -1)
                 {
                     NewVersion?.Invoke(null, new() { Version = remoteVersion, Uri = new(latestRelease["html_url"].ToString()) });
                     if (OpenDownloadPage)
                     {
-                        Process.Start("https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/latest");
+                        Process.Start("explorer", "https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/latest");
                     }
                 }
             }
