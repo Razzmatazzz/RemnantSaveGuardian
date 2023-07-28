@@ -73,8 +73,7 @@ namespace RemnantSaveGuardian
                 for (var i = 0; i < inventoryStarts.Count; i++)
                 {
                     Match invMatch = inventoryStarts[i];
-                    var inventoryEnd = inventoryEnds[i].Index;
-                    var inventory = profileData.Substring(invMatch.Index, inventoryEnd - invMatch.Index);
+                    var inventory = profileData.Substring(invMatch.Index, inventoryEnds[i].Index - invMatch.Index);
                     RemnantCharacter cd = new RemnantCharacter(remnantSave, i);
                     for (var m = 0; m < archetypes.Count; m++)
                     {
