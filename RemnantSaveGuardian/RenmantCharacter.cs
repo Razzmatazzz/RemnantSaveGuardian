@@ -11,7 +11,8 @@ namespace RemnantSaveGuardian
 {
     public class RemnantCharacter
     {
-        public string Archetype { get; set; }
+        public List<string> Archetypes { get; set; }
+        public string SecondArchetype { get; set; }
         public List<string> Inventory { get; set; }
         public List<RemnantWorldEvent> CampaignEvents { get; set; }
         public List<RemnantWorldEvent> AdventureEvents { get; set; }
@@ -33,18 +34,18 @@ namespace RemnantSaveGuardian
 
         public override string ToString()
         {
-            return Loc.T(this.Archetype) + " (" + this.Progression + ")";
+            return string.Join(", ", Archetypes.Select(arch => Loc.T(arch))) + " (" + this.Progression + ")";
         }
 
         public string ToFullString()
         {
-            string str = "CharacterData{ Archetype: " + this.Archetype + ", Inventory: [" + string.Join(", ", this.Inventory) + "], CampaignEvents: [" + string.Join(", ", this.CampaignEvents) + "], AdventureEvents: [" + string.Join(", ", this.AdventureEvents) + "] }";
+            string str = "CharacterData{ Archetypes: [" + string.Join(", ", Archetypes.Select(arch => Loc.T(arch))) + "], Inventory: [" + string.Join(", ", this.Inventory) + "], CampaignEvents: [" + string.Join(", ", this.CampaignEvents) + "], AdventureEvents: [" + string.Join(", ", this.AdventureEvents) + "] }";
             return str;
         }
 
         public RemnantCharacter(RemnantSave remnantSave, int index)
         {
-            this.Archetype = "";
+            this.Archetypes = new List<string>();
             this.Inventory = new List<string>();
             this.CampaignEvents = new List<RemnantWorldEvent>();
             this.AdventureEvents = new List<RemnantWorldEvent>();
@@ -66,20 +67,33 @@ namespace RemnantSaveGuardian
             try
             {
                 string profileData = remnantSave.GetProfileData();
-                File.WriteAllText(remnantSave.SaveFolderPath + @"\profile.txt", profileData);
-                string[] characters = profileData.Split(new string[] { "/Game/Characters/Player/Base/Character_Master_Player.Character_Master_Player_C" }, StringSplitOptions.None);
-                for (var i = 1; i < characters.Length; i++)
+                var archetypes = Regex.Matches(profileData, @"/Game/World_Base/Items/Archetypes/(?<archetype>\w+)/Archetype_\w+_UI\.Archetype_\w+_UI_C");
+                var inventoryStarts = Regex.Matches(profileData, "/Game/Characters/Player/Base/Character_Master_Player.Character_Master_Player_C");
+                var inventoryEnds = Regex.Matches(profileData, "[^.]Character_Master_Player_C");
+                for (var i = 0; i < inventoryStarts.Count; i++)
                 {
-                    RemnantCharacter cd = new RemnantCharacter(remnantSave, i - 1);
-                    cd.Archetype = "Unknown";
-                    Match archetypeMatch = new Regex(@"/Game/World_Base/Items/Archetypes/(?<archetype>\w+)/").Match(characters[i]);
-                    if (archetypeMatch.Success)
+                    Match invMatch = inventoryStarts[i];
+                    var inventoryEnd = inventoryEnds[i].Index;
+                    var inventory = profileData.Substring(invMatch.Index, inventoryEnd - invMatch.Index);
+                    RemnantCharacter cd = new RemnantCharacter(remnantSave, i);
+                    for (var m = 0; m < archetypes.Count; m++)
                     {
-                        cd.Archetype = archetypeMatch.Groups["archetype"].Value;
+                        Match archMatch = archetypes[m];
+                        int prevCharEnd = 0;
+                        if (i > 0)
+                        {
+                            prevCharEnd = inventoryEnds[i-1].Index;
+                        }
+                        if (archMatch.Index > prevCharEnd && archMatch.Index < invMatch.Index)
+                        {
+                            cd.Archetypes.Add(archMatch.Groups["archetype"].Value);
+                        }
+                    }
+                    if (cd.Archetypes.Count == 0)
+                    {
+                        cd.Archetypes.Add("Unknown");
                     }
                     List<string> saveItems = new List<string>();
-                    string charEnd = "Character_Master_Player_C";
-                    string inventory = characters[i].Substring(0, characters[i].IndexOf(charEnd));
 
                     MatchCollection matches = new Regex(@"/Items/Weapons/(?<weaponType>\w+)/(?<weaponClass>\w+)/(?<weaponName>\w+)").Matches(inventory);
                     foreach (Match match in matches)
