@@ -215,6 +215,14 @@ namespace RemnantSaveGuardian
 
                     if (mode == ProcessMode.Adventure) currentMainLocation = null;
 
+                    if (match.Groups.ContainsKey("eventType2"))
+                    {
+                        if (match.Groups["eventType2"].Value == "AdventureMode")
+                        {
+                            continue;
+                        }
+                    }
+
                     var worldEvent = new RemnantWorldEvent(match);
                     worldEvent.setMissingItems(character);
                     if (!zoneEvents.ContainsKey(zone))
