@@ -227,7 +227,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private void BtnSaveFolder_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            openFolderDialog.SelectedPath = Properties.Settings.Default.BackupFolder;
+            openFolderDialog.SelectedPath = Properties.Settings.Default.SaveFolder;
             openFolderDialog.Description = Loc.T("Save Folder");
             openFolderDialog.UseDescriptionForTitle = true;
             System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
