@@ -30,7 +30,6 @@ namespace RemnantSaveGuardian.Views.Pages
             get;
         }
         private RemnantSave Save;
-        private string savePath;
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string pathToSaveFiles)
         {
             ViewModel = viewModel;
@@ -69,10 +68,19 @@ namespace RemnantSaveGuardian.Views.Pages
             treeMissingItems.Items.Add(nodeHardcore);
             treeMissingItems.Items.Add(nodeSurvival);
 
-            savePath = pathToSaveFiles;
-            SaveWatcher.SaveUpdated += SaveWatcher_SaveUpdated;
+            Save = new(pathToSaveFiles);
+            if (pathToSaveFiles == Properties.Settings.Default.SaveFolder)
+            {
+                SaveWatcher.SaveUpdated += (sender, eventArgs) => {
+                    Save.UpdateCharacters();
+                    checkAdventureTab();
+                };
+            }
+            CharacterControl.ItemsSource = Save.Characters;
             CharacterControl.SelectionChanged += CharacterControl_SelectionChanged;
-            SaveWatcher_SaveUpdated(null, new());
+            Save.UpdateCharacters();
+            CharacterControl.SelectedIndex = 0;
+            checkAdventureTab();
         }
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel) : this(viewModel, Properties.Settings.Default.SaveFolder)
         {
@@ -117,7 +125,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             if (e.PropertyName == "ShowPossibleItems")
             {
-                refreshEvents();
+                reloadEventGrids();
             }
         }
 
@@ -144,16 +152,8 @@ namespace RemnantSaveGuardian.Views.Pages
             if (CharacterControl.Items.Count > 0 && CharacterControl.SelectedIndex > -1)
             {
                 CampaignData.ItemsSource = Save.Characters[CharacterControl.SelectedIndex].CampaignEvents;
-                if (Save.Characters[CharacterControl.SelectedIndex].AdventureEvents.Count > 0)
-                {
-                    tabAdventure.IsEnabled = true;
-                    AdventureData.ItemsSource = Save.Characters[CharacterControl.SelectedIndex].AdventureEvents;
-                }
-                else
-                {
-                    tabAdventure.IsEnabled = false;
-                    if (tabAnalyzer.SelectedIndex == 1) tabAnalyzer.SelectedIndex = 0;
-                }
+                AdventureData.ItemsSource = Save.Characters[CharacterControl.SelectedIndex].AdventureEvents;
+                checkAdventureTab();
                 //txtMissingItems.Text = string.Join("\n", Save.Characters[CharacterControl.SelectedIndex].GetMissingItems());
 
                 foreach (TreeViewItem item in treeMissingItems.Items)
@@ -193,31 +193,23 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void SaveWatcher_SaveUpdated(object? sender, EventArgs e)
+        private void checkAdventureTab()
         {
-            Save = new RemnantSave(savePath);
-            Save.UpdateCharacters();
-            var selectedIndex = CharacterControl.SelectedIndex;
-            if (selectedIndex < 0)
+            if (Save.Characters[CharacterControl.SelectedIndex].AdventureEvents.Count > 0)
             {
-                selectedIndex = 0;
+                tabAdventure.IsEnabled = true;
             }
-            CharacterControl.Items.Clear();
-            foreach (var character in Save.Characters)
+            else
             {
-                CharacterControl.Items.Add(character);
-            }
-            if (selectedIndex <= Save.Characters.Count - 1)
-            {
-                CharacterControl.SelectedIndex = selectedIndex;
-            }
-            else if (Save.Characters.Count > 0)
-            {
-                CharacterControl.SelectedIndex = 0;
+                tabAdventure.IsEnabled = false;
+                if (tabAnalyzer.SelectedIndex == 1)
+                {
+                    tabAnalyzer.SelectedIndex = 0;
+                }
             }
         }
 
-        private void refreshEvents()
+        private void reloadEventGrids()
         {
             var tempData = CampaignData.ItemsSource;
             CampaignData.ItemsSource = null;
@@ -226,13 +218,6 @@ namespace RemnantSaveGuardian.Views.Pages
             tempData = AdventureData.ItemsSource;
             AdventureData.ItemsSource = null;
             AdventureData.ItemsSource = tempData;
-        }
-
-        public void SetSave(RemnantSave save)
-        {
-            Save = save;
-            SaveWatcher.SaveUpdated -= SaveWatcher_SaveUpdated;
-            SaveWatcher_SaveUpdated(null, new());
         }
     }
 }
