@@ -171,7 +171,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             if (Properties.Settings.Default.BackupFolder.Length > 0 && Directory.Exists(Properties.Settings.Default.BackupFolder))
             {
-                var confirmResult = MessageBoxResult.No;
+                /*var confirmResult = MessageBoxResult.No;
                 List<String> backupFiles = Directory.GetDirectories(Properties.Settings.Default.BackupFolder).ToList();
                 if (backupFiles.Count > 0)
                 {
@@ -193,7 +193,39 @@ namespace RemnantSaveGuardian.Views.Pages
                         Directory.Delete(file, true);
                         //Directory.Move(file, folderName + subFolderName);
                     }
+                }*/
+                List<String> backupFiles = Directory.GetDirectories(Properties.Settings.Default.BackupFolder).ToList();
+                if (backupFiles.Count > 0)
+                {
+                    var messageBox = new Wpf.Ui.Controls.MessageBox()
+                    {
+                        Title = Loc.T("Move Backups"),
+                        Content = Loc.T("Do you want to move your backups to this new folder?"),
+                        ButtonLeftName = "Yes",
+                        ButtonRightName = "No",
+                    };
+                    messageBox.ButtonRightClick += (s, ev) => {
+                        messageBox.Hide();
+                    };
+                    messageBox.ButtonLeftClick += (s, ev) =>
+                    {
+                        foreach (string file in backupFiles)
+                        {
+                            string subFolderName = file.Substring(file.LastIndexOf(@"\"));
+                            Directory.CreateDirectory(folderName + subFolderName);
+                            Directory.SetCreationTime(folderName + subFolderName, Directory.GetCreationTime(file));
+                            Directory.SetLastWriteTime(folderName + subFolderName, Directory.GetCreationTime(file));
+                            foreach (string filename in Directory.GetFiles(file))
+                            {
+                                File.Copy(filename, filename.Replace(Properties.Settings.Default.BackupFolder, folderName));
+                            }
+                            Directory.Delete(file, true);
+                            //Directory.Move(file, folderName + subFolderName);
+                        }
+                    };
+                    messageBox.Show();
                 }
+                
             }
             txtBackupFolder.Text = folderName;
             Properties.Settings.Default.BackupFolder = folderName;
