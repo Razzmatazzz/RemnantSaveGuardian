@@ -44,11 +44,12 @@ namespace RemnantSaveGuardian
         { 
             get
             {
-                var parsed = new Regex(@"^(Ring|Amulet)_").Replace(_name, "");
+                /*var parsed = new Regex(@"^(Ring|Amulet)_").Replace(_name, "");
                 if (parsed.Length < 3) {
                     parsed = _name;
                 }
-                return Loc.GameT(parsed);
+                return Loc.GameT(parsed);*/
+                return _name;
             }
         }
         public string MissingItems
@@ -81,7 +82,7 @@ namespace RemnantSaveGuardian
             _world = match.Groups["world"].Value;
             _type = match.Groups["eventType"].Value;
             _name = match.Groups["eventName"].Value;
-            if (_name.Contains("TraitBook"))
+            if (_name.ToLower().Contains("traitbook"))
             {
                 _name = "TraitBook";
             }
@@ -319,6 +320,7 @@ namespace RemnantSaveGuardian
                 catch (Exception ex)
                 {
                     Logger.Error($"Error parsing save event on {textLine}: {ex}");
+                    Debug.WriteLine(ex);
                 }
             }
 

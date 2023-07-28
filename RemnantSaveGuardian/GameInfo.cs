@@ -8,6 +8,7 @@ using System.Net;
 using System.IO;
 using System.Text.Json.Nodes;
 using System.Net.Http;
+using System.Diagnostics;
 
 namespace RemnantSaveGuardian
 {
@@ -107,6 +108,11 @@ namespace RemnantSaveGuardian
             foreach (var kvp in gameEvents.AsEnumerable())
             {
                 List<RemnantItem> eventItems = new List<RemnantItem>();
+                if (kvp.Value["items"] == null)
+                {
+                    Logger.Warn($"{kvp.Key} has no items");
+                    continue;
+                }
                 foreach (var item in kvp.Value["items"].AsArray())
                 {
                     RemnantItem rItem = new RemnantItem(item.ToString());

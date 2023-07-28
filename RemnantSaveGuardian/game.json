@@ -6,10 +6,26 @@
         "ChainsOfAmplification"
       ]
     },
-    "BoosterRing": {
+    "Amulet_IndignantFetish": {
       "items": [
-        "BoosterRing"
+        "IndignantFetish"
       ]
+    },
+    "Amulet_VengeanceIdol": {
+      "items": [
+        "VengeanceIdol"
+      ]
+    },
+    "Amulet_WeightlessWeight": {
+      "items": [
+        "WeightlessWeight"
+      ]
+    },
+    "BloatKing": {
+      "items": [
+        "VoltaicRondure"
+      ],
+      "location": "TheGreatSewers"
     },
     "ClockTower": {
       "items": [
@@ -22,11 +38,6 @@
         "Godsplitter"
       ]
     },
-    "IndignantFetish": {
-      "items": [
-        "IndignantFetish"
-      ]
-    },
     "NimueDream": {
       "items": [
         "OneTrueKingSigil",
@@ -35,6 +46,16 @@
         "NimuesRibbon",
         "AssassinsDagger",
         "HexWard"
+      ]
+    },
+    "Ring_BoosterRing": {
+      "items": [
+        "BoosterRing"
+      ]
+    },
+    "Ring_CelerityStone": {
+      "items": [
+        "CelerityStone"
       ]
     },
     "Ring_FaeShamanRing": {
@@ -47,9 +68,49 @@
         "FaeWarriorRing"
       ]
     },
+    "Ring_HeartOfTheWolf": {
+      "items": [
+        "HeartOfTheWolf"
+      ]
+    },
+    "Ring_ReserveBoostingGem": {
+      "items": [
+        "ReserveBoostingGem"
+      ]
+    },
+    "Ring_RingOfRestocking": {
+      "items": [
+        "RingOfRestocking"
+      ]
+    },
+    "Ring_SoulLink": {
+      "items": [
+        "SoulLink"
+      ]
+    },
+    "Ring_StoneOfBalance": {
+      "items": [
+        "StoneOfBalance"
+      ]
+    },
+    "Ring_StoneOfExpanse": {
+      "items": [
+        "StoneOfExpanse"
+      ]
+    },
     "Ring_StreamCoupler": {
       "items": [
         "StreamCoupler"
+      ]
+    },
+    "Ring_TargetingJewel": {
+      "items": [
+        "TargetingJewel"
+      ]
+    },
+    "Ring_VacuumSeal": {
+      "items": [
+        "VacuumSeal"
       ]
     },
     "Remnant1": {
@@ -68,10 +129,9 @@
         "Armor_Legs_Void"
       ]
     },
-    "SoulLink": {
-      "items": [
-        "SoulLink"
-      ]
+    "RootHorror": {
+      "items": [],
+      "location": "TheFarWoods"
     },
     "Archetype_Gunslinger": {
       "items": [
