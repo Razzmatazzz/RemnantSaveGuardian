@@ -162,8 +162,7 @@ namespace RemnantSaveGuardian.Views.Pages
             string folderName = openFolderDialog.SelectedPath;
             if (folderName.Equals(Properties.Settings.Default.SaveFolder))
             {
-                MessageBox.Show(Loc.T("Select a folder other than the game's save folder."),
-                                    Loc.T("Invalid Folder"), MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+                Logger.Warn(Loc.T("InvalidBackupFolderNoBackupsInSaves"));
                 return;
             }
             if (folderName.Equals(Properties.Settings.Default.BackupFolder))
@@ -214,8 +213,7 @@ namespace RemnantSaveGuardian.Views.Pages
             string folderName = openFolderDialog.SelectedPath;
             if (!File.Exists(folderName + "\\Remnant2.exe"))
             {
-                MessageBox.Show(Loc.T("Select where your Remnant II game is installed"),
-                                    Loc.T("Invalid Folder"), MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+                Logger.Warn(Loc.T("InvalidGameFolder"));
                 return;
             }
             if (folderName.Equals(Properties.Settings.Default.GameFolder))
@@ -240,8 +238,7 @@ namespace RemnantSaveGuardian.Views.Pages
             string folderName = openFolderDialog.SelectedPath;
             if (folderName.Equals(Properties.Settings.Default.BackupFolder))
             {
-                MessageBox.Show(Loc.T("Please select a folder other than the backup folder."),
-                                    Loc.T("Invalid Folder"), MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+                Logger.Warn(Loc.T("InvalidSaveFolderNoSavesInBackups"));
                 return;
             }
             if (folderName.Equals(Properties.Settings.Default.BackupFolder))
@@ -250,8 +247,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             if (!RemnantSave.ValidSaveFolder(folderName))
             {
-                MessageBox.Show(Loc.T("Select where your Remnant II saves are stored"),
-                                    Loc.T("Invalid Folder"), MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
+                Logger.Warn(Loc.T("InvalidSaveFolder"));
                 return;
             }
             txtSaveFolder.Text = folderName;

@@ -385,6 +385,42 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid folder: Backup folder cannot be the game&apos;s save folder..
+        /// </summary>
+        public static string InvalidBackupFolderNoBackupsInSaves {
+            get {
+                return ResourceManager.GetString("InvalidBackupFolderNoBackupsInSaves", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid folder: Select where your Remnant II game is installed..
+        /// </summary>
+        public static string InvalidGameFolder {
+            get {
+                return ResourceManager.GetString("InvalidGameFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid folder: Select where your Remnant II saves are stored.
+        /// </summary>
+        public static string InvalidSaveFolder {
+            get {
+                return ResourceManager.GetString("InvalidSaveFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid folder: Please select a folder other than the backup folder..
+        /// </summary>
+        public static string InvalidSaveFolderNoSavesInBackups {
+            get {
+                return ResourceManager.GetString("InvalidSaveFolderNoSavesInBackups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Keep.
         /// </summary>
         public static string Keep {
@@ -556,33 +592,6 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select a folder other than the backup folder..
-        /// </summary>
-        public static string Please_select_a_folder_other_than_the_backup_folder_ {
-            get {
-                return ResourceManager.GetString("Please select a folder other than the backup folder.", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please select a folder other than the game&apos;s save folder..
-        /// </summary>
-        public static string Please_select_a_folder_other_than_the_game_s_save_folder_ {
-            get {
-                return ResourceManager.GetString("Please select a folder other than the game\'s save folder.", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please select the folder containing your Remnant II save..
-        /// </summary>
-        public static string Please_select_the_folder_containing_your_Remnant_II_save_ {
-            get {
-                return ResourceManager.GetString("Please select the folder containing your Remnant II save.", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Preferences.
         /// </summary>
         public static string Preferences {
@@ -678,24 +687,6 @@ namespace RemnantSaveGuardian.locales {
         public static string Select_a_folder_other_than_the_game_s_save_folder_ {
             get {
                 return ResourceManager.GetString("Select a folder other than the game\'s save folder.", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select where your Remnant II game is installed.
-        /// </summary>
-        public static string Select_where_your_Remnant_II_game_is_installed {
-            get {
-                return ResourceManager.GetString("Select where your Remnant II game is installed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select where your Remnant II saves are stored.
-        /// </summary>
-        public static string Select_where_your_Remnant_II_saves_are_stored {
-            get {
-                return ResourceManager.GetString("Select where your Remnant II saves are stored", resourceCulture);
             }
         }
         

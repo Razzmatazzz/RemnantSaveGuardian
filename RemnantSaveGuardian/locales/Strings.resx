@@ -225,6 +225,18 @@
   <data name="Invalid Folder" xml:space="preserve">
     <value>Invalid Folder</value>
   </data>
+  <data name="InvalidBackupFolderNoBackupsInSaves" xml:space="preserve">
+    <value>Invalid folder: Backup folder cannot be the game's save folder.</value>
+  </data>
+  <data name="InvalidGameFolder" xml:space="preserve">
+    <value>Invalid folder: Select where your Remnant II game is installed.</value>
+  </data>
+  <data name="InvalidSaveFolder" xml:space="preserve">
+    <value>Invalid folder: Select where your Remnant II saves are stored</value>
+  </data>
+  <data name="InvalidSaveFolderNoSavesInBackups" xml:space="preserve">
+    <value>Invalid folder: Please select a folder other than the backup folder.</value>
+  </data>
   <data name="Keep" xml:space="preserve">
     <value>Keep</value>
   </data>
@@ -282,15 +294,6 @@
   <data name="Open Folder" xml:space="preserve">
     <value>Open Folder</value>
   </data>
-  <data name="Please select a folder other than the backup folder." xml:space="preserve">
-    <value>Please select a folder other than the backup folder.</value>
-  </data>
-  <data name="Please select a folder other than the game's save folder." xml:space="preserve">
-    <value>Please select a folder other than the game's save folder.</value>
-  </data>
-  <data name="Please select the folder containing your Remnant II save." xml:space="preserve">
-    <value>Please select the folder containing your Remnant II save.</value>
-  </data>
   <data name="Preferences" xml:space="preserve">
     <value>Preferences</value>
   </data>
@@ -323,12 +326,6 @@
   </data>
   <data name="Select a folder other than the game's save folder." xml:space="preserve">
     <value>Select a folder other than the game's save folder.</value>
-  </data>
-  <data name="Select where your Remnant II game is installed" xml:space="preserve">
-    <value>Select where your Remnant II game is installed</value>
-  </data>
-  <data name="Select where your Remnant II saves are stored" xml:space="preserve">
-    <value>Select where your Remnant II saves are stored</value>
   </data>
   <data name="setting save file timer" xml:space="preserve">
     <value>setting save file timer</value>
