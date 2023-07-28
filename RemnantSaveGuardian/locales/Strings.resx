@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutRSG" xml:space="preserve">
-    <value>About  Remnant Save Guardian</value>
+    <value>About Remnant Save Guardian</value>
   </data>
   <data name="Active" xml:space="preserve">
     <value>Active</value>
@@ -128,6 +128,9 @@
   </data>
   <data name="Backup completed" xml:space="preserve">
     <value>Backup completed</value>
+  </data>
+  <data name="Backup Folder" xml:space="preserve">
+    <value>Backup Folder</value>
   </data>
   <data name="Backup folder not set; reverting to default." xml:space="preserve">
     <value>Backup folder not set; reverting to default.</value>
@@ -141,23 +144,14 @@
   <data name="Backups found" xml:space="preserve">
     <value>Backups found</value>
   </data>
-  <data name="btnBackupFolder_Content" xml:space="preserve">
-    <value>Backup Folder</value>
-  </data>
   <data name="btnBackup_ToolTip" xml:space="preserve">
     <value>Backup current save</value>
   </data>
   <data name="btnCheckUpdate_Content" xml:space="preserve">
     <value>Check Now</value>
   </data>
-  <data name="btnGameFolder_Content" xml:space="preserve">
-    <value>Game Folder</value>
-  </data>
   <data name="btnOpenBackupsFolder_ToolTip" xml:space="preserve">
     <value>Open backups folder</value>
-  </data>
-  <data name="btnSaveFolder_Content" xml:space="preserve">
-    <value>Save Folder</value>
   </data>
   <data name="btnStartGame_ToolTip" xml:space="preserve">
     <value>Start game</value>
@@ -212,6 +206,9 @@
   </data>
   <data name="Exit the game before restoring a save backup." xml:space="preserve">
     <value>Exit the game before restoring a save backup.</value>
+  </data>
+  <data name="Game Folder" xml:space="preserve">
+    <value>Game Folder</value>
   </data>
   <data name="Game info updated." xml:space="preserve">
     <value>Game info updated.</value>
@@ -312,6 +309,9 @@
   <data name="Save file in use; waiting 0.5 seconds and retrying." xml:space="preserve">
     <value>Save file in use; waiting 0.5 seconds and retrying.</value>
   </data>
+  <data name="Save Folder" xml:space="preserve">
+    <value>Save Folder</value>
+  </data>
   <data name="Save plaintext data" xml:space="preserve">
     <value>Save plaintext data</value>
   </data>
@@ -323,9 +323,6 @@
   </data>
   <data name="Select a folder other than the game's save folder." xml:space="preserve">
     <value>Select a folder other than the game's save folder.</value>
-  </data>
-  <data name="Select the folder where you want your backup saves kept" xml:space="preserve">
-    <value>Select the folder where you want your backup saves kept</value>
   </data>
   <data name="Select where your Remnant II game is installed" xml:space="preserve">
     <value>Select where your Remnant II game is installed</value>

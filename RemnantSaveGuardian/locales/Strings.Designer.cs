@@ -61,7 +61,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About  Remnant Save Guardian.
+        ///   Looks up a localized string similar to About Remnant Save Guardian.
         /// </summary>
         public static string AboutRSG {
             get {
@@ -93,6 +93,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Backup_completed {
             get {
                 return ResourceManager.GetString("Backup completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup Folder.
+        /// </summary>
+        public static string Backup_Folder {
+            get {
+                return ResourceManager.GetString("Backup Folder", resourceCulture);
             }
         }
         
@@ -142,15 +151,6 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Backup Folder.
-        /// </summary>
-        public static string btnBackupFolder_Content {
-            get {
-                return ResourceManager.GetString("btnBackupFolder_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Check Now.
         /// </summary>
         public static string btnCheckUpdate_Content {
@@ -160,29 +160,11 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Game Folder.
-        /// </summary>
-        public static string btnGameFolder_Content {
-            get {
-                return ResourceManager.GetString("btnGameFolder_Content", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Open backups folder.
         /// </summary>
         public static string btnOpenBackupsFolder_ToolTip {
             get {
                 return ResourceManager.GetString("btnOpenBackupsFolder_ToolTip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Save Folder.
-        /// </summary>
-        public static string btnSaveFolder_Content {
-            get {
-                return ResourceManager.GetString("btnSaveFolder_Content", resourceCulture);
             }
         }
         
@@ -345,6 +327,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Exit_the_game_before_restoring_a_save_backup_ {
             get {
                 return ResourceManager.GetString("Exit the game before restoring a save backup.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game Folder.
+        /// </summary>
+        public static string Game_Folder {
+            get {
+                return ResourceManager.GetString("Game Folder", resourceCulture);
             }
         }
         
@@ -646,6 +637,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save Folder.
+        /// </summary>
+        public static string Save_Folder {
+            get {
+                return ResourceManager.GetString("Save Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save plaintext data.
         /// </summary>
         public static string Save_plaintext_data {
@@ -678,15 +678,6 @@ namespace RemnantSaveGuardian.locales {
         public static string Select_a_folder_other_than_the_game_s_save_folder_ {
             get {
                 return ResourceManager.GetString("Select a folder other than the game\'s save folder.", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select the folder where you want your backup saves kept.
-        /// </summary>
-        public static string Select_the_folder_where_you_want_your_backup_saves_kept {
-            get {
-                return ResourceManager.GetString("Select the folder where you want your backup saves kept", resourceCulture);
             }
         }
         

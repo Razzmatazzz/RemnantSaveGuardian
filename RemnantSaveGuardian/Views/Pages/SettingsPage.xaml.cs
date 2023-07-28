@@ -152,7 +152,8 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             openFolderDialog.SelectedPath = Properties.Settings.Default.BackupFolder;
-            openFolderDialog.Description = Loc.T("Select the folder where you want your backup saves kept");
+            openFolderDialog.Description = Loc.T("Backup Folder");
+            openFolderDialog.UseDescriptionForTitle = true;
             System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
             if (result != System.Windows.Forms.DialogResult.OK)
             {
@@ -203,7 +204,8 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             openFolderDialog.SelectedPath = Properties.Settings.Default.GameFolder;
-            openFolderDialog.Description = Loc.T("Select where your Remnant II game is installed");
+            openFolderDialog.Description = Loc.T("Game Folder");
+            openFolderDialog.UseDescriptionForTitle = true;
             System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
             if (result != System.Windows.Forms.DialogResult.OK)
             {
@@ -228,7 +230,8 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             openFolderDialog.SelectedPath = Properties.Settings.Default.BackupFolder;
-            openFolderDialog.Description = Loc.T("Select where your Remnant II saves are stored");
+            openFolderDialog.Description = Loc.T("Save Folder");
+            openFolderDialog.UseDescriptionForTitle = true;
             System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
             if (result != System.Windows.Forms.DialogResult.OK)
             {

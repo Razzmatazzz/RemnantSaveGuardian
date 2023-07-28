@@ -49,11 +49,11 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Button x:Name="btnSaveFolder" Content="{lex:Loc}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="0" Grid.Column="0"/>
+            <Button x:Name="btnSaveFolder" Content="{lex:Loc Save Folder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="0" Grid.Column="0"/>
             <TextBox Name="txtSaveFolder"  TextWrapping="Wrap" Text="{Binding SaveFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Margin="5,0,5,0"/>
-            <Button x:Name="btnBackupFolder" Content="{lex:Loc}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="1" Grid.Column="0"/>
+            <Button x:Name="btnBackupFolder" Content="{lex:Loc Backup Folder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="1" Grid.Column="0"/>
             <TextBox Name="txtBackupFolder" TextWrapping="Wrap" Text="{Binding BackupFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Margin="5,0,5,0"/>
-            <Button x:Name="btnGameFolder" Content="{lex:Loc}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="2" Grid.Column="0"/>
+            <Button x:Name="btnGameFolder" Content="{lex:Loc Game FOlder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="2" Grid.Column="0"/>
             <TextBox Name="txtGameFolder" TextWrapping="Wrap" Text="{Binding GameFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Margin="5,0,5,0"/>
         </Grid>
         <TextBlock
