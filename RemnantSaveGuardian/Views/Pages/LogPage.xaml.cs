@@ -23,9 +23,8 @@ namespace RemnantSaveGuardian.Views.Pages
 
             InitializeComponent();
             Logger.MessageLogged += Logger_MessageLogged;
-            for (var i = Logger.Messages.Count - 1; i >= 0; i--)
+            foreach (var logMessage in Logger.Messages)
             {
-                var logMessage = Logger.Messages[i];
                 addMessage(logMessage.Message, logMessage.LogType);
             }
         }
@@ -57,7 +56,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     infoBar.Severity = InfoBarSeverity.Success;
                 }
                 //stackLogs.Children.Insert(0, infoBar);
-                stackLogs.Children.Add(infoBar);
+                stackLogs.Children.Insert(0, infoBar);
             });
         }
     }
