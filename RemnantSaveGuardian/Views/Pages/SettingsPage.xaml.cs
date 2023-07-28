@@ -171,29 +171,6 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             if (Properties.Settings.Default.BackupFolder.Length > 0 && Directory.Exists(Properties.Settings.Default.BackupFolder))
             {
-                /*var confirmResult = MessageBoxResult.No;
-                List<String> backupFiles = Directory.GetDirectories(Properties.Settings.Default.BackupFolder).ToList();
-                if (backupFiles.Count > 0)
-                {
-                    confirmResult = MessageBox.Show(Loc.T("Do you want to move your backups to this new folder?"),
-                                    Loc.T("Move Backups"), MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
-                }
-                if (confirmResult == MessageBoxResult.Yes)
-                {
-                    foreach (string file in backupFiles)
-                    {
-                        string subFolderName = file.Substring(file.LastIndexOf(@"\"));
-                        Directory.CreateDirectory(folderName + subFolderName);
-                        Directory.SetCreationTime(folderName + subFolderName, Directory.GetCreationTime(file));
-                        Directory.SetLastWriteTime(folderName + subFolderName, Directory.GetCreationTime(file));
-                        foreach (string filename in Directory.GetFiles(file))
-                        {
-                            File.Copy(filename, filename.Replace(Properties.Settings.Default.BackupFolder, folderName));
-                        }
-                        Directory.Delete(file, true);
-                        //Directory.Move(file, folderName + subFolderName);
-                    }
-                }*/
                 List<String> backupFiles = Directory.GetDirectories(Properties.Settings.Default.BackupFolder).ToList();
                 if (backupFiles.Count > 0)
                 {
