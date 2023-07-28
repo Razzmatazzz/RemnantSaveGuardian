@@ -150,7 +150,7 @@ namespace RemnantSaveGuardian
             {
                 if (ex.Message.Contains("being used by another process"))
                 {
-                    Logger.Log("Save file in use; waiting 0.5 seconds and retrying.");
+                    Logger.Warn(Loc.T("Save file in use; waiting 0.5 seconds and retrying."));
                     System.Threading.Thread.Sleep(500);
                     charData = GetCharactersFromSave(remnantSave, mode);
                 }
@@ -208,21 +208,16 @@ namespace RemnantSaveGuardian
                 }*/
 
                 //get adventure info
-                if (savetext.Contains("Quest_AdventureMode_"))
+                var adventureMatch = Regex.Match(savetext, @"/Game/World_(?<world>\w+)/Quests/Quest_AdventureMode/Quest_AdventureMode_\w+.Quest_AdventureMode_\w+_C");
+                if (adventureMatch.Success)
                 {
-                    string adventureZone = null;
-                    if (savetext.Contains("Quest_AdventureMode_City_C")) adventureZone = "City";
-                    if (savetext.Contains("Quest_AdventureMode_Wasteland_C")) adventureZone = "Wasteland";
-                    if (savetext.Contains("Quest_AdventureMode_Swamp_C")) adventureZone = "Swamp";
-                    if (savetext.Contains("Quest_AdventureMode_Jungle_C")) adventureZone = "Jungle";
-                    if (savetext.Contains("Quest_AdventureMode_Snow_C")) adventureZone = "Snow";
-
-                    string strAdventureEnd = String.Format("/Game/World_{0}/Quests/Quest_AdventureMode/Quest_AdventureMode_{0}.Quest_AdventureMode_{0}_C", adventureZone);
-                    int adventureEnd = savetext.IndexOf(strAdventureEnd) + strAdventureEnd.Length;
-                    string advtext = savetext.Substring(0, adventureEnd);
-                    string strAdventureStart = String.Format("/Game/World_{0}/Quests/Quest_AdventureMode/Quest_AdventureMode_{0}_0", adventureZone);
-                    int adventureStart = advtext.LastIndexOf(strAdventureStart) + strAdventureStart.Length;
-                    advtext = advtext.Substring(adventureStart);
+                    int adventureEnd = adventureMatch.Index;
+                    int adventureStart = campaignEnd;
+                    if (adventureStart > adventureEnd)
+                    {
+                        adventureStart = 0;
+                    }
+                    string advtext = savetext.Substring(adventureStart, adventureEnd);
                     RemnantWorldEvent.ProcessEvents(this, advtext, RemnantWorldEvent.ProcessMode.Adventure);
                 }
 
@@ -246,16 +241,14 @@ namespace RemnantSaveGuardian
             {
                 if (ex.Message.Contains("being used by another process"))
                 {
-                    Logger.Log("Save file in use; waiting 0.5 seconds and retrying.");
+                    Logger.Warn(Loc.T("Save file in use; waiting 0.5 seconds and retrying."));
                     System.Threading.Thread.Sleep(500);
                     LoadWorldData();
                 }
             }
             catch (Exception ex)
             {
-                Logger.Log("Error loading world Data: ");
-                Logger.Log("\tCharacterData.LoadWorldData");
-                Logger.Log("\t" + ex.ToString());
+                Logger.Error($"Error loading world Data in CharacterData.LoadWorldData: {ex.Message} {ex.StackTrace}");
             }
         }
 

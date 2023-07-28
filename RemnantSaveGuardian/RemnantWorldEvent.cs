@@ -310,9 +310,7 @@ namespace RemnantSaveGuardian
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error parsing save event:");
-                    Console.WriteLine("\tLine: " + textLine);
-                    Console.WriteLine("\tError: " + ex.ToString());
+                    Logger.Error($"Error parsing save event on {textLine}: {ex}");
                 }
             }
 

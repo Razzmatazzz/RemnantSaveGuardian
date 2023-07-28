@@ -21,7 +21,8 @@ namespace RemnantSaveGuardian
             var val = GetLocalizedValue<string>(key, resourceFile);
             if (val == null)
             {
-                if (resourceFile != "GameStrings")
+                return key;
+                /*if (resourceFile != "GameStrings")
                 {
                     return key;
                 }
@@ -29,7 +30,7 @@ namespace RemnantSaveGuardian
                 {
                     return key;
                 }
-                return Regex.Replace(key.Replace("_", " "), "([A-Z0-9]+)", " $1").Trim();
+                return Regex.Replace(key.Replace("_", " "), "([A-Z0-9]+)", " $1").Trim();*/
             }
             var matches = new Regex(@"{(?<sub>\w+?)}").Matches(val);
             foreach (Match match in matches)
