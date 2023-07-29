@@ -1,6 +1,11 @@
 {
-  "version": 2,
+  "version": 3,
   "events": {
+    "Abomination": {
+      "items": [
+        "Bore"
+      ]
+    },
     "Amulet_ChainsOfAmplification": {
       "items": [
         "ChainsOfAmplification"
@@ -32,10 +37,30 @@
         "ModTimeLapse"
       ]
     },
+    "CustodianEye": {
+      "items": [
+        "PrismaticDriver"
+      ]
+    },
+    "DranOracle": {
+      "items": [
+        "QuiltedHeart"
+      ]
+    },
+    "Extraction": {
+      "items": [
+        "NavigatorsHelm"
+      ]
+    },
     "FaelinFaerlin_POI": {
       "items": [
         "Deceit",
         "Godsplitter"
+      ]
+    },
+    "MotherMind": {
+      "items": [
+        "Tremor"
       ]
     },
     "NimueDream": {
@@ -48,6 +73,12 @@
         "HexWard"
       ]
     },
+    "Raenous": {
+      "items": [
+        "NeckboneNecklace",
+        "RunePistol"
+      ]
+    },
     "Ring_BoosterRing": {
       "items": [
         "BoosterRing"
@@ -56,6 +87,21 @@
     "Ring_CelerityStone": {
       "items": [
         "CelerityStone"
+      ]
+    },
+    "Ring_ConservationSeal": {
+      "items": [
+        "ConservationSeal"
+      ]
+    },
+    "Ring_DeepPocketRing": {
+      "items": [
+        "DeepPocketRing"
+      ]
+    },
+    "Ring_DefensiveActionLoop": {
+      "items": [
+        "DefensiveActionLoop"
       ]
     },
     "Ring_FaeShamanRing": {
@@ -68,9 +114,19 @@
         "FaeWarriorRing"
       ]
     },
+    "Ring_GuardiansRing": {
+      "items": [
+        "GuardiansRing"
+      ]
+    },
     "Ring_HeartOfTheWolf": {
       "items": [
         "HeartOfTheWolf"
+      ]
+    },
+    "Ring_PointFocusRing": {
+      "items": [
+        "PointFocusRing"
       ]
     },
     "Ring_ReserveBoostingGem": {
@@ -81,6 +137,21 @@
     "Ring_RingOfRestocking": {
       "items": [
         "RingOfRestocking"
+      ]
+    },
+    "Ring_RingOfTheForestSpirit": {
+      "items": [
+        "RingOfTheForestSpirit"
+      ]
+    },
+    "Ring_RingOfTheRobust": {
+      "items": [
+        "RingOfTheRobust"
+      ]
+    },
+    "Ring_RingSagestone": {
+      "items": [
+        "RingSagestone"
       ]
     },
     "Ring_SoulLink": {

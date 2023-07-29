@@ -324,7 +324,12 @@ namespace RemnantSaveGuardian
                 }
             }
 
-            List<RemnantWorldEvent> orderedEvents = new List<RemnantWorldEvent>();
+            List<RemnantWorldEvent> eventList = character.CampaignEvents;
+            if (mode == ProcessMode.Adventure)
+            {
+                eventList = character.AdventureEvents;
+            }
+            eventList.Clear();
 
             /*bool churchAdded = false;
             bool queenAdded = false;
@@ -426,17 +431,8 @@ namespace RemnantSaveGuardian
             {
                 foreach(var worldEvent in zoneEvents[zone])
                 {
-                    orderedEvents.Add(worldEvent);
+                    eventList.Add(worldEvent);
                 }
-            }
-
-            if (mode == ProcessMode.Campaign)
-            {
-                character.CampaignEvents = orderedEvents;
-            }
-            else
-            {
-                character.AdventureEvents = orderedEvents;
             }
 
             /*for (int i = 0; i < orderedEvents.Count; i++)

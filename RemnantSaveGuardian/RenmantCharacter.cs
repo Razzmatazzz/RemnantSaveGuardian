@@ -14,8 +14,8 @@ namespace RemnantSaveGuardian
         public List<string> Archetypes { get; set; }
         public string SecondArchetype { get; set; }
         public List<string> Inventory { get; set; }
-        public List<RemnantWorldEvent> CampaignEvents { get; set; }
-        public List<RemnantWorldEvent> AdventureEvents { get; set; }
+        public List<RemnantWorldEvent> CampaignEvents { get; }
+        public List<RemnantWorldEvent> AdventureEvents { get; }
 
         public int Progression
         {
@@ -177,10 +177,10 @@ namespace RemnantSaveGuardian
             {
                 return;
             }
-            if (this.CampaignEvents.Count != 0)
+            /*if (this.CampaignEvents.Count != 0)
             {
                 return;
-            }
+            }*/
             if (this.worldIndex >= save.WorldSaves.Length)
             {
                 return;
