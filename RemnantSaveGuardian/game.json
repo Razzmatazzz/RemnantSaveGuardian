@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "events": {
     "Abomination": {
       "items": [
@@ -8,22 +8,22 @@
     },
     "Amulet_ChainsOfAmplification": {
       "items": [
-        "ChainsOfAmplification"
+        "/Game/World_Fae/Items/Trinkets/Amulets/ChainsOfAmplification/Amulet_ChainsOfAmplification"
       ]
     },
     "Amulet_IndignantFetish": {
       "items": [
-        "IndignantFetish"
+        "/Game/World_Fae/Items/Trinkets/Amulets/IndignantFetish/Amulet_IndignantFetish"
       ]
     },
     "Amulet_VengeanceIdol": {
       "items": [
-        "VengeanceIdol"
+        "/Game/World_Fae/Items/Trinkets/Amulets/VengeanceIdol/Amulet_VengeanceIdol"
       ]
     },
     "Amulet_WeightlessWeight": {
       "items": [
-        "WeightlessWeight"
+        "/Game/World_Fae/Items/Trinkets/Amulets/WeightlessWeight/Amulet_WeightlessWeight"
       ]
     },
     "BloatKing": {
@@ -58,19 +58,19 @@
         "Godsplitter"
       ]
     },
-    "MotherMind": {
-      "items": [
-        "Tremor"
-      ]
-    },
-    "NimueDream": {
+    "GoldenHall_Nimue": {
       "items": [
         "OneTrueKingSigil",
         "RunePistol",
         "TranquilHeart",
-        "NimuesRibbon",
+        "/Game/World_Fae/Items/Trinkets/Amulets/HexWard/Amulet_NimuesRibbon",
         "AssassinsDagger",
-        "HexWard"
+        "/Game/World_Fae/Items/Trinkets/Rings/HexWard/Ring_HexWard"
+      ]
+    },
+    "MotherMind": {
+      "items": [
+        "Tremor"
       ]
     },
     "Raenous": {
@@ -81,138 +81,178 @@
     },
     "Ring_BoosterRing": {
       "items": [
-        "BoosterRing"
+        "/Game/World_Fae/Items/Trinkets/Rings/BoosterRing/Ring_BoosterRing"
       ]
     },
     "Ring_CelerityStone": {
       "items": [
-        "CelerityStone"
+        "/Game/World_Jungle/Items/Trinkets/Rings/CelerityStone/Ring_CelerityStone"
       ]
     },
     "Ring_ConservationSeal": {
       "items": [
-        "ConservationSeal"
+        "/Game/World_Nerud/Items/Trinkets/Rings/ConservationSeal/Ring_ConservationSeal"
       ]
     },
     "Ring_DeepPocketRing": {
       "items": [
-        "DeepPocketRing"
+        "/Game/World_Nerud/Items/Trinkets/Rings/DeepPocketRing/Ring_DeepPocketRing"
       ]
     },
     "Ring_DefensiveActionLoop": {
       "items": [
-        "DefensiveActionLoop"
+        "/Game/World_Nerud/Items/Trinkets/Rings/DefensiveActionLoop/Ring_DefensiveActionLoop"
       ]
     },
     "Ring_FaeShamanRing": {
       "items": [
-        "FaeShamanRing"
+        "/Game/World_Fae/Items/Trinkets/Rings/FaeShamanRing/Ring_FaeShamanRing"
       ]
     },
     "Ring_FaeWarriorRing": {
       "items": [
-        "FaeWarriorRing"
+        "/Game/World_Fae/Items/Trinkets/Rings/FaeWarriorRing/Ring_FaeWarriorRing"
       ]
     },
     "Ring_GuardiansRing": {
       "items": [
-        "GuardiansRing"
+        "/Game/World_Jungle/Items/Trinkets/Rings/GuardiansRing/Ring_GuardiansRing"
       ]
     },
     "Ring_HeartOfTheWolf": {
       "items": [
-        "HeartOfTheWolf"
+        "/Game/World_Jungle/Items/Trinkets/Rings/HeartOfTheWolf/Ring_HeartOfTheWolf"
       ]
     },
     "Ring_PointFocusRing": {
       "items": [
-        "PointFocusRing"
+        "/Game/World_Nerud/Items/Trinkets/Rings/PointFocusRing/Ring_PointFocusRing"
       ]
     },
     "Ring_ReserveBoostingGem": {
       "items": [
-        "ReserveBoostingGem"
+        "/Game/World_Nerud/Items/Trinkets/Rings/ReserveBoostingGem/Ring_ReserveBoostingGem"
       ]
     },
     "Ring_RingOfRestocking": {
       "items": [
-        "RingOfRestocking"
+        "/Game/World_Nerud/Items/Trinkets/Rings/RingOfRestocking/Ring_RingOfRestocking"
       ]
     },
     "Ring_RingOfTheForestSpirit": {
       "items": [
-        "RingOfTheForestSpirit"
+        "/Game/World_Jungle/Items/Trinkets/Rings/RingOfTheForestSpirit/Ring_RingOfTheForestSpirit"
       ]
     },
     "Ring_RingOfTheRobust": {
       "items": [
-        "RingOfTheRobust"
+        "/Game/World_Fae/Items/Trinkets/Rings/RingOfTheRobust/Ring_RingOfTheRobust"
       ]
     },
     "Ring_RingSagestone": {
       "items": [
-        "RingSagestone"
+        "/Game/World_Jungle/Items/Trinkets/Rings/RingSagestone/Ring_RingSagestone"
       ]
     },
     "Ring_SoulLink": {
       "items": [
-        "SoulLink"
+        "/Game/World_Jungle/Items/Trinkets/Rings/SoulLink/Ring_SoulLink"
       ]
     },
     "Ring_StoneOfBalance": {
       "items": [
-        "StoneOfBalance"
+        "/Game/World_Jungle/Items/Trinkets/Rings/StoneOfBalance/Ring_StoneOfBalance"
       ]
     },
     "Ring_StoneOfExpanse": {
       "items": [
-        "StoneOfExpanse"
+        "/Game/World_Nerud/Items/Trinkets/Rings/StoneOfExpanse/Ring_StoneOfExpanse"
       ]
     },
     "Ring_StreamCoupler": {
       "items": [
-        "StreamCoupler"
+        "/Game/World_Fae/Items/Trinkets/Rings/StreamCoupler/Ring_StreamCoupler"
       ]
     },
     "Ring_TargetingJewel": {
       "items": [
-        "TargetingJewel"
+        "/Game/World_Nerud/Items/Trinkets/Rings/TargetingJewel/Ring_TargetingJewel"
       ]
     },
     "Ring_VacuumSeal": {
       "items": [
-        "VacuumSeal"
-      ]
-    },
-    "Remnant1": {
-      "items": [
-        "Armor_Head_Elder",
-        "Armor_Body_Elder",
-        "Armor_Gloves_Elder",
-        "Armor_Legs_Elder",
-        "Armor_Head_Radiant",
-        "Armor_Body_Radiant",
-        "Armor_Gloves_Radiant",
-        "Armor_Legs_Radiant",
-        "Armor_Head_Void",
-        "Armor_Body_Void",
-        "Armor_Gloves_Void",
-        "Armor_Legs_Void"
+        "/Game/World_Nerud/Items/Trinkets/Rings/VacuumSeal/Ring_VacuumSeal"
       ]
     },
     "RootHorror": {
       "items": [],
       "location": "TheFarWoods"
     },
+    "ThreeMenMorris": {
+      "items": [
+        "/Game/World_Base/Items/Weapons/Longguns/Standard/Bow/Weapon_Bow"
+      ],
+      "location": "PostulantsParlor"
+    },
+    "Ward13": {
+      "items": [
+        "/Game/World_Base/Items/Trinkets/Rings/AcidStone/Ring_AcidStone",
+        "/Game/World_Base/Items/Trinkets/Rings/AnastasijasInspiration/Ring_AnastasijasInspiration",
+        "/Game/World_Base/Items/Armor/Archetype/Challenger/Armor_Head_Challenger",
+        "/Game/World_Base/Items/Armor/Archetype/Challenger/Armor_Body_Challenger",
+        "/Game/World_Base/Items/Armor/Archetype/Challenger/Armor_Gloves_Challenger",
+        "/Game/World_Base/Items/Armor/Archetype/Challenger/Armor_Legs_Challenger",
+        "/Game/World_Base/Items/Armor/Archetype/Gunslinger/Armor_Head_Gunslinger",
+        "/Game/World_Base/Items/Armor/Archetype/Gunslinger/Armor_Body_Gunslinger",
+        "/Game/World_Base/Items/Armor/Archetype/Gunslinger/Armor_Gloves_Gunslinger",
+        "/Game/World_Base/Items/Armor/Archetype/Gunslinger/Armor_Legs_Gunslinger",
+        "/Game/World_Base/Items/Armor/Archetype/Handler/Armor_Head_Handler",
+        "/Game/World_Base/Items/Armor/Archetype/Handler/Armor_Body_Handler",
+        "/Game/World_Base/Items/Armor/Archetype/Handler/Armor_Gloves_Handler",
+        "/Game/World_Base/Items/Armor/Archetype/Handler/Armor_Legs_Handler",
+        "/Game/World_Base/Items/Armor/Archetype/Hunter/Armor_Head_Hunter",
+        "/Game/World_Base/Items/Armor/Archetype/Hunter/Armor_Body_Hunter",
+        "/Game/World_Base/Items/Armor/Archetype/Hunter/Armor_Gloves_Hunter",
+        "/Game/World_Base/Items/Armor/Archetype/Hunter/Armor_Legs_Hunter",
+        "/Game/World_Base/Items/Armor/Archetype/Medic/Armor_Head_Medic",
+        "/Game/World_Base/Items/Armor/Archetype/Medic/Armor_Body_Medic",
+        "/Game/World_Base/Items/Armor/Archetype/Medic/Armor_Gloves_Medic",
+        "/Game/World_Base/Items/Armor/Archetype/Medic/Armor_Legs_Medic",
+        "/Game/World_Base/Items/Trinkets/Amulets/ButchersFetish/Amulet_ButchersFetish",
+        "/Game/World_Base/Items/Trinkets/Rings/FireStone/Ring_FireStone",
+        "/Game/World_Base/Items/Trinkets/Rings/GroundingStone/Ring_GroundingStone",
+        "/Game/World_Base/Items/Weapons/Melee/Standard/Hatchet/Hatchet/Weapon_Hatchet",
+        "/Game/World_Base/Items/Trinkets/Amulets/NightmareSpiral/Amulet_NightmareSpiral",
+        "/Game/World_Base/Items/Weapons/Longguns/Standard/LeverAction/Weapon_LeverAction",
+        "/Game/World_Base/Items/Weapons/Handguns/Standard/Repeater/Weapon_Repeater_Rusty",
+        "/Game/World_Base/Items/Weapons/Handguns/Standard/Revolver/Weapon_Revolver",
+        "/Game/World_Base/Items/Trinkets/Rings/WornAdmiralsRing/Ring_WornAdmiralsRing"
+      ]
+    },
+    "EditionDeluxe": {
+      "items": [
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Head_Elder",
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Body_Elder",
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Gloves_Elder",
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Legs_Elder",
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Head_Radiant",
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Body_Radiant",
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Gloves_Radiant",
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Legs_Radiant",
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Head_Void",
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Body_Void",
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Gloves_Void",
+        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Legs_Void"
+      ]
+    },
     "Archetype_Gunslinger": {
       "items": [
-        "AmmoReserves",
-        "QuickDraw",
-        "Armor_Head_Gunslinger",
-        "Armor_Body_Gunslinger",
-        "Armor_Gloves_Gunslinger",
-        "Armor_Legs_Gunslinger",
-        "Leadbringer"
+        "/Game/World_Base/Items/Traits/Archetype/AmmoReserves/Trait_AmmoReserves",
+        "/Game/World_Base/Items/Archetypes/Gunslinger/Skills/QuickDraw/Skill_Aimable_QuickDraw",
+        "/Game/World_Base/Items/Archetypes/Gunslinger/Skills/QuickDraw/SkillTrait_QuickDraw",
+        "/Game/World_Base/Items/Archetypes/Gunslinger/Perks/Leadbringer/Perk_Loaded",
+        "/Game/World_Base/Items/Archetypes/Gunslinger/Perks/SwiftShot/Perk_SwiftShot",
+        "/Game/World_Base/Items/Archetypes/Gunslinger/Perks/PosseUp/Perk_PosseUp"
       ]
     }
   }

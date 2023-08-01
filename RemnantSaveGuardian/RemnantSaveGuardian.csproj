@@ -9,7 +9,7 @@
 	<UseWindowsForms>true</UseWindowsForms>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\256.ico</ApplicationIcon>
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
+    <AssemblyVersion>1.0.0.3</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -83,5 +83,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Release &quot;C:\Program Files\7-Zip\7z.exe&quot; a %25userprofile%25\Desktop\RemnantSaveGuardian.zip &quot;$(TargetDir)\*&quot;" />
+  </Target>
 
 </Project>

@@ -3,19 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Wpf.Ui.Common.Interfaces;
 
 namespace RemnantSaveGuardian.Views.Pages
@@ -30,8 +19,12 @@ namespace RemnantSaveGuardian.Views.Pages
             get;
         }
         private RemnantSave Save;
-        public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string pathToSaveFiles)
+        public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
+            if (pathToSaveFiles == null)
+            {
+                pathToSaveFiles = Properties.Settings.Default.SaveFolder;
+            }
             ViewModel = viewModel;
 
             InitializeComponent();
@@ -74,7 +67,10 @@ namespace RemnantSaveGuardian.Views.Pages
                 SaveWatcher.SaveUpdated += (sender, eventArgs) => {
                     Save.UpdateCharacters();
                     checkAdventureTab();
+                    CampaignData.Items.Refresh();
+                    AdventureData.Items.Refresh();
                 };
+                Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
             }
             CharacterControl.ItemsSource = Save.Characters;
             CharacterControl.SelectionChanged += CharacterControl_SelectionChanged;
@@ -82,7 +78,8 @@ namespace RemnantSaveGuardian.Views.Pages
             CharacterControl.SelectedIndex = 0;
             checkAdventureTab();
         }
-        public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel) : this(viewModel, Properties.Settings.Default.SaveFolder)
+
+        public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel) : this(viewModel, null)
         {
 
         }
@@ -108,7 +105,8 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             //openFolderDialog.SelectedPath = Properties.Settings.Default.GameFolder;
-            openFolderDialog.Description = Loc.T("Save plaintext data");
+            openFolderDialog.Description = Loc.T("Export save files as plaintext");
+            openFolderDialog.UseDescriptionForTitle = true;
             System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
             if (result != System.Windows.Forms.DialogResult.OK)
             {
@@ -125,14 +123,35 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             if (e.PropertyName == "ShowPossibleItems")
             {
-                reloadEventGrids();
+                Dispatcher.Invoke(() =>
+                {
+                    reloadEventGrids();
+                });
+            }
+            if (e.PropertyName == "SaveFolder")
+            {
+                Dispatcher.Invoke(() => {
+                    Save = new(Properties.Settings.Default.SaveFolder);
+                    Save.UpdateCharacters();
+                    checkAdventureTab();
+                });
             }
         }
 
         private void Data_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
         {
+            var cancelColumns = new List<string>() {
+                "RawName",
+                "RawLocation"
+            };
+            if (cancelColumns.Contains(e.Column.Header))
+            {
+                e.Cancel = true;
+                return;
+            }
             if (e.Column.Header.Equals("MissingItems"))
             {
+                e.Column.Header = "Missing Items";
                 // todo: set missing item color?
             }
             else if (e.Column.Header.Equals("PossibleItems"))
@@ -195,18 +214,20 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void checkAdventureTab()
         {
-            if (Save.Characters[CharacterControl.SelectedIndex].AdventureEvents.Count > 0)
-            {
-                tabAdventure.IsEnabled = true;
-            }
-            else
-            {
-                tabAdventure.IsEnabled = false;
-                if (tabAnalyzer.SelectedIndex == 1)
+            Dispatcher.Invoke(() => {
+                if (Save.Characters[CharacterControl.SelectedIndex].AdventureEvents.Count > 0)
                 {
-                    tabAnalyzer.SelectedIndex = 0;
+                    tabAdventure.IsEnabled = true;
                 }
-            }
+                else
+                {
+                    tabAdventure.IsEnabled = false;
+                    if (tabAnalyzer.SelectedIndex == 1)
+                    {
+                        tabAnalyzer.SelectedIndex = 0;
+                    }
+                }
+            });
         }
 
         private void reloadEventGrids()

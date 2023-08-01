@@ -17,7 +17,7 @@ namespace RemnantSaveGuardian
         public static event EventHandler<GameInfoUpdateEventArgs> GameInfoUpdate;
         private static Dictionary<string, string> zones = new Dictionary<string, string>();
         private static Dictionary<string, string> events = new Dictionary<string, string>();
-        private static Dictionary<string, RemnantItem[]> eventItem = new Dictionary<string, RemnantItem[]>();
+        private static Dictionary<string, List<RemnantItem>> eventItem = new Dictionary<string, List<RemnantItem>>();
         private static Dictionary<string, string> subLocations = new Dictionary<string, string>();
         private static Dictionary<string, string> mainLocations = new Dictionary<string, string>();
         private static Dictionary<string, string> archetypes = new Dictionary<string, string>();
@@ -33,7 +33,7 @@ namespace RemnantSaveGuardian
                 return events;
             }
         }
-        public static Dictionary<string, RemnantItem[]> EventItem
+        public static Dictionary<string, List<RemnantItem>> EventItem
         {
             get
             {
@@ -110,7 +110,7 @@ namespace RemnantSaveGuardian
                 List<RemnantItem> eventItems = new List<RemnantItem>();
                 if (kvp.Value["items"] == null)
                 {
-                    Logger.Warn($"{kvp.Key} has no items");
+                    Logger.Warn($"Event {kvp.Key} has no items");
                     continue;
                 }
                 foreach (var item in kvp.Value["items"].AsArray())
@@ -118,7 +118,7 @@ namespace RemnantSaveGuardian
                     RemnantItem rItem = new RemnantItem(item.ToString());
                     eventItems.Add(rItem);
                 }
-                eventItem.Add(kvp.Key, eventItems.ToArray());
+                eventItem.Add(kvp.Key, eventItems);
             }
         }
 

@@ -8,6 +8,8 @@ using System.Xml;
 using System.Net;
 using System.Diagnostics;
 using System.Security.Policy;
+using System.IO;
+using System.Windows.Media.TextFormatting;
 
 namespace RemnantSaveGuardian
 {
@@ -26,22 +28,26 @@ namespace RemnantSaveGuardian
                 return Loc.GameT(_world);
             }
         }
-        public string Location 
-        { 
+        public string Location
+        {
             get
             {
                 return Loc.GameT(_location);
             }
+            set
+            {
+                _location = value;
+            }
         }
-        public string Type 
-        { 
+        public string Type
+        {
             get
             {
                 return Loc.GameT(_type);
             }
         }
-        public string Name 
-        { 
+        public string Name
+        {
             get
             {
                 /*var parsed = new Regex(@"^(Ring|Amulet)_").Replace(_name, "");
@@ -49,7 +55,7 @@ namespace RemnantSaveGuardian
                     parsed = _name;
                 }
                 return Loc.GameT(parsed);*/
-                return _name;
+                return Loc.GameT(_name);
             }
         }
         public string MissingItems
@@ -66,36 +72,45 @@ namespace RemnantSaveGuardian
                 return string.Join("\n", this.getPossibleItems());
             }
         }
+        public string RawName
+        {
+            get
+            {
+                return _name;
+            }
+        }
+        public string RawLocation
+        {
+            get { return _location; }
+        }
         public enum ProcessMode { Campaign, Adventure };
 
-        public RemnantWorldEvent()
+        public RemnantWorldEvent(string key, string name, string world, string location, string type)
         {
             mItems = new();
-        }
-
-        public RemnantWorldEvent(Match match)
-        {
-            mItems = new();
-
-
-            _key = match.Value;
-            _world = match.Groups["world"].Value;
-            _type = match.Groups["eventType"].Value;
-            _name = match.Groups["eventName"].Value;
+            _key = key;
+            _name = name;
+            _world = world;
+            _location = location;
+            _type = type;
             if (_name.ToLower().Contains("traitbook"))
             {
                 _name = "TraitBook";
             }
         }
+        public RemnantWorldEvent() : this("", "", "", "", "")
+        { }
+
+        public RemnantWorldEvent(Match match) : this(match.Value, match.Groups["eventName"].Value, match.Groups["world"].Value, "", match.Groups["eventType"].Value)
+        { }
 
         public List<RemnantItem> getPossibleItems()
-        {
-            List<RemnantItem> items = new List<RemnantItem>();
+        {;
             if (GameInfo.EventItem.ContainsKey(this._name))
             {
-                items = new List<RemnantItem>(GameInfo.EventItem[this._name]);
+                return GameInfo.EventItem[this._name];
             }
-            return items;
+            return new List<RemnantItem>();
         }
 
         public void setMissingItems(RemnantCharacter charData)
@@ -104,7 +119,7 @@ namespace RemnantSaveGuardian
             List<RemnantItem> possibleItems = this.getPossibleItems();
             foreach (RemnantItem item in possibleItems)
             {
-                if (!charData.Inventory.Contains(item.GetKey()))
+                if (!charData.Inventory.Contains(item.Key))
                 {
                     missingItems.Add(item);
                 }
@@ -124,8 +139,41 @@ namespace RemnantSaveGuardian
         }
 
         //credit to /u/hzla00 for original javascript implementation
-        static public void ProcessEvents(RemnantCharacter character, string eventsText, ProcessMode mode)
+        static public void ProcessEventsOld(RemnantCharacter character, string savetext, ProcessMode mode)
         {
+            string eventsText = "";
+            string strCampaignEnd = "/Game/Campaign_Main/Quest_Campaign_Main.Quest_Campaign_Main_C";
+            int campaignEnd = savetext.IndexOf(strCampaignEnd);
+            if (mode == ProcessMode.Campaign)
+            {
+                string strCampaignStart = "/Game/World_Base/Quests/Quest_Ward13/Quest_Ward13.Quest_Ward13_C";
+                int campaignStart = savetext.IndexOf(strCampaignStart);
+                if (campaignStart != -1 && campaignEnd != -1)
+                {
+                    eventsText = savetext.Substring(0, campaignEnd);
+                    campaignStart = eventsText.LastIndexOf(strCampaignStart);
+                    eventsText = eventsText.Substring(campaignStart);
+                }
+            }
+            else if (mode == ProcessMode.Adventure)
+            {
+                var adventureMatch = Regex.Match(savetext, @"/Game/World_(?<world>\w+)/Quests/Quest_AdventureMode/Quest_AdventureMode_\w+.Quest_AdventureMode_\w+_C");
+                if (adventureMatch.Success)
+                {
+                    int adventureEnd = adventureMatch.Index;
+                    int adventureStart = campaignEnd;
+                    if (adventureStart > adventureEnd)
+                    {
+                        adventureStart = 0;
+                    }
+                    eventsText = savetext.Substring(adventureStart, adventureEnd);
+                }
+            }
+
+            if (eventsText.Length == 0)
+            {
+                return;
+            }
             Dictionary<string, Dictionary<string, string>> zones = new Dictionary<string, Dictionary<string, string>>();
             Dictionary<string, List<RemnantWorldEvent>> zoneEvents = new Dictionary<string, List<RemnantWorldEvent>>();
             List<RemnantWorldEvent> churchEvents = new List<RemnantWorldEvent>();
@@ -139,7 +187,7 @@ namespace RemnantSaveGuardian
             string currentSublocation = null;
 
             string eventName = null;
-            MatchCollection matches = Regex.Matches(eventsText, @"/Game/(?:World|Campaign)_(?<world>\w+)/Quests/(?:Quest_(?:(?<eventType>\w+?)_)?\w+/)?(?:Quest_(?:(?<eventType2>\w+?)_)?(?<eventName>\w+)|(?<eventName>\w+))\.");
+            MatchCollection matches = Regex.Matches(eventsText, @"/Game/(?:World|Campaign)_(?<world>\w+)/Quests/(?:Quest_(?:(?<eventType>\w+?)_)?\w+/)?(?:Quest_(?:(?<eventType2>\w+?)_)?(?<eventName>\w+)|(?<eventName>\w+))\.\w+");
             foreach (Match match in matches)
             {
                 string zone = null;
@@ -320,7 +368,6 @@ namespace RemnantSaveGuardian
                 catch (Exception ex)
                 {
                     Logger.Error($"Error parsing save event on {textLine}: {ex}");
-                    Debug.WriteLine(ex);
                 }
             }
 
@@ -456,6 +503,118 @@ namespace RemnantSaveGuardian
                 ward17.setMissingItems(character);
                 character.CampaignEvents.Add(ward17);
             }*/
+        }
+        static public void ProcessEvents(RemnantCharacter character, string savetext, ProcessMode mode)
+        {
+            var eventsText = "";
+            var eventsIndex = 0;
+            var eventStarts = Regex.Matches(savetext, @"/Game/World_Base/Quests/Quest_Global/Quest_Global\.Quest_Global_C");
+            //Logger.Log($"{mode}");
+            if (mode == ProcessMode.Adventure)
+            {
+                eventsIndex = 1;
+            }
+            if (eventStarts.Count <= eventsIndex)
+            {
+                return;
+            }
+            var eventEnds = Regex.Matches(savetext, @"/Game/World_Base/Quests/Quest_Global/Quest_Global.{5}Quest_Global_C");
+            
+            if (eventEnds.Count != eventStarts.Count)
+            {
+                return;
+            }
+            eventsText = savetext[eventStarts[eventsIndex].Index..eventEnds[eventsIndex].Index];
+            if (eventsText.Length == 0)
+            {
+                return;
+            }
+
+            Dictionary<string, Dictionary<string, string>> zones = new Dictionary<string, Dictionary<string, string>>();
+            Dictionary<string, List<RemnantWorldEvent>> zoneEvents = new Dictionary<string, List<RemnantWorldEvent>>();
+            List<RemnantWorldEvent> churchEvents = new List<RemnantWorldEvent>();
+
+            var areas = Regex.Matches(eventsText, @"![\s\S]{3}(?<eventId>[ABCDEF\d]{32})[\s\S]{5}(?<location>[\w ']+)\W");
+            var eventStrings = new List<string>();
+            for (var areaIndex = 0; areaIndex < areas.Count; areaIndex++)
+            {
+                var currentArea = areas[areaIndex];
+                var areaEndIndex = eventsText.Length;
+                if (areaIndex + 1 < areas.Count)
+                {
+                    areaEndIndex = areas[areaIndex + 1].Index;
+                }
+                var areaText = eventsText[currentArea.Index..areaEndIndex];
+                MatchCollection eventMatches = Regex.Matches(areaText, @"/Game/(?:World|Campaign)_(?<world>\w+)/Quests/Quest_(?<eventType>\w+?)_(?<eventName>\w+)/\w+\.\w+");
+                foreach (Match eventMatch in eventMatches)
+                {
+                    try
+                    {
+                        if (eventMatch.Value.Contains("TileInfo") || eventMatch.Value.Contains("Template") || eventMatch.Value.Contains("EventTree") || eventMatch.Value.EndsWith("_C")) {
+                            continue;
+                        }
+                        eventStrings.Add(eventMatch.Value);
+                        var world = eventMatch.Groups["world"].Value;
+                        var worldEvent = new RemnantWorldEvent(eventMatch);
+                        worldEvent.Location = currentArea.Groups["location"].Value.Trim();
+                        worldEvent.setMissingItems(character);
+                        if (!zoneEvents.ContainsKey(world))
+                        {
+                            zoneEvents.Add(world, new List<RemnantWorldEvent>());
+                        }
+                        if (zoneEvents[world].Exists(ev => ev.RawLocation == worldEvent.RawLocation && ev.RawName == worldEvent.RawName))
+                        {
+                            continue;
+                        }
+                        zoneEvents[world].Add(worldEvent);
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.Error($"Error parsing save event on {areaText}: {ex}");
+
+                    }
+                }
+                //break;
+            }
+            //File.WriteAllText($"events{character.WorldIndex}-{eventsIndex}.txt", string.Join("\n", eventStrings.ToArray()));
+
+            List<RemnantWorldEvent> eventList = character.CampaignEvents;
+            if (mode == ProcessMode.Adventure)
+            {
+                eventList = character.AdventureEvents;
+            }
+            eventList.Clear();
+
+            if (mode == ProcessMode.Campaign)
+            {
+                RemnantWorldEvent ward13 = new RemnantWorldEvent("Ward13", "Ward13", "Earth", "Ward13", "Home");
+                ward13.setMissingItems(character);
+                if (ward13.MissingItems.Length > 0)
+                {
+                    Logger.Log("missing items for Ward 13");
+                    eventList.Add(ward13);
+                }
+
+            }
+
+                foreach (var zone in zoneEvents.Keys)
+            {
+                foreach (var worldEvent in zoneEvents[zone])
+                {
+                    eventList.Add(worldEvent);
+                }
+            }
+        }
+        static public void ProcessEvents(RemnantCharacter character, string savetext)
+        {
+            ProcessEvents(character, savetext, ProcessMode.Campaign);
+            ProcessEvents(character, savetext, ProcessMode.Adventure);
+        }
+        static public void ProcessEvents(RemnantCharacter character)
+        {
+            var savetext = RemnantSave.DecompressSaveAsString(character.Save.WorldSaves[character.WorldIndex]);
+            //File.WriteAllText(character.Save.WorldSaves[character.WorldIndex].Replace(".sav", ".txt"), savetext);
+            ProcessEvents(character, savetext);
         }
 
         static private string getZone(string textLine)

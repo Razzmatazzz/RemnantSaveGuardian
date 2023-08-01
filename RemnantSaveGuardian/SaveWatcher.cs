@@ -45,7 +45,6 @@ namespace RemnantSaveGuardian
         private static void SaveTimer_Elapsed(object? sender, System.Timers.ElapsedEventArgs e)
         {
             SaveUpdated?.Invoke(sender, e);
-            Logger.Log("save timer elapsed");
         }
 
         private static void OnSaveFileChanged(object sender, FileSystemEventArgs e)
@@ -58,7 +57,6 @@ namespace RemnantSaveGuardian
                 //and a backup only occurs after the timer expires.
                 saveTimer.Stop();
                 saveTimer.Start();
-                Logger.Log("Save file changed");
             }
             catch (Exception ex)
             {

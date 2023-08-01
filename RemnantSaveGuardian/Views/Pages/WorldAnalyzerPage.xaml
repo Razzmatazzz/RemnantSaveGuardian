@@ -30,9 +30,9 @@
             </Grid.ColumnDefinitions>
             <WrapPanel Grid.Column="0" >
                 <TextBlock FontWeight="Medium" Text="{lex:Loc Character}" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                <ComboBox Name="CharacterControl" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto"/>
-                <Button Name="SavePlaintextButton">
-                    <ui:SymbolIcon Symbol="SaveEdit24" ToolTip="Save plaintext data"/>
+                <ComboBox Name="CharacterControl" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Margin="0,0,5,0"/>
+                <Button Name="SavePlaintextButton" ToolTip="{lex:Loc Export save files as plaintext}">
+                    <ui:SymbolIcon Symbol="ArrowExportUp24"/>
                 </Button>
             </WrapPanel>
             <WrapPanel Grid.Column="2" VerticalAlignment="Center" Visibility="Collapsed">
@@ -45,12 +45,12 @@
         <TabControl Name="tabAnalyzer" Grid.Row="1">
             <TabItem Header="{lex:Loc Campaign}">
                 <Grid>
-                    <DataGrid Name="CampaignData" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
+                    <DataGrid Name="CampaignData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel"/>
                 </Grid>
             </TabItem>
             <TabItem Name="tabAdventure" Header="{lex:Loc Adventure}">
                 <Grid>
-                    <DataGrid Name="AdventureData"/>
+                    <DataGrid Name="AdventureData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel"/>
                 </Grid>
             </TabItem>
             <TabItem Header="{lex:Loc Missing Items}">

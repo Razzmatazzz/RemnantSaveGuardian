@@ -52,6 +52,7 @@ namespace RemnantSaveGuardian
                 writer.WriteLine(DateTime.Now.ToString() + ": " + message);
                 writer.Close();
             }
+            //Debug.WriteLine(message);
         }
         public static void Log(string message)
         {

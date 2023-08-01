@@ -117,14 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Amulet_ButchersFetish" xml:space="preserve">
+    <value>Butcher's Fetish</value>
+  </data>
+  <data name="Amulet_ChainsOfAmplification" xml:space="preserve">
+    <value>Chains of Amplification</value>
+  </data>
+  <data name="Amulet_NimuesRibbon" xml:space="preserve">
+    <value>Nimue's Ribbon</value>
+  </data>
+  <data name="Armor_Body" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="Armor_Challenger" xml:space="preserve">
+    <value>Challenger</value>
+  </data>
+  <data name="Armor_Gloves" xml:space="preserve">
+    <value>Gloves</value>
+  </data>
+  <data name="Armor_Gunslinger" xml:space="preserve">
+    <value>Gunslinger</value>
+  </data>
+  <data name="Armor_Handler" xml:space="preserve">
+    <value>Handler</value>
+  </data>
+  <data name="Armor_Head" xml:space="preserve">
+    <value>Head</value>
+  </data>
+  <data name="Armor_Hunter" xml:space="preserve">
+    <value>Hunter</value>
+  </data>
+  <data name="Armor_Legs" xml:space="preserve">
+    <value>Legs</value>
+  </data>
+  <data name="Armor_Medic" xml:space="preserve">
+    <value>Medic</value>
+  </data>
+  <data name="Armor_Radiant" xml:space="preserve">
+    <value>Radiant</value>
+  </data>
+  <data name="Armor_Void" xml:space="preserve">
+    <value>Void</value>
+  </data>
   <data name="Base" xml:space="preserve">
     <value>Earth</value>
-  </data>
-  <data name="BoosterRing" xml:space="preserve">
-    <value>Booster Ring</value>
-  </data>
-  <data name="ChainsOfAmplification" xml:space="preserve">
-    <value>Chains of Amplification</value>
   </data>
   <data name="ClockTower" xml:space="preserve">
     <value>The Clock Tower</value>
@@ -141,6 +177,9 @@
   <data name="FaeWarriorRing" xml:space="preserve">
     <value>Fae Warrior Ring</value>
   </data>
+  <data name="GoldenHall_Nimue" xml:space="preserve">
+    <value>Nimue's Retreat</value>
+  </data>
   <data name="IndignantFetish" xml:space="preserve">
     <value>Indignant Fetish</value>
   </data>
@@ -156,22 +195,37 @@
   <data name="Nerud" xml:space="preserve">
     <value>N'Erud</value>
   </data>
-  <data name="NimueDream" xml:space="preserve">
-    <value>Nimue's Retreat</value>
-  </data>
   <data name="OverworldPOI" xml:space="preserve">
     <value>OverworldPOI</value>
   </data>
-  <data name="SIdeD" xml:space="preserve">
-    <value>Dungeon</value>
+  <data name="Ring_AcidStone" xml:space="preserve">
+    <value>Acid Stone</value>
   </data>
-  <data name="SoulLink" xml:space="preserve">
+  <data name="Ring_AnastasijasInspiration" xml:space="preserve">
+    <value>Anastasia's Inspiration</value>
+  </data>
+  <data name="Ring_BoosterRing" xml:space="preserve">
+    <value>Booster Ring</value>
+  </data>
+  <data name="Ring_HexWard" xml:space="preserve">
+    <value>Hex Ward</value>
+  </data>
+  <data name="Ring_SoulLink" xml:space="preserve">
     <value>Soul Link</value>
   </data>
-  <data name="StreamCoupler" xml:space="preserve">
+  <data name="Ring_StreamCoupler" xml:space="preserve">
     <value>Stream Coupler Ring</value>
+  </data>
+  <data name="SideD" xml:space="preserve">
+    <value>Dungeon</value>
+  </data>
+  <data name="ThreeMenMorris" xml:space="preserve">
+    <value>The Postulant</value>
   </data>
   <data name="TraitBook" xml:space="preserve">
     <value>Tome of Knowledge</value>
+  </data>
+  <data name="Ward13" xml:space="preserve">
+    <value>Ward 13</value>
   </data>
 </root>

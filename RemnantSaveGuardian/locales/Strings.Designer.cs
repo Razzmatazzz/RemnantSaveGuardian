@@ -331,6 +331,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export save files as plaintext.
+        /// </summary>
+        public static string Export_save_files_as_plaintext {
+            get {
+                return ResourceManager.GetString("Export save files as plaintext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Game Folder.
         /// </summary>
         public static string Game_Folder {

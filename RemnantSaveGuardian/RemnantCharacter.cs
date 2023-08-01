@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Runtime.CompilerServices;
+using System.Diagnostics;
 
 namespace RemnantSaveGuardian
 {
@@ -16,6 +17,8 @@ namespace RemnantSaveGuardian
         public List<string> Inventory { get; set; }
         public List<RemnantWorldEvent> CampaignEvents { get; }
         public List<RemnantWorldEvent> AdventureEvents { get; }
+        public RemnantSave Save { get; }
+        public int WorldIndex { get; } = -1;
 
         public int Progression
         {
@@ -26,9 +29,6 @@ namespace RemnantSaveGuardian
         }
 
         private List<RemnantItem> missingItems;
-
-        private RemnantSave save;
-        private int worldIndex;
 
         public enum ProcessMode { Campaign, Adventure };
 
@@ -50,8 +50,8 @@ namespace RemnantSaveGuardian
             this.CampaignEvents = new List<RemnantWorldEvent>();
             this.AdventureEvents = new List<RemnantWorldEvent>();
             this.missingItems = new List<RemnantItem>();
-            this.save = remnantSave;
-            this.worldIndex = index;
+            this.Save = remnantSave;
+            this.WorldIndex = index;
         }
 
         public enum CharacterProcessingMode { All, NoEvents };
@@ -73,7 +73,8 @@ namespace RemnantSaveGuardian
                 for (var i = 0; i < inventoryStarts.Count; i++)
                 {
                     Match invMatch = inventoryStarts[i];
-                    var inventory = profileData.Substring(invMatch.Index, inventoryEnds[i].Index - invMatch.Index);
+                    Match invEndMatch = inventoryEnds.First(m => m.Index > invMatch.Index);
+                    var inventory = profileData.Substring(invMatch.Index, invEndMatch.Index - invMatch.Index);
                     RemnantCharacter cd = new RemnantCharacter(remnantSave, i);
                     for (var m = 0; m < archetypes.Count; m++)
                     {
@@ -81,7 +82,8 @@ namespace RemnantSaveGuardian
                         int prevCharEnd = 0;
                         if (i > 0)
                         {
-                            prevCharEnd = inventoryEnds[i-1].Index;
+                            Match prevInvStart = inventoryStarts[i - 1];
+                            prevCharEnd = inventoryEnds.First(m => m.Index > prevInvStart.Index).Index;
                         }
                         if (archMatch.Index > prevCharEnd && archMatch.Index < invMatch.Index)
                         {
@@ -92,36 +94,14 @@ namespace RemnantSaveGuardian
                     {
                         cd.Archetypes.Add("Unknown");
                     }
-                    List<string> saveItems = new List<string>();
 
-                    MatchCollection matches = new Regex(@"/Items/Weapons/(?<weaponType>\w+)/(?<weaponClass>\w+)/(?<weaponName>\w+)").Matches(inventory);
-                    foreach (Match match in matches)
+                    foreach (string pattern in RemnantItem.ItemKeyPatterns)
                     {
-                        saveItems.Add(match.Groups["weaponName"].Value);
-                    }
-
-                    matches = new Regex(@"/Items/Armor/(?<armorSource>\w+)/(?<armorSet>\w+)/(?<armorName>\w+)").Matches(inventory);
-                    foreach (Match match in matches)
-                    {
-                        saveItems.Add(match.Groups["armorName"].Value);
-                    }
-
-                    matches = new Regex(@"/Items/Trinkets/(BandsOfCastorAndPollux/)?(?<itemName>\w+)").Matches(inventory);
-                    foreach (Match match in matches)
-                    {
-                        saveItems.Add(match.Groups["itemName"].Value);
-                    }
-
-                    matches = new Regex(@"/Items/Mods/(?<itemName>\w+)").Matches(inventory);
-                    foreach (Match match in matches)
-                    {
-                        saveItems.Add(match.Groups["itemName"].Value);
-                    }
-
-                    matches = new Regex(@"/Items/Traits/(?<traitSource>\w+)/(?<traitName>\w+)").Matches(inventory);
-                    foreach (Match match in matches)
-                    {
-                        saveItems.Add(match.Groups["traitName"].Value);
+                        var itemMatches = new Regex(pattern).Matches(inventory);
+                        foreach (Match itemMatch in itemMatches)
+                        {
+                            cd.Inventory.Add(itemMatch.Value.Replace(".", ""));
+                        }
                     }
 
                     /*rx = new Regex(@"/Items/QuestItems(/[a-zA-Z0-9_]+)+/[a-zA-Z0-9_]+");
@@ -145,13 +125,6 @@ namespace RemnantSaveGuardian
                         saveItems.Add(match.Value);
                     }*/
 
-                    matches = new Regex(@"/Items/Archetypes/(?<archetype>[\w]+)/Skills/(?<itemName>[\w]+)").Matches(inventory);
-                    foreach (Match match in matches)
-                    {
-                        saveItems.Add(match.Groups["itemName"].Value);
-                    }
-
-                    cd.Inventory = saveItems;
                     if (mode == CharacterProcessingMode.All)
                     {
                         cd.LoadWorldData();
@@ -173,7 +146,7 @@ namespace RemnantSaveGuardian
 
         public void LoadWorldData()
         {
-            if (this.save == null)
+            if (this.Save == null)
             {
                 return;
             }
@@ -181,65 +154,20 @@ namespace RemnantSaveGuardian
             {
                 return;
             }*/
-            if (this.worldIndex >= save.WorldSaves.Length)
+            if (this.WorldIndex >= Save.WorldSaves.Length)
             {
                 return;
             }
             try
             {
-                var savetext = RemnantSave.DecompressSaveAsString(this.save.WorldSaves[this.worldIndex]);
-                File.WriteAllText(this.save.WorldSaves[this.worldIndex].Replace(".sav", ".txt"), savetext);
-                //get campaign info
-                string strCampaignEnd = "/Game/Campaign_Main/Quest_Campaign_Main.Quest_Campaign_Main_C";
-                string strCampaignStart = "/Game/World_Base/Quests/Quest_Ward13/Quest_Ward13.Quest_Ward13_C";
-                int campaignEnd = savetext.IndexOf(strCampaignEnd);
-                int campaignStart = savetext.IndexOf(strCampaignStart);
-                if (campaignStart != -1 && campaignEnd != -1)
-                {
-                    string campaigntext = savetext.Substring(0, campaignEnd);
-                    campaignStart = campaigntext.LastIndexOf(strCampaignStart);
-                    campaigntext = campaigntext.Substring(campaignStart);
-                    RemnantWorldEvent.ProcessEvents(this, campaigntext, RemnantWorldEvent.ProcessMode.Campaign);
-                }
-                /*else
-                {
-                    strCampaignEnd = "/Game/Campaign_Clementine/Quest_Campaign_Clementine.Quest_Campaign_Clementine_C";
-                    strCampaignStart = "/Game/World_Rural/Templates/Template_Rural_Overworld_0";
-                    campaignEnd = savetext.IndexOf(strCampaignEnd);
-                    campaignStart = savetext.IndexOf(strCampaignStart);
-                    if (campaignStart != -1 && campaignEnd != -1)
-                    {
-                        string campaigntext = savetext.Substring(0, campaignEnd);
-                        campaignStart = campaigntext.LastIndexOf(strCampaignStart);
-                        campaigntext = campaigntext.Substring(campaignStart);
-                        RemnantWorldEvent.ProcessEvents(this, campaigntext, RemnantWorldEvent.ProcessMode.Subject2923);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Campaign not found; likely in tutorial mission.");
-                    }
-                }*/
-
-                //get adventure info
-                var adventureMatch = Regex.Match(savetext, @"/Game/World_(?<world>\w+)/Quests/Quest_AdventureMode/Quest_AdventureMode_\w+.Quest_AdventureMode_\w+_C");
-                if (adventureMatch.Success)
-                {
-                    int adventureEnd = adventureMatch.Index;
-                    int adventureStart = campaignEnd;
-                    if (adventureStart > adventureEnd)
-                    {
-                        adventureStart = 0;
-                    }
-                    string advtext = savetext.Substring(adventureStart, adventureEnd);
-                    RemnantWorldEvent.ProcessEvents(this, advtext, RemnantWorldEvent.ProcessMode.Adventure);
-                }
+                RemnantWorldEvent.ProcessEvents(this);
 
                 missingItems.Clear();
-                foreach (RemnantItem[] eventItems in GameInfo.EventItem.Values)
+                foreach (List <RemnantItem> eventItems in GameInfo.EventItem.Values)
                 {
                     foreach (RemnantItem item in eventItems)
                     {
-                        if (!this.Inventory.Contains(item.GetKey()))
+                        if (!this.Inventory.Contains(item.Key))
                         {
                             if (!missingItems.Contains(item))
                             {

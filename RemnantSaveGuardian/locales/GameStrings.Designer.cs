@@ -61,29 +61,137 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Earth.
+        ///   Looks up a localized string similar to Butcher&apos;s Fetish.
         /// </summary>
-        internal static string Base {
+        internal static string Amulet_ButchersFetish {
             get {
-                return ResourceManager.GetString("Base", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Booster Ring.
-        /// </summary>
-        internal static string BoosterRing {
-            get {
-                return ResourceManager.GetString("BoosterRing", resourceCulture);
+                return ResourceManager.GetString("Amulet_ButchersFetish", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Chains of Amplification.
         /// </summary>
-        internal static string ChainsOfAmplification {
+        internal static string Amulet_ChainsOfAmplification {
             get {
-                return ResourceManager.GetString("ChainsOfAmplification", resourceCulture);
+                return ResourceManager.GetString("Amulet_ChainsOfAmplification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nimue&apos;s Ribbon.
+        /// </summary>
+        internal static string Amulet_NimuesRibbon {
+            get {
+                return ResourceManager.GetString("Amulet_NimuesRibbon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Body.
+        /// </summary>
+        internal static string Armor_Body {
+            get {
+                return ResourceManager.GetString("Armor_Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Challenger.
+        /// </summary>
+        internal static string Armor_Challenger {
+            get {
+                return ResourceManager.GetString("Armor_Challenger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gloves.
+        /// </summary>
+        internal static string Armor_Gloves {
+            get {
+                return ResourceManager.GetString("Armor_Gloves", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gunslinger.
+        /// </summary>
+        internal static string Armor_Gunslinger {
+            get {
+                return ResourceManager.GetString("Armor_Gunslinger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Handler.
+        /// </summary>
+        internal static string Armor_Handler {
+            get {
+                return ResourceManager.GetString("Armor_Handler", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Head.
+        /// </summary>
+        internal static string Armor_Head {
+            get {
+                return ResourceManager.GetString("Armor_Head", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hunter.
+        /// </summary>
+        internal static string Armor_Hunter {
+            get {
+                return ResourceManager.GetString("Armor_Hunter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Legs.
+        /// </summary>
+        internal static string Armor_Legs {
+            get {
+                return ResourceManager.GetString("Armor_Legs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medic.
+        /// </summary>
+        internal static string Armor_Medic {
+            get {
+                return ResourceManager.GetString("Armor_Medic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Radiant.
+        /// </summary>
+        internal static string Armor_Radiant {
+            get {
+                return ResourceManager.GetString("Armor_Radiant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Void.
+        /// </summary>
+        internal static string Armor_Void {
+            get {
+                return ResourceManager.GetString("Armor_Void", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earth.
+        /// </summary>
+        internal static string Base {
+            get {
+                return ResourceManager.GetString("Base", resourceCulture);
             }
         }
         
@@ -133,6 +241,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nimue&apos;s Retreat.
+        /// </summary>
+        internal static string GoldenHall_Nimue {
+            get {
+                return ResourceManager.GetString("GoldenHall_Nimue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Indignant Fetish.
         /// </summary>
         internal static string IndignantFetish {
@@ -178,15 +295,6 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nimue&apos;s Retreat.
-        /// </summary>
-        internal static string NimueDream {
-            get {
-                return ResourceManager.GetString("NimueDream", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to OverworldPOI.
         /// </summary>
         internal static string OverworldPOI {
@@ -196,29 +304,74 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dungeon.
+        ///   Looks up a localized string similar to Acid Stone.
         /// </summary>
-        internal static string SIdeD {
+        internal static string Ring_AcidStone {
             get {
-                return ResourceManager.GetString("SIdeD", resourceCulture);
+                return ResourceManager.GetString("Ring_AcidStone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anastasia&apos;s Inspiration.
+        /// </summary>
+        internal static string Ring_AnastasijasInspiration {
+            get {
+                return ResourceManager.GetString("Ring_AnastasijasInspiration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Booster Ring.
+        /// </summary>
+        internal static string Ring_BoosterRing {
+            get {
+                return ResourceManager.GetString("Ring_BoosterRing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hex Ward.
+        /// </summary>
+        internal static string Ring_HexWard {
+            get {
+                return ResourceManager.GetString("Ring_HexWard", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Soul Link.
         /// </summary>
-        internal static string SoulLink {
+        internal static string Ring_SoulLink {
             get {
-                return ResourceManager.GetString("SoulLink", resourceCulture);
+                return ResourceManager.GetString("Ring_SoulLink", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Stream Coupler Ring.
         /// </summary>
-        internal static string StreamCoupler {
+        internal static string Ring_StreamCoupler {
             get {
-                return ResourceManager.GetString("StreamCoupler", resourceCulture);
+                return ResourceManager.GetString("Ring_StreamCoupler", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dungeon.
+        /// </summary>
+        internal static string SideD {
+            get {
+                return ResourceManager.GetString("SideD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Postulant.
+        /// </summary>
+        internal static string ThreeMenMorris {
+            get {
+                return ResourceManager.GetString("ThreeMenMorris", resourceCulture);
             }
         }
         
@@ -228,6 +381,15 @@ namespace RemnantSaveGuardian.locales {
         internal static string TraitBook {
             get {
                 return ResourceManager.GetString("TraitBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ward 13.
+        /// </summary>
+        internal static string Ward13 {
+            get {
+                return ResourceManager.GetString("Ward13", resourceCulture);
             }
         }
     }
