@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Common.Interfaces;
@@ -21,62 +22,44 @@ namespace RemnantSaveGuardian.Views.Pages
         private RemnantSave Save;
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
-            if (pathToSaveFiles == null)
-            {
-                pathToSaveFiles = Properties.Settings.Default.SaveFolder;
-            }
             ViewModel = viewModel;
 
             InitializeComponent();
 
-            SavePlaintextButton.Click += SavePlaintextButton_Click;
-
-            CampaignData.AutoGeneratingColumn += Data_AutoGeneratingColumn;
-            AdventureData.AutoGeneratingColumn += Data_AutoGeneratingColumn;
-
-            Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
-
-            TreeViewItem nodeNormal = new TreeViewItem();
-            nodeNormal.Header = Loc.T("Normal");
-            nodeNormal.Foreground = treeMissingItems.Foreground;
-            nodeNormal.IsExpanded = Properties.Settings.Default.NormalExpanded;
-            nodeNormal.Expanded += GameType_CollapsedExpanded;
-            nodeNormal.Collapsed += GameType_CollapsedExpanded;
-            nodeNormal.Tag = "mode-normal";
-            TreeViewItem nodeHardcore = new TreeViewItem();
-            nodeHardcore.Header = Loc.T("Hardcore");
-            nodeHardcore.Foreground = treeMissingItems.Foreground;
-            nodeHardcore.IsExpanded = Properties.Settings.Default.HardcoreExpanded;
-            nodeHardcore.Expanded += GameType_CollapsedExpanded;
-            nodeHardcore.Collapsed += GameType_CollapsedExpanded;
-            nodeHardcore.Tag = "mode-hardcore";
-            TreeViewItem nodeSurvival = new TreeViewItem();
-            nodeSurvival.Header = Loc.T("Survival");
-            nodeSurvival.Foreground = treeMissingItems.Foreground;
-            nodeSurvival.IsExpanded = Properties.Settings.Default.SurvivalExpanded;
-            nodeSurvival.Expanded += GameType_CollapsedExpanded;
-            nodeSurvival.Collapsed += GameType_CollapsedExpanded;
-            nodeSurvival.Tag = "mode-survival";
-            treeMissingItems.Items.Add(nodeNormal);
-            treeMissingItems.Items.Add(nodeHardcore);
-            treeMissingItems.Items.Add(nodeSurvival);
-
-            Save = new(pathToSaveFiles);
-            if (pathToSaveFiles == Properties.Settings.Default.SaveFolder)
+            try
             {
-                SaveWatcher.SaveUpdated += (sender, eventArgs) => {
-                    Save.UpdateCharacters();
-                    checkAdventureTab();
-                    CampaignData.Items.Refresh();
-                    AdventureData.Items.Refresh();
-                };
+                if (pathToSaveFiles == null)
+                {
+                    pathToSaveFiles = Properties.Settings.Default.SaveFolder;
+                }
+
                 Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
+
+                foreach (TreeViewItem treeViewItem in treeMissingItems.Items)
+                {
+                    treeViewItem.IsExpanded = (bool)Properties.Settings.Default[$"{treeViewItem.Tag}_Expanded"];
+                    treeViewItem.Expanded += GameType_CollapsedExpanded;
+                    treeViewItem.Collapsed += GameType_CollapsedExpanded;
+                }
+
+                Save = new(pathToSaveFiles);
+                if (pathToSaveFiles == Properties.Settings.Default.SaveFolder)
+                {
+                    SaveWatcher.SaveUpdated += (sender, eventArgs) => {
+                        Save.UpdateCharacters();
+                        CharacterControl.Items.Refresh();
+                        CharacterControl_SelectionChanged(null, null);
+                    };
+                    Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
+                }
+                CharacterControl.ItemsSource = Save.Characters;
+                Save.UpdateCharacters();
+                CharacterControl.SelectedIndex = 0;
+                checkAdventureTab();
+            } catch (Exception ex) {
+                Logger.Error($"Error initializing analzyer page: {ex}");
             }
-            CharacterControl.ItemsSource = Save.Characters;
-            CharacterControl.SelectionChanged += CharacterControl_SelectionChanged;
-            Save.UpdateCharacters();
-            CharacterControl.SelectedIndex = 0;
-            checkAdventureTab();
+
         }
 
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel) : this(viewModel, null)
@@ -87,18 +70,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private void GameType_CollapsedExpanded(object sender, RoutedEventArgs e)
         {
             TreeViewItem modeItem = (TreeViewItem)sender;
-            if (modeItem.Tag.ToString().Contains("normal"))
-            {
-                Properties.Settings.Default.NormalExpanded = modeItem.IsExpanded;
-            }
-            else if (modeItem.Tag.ToString().Contains("hardcore"))
-            {
-                Properties.Settings.Default.HardcoreExpanded = modeItem.IsExpanded;
-            }
-            else if (modeItem.Tag.ToString().Contains("survival"))
-            {
-                Properties.Settings.Default.SurvivalExpanded = modeItem.IsExpanded;
-            }
+            Properties.Settings.Default[$"{modeItem.Tag}_Expanded"] = modeItem.IsExpanded;
         }
 
         private void SavePlaintextButton_Click(object sender, RoutedEventArgs e)
@@ -181,17 +153,16 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
                 foreach (RemnantItem rItem in Save.Characters[CharacterControl.SelectedIndex].GetMissingItems())
                 {
-                    TreeViewItem item = new TreeViewItem();
+                    var item = new TreeViewItem();
                     item.Header = rItem.Name;
                     if (!rItem.ItemNotes.Equals("")) item.ToolTip = rItem.ItemNotes;
-                    item.Foreground = treeMissingItems.Foreground;
-                    item.ContextMenu = this.treeMissingItems.Resources["ItemContext"] as System.Windows.Controls.ContextMenu;
+                    item.ContextMenu = treeMissingItems.Resources["ItemContext"] as System.Windows.Controls.ContextMenu;
                     item.Tag = "item";
                     TreeViewItem modeNode = ((TreeViewItem)treeMissingItems.Items[(int)rItem.ItemMode]);
-                    TreeViewItem itemTypeNode = null;
+                    TreeViewItem? itemTypeNode = null;
                     foreach (TreeViewItem typeNode in modeNode.Items)
                     {
-                        if (typeNode.Tag.ToString().Equals($"type-{rItem.RawType}"))
+                        if (typeNode.Tag.ToString().Equals($"{modeNode.Tag}{rItem.RawType}"))
                         {
                             itemTypeNode = typeNode;
                             break;
@@ -199,15 +170,18 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                     if (itemTypeNode == null)
                     {
-                        itemTypeNode = new TreeViewItem();
+                        itemTypeNode = new();
                         itemTypeNode.Header = rItem.Type;
-                        itemTypeNode.Foreground = treeMissingItems.Foreground;
                         itemTypeNode.IsExpanded = true;
-                        itemTypeNode.ContextMenu = this.treeMissingItems.Resources["ItemGroupContext"] as System.Windows.Controls.ContextMenu;
-                        itemTypeNode.Tag = $"type-{rItem.RawType}";
-                        ((TreeViewItem)treeMissingItems.Items[(int)rItem.ItemMode]).Items.Add(itemTypeNode);
+                        itemTypeNode.ContextMenu = treeMissingItems.Resources["ItemGroupContext"] as System.Windows.Controls.ContextMenu;
+                        itemTypeNode.Tag = $"{modeNode.Tag}{rItem.RawType}";
+                        modeNode.Items.Add(itemTypeNode);
                     }
                     itemTypeNode.Items.Add(item);
+                }
+                foreach (TreeViewItem item in treeMissingItems.Items)
+                {
+                    item.Visibility = item.Items.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
                 }
             }
         }
@@ -239,6 +213,52 @@ namespace RemnantSaveGuardian.Views.Pages
             tempData = AdventureData.ItemsSource;
             AdventureData.ItemsSource = null;
             AdventureData.ItemsSource = tempData;
+        }
+
+        private string GetTreeItem(TreeViewItem item)
+        {
+            if ((string)item.Tag == "item") return item.Header.ToString();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(item.Header.ToString() + ":");
+            foreach (TreeViewItem i in item.Items)
+            {
+                sb.AppendLine("\t- " + GetTreeItem(i));
+            }
+            return sb.ToString();
+        }
+
+        private void CopyItem_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem mnu = sender as MenuItem;
+            TreeViewItem treeItem = ((ContextMenu)mnu?.Parent)?.PlacementTarget as TreeViewItem;
+
+            Clipboard.SetDataObject(GetTreeItem(treeItem));
+        }
+
+        private void SearchItem_Click(object sender, RoutedEventArgs e)
+        {
+            var treeItem = (TreeViewItem)treeMissingItems.SelectedItem;
+            var type = ((TreeViewItem)treeItem?.Parent)?.Header.ToString();
+            var itemname = treeItem?.Header.ToString();
+
+            if (type == "Armor")
+            {
+                itemname = itemname?.Substring(0, itemname.IndexOf("(")) + "Set";
+            }
+
+            Process.Start("explorer.exe", $"https://remnant2.wiki.fextralife.com/{itemname}");
+        }
+
+        private void treeMissingItems_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+        {
+            var item = (TreeViewItem)e.Source;
+            menuMissingItemOpenWiki.Visibility = item.Items.Count > 0 ? Visibility.Collapsed : Visibility.Visible;
+        }
+
+        private void treeMissingItems_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var item = e.Source as TreeViewItem;
+            if (item != null) { item.IsSelected = true; }
         }
     }
 }

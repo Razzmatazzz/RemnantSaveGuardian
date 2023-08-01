@@ -49,27 +49,64 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Button x:Name="btnSaveFolder" Content="{lex:Loc Save Folder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="0" Grid.Column="0"/>
-            <TextBox Name="txtSaveFolder"  TextWrapping="Wrap" Text="{Binding SaveFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Margin="5,0,5,0"/>
-            <Button x:Name="btnBackupFolder" Content="{lex:Loc Backup Folder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="1" Grid.Column="0"/>
-            <TextBox Name="txtBackupFolder" TextWrapping="Wrap" Text="{Binding BackupFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Margin="5,0,5,0"/>
-            <Button x:Name="btnGameFolder" Content="{lex:Loc Game FOlder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="2" Grid.Column="0"/>
-            <TextBox Name="txtGameFolder" TextWrapping="Wrap" Text="{Binding GameFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Margin="5,0,5,0"/>
+            <Button x:Name="btnSaveFolder" Content="{lex:Loc Save Folder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="0" Grid.Column="0" Click="BtnSaveFolder_Click"/>
+            <TextBox Name="txtSaveFolder"  TextWrapping="Wrap" Text="{Binding SaveFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Margin="5,0,5,0">
+                <TextBox.ContextMenu>
+                    <ContextMenu>
+                        <ui:MenuItem Header="{lex:Loc Open Folder}" Click="SaveFolderOpen_Click">
+                            <MenuItem.Icon>
+                                <ui:SymbolIcon HorizontalAlignment="Left" Symbol="OpenFolder24" />
+                            </MenuItem.Icon>
+                        </ui:MenuItem>
+                    </ContextMenu>
+                </TextBox.ContextMenu>
+            </TextBox>
+            <Button x:Name="btnBackupFolder" Content="{lex:Loc Backup Folder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="1" Grid.Column="0" Click="BtnBackupFolder_Click"/>
+            <TextBox Name="txtBackupFolder" TextWrapping="Wrap" Text="{Binding BackupFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Margin="5,0,5,0">
+                <TextBox.ContextMenu>
+                    <ContextMenu>
+                        <ui:MenuItem Header="{lex:Loc Open Folder}" Click="BackupFolderOpen_Click">
+                            <MenuItem.Icon>
+                                <ui:SymbolIcon HorizontalAlignment="Left" Symbol="OpenFolder24" />
+                            </MenuItem.Icon>
+                        </ui:MenuItem>
+                    </ContextMenu>
+                </TextBox.ContextMenu>
+            </TextBox>
+            <Button x:Name="btnGameFolder" Content="{lex:Loc Game Folder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="2" Grid.Column="0" Click="BtnGameFolder_Click"/>
+            <TextBox Name="txtGameFolder" TextWrapping="Wrap" Text="{Binding GameFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Margin="5,0,5,0">
+                <TextBox.ContextMenu>
+                    <ContextMenu>
+                        <ui:MenuItem Header="{lex:Loc Open Folder}" Click="GameFolderOpen_Click">
+                            <MenuItem.Icon>
+                                <ui:SymbolIcon HorizontalAlignment="Left" Symbol="OpenFolder24" />
+                            </MenuItem.Icon>
+                        </ui:MenuItem>
+                    </ContextMenu>
+                </TextBox.ContextMenu>
+            </TextBox>
         </Grid>
         <TextBlock
             FontSize="20"
             FontWeight="Medium"
             Text="{lex:Loc Preferences}" Margin="0,8,0,0" />
         <WrapPanel>
+            <ComboBox Name="cmbStartPage" VerticalAlignment="Top" Width="Auto" SelectedIndex="0" SelectionChanged="cmbStartPage_SelectionChanged">
+                <ComboBoxItem Content="{lex:Loc Save Backups}" Tag="backups"/>
+                <ComboBoxItem Content="{lex:Loc World Analyzer}" Tag="world-analyzer"/>
+            </ComboBox>
+            <TextBlock Name="lblStartPage" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+        </WrapPanel>
+        <WrapPanel>
             <ui:ToggleSwitch Name="chkShowPossibleItems" Content="{lex:Loc}" IsChecked="{Binding ShowPossibleItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
         </WrapPanel>
         <WrapPanel>
-            <ComboBox Name="cmbMissingItemColor" VerticalAlignment="Top" Width="120"/>
+            <ComboBox Name="cmbMissingItemColor" VerticalAlignment="Top" Width="Auto"/>
             <TextBlock Name="lblMissingItemColor" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
         </WrapPanel>
         <WrapPanel>
             <ui:ToggleSwitch Name="chkAutoCheckUpdate" Content="{lex:Loc}" IsChecked="{Binding AutoCheckUpdate}" VerticalAlignment="Center" Margin="0,0,5,0"/>
-            <Button Name="btnCheckUpdate" Content="{lex:Loc}" VerticalAlignment="Top"/>
+            <Button Name="btnCheckUpdate" Content="{lex:Loc}" VerticalAlignment="Top" Click="BtnCheckUpdate_Click"/>
         </WrapPanel>
         <ui:ToggleSwitch Name="chkCreateLogFile" IsChecked="{Binding CreateLogFile}" Content="{lex:Loc}"/>
         <TextBlock Margin="0,12,0,0" Text="{lex:Loc Theme}" />
@@ -77,13 +114,14 @@
             Name="radThemeLight"
             Margin="0,12,0,0"
             Content="{lex:Loc Light}"
-            GroupName="themeSelect" />
+            GroupName="themeSelect"
+            Checked="RadThemeLight_Checked"/>
         <RadioButton
             Name="radThemeDark"
             Margin="0,8,0,0"
             Content="{lex:Loc Dark}"
-            GroupName="themeSelect" />
-
+            GroupName="themeSelect"
+            Checked="RadThemeDark_Checked"/>
         <TextBlock
             Margin="0,24,0,0"
             FontSize="20"

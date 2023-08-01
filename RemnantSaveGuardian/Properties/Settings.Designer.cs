@@ -122,36 +122,36 @@ namespace RemnantSaveGuardian.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool NormalExpanded {
+        public bool treeMissingNormal_Expanded {
             get {
-                return ((bool)(this["NormalExpanded"]));
+                return ((bool)(this["treeMissingNormal_Expanded"]));
             }
             set {
-                this["NormalExpanded"] = value;
+                this["treeMissingNormal_Expanded"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool HardcoreExpanded {
+        public bool treeMissingHardcore_Expanded {
             get {
-                return ((bool)(this["HardcoreExpanded"]));
+                return ((bool)(this["treeMissingHardcore_Expanded"]));
             }
             set {
-                this["HardcoreExpanded"] = value;
+                this["treeMissingHardcore_Expanded"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SurvivalExpanded {
+        public bool treeMissingSurvival_Expanded {
             get {
-                return ((bool)(this["SurvivalExpanded"]));
+                return ((bool)(this["treeMissingSurvival_Expanded"]));
             }
             set {
-                this["SurvivalExpanded"] = value;
+                this["treeMissingSurvival_Expanded"] = value;
             }
         }
         
@@ -236,6 +236,18 @@ namespace RemnantSaveGuardian.Properties {
             }
             set {
                 this["Theme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("backups")]
+        public string StartPage {
+            get {
+                return ((string)(this["StartPage"]));
+            }
+            set {
+                this["StartPage"] = value;
             }
         }
     }

@@ -591,7 +591,6 @@ namespace RemnantSaveGuardian
                 ward13.setMissingItems(character);
                 if (ward13.MissingItems.Length > 0)
                 {
-                    Logger.Log("missing items for Ward 13");
                     eventList.Add(ward13);
                 }
 

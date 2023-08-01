@@ -259,6 +259,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy.
+        /// </summary>
+        public static string Copy {
+            get {
+                return ResourceManager.GetString("Copy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not find save file location; please set manually.
         /// </summary>
         public static string Could_not_find_save_file_location__please_set_manually {
@@ -493,6 +502,24 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start page.
+        /// </summary>
+        public static string lblStartPage_Text {
+            get {
+                return ResourceManager.GetString("lblStartPage_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which page to load on app start.
+        /// </summary>
+        public static string lblStartPage_ToolTip {
+            get {
+                return ResourceManager.GetString("lblStartPage_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Light.
         /// </summary>
         public static string Light {
@@ -597,6 +624,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Open_Folder {
             get {
                 return ResourceManager.GetString("Open Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open wiki.
+        /// </summary>
+        public static string Open_wiki {
+            get {
+                return ResourceManager.GetString("Open wiki", resourceCulture);
             }
         }
         

@@ -97,7 +97,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Challenger.
+        ///   Looks up a localized string similar to Bruiser.
         /// </summary>
         internal static string Armor_Challenger {
             get {
@@ -115,7 +115,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gunslinger.
+        ///   Looks up a localized string similar to High Noon.
         /// </summary>
         internal static string Armor_Gunslinger {
             get {
@@ -124,7 +124,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Handler.
+        ///   Looks up a localized string similar to Trainer.
         /// </summary>
         internal static string Armor_Handler {
             get {
@@ -142,7 +142,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hunter.
+        ///   Looks up a localized string similar to Nightstalker.
         /// </summary>
         internal static string Armor_Hunter {
             get {
@@ -160,7 +160,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Medic.
+        ///   Looks up a localized string similar to Field Medic.
         /// </summary>
         internal static string Armor_Medic {
             get {

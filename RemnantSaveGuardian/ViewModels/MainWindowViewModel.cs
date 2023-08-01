@@ -48,14 +48,6 @@ namespace RemnantSaveGuardian.ViewModels
                 },
                 new NavigationItem()
                 {
-                    Content = Loc.T("Log"),
-                    ToolTip = Loc.T("Log"),
-                    PageTag = "log",
-                    Icon = SymbolRegular.Notebook24,
-                    PageType = typeof(Views.Pages.LogPage)
-                },
-                new NavigationItem()
-                {
                     Content = Loc.T("World Analyzer"),
                     ToolTip = Loc.T("World Analyzer"),
                     PageTag = "world-analyzer",
@@ -66,6 +58,14 @@ namespace RemnantSaveGuardian.ViewModels
 
             NavigationFooter = new ObservableCollection<INavigationControl>
             {
+                new NavigationItem()
+                {
+                    Content = Loc.T("Log"),
+                    ToolTip = Loc.T("Log"),
+                    PageTag = "log",
+                    Icon = SymbolRegular.Notebook24,
+                    PageType = typeof(Views.Pages.LogPage)
+                },
                 new NavigationItem()
                 {
                     Content = Loc.T("Settings"),

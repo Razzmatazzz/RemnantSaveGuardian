@@ -64,33 +64,17 @@ namespace RemnantSaveGuardian
         }
         public RemnantItemMode ItemMode { get; set; }
         public string ItemNotes { get; set; }
-
-        public RemnantItem(string name, string type)
+        public RemnantItem(string nameOrKey)
         {
-            this._name = name;
-            this._type = type;
-            this.ItemMode = RemnantItemMode.Normal;
-            this.ItemNotes = "";
-        }
-
-        public RemnantItem(string name, string type, RemnantItemMode mode)
-        {
-            this._name = name;
-            this._type = type;
-            this.ItemMode = mode;
-            this.ItemNotes = "";
-        }
-        public RemnantItem(string name)
-        {
-            this._key = name;
-            this._name = name;
-            this._type = "";
+            this._key = nameOrKey;
+            this._name = nameOrKey;
+            this._type = "Unknown";
             this._set = "";
             this._part = "";
             this.ItemMode = RemnantItemMode.Normal;
             this.ItemNotes = "";
             foreach (string pattern in ItemKeyPatterns) { 
-                var nameMatch = Regex.Match(name, pattern);
+                var nameMatch = Regex.Match(nameOrKey, pattern);
                 if (!nameMatch.Success)
                 {
                     continue;

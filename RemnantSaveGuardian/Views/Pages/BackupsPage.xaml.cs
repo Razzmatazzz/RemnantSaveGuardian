@@ -66,45 +66,51 @@ namespace RemnantSaveGuardian.Views.Pages
 
             InitializeComponent();
 
-            dataBackups.CanUserDeleteRows = false;
-            dataBackups.CanUserAddRows = false;
-            dataBackups.BeginningEdit += DataBackups_BeginningEdit;
-            dataBackups.CellEditEnding += DataBackups_CellEditEnding;
-            dataBackups.AutoGeneratingColumn += DataBackups_AutoGeneratingColumn;
-
-            contextBackups.ContextMenuOpening += ContextBackups_ContextMenuOpening;
-            contextBackups.Opened += ContextBackups_Opened;
-
-            menuRestoreAll.Click += MenuRestoreAll_Click;
-            menuRestoreCharacters.Click += MenuRestoreCharacters_Click;
-            menuRestoreWorlds.Click += MenuRestoreWorlds_Click;
-
-            menuAnalyze.Click += MenuAnalyze_Click;
-
-            menuOpenBackup.Click += MenuOpenBackup_Click;
-
-            if (Properties.Settings.Default.BackupFolder.Length == 0)
+            try
             {
-                Logger.Log(Loc.T("Backup folder not set; reverting to default."));
-                if (!Directory.Exists(defaultBackupFolder))
+                dataBackups.CanUserDeleteRows = false;
+                dataBackups.CanUserAddRows = false;
+                dataBackups.BeginningEdit += DataBackups_BeginningEdit;
+                dataBackups.CellEditEnding += DataBackups_CellEditEnding;
+                dataBackups.AutoGeneratingColumn += DataBackups_AutoGeneratingColumn;
+
+                contextBackups.ContextMenuOpening += ContextBackups_ContextMenuOpening;
+                contextBackups.Opened += ContextBackups_Opened;
+
+                menuRestoreAll.Click += MenuRestoreAll_Click;
+                menuRestoreCharacters.Click += MenuRestoreCharacters_Click;
+                menuRestoreWorlds.Click += MenuRestoreWorlds_Click;
+
+                menuAnalyze.Click += MenuAnalyze_Click;
+
+                menuOpenBackup.Click += MenuOpenBackup_Click;
+
+                if (Properties.Settings.Default.BackupFolder.Length == 0)
                 {
-                    Directory.CreateDirectory(defaultBackupFolder);
+                    Logger.Log(Loc.T("Backup folder not set; reverting to default."));
+                    if (!Directory.Exists(defaultBackupFolder))
+                    {
+                        Directory.CreateDirectory(defaultBackupFolder);
+                    }
+                    Properties.Settings.Default.BackupFolder = defaultBackupFolder;
                 }
-                Properties.Settings.Default.BackupFolder = defaultBackupFolder;
+
+                listBackups = new List<SaveBackup>();
+
+                SaveWatcher.SaveUpdated += SaveWatcher_SaveUpdated;
+
+                btnBackup.Click += BtnBackup_Click;
+
+                btnOpenBackupsFolder.Click += BtnOpenBackupsFolder_Click;
+
+                btnStartGame.Click += BtnStartGame_Click;
+                btnStartGame.IsEnabled = !IsRemnantRunning();
+
+                loadBackups();
+            } catch (Exception ex) {
+                Logger.Error($"Error loading backups page: {ex}");
             }
 
-            listBackups = new List<SaveBackup>();
-
-            SaveWatcher.SaveUpdated += SaveWatcher_SaveUpdated;
-
-            btnBackup.Click += BtnBackup_Click;
-
-            btnOpenBackupsFolder.Click += BtnOpenBackupsFolder_Click;
-
-            btnStartGame.Click += BtnStartGame_Click;
-            btnStartGame.IsEnabled = !IsRemnantRunning();
-
-            loadBackups();
         }
 
         private void DataBackups_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)

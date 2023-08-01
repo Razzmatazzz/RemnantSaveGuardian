@@ -36,7 +36,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void addMessage(string message, LogType logType)
         {
-            Dispatcher.Invoke((Action)delegate {
+            Dispatcher.Invoke(delegate {
                 var infoBar = new InfoBar()
                 {
                     Message = message,
@@ -55,7 +55,15 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     infoBar.Severity = InfoBarSeverity.Success;
                 }
-                //stackLogs.Children.Insert(0, infoBar);
+                infoBar.ContextMenu = new System.Windows.Controls.ContextMenu();
+                var menuCopyMessage = new Wpf.Ui.Controls.MenuItem();
+                menuCopyMessage.Header = Loc.T("Copy");
+                menuCopyMessage.SymbolIcon = Wpf.Ui.Common.SymbolRegular.Copy24;
+                menuCopyMessage.Click += (s, e) =>
+                {
+                    System.Windows.Clipboard.SetDataObject(message);
+                };
+                infoBar.ContextMenu.Items.Add(menuCopyMessage);
                 stackLogs.Children.Insert(0, infoBar);
             });
         }

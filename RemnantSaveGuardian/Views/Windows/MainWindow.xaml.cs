@@ -1,4 +1,5 @@
-﻿using RemnantSaveGuardian.ViewModels;
+﻿using RemnantSaveGuardian.Services;
+using RemnantSaveGuardian.ViewModels;
 using RemnantSaveGuardian.Views.Pages;
 using System;
 using System.Diagnostics;
@@ -48,72 +49,79 @@ namespace RemnantSaveGuardian.Views.Windows
 
             navigationService.SetNavigationControl(RootNavigation);
 
-            Logger.MessageLogged += Logger_MessageLogged;
+            try
+            {
+                Logger.MessageLogged += Logger_MessageLogged;
 
-            var theme = Properties.Settings.Default.Theme;
-            if (theme == "Light")
-            {
-                Wpf.Ui.Appearance.Theme.Apply(Wpf.Ui.Appearance.ThemeType.Light);
-            } else
-            {
-                Wpf.Ui.Appearance.Theme.Apply(Wpf.Ui.Appearance.ThemeType.Dark);
-            }
-
-            if (Properties.Settings.Default.SaveFolder.Length == 0)
-            {
-                Logger.Log("Save folder not set; reverting to default.");
-                Properties.Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
-                if (!Directory.Exists(RemnantSave.DefaultSaveFolder()))
+                var theme = Properties.Settings.Default.Theme;
+                if (theme == "Light")
                 {
-                    Logger.Error(Loc.T("Could not find save file location; please set manually"));
-                    /*if (Directory.Exists(RemnantSave.DefaultWgsSaveFolder))
+                    Wpf.Ui.Appearance.Theme.Apply(Wpf.Ui.Appearance.ThemeType.Light);
+                }
+                else
+                {
+                    Wpf.Ui.Appearance.Theme.Apply(Wpf.Ui.Appearance.ThemeType.Dark);
+                }
+
+                if (Properties.Settings.Default.SaveFolder.Length == 0)
+                {
+                    Logger.Log("Save folder not set; reverting to default.");
+                    Properties.Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
+                    if (!Directory.Exists(RemnantSave.DefaultSaveFolder()))
                     {
-                        var dirs = Directory.GetDirectories(RemnantSave.DefaultWgsSaveFolder);
-                        foreach (var dir in dirs)
+                        Logger.Error(Loc.T("Could not find save file location; please set manually"));
+                        /*if (Directory.Exists(RemnantSave.DefaultWgsSaveFolder))
                         {
-                            if (dir != "t" && Directory.GetDirectories(dir).Length > 0)
+                            var dirs = Directory.GetDirectories(RemnantSave.DefaultWgsSaveFolder);
+                            foreach (var dir in dirs)
                             {
-                                var saveDir = Directory.GetDirectories(dir)[0];
-                                Properties.Settings.Default.SaveFolder = saveDir;
+                                if (dir != "t" && Directory.GetDirectories(dir).Length > 0)
+                                {
+                                    var saveDir = Directory.GetDirectories(dir)[0];
+                                    Properties.Settings.Default.SaveFolder = saveDir;
+                                }
                             }
-                        }
-                    }*/
+                        }*/
+                    }
                 }
-            }
-            else if (!Directory.Exists(Properties.Settings.Default.SaveFolder) && !Properties.Settings.Default.SaveFolder.Equals(RemnantSave.DefaultSaveFolder))
-            {
-                Logger.Log($"Save folder ({Properties.Settings.Default.SaveFolder}) not found; reverting to default.");
-                Properties.Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
-            }
-            if (!Directory.Exists(Properties.Settings.Default.SaveFolder))
-            {
-                Logger.Log("Save folder not found, creating...");
-                Directory.CreateDirectory(Properties.Settings.Default.SaveFolder);
-            }
-            SaveWatcher.Watch(Properties.Settings.Default.SaveFolder);
-
-            if (!Directory.Exists(Properties.Settings.Default.GameFolder))
-            {
-                Logger.Log("Game folder not found...");
-                //this.btnStartGame.IsEnabled = false;
-                //this.btnStartGame.Content = this.FindResource("PlayGrey");
-                //this.backupCMStart.IsEnabled = false;
-                //this.backupCMStart.Icon = this.FindResource("PlayGrey");
-                if (Properties.Settings.Default.GameFolder == "")
+                else if (!Directory.Exists(Properties.Settings.Default.SaveFolder) && !Properties.Settings.Default.SaveFolder.Equals(RemnantSave.DefaultSaveFolder))
                 {
-                    TryToFindGameFolder();
+                    Logger.Log($"Save folder ({Properties.Settings.Default.SaveFolder}) not found; reverting to default.");
+                    Properties.Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
                 }
-            }
+                if (!Directory.Exists(Properties.Settings.Default.SaveFolder))
+                {
+                    Logger.Log("Save folder not found, creating...");
+                    Directory.CreateDirectory(Properties.Settings.Default.SaveFolder);
+                }
+                SaveWatcher.Watch(Properties.Settings.Default.SaveFolder);
 
-            BackupsPage.BackupSaveViewed += BackupsPage_BackupSaveViewed;
+                if (!Directory.Exists(Properties.Settings.Default.GameFolder))
+                {
+                    Logger.Log("Game folder not found...");
+                    //this.btnStartGame.IsEnabled = false;
+                    //this.btnStartGame.Content = this.FindResource("PlayGrey");
+                    //this.backupCMStart.IsEnabled = false;
+                    //this.backupCMStart.Icon = this.FindResource("PlayGrey");
+                    if (Properties.Settings.Default.GameFolder == "")
+                    {
+                        TryToFindGameFolder();
+                    }
+                }
 
-            RootNavigation.Navigated += RootNavigation_Navigated;
+                BackupsPage.BackupSaveViewed += BackupsPage_BackupSaveViewed;
 
-            UpdateCheck.NewVersion += UpdateCheck_NewVersion;
-            UpdateCheck.Error += UpdateCheck_Error;
-            if (Properties.Settings.Default.AutoCheckUpdate)
+                RootNavigation.Navigated += RootNavigation_Navigated;
+
+                UpdateCheck.NewVersion += UpdateCheck_NewVersion;
+                UpdateCheck.Error += UpdateCheck_Error;
+                if (Properties.Settings.Default.AutoCheckUpdate)
+                {
+                    UpdateCheck.CheckForNewVersion();
+                }
+            } catch (Exception ex)
             {
-                UpdateCheck.CheckForNewVersion();
+                Logger.Error($"Error loading main window: {ex}");
             }
         }
 

@@ -27,55 +27,47 @@ namespace RemnantSaveGuardian.Views.Pages
 
             InitializeComponent();
 
-            btnSaveFolder.Click += BtnSaveFolder_Click;
-            var saveFolderContext = new ContextMenu();
-            var saveFolderOpen = new MenuItem { Header = Loc.T("Open Folder") };
-            saveFolderOpen.Click += SaveFolderOpen_Click;
-            saveFolderContext.Items.Add(saveFolderOpen);
-            txtSaveFolder.ContextMenu = saveFolderContext;
-
-            btnGameFolder.Click += BtnGameFolder_Click;
-            var gameFolderContext = new ContextMenu();
-            var gameFolderOpen = new MenuItem { Header = Loc.T("Open Folder") };
-            gameFolderOpen.Click += GameFolderOpen_Click;
-            gameFolderContext.Items.Add(gameFolderOpen);
-            txtGameFolder.ContextMenu = gameFolderContext;
-
-            btnBackupFolder.Click += BtnBackupFolder_Click;
-            var backupFolderContext = new ContextMenu();
-            var backupFolderOpen = new MenuItem { Header = Loc.T("Open Folder") };
-            backupFolderOpen.Click += BackupFolderOpen_Click;
-            backupFolderContext.Items.Add(backupFolderOpen);
-            txtBackupFolder.ContextMenu = backupFolderContext;
-            cmbMissingItemColor.ItemsSource = new Dictionary<string, string>
+            try
             {
-                { "Red", Loc.T("Red") },
-                { "White", Loc.T("White") }
-            };
-            cmbMissingItemColor.DisplayMemberPath = "Value";
-            cmbMissingItemColor.SelectedValuePath = "Key";
-            if (Properties.Settings.Default.MissingItemColor == "Red")
-            {
-                cmbMissingItemColor.SelectedIndex = 0;
+                cmbMissingItemColor.ItemsSource = new Dictionary<string, string>
+                {
+                    { "Red", Loc.T("Red") },
+                    { "White", Loc.T("White") }
+                };
+                cmbMissingItemColor.DisplayMemberPath = "Value";
+                cmbMissingItemColor.SelectedValuePath = "Key";
+                if (Properties.Settings.Default.MissingItemColor == "Red")
+                {
+                    cmbMissingItemColor.SelectedIndex = 0;
+                }
+                else
+                {
+                    cmbMissingItemColor.SelectedIndex = 1;
+                }
+                cmbMissingItemColor.SelectionChanged += CmbMissingItemColor_SelectionChanged;
+                cmbMissingItemColor.Visibility = Visibility.Collapsed;
+                lblMissingItemColor.Visibility = Visibility.Collapsed;
+
+                foreach (ComboBoxItem item in cmbStartPage.Items)
+                {
+                    if (item.Tag.ToString() == Properties.Settings.Default.StartPage)
+                    {
+                        cmbStartPage.SelectedItem = item;
+                    }
+                }
+                cmbStartPage.Visibility = Visibility.Collapsed;
+                lblStartPage.Visibility = Visibility.Collapsed;
+
+                radThemeLight.IsChecked = Properties.Settings.Default.Theme == "Light";
+
+                radThemeDark.IsChecked = Properties.Settings.Default.Theme != "Light";
+
+                lblVersion.Text = $"Remnant Save Guardian - {GetAssemblyVersion()}";
+
+                Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
+            } catch (Exception ex) {
+                Logger.Error($"Error initializing settings page: {ex}");
             }
-            else
-            {
-                cmbMissingItemColor.SelectedIndex = 1;
-            }
-            cmbMissingItemColor.SelectionChanged += CmbMissingItemColor_SelectionChanged;
-            cmbMissingItemColor.Visibility = Visibility.Collapsed;
-
-            btnCheckUpdate.Click += BtnCheckUpdate_Click;
-
-            radThemeLight.IsChecked = Properties.Settings.Default.Theme == "Light";
-            radThemeLight.Checked += RadThemeLight_Checked;
-
-            radThemeDark.IsChecked = Properties.Settings.Default.Theme != "Light";
-            radThemeDark.Checked += RadThemeDark_Checked;
-
-            lblVersion.Text = $"Remnant Save Guardian - {GetAssemblyVersion()}";
-
-            Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
         }
 
         private void BtnCheckUpdate_Click(object sender, RoutedEventArgs e)
@@ -276,6 +268,21 @@ namespace RemnantSaveGuardian.Views.Pages
         private void OpenFolder(string path)
         {
             Process.Start("explorer.exe", @$"{path}\");
+        }
+
+        private void cmbStartPage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selected = cmbStartPage.SelectedItem as ComboBoxItem;
+            if (selected == null)
+            {
+                return;
+            }
+            var startPage = selected.Tag.ToString();
+            if (startPage == Properties.Settings.Default.StartPage)
+            {
+                return;
+            }
+            Properties.Settings.Default.StartPage = startPage;
         }
     }
 }

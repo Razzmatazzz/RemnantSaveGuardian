@@ -118,223 +118,211 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutRSG" xml:space="preserve">
-    <value>About Remnant Save Guardian</value>
+    <value>렘넌트 세이브 가디언에 대하여</value>
   </data>
   <data name="Active" xml:space="preserve">
-    <value>Active</value>
+    <value>활성화</value>
   </data>
   <data name="Adventure" xml:space="preserve">
-    <value>Adventure</value>
+    <value>어드벤처</value>
   </data>
   <data name="Backup completed" xml:space="preserve">
-    <value>Backup completed</value>
+    <value>백업 완료</value>
   </data>
   <data name="Backup Folder" xml:space="preserve">
-    <value>Backup Folder</value>
+    <value>백업 폴더</value>
   </data>
   <data name="Backup folder not set; reverting to default." xml:space="preserve">
-    <value>Backup folder not set; reverting to default.</value>
+    <value>백업 폴더가 설정되지 않았습니다; 기본값으로 복구합니다</value>
   </data>
   <data name="Backup restored" xml:space="preserve">
-    <value>Backup restored</value>
+    <value>백업 복원 완료</value>
   </data>
   <data name="Backups folder not found, creating..." xml:space="preserve">
-    <value>Backups folder not found, creating...</value>
+    <value>백업 폴더가 발견되지 않았습니다. 생성중...</value>
   </data>
   <data name="Backups found" xml:space="preserve">
-    <value>Backups found</value>
+    <value>백업 발견</value>
   </data>
   <data name="btnBackup_ToolTip" xml:space="preserve">
-    <value>Backup current save</value>
+    <value>현 상태 백업</value>
   </data>
   <data name="btnCheckUpdate_Content" xml:space="preserve">
-    <value>Check Now</value>
+    <value>지금 확인하기</value>
   </data>
   <data name="btnOpenBackupsFolder_ToolTip" xml:space="preserve">
-    <value>Open backups folder</value>
+    <value>백업 폳더 열기</value>
   </data>
   <data name="btnStartGame_ToolTip" xml:space="preserve">
-    <value>Start game</value>
+    <value>게임 실행</value>
   </data>
   <data name="Campaign" xml:space="preserve">
-    <value>Campaign</value>
+    <value>캠페인</value>
   </data>
   <data name="Character" xml:space="preserve">
-    <value>Character</value>
+    <value>캐릭터</value>
   </data>
   <data name="chkAutoBackup_Content" xml:space="preserve">
-    <value>Automatically backup save files</value>
+    <value>자동 세이브 백업</value>
   </data>
   <data name="chkAutoBackup_ToolTip" xml:space="preserve">
-    <value>Monitor Remnant save files and back them up when they're changed</value>
+    <value>세이브 파일을 관찰하다 변경이 감지되면 자동으로 백업합니다</value>
   </data>
   <data name="chkAutoCheckUpdate_Content" xml:space="preserve">
-    <value>Automatically check for program update</value>
+    <value>프로그램 업데이트 자동 확인</value>
   </data>
   <data name="chkCreateLogFile_Content" xml:space="preserve">
-    <value>Create log file</value>
+    <value>로그 파일 생성</value>
   </data>
   <data name="chkCreateLogFile_ToolTip" xml:space="preserve">
-    <value>Whether a log.txt file should be created</value>
+    <value>log.txt 파일을 생성합니다</value>
   </data>
   <data name="chkShowPossibleItems_Content" xml:space="preserve">
-    <value>Show Possible Items column in analyzer</value>
+    <value>판독기에 습득 가능 아이템 열 추가</value>
   </data>
   <data name="Choose a backup to restore from the list." xml:space="preserve">
-    <value>Choose a backup to restore from the list.</value>
-  </data>
-  <data name="Copy" xml:space="preserve">
-    <value>Copy</value>
+    <value>목록에서 복원하고자 하는 백업을 선택하세요.</value>
   </data>
   <data name="Could not find save file location; please set manually" xml:space="preserve">
-    <value>Could not find save file location; please set manually</value>
+    <value>세이브 파일 경로를 찾지 못 했습니다; 수동으로 설정해 주세요.</value>
   </data>
   <data name="Dark" xml:space="preserve">
-    <value>Dark</value>
+    <value>다크 모드</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>삭제</value>
   </data>
   <data name="Deleting excess backup" xml:space="preserve">
-    <value>Deleting excess backup</value>
+    <value>넘치는 세이브 삭제</value>
   </data>
   <data name="Do you want to move your backups to this new folder?" xml:space="preserve">
-    <value>Do you want to move your backups to this new folder?</value>
+    <value>백업을 새 폴더로 옮길까요?</value>
   </data>
   <data name="Error checking for new game info" xml:space="preserve">
-    <value>Error checking for new game info</value>
+    <value>새 게임 정보 오류 체크중</value>
   </data>
   <data name="Error checking for new version" xml:space="preserve">
-    <value>Error checking for new version</value>
+    <value>새 버전 오류 체크중</value>
   </data>
   <data name="Exit the game before restoring a save backup." xml:space="preserve">
-    <value>Exit the game before restoring a save backup.</value>
+    <value>백업을 복원하기 전에 게임을 종료해 주세요.</value>
   </data>
   <data name="Export save files as plaintext" xml:space="preserve">
-    <value>Export save files as plaintext</value>
+    <value>세이브 파일을 단순 텍스트로 추출하기</value>
   </data>
   <data name="Game Folder" xml:space="preserve">
-    <value>Game Folder</value>
+    <value>게임 폴더</value>
   </data>
   <data name="Game info updated." xml:space="preserve">
-    <value>Game info updated.</value>
+    <value>게임 정보 업데이트 완료</value>
   </data>
   <data name="Hardcore" xml:space="preserve">
-    <value>Hardcore</value>
+    <value>하드코어</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
   <data name="Invalid backup restore type" xml:space="preserve">
-    <value>Invalid backup restore type</value>
+    <value>유효하지 않은 백업 복원 타입</value>
   </data>
   <data name="Invalid Folder" xml:space="preserve">
-    <value>Invalid Folder</value>
+    <value>유효하지 않은 폴더</value>
   </data>
   <data name="InvalidBackupFolderNoBackupsInSaves" xml:space="preserve">
-    <value>Invalid folder: Backup folder cannot be the game's save folder.</value>
+    <value>유효하지 않은 폴더; 백업 폴더는 게임 세이브 폴더와 같을 수 없습니다.</value>
   </data>
   <data name="InvalidGameFolder" xml:space="preserve">
-    <value>Invalid folder: Select where your Remnant II game is installed.</value>
+    <value>유효하지 않은 폴더; Remnant II 게임이 설치된 폴더를 지정해주세요.</value>
   </data>
   <data name="InvalidSaveFolder" xml:space="preserve">
-    <value>Invalid folder: Select where your Remnant II saves are stored</value>
+    <value>유효하지 않은 폴더; Remnant II 세이브가 저장되어있는 폴더를 지정해주세요.</value>
   </data>
   <data name="InvalidSaveFolderNoSavesInBackups" xml:space="preserve">
-    <value>Invalid folder: Please select a folder other than the backup folder.</value>
+    <value>유효하지 않은 폴더; 백업 폴더와는 다른 폴더를 지정해주세요.</value>
   </data>
   <data name="Keep" xml:space="preserve">
-    <value>Keep</value>
+    <value>보존</value>
   </data>
   <data name="Last backup save date" xml:space="preserve">
-    <value>Last backup save date</value>
+    <value>마지막 세이브 백업 시간</value>
   </data>
   <data name="lblBackupLimit_Text" xml:space="preserve">
-    <value>Backups to keep (0 for unlimited)</value>
+    <value>저장할 백업 수 (0 : 무제한)</value>
   </data>
   <data name="lblBackupLimit_ToolTip" xml:space="preserve">
-    <value>When your number of backups reaches this number, backups will automatically be deleted starting with the oldest</value>
+    <value>백업 수가 이 한도를 넘으면 자동으로 오래된 백업부터 삭제합니다.</value>
   </data>
   <data name="lblBackupMins_Text" xml:space="preserve">
-    <value>Minutes between backups</value>
+    <value>분 마다 백업</value>
   </data>
   <data name="lblBackupMins_ToolTip" xml:space="preserve">
-    <value>Minimum amount of time that must have passed since last backup before a new backup is made</value>
+    <value>다음 백업을 하기 위해 반드시 경과해야하는 최소 시간</value>
   </data>
   <data name="lblMissingItemColor_Content" xml:space="preserve">
     <value>World analzyer missing item color</value>
   </data>
-  <data name="lblStartPage_Text" xml:space="preserve">
-    <value>Start page</value>
-  </data>
-  <data name="lblStartPage_ToolTip" xml:space="preserve">
-    <value>Which page to load on app start</value>
-  </data>
   <data name="Light" xml:space="preserve">
-    <value>Light</value>
+    <value>라이트 모드</value>
   </data>
   <data name="Log" xml:space="preserve">
-    <value>Log</value>
+    <value>로그</value>
   </data>
   <data name="menuRestoreAll_Header" xml:space="preserve">
-    <value>Everything</value>
+    <value>전부 복원</value>
   </data>
   <data name="menuRestoreCharacters_Header" xml:space="preserve">
-    <value>Characters Only</value>
+    <value>캐릭터만 복원</value>
   </data>
   <data name="menuRestoreWorlds_Header" xml:space="preserve">
-    <value>Worlds Only</value>
+    <value>월드만 복원</value>
   </data>
   <data name="menuRestore_Header" xml:space="preserve">
-    <value>Restore Backup</value>
+    <value>백업 복원</value>
   </data>
   <data name="Missing Items" xml:space="preserve">
-    <value>Missing Items</value>
+    <value>미획득 아이템</value>
   </data>
   <data name="Move Backups" xml:space="preserve">
-    <value>Move Backups</value>
+    <value>백업 이동</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>Name</value>
+    <value>이름</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>New version available!</value>
+    <value>새 버전이 사용 가능합니다!</value>
   </data>
   <data name="Normal" xml:space="preserve">
     <value>Normal</value>
   </data>
   <data name="Open Folder" xml:space="preserve">
-    <value>Open Folder</value>
-  </data>
-  <data name="Open wiki" xml:space="preserve">
-    <value>Open wiki</value>
+    <value>폴더 열기</value>
   </data>
   <data name="Preferences" xml:space="preserve">
-    <value>Preferences</value>
+    <value>기본 설정</value>
   </data>
   <data name="processing save file change" xml:space="preserve">
     <value>processing save file change</value>
   </data>
   <data name="Progression" xml:space="preserve">
-    <value>Progression</value>
+    <value>진행 상황</value>
   </data>
   <data name="Red" xml:space="preserve">
     <value>Red</value>
   </data>
   <data name="Save Backups" xml:space="preserve">
-    <value>Save Backups</value>
+    <value>백업 저장</value>
   </data>
   <data name="Save file in use; waiting 0.5 seconds and retrying." xml:space="preserve">
-    <value>Save file in use; waiting 0.5 seconds and retrying.</value>
+    <value>세이브 파일이 사용 중입니다; 0.5 초 후 다시 시도해주세요.</value>
   </data>
   <data name="Save Folder" xml:space="preserve">
-    <value>Save Folder</value>
+    <value>세이브 폴더</value>
   </data>
   <data name="Save plaintext data" xml:space="preserve">
-    <value>Save plaintext data</value>
+    <value>단순 텍스트로 저장</value>
   </data>
   <data name="SaveDate" xml:space="preserve">
-    <value>Save Date</value>
+    <value>세이브 데이터</value>
   </data>
   <data name="Saves" xml:space="preserve">
     <value>Saves</value>
@@ -343,27 +331,27 @@
     <value>Select a folder other than the game's save folder.</value>
   </data>
   <data name="setting save file timer" xml:space="preserve">
-    <value>setting save file timer</value>
+    <value>세이브 파일 타이머 설정</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>설정</value>
   </data>
   <data name="Survival" xml:space="preserve">
-    <value>Survival</value>
+    <value>서바이벌</value>
   </data>
   <data name="Theme" xml:space="preserve">
-    <value>Theme</value>
+    <value>테마</value>
   </data>
   <data name="White" xml:space="preserve">
     <value>White</value>
   </data>
   <data name="World Analyzer" xml:space="preserve">
-    <value>World Analyzer</value>
+    <value>월드 판독기</value>
   </data>
   <data name="You must wait 5 minutes between update checks" xml:space="preserve">
-    <value>You must wait 5 minutes between update checks</value>
+    <value>다시 체크하려면 5분 기다려주세요</value>
   </data>
   <data name="Zoom" xml:space="preserve">
-    <value>Zoom</value>
+    <value>줌</value>
   </data>
 </root>

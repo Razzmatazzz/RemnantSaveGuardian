@@ -30,8 +30,8 @@
             </Grid.ColumnDefinitions>
             <WrapPanel Grid.Column="0" >
                 <TextBlock FontWeight="Medium" Text="{lex:Loc Character}" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                <ComboBox Name="CharacterControl" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Margin="0,0,5,0"/>
-                <Button Name="SavePlaintextButton" ToolTip="{lex:Loc Export save files as plaintext}">
+                <ComboBox Name="CharacterControl" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Margin="0,0,5,0" SelectionChanged="CharacterControl_SelectionChanged"/>
+                <Button Name="SavePlaintextButton" ToolTip="{lex:Loc Export save files as plaintext}" Click="SavePlaintextButton_Click">
                     <ui:SymbolIcon Symbol="ArrowExportUp24"/>
                 </Button>
             </WrapPanel>
@@ -42,20 +42,40 @@
                 <ui:SymbolIcon Symbol="ZoomIn24"/>
             </WrapPanel>
         </Grid>
-        <TabControl Name="tabAnalyzer" Grid.Row="1">
+        <TabControl Name="tabAnalyzer" Grid.Row="1" Margin="0,4,0,0">
             <TabItem Header="{lex:Loc Campaign}">
                 <Grid>
-                    <DataGrid Name="CampaignData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel"/>
+                    <DataGrid Name="CampaignData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn"/>
                 </Grid>
             </TabItem>
             <TabItem Name="tabAdventure" Header="{lex:Loc Adventure}">
                 <Grid>
-                    <DataGrid Name="AdventureData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel"/>
+                    <DataGrid Name="AdventureData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn"/>
                 </Grid>
             </TabItem>
             <TabItem Header="{lex:Loc Missing Items}">
                 <Grid>
-                    <TreeView Name="treeMissingItems"/>
+                    <TreeView Name="treeMissingItems" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.IsVirtualizing="True" ContextMenuOpening="treeMissingItems_ContextMenuOpening" MouseDown="treeMissingItems_MouseDown">
+                        <TreeView.ContextMenu>
+                            <ContextMenu StaysOpen="True">
+                                <ui:MenuItem Name="menuMissingItemOpenWiki" Header="{lex:Loc Open wiki}" Click="SearchItem_Click">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Link24" />
+                                    </MenuItem.Icon>
+                                </ui:MenuItem>
+                                <ui:MenuItem Header="{lex:Loc Copy}" Click="CopyItem_Click">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Copy24" />
+                                    </MenuItem.Icon>
+                                </ui:MenuItem>
+                            </ContextMenu>
+                        </TreeView.ContextMenu>
+                        <TreeView.Items>
+                            <TreeViewItem Header="{lex:Loc Normal}" Tag="treeMissingNormal"/>
+                            <TreeViewItem Header="{lex:Loc Survival}" Tag="treeMissingSurvival"/>
+                            <TreeViewItem Header="{lex:Loc Hardcore}" Tag="treeMissingHardcore"/>
+                        </TreeView.Items>
+                    </TreeView>
                 </Grid>
             </TabItem>
         </TabControl>
