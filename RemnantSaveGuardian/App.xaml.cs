@@ -3,8 +3,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RemnantSaveGuardian.Models;
 using RemnantSaveGuardian.Services;
+using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using Wpf.Ui.Mvvm.Contracts;
@@ -77,6 +80,10 @@ namespace RemnantSaveGuardian
         private async void OnStartup(object sender, StartupEventArgs e)
         {
             await _host.StartAsync();
+            //var culture = new CultureInfo("ko");
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CurrentCulture;
+
+            WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
         }
 
         /// <summary>

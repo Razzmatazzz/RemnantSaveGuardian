@@ -19,12 +19,9 @@ namespace RemnantSaveGuardian
         public static T GetLocalizedValue<T>(string key, LocalizationOptions options)
         {
             var ns = "Strings";
-            try
+            if (options.Has("namespace"))
             {
-                ns = options.First(kvp => kvp.Key == "namespace").Value;
-            } catch (Exception)
-            {
-                // use default namespace
+                ns = options["namespace"];
             }
             return LocExtension.GetLocalizedValue<T>(Assembly.GetCallingAssembly().GetName().Name + $":{ns}:" + key);
         }
@@ -87,5 +84,10 @@ namespace RemnantSaveGuardian
             }
         }
         public LocalizationOptions() { }
+
+        public bool Has(string key)
+        {
+            return this[key] != null;
+        }
     }
 }

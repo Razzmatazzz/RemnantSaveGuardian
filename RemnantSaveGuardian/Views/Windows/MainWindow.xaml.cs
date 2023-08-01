@@ -19,6 +19,7 @@ using Wpf.Ui.Controls.Interfaces;
 using Wpf.Ui.Extensions;
 using Wpf.Ui.Mvvm.Contracts;
 using Wpf.Ui.Mvvm.Interfaces;
+using WPFLocalizeExtension.Engine;
 
 namespace RemnantSaveGuardian.Views.Windows
 {
@@ -119,6 +120,9 @@ namespace RemnantSaveGuardian.Views.Windows
                 {
                     UpdateCheck.CheckForNewVersion();
                 }
+                LocalizeDictionary.Instance.MissingKeyEvent += (s, e) => {
+                    //Logger.Log($"Missing translation for key: {e.Key}");
+                };
             } catch (Exception ex)
             {
                 Logger.Error($"Error loading main window: {ex}");

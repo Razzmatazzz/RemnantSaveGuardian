@@ -46,9 +46,18 @@ namespace RemnantSaveGuardian.Views.Pages
                 if (pathToSaveFiles == Properties.Settings.Default.SaveFolder)
                 {
                     SaveWatcher.SaveUpdated += (sender, eventArgs) => {
-                        Save.UpdateCharacters();
-                        CharacterControl.Items.Refresh();
-                        CharacterControl_SelectionChanged(null, null);
+                        Dispatcher.Invoke(() =>
+                        {
+                            var selectedIndex = CharacterControl.SelectedIndex;
+                            Save.UpdateCharacters();
+                            CharacterControl.Items.Refresh();
+                            if (selectedIndex >= CharacterControl.Items.Count)
+                            {
+                                selectedIndex = 0;
+                            }
+                            CharacterControl.SelectedIndex = selectedIndex;
+                            //CharacterControl_SelectionChanged(null, null);
+                        });
                     };
                     Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
                 }
