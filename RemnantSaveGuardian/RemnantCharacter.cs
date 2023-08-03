@@ -34,7 +34,7 @@ namespace RemnantSaveGuardian
 
         public override string ToString()
         {
-            return string.Join(", ", Archetypes.Select(arch => Loc.T(arch))) + " (" + this.Progression + ")";
+            return string.Join(", ", Archetypes.Select(arch => Loc.GameT(arch))) + " (" + this.Progression + ")";
         }
 
         public string ToFullString()
