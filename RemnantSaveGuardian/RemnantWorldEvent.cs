@@ -114,6 +114,12 @@ namespace RemnantSaveGuardian
                 _locations.AddRange(locations);
             }
             _type = type;
+            if (type == "Ring" || type == "Amulet")
+            {
+                _name = $"{type}_{_name}";
+                _type = "Item";
+                Logger.Log(_name);
+            }
             if (type.ToLower() == "traitbook")
             {
                 _type = "Item";
@@ -140,9 +146,6 @@ namespace RemnantSaveGuardian
             _locations.Add(world);
         }
         public RemnantWorldEvent(string key, List<string> locations, string type) : this(key, key, locations, type) { }
-        public RemnantWorldEvent() : this("", "", "")
-        { }
-
         public RemnantWorldEvent(Match match) : this(match.Value, match.Groups["eventName"].Value, new() { match.Groups["world"].Value }, match.Groups["eventType"].Value)
         { }
         public RemnantWorldEvent(Match match, string location) : this(match.Value, match.Groups["eventName"].Value, new() { match.Groups["world"].Value, location }, match.Groups["eventType"].Value) { }

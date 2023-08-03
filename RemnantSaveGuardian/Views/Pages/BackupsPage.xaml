@@ -31,7 +31,7 @@
                 <Button Name="btnOpenBackupsFolder" ToolTip="{lex:Loc}">
                     <ui:SymbolIcon HorizontalAlignment="Left" Symbol="FolderOpen24" />
                 </Button>
-                <Button Name="btnStartGame" ToolTip="{lex:Loc}">
+                <Button Name="btnStartGame" ToolTip="{lex:Loc}" Visibility="Collapsed">
                     <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Play24" />
                 </Button>
             </ToolBar>
