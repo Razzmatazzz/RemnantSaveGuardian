@@ -190,7 +190,12 @@ namespace RemnantSaveGuardian
                 if (args.RemoteVersion > args.LocalVersion)
                 {
                     File.WriteAllText("game.json", gameJson.ToJsonString());
-                    RefreshGameInfo();
+                    try {
+                        RefreshGameInfo();
+                    } catch (Exception ex) {
+                        File.WriteAllText("game.json", json.ToString());
+                        Logger.Error(Loc.T("Could not parse updated game data; check for new version of this app"));
+                    }
                     args.Result = GameInfoUpdateResult.Updated;
                     args.Message = Loc.T("Game info updated.");
                 }

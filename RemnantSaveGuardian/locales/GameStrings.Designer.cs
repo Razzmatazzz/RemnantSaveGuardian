@@ -331,15 +331,6 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Losomn.
-        /// </summary>
-        public static string Fae {
-            get {
-                return ResourceManager.GetString("Fae", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Faelin.
         /// </summary>
         public static string FaelinFaerlin {
@@ -466,15 +457,6 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yaesha.
-        /// </summary>
-        public static string Jungle {
-            get {
-                return ResourceManager.GetString("Jungle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Kaeula&apos;s Rest.
         /// </summary>
         public static string KaeulasRest {
@@ -489,15 +471,6 @@ namespace RemnantSaveGuardian.locales {
         public static string KoaraKuriNest {
             get {
                 return ResourceManager.GetString("KoaraKuriNest", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Labyrinth.
-        /// </summary>
-        public static string Labyrinth {
-            get {
-                return ResourceManager.GetString("Labyrinth", resourceCulture);
             }
         }
         
@@ -525,15 +498,6 @@ namespace RemnantSaveGuardian.locales {
         public static string Medic {
             get {
                 return ResourceManager.GetString("Medic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to N&apos;Erud.
-        /// </summary>
-        public static string Nerud {
-            get {
-                return ResourceManager.GetString("Nerud", resourceCulture);
             }
         }
         
@@ -615,15 +579,6 @@ namespace RemnantSaveGuardian.locales {
         public static string Root {
             get {
                 return ResourceManager.GetString("Root", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Root Earth.
-        /// </summary>
-        public static string RootEarth {
-            get {
-                return ResourceManager.GetString("RootEarth", resourceCulture);
             }
         }
         
@@ -777,6 +732,60 @@ namespace RemnantSaveGuardian.locales {
         public static string Ward13 {
             get {
                 return ResourceManager.GetString("Ward13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Earth.
+        /// </summary>
+        public static string World_Earth {
+            get {
+                return ResourceManager.GetString("World_Earth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Losomn.
+        /// </summary>
+        public static string World_Fae {
+            get {
+                return ResourceManager.GetString("World_Fae", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yaesha.
+        /// </summary>
+        public static string World_Jungle {
+            get {
+                return ResourceManager.GetString("World_Jungle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Labyrinth.
+        /// </summary>
+        public static string World_Labyrinth {
+            get {
+                return ResourceManager.GetString("World_Labyrinth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to N&apos;Erud.
+        /// </summary>
+        public static string World_Nerud {
+            get {
+                return ResourceManager.GetString("World_Nerud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Root Earth.
+        /// </summary>
+        public static string World_RootEarth {
+            get {
+                return ResourceManager.GetString("World_RootEarth", resourceCulture);
             }
         }
         

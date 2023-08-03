@@ -133,7 +133,7 @@ namespace RemnantSaveGuardian
                 _name = _locations.Last().Replace(" ", "");
                 _type = "Location";
                 _locations.Clear();
-                _locations.Add("RootEarth");
+                _locations.Add("World_RootEarth");
             }
         }
         public RemnantWorldEvent(string key, string world, string type) : this(key, key, null, type) {
@@ -600,7 +600,7 @@ namespace RemnantSaveGuardian
                     areaEndIndex = areas[areaIndex + 1].Index;
                 }
                 var areaText = eventsText[currentArea.Index..areaEndIndex];
-                MatchCollection eventMatches = Regex.Matches(areaText, @"/Game/(?:World|Campaign)_(?<world>\w+)/Quests/(?:\w+)_(?<eventType>\w+?)_(?<eventName>\w+)/\w+\.\w+");
+                MatchCollection eventMatches = Regex.Matches(areaText, @"/Game/(?<world>(?:World|Campaign)_\w+)/Quests/(?:\w+)_(?<eventType>\w+?)_(?<eventName>\w+)/\w+\.\w+");
                 //MatchCollection eventMatches = Regex.Matches(eventsText, @"/\w+/(?:\w+)_(?<world>\w+)/(?:\w+/)?([a-zA-Z0-9]+_(?<eventType>[a-zA-Z0-9]+)_(?<eventName>[a-zA-Z0-9_]+))/(?:Q)");
                 foreach (Match eventMatch in eventMatches)
                 {
@@ -653,7 +653,7 @@ namespace RemnantSaveGuardian
                         {
                             worldEvent = new RemnantWorldEvent(eventMatch, currentSublocation);
                         }*/
-                        if (firstZone.Length == 0 && worldEvent.RawWorld != "RootEarth") {
+                        if (firstZone.Length == 0 && worldEvent.RawWorld != "World_RootEarth") {
                             firstZone = worldEvent.RawWorld;
                             //Logger.Log($"Setting first zone to {firstZone} for {worldEvent.Name}");
                         }
@@ -669,43 +669,43 @@ namespace RemnantSaveGuardian
                         zoneEvents[worldEvent.RawWorld].Add(worldEvent);
 
                         // Add associated events
-                        if (worldEvent.RawWorld == "Nerud" && worldEvent.RawName.Contains("Story"))
+                        if (worldEvent.RawWorld == "World_Nerud" && worldEvent.RawName.Contains("Story"))
                         {
-                            var cust = new RemnantWorldEvent("TheCustodian", "Nerud", "Point of Interest");
+                            var cust = new RemnantWorldEvent("TheCustodian", "World_Nerud", "Point of Interest");
                             cust.setMissingItems(character);
-                            zoneEvents["Nerud"].Add(cust);
+                            zoneEvents["World_Nerud"].Add(cust);
                             if (worldEvent.RawName == "IAmLegendStory")
                             {
-                                var talratha = new RemnantWorldEvent("TalRatha", "Nerud", "WorldBoss");
+                                var talratha = new RemnantWorldEvent("TalRatha", "World_Nerud", "WorldBoss");
                                 talratha.setMissingItems(character);
-                                zoneEvents["Nerud"].Add(talratha);
+                                zoneEvents["World_Nerud"].Add(talratha);
                             }
 
                         }
 
-                        if (worldEvent.RawName == "AsylumStory" && worldEvent.RawWorld == "Fae")
+                        if (worldEvent.RawName == "AsylumStory" && worldEvent.RawWorld == "World_Fae")
                         {
-                            RemnantWorldEvent asylumhouse = new RemnantWorldEvent("AsylumHouse", "Fae", "Location");
+                            RemnantWorldEvent asylumhouse = new RemnantWorldEvent("AsylumHouse", "World_Fae", "Location");
                             asylumhouse.Locations.Add("Asylum");
                             asylumhouse.setMissingItems(character);
-                            zoneEvents["Fae"].Add(asylumhouse);
+                            zoneEvents["World_Fae"].Add(asylumhouse);
 
-                            RemnantWorldEvent abberation = new RemnantWorldEvent("AsylumChainsaw", "Fae", "Abberation");
+                            RemnantWorldEvent abberation = new RemnantWorldEvent("AsylumChainsaw", "World_Fae", "Abberation");
                             asylumhouse.Locations.Add("Asylum");
                             abberation.setMissingItems(character);
-                            zoneEvents["Fae"].Add(abberation);
+                            zoneEvents["World_Fae"].Add(abberation);
 
-                            RemnantWorldEvent nightweb = new RemnantWorldEvent("Nightweb", "Fae", "Point of Interest");
+                            RemnantWorldEvent nightweb = new RemnantWorldEvent("Nightweb", "World_Fae", "Point of Interest");
                             asylumhouse.Locations.Add("TormentedAsylum");
                             nightweb.setMissingItems(character);
-                            zoneEvents["Fae"].Add(nightweb);
+                            zoneEvents["World_Fae"].Add(nightweb);
 
                         }
                         else if (worldEvent.RawName == "FaelinFaerlin")
                         {
-                            RemnantWorldEvent faerlin = new RemnantWorldEvent("Faeron", "Fae", "WorldBoss");
+                            RemnantWorldEvent faerlin = new RemnantWorldEvent("Faeron", "World_Fae", "WorldBoss");
                             faerlin.setMissingItems(character);
-                            zoneEvents["Fae"].Add(faerlin);
+                            zoneEvents["World_Fae"].Add(faerlin);
                         }
                         // Abberation
                         else if (worldEvent.RawName == "HiddenMaze")
@@ -725,6 +725,12 @@ namespace RemnantSaveGuardian
                             RemnantWorldEvent mantagora = new RemnantWorldEvent("Mantagora", worldEvent.Locations, "Abberation");
                             mantagora.setMissingItems(character);
                             zoneEvents[worldEvent.RawWorld].Add(mantagora);
+                        }
+                        else if (worldEvent.RawName == "TheCustodian")
+                        {
+                            var drzyr = new RemnantWorldEvent("DrzyrReplicator", worldEvent.Locations, "Merchant");
+                            drzyr.setMissingItems(character);
+                            zoneEvents[worldEvent.RawWorld].Add(drzyr);
                         }
                     }
                     catch (Exception ex)
@@ -747,11 +753,11 @@ namespace RemnantSaveGuardian
             if (mode == ProcessMode.Campaign)
             {
                 // Add Ward 13 events
-                var ward13 = new RemnantWorldEvent("Ward13", "Earth", "Home");
+                var ward13 = new RemnantWorldEvent("Ward13", "World_Earth", "Home");
                 ward13.setMissingItems(character);
                 if (ward13.MissingItems.Length > 0) eventList.Add(ward13);
 
-                var cass = new RemnantWorldEvent("Cass", "Earth", "Home");
+                var cass = new RemnantWorldEvent("Cass", "World_Earth", "Home");
                 cass.setMissingItems(character);
                 if (cass.MissingItems.Length > 0) eventList.Add(cass);
                 //Logger.Log(firstZone);
@@ -763,30 +769,32 @@ namespace RemnantSaveGuardian
                 }
 
                 // Add the Labyrinth
-                var lab = new RemnantWorldEvent("Labyrinth", "Labyrinth", "Location");
+                var lab = new RemnantWorldEvent("Labyrinth", "World_Labyrinth", "Location");
                 lab.setMissingItems(character);
                 if (lab.MissingItems.Length > 0) eventList.Add(lab);
 
-                RemnantWorldEvent lab2 = new RemnantWorldEvent("LabyrinthBackrooms", "Labyrinth", "Location");
+                RemnantWorldEvent lab2 = new RemnantWorldEvent("LabyrinthBackrooms", "World_Labyrinth", "Location");
                 lab2.setMissingItems(character);
                 if (lab2.MissingItems.Length > 0) eventList.Add(lab2);
                 //orderedEvents.Add(lab2);
 
                 // Add other zones
-                foreach (string s in zoneEvents.Keys.Except(new List<string>() { firstZone, "RootEarth" }))
+                foreach (string s in zoneEvents.Keys.Except(new List<string>() { firstZone, "World_RootEarth" }))
                 {
                     //Debug.WriteLine($"{mode.ToString() + " " + s}:" + String.Join(",", zoneEvents[s].Select(x => x.eventKey)));
                     eventList.AddRange(zoneEvents[s]);
                 }
 
                 // Add Root Earth
-                RemnantWorldEvent RootEarth1 = new RemnantWorldEvent("AshenWasteland", "RootEarth", "Location");
+                RemnantWorldEvent RootEarth1 = new RemnantWorldEvent("AshenWasteland", "World_RootEarth", "Location");
                 RootEarth1.setMissingItems(character);
                 if (RootEarth1.MissingItems.Length > 0) eventList.Add(RootEarth1);
 
-                RemnantWorldEvent RootEarth2 = new RemnantWorldEvent("CorruptedHarbor", "RootEarth", "Location");
+                RemnantWorldEvent RootEarth2 = new RemnantWorldEvent("CorruptedHarbor", "World_RootEarth", "Location");
                 RootEarth2.setMissingItems(character);
                 if (RootEarth2.MissingItems.Length > 0) eventList.Add(RootEarth2);
+
+                // Add back in root earth events filtered out above?
             }
             else
             {

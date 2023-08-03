@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "mainLocations": [
     "FaeStarter",
     "DranStarter"
@@ -1244,27 +1244,41 @@
           "name": "/Items/Trinkets/Rings/PowerSaver/Ring_PowerSaver"
         },
         {
-          "name": "/Items/Mods/Overflow/Mod_Overflow"
+          "name": "/Items/Mods/Overflow/Mod_Overflow",
+          "notes": "take the elevator on the right of the vending machine, now take the path on the right of the bridge and you should see the crafting material on a machine"
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/SiphonHeart/Relic_Consumable_SiphonHeart",
           "notes": "give Shining Essence to Custodian"
+        }
+      ],
+      "DrzyrReplicator": [
+        {
+          "name": "/Items/Trinkets/Rings/MeteoriteShardRing/Ring_MeteoriteShardRing"
         },
         {
-          "name": "/Items/Trinkets/Rings/MeteoriteShardRing/Ring_MeteoriteShardRing",
-          "notes": "VendingMachine"
+          "name": "/Items/Trinkets/Rings/Microcompressor/Ring_Microcompressor"
         },
         {
-          "name": "/Items/Trinkets/Rings/Microcompressor/Ring_Microcompressor",
-          "notes": "VendingMachine"
+          "name": "/Items/Trinkets/Amulets/EnergyDiverter/Amulet_EnergyDiverter"
         },
         {
-          "name": "/Items/Trinkets/Amulets/EnergyDiverter/Amulet_EnergyDiverter",
-          "notes": "VendingMachine"
+          "name": "/Items/Armor/Base/RelicTesting/SalvagedHeart/Relic_Consumable_SalvagedHeart"
         },
         {
-          "name": "/Items/Armor/Base/RelicTesting/SalvagedHeart/Relic_Consumable_SalvagedHeart",
-          "notes": "VendingMachine"
+          "name": "/Items/Weapons/Melee/Standard/Claws/Vice_Grips/Weapon_ViceGrips"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/RangeFinder/Amulet_RangeFinder"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/EffluviumEnhancer/Amulet_EffluviumEnhancer"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheMariner/Ring_BurdenOfTheMariner"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/SuppressionWard/Ring_SuppressionWard"
         }
       ],
       "NerudGuardian": [
@@ -1399,16 +1413,20 @@
           "notes": "mudtooth chat half reward"
         },
         {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Challenger"
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Challenger",
+          "notes": "buy Old Metal Tool from Reggie"
         },
         {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Handler"
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Handler",
+          "notes":  "buy Old Whistle from Mudtooth"
         },
         {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Hunter"
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Hunter",
+          "notes": "buy Rusty Medal from Brabus"
         },
         {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Medic"
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Medic",
+          "notes":  "buy Medic Pin from Norah"
         },
         {
           "name": "/Items/Weapons/LongGuns/Standard/TommyGun/Weapon_TommyGun",
@@ -1441,6 +1459,18 @@
         {
           "name": "/Items/Armor/Base/RelicTesting/LifelessHeart/Relic_Consumable_LifelessHeart",
           "notes": "eat fruit of death 3 times"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/01_Graveyard/RingOfTheAdmiral/Ring_RingOfTheAdmiral"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/PoisonStone/Ring_AcidStone"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/FireStone/Ring_FireStone"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/GroundingStone/Ring_GroundingStone"
         }
       ],
       "Cass": [

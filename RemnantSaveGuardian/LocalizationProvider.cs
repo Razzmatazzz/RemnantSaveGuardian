@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using WPFLocalizeExtension.Extensions;
 
@@ -12,10 +13,6 @@ namespace RemnantSaveGuardian
 {
     internal class Loc
     {
-        public static T GetLocalizedValue<T>(string key, string resourceFile)
-        {
-            return LocExtension.GetLocalizedValue<T>(Assembly.GetCallingAssembly().GetName().Name + $":{resourceFile}:" + key);
-        }
         public static T GetLocalizedValue<T>(string key, LocalizationOptions options)
         {
             var ns = "Strings";

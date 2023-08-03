@@ -207,9 +207,6 @@
   <data name="Explorer" xml:space="preserve">
     <value>Explorer</value>
   </data>
-  <data name="Fae" xml:space="preserve">
-    <value>Losomn</value>
-  </data>
   <data name="FaelinFaerlin" xml:space="preserve">
     <value>Faelin</value>
   </data>
@@ -252,17 +249,11 @@
   <data name="Invader" xml:space="preserve">
     <value>Invader</value>
   </data>
-  <data name="Jungle" xml:space="preserve">
-    <value>Yaesha</value>
-  </data>
   <data name="KaeulasRest" xml:space="preserve">
     <value>Kaeula's Rest</value>
   </data>
   <data name="KoaraKuriNest" xml:space="preserve">
     <value>Koara Kuri Nest</value>
-  </data>
-  <data name="Labyrinth" xml:space="preserve">
-    <value>Labyrinth</value>
   </data>
   <data name="LaemirsLyceum" xml:space="preserve">
     <value>Laemirs' Lyceum</value>
@@ -272,9 +263,6 @@
   </data>
   <data name="Medic" xml:space="preserve">
     <value>Medic</value>
-  </data>
-  <data name="Nerud" xml:space="preserve">
-    <value>N'Erud</value>
   </data>
   <data name="Nightweb" xml:space="preserve">
     <value>Nightweavers Web</value>
@@ -302,9 +290,6 @@
   </data>
   <data name="Root" xml:space="preserve">
     <value>Root</value>
-  </data>
-  <data name="RootEarth" xml:space="preserve">
-    <value>Root Earth</value>
   </data>
   <data name="RootEarthAshenWasteland" xml:space="preserve">
     <value>Ashen Wasteland</value>
@@ -359,5 +344,23 @@
   </data>
   <data name="WorldBoss" xml:space="preserve">
     <value>World Boss</value>
+  </data>
+  <data name="World_Earth" xml:space="preserve">
+    <value>Earth</value>
+  </data>
+  <data name="World_Fae" xml:space="preserve">
+    <value>Losomn</value>
+  </data>
+  <data name="World_Jungle" xml:space="preserve">
+    <value>Yaesha</value>
+  </data>
+  <data name="World_Labyrinth" xml:space="preserve">
+    <value>Labyrinth</value>
+  </data>
+  <data name="World_Nerud" xml:space="preserve">
+    <value>N'Erud</value>
+  </data>
+  <data name="World_RootEarth" xml:space="preserve">
+    <value>Root Earth</value>
   </data>
 </root>
