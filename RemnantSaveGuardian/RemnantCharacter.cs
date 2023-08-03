@@ -100,7 +100,7 @@ namespace RemnantSaveGuardian
                         var itemMatches = new Regex(pattern).Matches(inventory);
                         foreach (Match itemMatch in itemMatches)
                         {
-                            cd.Inventory.Add(itemMatch.Value.Replace(".", ""));
+                            cd.Inventory.Add(itemMatch.Value.Replace(".", "").ToLower());
                         }
                     }
 

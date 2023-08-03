@@ -19,7 +19,8 @@ namespace RemnantSaveGuardian
         private static Dictionary<string, string> events = new Dictionary<string, string>();
         private static Dictionary<string, List<RemnantItem>> eventItem = new Dictionary<string, List<RemnantItem>>();
         private static Dictionary<string, string> subLocations = new Dictionary<string, string>();
-        private static Dictionary<string, string> mainLocations = new Dictionary<string, string>();
+        private static Dictionary<string, string> injectables = new Dictionary<string, string>();
+        private static List<string> mainLocations = new List<string>();
         private static Dictionary<string, string> archetypes = new Dictionary<string, string>();
         public static Dictionary<string, string> Events
         {
@@ -69,7 +70,19 @@ namespace RemnantSaveGuardian
                 return subLocations;
             }
         }
-        public static Dictionary<string, string> MainLocations
+        public static Dictionary<string, string> Injectables
+        {
+            get
+            {
+                if (injectables.Count == 0)
+                {
+                    RefreshGameInfo();
+                }
+
+                return injectables;
+            }
+        }
+        public static List<string> MainLocations
         {
             get
             {
@@ -101,24 +114,57 @@ namespace RemnantSaveGuardian
             events.Clear();
             eventItem.Clear();
             subLocations.Clear();
+            injectables.Clear();
             mainLocations.Clear();
             archetypes.Clear();
             var json = JsonNode.Parse(File.ReadAllText("game.json"));
             var gameEvents = json["events"].AsObject();
-            foreach (var kvp in gameEvents.AsEnumerable())
+            foreach (var worldkvp in gameEvents.AsEnumerable())
             {
-                List<RemnantItem> eventItems = new List<RemnantItem>();
-                if (kvp.Value["items"] == null)
+                foreach (var kvp in worldkvp.Value.AsObject().AsEnumerable())
                 {
-                    Logger.Warn($"Event {kvp.Key} has no items");
-                    continue;
+                    List<RemnantItem> eventItems = new List<RemnantItem>();
+                    if (kvp.Value == null)
+                    {
+                        Logger.Warn($"Event {kvp.Key} has no items");
+                        continue;
+                    }
+                    foreach (var item in kvp.Value.AsArray())
+                    {
+                        RemnantItem rItem = new RemnantItem(item["name"].ToString());
+                        if (item["notes"] != null)
+                        {
+                            rItem.ItemNotes = item["notes"].ToString();
+                        }
+                        if (item["mode"] != null)
+                        {
+                            rItem.ItemMode = (RemnantItem.RemnantItemMode)Enum.Parse(typeof(RemnantItem.RemnantItemMode), item["mode"].ToString(), true);
+                        }
+                        eventItems.Add(rItem);
+                    }
+                    eventItem.Add(kvp.Key, eventItems);
                 }
-                foreach (var item in kvp.Value["items"].AsArray())
+            }
+            var locations = json["mainLocations"].AsArray();
+            foreach (var location in locations)
+            {
+                mainLocations.Add(location.ToString());
+            }
+            var subLocs = json["subLocations"].AsObject();
+            foreach (var worldkvp in subLocs.AsEnumerable())
+            {
+                foreach (var kvp in worldkvp.Value.AsObject().AsEnumerable())
                 {
-                    RemnantItem rItem = new RemnantItem(item.ToString());
-                    eventItems.Add(rItem);
+                    subLocations.Add(kvp.Key, kvp.Value.ToString());
                 }
-                eventItem.Add(kvp.Key, eventItems);
+            }
+            var injects = json["injectables"].AsObject();
+            foreach (var worldkvp in injects.AsEnumerable())
+            {
+                foreach (var kvp in worldkvp.Value.AsObject().AsEnumerable())
+                {
+                    injectables.Add(kvp.Key, kvp.Value.ToString());
+                }
             }
         }
 

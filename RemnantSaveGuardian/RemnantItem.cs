@@ -10,13 +10,18 @@ namespace RemnantSaveGuardian
     public class RemnantItem : IEquatable<Object>, IComparable
     {
         private static readonly List<string> _itemKeyPatterns = new() {
-            @"/Game/\w+/Items/Trinkets/(?<itemType>\w+)/\w+/(?<itemName>\w+)(?:\.|$)", // rings and amulets
-            @"/Game/\w+/Items/Mods/\w+/(?<itemType>\w+)(?:\.|$)", // weapon mods
-            @"/Game/\w+/Items/(?<itemType>Archetypes)/\w+/(?<itemName>Archetype_\w+)(?:\.|$)", // archetypes
-            @"/Game/\w+/Items/Archetypes/(?<archetypeName>\w+)/(?<itemType>\w+)/\w+/(?<itemName>\w+)(?:\.|$)", // perks and skills
-            @"/Game/\w+/Items/(?<itemType>Traits)/(?<traitType>\w+)/\w+/(?<itemName>\w+)(?:\.|$)", // traits
-            @"/Game/\w+/Items/(?<itemType>Armor)/\w+/(?<armorSet>\w+)/(?<itemName>\w+)(?:\.|$)", // armor
-            @"/Game/\w+/Items/(?<itemType>Weapons)/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // weapons
+            @"/Items/Trinkets/(?<itemType>\w+)/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // rings and amulets
+            @"/Items/(?<itemType>Mods)/\w+/(?<itemName>\w+)(?:\.|$)", // weapon mods
+            @"/Items/(?<itemType>Archetypes)/\w+/(?<itemName>Archetype_\w+)(?:\.|$)", // archetypes
+            @"/Items/Archetypes/(?<archetypeName>\w+)/(?<itemType>\w+)/\w+/(?<itemName>\w+)(?:\.|$)", // perks and skills
+            @"/Items/(?<itemType>Traits)/(?<traitType>\w+)/\w+/(?<itemName>\w+)(?:\.|$)", // traits
+            @"/Items/(?<itemType>Armor)/(?:\w+/)?(?:(?<armorSet>\w+)/)?(?<itemName>\w+)(?:\.|$)", // armor
+            @"/Items/(?<itemType>Weapons)/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // weapons
+            @"/Items/(?<itemType>Gems)/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // gems
+            @"/Items/Armor/(?:\w+/)?(?<itemType>Relic)Testing/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // relics
+            @"/Items/Materials/(?<itemType>Engrams)/(?<itemName>\w+)(?:\.|$)", // engrams
+            @"/(?<itemType>Quests)/Quest_\w+/Items/(?<itemName>\w+)(?:\.|$)", // quest items
+            @"/Items/(?<itemType>Materials)/World/\w+/(?<itemName>\w+)(?:\.|$)", // materials
         };
         public static List<string> ItemKeyPatterns { get { return _itemKeyPatterns; } }
         public enum RemnantItemMode
@@ -37,6 +42,20 @@ namespace RemnantSaveGuardian
                 if (this._set != "" && this._part != "")
                 {
                     return $"{Loc.GameT($"Armor_{this._set}")} ({Loc.GameT($"Armor_{this._part}")})";
+                }
+                if (_type == "Armor")
+                {
+                    var armorParts = new List<string>() { 
+                        "Head",
+                        "Body",
+                        "Gloves",
+                        "Legs"
+                    };
+                    var armorMatch = Regex.Match(_name, @"\w+_(?<armorPart>(?:Head|Body|Gloves|Legs))_\w+");
+                    if (armorMatch.Success)
+                    {
+                        return $"{Loc.GameT(_name.Replace($"{armorMatch.Groups["armorPart"].Value}_", ""))} ({Loc.GameT($"Armor_{armorMatch.Groups["armorPart"].Value}")})";
+                    }
                 }
                 return Loc.GameT(_name);
             } 
@@ -151,9 +170,13 @@ namespace RemnantSaveGuardian
                 RemnantItem rItem = (RemnantItem)obj;
                 if (this.ItemMode != rItem.ItemMode)
                 {
-                    return this.ItemMode.CompareTo(rItem.ItemMode);
+                    var modeCompare = this.ItemMode.CompareTo(rItem.ItemMode);
+                    if (modeCompare != 0)
+                    {
+                        return modeCompare;
+                    }
                 }
-                return this._name.CompareTo(rItem.Key);
+                return this._key.CompareTo(rItem.Key);
             }
         }
     }

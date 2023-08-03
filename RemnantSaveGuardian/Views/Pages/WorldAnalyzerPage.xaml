@@ -72,8 +72,8 @@
                         </TreeView.ContextMenu>
                         <TreeView.Items>
                             <TreeViewItem Header="{lex:Loc Normal}" Tag="treeMissingNormal"/>
-                            <TreeViewItem Header="{lex:Loc Survival}" Tag="treeMissingSurvival"/>
                             <TreeViewItem Header="{lex:Loc Hardcore}" Tag="treeMissingHardcore"/>
+                            <TreeViewItem Header="{lex:Loc Survival}" Tag="treeMissingSurvival"/>
                         </TreeView.Items>
                     </TreeView>
                 </Grid>

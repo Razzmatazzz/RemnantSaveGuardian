@@ -1,258 +1,1772 @@
 {
   "version": 4,
+  "mainLocations": [
+    "FaeStarter",
+    "DranStarter"
+  ],
+  "subLocations": {
+    "Jungle": {
+      "Shrewd": "TheExpandingGlade",
+      "RootHorror": "KaeulasRest",
+      "RootCultist": "TheTwistedChantry",
+      "MotherMind": "TheNamelessNest",
+      "Meidra": "TheDappledGlade",
+      "Ruins": "AbandonedRuins",
+      "KoaraKuri": "KoaraKuriNest",
+      "Flautist": "RootNexus",
+      "HiddenMaze": "EndairasEnd",
+      "TheTangle": "ImperialGardens",
+      "TheLament": "TheLament",
+      "Sarcophagus": "TheLament",
+      "TheChimney": "LaemirsLyceum",
+      "WailingField": "ForgottenField",
+      "CathedralOfSeasons": "CathedralOfOmens"
+    },
+    "Fae": {
+      "DranGrenadier": "CottonsKiln",
+      "Ravenous": "TheGreatHall",
+      "CharnelHouse": "HarvestersReach",
+      "TheHunter": "BriellasGarden",
+      "ClockTower": "LemarkDistrict",
+      "BloatKing": "TheGreatSewers",
+      "CrimsonHarvest": "ButchersQuarter",
+      "FaeArchon": "ShatteredGallery",
+      "FaeCouncil": "CouncilChamber",
+      "RedPrince": "GildedChambers",
+      "DranOracle": "OraclesRefuge",
+      "Settlement": "BairnsCrossing",
+      "Nimue": "NimuesRetreat",
+      "FaelinFaerlin": "BeatificPalace",
+      "TheNest": "Sewers",
+      "TownTurnedToDust": "TillersRest",
+      "ThreeMenMorris": "PostulantsParlor"
+    },
+    "Nerud": {
+      "Hatchery": "TheHatchery",
+      "Extraction": "DarkConduit",
+      "Extermination": "DormantNErudianFacility",
+      "Train": "TerminusStation",
+      "CustodianEye": "SpectrumNexus",
+      "TowerHeist": "TowerOfTheUnseen",
+      "TheDreamlessSleep": "VoidVesselFacility",
+      "NerudGuardian": "ThresholdOfTheUnknown"
+    }
+  },
+  "injectables": {
+    "Jungle": {
+      "TheChimney": "Crypt",
+      "TheLament": "Crypt",
+      "RootCultist": "Crypt",
+      "LivingStone": "Crypt",
+      "Sarcophagus": "Crypt",
+      "CryptHidden": "Crypt",
+      "TheTangle": "Island",
+      "WailingField": "Island",
+      "Shrewd": "Island",
+      "MotherMind": "Island",
+      "BrokenTomb": "Island",
+      "Tower": "Island",
+      "IslandJump": "Island",
+      "CathedralOfSeasons": "Ziggurat",
+      "RootHorror": "Ziggurat",
+      "HiddenMaze": "Ziggurat",
+      "HiddenChamber": "Ziggurat",
+      "Library": "Ziggurat",
+      "WindHollow": "Ziggurat"
+    },
+    "Nerud": {
+      "TowerHeist": "Tower",
+      "ElevatorShaft": "Tower",
+      "RemainsBelow": "Tower",
+      "Seeker": "Tower",
+      "BlackHole": "Underworld",
+      "LurkerVents": "Underworld",
+      "SewageFacility": "Underworld",
+      "Shockwire": "Underworld",
+      "StoreRoom": "Underworld",
+      "TheClaw": "Underworld"
+    }
+  },
   "events": {
-    "Abomination": {
-      "items": [
-        "Bore"
-      ]
-    },
-    "Amulet_ChainsOfAmplification": {
-      "items": [
-        "/Game/World_Fae/Items/Trinkets/Amulets/ChainsOfAmplification/Amulet_ChainsOfAmplification"
-      ]
-    },
-    "Amulet_IndignantFetish": {
-      "items": [
-        "/Game/World_Fae/Items/Trinkets/Amulets/IndignantFetish/Amulet_IndignantFetish"
-      ]
-    },
-    "Amulet_VengeanceIdol": {
-      "items": [
-        "/Game/World_Fae/Items/Trinkets/Amulets/VengeanceIdol/Amulet_VengeanceIdol"
-      ]
-    },
-    "Amulet_WeightlessWeight": {
-      "items": [
-        "/Game/World_Fae/Items/Trinkets/Amulets/WeightlessWeight/Amulet_WeightlessWeight"
-      ]
-    },
-    "BloatKing": {
-      "items": [
-        "VoltaicRondure"
+    "Jungle": {
+      "Fester": [
+        {
+          "name": "/Items/Gems/Melee/MetaGems/VampireBlade/MetaGem_VampireBlade"
+        }
       ],
-      "location": "TheGreatSewers"
-    },
-    "ClockTower": {
-      "items": [
-        "ModTimeLapse"
-      ]
-    },
-    "CustodianEye": {
-      "items": [
-        "PrismaticDriver"
-      ]
-    },
-    "DranOracle": {
-      "items": [
-        "QuiltedHeart"
-      ]
-    },
-    "Extraction": {
-      "items": [
-        "NavigatorsHelm"
-      ]
-    },
-    "FaelinFaerlin_POI": {
-      "items": [
-        "Deceit",
-        "Godsplitter"
-      ]
-    },
-    "GoldenHall_Nimue": {
-      "items": [
-        "OneTrueKingSigil",
-        "RunePistol",
-        "TranquilHeart",
-        "/Game/World_Fae/Items/Trinkets/Amulets/HexWard/Amulet_NimuesRibbon",
-        "AssassinsDagger",
-        "/Game/World_Fae/Items/Trinkets/Rings/HexWard/Ring_HexWard"
-      ]
-    },
-    "MotherMind": {
-      "items": [
-        "Tremor"
-      ]
-    },
-    "Raenous": {
-      "items": [
-        "NeckboneNecklace",
-        "RunePistol"
-      ]
-    },
-    "Ring_BoosterRing": {
-      "items": [
-        "/Game/World_Fae/Items/Trinkets/Rings/BoosterRing/Ring_BoosterRing"
-      ]
-    },
-    "Ring_CelerityStone": {
-      "items": [
-        "/Game/World_Jungle/Items/Trinkets/Rings/CelerityStone/Ring_CelerityStone"
-      ]
-    },
-    "Ring_ConservationSeal": {
-      "items": [
-        "/Game/World_Nerud/Items/Trinkets/Rings/ConservationSeal/Ring_ConservationSeal"
-      ]
-    },
-    "Ring_DeepPocketRing": {
-      "items": [
-        "/Game/World_Nerud/Items/Trinkets/Rings/DeepPocketRing/Ring_DeepPocketRing"
-      ]
-    },
-    "Ring_DefensiveActionLoop": {
-      "items": [
-        "/Game/World_Nerud/Items/Trinkets/Rings/DefensiveActionLoop/Ring_DefensiveActionLoop"
-      ]
-    },
-    "Ring_FaeShamanRing": {
-      "items": [
-        "/Game/World_Fae/Items/Trinkets/Rings/FaeShamanRing/Ring_FaeShamanRing"
-      ]
-    },
-    "Ring_FaeWarriorRing": {
-      "items": [
-        "/Game/World_Fae/Items/Trinkets/Rings/FaeWarriorRing/Ring_FaeWarriorRing"
-      ]
-    },
-    "Ring_GuardiansRing": {
-      "items": [
-        "/Game/World_Jungle/Items/Trinkets/Rings/GuardiansRing/Ring_GuardiansRing"
-      ]
-    },
-    "Ring_HeartOfTheWolf": {
-      "items": [
-        "/Game/World_Jungle/Items/Trinkets/Rings/HeartOfTheWolf/Ring_HeartOfTheWolf"
-      ]
-    },
-    "Ring_PointFocusRing": {
-      "items": [
-        "/Game/World_Nerud/Items/Trinkets/Rings/PointFocusRing/Ring_PointFocusRing"
-      ]
-    },
-    "Ring_ReserveBoostingGem": {
-      "items": [
-        "/Game/World_Nerud/Items/Trinkets/Rings/ReserveBoostingGem/Ring_ReserveBoostingGem"
-      ]
-    },
-    "Ring_RingOfRestocking": {
-      "items": [
-        "/Game/World_Nerud/Items/Trinkets/Rings/RingOfRestocking/Ring_RingOfRestocking"
-      ]
-    },
-    "Ring_RingOfTheForestSpirit": {
-      "items": [
-        "/Game/World_Jungle/Items/Trinkets/Rings/RingOfTheForestSpirit/Ring_RingOfTheForestSpirit"
-      ]
-    },
-    "Ring_RingOfTheRobust": {
-      "items": [
-        "/Game/World_Fae/Items/Trinkets/Rings/RingOfTheRobust/Ring_RingOfTheRobust"
-      ]
-    },
-    "Ring_RingSagestone": {
-      "items": [
-        "/Game/World_Jungle/Items/Trinkets/Rings/RingSagestone/Ring_RingSagestone"
-      ]
-    },
-    "Ring_SoulLink": {
-      "items": [
-        "/Game/World_Jungle/Items/Trinkets/Rings/SoulLink/Ring_SoulLink"
-      ]
-    },
-    "Ring_StoneOfBalance": {
-      "items": [
-        "/Game/World_Jungle/Items/Trinkets/Rings/StoneOfBalance/Ring_StoneOfBalance"
-      ]
-    },
-    "Ring_StoneOfExpanse": {
-      "items": [
-        "/Game/World_Nerud/Items/Trinkets/Rings/StoneOfExpanse/Ring_StoneOfExpanse"
-      ]
-    },
-    "Ring_StreamCoupler": {
-      "items": [
-        "/Game/World_Fae/Items/Trinkets/Rings/StreamCoupler/Ring_StreamCoupler"
-      ]
-    },
-    "Ring_TargetingJewel": {
-      "items": [
-        "/Game/World_Nerud/Items/Trinkets/Rings/TargetingJewel/Ring_TargetingJewel"
-      ]
-    },
-    "Ring_VacuumSeal": {
-      "items": [
-        "/Game/World_Nerud/Items/Trinkets/Rings/VacuumSeal/Ring_VacuumSeal"
-      ]
-    },
-    "RootHorror": {
-      "items": [],
-      "location": "TheFarWoods"
-    },
-    "ThreeMenMorris": {
-      "items": [
-        "/Game/World_Base/Items/Weapons/Longguns/Standard/Bow/Weapon_Bow"
+      "Wither": [
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Overdrive/MetaGem_Overdrive"
+        }
       ],
-      "location": "PostulantsParlor"
-    },
-    "Ward13": {
-      "items": [
-        "/Game/World_Base/Items/Trinkets/Rings/AcidStone/Ring_AcidStone",
-        "/Game/World_Base/Items/Trinkets/Rings/AnastasijasInspiration/Ring_AnastasijasInspiration",
-        "/Game/World_Base/Items/Armor/Archetype/Challenger/Armor_Head_Challenger",
-        "/Game/World_Base/Items/Armor/Archetype/Challenger/Armor_Body_Challenger",
-        "/Game/World_Base/Items/Armor/Archetype/Challenger/Armor_Gloves_Challenger",
-        "/Game/World_Base/Items/Armor/Archetype/Challenger/Armor_Legs_Challenger",
-        "/Game/World_Base/Items/Armor/Archetype/Gunslinger/Armor_Head_Gunslinger",
-        "/Game/World_Base/Items/Armor/Archetype/Gunslinger/Armor_Body_Gunslinger",
-        "/Game/World_Base/Items/Armor/Archetype/Gunslinger/Armor_Gloves_Gunslinger",
-        "/Game/World_Base/Items/Armor/Archetype/Gunslinger/Armor_Legs_Gunslinger",
-        "/Game/World_Base/Items/Armor/Archetype/Handler/Armor_Head_Handler",
-        "/Game/World_Base/Items/Armor/Archetype/Handler/Armor_Body_Handler",
-        "/Game/World_Base/Items/Armor/Archetype/Handler/Armor_Gloves_Handler",
-        "/Game/World_Base/Items/Armor/Archetype/Handler/Armor_Legs_Handler",
-        "/Game/World_Base/Items/Armor/Archetype/Hunter/Armor_Head_Hunter",
-        "/Game/World_Base/Items/Armor/Archetype/Hunter/Armor_Body_Hunter",
-        "/Game/World_Base/Items/Armor/Archetype/Hunter/Armor_Gloves_Hunter",
-        "/Game/World_Base/Items/Armor/Archetype/Hunter/Armor_Legs_Hunter",
-        "/Game/World_Base/Items/Armor/Archetype/Medic/Armor_Head_Medic",
-        "/Game/World_Base/Items/Armor/Archetype/Medic/Armor_Body_Medic",
-        "/Game/World_Base/Items/Armor/Archetype/Medic/Armor_Gloves_Medic",
-        "/Game/World_Base/Items/Armor/Archetype/Medic/Armor_Legs_Medic",
-        "/Game/World_Base/Items/Trinkets/Amulets/ButchersFetish/Amulet_ButchersFetish",
-        "/Game/World_Base/Items/Trinkets/Rings/FireStone/Ring_FireStone",
-        "/Game/World_Base/Items/Trinkets/Rings/GroundingStone/Ring_GroundingStone",
-        "/Game/World_Base/Items/Weapons/Melee/Standard/Hatchet/Hatchet/Weapon_Hatchet",
-        "/Game/World_Base/Items/Trinkets/Amulets/NightmareSpiral/Amulet_NightmareSpiral",
-        "/Game/World_Base/Items/Weapons/Longguns/Standard/LeverAction/Weapon_LeverAction",
-        "/Game/World_Base/Items/Weapons/Handguns/Standard/Repeater/Weapon_Repeater_Rusty",
-        "/Game/World_Base/Items/Weapons/Handguns/Standard/Revolver/Weapon_Revolver",
-        "/Game/World_Base/Items/Trinkets/Rings/WornAdmiralsRing/Ring_WornAdmiralsRing"
+      "ScavengersBauble": [
+        {
+          "name": "/Items/Trinkets/Amulets/ScavengersBauble/Amulet_ScavengersBauble"
+        }
+      ],
+      "StalkersBrand": [
+        {
+          "name": "/Items/Trinkets/Amulets/StalkersBrand/Amulet_StalkersBrand"
+        }
+      ],
+      "VengeanceIdol": [
+        {
+          "name": "/Items/Trinkets/Amulets/VengeanceIdol/Amulet_VengeanceIdol"
+        }
+      ],
+      "BloodStamp": [
+        {
+          "name": "/Items/Trinkets/Rings/WaxSealedRing/Ring_WaxSealedRing"
+        }
+      ],
+      "CelerityStone": [
+        {
+          "name": "/Items/Trinkets/Rings/CelerityStone/Ring_CelerityStone"
+        }
+      ],
+      "VestigeOfPower": [
+        {
+          "name": "/Items/Trinkets/Rings/VestigeOfPower/Ring_VestigeOfPower"
+        }
+      ],
+      "GuardiansRing": [
+        {
+          "name": "/Items/Trinkets/Rings/GuardiansRing/Ring_GuardiansRing"
+        }
+      ],
+      "HeartOfTheWolf": [
+        {
+          "name": "/Items/Trinkets/Rings/HeartOfTheWolf/Ring_HeartOfTheWolf"
+        }
+      ],
+      "RingOfTheForestSpirit": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfTheForestSpirit/Ring_RingOfTheForestSpirit"
+        }
+      ],
+      "Sagestone": [
+        {
+          "name": "/Items/Trinkets/Rings/SageStone/Ring_Sagestone"
+        }
+      ],
+      "SoulLink": [
+        {
+          "name": "/Items/Trinkets/Rings/SoulLink/Ring_SoulLink"
+        }
+      ],
+      "SpiritStone": [
+        {
+          "name": "/Items/Trinkets/Rings/SpiritStone/Ring_SpiritStone"
+        }
+      ],
+      "StoneOfBalance": [
+        {
+          "name": "/Items/Trinkets/Rings/StoneofBalance/Ring_StoneOfBalance"
+        }
+      ],
+      "StrongArmBand": [
+        {
+          "name": "/Items/Trinkets/Rings/StrongArmBand/Ring_StrongArmBand"
+        }
+      ],
+      "ThaenLeaf": [
+        {
+          "name": "/Items/Materials/World/ThaenLeaf/Material_ThaenLeaf"
+        }
+      ],
+      "EmpressStory": [
+        {
+          "name": "/Items/Weapons/Melee/Standard/GreatSword/RoyalBroadsword/Weapon_RoyalBroadsword"
+        },
+        {
+          "name": "/Items/Weapons/LongGuns/Standard/Shotgun/Weapon_Shotgun"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/SealOfTheEmpress/Ring_SealOfTheEmpress"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/MatriarchsInsignia/Amulet_MatriarchsInsignia"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/RedDoeSigil/Amulet_RedDoeSigil"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ZoheesRing/Ring_ZoheesRing"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenoftheRebel/Ring_BurdenOfTheRebel"
+        }
+      ],
+      "RavagerStory": [
+        {
+          "name": "/Items/Trinkets/Rings/FrivolousBand/Ring_FrivolousBand"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/LodestoneRing/Ring_LodestoneRing"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BloodJewel/Ring_BloodJewel"
+        },
+        {
+          "name": "/Items/Mods/Mod_SongOfTheEafir/Mod_SongOfEafir"
+        },
+        {
+          "name": "/Items/Weapons/HandGuns/Standard/BoltDriver/Weapon_BoltDriver"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/LifelessHeart/Relic_Consumable_LifelessHeart"
+        }
+      ],
+      "Ravager": [
+        {
+          "name": "/Items/Trinkets/Amulets/RavagersMark/Amulet_RavagersMark"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/FeralJudgment/Weapon_FeralJudgment"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/RedDoeStaff/Weapon_RedDoeStaff"
+        },
+        {
+          "name": "/Items/Weapons/LongGuns/Special/Merciless/Weapon_Merciless"
+        }
+      ],
+      "ManyFaces": [
+        {
+          "name": "/Items/Weapons/LongGuns/Special/TwistedArbalest/Weapon_TwistedArbalest"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/Stonebreaker/Weapon_Stonebreaker"
+        }
+      ],
+      "LivingStone": [
+        {
+          "name": "/Items/Trinkets/Rings/LithicSignet/Ring_LithicSignet"
+        }
+      ],
+      "Sarcophagus": [
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Extender/MetaGem_Extender"
+        }
+      ],
+      "CryptHidden": [
+        {
+          "name": "/Items/Trinkets/Rings/TombDwellersRing/Ring_TombDwellersRing"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/NecklaceOfFlowingLife/Amulet_NecklaceOfFlowingLife"
+        }
+      ],
+      "BrokenTomb": [
+        {
+          "name": "/Items/Trinkets/Rings/HardenedCoil/Ring_HardenedCoil"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Bandit/MetaGem_Bandit"
+        }
+      ],
+      "IslandJump": [
+        {
+          "name": "/Items/Trinkets/Amulets/TalismanOfTheSun/Amulet_TalismanOfTheSun"
+        }
+      ],
+      "Tower": [
+        {
+          "name": "/Items/Trinkets/Rings/SlayersCrest/Ring_SlayersCrest"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/BloomingHeart/Relic_Consumable_BloomingHeart"
+        }
+      ],
+      "PanRootNexus": [
+        {
+          "name": "/Items/Trinkets/Amulets/HallowedEgg/Amulet_HallowedEgg"
+        }
+      ],
+      "WindHollow": [
+        {
+          "name": "/Items/Trinkets/Rings/WindHollowCirclet/Ring_WindHollowCirclet"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BandBand/Ring_BandBand"
+        }
+      ],
+      "HiddenChamber": [
+        {
+          "name": "/Items/Trinkets/Rings/ArchersCrest/Ring_ArchersCrest"
+        }
+      ],
+      "Library": [
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Bulletweaver/MetaGem_Bulletweaver"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheFollower/Ring_BurdenOfTheFollower"
+        }
+      ],
+      "MotherMind": [
+        {
+          "name": "/Items/Mods/Mod_Tremor/Mod_Tremor"
+        }
+      ],
+      "RootCultist": [
+        {
+          "name": "/Items/Mods/Mod_Fargazer/Mod_Fargazer"
+        }
+      ],
+      "RootHorror": [
+        {
+          "name": "/Items/Trinkets/Rings/TearOfKaeula/Ring_TearOfKaeula"
+        },
+        {
+          "name": "/Items/Mods/Mod_Rootlash/Mod_Rootlash"
+        }
+      ],
+      "Shrewd": [
+        {
+          "name": "/Items/Mods/Mod_RottedArrow/Mod_RottedArrow"
+        }
+      ],
+      "BloodMoon": [
+        {
+          "name": "/Items/Trinkets/Amulets/DeathsEmbrace/Amulet_DeathsEmbrace"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BloodTingedRing/Ring_BloodTingedRing"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Sword/BladeOfGul/Weapon_BladeOfGul"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Summoner/Armor_Head_Summoner"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Summoner/Armor_Body_Summoner"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Summoner/Armor_Legs_Summoner"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Summoner/Armor_Gloves_Summoner"
+        },
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Summoner"
+        }
+      ],
+      "Meidra": [
+        {
+          "name": "/Items/Weapons/HandGuns/Special/Sorrow/Weapon_Sorrow"
+        },
+        {
+          "name": "/Items/Traits/Core/Barkskin/Trait_Barkskin"
+        },
+        {
+          "name": "/Items/Traits/Core/Bloodstream/Trait_Bloodstream"
+        }
+      ],
+      "Flautist": [
+        {
+          "name": "/Items/Trinkets/Amulets/HallowedEgg/Amulet_HallowedEgg"
+        },
+        {
+          "name": "/Items/Traits/Core/BloodBond/Trait_BloodBond"
+        }
+      ],
+      "KoaraKuri": [
+        {
+          "name": "/Items/Trinkets/Amulets/KuriKuriCharm/Amulet_KuriKuriCharm"
+        }
+      ],
+      "CathedralOfSeasons": [
+        {
+          "name": "/Items/Mods/Mod_AstralBurst/Mod_AstralBurst"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RingOfOmens/Ring_RingOfOmens"
+        },
+        {
+          "name": "/Items/Weapons/LongGuns/Special/Sagittarius/Weapon_Sagittarius"
+        }
+      ],
+      "HiddenMaze": [
+        {
+          "name": "/Items/Trinkets/Rings/TempestConduit/Ring_TempestConduit"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/CaptainsInsignia/Ring_CaptainsInsignia"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/EndairasEndlessLoop/Ring_EndairasEndlessLoop"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Hatchet/KrellAxe/Weapon_KrellAxe"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/PulsingHeart/Relic_Consumable_PulsingHeart"
+        }
+      ],
+      "TheChimney": [
+        {
+          "name": "/Items/Mods/Mod_Soulbinder/Mod_Soulbinder"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/DownwardSpiral/Amulet_DownwardSpiral"
+        }
+      ],
+      "TheLament": [
+        {
+          "name": "/Items/Armor/Armor_Head_LodestoneCrown",
+          "notes": "On the boat inside Kolkets locked room"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BloodTingedRing/Ring_BloodTingedRing"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RingOfDiversion/Ring_RingOfDiversion"
+        },
+        {
+          "name": "/Items/Armor/RedWidow/Armor_Head_RedWidow"
+        },
+        {
+          "name": "/Items/Armor/RedWidow/Armor_Body_RedWidow"
+        },
+        {
+          "name": "/Items/Armor/RedWidow/Armor_Legs_RedWidow"
+        },
+        {
+          "name": "/Items/Armor/RedWidow/Armor_Gloves_RedWidow"
+        }
+      ],
+      "TheTangle": [
+        {
+          "name": "/Items/Trinkets/Amulets/FullMoonCirclet/Amulet_FullMoonCirclet"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Katana/EdgeOfTheForest/Weapon_EdgeOfTheForest"
+        },
+        {
+          "name": "/Items/Weapons/LongGuns/Standard/Crossbow/Weapon_Crossbow"
+        }
+      ],
+      "Mantagora": [
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Momentum/MetaGem_Momentum"
+        }
+      ],
+      "WailingField": [
+        {
+          "name": "/Items/Trinkets/Amulets/LaemirCenser/Amulet_LaemirCenser"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/NecklaceOfSumpremacy/Amulet_NecklaceOfSupremacy"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Reinvigorate/MetaGem_Reinvigorate"
+        },
+        {
+          "name": "/Items/Traits/Core/Rugged/Trait_Rugged"
+        }
       ]
     },
-    "EditionDeluxe": {
-      "items": [
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Head_Elder",
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Body_Elder",
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Gloves_Elder",
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Legs_Elder",
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Head_Radiant",
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Body_Radiant",
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Gloves_Radiant",
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Legs_Radiant",
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Head_Void",
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Body_Void",
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Gloves_Void",
-        "/Game/World_Base/Items/Armor/Remnant1/Radiant/Armor_Legs_Void"
+    "Fae": {
+      "Oink": [
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/TwistingWounds/MetaGem_TwistingWounds"
+        }
+      ],
+      "AsylumChainsaw": [
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Striker/MetaGem_Striker"
+        }
+      ],
+      "CharnelHouse": [
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Lithely/MetaGem_Lithely"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RingOfRetribution/Ring_RingOfRetribution"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RingOfGrace/Ring_RingOfGrace"
+        },
+        {
+          "name": "/Items/Traits/Core/ArcaneStrike/Trait_ArcaneStrike"
+        }
+      ],
+      "AboveBelow": [
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Steadfast/MetaGem_Steadfast"
+        }
+      ],
+      "AlchemyStone": [
+        {
+          "name": "/Items/Trinkets/Rings/AlchemyStone/Ring_AlchemyStone"
+        }
+      ],
+      "AlumniRing": [
+        {
+          "name": "/Items/Trinkets/Rings/AlumniRing/Ring_AlumniRing"
+        }
+      ],
+      "BoosterRing": [
+        {
+          "name": "/Items/Trinkets/Rings/BoosterRing/Ring_BoosterRing"
+        }
+      ],
+      "BurdenOfTheDivine": [
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheDivine/Ring_BurdenOfTheDivine"
+        }
+      ],
+      "BurdenOfTheWarlock": [
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheWarlock/Ring_BurdenOfTheWarlock"
+        }
+      ],
+      "CatalogersJewel": [
+        {
+          "name": "/Items/Trinkets/Rings/CatalogersJewel/Ring_CatalogersJewel"
+        }
+      ],
+      "DranMemento": [
+        {
+          "name": "/Items/Trinkets/Rings/DranMemento/Ring_DranMemento"
+        }
+      ],
+      "FaeShamanRing": [
+        {
+          "name": "/Items/Trinkets/Rings/DranShamanRing/Ring_FaeShamanRing"
+        }
+      ],
+      "FaeBruiserRing": [
+        {
+          "name": "/Items/Trinkets/Rings/FaeBruiserRing/Ring_FaeBruiserRing"
+        }
+      ],
+      "FaeHunterRing": [
+        {
+          "name": "/Items/Trinkets/Rings/FaeHunterRing/Ring_FaeHunterRing"
+        }
+      ],
+      "FaeProtectorSignet": [
+        {
+          "name": "/Items/Trinkets/Rings/FaeProtectorSignet/Ring_FaeProtectorSignet"
+        }
+      ],
+      "FaeWarriorRing": [
+        {
+          "name": "/Items/Trinkets/Rings/FaeWarriorRing/Ring_FaeWarriorRing"
+        }
+      ],
+      "FeastmastersSignet": [
+        {
+          "name": "/Items/Trinkets/Rings/FeastmastersSignet/Ring_FeastmastersSignet"
+        }
+      ],
+      "FireStone": [
+        {
+          "name": "/Items/Trinkets/Rings/FireStone/Ring_FireStone"
+        }
+      ],
+      "GameMastersPride": [
+        {
+          "name": "/Items/Trinkets/Rings/GameMastersPride/Ring_GameMastersPride"
+        }
+      ],
+      "GroundingStone": [
+        {
+          "name": "/Items/Trinkets/Rings/GroundingStone/Ring_GroundingStone"
+        }
+      ],
+      "OutcastRing": [
+        {
+          "name": "/Items/Trinkets/Rings/OutcastRing/Ring_OutcastRing"
+        }
+      ],
+      "RingOfGrace": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfGrace/Ring_RingOfGrace"
+        }
+      ],
+      "RingOfRetribution": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfRetribution/Ring_RingOfRetribution"
+        }
+      ],
+      "RingOfTheRobust": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfTheRobust/Ring_RingOfTheRobust"
+        }
+      ],
+      "ShinyHogLure": [
+        {
+          "name": "/Items/Trinkets/Rings/ShinyHogLure/Ring_ShinyHogLure"
+        }
+      ],
+      "StoneOfMalevolence": [
+        {
+          "name": "/Items/Trinkets/Rings/StoneOfMalevolence/Ring_StoneOfMalevolence"
+        }
+      ],
+      "DreadFont": [
+        {
+          "name": "/Items/Trinkets/Rings/DreadFont/Ring_DreadFont"
+        }
+      ],
+      "StreamCoupler": [
+        {
+          "name": "/Items/Trinkets/Rings/StreamCoupler/Ring_StreamCoupler"
+        }
+      ],
+      "WeightlessWeight": [
+        {
+          "name": "/Items/Trinkets/Amulets/WeightlessWeight/Amulet_WeightlessWeight"
+        }
+      ],
+      "ChainsOfAmplification": [
+        {
+          "name": "/Items/Trinkets/Amulets/ChainsOfAmplification/Amulet_ChainsOfAmplification"
+        }
+      ],
+      "ConductivePadding": [
+        {
+          "name": "/Items/Trinkets/Amulets/ConductivePadding/Amulet_ShockDevice"
+        }
+      ],
+      "JestersBell": [
+        {
+          "name": "/Items/Trinkets/Amulets/JestersBell/Amulet_JestersBell"
+        }
+      ],
+      "NeckboneNecklace": [
+        {
+          "name": "/Items/Trinkets/Amulets/NeckboneNecklace/Amulet_NeckboneNecklace"
+        }
+      ],
+      "IndignantFetish": [
+        {
+          "name": "/Items/Trinkets/Amulets/IndignantFetish/Amulet_IndignantFetish"
+        }
+      ],
+      "ShadeBloomFloret": [
+        {
+          "name": "/Items/Trinkets/Amulets/ShadeBloomFloret/Amulet_ShadeBloomCrystal"
+        }
+      ],
+      "SpiritWispAmulet": [
+        {
+          "name": "/Items/Trinkets/Amulets/SpiritWispAmulet/Amulet_SpiritWispAmulet"
+        }
+      ],
+      "Nimue": [
+        {
+          "name": "/Items/Trinkets/Rings/HexWard/Ring_HexWard"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/OneTrueKingSigil/Amulet_OneTrueKingSigil",
+          "notes": "Give Faerin and Faelin's Sigil to Nimue"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/NimuesRibbon/Amulet_NimuesRibbon",
+          "notes": "Give Silver and Gold Ribbon to Nimue"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Sword/AssassinsDagger/Weapon_AssassinsDagger",
+          "notes": "Give Council Chambers dagger to Nimue"
+        },
+        {
+          "name": "/Items/Weapons/LongGuns/Special/CrescentMoon/Weapon_CrescentMoon",
+          "notes": "Use Dreamcatcher on Nimue while she is sleeping"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/TranquilHeart/Relic_Consumable_TranquilHeart",
+          "notes": "Give Tormented Heart to Nimue"
+        }
+      ],
+      "BoneHarvesterLair": [
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Alchemist"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Head_Alchemist"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Body_Alchemist"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Legs_Alchemist"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Gloves_Alchemist"
+        }
+      ],
+      "CrimsonHarvest": [
+        {
+          "name": "/Items/Traits/Core/Shadeskin/Trait_Shadeskin"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/DranMemento/Ring_DranMemento"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/SingedRing/Ring_SingedRing"
+        }
+      ],
+      "BloatKing": [
+        {
+          "name": "/Items/Mods/Mod_VoltaicRondure/Mod_VoltaicRondure"
+        }
+      ],
+      "BlackAndWhite": [
+        {
+          "name": "/Items/Trinkets/Rings/BlackPawnStamp/Ring_BlackPawnStamp"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/WhitePawnStamp/Ring_WhitePawnStamp"
+        }
+      ],
+      "TheNest": [
+        {
+          "name": "/Items/Trinkets/Rings/StockpileDelayLoop/Ring_StockpileCharger"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/PoisonStone/Ring_AcidStone"
+        }
+      ],
+      "Ravenous": [
+        {
+          "name": "/Items/Weapons/Melee/Standard/Hatchet/BoneChopper/Weapon_BoneChopper"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/NeckboneNecklace/Amulet_NeckboneNecklace"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/FeastmastersSignet/Ring_FeastmastersSignet"
+        },
+        {
+          "name": "/Items/Traits/Core/Glutton/Trait_Glutton"
+        }
+      ],
+      "SilverGold": [
+        {
+          "name": "/Items/Trinkets/Amulets/SilverRibbon/Amulet_SilverRibbon"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/GoldenRibbon/Amulet_GoldenRibbon"
+        }
+      ],
+      "DranGrenadier": [
+        {
+          "name": "/Items/Mods/Mod_Witchfire/Mod_Witchfire"
+        }
+      ],
+      "DranOracle": [
+        {
+          "name": "/Items/Armor/Base/RelicTesting/QuiltedHeart/Relic_Consumable_QuiltedHeart"
+        },
+        {
+          "name": "/Items/Traits/Core/Recovery/Trait_Recovery"
+        }
+      ],
+      "TheHunter": [
+        {
+          "name": "/Items/Mods/Mod_Familiar/Mod_Familiar",
+          "notes": "dream world version"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/HuntressSpear/Weapon_HuntressSpear"
+        }
+      ],
+      "Rookery": [
+        {
+          "name": "/Items/Trinkets/Amulets/EffigyPendant/Amulet_EffigyPendant"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/CleansingStone/Amulet_CleansingStone",
+          "notes": "Inside lockbox"
+        }
+      ],
+      "FaeArchon": [
+        {
+          "name": "/Items/Mods/CorrosiveRounds/Mod_CorrosiveRounds"
+        }
+      ],
+      "FieryGraveyard": [
+        {
+          "name": "/Items/Trinkets/Rings/DrakestonePearl/Ring_DrakestonePearl"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheWarlock/Ring_BurdenOfTheWarlock"
+        }
+      ],
+      "ClockTower": [
+        {
+          "name": "/Items/Trinkets/Rings/TimekeepersJewel/Ring_TimekeepersJewel"
+        },
+        {
+          "name": "/Items/Mods/Mod_TimeLapse/Mod_TimeLapse"
+        }
+      ],
+      "TownTurnedToDust": [
+        {
+          "name": "/Items/Trinkets/Rings/OutcastRing/Ring_OutcastRing"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/SpiritWispAmulet/Amulet_SpiritWispAmulet"
+        }
+      ],
+      "ThreeMenMorris": [
+        {
+          "name": "/Items/Armor/FaeRoyal/Armor_Head_FaeRoyalGuard"
+        },
+        {
+          "name": "/Items/Armor/FaeRoyal/Armor_Body_FaeRoyalGuard"
+        },
+        {
+          "name": "/Items/Armor/FaeRoyal/Armor_Legs_FaeRoyalGuard"
+        },
+        {
+          "name": "/Items/Armor/FaeRoyal/Armor_Gloves_FaeRoyalGuard"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/GameMastersPride/Ring_GameMastersPride"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/Bow/Weapon_Bow"
+        }
+      ],
+      "RedPrince": [
+        {
+          "name": "/Items/Mods/Mod_Firestorm/Mod_Firestorm"
+        },
+        {
+          "name": "/Items/Mods/Mod_BloodDraw/Mod_BloodDraw"
+        },
+        {
+          "name": "/Items/Armor/Misc/Armor_Head_RedPrince",
+          "notes": "kill with Assassins Dagger"
+        }
+      ],
+      "NightWeaver": [
+        {
+          "name": "/Items/Weapons/LongGuns/Special/Nightfall/Weapon_Nightfall"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/Nightshade/Weapon_Nightshade"
+        }
+      ],
+      "FaelinFaerlin": [
+        {
+          "name": "/Items/Weapons/LongGuns/Special/Deceit/Weapon_Deceit"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/FaelinsSigil/Ring_FaelinsSigil"
+        }
+      ],
+      "Faerin": [
+        {
+          "name": "/Items/Weapons/Melee/Special/Godsplitter/Weapon_Godsplitter"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/FaerinsSigil/Ring_FaerinsSigil"
+        }
+      ],
+      "FaeCouncil": [
+        {
+          "name": "/Items/Trinkets/Rings/FaeProtectorSignet/Ring_FaeProtectorSignet"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/AssassinsSeal/Ring_AssassinsSeal",
+          "notes": "kill council members"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Sword/AssassinsDagger/Weapon_AssassinsDagger"
+        }
+      ],
+      "AsylumHouse": [
+        {
+          "name": "/Items/Weapons/HandGuns/Standard/ShortBarrel/Weapon_ShortBarrel"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/AlumniRing/Ring_AlumniRing"
+        }
+      ],
+      "Nightweb": [
+        {
+          "name": "/Items/Weapons/Melee/Special/Dreamcatcher/Weapon_Dreamcatcher",
+          "notes": "Nightweb - Nightweaver Stone Doll"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/TormentedHeart/Relic_Consumable_TormentedHeart",
+          "notes": "Nightweb - Override Pin (Nerud)"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RingOfRetribution/Ring_RingOfRetribution",
+          "notes": "Nightweb - Charnel House Anklet"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/NightweaversGrudge/Amulet_NightweaversGrudge",
+          "notes": "Nightweb - Kolkets Razor (Yaesha)"
+        },
+        {
+          "name": "/Items/Weapons/HandGuns/Special/RunePistol/Weapon_RunePistol",
+          "notes": "Nightweb - Ravenous Medallion"
+        }
+      ],
+      "AllFatherStory": [
+        {
+          "name": "/Items/Trinkets/Rings/CatalogersJewel/Ring_CatalogersJewel",
+          "notes": "backtrack joker door"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/JestersBell/Amulet_JestersBell",
+          "notes": "clap emote in front of jester"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/OneEyedJokerIdol/Amulet_OneEyedJokerIdol",
+          "notes": "Jester Card Doors - face mask door"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Misfortune/MetaGem_Misfortune",
+          "notes": "Jester Card Doors - devil horns door"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/UnsulliedHeart/Relic_Consumable_UnsulliedHeart",
+          "notes": "Wear OneTrueKing(AM) and both Faerin/Faelin(RI) in the Palace Courtyard"
+        }
+      ],
+      "TheSafe": [
+        {
+          "name": "/Items/Trinkets/Rings/RustedHeirloom/Ring_RustedHeirloom"
+        }
+      ],
+      "RisingTides": [
+        {
+          "name": "/Items/Weapons/HandGuns/Special/Meridian/Weapon_Meridian",
+          "notes": "wait 90m for the water to rise"
+        }
       ]
     },
-    "Archetype_Gunslinger": {
-      "items": [
-        "/Game/World_Base/Items/Traits/Archetype/AmmoReserves/Trait_AmmoReserves",
-        "/Game/World_Base/Items/Archetypes/Gunslinger/Skills/QuickDraw/Skill_Aimable_QuickDraw",
-        "/Game/World_Base/Items/Archetypes/Gunslinger/Skills/QuickDraw/SkillTrait_QuickDraw",
-        "/Game/World_Base/Items/Archetypes/Gunslinger/Perks/Leadbringer/Perk_Loaded",
-        "/Game/World_Base/Items/Archetypes/Gunslinger/Perks/SwiftShot/Perk_SwiftShot",
-        "/Game/World_Base/Items/Archetypes/Gunslinger/Perks/PosseUp/Perk_PosseUp"
+    "Nerud": {
+      "IAmLegendStory": [
+        {
+          "name": "/Items/Mods/StasisBeam/Mod_StasisBeam"
+        }
+      ],
+      "TheCoreStory": [
+        {
+          "name": "/Items/Trinkets/Rings/DowngradedRing/Ring_DowngradedRing"
+        },
+        {
+          "name": "/Items/Mods/EnergyWall/Mod_EnergyWall"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/VoidHeart/Relic_Consumable_VoidHeart"
+        }
+      ],
+      "01": [
+        {
+          "name": "/Items/Trinkets/Amulets/KineticShieldExchanger/Amulet_KineticShieldExchanger"
+        }
+      ],
+      "02": [
+        {
+          "name": "/Items/Trinkets/Amulets/InertOvercharger/Amulet_InertOvercharger"
+        }
+      ],
+      "03": [
+        {
+          "name": "/Items/Trinkets/Amulets/EmergencySwitch/Amulet_EmergencySwitch"
+        }
+      ],
+      "ConservationSeal": [
+        {
+          "name": "/Items/Trinkets/Rings/ConservationSeal/Ring_ConservationSeal"
+        }
+      ],
+      "DeepPocketRing": [
+        {
+          "name": "/Items/Trinkets/Rings/DeepPocketRing/Ring_DeepPocketRing"
+        }
+      ],
+      "DefensiveActionLoop": [
+        {
+          "name": "/Items/Trinkets/Rings/DefensiveActionLoop/Ring_DefensiveActionLoop"
+        }
+      ],
+      "FeedbackLoop": [
+        {
+          "name": "/Items/Trinkets/Rings/FeedbackLoop/Ring_FeedbackLoop"
+        }
+      ],
+      "PointFocusRing": [
+        {
+          "name": "/Items/Trinkets/Rings/PointFocusRing/Ring_PointFocusRing"
+        }
+      ],
+      "ReserveBoostingGem": [
+        {
+          "name": "/Items/Trinkets/Rings/ReserveBoostingGem/Ring_ReserveBoostingGem"
+        }
+      ],
+      "RingOfRestocking": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfRestocking/Ring_RingOfRestocking"
+        }
+      ],
+      "StoneOfExpanse": [
+        {
+          "name": "/Items/Trinkets/Rings/StoneOfExpanse/Ring_StoneOfExpanse"
+        }
+      ],
+      "TargetingJewel": [
+        {
+          "name": "/Items/Trinkets/Rings/TargetingJewel/Ring_TargetingJewel"
+        }
+      ],
+      "VacuumSeal": [
+        {
+          "name": "/Items/Trinkets/Rings/VacuumSeal/Ring_VacuumSeal"
+        }
+      ],
+      "ElevatorShaft": [
+        {
+          "name": "/Items/Trinkets/Rings/PropulsionLoop/Ring_PropulsionLoop"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/LowYieldRecoveryRing/Ring_LowYieldRecoveryRing"
+        }
+      ],
+      "RemainsBelow": [
+        {
+          "name": "/Items/Trinkets/Rings/ConstantVariableRing/Ring_ConstantVariableRing"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Timewave/MetaGem_Timewave"
+        }
+      ],
+      "Seeker": [
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheStargazer/Ring_BurdenOfTheStargazer"
+        }
+      ],
+      "BlackHole": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfDeflection/Ring_RingOfDeflection"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/FocusedJewel/Ring_FocusedJewel"
+        }
+      ],
+      "LurkerVents": [
+        {
+          "name": "/Items/Trinkets/Rings/ExcessCoil/Ring_ExcessCoil"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Transpose/MetaGem_Transpose"
+        }
+      ],
+      "SewageFacility": [
+        {
+          "name": "/Items/Trinkets/Amulets/InsulationDriver/Amulet_InsulationDriver"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/GeneratingBand/Ring_GeneratingBand"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/SubterfugeLink/Ring_SubterfugeLink"
+        }
+      ],
+      "Shockwire": [
+        {
+          "name": "/Items/Trinkets/Rings/BlackoutRing/Ring_BlackoutRing"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ReroutingCable/Ring_ReroutingCable"
+        }
+      ],
+      "StoreRoom": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfCrisis/Ring_RingOfCrisis"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Disengage/MetaGem_Disengage"
+        }
+      ],
+      "TheClaw": [
+        {
+          "name": "/Items/Trinkets/Rings/MomentumDriver/Ring_MomentumDriver"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/AtomSplitter/Weapon_AtomSplitter"
+        }
+      ],
+      "Abomination": [
+        {
+          "name": "/Items/Mods/Bore/Mod_Bore"
+        }
+      ],
+      "CustodianEye": [
+        {
+          "name": "/Items/Mods/PrismaticDriver/Mod_PrismaticDriver"
+        }
+      ],
+      "Hatchery": [
+        {
+          "name": "/Items/Mods/SpaceCrabs/Mod_SpaceCrabs"
+        }
+      ],
+      "Phantom": [
+        {
+          "name": "/Items/Trinkets/Amulets/RustedNavigatorsPendant/Amulet_RustedNavigatorsPendant"
+        },
+        {
+          "name": "/Items/Mods/Helix/Mod_Helix"
+        }
+      ],
+      "Extermination": [
+        {
+          "name": "/Quests/Quest_SideD_Extermination/Items/Quest_Item_Extermination_AICore"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/ToxicReleaseValve/Amulet_ToxicReleaseValve"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Failsafe/MetaGem_Failsafe"
+        },
+        {
+          "name": "/Items/Traits/Core/Siphoner/Trait_Siphoner"
+        },
+        {
+          "name": "/Items/Traits/Core/Resonance/Trait_Resonance",
+          "notes": "get killed by getting locked in the purge"
+        }
+      ],
+      "Extraction": [
+        {
+          "name": "/Items/Trinkets/Rings/GalvanizedResupplyBand/Ring_GalvanizedResupplyBand"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/DifferenceEngine/Amulet_DifferenceEngine"
+        },
+        {
+          "name": "/Items/Weapons/HandGuns/Special/StarShot/Weapon_StarShot"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/CrystalHeart/Relic_Consumable_CrystalHeart"
+        }
+      ],
+      "StasisSiege": [
+        {
+          "name": "/Items/Trinkets/Rings/MetalDriver/Ring_MetalDriver"
+        },
+        {
+          "name": "/Items/Weapons/HandGuns/Standard/RuptureCannon/Weapon_RuptureCannon"
+        },
+        {
+          "name": "/Items/Traits/Core/Fitness/Trait_Fitness"
+        }
+      ],
+      "TheDreamlessSleep": [
+        {
+          "name": "/Items/Armor/SpaceWorker/Armor_Head_SpaceWorker"
+        },
+        {
+          "name": "/Items/Armor/SpaceWorker/Armor_Body_SpaceWorker"
+        },
+        {
+          "name": "/Items/Armor/SpaceWorker/Armor_Legs_SpaceWorker"
+        },
+        {
+          "name": "/Items/Armor/SpaceWorker/Armor_Gloves_SpaceWorker"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Transferrence/MetaGem_Transference"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/TightlyWoundCoil/Ring_TightlyWoundCoil"
+        }
+      ],
+      "TowerHeist": [
+        {
+          "name": "/Items/Trinkets/Amulets/Samoflange/Amulet_Samoflange"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/StoneOfContinuance/Ring_StoneOfContinuance"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Refunder/MetaGem_Refunder"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/ShieldedHeart/Relic_Consumable_ShieldedHeart"
+        }
+      ],
+      "Train": [
+        {
+          "name": "/Quests/Quest_SideD_Train/Items/Quest_Item_Train_AICore"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Hammer/AtomSmasher/Weapon_AtomSmasher"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/Hyperconductor/Amulet_Hyperconductor"
+        },
+        {
+          "name": "/Items/Traits/Core/Footwork/Trait_Footwork"
+        }
+      ],
+      "IronGiant": [
+        {
+          "name": "/Items/Trinkets/Rings/HardcoreMetalBand/Ring_HardcoreMetalBand"
+        },
+        {
+          "name": "/Items/Weapons/LongGuns/Special/PlasmaCutter/Weapon_PlasmaCutter"
+        }
+      ],
+      "OilField": [
+        {
+          "name": "/Items/Armor/Nerud_Pilot/Armor_Head_PilotsHelm"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/DetonationTrigger/Amulet_DetonationTrigger"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BlastingCapRing/Ring_BlastingCapRing"
+        }
+      ],
+      "TheCustodian": [
+        {
+          "name": "/Items/Trinkets/Amulets/CoreBooster/Amulet_CoreBooster"
+        },
+        {
+          "name": "/Items/Weapons/LongGuns/Standard/BurstRifle/Weapon_PulseRifle"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/PowerSaver/Ring_PowerSaver"
+        },
+        {
+          "name": "/Items/Mods/Overflow/Mod_Overflow"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/SiphonHeart/Relic_Consumable_SiphonHeart",
+          "notes": "give Shining Essence to Custodian"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/MeteoriteShardRing/Ring_MeteoriteShardRing",
+          "notes": "VendingMachine"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/Microcompressor/Ring_Microcompressor",
+          "notes": "VendingMachine"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/EnergyDiverter/Amulet_EnergyDiverter",
+          "notes": "VendingMachine"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/SalvagedHeart/Relic_Consumable_SalvagedHeart",
+          "notes": "VendingMachine"
+        }
+      ],
+      "NerudGuardian": [
+        {
+          "name": "/Items/Weapons/LongGuns/Special/Aphelion/Weapon_Aphelion"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/SpectralBlade/Weapon_SpectralBlade",
+          "notes": "dont put override pin"
+        }
+      ],
+      "TalRatha": [
+        {
+          "name": "/Items/Weapons/HandGuns/Special/Nebula/Weapon_Nebula"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/NavigatorsPendant/Amulet_NavigatorsPendant",
+          "notes": "get eaten while wearing rusted navigators"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/TalRatha_Hammer/Weapon_TalRatha_Hammer",
+          "notes": "get eaten by tal ratha"
+        }
+      ],
+      "Fog": [
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Engineer"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Engineer/Armor_Head_Engineer"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Engineer/Armor_Body_Engineer"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Engineer/Armor_Legs_Engineer"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Engineer/Armor_Gloves_Engineer"
+        }
+      ]
+    },
+    "Story": {
+      "AshenWasteland": [
+        {
+          "name": "/Items/Armor/Archetype/Invader/Armor_Head_Invader"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Invader/Armor_Body_Invader"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Invader/Armor_Gloves_Invader"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Invader/Armor_Legs_Invader"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/AnkhOfPower/Amulet_AnkhOfPower"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/ResonatingHeart/Relic_Consumable_ResonatingHeart"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Katana/Katana/Weapon_Katana"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ZaniasMalice/Ring_ZaniasMalice"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/HaymakersRing/Ring_HaymakersRing"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/DyingEmber/Ring_DyingEmber"
+        },
+        {
+          "name": "/Items/Weapons/HandGuns/Special/Hellfire/Weapon_Hellfire"
+        },
+        {
+          "name": "/Items/Traits/Core/Handling/Trait_Handling"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ReapingStone/Ring_ReapingStone"
+        },
+        {
+          "name": "/Items/Mods/Mod_Defrag/Mod_Defrag"
+        }
+      ],
+      "CorruptedHarbor": [
+        {
+          "name": "/Items/Trinkets/Amulets/EscalationProtocol/Amulet_EscalationProtocol"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/KineticCycleStone/Ring_KineticCycleStone"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/FlyweightsSting/Ring_FlyweightsSting"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ProbabilityCord/Ring_ProbabilityCord"
+        },
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Invader"
+        },
+        {
+          "name": "/Items/Mods/Mod_Skewer/Mod_Skewer"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Supercharger/MetaGem_Supercharger"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/DecayedHeart/Relic_Consumable_DecayedHeart"
+        },
+        {
+          "name": "/Items/Traits/Core/Wayfarer/Trait_Wayfarer"
+        }
+      ],
+      "Ward13": [
+        {
+          "name": "/Items/Trinkets/Rings/TarnishedRing/Ring_TarnishedRing",
+          "notes": "listen to earls rabbit story"
+        },
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Gunslinger",
+          "notes": "mudtooth chat full reward"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/GunslingersCharm/Amulet_GunslingersCharm",
+          "notes": "mudtooth chat full reward"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/GunslingersRing/Ring_GunslingersRing",
+          "notes": "mudtooth chat half reward"
+        },
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Challenger"
+        },
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Handler"
+        },
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Hunter"
+        },
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Medic"
+        },
+        {
+          "name": "/Items/Weapons/LongGuns/Standard/TommyGun/Weapon_TommyGun",
+          "notes": "cargo ship portal"
+        },
+        {
+          "name": "/Items/Armor/Leto2/Armor_Head_Leto2",
+          "notes": "cargo ship portal"
+        },
+        {
+          "name": "/Items/Armor/Leto2/Armor_Body_Leto2",
+          "notes": "cargo ship portal"
+        },
+        {
+          "name": "/Items/Armor/Leto2/Armor_Gloves_Leto2",
+          "notes": "cargo ship portal"
+        },
+        {
+          "name": "/Items/Armor/Leto2/Armor_Legs_Leto2",
+          "notes": "cargo ship portal"
+        },
+        {
+          "name": "/Items/Weapons/HandGuns/Standard/SMG/Weapon_SMG",
+          "notes": "cargo ship"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/RipenedHeart/Relic_Consumable_RipenedHeart",
+          "notes": "thaen tree fully grown"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/LifelessHeart/Relic_Consumable_LifelessHeart",
+          "notes": "eat fruit of death 3 times"
+        }
+      ],
+      "Cass": [
+        {
+          "name": "/Items/Trinkets/Rings/AmberMoonstone/Ring_AmberMoonstone",
+          "notes": "cass 75%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BraidedThorns/Ring_BraidedThorns",
+          "notes": "cass 65%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/AkariWarBand/Ring_AkariWarBand",
+          "notes": "cass 65%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/CompulsionLoop/Ring_CompulsionLoop",
+          "notes": "cass 65%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RockOfAnguish/Ring_RockOfAnguish",
+          "notes": "cass 65%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/DeceiversBand/Ring_DeceiversBand",
+          "notes": "cass 65%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BlessedRing/Ring_BlessedRing",
+          "notes": "cass 65%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RingOfFlawedBeauty/Ring_RingOfFlawedBeauty",
+          "notes": "cass 65%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/DeadKingsMemento/Ring_DeadKingsMemento",
+          "notes": "cass 65%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/MechanicsCog/Ring_MechanicsCog",
+          "notes": "cass 65%"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/ButchersFetish/Amulet_ButchersFetish",
+          "notes": "Beat the game"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/EnlargedHeart/Relic_Consumable_EnlargedHeart",
+          "notes": "Get to Root Earth"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/BrokenPocketWatch/Amulet_BrokenPocketWatch",
+          "notes": "cass 35%"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/AbrasiveWhetstone/Amulet_AbrasiveWhetstone",
+          "notes": "cass 35%"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/DecayedMargin/Amulet_DecayedMargin",
+          "notes": "cass 35%"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/TwistedIdol/Amulet_TwistedIdol",
+          "notes": "cass 35%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheGambler/Ring_BurdenOfTheGambler",
+          "notes": "cass 35%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheAudacious/Ring_BurdenOfTheAudacious",
+          "notes": "cass 35%"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheDestroyer/Ring_BurdenOfTheDestroyer",
+          "notes": "cass 35%"
+        }
+      ],
+      "Labyrinth": [
+        {
+          "name": "/Items/Trinkets/Rings/DenseSiliconRing/Ring_DenseSiliconRing"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ShardBandedRing/Ring_ShardBandedRing"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/EncryptedLoop/Ring_EncryptedLoop"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/EnergizedNeckCoil/Amulet_EnergizedNeckCoil"
+        },
+        {
+          "name": "/Items/Weapons/HandGuns/Special/Enigma/Weapon_Enigma"
+        },
+        {
+          "name": "/Items/Weapons/HandGuns/Special/CubeGun/Weapon_CubeGun"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/LabyrinthStaff/Weapon_LabyrinthStaff"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/VengefulStrike/MetaGem_VengefulStrike"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/ReprocessedHeart/Relic_Consumable_ReprocessedHeart"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/RunedHeart/Relic_Consumable_RunedHeart"
+        },
+        {
+          "name": "/Items/Traits/Archetype/Amplitude/Trait_Amplitude"
+        }
+      ],
+      "LabyrinthBackrooms": [
+        {
+          "name": "/Items/Trinkets/Amulets/GunfireSecurityLanyard/Amulet_GunfireSecurityLanyard"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BisectedRing/Ring_BisectedRing"
+        },
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Archon"
+        }
+      ]
+    },
+    "Uncategorized": {
+      "Uncategorized": [
+        {
+          "name": "/Items/Armor/Archetype/Arcanist/Armor_Head_Archon"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Arcanist/Armor_Body_Archon"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Arcanist/Armor_Gloves_Archon"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Arcanist/Armor_Legs_Archon"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Explorer/Armor_Head_Explorer"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Explorer/Armor_Body_Explorer"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Explorer/Armor_Gloves_Explorer"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Explorer/Armor_Legs_Explorer"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Head_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Body_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Gloves_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Legs_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Head_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Body_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Gloves_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Legs_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Head_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Body_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Gloves_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Legs_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Head_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Body_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Gloves_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Legs_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Head_Medic"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Body_Medic"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Gloves_Medic"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Legs_Medic"
+        },
+        {
+          "name": "/Items/Traits/Archetype/AmmoReserves/Trait_AmmoReserves"
+        },
+        {
+          "name": "/Items/Traits/Archetype/Amplitude/Trait_Amplitude"
+        },
+        {
+          "name": "/Items/Traits/Archetype/FlashCaster/Trait_FlashCaster"
+        },
+        {
+          "name": "/Items/Traits/Archetype/Fortify/Trait_Fortify"
+        },
+        {
+          "name": "/Items/Traits/Archetype/Kinship/Trait_Kinship"
+        },
+        {
+          "name": "/Items/Traits/Archetype/Longshot/Trait_Longshot"
+        },
+        {
+          "name": "/Items/Traits/Archetype/Potency/Trait_Potency"
+        },
+        {
+          "name": "/Items/Traits/Archetype/Regrowth/Trait_Regrowth"
+        },
+        {
+          "name": "/Items/Traits/Archetype/StrongBack/Trait_StrongBack"
+        },
+        {
+          "name": "/Items/Traits/Archetype/Swiftness/Trait_Swiftness"
+        },
+        {
+          "name": "/Items/Traits/Archetype/Triage/Trait_Triage"
+        },
+        {
+          "name": "/Items/Traits/Archetype/Untouchable/Trait_Untouchable"
+        },
+        {
+          "name": "/Items/Traits/Core/Vigor/Trait_Vigor"
+        },
+        {
+          "name": "/Items/Traits/Core/Endurance/Trait_Endurance"
+        },
+        {
+          "name": "/Items/Traits/Core/Spirit/Trait_Spirit"
+        },
+        {
+          "name": "/Items/Traits/Core/Expertise/Trait_Expertise"
+        },
+        {
+          "name": "/Items/Traits/Core/Revivalist/Trait_Revivalist"
+        },
+        {
+          "name": "/Items/Traits/Core/Scholar/Trait_Scholar"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/LetosAmulet/Amulet_LetosAmulet",
+          "notes": "flop 100 times - Reggie"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BlackCatBand/Ring_BlackCatBand",
+          "notes": "die 15 times - Reggie"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/PanMageSigil/Ring_PanMageSigil",
+          "notes": "Complete Yaesha on HC",
+          "mode": "Hardcore"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/DranScavengerSigil/Ring_DranScavengerSigil",
+          "notes": "Complete Losomn on HC",
+          "mode": "Hardcore"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/DrzyrSniperSigil/Ring_DrzyrSniperSigil",
+          "notes": "Complete N'Erud on HC",
+          "mode": "Hardcore"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/02_OnHold/ProvisionerRing/Ring_ProvisionerRing",
+          "notes": "Complete Labyrinth on HC",
+          "mode": "Hardcore"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/DaredevilsCharm/Amulet_DaredevilsCharm",
+          "notes": "Complete the game on HC",
+          "mode": "Hardcore"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Special/Sporebloom/Weapon_Sporebloom",
+          "notes": "Complete the game on Veteran"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Special/Starkiller/Weapon_Starkiller",
+          "notes": "Complete the game on HC",
+          "mode": "Hardcore"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Special/Savior/Weapon_Savior",
+          "notes": "Complete the game on Veteran HC",
+          "mode": "Hardcore"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/HerosSword/Weapon_HerosSword",
+          "notes": "Complete the game"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/Smolder/Weapon_Smolder",
+          "notes": "Complete the game"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/WorldsEdge/Weapon_WorldsEdge",
+          "notes": "Complete the game on Apocalypse"
+        }
       ]
     }
   }

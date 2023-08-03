@@ -9,7 +9,7 @@
 	<UseWindowsForms>true</UseWindowsForms>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\256.ico</ApplicationIcon>
-    <AssemblyVersion>1.0.0.5</AssemblyVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -123,7 +123,11 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             var cancelColumns = new List<string>() {
                 "RawName",
-                "RawLocation"
+                "RawLocation",
+                "RawWorld",
+                "RawType",
+                "Locations",
+                "World"
             };
             if (cancelColumns.Contains(e.Column.Header))
             {
@@ -164,6 +168,10 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     var item = new TreeViewItem();
                     item.Header = rItem.Name;
+                    if (item.Header == null)
+                    {
+                        Logger.Log(rItem.Key);
+                    }
                     if (!rItem.ItemNotes.Equals("")) item.ToolTip = rItem.ItemNotes;
                     item.ContextMenu = treeMissingItems.Resources["ItemContext"] as System.Windows.Controls.ContextMenu;
                     item.Tag = "item";
@@ -226,6 +234,10 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private string GetTreeItem(TreeViewItem item)
         {
+            if (item == null)
+            {
+                return "";
+            }
             if ((string)item.Tag == "item") return item.Header.ToString();
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(item.Header.ToString() + ":");
@@ -238,10 +250,11 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void CopyItem_Click(object sender, RoutedEventArgs e)
         {
-            MenuItem mnu = sender as MenuItem;
-            TreeViewItem treeItem = ((ContextMenu)mnu?.Parent)?.PlacementTarget as TreeViewItem;
-
-            Clipboard.SetDataObject(GetTreeItem(treeItem));
+            if (treeMissingItems.SelectedItem == null)
+            {
+                return;
+            }
+            Clipboard.SetDataObject(GetTreeItem((TreeViewItem)treeMissingItems.SelectedItem));
         }
 
         private void SearchItem_Click(object sender, RoutedEventArgs e)
