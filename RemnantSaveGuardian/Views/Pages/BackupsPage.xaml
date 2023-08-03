@@ -24,7 +24,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <WrapPanel Grid.Row="0">
-            <ToolBar Height="Auto" Width="200">
+            <ToolBar ToolBarTray.IsLocked="True" Height="Auto" Width="Auto">
                 <Button Name="btnBackup" ToolTip="{lex:Loc}">
                     <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Save24" />
                 </Button>

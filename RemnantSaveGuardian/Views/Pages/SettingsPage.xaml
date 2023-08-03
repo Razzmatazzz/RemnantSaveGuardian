@@ -49,7 +49,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Button x:Name="btnSaveFolder" Content="{lex:Loc Save Folder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="0" Grid.Column="0" Click="BtnSaveFolder_Click"/>
+            <Button x:Name="btnSaveFolder" Content="{lex:Loc Save Folder}" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="0" Grid.Column="0" Click="BtnSaveFolder_Click"/>
             <TextBox Name="txtSaveFolder"  TextWrapping="Wrap" Text="{Binding SaveFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Margin="5,0,5,0">
                 <TextBox.ContextMenu>
                     <ContextMenu>
@@ -61,7 +61,7 @@
                     </ContextMenu>
                 </TextBox.ContextMenu>
             </TextBox>
-            <Button x:Name="btnBackupFolder" Content="{lex:Loc Backup Folder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="1" Grid.Column="0" Click="BtnBackupFolder_Click"/>
+            <Button x:Name="btnBackupFolder" Content="{lex:Loc Backup Folder}" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="1" Grid.Column="0" Click="BtnBackupFolder_Click"/>
             <TextBox Name="txtBackupFolder" TextWrapping="Wrap" Text="{Binding BackupFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Margin="5,0,5,0">
                 <TextBox.ContextMenu>
                     <ContextMenu>
@@ -73,7 +73,7 @@
                     </ContextMenu>
                 </TextBox.ContextMenu>
             </TextBox>
-            <Button x:Name="btnGameFolder" Content="{lex:Loc Game Folder}" VerticalAlignment="Top" Margin="0,2,0,0" Grid.Row="2" Grid.Column="0" Click="BtnGameFolder_Click"/>
+            <Button x:Name="btnGameFolder" Content="{lex:Loc Game Folder}" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,2,0,0" Grid.Row="2" Grid.Column="0" Click="BtnGameFolder_Click"/>
             <TextBox Name="txtGameFolder" TextWrapping="Wrap" Text="{Binding GameFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Margin="5,0,5,0">
                 <TextBox.ContextMenu>
                     <ContextMenu>
