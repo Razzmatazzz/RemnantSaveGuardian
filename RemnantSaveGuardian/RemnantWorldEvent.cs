@@ -607,6 +607,11 @@ namespace RemnantSaveGuardian
                     try
                     {
                         if (eventMatch.Value.Contains("TileInfo") || eventMatch.Value.Contains("Template") || eventMatch.Value.Contains("EventTree") || eventMatch.Value.EndsWith("_C")) {
+                            if (!eventMatch.Value.EndsWith("C"))
+                            {
+                                Logger.Log(currentArea.Groups["location"]);
+                                Logger.Log(eventMatch.Value);
+                            }
                             continue;
                         }
 

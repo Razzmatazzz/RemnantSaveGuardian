@@ -42,10 +42,10 @@ namespace RemnantSaveGuardian
             File.WriteAllText("log.txt", DateTime.Now.ToString() + ": Version " + typeof(MainWindow).Assembly.GetName().Version + "\r\n");
         }
 
-        public static void Log(string message, LogType logType)
+        public static void Log(object message, LogType logType)
         {
-            MessageLogged?.Invoke(null, new (message, logType));
-            messages.Add(new(message, logType));
+            MessageLogged?.Invoke(null, new (message.ToString(), logType));
+            messages.Add(new(message.ToString(), logType));
             if (Properties.Settings.Default.CreateLogFile)
             {
                 StreamWriter writer = File.AppendText("log.txt");
@@ -54,19 +54,19 @@ namespace RemnantSaveGuardian
             }
             //Debug.WriteLine(message);
         }
-        public static void Log(string message)
+        public static void Log(object message)
         {
             Log(message, LogType.Normal);
         }
-        public static void Success(string message)
+        public static void Success(object message)
         {
             Log(message, LogType.Success);
         }
-        public static void Error(string message)
+        public static void Error(object message)
         {
             Log(message, LogType.Error);
         }
-        public static void Warn(string message)
+        public static void Warn(object message)
         {
             Log(message, LogType.Warning);
         }

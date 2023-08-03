@@ -79,10 +79,10 @@ namespace RemnantSaveGuardian
         /// </summary>
         private async void OnStartup(object sender, StartupEventArgs e)
         {
+            var culture = CultureInfo.CurrentCulture; // new CultureInfo("ru");
+            Thread.CurrentThread.CurrentCulture = culture;
+            WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = culture;
             await _host.StartAsync();
-            //var culture = new CultureInfo("ko");
-            //Thread.CurrentThread.CurrentCulture = CultureInfo.CurrentCulture;
-            WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = Thread.CurrentThread.CurrentCulture;
         }
 
         /// <summary>

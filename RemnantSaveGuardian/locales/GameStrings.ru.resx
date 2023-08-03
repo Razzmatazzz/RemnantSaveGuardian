@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbandonedRuins" xml:space="preserve">
+    <value>Заброшенные руины</value>
+  </data>
+  <data name="Alchemist" xml:space="preserve">
+    <value>Алхимик</value>
+  </data>
+  <data name="AllFatherStory" xml:space="preserve">
+    <value>Всеотец</value>
+  </data>
+  <data name="Amulet_ButchersFetish" xml:space="preserve">
+    <value>Идол Мясника</value>
+  </data>
+  <data name="Amulet_ChainsOfAmplification" xml:space="preserve">
+    <value>Цепи усиления</value>
+  </data>
+  <data name="Amulet_NimuesRibbon" xml:space="preserve">
+    <value>Ленточка Нимуэ</value>
+  </data>
+  <data name="Archon" xml:space="preserve">
+    <value>Архонт</value>
+  </data>
+  <data name="Armor_Body" xml:space="preserve">
+    <value>Тело</value>
+  </data>
+  <data name="Armor_Challenger" xml:space="preserve">
+    <value>Громила</value>
+  </data>
+  <data name="Armor_Gloves" xml:space="preserve">
+    <value>Перчатки</value>
+  </data>
+  <data name="Armor_Gunslinger" xml:space="preserve">
+    <value>Полуденный</value>
+  </data>
+  <data name="Armor_Handler" xml:space="preserve">
+    <value>Дрессировщик</value>
+  </data>
+  <data name="Armor_Head" xml:space="preserve">
+    <value>Голова</value>
+  </data>
+  <data name="Armor_Hunter" xml:space="preserve">
+    <value>Ловчий</value>
+  </data>
+  <data name="Armor_Legs" xml:space="preserve">
+    <value>Ноги</value>
+  </data>
+  <data name="Armor_Medic" xml:space="preserve">
+    <value>Полевой медик</value>
+  </data>
+  <data name="Armor_Radiant" xml:space="preserve">
+    <value>Сияющий</value>
+  </data>
+  <data name="Armor_RedPrince" xml:space="preserve">
+    <value>Корона алого принца</value>
+  </data>
+  <data name="Armor_Void" xml:space="preserve">
+    <value>Пустота</value>
+  </data>
+  <data name="Asylum" xml:space="preserve">
+    <value>Лечебница</value>
+  </data>
+  <data name="AsylumChainsaw" xml:space="preserve">
+    <value>Распиловочная пила</value>
+  </data>
+  <data name="AsylumStory" xml:space="preserve">
+    <value>Лечебница</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>Земля</value>
+  </data>
+  <data name="CathedralOfOmens" xml:space="preserve">
+    <value>Собор Предзнаменований</value>
+  </data>
+  <data name="Challenger" xml:space="preserve">
+    <value>Боец</value>
+  </data>
+  <data name="ClockTower" xml:space="preserve">
+    <value>Часовая башня</value>
+  </data>
+  <data name="DranStarter" xml:space="preserve">
+    <value>Город дранов</value>
+  </data>
+  <data name="EndairasEnd" xml:space="preserve">
+    <value>Тупик Эндайры</value>
+  </data>
+  <data name="Engineer" xml:space="preserve">
+    <value>Инженер</value>
+  </data>
+  <data name="Explorer" xml:space="preserve">
+    <value>Исследователь</value>
+  </data>
+  <data name="Fae" xml:space="preserve">
+    <value>Лосом</value>
+  </data>
+  <data name="FaelinFaerlin" xml:space="preserve">
+    <value>Фэйлин</value>
+  </data>
+  <data name="FaelinFaerlin_POI" xml:space="preserve">
+    <value>Фэйлин / Фэйрин</value>
+  </data>
+  <data name="Faerin" xml:space="preserve">
+    <value>Фэйрин</value>
+  </data>
+  <data name="FaeShamanRing" xml:space="preserve">
+    <value>Кольцо сильфа Шамана</value>
+  </data>
+  <data name="FaeStarter" xml:space="preserve">
+    <value>Золотые покои</value>
+  </data>
+  <data name="FaeWarriorRing" xml:space="preserve">
+    <value>Кольцо сильфа Воина</value>
+  </data>
+  <data name="ForgottenField" xml:space="preserve">
+    <value>Забытое поле</value>
+  </data>
+  <data name="GoldenHall_Nimue" xml:space="preserve">
+    <value>Убежище Нимуэ</value>
+  </data>
+  <data name="Gunslinger" xml:space="preserve">
+    <value>Стрелок</value>
+  </data>
+  <data name="Handler" xml:space="preserve">
+    <value>Кинолог</value>
+  </data>
+  <data name="Hunter" xml:space="preserve">
+    <value>Охотник</value>
+  </data>
+  <data name="ImperialGardens" xml:space="preserve">
+    <value>Имперские сады</value>
+  </data>
+  <data name="IndignantFetish" xml:space="preserve">
+    <value>Возмутительный Идол</value>
+  </data>
+  <data name="Invader" xml:space="preserve">
+    <value>Захватчик</value>
+  </data>
+  <data name="Jungle" xml:space="preserve">
+    <value>Йаэша</value>
+  </data>
+  <data name="KaeulasRest" xml:space="preserve">
+    <value>Покой Кеулы</value>
+  </data>
+  <data name="KoaraKuriNest" xml:space="preserve">
+    <value>Гнездо Коара Кури</value>
+  </data>
+  <data name="Labyrinth" xml:space="preserve">
+    <value>Лабиринт</value>
+  </data>
+  <data name="LaemirsLyceum" xml:space="preserve">
+    <value>Лицей Леймиров</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>Земля</value>
+  </data>
+  <data name="Medic" xml:space="preserve">
+    <value>Медик</value>
+  </data>
+  <data name="Nerud" xml:space="preserve">
+    <value>Н'Еруд</value>
+  </data>
+  <data name="Nightweb" xml:space="preserve">
+    <value>Паутина ночной ткачихи</value>
+  </data>
+  <data name="OverworldPOI" xml:space="preserve">
+    <value>Мировое место интереса</value>
+  </data>
+  <data name="Ring_AcidStone" xml:space="preserve">
+    <value>Кислотный камень</value>
+  </data>
+  <data name="Ring_AnastasijasInspiration" xml:space="preserve">
+    <value>Вдохновение Анастасии</value>
+  </data>
+  <data name="Ring_BoosterRing" xml:space="preserve">
+    <value>Кольцо-усилитель</value>
+  </data>
+  <data name="Ring_HexWard" xml:space="preserve">
+    <value>Оберег от сглаза</value>
+  </data>
+  <data name="Ring_SoulLink" xml:space="preserve">
+    <value>Связь Душ</value>
+  </data>
+  <data name="Ring_StreamCoupler" xml:space="preserve">
+    <value>Кольцо Удвоитель Потоков</value>
+  </data>
+  <data name="Root" xml:space="preserve">
+    <value>Корень</value>
+  </data>
+  <data name="RootEarth" xml:space="preserve">
+    <value>Мир Корня</value>
+  </data>
+  <data name="RootEarthAshenWasteland" xml:space="preserve">
+    <value>Пепельная пустошь</value>
+  </data>
+  <data name="RootEarthCorruptedHarbor" xml:space="preserve">
+    <value>Испорченная гавань</value>
+  </data>
+  <data name="RootNexus" xml:space="preserve">
+    <value>Корневой Нексус</value>
+  </data>
+  <data name="Sewer" xml:space="preserve">
+    <value>Затопленная Канализация</value>
+  </data>
+  <data name="SideD" xml:space="preserve">
+    <value>Подземелье</value>
+  </data>
+  <data name="Summoner" xml:space="preserve">
+    <value>Призыватель</value>
+  </data>
+  <data name="TalRatha" xml:space="preserve">
+    <value>Тал'Рата</value>
+  </data>
+  <data name="The Twisted C	hantry" xml:space="preserve">
+    <value>Искореженная часовня</value>
+  </data>
+  <data name="TheCustodian" xml:space="preserve">
+    <value>Хранитель</value>
+  </data>
+  <data name="TheDappledGlade" xml:space="preserve">
+    <value>Пестрая поляна</value>
+  </data>
+  <data name="TheExpandingGlade" xml:space="preserve">
+    <value>Широкая поляна</value>
+  </data>
+  <data name="TheLament" xml:space="preserve">
+    <value>Скорбь</value>
+  </data>
+  <data name="TheNamelessNest" xml:space="preserve">
+    <value>Безымянное Гнездо</value>
+  </data>
+  <data name="ThreeMenMorris" xml:space="preserve">
+    <value>Послушник</value>
+  </data>
+  <data name="TormentedAsylum" xml:space="preserve">
+    <value>Лечебница терзаний</value>
+  </data>
+  <data name="TraitBook" xml:space="preserve">
+    <value>Том знаний</value>
+  </data>
+  <data name="Ward13" xml:space="preserve">
+    <value>Блок 13</value>
+  </data>
+  <data name="WorldBoss" xml:space="preserve">
+    <value>Мировой босс</value>
+  </data>
+</root>
