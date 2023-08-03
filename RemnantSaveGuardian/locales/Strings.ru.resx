@@ -190,7 +190,7 @@
     <value>Не найдено расположение сохранений; Пожалуйста, укажите вручную</value>
   </data>
   <data name="Dark" xml:space="preserve">
-    <value>Тёмня</value>
+    <value>Тёмная</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Удалить</value>
@@ -292,7 +292,7 @@
     <value>Восстановить резерв</value>
   </data>
   <data name="Missing Items" xml:space="preserve">
-    <value>отсутствующие предметы</value>
+    <value>Отсутствующие предметы</value>
   </data>
   <data name="Move Backups" xml:space="preserve">
     <value>Переместить резервы</value>
@@ -325,7 +325,7 @@
     <value>Красный</value>
   </data>
   <data name="Save Backups" xml:space="preserve">
-    <value>Сохранить резервы</value>
+    <value>Резервы сохранений</value>
   </data>
   <data name="Save file in use; waiting 0.5 seconds and retrying." xml:space="preserve">
     <value>Файл сохранения используется; подождите 0,5 секунды и повторите попытку.</value>
