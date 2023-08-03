@@ -703,7 +703,7 @@ namespace RemnantSaveGuardian
                         }
                         else if (worldEvent.RawName == "FaelinFaerlin")
                         {
-                            RemnantWorldEvent faerlin = new RemnantWorldEvent("Faeron", "World_Fae", "WorldBoss");
+                            RemnantWorldEvent faerlin = new RemnantWorldEvent("Faerin", "World_Fae", "WorldBoss");
                             faerlin.setMissingItems(character);
                             zoneEvents["World_Fae"].Add(faerlin);
                         }
