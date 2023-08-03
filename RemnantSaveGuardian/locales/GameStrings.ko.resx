@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AbandonedRuins" xml:space="preserve">
+    <value>Abandoned Ruins</value>
+  </data>
+  <data name="Abyssal Rift" xml:space="preserve">
+    <value>심해의 균열</value>
+  </data>
+  <data name="Alchemist" xml:space="preserve">
+    <value>Alchemist</value>
+  </data>
+  <data name="Alepsis-Taura" xml:space="preserve">
+    <value>알렙시스-타우라</value>
+  </data>
+  <data name="AllFatherStory" xml:space="preserve">
+    <value>All Father</value>
+  </data>
   <data name="Amulet_ButchersFetish" xml:space="preserve">
     <value>Butcher's Fetish</value>
   </data>
@@ -125,6 +140,9 @@
   </data>
   <data name="Amulet_NimuesRibbon" xml:space="preserve">
     <value>Nimue's Ribbon</value>
+  </data>
+  <data name="Archon" xml:space="preserve">
+    <value>Archon</value>
   </data>
   <data name="Armor_Body" xml:space="preserve">
     <value>상의</value>
@@ -156,20 +174,98 @@
   <data name="Armor_Radiant" xml:space="preserve">
     <value>Radiant</value>
   </data>
+  <data name="Armor_RedPrince" xml:space="preserve">
+    <value>Crown of the Red Prince</value>
+  </data>
   <data name="Armor_Void" xml:space="preserve">
     <value>Void</value>
+  </data>
+  <data name="Ascension Spire" xml:space="preserve">
+    <value>승천 첨탑</value>
+  </data>
+  <data name="Ashen Wasteland" xml:space="preserve">
+    <value>잿빛 황무지</value>
+  </data>
+  <data name="Astropath's Respite" xml:space="preserve">
+    <value>아스트로패스의 유예</value>
+  </data>
+  <data name="Asylum" xml:space="preserve">
+    <value>Asylum</value>
+  </data>
+  <data name="AsylumChainsaw" xml:space="preserve">
+    <value>Ripsaw</value>
+  </data>
+  <data name="AsylumStory" xml:space="preserve">
+    <value>The Asylum</value>
   </data>
   <data name="Base" xml:space="preserve">
     <value>지구</value>
   </data>
+  <data name="Beatific Gallery" xml:space="preserve">
+    <value>지복의 화랑</value>
+  </data>
+  <data name="Beatific Palace" xml:space="preserve">
+    <value>지복의 궁전</value>
+  </data>
+  <data name="Blackened Citadel" xml:space="preserve">
+    <value>그을린 요새</value>
+  </data>
   <data name="Boss" xml:space="preserve">
     <value>월드 보스</value>
+  </data>
+  <data name="Briella's Garden" xml:space="preserve">
+    <value>브리엘라의 정원</value>
+  </data>
+  <data name="Briella's Reverie" xml:space="preserve">
+    <value>브리엘라의 몽상</value>
+  </data>
+  <data name="Brocwithe Quarter" xml:space="preserve">
+    <value>브록위트 쿼터</value>
+  </data>
+  <data name="Butcher's Quarter" xml:space="preserve">
+    <value>도축업자 구역</value>
+  </data>
+  <data name="Cathedral of Omens" xml:space="preserve">
+    <value>전조의 대성당</value>
+  </data>
+  <data name="Challenger" xml:space="preserve">
+    <value>Challenger</value>
   </data>
   <data name="ClockTower" xml:space="preserve">
     <value>The Clock Tower</value>
   </data>
+  <data name="Corrupted Harbor" xml:space="preserve">
+    <value>타락한 항구</value>
+  </data>
+  <data name="Cotton's Kiln" xml:space="preserve">
+    <value>Cotton's Kiln</value>
+  </data>
+  <data name="Council Chamber" xml:space="preserve">
+    <value>의회실</value>
+  </data>
+  <data name="Council Tribunal" xml:space="preserve">
+    <value>의회 재판소</value>
+  </data>
+  <data name="Dormant N'Erudian Facility" xml:space="preserve">
+    <value>휴면 네루디언 시설</value>
+  </data>
+  <data name="DranOracle" xml:space="preserve">
+    <value>드란 예언자?</value>
+  </data>
+  <data name="DranStarter" xml:space="preserve">
+    <value>Dran City</value>
+  </data>
+  <data name="EndairasEnd" xml:space="preserve">
+    <value>엔다이라의 끝</value>
+  </data>
+  <data name="Engineer" xml:space="preserve">
+    <value>Engineer</value>
+  </data>
   <data name="Event" xml:space="preserve">
     <value>이벤트</value>
+  </data>
+  <data name="Explorer" xml:space="preserve">
+    <value>Explorer</value>
   </data>
   <data name="Fae" xml:space="preserve">
     <value>로섬</value>
@@ -177,17 +273,56 @@
   <data name="FaelinFaerlin_POI" xml:space="preserve">
     <value>파에린 / 파엘린</value>
   </data>
+  <data name="Faerin" xml:space="preserve">
+    <value>페이린</value>
+  </data>
   <data name="FaeShamanRing" xml:space="preserve">
     <value>Fae Shaman Ring</value>
+  </data>
+  <data name="FaeStarter" xml:space="preserve">
+    <value>Golden Halls</value>
   </data>
   <data name="FaeWarriorRing" xml:space="preserve">
     <value>Fae Warrior Ring</value>
   </data>
+  <data name="Faithless Thicket" xml:space="preserve">
+    <value>불신의 수풀</value>
+  </data>
+  <data name="Foesaken Quarter" xml:space="preserve">
+    <value>버림받은 구역</value>
+  </data>
+  <data name="Forgotten Prison" xml:space="preserve">
+    <value>잊힌 감옥</value>
+  </data>
+  <data name="ForgottenField" xml:space="preserve">
+    <value>잊힌 들판</value>
+  </data>
+  <data name="Gilded Chambers" xml:space="preserve">
+    <value>금빛 방</value>
+  </data>
   <data name="GoldenHall_Nimue" xml:space="preserve">
     <value>Nimue's Retreat</value>
   </data>
+  <data name="Gunslinger" xml:space="preserve">
+    <value>총잡이</value>
+  </data>
+  <data name="Handler" xml:space="preserve">
+    <value>핸들러</value>
+  </data>
+  <data name="Harvester's Rech" xml:space="preserve">
+    <value>수확자의 구역</value>
+  </data>
+  <data name="Hewdas Clock" xml:space="preserve">
+    <value>휴다스의 시계</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>거점</value>
+  </data>
+  <data name="Hunter" xml:space="preserve">
+    <value>사냥꾼</value>
+  </data>
+  <data name="ImperialGardens" xml:space="preserve">
+    <value>제국 정원</value>
   </data>
   <data name="IndignantFetish" xml:space="preserve">
     <value>Indignant Fetish</value>
@@ -195,23 +330,80 @@
   <data name="Injectable" xml:space="preserve">
     <value>추가 이벤트</value>
   </data>
+  <data name="Invader" xml:space="preserve">
+    <value>침략자</value>
+  </data>
+  <data name="Ironborough" xml:space="preserve">
+    <value>아이언보로우</value>
+  </data>
   <data name="Jungle" xml:space="preserve">
     <value>아에샤</value>
+  </data>
+  <data name="KaeulasRest" xml:space="preserve">
+    <value>카에울라의 휴식처</value>
+  </data>
+  <data name="KoaraKuriNest" xml:space="preserve">
+    <value>코아라 쿠리 둥지</value>
   </data>
   <data name="Labyrinth" xml:space="preserve">
     <value>미궁</value>
   </data>
+  <data name="LaemirsLyceum" xml:space="preserve">
+    <value>Laemirs' Lyceum</value>
+  </data>
+  <data name="LemarkDistrict" xml:space="preserve">
+    <value>레마크 구역</value>
+  </data>
   <data name="Main" xml:space="preserve">
     <value>지구</value>
+  </data>
+  <data name="Malefic Gallery" xml:space="preserve">
+    <value>사악한 화랑</value>
+  </data>
+  <data name="Malefic Palace" xml:space="preserve">
+    <value>사악한 궁전</value>
+  </data>
+  <data name="Medic" xml:space="preserve">
+    <value>위생병</value>
   </data>
   <data name="MiniBoss" xml:space="preserve">
     <value>보스 던전</value>
   </data>
+  <data name="Morrow Parish" xml:space="preserve">
+    <value>머로우 교구</value>
+  </data>
+  <data name="Morrow Sanatorium" xml:space="preserve">
+    <value>머로우 요양원</value>
+  </data>
   <data name="Nerud" xml:space="preserve">
     <value>네루드</value>
   </data>
+  <data name="Nightweb" xml:space="preserve">
+    <value>나이트위버 고치</value>
+  </data>
+  <data name="Nimue's Retreat" xml:space="preserve">
+    <value>니므에의 은신</value>
+  </data>
+  <data name="Oracle's Refuge" xml:space="preserve">
+    <value>계시의 피난처</value>
+  </data>
   <data name="OverworldPOI" xml:space="preserve">
     <value>월드 POI</value>
+  </data>
+  <data name="Palace Courtyard" xml:space="preserve">
+    <value>궁전 안뜰</value>
+  </data>
+  <data name="Phantom Wasteland" xml:space="preserve">
+    <value>혼령 황무지</value>
+  </data>
+  <data name="Postulant's Parlor" xml:space="preserve">
+    <value>성직 청원자의 객실</value>
+  </data>
+  <data name="Ravager's Lair" xml:space="preserve">
+    <value>약탈자의 굴</value>
+  </data>
+  <data name="Retreat's Horizon" xml:space="preserve">
+    <value>니므에의 은신</value>
   </data>
   <data name="Ring_AcidStone" xml:space="preserve">
     <value>Acid Stone</value>
@@ -231,19 +423,163 @@
   <data name="Ring_StreamCoupler" xml:space="preserve">
     <value>Stream Coupler Ring</value>
   </data>
-  <data name="Root Earth" xml:space="preserve">
+  <data name="Root" xml:space="preserve">
+    <value>루트</value>
+  </data>
+  <data name="RootEarth" xml:space="preserve">
     <value>루트 지구</value>
+  </data>
+  <data name="RootEarthAshenWasteland" xml:space="preserve">
+    <value>잿빛 황무지</value>
+  </data>
+  <data name="RootEarthCorruptedHarbor" xml:space="preserve">
+    <value>타락한 항구</value>
+  </data>
+  <data name="RootNexus" xml:space="preserve">
+    <value>루트 넥서스</value>
+  </data>
+  <data name="SeekersRest" xml:space="preserve">
+    <value>탐구자의 안식처</value>
+  </data>
+  <data name="SentinelsKeep" xml:space="preserve">
+    <value>센티넬의 요새</value>
+  </data>
+  <data name="Sewer" xml:space="preserve">
+    <value>Flooder Sewer</value>
+  </data>
+  <data name="ShatteredGallery" xml:space="preserve">
+    <value>Shattered Gallery</value>
   </data>
   <data name="SideD" xml:space="preserve">
     <value>사이드 던전</value>
   </data>
+  <data name="Spectrum Nexus" xml:space="preserve">
+    <value>스펙트럼 넥서스</value>
+  </data>
+  <data name="Summoner" xml:space="preserve">
+    <value>소환사</value>
+  </data>
+  <data name="Tal'Ratha's Refuge" xml:space="preserve">
+    <value>탈 라사의 피난처</value>
+  </data>
+  <data name="TalRatha" xml:space="preserve">
+    <value>탈라사</value>
+  </data>
+  <data name="Terminus Station" xml:space="preserve">
+    <value>종착역</value>
+  </data>
+  <data name="The Chimney" xml:space="preserve">
+    <value>굴뚝</value>
+  </data>
+  <data name="The Dark Conduit" xml:space="preserve">
+    <value>암흑 전달자</value>
+  </data>
+  <data name="The Eon Vault" xml:space="preserve">
+    <value>영겁의 금고</value>
+  </data>
+  <data name="The Far Woods" xml:space="preserve">
+    <value>머나먼 숲</value>
+  </data>
+  <data name="The Forbidden Grove" xml:space="preserve">
+    <value>금단의 숲</value>
+  </data>
+  <data name="The Great Bole" xml:space="preserve">
+    <value>위대한 줄기</value>
+  </data>
+  <data name="The Great Hall" xml:space="preserve">
+    <value>대회당</value>
+  </data>
+  <data name="The Great Sewers" xml:space="preserve">
+    <value>거대한 하수도</value>
+  </data>
+  <data name="The Hatchery" xml:space="preserve">
+    <value>부화장</value>
+  </data>
+  <data name="The Lament" xml:space="preserve">
+    <value>애도</value>
+  </data>
+  <data name="The Lost Temple" xml:space="preserve">
+    <value>잃어버린 사원</value>
+  </data>
+  <data name="The Nameless Nest" xml:space="preserve">
+    <value>이름 없는 둥지</value>
+  </data>
+  <data name="The Putrid Domain" xml:space="preserve">
+    <value>타락의 영역</value>
+  </data>
+  <data name="The Red Throne" xml:space="preserve">
+    <value>붉은 왕좌</value>
+  </data>
+  <data name="The Tormented Asylum" xml:space="preserve">
+    <value>고통스러운 정신병원</value>
+  </data>
+  <data name="The Twisted Chantry" xml:space="preserve">
+    <value>일그러진 예배당</value>
+  </data>
+  <data name="The Withering Weald" xml:space="preserve">
+    <value>시들어가는 삼림지대</value>
+  </data>
+  <data name="TheCustodian" xml:space="preserve">
+    <value>The Custodian</value>
+  </data>
+  <data name="TheDappledGlade" xml:space="preserve">
+    <value>얼룩진 빈터</value>
+  </data>
+  <data name="TheExpandingGlade" xml:space="preserve">
+    <value>팽창하는 빈터</value>
+  </data>
   <data name="ThreeMenMorris" xml:space="preserve">
     <value>The Postulant</value>
+  </data>
+  <data name="Threshold of the Unknown" xml:space="preserve">
+    <value>미지의 문턱</value>
+  </data>
+  <data name="Tiller's Rest" xml:space="preserve">
+    <value>틸러의 휴식</value>
+  </data>
+  <data name="Timeless Horizon" xml:space="preserve">
+    <value>영원한 지평선</value>
+  </data>
+  <data name="Titan's Reach" xml:space="preserve">
+    <value>타이탄의 구역</value>
+  </data>
+  <data name="Tower of the unseen" xml:space="preserve">
+    <value>보이지 않는 것의 타워</value>
   </data>
   <data name="TraitBook" xml:space="preserve">
     <value>Tome of Knowledge</value>
   </data>
+  <data name="Vault of the Formless" xml:space="preserve">
+    <value>무형의 금고</value>
+  </data>
+  <data name="Void Vessel Facility" xml:space="preserve">
+    <value>공허 함선 시설</value>
+  </data>
   <data name="Ward13" xml:space="preserve">
     <value>와드 13</value>
+  </data>
+  <data name="Widow's Court" xml:space="preserve">
+    <value>과부의 궐</value>
+  </data>
+  <data name="WorldBoss" xml:space="preserve">
+    <value>월드 보스</value>
+  </data>
+  <data name="World_Earth" xml:space="preserve">
+    <value>지구</value>
+  </data>
+  <data name="World_Fae" xml:space="preserve">
+    <value>로섬</value>
+  </data>
+  <data name="World_Jungle" xml:space="preserve">
+    <value>이예샤</value>
+  </data>
+  <data name="World_Labyrinth" xml:space="preserve">
+    <value>미궁</value>
+  </data>
+  <data name="World_Nerud" xml:space="preserve">
+    <value>네루드</value>
+  </data>
+  <data name="World_RootEarth" xml:space="preserve">
+    <value>루트 지구</value>
   </data>
 </root>
