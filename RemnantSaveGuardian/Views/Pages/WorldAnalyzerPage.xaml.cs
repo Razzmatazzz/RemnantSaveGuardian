@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using Wpf.Ui.Common.Interfaces;
 
 namespace RemnantSaveGuardian.Views.Pages
@@ -21,6 +22,7 @@ namespace RemnantSaveGuardian.Views.Pages
             get;
         }
         private RemnantSave Save;
+        private double midFontSize = 14;
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
             ViewModel = viewModel;
@@ -64,6 +66,13 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
                 CharacterControl.ItemsSource = Save.Characters;
                 Save.UpdateCharacters();
+
+                //FontSizeSlider.Value = AdventureData.FontSize;
+                //FontSizeSlider.Minimum = 2.0;
+                //FontSizeSlider.Maximum = AdventureData.FontSize * 2;
+                FontSizeSlider.Value = Properties.Settings.Default.AnalyzerFontSize;
+                FontSizeSlider.ValueChanged += FontSizeSlider_ValueChanged;
+
                 CharacterControl.SelectedIndex = 0;
                 checkAdventureTab();
             } catch (Exception ex) {
@@ -74,7 +83,13 @@ namespace RemnantSaveGuardian.Views.Pages
 
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel) : this(viewModel, null)
         {
+            
+        }
 
+        private void FontSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Properties.Settings.Default.AnalyzerFontSize = (int)Math.Round(FontSizeSlider.Value);
+            reloadEventGrids();
         }
 
         private void GameType_CollapsedExpanded(object sender, RoutedEventArgs e)
@@ -135,16 +150,16 @@ namespace RemnantSaveGuardian.Views.Pages
                 e.Cancel = true;
                 return;
             }
+            var cellStyle = new Style(typeof(DataGridCell));
+            cellStyle.Setters.Add(new Setter(FontSizeProperty, FontSizeSlider.Value));
             if (e.Column.Header.Equals("MissingItems"))
             {
                 e.Column.Header = "Missing Items";
                 
                 if (Properties.Settings.Default.MissingItemColor == "Highlight")
                 {
-                    var colorStyle = new Style(typeof(DataGridCell));
                     var highlight = System.Drawing.SystemColors.Highlight;
-                    colorStyle.Setters.Add(new Setter(ForegroundProperty, new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(highlight.R, highlight.G, highlight.B))));
-                    e.Column.CellStyle = colorStyle;
+                    cellStyle.Setters.Add(new Setter(ForegroundProperty, new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(highlight.R, highlight.G, highlight.B))));
                 }
             }
             else if (e.Column.Header.Equals("PossibleItems"))
@@ -155,6 +170,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     return;
                 }
             }
+            e.Column.CellStyle = cellStyle;
             e.Column.Header = Loc.T(e.Column.Header.ToString());
         }
 

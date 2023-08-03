@@ -35,10 +35,10 @@
                     <ui:SymbolIcon Symbol="ArrowExportUp24"/>
                 </Button>
             </WrapPanel>
-            <WrapPanel Grid.Column="2" VerticalAlignment="Center" Visibility="Collapsed">
+            <WrapPanel Grid.Column="2" VerticalAlignment="Center" Visibility="Visible">
                 <TextBlock FontWeight="Medium" Text="{lex:Loc Zoom}" VerticalAlignment="Center" Margin="0,0,5,0"/>
                 <ui:SymbolIcon Symbol="ZoomOut24"/>
-                <Slider Name="FontSizeSlider" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Minimum="6" Value="18" Maximum="30" SmallChange="6" LargeChange="6" TickFrequency="6" TickPlacement="BottomRight" IsSnapToTickEnabled="True"/>
+                <Slider Name="FontSizeSlider" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Minimum="6" Value="14" Maximum="30" SmallChange="4" LargeChange="4" TickFrequency="4" TickPlacement="BottomRight" IsSnapToTickEnabled="True"/>
                 <ui:SymbolIcon Symbol="ZoomIn24"/>
             </WrapPanel>
         </Grid>
