@@ -29,24 +29,16 @@ namespace RemnantSaveGuardian.Views.Pages
 
             try
             {
-                cmbMissingItemColor.ItemsSource = new Dictionary<string, string>
-                {
-                    { "Red", Loc.T("Red") },
-                    { "White", Loc.T("White") }
-                };
-                cmbMissingItemColor.DisplayMemberPath = "Value";
-                cmbMissingItemColor.SelectedValuePath = "Key";
-                if (Properties.Settings.Default.MissingItemColor == "Red")
-                {
-                    cmbMissingItemColor.SelectedIndex = 0;
-                }
-                else
+                //cmbMissingItemColor.DisplayMemberPath = "Content";
+                //cmbMissingItemColor.SelectedValuePath = "Tag";
+                if (Properties.Settings.Default.MissingItemColor == "Highlight")
                 {
                     cmbMissingItemColor.SelectedIndex = 1;
                 }
-                cmbMissingItemColor.SelectionChanged += CmbMissingItemColor_SelectionChanged;
-                cmbMissingItemColor.Visibility = Visibility.Collapsed;
-                lblMissingItemColor.Visibility = Visibility.Collapsed;
+                else
+                {
+                    cmbMissingItemColor.SelectedIndex = 0;
+                }
 
                 foreach (ComboBoxItem item in cmbStartPage.Items)
                 {
@@ -257,7 +249,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void CmbMissingItemColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Properties.Settings.Default.MissingItemColor = ((KeyValuePair<string, string>)cmbMissingItemColor.SelectedItem).Key;
+            Properties.Settings.Default.MissingItemColor = ((ComboBoxItem)cmbMissingItemColor.SelectedItem).Tag.ToString();
         }
 
         private string GetAssemblyVersion()

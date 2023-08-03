@@ -354,6 +354,12 @@
   <data name="Survival" xml:space="preserve">
     <value>Survival</value>
   </data>
+  <data name="Text_Highlight" xml:space="preserve">
+    <value>Highlight</value>
+  </data>
+  <data name="Text_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
   <data name="Theme" xml:space="preserve">
     <value>Theme</value>
   </data>

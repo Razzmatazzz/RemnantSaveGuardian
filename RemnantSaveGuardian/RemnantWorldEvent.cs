@@ -54,11 +54,7 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                /*var parsed = new Regex(@"^(Ring|Amulet)_").Replace(_name, "");
-                if (parsed.Length < 3) {
-                    parsed = _name;
-                }
-                return Loc.GameT(parsed);*/
+                //return $"{_name}\n{_key}";
                 return Loc.GameT(_name);
             }
         }

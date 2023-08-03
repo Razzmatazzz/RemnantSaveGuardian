@@ -169,7 +169,7 @@ namespace RemnantSaveGuardian.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Highlight")]
         public string MissingItemColor {
             get {
                 return ((string)(this["MissingItemColor"]));

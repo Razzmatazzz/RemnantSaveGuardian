@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -102,7 +103,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "ShowPossibleItems")
+            if (e.PropertyName == "ShowPossibleItems" || e.PropertyName == "MissingItemColor")
             {
                 Dispatcher.Invoke(() =>
                 {
@@ -137,7 +138,14 @@ namespace RemnantSaveGuardian.Views.Pages
             if (e.Column.Header.Equals("MissingItems"))
             {
                 e.Column.Header = "Missing Items";
-                // todo: set missing item color?
+                
+                if (Properties.Settings.Default.MissingItemColor == "Highlight")
+                {
+                    var colorStyle = new Style(typeof(DataGridCell));
+                    var highlight = System.Drawing.SystemColors.Highlight;
+                    colorStyle.Setters.Add(new Setter(ForegroundProperty, new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(highlight.R, highlight.G, highlight.B))));
+                    e.Column.CellStyle = colorStyle;
+                }
             }
             else if (e.Column.Header.Equals("PossibleItems"))
             {

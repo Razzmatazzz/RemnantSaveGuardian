@@ -772,6 +772,24 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Highlight.
+        /// </summary>
+        public static string Text_Highlight {
+            get {
+                return ResourceManager.GetString("Text_Highlight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        public static string Text_Normal {
+            get {
+                return ResourceManager.GetString("Text_Normal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Theme.
         /// </summary>
         public static string Theme {
