@@ -101,7 +101,6 @@ namespace RemnantSaveGuardian.Views.Pages
         private void SavePlaintextButton_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            //openFolderDialog.SelectedPath = Properties.Settings.Default.GameFolder;
             openFolderDialog.Description = Loc.T("Export save files as plaintext");
             openFolderDialog.UseDescriptionForTitle = true;
             System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
@@ -110,10 +109,13 @@ namespace RemnantSaveGuardian.Views.Pages
                 return;
             }
             File.WriteAllText($@"{openFolderDialog.SelectedPath}\profile.txt", Save.GetProfileData());
+            File.Copy(Save.SaveProfilePath, $@"{openFolderDialog.SelectedPath}\profile.sav", true);
             foreach (var filePath in Save.WorldSaves)
             {
                 File.WriteAllText($@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\")).Replace(".sav", ".txt")}", RemnantSave.DecompressSaveAsString(filePath));
+                File.Copy(filePath, $@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\"))}", true);
             }
+            Logger.Success(Loc.T($"Exported save files successfully to {openFolderDialog.SelectedPath}"));
         }
 
         private void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)

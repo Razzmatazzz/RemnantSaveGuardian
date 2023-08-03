@@ -340,7 +340,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export save files as plaintext.
+        ///   Looks up a localized string similar to Export save files.
         /// </summary>
         public static string Export_save_files_as_plaintext {
             get {

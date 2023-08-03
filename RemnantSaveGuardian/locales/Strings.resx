@@ -211,7 +211,7 @@
     <value>Exit the game before restoring a save backup.</value>
   </data>
   <data name="Export save files as plaintext" xml:space="preserve">
-    <value>Export save files as plaintext</value>
+    <value>Export save files</value>
   </data>
   <data name="Game Folder" xml:space="preserve">
     <value>Game Folder</value>
