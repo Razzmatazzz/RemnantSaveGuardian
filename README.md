@@ -10,10 +10,13 @@ Back up your Remnant 2 saves and view your world rolls.
 4. Run RemnantSaveGuardian.exe
 
 ## Known Issues
-- Many events do not have the corresponding items they drop. It's a manual process to add those, so it will take some time.
-- Many events and items do not have well-formatted names. Again, it's a manual process to add those.
-- The world analyzer might not be updating automatically as it should be.
+- Some items are erroneously shown as missing
+- Many events and items do not have well-formatted names
 - Sometimes events from the campaign get incorrectly allocated to adventure
+- Some events are displayed that should not be
+- Some events are duplicated
 
 
 Thanks for @crackedmind for the inflation code to convert saves into partial plaintext. 
+
+Thanks to AuriCrystal for event/item list.
