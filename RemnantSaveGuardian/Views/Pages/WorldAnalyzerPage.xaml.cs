@@ -168,10 +168,6 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     var item = new TreeViewItem();
                     item.Header = rItem.Name;
-                    if (item.Header == null)
-                    {
-                        Logger.Log(rItem.Key);
-                    }
                     if (!rItem.ItemNotes.Equals("")) item.ToolTip = rItem.ItemNotes;
                     item.ContextMenu = treeMissingItems.Resources["ItemContext"] as System.Windows.Controls.ContextMenu;
                     item.Tag = "item";

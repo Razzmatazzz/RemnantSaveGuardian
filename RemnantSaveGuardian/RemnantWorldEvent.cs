@@ -118,7 +118,6 @@ namespace RemnantSaveGuardian
             {
                 _name = $"{type}_{_name}";
                 _type = "Item";
-                Logger.Log(_name);
             }
             if (type.ToLower() == "traitbook")
             {
@@ -161,16 +160,15 @@ namespace RemnantSaveGuardian
 
         public void setMissingItems(RemnantCharacter charData)
         {
-            List<RemnantItem> missingItems = new List<RemnantItem>();
+            mItems.Clear();
             List<RemnantItem> possibleItems = this.getPossibleItems();
             foreach (RemnantItem item in possibleItems)
             {
                 if (!charData.Inventory.Contains(item.Key.ToLower()))
                 {
-                    missingItems.Add(item);
+                    mItems.Add(item);
                 }
             }
-            mItems = missingItems;
 
             if (possibleItems.Count == 0 && !GameInfo.Events.ContainsKey(this._name) && !this._name.Equals("TraitBook") && !this.Name.Equals("Simulacrum"))
             {
@@ -594,6 +592,7 @@ namespace RemnantSaveGuardian
             string firstZone = "";
             string currentMainLocation = null;
             string currentSublocation = null;
+            string lastTemplate = "N/A";
             for (var areaIndex = 0; areaIndex < areas.Count; areaIndex++)
             {
                 var currentArea = areas[areaIndex];
@@ -612,12 +611,16 @@ namespace RemnantSaveGuardian
                         if (eventMatch.Value.Contains("TileInfo") || eventMatch.Value.Contains("Template") || eventMatch.Value.Contains("EventTree") || eventMatch.Value.EndsWith("_C")) {
                             if (!eventMatch.Value.EndsWith("C"))
                             {
-                                Logger.Log(currentArea.Groups["location"]);
-                                Logger.Log(eventMatch.Value);
+                                if (eventMatch.Value.Contains("Template"))
+                                {
+                                    lastTemplate = eventMatch.Value;
+                                }
+                                //Logger.Log(currentArea.Groups["location"]);
+                                //Logger.Log(eventMatch.Value);
                             }
                             continue;
                         }
-
+                        //Logger.Log($"{eventMatch.Value}\n{lastTemplate}");
                         // determine location
                         if (eventMatch.Value.Contains("Ring") || eventMatch.Value.Contains("Amulet"))
                         {
