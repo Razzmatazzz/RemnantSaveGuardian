@@ -9,6 +9,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Windows;
+using System.Windows.Markup;
 using System.Windows.Threading;
 using Wpf.Ui.Mvvm.Contracts;
 using Wpf.Ui.Mvvm.Services;
@@ -82,6 +83,9 @@ namespace RemnantSaveGuardian
             var culture = CultureInfo.CurrentCulture; // new CultureInfo("ru");
             Thread.CurrentThread.CurrentCulture = culture;
             WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = culture;
+            FrameworkElement.LanguageProperty.OverrideMetadata(
+                typeof(FrameworkElement),
+                new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
             await _host.StartAsync();
         }
 
