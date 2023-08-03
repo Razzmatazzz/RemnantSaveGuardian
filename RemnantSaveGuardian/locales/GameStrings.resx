@@ -129,6 +129,15 @@
   <data name="AllFatherStory" xml:space="preserve">
     <value>All Father</value>
   </data>
+  <data name="Amulet_01" xml:space="preserve">
+    <value>{Amulet_KineticShieldExchanger}</value>
+  </data>
+  <data name="Amulet_02" xml:space="preserve">
+    <value>{Amulet_InertOvercharger}</value>
+  </data>
+  <data name="Amulet_03" xml:space="preserve">
+    <value>{Amulet_EmergencySwitch}</value>
+  </data>
   <data name="Amulet_AbrasiveWhetstone" xml:space="preserve">
     <value>Abrasive Whetstone</value>
   </data>

@@ -97,6 +97,33 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {Amulet_KineticShieldExchanger}.
+        /// </summary>
+        public static string Amulet_01 {
+            get {
+                return ResourceManager.GetString("Amulet_01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {Amulet_InertOvercharger}.
+        /// </summary>
+        public static string Amulet_02 {
+            get {
+                return ResourceManager.GetString("Amulet_02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {Amulet_EmergencySwitch}.
+        /// </summary>
+        public static string Amulet_03 {
+            get {
+                return ResourceManager.GetString("Amulet_03", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abrasive Whetstone.
         /// </summary>
         public static string Amulet_AbrasiveWhetstone {

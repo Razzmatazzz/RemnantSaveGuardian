@@ -16,10 +16,11 @@ namespace RemnantSaveGuardian
         public static T GetLocalizedValue<T>(string key, LocalizationOptions options)
         {
             var ns = "Strings";
-            if (options.Has("namespace"))
+            if (options.Has("namespace") && options["namespace"] != "")
             {
                 ns = options["namespace"];
             }
+            //Debug.WriteLine($"{ns}:{key}");
             return LocExtension.GetLocalizedValue<T>(Assembly.GetCallingAssembly().GetName().Name + $":{ns}:" + key);
         }
         public static string T(string key, LocalizationOptions options)
@@ -38,21 +39,16 @@ namespace RemnantSaveGuardian
                 }
                 return Regex.Replace(key.Replace("_", " "), "([A-Z0-9]+)", " $1").Trim();*/
             }
-            var matches = new Regex(@"{(?<sub>\w+?)}|{(?:(?<namespace>\w+?):(?<sub>\w+?))}").Matches(val);
+            var matches = new Regex(@"{(?:(?<namespace>\w+?):)?(?<sub>\w+?)}").Matches(val);
             foreach (Match match in matches)
             {
-                if (match.Groups.ContainsKey("namespace"))
+                var optionsToUse = options;
+                if (match.Groups.ContainsKey("namespace") && match.Groups["namespace"].Value != "")
                 {
-                    var newOptions = new LocalizationOptions(options)
-                    {
-                        { "namespace", match.Groups["namespace"].Value }
-                    };
-                    val = val.Replace(match.Value, T(match.Groups["sub"].Value, newOptions));
+                    optionsToUse = new LocalizationOptions(options);
+                    optionsToUse["namespace"] = match.Groups["namespace"].Value;
                 }
-                else
-                {
-                    val = val.Replace(match.Value, T(match.Groups["sub"].Value, options));
-                }
+                val = val.Replace(match.Value, T(match.Groups["sub"].Value, optionsToUse));
             }
             return val;
         }
@@ -62,7 +58,7 @@ namespace RemnantSaveGuardian
         }
         public static string GameT(string key, LocalizationOptions options)
         {
-            options.Add("namespace", "GameStrings");
+            options["namespace"] = "GameStrings";
             return T(key, options);
         }
         public static string GameT(string key)

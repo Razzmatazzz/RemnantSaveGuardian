@@ -588,7 +588,7 @@ namespace RemnantSaveGuardian
             string firstZone = "";
             string currentMainLocation = null;
             string currentSublocation = null;
-            string lastTemplate = "N/A";
+            RemnantWorldEvent lastTemplate;
             for (var areaIndex = 0; areaIndex < areas.Count; areaIndex++)
             {
                 var currentArea = areas[areaIndex];
@@ -609,14 +609,18 @@ namespace RemnantSaveGuardian
                             {
                                 if (eventMatch.Value.Contains("Template"))
                                 {
-                                    lastTemplate = eventMatch.Value;
+                                    lastTemplate = new RemnantWorldEvent(eventMatch.Value, eventMatch.Value, new() { eventMatch.Groups["world"].Value }, "Template");
+                                    /*if (!zoneEvents.ContainsKey(lastTemplate.RawWorld))
+                                    {
+                                        zoneEvents.Add(lastTemplate.RawWorld, new List<RemnantWorldEvent>());
+                                    }
+                                    zoneEvents[lastTemplate.RawWorld].Add(lastTemplate);*/
                                 }
                                 //Logger.Log(currentArea.Groups["location"]);
                                 //Logger.Log(eventMatch.Value);
                             }
                             continue;
                         }
-                        //Logger.Log($"{eventMatch.Value}\n{lastTemplate}");
                         // determine location
                         if (eventMatch.Value.Contains("Ring") || eventMatch.Value.Contains("Amulet"))
                         {
