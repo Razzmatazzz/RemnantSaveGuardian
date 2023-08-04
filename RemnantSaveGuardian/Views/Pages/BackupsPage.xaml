@@ -36,7 +36,7 @@
                 </Button>
             </ToolBar>
         </WrapPanel>
-        <DataGrid Grid.Row="1" Name="dataBackups" AutoGeneratingColumn="dataBackups_AutoGeneratingColumn" SelectionMode="Single" IsReadOnly="False">
+        <DataGrid Grid.Row="1" Name="dataBackups" AutoGeneratingColumn="dataBackups_AutoGeneratingColumn" SelectionMode="Single" IsReadOnly="False" SelectionUnit="FullRow">
             <DataGrid.ContextMenu>
                 <ContextMenu Name="contextBackups">
                     <ui:MenuItem Name="menuRestore" Header="{lex:Loc}">
@@ -71,7 +71,7 @@
                             <ui:SymbolIcon HorizontalAlignment="Left" Symbol="FolderOpen24" />
                         </MenuItem.Icon>
                     </ui:MenuItem>
-                    <ui:MenuItem Name="menuDelete" Header="{lex:Loc Delete}">
+                    <ui:MenuItem Name="menuDelete" Header="{lex:Loc Delete}" Click="menuDelete_Click">
                         <MenuItem.Icon>
                             <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Delete24" />
                         </MenuItem.Icon>

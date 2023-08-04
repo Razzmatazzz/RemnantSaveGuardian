@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Shapes;
 using Wpf.Ui.Common.Interfaces;
@@ -629,6 +630,32 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 SaveWatcher.Resume();
             }
+        }
+
+        private void menuDelete_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var backup = dataBackups.SelectedItem as SaveBackup;
+            if (backup == null)
+            {
+                return;
+            }
+            var messageBox = new Wpf.Ui.Controls.MessageBox();
+            messageBox.Title = Loc.T("Confirm Delete");
+            messageBox.Content = new TextBlock() {
+                Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {
+                    { "backupName", backup.Name } })+$"\n{Loc.T("Characters")}: {string.Join(", ", backup.Save.Characters)}\n{Loc.T("Date")}: {backup.SaveDate.ToString()}", 
+                TextWrapping = System.Windows.TextWrapping.WrapWithOverflow 
+            };
+            messageBox.ButtonLeftName = Loc.T("Delete");
+            messageBox.ButtonLeftClick += (send, updatedEvent) => { 
+
+                messageBox.Close();
+            };
+            messageBox.ButtonRightName = Loc.T("Cancel");
+            messageBox.ButtonRightClick += (send, updatedEvent) => {
+                messageBox.Close();
+            };
+            messageBox.ShowDialog();
         }
     }
 

@@ -39,16 +39,26 @@ namespace RemnantSaveGuardian
                 }
                 return Regex.Replace(key.Replace("_", " "), "([A-Z0-9]+)", " $1").Trim();*/
             }
+            Debug.WriteLine(key);
             var matches = new Regex(@"{(?:(?<namespace>\w+?):)?(?<sub>\w+?)}").Matches(val);
             foreach (Match match in matches)
             {
-                var optionsToUse = options;
-                if (match.Groups.ContainsKey("namespace") && match.Groups["namespace"].Value != "")
+                Debug.WriteLine(match.Value);
+                var valueToSub = match.Groups["sub"].Value;
+                if (options.Has(valueToSub) && options[valueToSub] != "")
                 {
-                    optionsToUse = new LocalizationOptions(options);
-                    optionsToUse["namespace"] = match.Groups["namespace"].Value;
+                    valueToSub = options[valueToSub];
+                } else
+                {
+                    var optionsToUse = options;
+                    if (match.Groups.ContainsKey("namespace") && match.Groups["namespace"].Value != "")
+                    {
+                        optionsToUse = new LocalizationOptions(options);
+                        optionsToUse["namespace"] = match.Groups["namespace"].Value;
+                    }
+                    valueToSub = T(valueToSub, optionsToUse);
                 }
-                val = val.Replace(match.Value, T(match.Groups["sub"].Value, optionsToUse));
+                val = val.Replace(match.Value, valueToSub);
             }
             return val;
         }
@@ -80,6 +90,7 @@ namespace RemnantSaveGuardian
 
         public bool Has(string key)
         {
+            if (!ContainsKey(key)) return false;
             return this[key] != null;
         }
     }

@@ -126,6 +126,9 @@
   <data name="Adventure" xml:space="preserve">
     <value>Adventure</value>
   </data>
+  <data name="Are you sure you want to delete backup {backupName}?" xml:space="preserve">
+    <value>Are you sure you want to delete backup {backupName}?</value>
+  </data>
   <data name="Backup completed" xml:space="preserve">
     <value>Backup completed</value>
   </data>
@@ -159,8 +162,14 @@
   <data name="Campaign" xml:space="preserve">
     <value>Campaign</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="Character" xml:space="preserve">
     <value>Character</value>
+  </data>
+  <data name="Characters" xml:space="preserve">
+    <value>Characters</value>
   </data>
   <data name="chkAutoBackup_Content" xml:space="preserve">
     <value>Automatically backup save files</value>
@@ -183,6 +192,9 @@
   <data name="Choose a backup to restore from the list." xml:space="preserve">
     <value>Choose a backup to restore from the list.</value>
   </data>
+  <data name="Confirm Delete" xml:space="preserve">
+    <value>Confirm Delete</value>
+  </data>
   <data name="Copy" xml:space="preserve">
     <value>Copy</value>
   </data>
@@ -191,6 +203,9 @@
   </data>
   <data name="Dark" xml:space="preserve">
     <value>Dark</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
