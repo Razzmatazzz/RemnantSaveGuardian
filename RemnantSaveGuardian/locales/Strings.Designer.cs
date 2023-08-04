@@ -691,6 +691,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Possible Items.
+        /// </summary>
+        public static string Possible_Items {
+            get {
+                return ResourceManager.GetString("Possible Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Preferences.
         /// </summary>
         public static string Preferences {
