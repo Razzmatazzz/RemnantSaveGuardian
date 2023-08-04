@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Windows.Controls;
-using System.Windows.Shapes;
 using Wpf.Ui.Common.Interfaces;
-using Wpf.Ui.Controls;
 
 namespace RemnantSaveGuardian.Views.Pages
 {
@@ -86,6 +83,8 @@ namespace RemnantSaveGuardian.Views.Pages
 
                 menuOpenBackup.Click += MenuOpenBackup_Click;
 
+                menuDelete.Click += MenuDelete_Click;
+
                 if (Properties.Settings.Default.BackupFolder.Length == 0)
                 {
                     Logger.Log(Loc.T("Backup folder not set; reverting to default."));
@@ -137,6 +136,33 @@ namespace RemnantSaveGuardian.Views.Pages
                 return;
             }
             Process.Start("explorer.exe", @$"{backup.Save.SaveFolderPath}\");
+        }
+
+        private void MenuDelete_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var backup = dataBackups.SelectedItem as SaveBackup;
+            if (backup == null)
+            {
+                return;
+            }
+            var messageBox = new Wpf.Ui.Controls.MessageBox();
+            messageBox.Title = Loc.T("Confirm Delete");
+            messageBox.Content = new TextBlock()
+            {
+                Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {
+                    { "backupName", backup.Name } }) + $"\n{Loc.T("Characters")}: {string.Join(", ", backup.Save.Characters)}\n{Loc.T("Date")}: {backup.SaveDate.ToString()}",
+                TextWrapping = System.Windows.TextWrapping.WrapWithOverflow
+            };
+            messageBox.ButtonLeftName = Loc.T("Delete");
+            messageBox.ButtonLeftClick += (send, updatedEvent) => {
+                DeleteBackup(backup);
+                messageBox.Close();
+            };
+            messageBox.ButtonRightName = Loc.T("Cancel");
+            messageBox.ButtonRightClick += (send, updatedEvent) => {
+                messageBox.Close();
+            };
+            messageBox.ShowDialog();
         }
 
         private void BtnStartGame_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -647,8 +673,8 @@ namespace RemnantSaveGuardian.Views.Pages
                 TextWrapping = System.Windows.TextWrapping.WrapWithOverflow 
             };
             messageBox.ButtonLeftName = Loc.T("Delete");
-            messageBox.ButtonLeftClick += (send, updatedEvent) => { 
-
+            messageBox.ButtonLeftClick += (send, updatedEvent) => {
+                DeleteBackup(backup);
                 messageBox.Close();
             };
             messageBox.ButtonRightName = Loc.T("Cancel");
@@ -656,6 +682,21 @@ namespace RemnantSaveGuardian.Views.Pages
                 messageBox.Close();
             };
             messageBox.ShowDialog();
+        }
+
+        private void DeleteBackup(SaveBackup backup)
+        {
+            try
+            {
+                Directory.Delete(backup.Save.SaveFolderPath, true);
+
+                listBackups.Remove(backup);
+                dataBackups.Items.Refresh();
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"{Loc.T("Could not delete backup:")} {ex.Message}");
+            }
         }
     }
 

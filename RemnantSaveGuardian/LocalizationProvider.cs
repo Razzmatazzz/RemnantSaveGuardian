@@ -39,11 +39,9 @@ namespace RemnantSaveGuardian
                 }
                 return Regex.Replace(key.Replace("_", " "), "([A-Z0-9]+)", " $1").Trim();*/
             }
-            Debug.WriteLine(key);
             var matches = new Regex(@"{(?:(?<namespace>\w+?):)?(?<sub>\w+?)}").Matches(val);
             foreach (Match match in matches)
             {
-                Debug.WriteLine(match.Value);
                 var valueToSub = match.Groups["sub"].Value;
                 if (options.Has(valueToSub) && options[valueToSub] != "")
                 {
