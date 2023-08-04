@@ -312,6 +312,9 @@
   <data name="Open wiki" xml:space="preserve">
     <value>Open wiki</value>
   </data>
+  <data name="Possible Items" xml:space="preserve">
+    <value>Possible Items</value>
+  </data>
   <data name="Preferences" xml:space="preserve">
     <value>Preferences</value>
   </data>
