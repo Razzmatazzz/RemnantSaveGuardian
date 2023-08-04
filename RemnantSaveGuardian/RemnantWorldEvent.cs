@@ -556,6 +556,10 @@ namespace RemnantSaveGuardian
                 eventLengths.Add(eventEnds[i].Index - eventStarts[i].Index);
             }
             //Logger.Log($"{mode}");
+            if (mode == ProcessMode.Adventure && eventLengths.Count == 1)
+            {
+                return;
+            }
             if (mode == ProcessMode.Adventure && eventLengths.Count > 1 && eventLengths[1] < eventLengths[0])
             {
                 eventsIndex = 1;

@@ -1141,6 +1141,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mutators.
+        /// </summary>
+        public static string Gems {
+            get {
+                return ResourceManager.GetString("Gems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nimue&apos;s Retreat.
         /// </summary>
         public static string GoldenHall_Nimue {

@@ -22,6 +22,8 @@ namespace RemnantSaveGuardian.Views.Pages
             get;
         }
         private RemnantSave Save;
+        private List<RemnantWorldEvent> filteredCampaign;
+        private List<RemnantWorldEvent> filteredAdventure;
         private double midFontSize = 14;
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
@@ -72,6 +74,11 @@ namespace RemnantSaveGuardian.Views.Pages
                 //FontSizeSlider.Maximum = AdventureData.FontSize * 2;
                 FontSizeSlider.Value = Properties.Settings.Default.AnalyzerFontSize;
                 FontSizeSlider.ValueChanged += FontSizeSlider_ValueChanged;
+
+                filteredCampaign = new();
+                filteredAdventure = new();
+                CampaignData.ItemsSource = filteredCampaign;
+                AdventureData.ItemsSource = filteredAdventure;
 
                 CharacterControl.SelectedIndex = 0;
                 checkAdventureTab();
@@ -181,9 +188,9 @@ namespace RemnantSaveGuardian.Views.Pages
             //if (CharacterControl.SelectedIndex == -1 && listCharacters.Count > 0) return;
             if (CharacterControl.Items.Count > 0 && CharacterControl.SelectedIndex > -1)
             {
-                CampaignData.ItemsSource = Save.Characters[CharacterControl.SelectedIndex].CampaignEvents;
-                AdventureData.ItemsSource = Save.Characters[CharacterControl.SelectedIndex].AdventureEvents;
+                applyFilter();
                 checkAdventureTab();
+                applyFilter();
                 //txtMissingItems.Text = string.Join("\n", Save.Characters[CharacterControl.SelectedIndex].GetMissingItems());
 
                 foreach (TreeViewItem item in treeMissingItems.Items)
@@ -245,11 +252,11 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void reloadEventGrids()
         {
-            var tempData = CampaignData.ItemsSource;
+            var tempData = filteredCampaign;
             CampaignData.ItemsSource = null;
             CampaignData.ItemsSource = tempData;
 
-            tempData = AdventureData.ItemsSource;
+            tempData = filteredAdventure;
             AdventureData.ItemsSource = null;
             AdventureData.ItemsSource = tempData;
         }
@@ -303,6 +310,29 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             var item = e.Source as TreeViewItem;
             if (item != null) { item.IsSelected = true; }
+        }
+
+        private void WorldAnalyzerFilter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            applyFilter();
+        }
+        private void applyFilter()
+        {
+            if (CharacterControl.Items.Count == 0 || CharacterControl.SelectedIndex == -1)
+            {
+                return;
+            }
+            var character = Save.Characters[CharacterControl.SelectedIndex];
+            if (character == null)
+            {
+                return;
+            }
+            var filter = WorldAnalyzerFilter.Text.ToLower();
+            filteredCampaign.Clear();
+            filteredCampaign.AddRange(character.CampaignEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter)));
+            filteredAdventure.Clear();
+            filteredAdventure.AddRange(character.AdventureEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter)));
+            reloadEventGrids();
         }
     }
 }

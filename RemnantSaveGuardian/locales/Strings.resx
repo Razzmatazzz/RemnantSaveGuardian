@@ -384,6 +384,9 @@
   <data name="World Analyzer" xml:space="preserve">
     <value>World Analyzer</value>
   </data>
+  <data name="WorldAnalyzerFilter_PlaceholderText" xml:space="preserve">
+    <value>Filter by missing items</value>
+  </data>
   <data name="You must wait 5 minutes between update checks" xml:space="preserve">
     <value>You must wait 5 minutes between update checks</value>
   </data>

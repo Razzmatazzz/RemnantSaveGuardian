@@ -477,6 +477,9 @@
   <data name="ForgottenField" xml:space="preserve">
     <value>Forgotten Field</value>
   </data>
+  <data name="Gems" xml:space="preserve">
+    <value>Mutators</value>
+  </data>
   <data name="GoldenHall_Nimue" xml:space="preserve">
     <value>Nimue's Retreat</value>
   </data>

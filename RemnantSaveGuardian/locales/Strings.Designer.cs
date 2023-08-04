@@ -862,6 +862,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Filter by missing items.
+        /// </summary>
+        public static string WorldAnalyzerFilter_PlaceholderText {
+            get {
+                return ResourceManager.GetString("WorldAnalyzerFilter_PlaceholderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You must wait 5 minutes between update checks.
         /// </summary>
         public static string You_must_wait_5_minutes_between_update_checks {

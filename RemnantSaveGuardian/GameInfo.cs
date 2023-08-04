@@ -131,6 +131,10 @@ namespace RemnantSaveGuardian
                     }
                     foreach (var item in kvp.Value.AsArray())
                     {
+                        if (item["ignore"] != null && item["ignore"].GetValue<bool>() == true)
+                        {
+                            continue;
+                        }
                         RemnantItem rItem = new RemnantItem(item["name"].ToString());
                         if (item["notes"] != null)
                         {

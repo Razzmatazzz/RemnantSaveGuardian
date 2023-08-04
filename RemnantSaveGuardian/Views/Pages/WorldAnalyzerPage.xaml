@@ -35,6 +35,9 @@
                     <ui:SymbolIcon Symbol="ArrowExportUp24"/>
                 </Button>
             </WrapPanel>
+            <WrapPanel Grid.Column="1">
+                <ui:TextBox Name="WorldAnalyzerFilter" Margin="10,0,0,0" TextWrapping="Wrap" Text="" Width="Auto" HorizontalAlignment="Left" Icon="Filter24" PlaceholderEnabled="True" PlaceholderText="{lex:Loc}" TextChanged="WorldAnalyzerFilter_TextChanged"/>
+            </WrapPanel>
             <WrapPanel Grid.Column="2" VerticalAlignment="Center" Visibility="Visible">
                 <TextBlock FontWeight="Medium" Text="{lex:Loc Zoom}" VerticalAlignment="Center" Margin="0,0,5,0"/>
                 <ui:SymbolIcon Symbol="ZoomOut24"/>
