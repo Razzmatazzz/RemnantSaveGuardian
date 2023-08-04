@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Shapes;
 using Wpf.Ui.Common.Interfaces;
@@ -85,6 +86,8 @@ namespace RemnantSaveGuardian.Views.Pages
 
                 menuOpenBackup.Click += MenuOpenBackup_Click;
 
+                menuDelete.Click += MenuDelete_Click;
+
                 if (Properties.Settings.Default.BackupFolder.Length == 0)
                 {
                     Logger.Log(Loc.T("Backup folder not set; reverting to default."));
@@ -136,6 +139,16 @@ namespace RemnantSaveGuardian.Views.Pages
                 return;
             }
             Process.Start("explorer.exe", @$"{backup.Save.SaveFolderPath}\");
+        }
+
+        private void MenuDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var backup = dataBackups.SelectedItem as SaveBackup;
+            if (backup == null)
+            {
+                return;
+            }
+            DeleteBackup(backup);
         }
 
         private void BtnStartGame_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -628,6 +641,21 @@ namespace RemnantSaveGuardian.Views.Pages
             if (Properties.Settings.Default.AutoBackup)
             {
                 SaveWatcher.Resume();
+            }
+        }
+
+        private void DeleteBackup(SaveBackup backup)
+        {
+            try
+            {
+                Directory.Delete(backup.Save.SaveFolderPath, true);
+
+                listBackups.Remove(backup);
+                dataBackups.Items.Refresh();
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"{Loc.T("Could not delete backup:")} {ex.Message}");
             }
         }
     }
