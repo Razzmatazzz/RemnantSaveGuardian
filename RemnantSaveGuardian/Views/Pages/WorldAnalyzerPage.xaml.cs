@@ -166,6 +166,8 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             else if (e.Column.Header.Equals("PossibleItems"))
             {
+                e.Column.Header = "Possible Items";
+
                 if (!Properties.Settings.Default.ShowPossibleItems)
                 {
                     e.Cancel = true;
