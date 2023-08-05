@@ -312,6 +312,9 @@
   <data name="Open wiki" xml:space="preserve">
     <value>Открыть Вики</value>
   </data>
+  <data name="Possible Items" xml:space="preserve">
+    <value>Возможные предметы</value>
+  </data>
   <data name="Preferences" xml:space="preserve">
     <value>Предпочтения</value>
   </data>

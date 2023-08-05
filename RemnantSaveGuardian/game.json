@@ -99,72 +99,72 @@
           "name": "/Items/Gems/Melee/MetaGems/Overdrive/MetaGem_Overdrive"
         }
       ],
-      "ScavengersBauble": [
+      "Amulet_ScavengersBauble": [
         {
           "name": "/Items/Trinkets/Amulets/ScavengersBauble/Amulet_ScavengersBauble"
         }
       ],
-      "StalkersBrand": [
+      "Amulet_StalkersBrand": [
         {
           "name": "/Items/Trinkets/Amulets/StalkersBrand/Amulet_StalkersBrand"
         }
       ],
-      "VengeanceIdol": [
+      "Amulet_VengeanceIdol": [
         {
           "name": "/Items/Trinkets/Amulets/VengeanceIdol/Amulet_VengeanceIdol"
         }
       ],
-      "BloodStamp": [
+      "Ring_BloodStamp": [
         {
           "name": "/Items/Trinkets/Rings/WaxSealedRing/Ring_WaxSealedRing"
         }
       ],
-      "CelerityStone": [
+      "Ring_CelerityStone": [
         {
           "name": "/Items/Trinkets/Rings/CelerityStone/Ring_CelerityStone"
         }
       ],
-      "VestigeOfPower": [
+      "Ring_VestigeOfPower": [
         {
           "name": "/Items/Trinkets/Rings/VestigeOfPower/Ring_VestigeOfPower"
         }
       ],
-      "GuardiansRing": [
+      "Ring_GuardiansRing": [
         {
           "name": "/Items/Trinkets/Rings/GuardiansRing/Ring_GuardiansRing"
         }
       ],
-      "HeartOfTheWolf": [
+      "Ring_HeartOfTheWolf": [
         {
           "name": "/Items/Trinkets/Rings/HeartOfTheWolf/Ring_HeartOfTheWolf"
         }
       ],
-      "RingOfTheForestSpirit": [
+      "Ring_RingOfTheForestSpirit": [
         {
           "name": "/Items/Trinkets/Rings/RingOfTheForestSpirit/Ring_RingOfTheForestSpirit"
         }
       ],
-      "Sagestone": [
+      "Ring_Sagestone": [
         {
           "name": "/Items/Trinkets/Rings/SageStone/Ring_Sagestone"
         }
       ],
-      "SoulLink": [
+      "Ring_SoulLink": [
         {
           "name": "/Items/Trinkets/Rings/SoulLink/Ring_SoulLink"
         }
       ],
-      "SpiritStone": [
+      "Ring_SpiritStone": [
         {
           "name": "/Items/Trinkets/Rings/SpiritStone/Ring_SpiritStone"
         }
       ],
-      "StoneOfBalance": [
+      "Ring_StoneOfBalance": [
         {
           "name": "/Items/Trinkets/Rings/StoneofBalance/Ring_StoneOfBalance"
         }
       ],
-      "StrongArmBand": [
+      "Ring_StrongArmBand": [
         {
           "name": "/Items/Trinkets/Rings/StrongArmBand/Ring_StrongArmBand"
         }
@@ -239,7 +239,7 @@
           "name": "/Items/Weapons/Melee/Special/Stonebreaker/Weapon_Stonebreaker"
         }
       ],
-      "LivingStone": [
+      "Ring_LivingStone": [
         {
           "name": "/Items/Trinkets/Rings/LithicSignet/Ring_LithicSignet"
         }
@@ -372,7 +372,7 @@
           "name": "/Items/Traits/Core/BloodBond/Trait_BloodBond"
         }
       ],
-      "KoaraKuri": [
+      "Amulet_KoaraKuri": [
         {
           "name": "/Items/Trinkets/Amulets/KuriKuriCharm/Amulet_KuriKuriCharm"
         }
@@ -498,162 +498,162 @@
           "name": "/Items/Gems/Melee/MetaGems/Steadfast/MetaGem_Steadfast"
         }
       ],
-      "AlchemyStone": [
+      "Ring_AlchemyStone": [
         {
           "name": "/Items/Trinkets/Rings/AlchemyStone/Ring_AlchemyStone"
         }
       ],
-      "AlumniRing": [
+      "Ring_AlumniRing": [
         {
           "name": "/Items/Trinkets/Rings/AlumniRing/Ring_AlumniRing"
         }
       ],
-      "BoosterRing": [
+      "Ring_BoosterRing": [
         {
           "name": "/Items/Trinkets/Rings/BoosterRing/Ring_BoosterRing"
         }
       ],
-      "BurdenOfTheDivine": [
+      "Ring_BurdenOfTheDivine": [
         {
           "name": "/Items/Trinkets/Rings/BurdenOfTheDivine/Ring_BurdenOfTheDivine"
         }
       ],
-      "BurdenOfTheWarlock": [
+      "Ring_BurdenOfTheWarlock": [
         {
           "name": "/Items/Trinkets/Rings/BurdenOfTheWarlock/Ring_BurdenOfTheWarlock"
         }
       ],
-      "CatalogersJewel": [
+      "Ring_CatalogersJewel": [
         {
           "name": "/Items/Trinkets/Rings/CatalogersJewel/Ring_CatalogersJewel"
         }
       ],
-      "DranMemento": [
+      "Ring_DranMemento": [
         {
           "name": "/Items/Trinkets/Rings/DranMemento/Ring_DranMemento"
         }
       ],
-      "FaeShamanRing": [
+      "Ring_FaeShamanRing": [
         {
           "name": "/Items/Trinkets/Rings/DranShamanRing/Ring_FaeShamanRing"
         }
       ],
-      "FaeBruiserRing": [
+      "Ring_FaeBruiserRing": [
         {
           "name": "/Items/Trinkets/Rings/FaeBruiserRing/Ring_FaeBruiserRing"
         }
       ],
-      "FaeHunterRing": [
+      "Ring_FaeHunterRing": [
         {
           "name": "/Items/Trinkets/Rings/FaeHunterRing/Ring_FaeHunterRing"
         }
       ],
-      "FaeProtectorSignet": [
+      "Ring_FaeProtectorSignet": [
         {
           "name": "/Items/Trinkets/Rings/FaeProtectorSignet/Ring_FaeProtectorSignet"
         }
       ],
-      "FaeWarriorRing": [
+      "Ring_FaeWarriorRing": [
         {
           "name": "/Items/Trinkets/Rings/FaeWarriorRing/Ring_FaeWarriorRing"
         }
       ],
-      "FeastmastersSignet": [
+      "Ring_FeastmastersSignet": [
         {
           "name": "/Items/Trinkets/Rings/FeastmastersSignet/Ring_FeastmastersSignet"
         }
       ],
-      "FireStone": [
+      "Ring_FireStone": [
         {
           "name": "/Items/Trinkets/Rings/FireStone/Ring_FireStone"
         }
       ],
-      "GameMastersPride": [
+      "Ring_GameMastersPride": [
         {
           "name": "/Items/Trinkets/Rings/GameMastersPride/Ring_GameMastersPride"
         }
       ],
-      "GroundingStone": [
+      "Ring_GroundingStone": [
         {
           "name": "/Items/Trinkets/Rings/GroundingStone/Ring_GroundingStone"
         }
       ],
-      "OutcastRing": [
+      "Ring_OutcastRing": [
         {
           "name": "/Items/Trinkets/Rings/OutcastRing/Ring_OutcastRing"
         }
       ],
-      "RingOfGrace": [
+      "Ring_RingOfGrace": [
         {
           "name": "/Items/Trinkets/Rings/RingOfGrace/Ring_RingOfGrace"
         }
       ],
-      "RingOfRetribution": [
+      "Ring_RingOfRetribution": [
         {
           "name": "/Items/Trinkets/Rings/RingOfRetribution/Ring_RingOfRetribution"
         }
       ],
-      "RingOfTheRobust": [
+      "Ring_RingOfTheRobust": [
         {
           "name": "/Items/Trinkets/Rings/RingOfTheRobust/Ring_RingOfTheRobust"
         }
       ],
-      "ShinyHogLure": [
+      "Ring_ShinyHogLure": [
         {
           "name": "/Items/Trinkets/Rings/ShinyHogLure/Ring_ShinyHogLure"
         }
       ],
-      "StoneOfMalevolence": [
+      "Ring_StoneOfMalevolence": [
         {
           "name": "/Items/Trinkets/Rings/StoneOfMalevolence/Ring_StoneOfMalevolence"
         }
       ],
-      "DreadFont": [
+      "Ring_DreadFont": [
         {
           "name": "/Items/Trinkets/Rings/DreadFont/Ring_DreadFont"
         }
       ],
-      "StreamCoupler": [
+      "Ring_StreamCoupler": [
         {
           "name": "/Items/Trinkets/Rings/StreamCoupler/Ring_StreamCoupler"
         }
       ],
-      "WeightlessWeight": [
+      "Amulet_WeightlessWeight": [
         {
           "name": "/Items/Trinkets/Amulets/WeightlessWeight/Amulet_WeightlessWeight"
         }
       ],
-      "ChainsOfAmplification": [
+      "Amulet_ChainsOfAmplification": [
         {
           "name": "/Items/Trinkets/Amulets/ChainsOfAmplification/Amulet_ChainsOfAmplification"
         }
       ],
-      "ConductivePadding": [
+      "Amulet_ConductivePadding": [
         {
           "name": "/Items/Trinkets/Amulets/ConductivePadding/Amulet_ShockDevice"
         }
       ],
-      "JestersBell": [
+      "Amulet_JestersBell": [
         {
           "name": "/Items/Trinkets/Amulets/JestersBell/Amulet_JestersBell"
         }
       ],
-      "NeckboneNecklace": [
+      "Amulet_NeckboneNecklace": [
         {
           "name": "/Items/Trinkets/Amulets/NeckboneNecklace/Amulet_NeckboneNecklace"
         }
       ],
-      "IndignantFetish": [
+      "Amulet_IndignantFetish": [
         {
           "name": "/Items/Trinkets/Amulets/IndignantFetish/Amulet_IndignantFetish"
         }
       ],
-      "ShadeBloomFloret": [
+      "Amulet_ShadeBloomFloret": [
         {
           "name": "/Items/Trinkets/Amulets/ShadeBloomFloret/Amulet_ShadeBloomCrystal"
         }
       ],
-      "SpiritWispAmulet": [
+      "Amulet_SpiritWispAmulet": [
         {
           "name": "/Items/Trinkets/Amulets/SpiritWispAmulet/Amulet_SpiritWispAmulet"
         }
@@ -963,72 +963,72 @@
           "name": "/Items/Armor/Base/RelicTesting/VoidHeart/Relic_Consumable_VoidHeart"
         }
       ],
-      "01": [
+      "Amulet_01": [
         {
           "name": "/Items/Trinkets/Amulets/KineticShieldExchanger/Amulet_KineticShieldExchanger"
         }
       ],
-      "02": [
+      "Amulet_02": [
         {
           "name": "/Items/Trinkets/Amulets/InertOvercharger/Amulet_InertOvercharger"
         }
       ],
-      "03": [
+      "Amulet_03": [
         {
           "name": "/Items/Trinkets/Amulets/EmergencySwitch/Amulet_EmergencySwitch"
         }
       ],
-      "ConservationSeal": [
+      "Ring_ConservationSeal": [
         {
           "name": "/Items/Trinkets/Rings/ConservationSeal/Ring_ConservationSeal"
         }
       ],
-      "DeepPocketRing": [
+      "Ring_DeepPocketRing": [
         {
           "name": "/Items/Trinkets/Rings/DeepPocketRing/Ring_DeepPocketRing"
         }
       ],
-      "DefensiveActionLoop": [
+      "Ring_DefensiveActionLoop": [
         {
           "name": "/Items/Trinkets/Rings/DefensiveActionLoop/Ring_DefensiveActionLoop"
         }
       ],
-      "FeedbackLoop": [
+      "Ring_FeedbackLoop": [
         {
           "name": "/Items/Trinkets/Rings/FeedbackLoop/Ring_FeedbackLoop"
         }
       ],
-      "PointFocusRing": [
+      "Ring_PointFocusRing": [
         {
           "name": "/Items/Trinkets/Rings/PointFocusRing/Ring_PointFocusRing"
         }
       ],
-      "ReserveBoostingGem": [
+      "Ring_ReserveBoostingGem": [
         {
           "name": "/Items/Trinkets/Rings/ReserveBoostingGem/Ring_ReserveBoostingGem"
         }
       ],
-      "RingOfRestocking": [
+      "Ring_RingOfRestocking": [
         {
           "name": "/Items/Trinkets/Rings/RingOfRestocking/Ring_RingOfRestocking"
         }
       ],
-      "StoneOfExpanse": [
+      "Ring_StoneOfExpanse": [
         {
           "name": "/Items/Trinkets/Rings/StoneOfExpanse/Ring_StoneOfExpanse"
         }
       ],
-      "TargetingJewel": [
+      "Ring_TargetingJewel": [
         {
           "name": "/Items/Trinkets/Rings/TargetingJewel/Ring_TargetingJewel"
         }
       ],
-      "VacuumSeal": [
+      "Ring_VacuumSeal": [
         {
           "name": "/Items/Trinkets/Rings/VacuumSeal/Ring_VacuumSeal"
         }
       ],
-      "ElevatorShaft": [
+      "Ring_ElevatorShaft": [
         {
           "name": "/Items/Trinkets/Rings/PropulsionLoop/Ring_PropulsionLoop"
         },
@@ -1125,7 +1125,8 @@
       ],
       "Extermination": [
         {
-          "name": "/Quests/Quest_SideD_Extermination/Items/Quest_Item_Extermination_AICore"
+          "name": "/Quests/Quest_SideD_Extermination/Items/Quest_Item_Extermination_AICore",
+          "ignore":  true
         },
         {
           "name": "/Items/Trinkets/Amulets/ToxicReleaseValve/Amulet_ToxicReleaseValve"
@@ -1202,7 +1203,8 @@
       ],
       "Train": [
         {
-          "name": "/Quests/Quest_SideD_Train/Items/Quest_Item_Train_AICore"
+          "name": "/Quests/Quest_SideD_Train/Items/Quest_Item_Train_AICore",
+          "ignore":  true
         },
         {
           "name": "/Items/Weapons/Melee/Standard/Hammer/AtomSmasher/Weapon_AtomSmasher"

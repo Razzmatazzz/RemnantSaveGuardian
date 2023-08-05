@@ -88,6 +88,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete backup {backupName}?.
+        /// </summary>
+        public static string Are_you_sure_you_want_to_delete_backup__backupName__ {
+            get {
+                return ResourceManager.GetString("Are you sure you want to delete backup {backupName}?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backup completed.
         /// </summary>
         public static string Backup_completed {
@@ -187,11 +196,29 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Character.
         /// </summary>
         public static string Character {
             get {
                 return ResourceManager.GetString("Character", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Characters.
+        /// </summary>
+        public static string Characters {
+            get {
+                return ResourceManager.GetString("Characters", resourceCulture);
             }
         }
         
@@ -259,6 +286,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm Delete.
+        /// </summary>
+        public static string Confirm_Delete {
+            get {
+                return ResourceManager.GetString("Confirm Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy.
         /// </summary>
         public static string Copy {
@@ -282,6 +318,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Dark {
             get {
                 return ResourceManager.GetString("Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string Date {
+            get {
+                return ResourceManager.GetString("Date", resourceCulture);
             }
         }
         
@@ -340,7 +385,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export save files as plaintext.
+        ///   Looks up a localized string similar to Export save files.
         /// </summary>
         public static string Export_save_files_as_plaintext {
             get {
@@ -646,6 +691,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Possible Items.
+        /// </summary>
+        public static string Possible_Items {
+            get {
+                return ResourceManager.GetString("Possible Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Preferences.
         /// </summary>
         public static string Preferences {
@@ -772,6 +826,24 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Highlight.
+        /// </summary>
+        public static string Text_Highlight {
+            get {
+                return ResourceManager.GetString("Text_Highlight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        public static string Text_Normal {
+            get {
+                return ResourceManager.GetString("Text_Normal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Theme.
         /// </summary>
         public static string Theme {
@@ -795,6 +867,15 @@ namespace RemnantSaveGuardian.locales {
         public static string World_Analyzer {
             get {
                 return ResourceManager.GetString("World Analyzer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filter by missing items.
+        /// </summary>
+        public static string WorldAnalyzerFilter_PlaceholderText {
+            get {
+                return ResourceManager.GetString("WorldAnalyzerFilter_PlaceholderText", resourceCulture);
             }
         }
         

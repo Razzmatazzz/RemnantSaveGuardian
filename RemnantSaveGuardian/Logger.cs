@@ -44,6 +44,10 @@ namespace RemnantSaveGuardian
 
         public static void Log(object message, LogType logType)
         {
+            if (message == null)
+            {
+                message = "null";
+            }
             MessageLogged?.Invoke(null, new (message.ToString(), logType));
             messages.Add(new(message.ToString(), logType));
             if (Properties.Settings.Default.CreateLogFile)

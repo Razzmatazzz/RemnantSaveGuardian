@@ -54,11 +54,7 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                /*var parsed = new Regex(@"^(Ring|Amulet)_").Replace(_name, "");
-                if (parsed.Length < 3) {
-                    parsed = _name;
-                }
-                return Loc.GameT(parsed);*/
+                //return $"{_name}\n{_key}";
                 return Loc.GameT(_name);
             }
         }
@@ -114,6 +110,11 @@ namespace RemnantSaveGuardian
                 _locations.AddRange(locations);
             }
             _type = type;
+            if (type == "Ring" || type == "Amulet")
+            {
+                _name = $"{type}_{_name}";
+                _type = "Item";
+            }
             if (type.ToLower() == "traitbook")
             {
                 _type = "Item";
@@ -140,9 +141,6 @@ namespace RemnantSaveGuardian
             _locations.Add(world);
         }
         public RemnantWorldEvent(string key, List<string> locations, string type) : this(key, key, locations, type) { }
-        public RemnantWorldEvent() : this("", "", "")
-        { }
-
         public RemnantWorldEvent(Match match) : this(match.Value, match.Groups["eventName"].Value, new() { match.Groups["world"].Value }, match.Groups["eventType"].Value)
         { }
         public RemnantWorldEvent(Match match, string location) : this(match.Value, match.Groups["eventName"].Value, new() { match.Groups["world"].Value, location }, match.Groups["eventType"].Value) { }
@@ -158,16 +156,15 @@ namespace RemnantSaveGuardian
 
         public void setMissingItems(RemnantCharacter charData)
         {
-            List<RemnantItem> missingItems = new List<RemnantItem>();
+            mItems.Clear();
             List<RemnantItem> possibleItems = this.getPossibleItems();
             foreach (RemnantItem item in possibleItems)
             {
                 if (!charData.Inventory.Contains(item.Key.ToLower()))
                 {
-                    missingItems.Add(item);
+                    mItems.Add(item);
                 }
             }
-            mItems = missingItems;
 
             if (possibleItems.Count == 0 && !GameInfo.Events.ContainsKey(this._name) && !this._name.Equals("TraitBook") && !this.Name.Equals("Simulacrum"))
             {
@@ -559,6 +556,10 @@ namespace RemnantSaveGuardian
                 eventLengths.Add(eventEnds[i].Index - eventStarts[i].Index);
             }
             //Logger.Log($"{mode}");
+            if (mode == ProcessMode.Adventure && eventLengths.Count == 1)
+            {
+                return;
+            }
             if (mode == ProcessMode.Adventure && eventLengths.Count > 1 && eventLengths[1] < eventLengths[0])
             {
                 eventsIndex = 1;
@@ -591,6 +592,7 @@ namespace RemnantSaveGuardian
             string firstZone = "";
             string currentMainLocation = null;
             string currentSublocation = null;
+            RemnantWorldEvent lastTemplate;
             for (var areaIndex = 0; areaIndex < areas.Count; areaIndex++)
             {
                 var currentArea = areas[areaIndex];
@@ -609,12 +611,20 @@ namespace RemnantSaveGuardian
                         if (eventMatch.Value.Contains("TileInfo") || eventMatch.Value.Contains("Template") || eventMatch.Value.Contains("EventTree") || eventMatch.Value.EndsWith("_C")) {
                             if (!eventMatch.Value.EndsWith("C"))
                             {
-                                Logger.Log(currentArea.Groups["location"]);
-                                Logger.Log(eventMatch.Value);
+                                if (eventMatch.Value.Contains("Template"))
+                                {
+                                    lastTemplate = new RemnantWorldEvent(eventMatch.Value, eventMatch.Value, new() { eventMatch.Groups["world"].Value }, "Template");
+                                    /*if (!zoneEvents.ContainsKey(lastTemplate.RawWorld))
+                                    {
+                                        zoneEvents.Add(lastTemplate.RawWorld, new List<RemnantWorldEvent>());
+                                    }
+                                    zoneEvents[lastTemplate.RawWorld].Add(lastTemplate);*/
+                                }
+                                //Logger.Log(currentArea.Groups["location"]);
+                                //Logger.Log(eventMatch.Value);
                             }
                             continue;
                         }
-
                         // determine location
                         if (eventMatch.Value.Contains("Ring") || eventMatch.Value.Contains("Amulet"))
                         {

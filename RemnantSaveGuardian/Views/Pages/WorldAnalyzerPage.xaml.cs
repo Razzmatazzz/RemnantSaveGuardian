@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using Wpf.Ui.Common.Interfaces;
 
 namespace RemnantSaveGuardian.Views.Pages
@@ -20,6 +22,9 @@ namespace RemnantSaveGuardian.Views.Pages
             get;
         }
         private RemnantSave Save;
+        private List<RemnantWorldEvent> filteredCampaign;
+        private List<RemnantWorldEvent> filteredAdventure;
+        private double midFontSize = 14;
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
             ViewModel = viewModel;
@@ -63,6 +68,18 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
                 CharacterControl.ItemsSource = Save.Characters;
                 Save.UpdateCharacters();
+
+                //FontSizeSlider.Value = AdventureData.FontSize;
+                //FontSizeSlider.Minimum = 2.0;
+                //FontSizeSlider.Maximum = AdventureData.FontSize * 2;
+                FontSizeSlider.Value = Properties.Settings.Default.AnalyzerFontSize;
+                FontSizeSlider.ValueChanged += FontSizeSlider_ValueChanged;
+
+                filteredCampaign = new();
+                filteredAdventure = new();
+                CampaignData.ItemsSource = filteredCampaign;
+                AdventureData.ItemsSource = filteredAdventure;
+
                 CharacterControl.SelectedIndex = 0;
                 checkAdventureTab();
             } catch (Exception ex) {
@@ -73,7 +90,13 @@ namespace RemnantSaveGuardian.Views.Pages
 
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel) : this(viewModel, null)
         {
+            
+        }
 
+        private void FontSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Properties.Settings.Default.AnalyzerFontSize = (int)Math.Round(FontSizeSlider.Value);
+            reloadEventGrids();
         }
 
         private void GameType_CollapsedExpanded(object sender, RoutedEventArgs e)
@@ -85,7 +108,6 @@ namespace RemnantSaveGuardian.Views.Pages
         private void SavePlaintextButton_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            //openFolderDialog.SelectedPath = Properties.Settings.Default.GameFolder;
             openFolderDialog.Description = Loc.T("Export save files as plaintext");
             openFolderDialog.UseDescriptionForTitle = true;
             System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
@@ -94,15 +116,18 @@ namespace RemnantSaveGuardian.Views.Pages
                 return;
             }
             File.WriteAllText($@"{openFolderDialog.SelectedPath}\profile.txt", Save.GetProfileData());
+            File.Copy(Save.SaveProfilePath, $@"{openFolderDialog.SelectedPath}\profile.sav", true);
             foreach (var filePath in Save.WorldSaves)
             {
                 File.WriteAllText($@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\")).Replace(".sav", ".txt")}", RemnantSave.DecompressSaveAsString(filePath));
+                File.Copy(filePath, $@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\"))}", true);
             }
+            Logger.Success(Loc.T($"Exported save files successfully to {openFolderDialog.SelectedPath}"));
         }
 
         private void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "ShowPossibleItems")
+            if (e.PropertyName == "ShowPossibleItems" || e.PropertyName == "MissingItemColor")
             {
                 Dispatcher.Invoke(() =>
                 {
@@ -134,19 +159,29 @@ namespace RemnantSaveGuardian.Views.Pages
                 e.Cancel = true;
                 return;
             }
+            var cellStyle = new Style(typeof(DataGridCell));
+            cellStyle.Setters.Add(new Setter(FontSizeProperty, FontSizeSlider.Value));
             if (e.Column.Header.Equals("MissingItems"))
             {
                 e.Column.Header = "Missing Items";
-                // todo: set missing item color?
+                
+                if (Properties.Settings.Default.MissingItemColor == "Highlight")
+                {
+                    var highlight = System.Drawing.SystemColors.Highlight;
+                    cellStyle.Setters.Add(new Setter(ForegroundProperty, new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(highlight.R, highlight.G, highlight.B))));
+                }
             }
             else if (e.Column.Header.Equals("PossibleItems"))
             {
+                e.Column.Header = "Possible Items";
+
                 if (!Properties.Settings.Default.ShowPossibleItems)
                 {
                     e.Cancel = true;
                     return;
                 }
             }
+            e.Column.CellStyle = cellStyle;
             e.Column.Header = Loc.T(e.Column.Header.ToString());
         }
 
@@ -155,9 +190,9 @@ namespace RemnantSaveGuardian.Views.Pages
             //if (CharacterControl.SelectedIndex == -1 && listCharacters.Count > 0) return;
             if (CharacterControl.Items.Count > 0 && CharacterControl.SelectedIndex > -1)
             {
-                CampaignData.ItemsSource = Save.Characters[CharacterControl.SelectedIndex].CampaignEvents;
-                AdventureData.ItemsSource = Save.Characters[CharacterControl.SelectedIndex].AdventureEvents;
+                applyFilter();
                 checkAdventureTab();
+                applyFilter();
                 //txtMissingItems.Text = string.Join("\n", Save.Characters[CharacterControl.SelectedIndex].GetMissingItems());
 
                 foreach (TreeViewItem item in treeMissingItems.Items)
@@ -168,10 +203,6 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     var item = new TreeViewItem();
                     item.Header = rItem.Name;
-                    if (item.Header == null)
-                    {
-                        Logger.Log(rItem.Key);
-                    }
                     if (!rItem.ItemNotes.Equals("")) item.ToolTip = rItem.ItemNotes;
                     item.ContextMenu = treeMissingItems.Resources["ItemContext"] as System.Windows.Controls.ContextMenu;
                     item.Tag = "item";
@@ -223,11 +254,11 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void reloadEventGrids()
         {
-            var tempData = CampaignData.ItemsSource;
+            var tempData = filteredCampaign;
             CampaignData.ItemsSource = null;
             CampaignData.ItemsSource = tempData;
 
-            tempData = AdventureData.ItemsSource;
+            tempData = filteredAdventure;
             AdventureData.ItemsSource = null;
             AdventureData.ItemsSource = tempData;
         }
@@ -281,6 +312,29 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             var item = e.Source as TreeViewItem;
             if (item != null) { item.IsSelected = true; }
+        }
+
+        private void WorldAnalyzerFilter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            applyFilter();
+        }
+        private void applyFilter()
+        {
+            if (CharacterControl.Items.Count == 0 || CharacterControl.SelectedIndex == -1)
+            {
+                return;
+            }
+            var character = Save.Characters[CharacterControl.SelectedIndex];
+            if (character == null)
+            {
+                return;
+            }
+            var filter = WorldAnalyzerFilter.Text.ToLower();
+            filteredCampaign.Clear();
+            filteredCampaign.AddRange(character.CampaignEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter)));
+            filteredAdventure.Clear();
+            filteredAdventure.AddRange(character.AdventureEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter)));
+            reloadEventGrids();
         }
     }
 }
