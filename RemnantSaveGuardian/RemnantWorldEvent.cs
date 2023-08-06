@@ -800,7 +800,6 @@ namespace RemnantSaveGuardian
                         }
                         else if (worldEvent.RawName == "FaelinFaerlin")
                         {
-                            Debug.WriteLine(eventMatch.Groups["details"].Value);
                             RemnantWorldEvent faerlin = new RemnantWorldEvent("Faerin", "Faerin", new() { "World_Fae", "Malefic Gallery" }, "Boss");
                             faerlin.setMissingItems(character);
                             //zoneEvents["World_Fae"].Add(faerlin);
