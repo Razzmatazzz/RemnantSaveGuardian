@@ -271,15 +271,15 @@ namespace RemnantSaveGuardian.Views.Pages
                         }
                         else
                         {
-                            this.ActiveSaveIsBackedUp = false;
-                            foreach (SaveBackup backup in listBackups)
-                            {
-                                if (backup.Active) backup.Active = false;
-                            }
-                            dataBackups.Items.Refresh();
+                            ResetActiveBackupStatus();
+
                             TimeSpan span = (newBackupTime - DateTime.Now);
                             Logger.Log(Loc.T("Save change detected; waiting {numMinutes} minutes until next backup", new() { { "numMinutes", $"{Math.Round(span.Minutes + (span.Seconds / 60.0), 2)}" } }));
                         }
+                    }
+                    else
+                    {
+                        ResetActiveBackupStatus();
                     }
 
                     if (gameProcess == null || gameProcess.HasExited)
@@ -306,6 +306,18 @@ namespace RemnantSaveGuardian.Views.Pages
                     Logger.Error($"{ex.GetType()} {Loc.T("processing save file change")}: {ex.Message} ({ex.StackTrace})");
                 }
             });
+        }
+
+        private void ResetActiveBackupStatus()
+        {
+            this.ActiveSaveIsBackedUp = false;
+
+            foreach (SaveBackup backup in listBackups)
+            {
+                if (backup.Active) backup.Active = false;
+            }
+
+            dataBackups.Items.Refresh();
         }
 
         private void loadBackups()
