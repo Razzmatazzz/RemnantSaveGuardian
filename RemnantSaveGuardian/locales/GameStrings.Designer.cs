@@ -2131,7 +2131,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Archers Crest.
+        ///   Looks up a localized string similar to Archer&apos;s Crest.
         /// </summary>
         public static string Ring_ArchersCrest {
             get {

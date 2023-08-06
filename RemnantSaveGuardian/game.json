@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "mainLocations": [
     "Quest_Global_TheHunterDream_Template01",
     "Quest_Story_AllFather_DranCity1_Template",
@@ -120,6 +120,11 @@
           "name": "/Items/Trinkets/Amulets/VengeanceIdol/Amulet_VengeanceIdol"
         }
       ],
+      "Ring_ArchersCrest": [
+        {
+          "name": "/Items/Trinkets/Rings/ArchersCrest/Ring_ArchersCrest"
+        }
+      ],
       "Ring_BloodStamp": [
         {
           "name": "/Items/Trinkets/Rings/WaxSealedRing/Ring_WaxSealedRing"
@@ -173,6 +178,11 @@
       "Ring_StrongArmBand": [
         {
           "name": "/Items/Trinkets/Rings/StrongArmBand/Ring_StrongArmBand"
+        }
+      ],
+      "Ring_LivingStone": [
+        {
+          "name": "/Items/Trinkets/Rings/LithicSignet/Ring_LithicSignet"
         }
       ],
       "ThaenLeaf": [
@@ -245,11 +255,6 @@
           "name": "/Items/Weapons/Melee/Special/Stonebreaker/Weapon_Stonebreaker"
         }
       ],
-      "Ring_LivingStone": [
-        {
-          "name": "/Items/Trinkets/Rings/LithicSignet/Ring_LithicSignet"
-        }
-      ],
       "Sarcophagus": [
         {
           "name": "/Items/Gems/Ranged/MetaGems/Extender/MetaGem_Extender"
@@ -295,11 +300,6 @@
         },
         {
           "name": "/Items/Trinkets/Rings/BandBand/Ring_BandBand"
-        }
-      ],
-      "HiddenChamber": [
-        {
-          "name": "/Items/Trinkets/Rings/ArchersCrest/Ring_ArchersCrest"
         }
       ],
       "Library": [
