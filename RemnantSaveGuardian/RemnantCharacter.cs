@@ -72,6 +72,7 @@ namespace RemnantSaveGuardian
                 var inventoryEnds = Regex.Matches(profileData, "[^.]Character_Master_Player_C");
                 for (var i = 0; i < inventoryStarts.Count; i++)
                 {
+                    //Debug.WriteLine($"character {i}");
                     Match invMatch = inventoryStarts[i];
                     Match invEndMatch = inventoryEnds.First(m => m.Index > invMatch.Index);
                     var inventory = profileData.Substring(invMatch.Index, invEndMatch.Index - invMatch.Index);

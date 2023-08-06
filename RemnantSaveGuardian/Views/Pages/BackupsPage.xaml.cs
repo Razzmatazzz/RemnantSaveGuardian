@@ -278,7 +278,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             }
                             dataBackups.Items.Refresh();
                             TimeSpan span = (newBackupTime - DateTime.Now);
-                            Logger.Log($"Save change detected, but {span.Minutes + Math.Round(span.Seconds / 60.0, 2)} minutes, left until next backup");
+                            Logger.Log(Loc.T("Save change detected; waiting {numMinutes} minutes until next backup", new() { { "numMinutes", $"{Math.Round(span.Minutes + (span.Seconds / 60.0), 2)}" } }));
                         }
                     }
 

@@ -55,6 +55,7 @@ namespace RemnantSaveGuardian
             get
             {
                 //return $"{_name}\n{_key}";
+                //return Loc.GameT(_name)+"\n"+_key;
                 return Loc.GameT(_name);
             }
         }
@@ -109,16 +110,22 @@ namespace RemnantSaveGuardian
             {
                 _locations.AddRange(locations);
             }
+            if (_name.Contains("_Spawntable")) {
+                _name = _name.Replace("_Spawntable", "");
+            }
             _type = type;
-            if (type == "Ring" || type == "Amulet")
+            List<string> itemPrefixes = new() { "Ring", "Amulet", "Trait" };
+            if (!itemPrefixes.TrueForAll(prefix => !name.StartsWith(prefix)))
             {
-                _name = $"{type}_{_name}";
                 _type = "Item";
             }
-            if (type.ToLower() == "traitbook")
+            if (name.ToLower().Contains("traitbook"))
             {
-                _type = "Item";
                 _name = "TraitBook";
+            }
+            if (type == "Sewer")
+            {
+                _type = "Event";
             }
             if (!key.Contains("Quest_Event") && type == "Story")
             {
@@ -592,7 +599,11 @@ namespace RemnantSaveGuardian
             string firstZone = "";
             string currentMainLocation = null;
             string currentSublocation = null;
-            RemnantWorldEvent lastTemplate;
+            var faelinCount = 0;
+            Dictionary<string, RemnantWorldEvent> lastTemplates = new();
+            RemnantWorldEvent lastTileInfo;
+            RemnantWorldEvent lastEventTree;
+            List<string> excludeTypes = new() { "Global", "Earth" };
             for (var areaIndex = 0; areaIndex < areas.Count; areaIndex++)
             {
                 var currentArea = areas[areaIndex];
@@ -602,33 +613,89 @@ namespace RemnantSaveGuardian
                     areaEndIndex = areas[areaIndex + 1].Index;
                 }
                 var areaText = eventsText[currentArea.Index..areaEndIndex];
-                MatchCollection eventMatches = Regex.Matches(areaText, @"/Game/(?<world>(?:World|Campaign)_\w+)/Quests/(?:\w+)_(?<eventType>\w+?)_(?<eventName>\w+)/\w+\.\w+");
+                //MatchCollection eventMatches = Regex.Matches(areaText, @"/Game/(?<world>(?:World|Campaign)_\w+)/Quests/(?:\w+)/(?<eventDetails>(?:SpawnTable_)?(?:[a-zA-Z0-9]+_)?(?<eventType>[a-zA-Z0-9]+)_(?<eventName>\w+))\.\w+");
+                MatchCollection eventMatches = Regex.Matches(areaText, @"/Game/(?<world>(?:World|Campaign)_\w+)/Quests/(?:Quest_)?(?<eventType>[a-zA-Z0-9]+)_(?<eventName>\w+)/(?<details>\w+)\.\w+");
                 //MatchCollection eventMatches = Regex.Matches(eventsText, @"/\w+/(?:\w+)_(?<world>\w+)/(?:\w+/)?([a-zA-Z0-9]+_(?<eventType>[a-zA-Z0-9]+)_(?<eventName>[a-zA-Z0-9_]+))/(?:Q)");
                 foreach (Match eventMatch in eventMatches)
                 {
+                    var lastTemplate = lastTemplates.ContainsKey(eventMatch.Groups["world"].Value) ? lastTemplates[eventMatch.Groups["world"].Value] : null;
+                    if (lastTemplate != null)
+                    {
+                        currentMainLocation = lastTemplate.RawName;
+                    } else
+                    {
+                        //Debug.WriteLine($"No last template for {eventMatch.Value}");
+                        currentMainLocation = null;
+                    }
                     try
                     {
-                        if (eventMatch.Value.Contains("TileInfo") || eventMatch.Value.Contains("Template") || eventMatch.Value.Contains("EventTree") || eventMatch.Value.EndsWith("_C")) {
-                            if (!eventMatch.Value.EndsWith("C"))
+                        if (eventMatch.Value.Contains("TileInfo") || eventMatch.Value.Contains("Template") || eventMatch.Value.Contains("EventTree") || eventMatch.Value.EndsWith("_Cxxx")) {
+                            if (true || !eventMatch.Value.EndsWith("C"))
                             {
                                 if (eventMatch.Value.Contains("Template"))
                                 {
-                                    lastTemplate = new RemnantWorldEvent(eventMatch.Value, eventMatch.Value, new() { eventMatch.Groups["world"].Value }, "Template");
+                                    lastTemplate = new RemnantWorldEvent(eventMatch.Value, eventMatch.Groups["details"].Value, new() { eventMatch.Groups["world"].Value }, "Template");
+                                    var mainTemplateMatch = Regex.Match(eventMatch.Value, @"Quest_(Global|Story)_\w+_Template");
+                                    if (mainTemplateMatch.Success)
+                                    {
+                                        lastTemplates[eventMatch.Groups["world"].Value] = lastTemplate;
+                                    }
                                     /*if (!zoneEvents.ContainsKey(lastTemplate.RawWorld))
                                     {
                                         zoneEvents.Add(lastTemplate.RawWorld, new List<RemnantWorldEvent>());
                                     }
                                     zoneEvents[lastTemplate.RawWorld].Add(lastTemplate);*/
                                 }
+                                /*if (eventMatch.Value.Contains("TileInfo"))
+                                {
+                                    lastTileInfo = new RemnantWorldEvent(eventMatch.Value, eventMatch.Value, new() { eventMatch.Groups["world"].Value }, "TileInfo");
+                                    if (!zoneEvents.ContainsKey(lastTileInfo.RawWorld))
+                                    {
+                                        zoneEvents.Add(lastTileInfo.RawWorld, new List<RemnantWorldEvent>());
+                                    }
+                                    zoneEvents[lastTileInfo.RawWorld].Add(lastTileInfo);
+                                }*/
+                                /*if (eventMatch.Value.Contains("EventTree"))
+                                {
+                                    lastEventTree = new RemnantWorldEvent(eventMatch.Value, eventMatch.Groups["eventName"].Value, new() { eventMatch.Groups["world"].Value }, "EventTree");
+                                    if (!zoneEvents.ContainsKey(lastEventTree.RawWorld))
+                                    {
+                                        zoneEvents.Add(lastEventTree.RawWorld, new List<RemnantWorldEvent>());
+                                    }
+                                    zoneEvents[lastEventTree.RawWorld].Add(lastEventTree);
+                                }*/
                                 //Logger.Log(currentArea.Groups["location"]);
                                 //Logger.Log(eventMatch.Value);
                             }
                             continue;
                         }
+                        if (eventMatch.Value.EndsWith("_C"))
+                        {
+                            continue;
+                        }
+                        if (excludeTypes.Contains(eventMatch.Groups["eventType"].Value))
+                        {
+                            continue;
+                        }
+                        if (eventMatch.Groups["eventType"].Value == "Miniboss" && eventMatch.Groups["eventName"].Value.Contains("POI"))
+                        {
+                            continue;
+                        }
+                        if (eventMatch.Groups["details"].Value.Contains("SpawnTable_Quest_Global"))
+                        {
+                            continue;
+                        }
+                        if (eventMatch.Groups["details"].Value.Contains("SpawnTable_Quest_Story"))
+                        {
+                            continue;
+                        }
+                        if (eventMatch.Groups["details"].Value.Contains("SpawnTable_Miniboss"))
+                        {
+                            continue;
+                        }
                         // determine location
                         if (eventMatch.Value.Contains("Ring") || eventMatch.Value.Contains("Amulet"))
                         {
-                            //eventName = textLine.Split('/')[4].Split('_')[3];
                             currentSublocation = null;
                         }
                         else if (eventMatch.Groups["eventType"].Value.Contains("Injectable") || eventMatch.Groups["eventType"].Value.Contains("Abberation"))
@@ -657,7 +724,30 @@ namespace RemnantSaveGuardian
                         }
 
                         //eventStrings.Add(eventMatch.Value);
-                        var worldEvent = new RemnantWorldEvent(eventMatch, currentArea.Groups["location"].Value.Trim());
+                        var worldEvent = new RemnantWorldEvent(eventMatch);//, currentArea.Groups["location"].Value.Trim());
+                        var subLoc = currentArea.Groups["location"].Value.Trim();
+                        if (currentMainLocation != null)
+                        {
+                            //worldEvent.Locations.Add(currentMainLocation);
+                        }
+                        else if (true || mode == ProcessMode.Campaign)
+                        {
+                            //Debug.WriteLine("excluding due to no main location " + eventMatch.Value);
+                            continue;
+                        }
+                        if (Loc.GameT(currentMainLocation) == Loc.GameT(subLoc))
+                        {
+                            subLoc = null;
+                        }
+                        if (worldEvent._key.Contains("OverworldPOI"))
+                        {
+                            subLoc = null;
+                        }
+                        if (subLoc != null)
+                        {
+                            worldEvent.Locations.Add(subLoc);
+                        }
+                        //worldEvent.Locations.Add(currentArea.Groups["location"].Value.Trim());
                         //worldEvent.Locations.Add(currentArea.Groups["location"].Value.Trim());
                         /*RemnantWorldEvent worldEvent;
                         if (currentSublocation == null)
@@ -673,15 +763,7 @@ namespace RemnantSaveGuardian
                             //Logger.Log($"Setting first zone to {firstZone} for {worldEvent.Name}");
                         }
                         worldEvent.setMissingItems(character);
-                        if (!zoneEvents.ContainsKey(worldEvent.RawWorld))
-                        {
-                            zoneEvents.Add(worldEvent.RawWorld, new List<RemnantWorldEvent>());
-                        }
-                        if (zoneEvents[worldEvent.RawWorld].Exists(ev => ev.Locations.Last() == worldEvent.Locations.Last() && ev.RawName == worldEvent.RawName))
-                        {
-                            continue;
-                        }
-                        zoneEvents[worldEvent.RawWorld].Add(worldEvent);
+                        addEventToZones(zoneEvents, worldEvent);
 
                         // Add associated events
                         if (worldEvent.RawWorld == "World_Nerud" && worldEvent.RawName.Contains("Story"))
@@ -718,9 +800,11 @@ namespace RemnantSaveGuardian
                         }
                         else if (worldEvent.RawName == "FaelinFaerlin")
                         {
-                            RemnantWorldEvent faerlin = new RemnantWorldEvent("Faerin", "World_Fae", "WorldBoss");
+                            Debug.WriteLine(eventMatch.Groups["details"].Value);
+                            RemnantWorldEvent faerlin = new RemnantWorldEvent("Faerin", "Faerin", new() { "World_Fae", "Malefic Gallery" }, "Boss");
                             faerlin.setMissingItems(character);
-                            zoneEvents["World_Fae"].Add(faerlin);
+                            //zoneEvents["World_Fae"].Add(faerlin);
+                            addEventToZones(zoneEvents, faerlin);
                         }
                         // Abberation
                         else if (worldEvent.RawName == "HiddenMaze")
@@ -1093,6 +1177,37 @@ namespace RemnantSaveGuardian
             var savetext = RemnantSave.DecompressSaveAsString(character.Save.WorldSaves[character.WorldIndex]);
             //File.WriteAllText(character.Save.WorldSaves[character.WorldIndex].Replace(".sav", ".txt"), savetext);
             ProcessEvents(character, savetext);
+        }
+
+        private static void addEventToZones(Dictionary <string, List<RemnantWorldEvent>> zoneEvents, RemnantWorldEvent worldEvent)
+        {
+            var world = worldEvent.RawWorld;
+            if (!zoneEvents.ContainsKey(world))
+            {
+                zoneEvents.Add(world, new List<RemnantWorldEvent>());
+            }
+            if (zoneEvents[world].Exists(ev => ev.Locations.Last() == worldEvent.Locations.Last() && ev.RawName == worldEvent.RawName))
+            {
+                return;
+            }
+            var insertAtIndex = zoneEvents[world].Count;
+            if (zoneEvents[world].Count > 0 && worldEvent.Locations.Count > 1)
+            {
+                var lastIndex = zoneEvents[world].FindLastIndex(e => e.Locations.Count > 1 && e.Locations.Last() == worldEvent.Locations.Last());
+                if (lastIndex != -1)
+                {
+                    if (zoneEvents[world][lastIndex].RawName == worldEvent.RawName)
+                    {
+                        return;
+                    }
+                    insertAtIndex = lastIndex + 1;
+                }
+            }
+            if (worldEvent.RawName == "FaelinFaerlin" && worldEvent.Locations.Last() != "Beatific Gallery")
+            {
+                return;
+            }
+            zoneEvents[world].Insert(insertAtIndex, worldEvent);
         }
     }
 }

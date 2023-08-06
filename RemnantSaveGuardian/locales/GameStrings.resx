@@ -406,10 +406,13 @@
     <value>The Flames</value>
   </data>
   <data name="BlackHole" xml:space="preserve">
-    <value>Gravity Anomoly</value>
+    <value>Gravity Anomaly</value>
   </data>
   <data name="BloodMoon" xml:space="preserve">
     <value>Blood Moon Altar</value>
+  </data>
+  <data name="BoneHarvesterLair" xml:space="preserve">
+    <value>Monster in the Drain</value>
   </data>
   <data name="BrokenTomb" xml:space="preserve">
     <value>The Weald Stalker/The Gnarled Archer</value>
@@ -458,9 +461,6 @@
   </data>
   <data name="FaelinFaerlin" xml:space="preserve">
     <value>Faelin</value>
-  </data>
-  <data name="FaelinFaerlin_POI" xml:space="preserve">
-    <value>Faelin / Faerin</value>
   </data>
   <data name="Faerin" xml:space="preserve">
     <value>Faerin</value>
@@ -708,11 +708,23 @@
   <data name="Phantom" xml:space="preserve">
     <value>The Astropath</value>
   </data>
+  <data name="Quest_Global_TheHunterDream_Template01" xml:space="preserve">
+    <value>Beatific Palace</value>
+  </data>
   <data name="Quest_Item_Extermination_AICore" xml:space="preserve">
-    <value>AI Core</value>
+    <value>Memory Core II</value>
   </data>
   <data name="Quest_Item_Train_AICore" xml:space="preserve">
-    <value>AI Core</value>
+    <value>Decorum Cipher</value>
+  </data>
+  <data name="Quest_Story_AllFather_DranCity1_Template" xml:space="preserve">
+    <value>Brocwithe Quarter</value>
+  </data>
+  <data name="Quest_Story_AllFather_DranCity2_Template" xml:space="preserve">
+    <value>Ironborough</value>
+  </data>
+  <data name="Quest_Story_Empress_Zone01_Template01" xml:space="preserve">
+    <value>The Red Throne</value>
   </data>
   <data name="Ravager" xml:space="preserve">
     <value>Ravager &amp; Doe</value>
@@ -870,6 +882,9 @@
   <data name="Ring_CatalogersJewel" xml:space="preserve">
     <value>Cataloger's Jewel</value>
   </data>
+  <data name="Ring_CelerityStone" xml:space="preserve">
+    <value>Celerity Stone</value>
+  </data>
   <data name="Ring_CompulsionLoop" xml:space="preserve">
     <value>Compulsion Loop</value>
   </data>
@@ -895,7 +910,7 @@
     <value>Dense Silicon Ring</value>
   </data>
   <data name="Ring_DowngradedRing" xml:space="preserve">
-    <value>Downgraded Ring</value>
+    <value>Embrace of Sha'Hala</value>
   </data>
   <data name="Ring_DrakestonePearl" xml:space="preserve">
     <value>Drakestone Pearl</value>
@@ -1101,6 +1116,9 @@
   <data name="Ring_SealOfTheEmpress" xml:space="preserve">
     <value>Seal of the Empress</value>
   </data>
+  <data name="Ring_ShaedBloomCrystal" xml:space="preserve">
+    <value>Shaed Bloom Crystal</value>
+  </data>
   <data name="Ring_ShardBandedRing" xml:space="preserve">
     <value>Shard Banded Ring</value>
   </data>
@@ -1188,6 +1206,9 @@
   <data name="Ring_ZoheesRing" xml:space="preserve">
     <value>Zohee's Ring</value>
   </data>
+  <data name="RisingTides" xml:space="preserve">
+    <value>Flooding Sewer</value>
+  </data>
   <data name="Root" xml:space="preserve">
     <value>Root</value>
   </data>
@@ -1211,9 +1232,6 @@
   </data>
   <data name="SewageFacility" xml:space="preserve">
     <value>The Flooded Room</value>
-  </data>
-  <data name="Sewer" xml:space="preserve">
-    <value>Flooder Sewer</value>
   </data>
   <data name="SideD" xml:space="preserve">
     <value>Dungeon</value>
@@ -1250,6 +1268,9 @@
   </data>
   <data name="TheNamelessNest" xml:space="preserve">
     <value>The Nameless Nest</value>
+  </data>
+  <data name="TheSafe" xml:space="preserve">
+    <value>Locked Safe</value>
   </data>
   <data name="ThreeMenMorris" xml:space="preserve">
     <value>The Postulant</value>

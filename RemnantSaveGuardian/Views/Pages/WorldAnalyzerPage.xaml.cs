@@ -190,7 +190,6 @@ namespace RemnantSaveGuardian.Views.Pages
             //if (CharacterControl.SelectedIndex == -1 && listCharacters.Count > 0) return;
             if (CharacterControl.Items.Count > 0 && CharacterControl.SelectedIndex > -1)
             {
-                applyFilter();
                 checkAdventureTab();
                 applyFilter();
                 //txtMissingItems.Text = string.Join("\n", Save.Characters[CharacterControl.SelectedIndex].GetMissingItems());
@@ -318,6 +317,27 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             applyFilter();
         }
+        private bool eventPassesFilter(RemnantWorldEvent e)
+        {
+            var filter = WorldAnalyzerFilter.Text.ToLower();
+            if (filter.Length == 0)
+            {
+                return true;
+            }
+            if (e.MissingItems.ToLower().Contains(filter))
+            {
+                return true;
+            }
+            if (Properties.Settings.Default.ShowPossibleItems && e.PossibleItems.ToLower().Contains(filter))
+            {
+                return true;
+            }
+            if (e.Name.ToLower().Contains(filter))
+            {
+                return true;
+            }
+            return false;
+        }
         private void applyFilter()
         {
             if (CharacterControl.Items.Count == 0 || CharacterControl.SelectedIndex == -1)
@@ -329,11 +349,10 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return;
             }
-            var filter = WorldAnalyzerFilter.Text.ToLower();
             filteredCampaign.Clear();
-            filteredCampaign.AddRange(character.CampaignEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter)));
+            filteredCampaign.AddRange(character.CampaignEvents.FindAll(e => eventPassesFilter(e)));
             filteredAdventure.Clear();
-            filteredAdventure.AddRange(character.AdventureEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter)));
+            filteredAdventure.AddRange(character.AdventureEvents.FindAll(e => eventPassesFilter(e)));
             reloadEventGrids();
         }
     }

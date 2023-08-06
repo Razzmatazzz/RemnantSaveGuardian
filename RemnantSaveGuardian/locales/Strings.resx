@@ -345,6 +345,9 @@
   <data name="Save Backups" xml:space="preserve">
     <value>Save Backups</value>
   </data>
+  <data name="Save change detected; waiting {numMinutes} minutes until next backup" xml:space="preserve">
+    <value>Save change detected; waiting {numMinutes} minutes until next backup</value>
+  </data>
   <data name="Save file in use; waiting 0.5 seconds and retrying." xml:space="preserve">
     <value>Save file in use; waiting 0.5 seconds and retrying.</value>
   </data>
@@ -388,7 +391,7 @@
     <value>World Analyzer</value>
   </data>
   <data name="WorldAnalyzerFilter_PlaceholderText" xml:space="preserve">
-    <value>Filter by missing items</value>
+    <value>Filter by events or items</value>
   </data>
   <data name="You must wait 5 minutes between update checks" xml:space="preserve">
     <value>You must wait 5 minutes between update checks</value>
