@@ -190,7 +190,6 @@ namespace RemnantSaveGuardian.Views.Pages
             //if (CharacterControl.SelectedIndex == -1 && listCharacters.Count > 0) return;
             if (CharacterControl.Items.Count > 0 && CharacterControl.SelectedIndex > -1)
             {
-                applyFilter();
                 checkAdventureTab();
                 applyFilter();
                 //txtMissingItems.Text = string.Join("\n", Save.Characters[CharacterControl.SelectedIndex].GetMissingItems());
@@ -331,9 +330,11 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             var filter = WorldAnalyzerFilter.Text.ToLower();
             filteredCampaign.Clear();
-            filteredCampaign.AddRange(character.CampaignEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter)));
+            filteredCampaign.AddRange(character.CampaignEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter))
+                .DistinctBy(e => new { e.Name, e.Location, e.Type }));
             filteredAdventure.Clear();
-            filteredAdventure.AddRange(character.AdventureEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter)));
+            filteredAdventure.AddRange(character.AdventureEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter))
+                .DistinctBy(e => new { e.Name, e.Location, e.Type }));
             reloadEventGrids();
         }
     }
