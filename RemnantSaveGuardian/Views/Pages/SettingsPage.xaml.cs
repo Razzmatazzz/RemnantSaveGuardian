@@ -173,16 +173,19 @@ namespace RemnantSaveGuardian.Views.Pages
                         foreach (string file in backupFiles)
                         {
                             string subFolderName = file.Substring(file.LastIndexOf(@"\"));
-                            Directory.CreateDirectory(folderName + subFolderName);
+                            DirectoryInfo currentBackupFolder = new DirectoryInfo(file);
+                            DirectoryInfo newBackupFolder = Directory.CreateDirectory(folderName + subFolderName);
+
+                            foreach (FileInfo fileInfo in currentBackupFolder.GetFiles())
+                            {
+                                fileInfo.CopyTo(Path.Combine(newBackupFolder.FullName, fileInfo.Name), true);
+                            }
+
                             Directory.SetCreationTime(folderName + subFolderName, Directory.GetCreationTime(file));
                             Directory.SetLastWriteTime(folderName + subFolderName, Directory.GetCreationTime(file));
-                            foreach (string filename in Directory.GetFiles(file))
-                            {
-                                File.Copy(filename, filename.Replace(Properties.Settings.Default.BackupFolder, folderName));
-                            }
                             Directory.Delete(file, true);
-                            //Directory.Move(file, folderName + subFolderName);
                         }
+                        messageBox.Hide();
                     };
                     messageBox.Show();
                 }
