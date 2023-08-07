@@ -316,14 +316,17 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void ResetActiveBackupStatus()
         {
-            this.ActiveSaveIsBackedUp = false;
-
-            foreach (SaveBackup backup in listBackups)
+            this.Dispatcher.Invoke(() =>
             {
-                if (backup.Active) backup.Active = false;
-            }
+                this.ActiveSaveIsBackedUp = false;
 
-            dataBackups.Items.Refresh();
+                foreach (SaveBackup backup in listBackups)
+                {
+                    if (backup.Active) backup.Active = false;
+                }
+
+                dataBackups.Items.Refresh();
+            }));
         }
 
         private void loadBackups()
