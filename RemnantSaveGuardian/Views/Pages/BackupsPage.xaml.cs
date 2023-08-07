@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Controls;
@@ -71,6 +72,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 dataBackups.BeginningEdit += DataBackups_BeginningEdit;
                 dataBackups.CellEditEnding += DataBackups_CellEditEnding;
                 dataBackups.AutoGeneratingColumn += DataBackups_AutoGeneratingColumn;
+                dataBackups.Items.SortDescriptions.Add(new SortDescription("SaveDate", ListSortDirection.Descending));
 
                 contextBackups.ContextMenuOpening += ContextBackups_ContextMenuOpening;
                 contextBackups.Opened += ContextBackups_Opened;
