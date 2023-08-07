@@ -326,7 +326,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
 
                 dataBackups.Items.Refresh();
-            }));
+            });
         }
 
         private void loadBackups()
