@@ -382,7 +382,7 @@
     <value>Field Medic</value>
   </data>
   <data name="Armor_PilotsHelm" xml:space="preserve">
-    <value>Pilot's Helm</value>
+    <value>Navigator's Helm</value>
   </data>
   <data name="Armor_Radiant" xml:space="preserve">
     <value>Radiant</value>
@@ -1545,6 +1545,9 @@
   <data name="Weapon_AssassinsDagger" xml:space="preserve">
     <value>Assassin's Dagger</value>
   </data>
+  <data name="Weapon_AssaultRifle" xml:space="preserve">
+    <value>Blackmaw AR-47</value>
+  </data>
   <data name="Weapon_AtomSmasher" xml:space="preserve">
     <value>Atom Smasher</value>
   </data>
@@ -1593,6 +1596,9 @@
   <data name="Weapon_Godsplitter" xml:space="preserve">
     <value>Godsplitter</value>
   </data>
+  <data name="Weapon_Greatsword" xml:space="preserve">
+    <value>Iron Greatsword</value>
+  </data>
   <data name="Weapon_Hatchet" xml:space="preserve">
     <value>Scrap Hatchet</value>
   </data>
@@ -1601,6 +1607,9 @@
   </data>
   <data name="Weapon_HerosSword" xml:space="preserve">
     <value>Hero's Sword</value>
+  </data>
+  <data name="Weapon_HuntingPistol" xml:space="preserve">
+    <value>Sureshot</value>
   </data>
   <data name="Weapon_HuntressSpear" xml:space="preserve">
     <value>Huntress Spear</value>
@@ -1622,6 +1631,9 @@
   </data>
   <data name="Weapon_LMG" xml:space="preserve">
     <value>XMG57 Bonesaw</value>
+  </data>
+  <data name="Weapon_Magnum" xml:space="preserve">
+    <value>Silverback Model 500</value>
   </data>
   <data name="Weapon_Merciless" xml:space="preserve">
     <value>Merciless</value>

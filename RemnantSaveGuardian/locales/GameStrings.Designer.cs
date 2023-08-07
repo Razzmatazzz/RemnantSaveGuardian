@@ -853,7 +853,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pilot&apos;s Helm.
+        ///   Looks up a localized string similar to Navigator&apos;s Helm.
         /// </summary>
         public static string Armor_PilotsHelm {
             get {
@@ -4336,6 +4336,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blackmaw AR-47.
+        /// </summary>
+        public static string Weapon_AssaultRifle {
+            get {
+                return ResourceManager.GetString("Weapon_AssaultRifle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Atom Smasher.
         /// </summary>
         public static string Weapon_AtomSmasher {
@@ -4480,6 +4489,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Iron Greatsword.
+        /// </summary>
+        public static string Weapon_Greatsword {
+            get {
+                return ResourceManager.GetString("Weapon_Greatsword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Scrap Hatchet.
         /// </summary>
         public static string Weapon_Hatchet {
@@ -4503,6 +4521,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Weapon_HerosSword {
             get {
                 return ResourceManager.GetString("Weapon_HerosSword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sureshot.
+        /// </summary>
+        public static string Weapon_HuntingPistol {
+            get {
+                return ResourceManager.GetString("Weapon_HuntingPistol", resourceCulture);
             }
         }
         
@@ -4566,6 +4593,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Weapon_LMG {
             get {
                 return ResourceManager.GetString("Weapon_LMG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Silverback Model 500.
+        /// </summary>
+        public static string Weapon_Magnum {
+            get {
+                return ResourceManager.GetString("Weapon_Magnum", resourceCulture);
             }
         }
         

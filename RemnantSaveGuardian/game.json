@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "mainLocations": [
     "Quest_Global_TheHunterDream_Template01",
     "Quest_Story_AllFather_DranCity1_Template",
@@ -1477,28 +1477,46 @@
           "notes": "buy Rusty Medal from Brabus"
         },
         {
+          "name": "/Items/Weapons/Handguns/Standard/HuntingPistol/Weapon_HuntingPistol"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/Magnum/Weapon_Magnum"
+        },
+        {
           "name": "/Items/Weapons/Handguns/Standard/Repeater/Weapon_Repeater_Rusty"
         },
         {
           "name": "/Items/Weapons/Handguns/Standard/Revolver/Weapon_Revolver"
         },
         {
-          "name": "/Items/Weapons/Longguns/Standard/LeverAction/Weapon_LeverAction_Rusty"
+          "name": "/Items/Weapons/Handguns/Standard/ServicePistol/Weapon_ServicePistol"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/AssaultRifle/Weapon_AssaultRifle"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/Coachgun/Weapon_CoachGun"
         },
         {
           "name": "/Items/Weapons/Longguns/Standard/LeverAction/Weapon_LeverAction"
         },
         {
-          "name": "/Items/Weapons/Melee/Standard/Hatchet/Hatchet/Weapon_Hatchet"
-        },
-        {
-          "name": "/Items/Weapons/Handguns/Standard/ServicePistol/Weapon_ServicePistol"
+          "name": "/Items/Weapons/Longguns/Standard/LeverAction/Weapon_LeverAction_Rusty"
         },
         {
           "name": "/Items/Weapons/Longguns/Standard/LMG/Weapon_LMG"
         },
         {
+          "name": "/Items/Weapons/Melee/Standard/Hatchet/Hatchet/Weapon_Hatchet"
+        },
+        {
           "name": "/Items/Weapons/Melee/Standard/Flail/Flail_Steel_Base/Weapon_Flail"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/GreatSword/IronGreatsword/Weapon_Greatsword"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Katana/Katana/Weapon_Katana"
         }
       ],
       "Reggie": [
@@ -1521,6 +1539,14 @@
         {
           "name": "/Items/Trinkets/Amulets/ButchersFetish/Amulet_ButchersFetish",
           "notes": "Beat the game"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/LetosAmulet/Amulet_LetosAmulet",
+          "notes": "flop 100 times"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BlackCatBand/Ring_BlackCatBand",
+          "notes": "die 15 times"
         }
       ],
       "Cass": [
@@ -1597,6 +1623,71 @@
           "notes": "cass 35%"
         }
       ],
+      "Whispers": [
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Head_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Body_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Gloves_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Legs_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Head_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Body_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Gloves_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Legs_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Head_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Body_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Gloves_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Legs_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Head_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Body_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Gloves_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Legs_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Head_Medic"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Body_Medic"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Gloves_Medic"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Legs_Medic"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/AnastasijasInspiration/Ring_AnastasijasInspiration"
+        }
+      ],
       "Labyrinth": [
         {
           "name": "/Items/Trinkets/Rings/DenseSiliconRing/Ring_DenseSiliconRing"
@@ -1671,66 +1762,6 @@
           "name": "/Items/Armor/Archetype/Explorer/Armor_Legs_Explorer"
         },
         {
-          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Head_Gunslinger"
-        },
-        {
-          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Body_Gunslinger"
-        },
-        {
-          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Gloves_Gunslinger"
-        },
-        {
-          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Legs_Gunslinger"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Head_Challenger"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Body_Challenger"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Gloves_Challenger"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Legs_Challenger"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Head_Handler"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Body_Handler"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Gloves_Handler"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Legs_Handler"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Head_Hunter"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Body_Hunter"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Gloves_Hunter"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Legs_Hunter"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Head_Medic"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Body_Medic"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Gloves_Medic"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Legs_Medic"
-        },
-        {
           "name": "/Items/Traits/Archetype/AmmoReserves/Trait_AmmoReserves"
         },
         {
@@ -1783,14 +1814,6 @@
         },
         {
           "name": "/Items/Traits/Core/Scholar/Trait_Scholar"
-        },
-        {
-          "name": "/Items/Trinkets/Amulets/LetosAmulet/Amulet_LetosAmulet",
-          "notes": "flop 100 times - Reggie"
-        },
-        {
-          "name": "/Items/Trinkets/Rings/BlackCatBand/Ring_BlackCatBand",
-          "notes": "die 15 times - Reggie"
         },
         {
           "name": "/Items/Trinkets/Rings/PanMageSigil/Ring_PanMageSigil",
