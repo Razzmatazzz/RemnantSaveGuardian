@@ -25,9 +25,12 @@
       "Sarcophagus": "TheLament",
       "TheChimney": "LaemirsLyceum",
       "WailingField": "ForgottenField",
-      "CathedralOfSeasons": "CathedralOfOmens"
+      "CathedralOfSeasons": "CathedralOfSeasons",
+      "Empress": "TheRedThrone",
+      "ManyFaces": "TheGreatBole"
     },
     "Fae": {
+      "AllFather": "BeatificPalace",
       "DranGrenadier": "CottonsKiln",
       "Ravenous": "TheGreatHall",
       "CharnelHouse": "HarvestersReach",
@@ -55,7 +58,9 @@
       "CustodianEye": "SpectrumNexus",
       "TowerHeist": "TowerOfTheUnseen",
       "TheDreamlessSleep": "VoidVesselFacility",
-      "NerudGuardian": "ThresholdOfTheUnknown"
+      "NerudGuardian": "ThresholdOfTheUnknown",
+      "TheCustodian": "ThePhantomWasteland",
+      "TalRatha":  "ForgottenPrison"
     }
   },
   "injectables": {
@@ -655,11 +660,6 @@
           "name": "/Items/Trinkets/Amulets/IndignantFetish/Amulet_IndignantFetish"
         }
       ],
-      "Amulet_ShadeBloomFloret": [
-        {
-          "name": "/Items/Trinkets/Amulets/ShadeBloomFloret/Amulet_ShadeBloomCrystal"
-        }
-      ],
       "Amulet_SpiritWispAmulet": [
         {
           "name": "/Items/Trinkets/Amulets/SpiritWispAmulet/Amulet_SpiritWispAmulet"
@@ -941,7 +941,7 @@
           "notes": "Wear OneTrueKing(AM) and both Faerin/Faelin(RI) in the Palace Courtyard"
         },
         {
-          "name": "/Items/Trinkets/Rings/ShaedBloomCrystal/Ring_ShaedBloomCrystal",
+          "name": "/Items/Trinkets/Amulets/ShadeBloomFloret/Amulet_ShadeBloomCrystal",
           "notes": "on the bone pile where the Jester sits in Beatific Palace"
         }
       ],
@@ -1414,35 +1414,11 @@
       "Ward13": [
         {
           "name": "/Items/Trinkets/Rings/TarnishedRing/Ring_TarnishedRing",
-          "notes": "listen to earls rabbit story"
-        },
-        {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Gunslinger",
-          "notes": "mudtooth chat full reward"
-        },
-        {
-          "name": "/Items/Trinkets/Amulets/GunslingersCharm/Amulet_GunslingersCharm",
-          "notes": "mudtooth chat full reward"
-        },
-        {
-          "name": "/Items/Trinkets/Rings/GunslingersRing/Ring_GunslingersRing",
-          "notes": "mudtooth chat half reward"
-        },
-        {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Challenger",
-          "notes": "buy Old Metal Tool from Reggie"
-        },
-        {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Handler",
-          "notes":  "buy Old Whistle from Mudtooth"
-        },
-        {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Hunter",
-          "notes": "buy Rusty Medal from Brabus"
+          "notes": "listen to Earl's rabbit story"
         },
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Medic",
-          "notes":  "buy Medic Pin from Norah"
+          "notes": "buy Medic Pin from Norah"
         },
         {
           "name": "/Items/Weapons/LongGuns/Standard/TommyGun/Weapon_TommyGun",
@@ -1475,6 +1451,60 @@
         {
           "name": "/Items/Armor/Base/RelicTesting/LifelessHeart/Relic_Consumable_LifelessHeart",
           "notes": "eat fruit of death 3 times"
+        }
+      ],
+      "Mudtooth": [
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Gunslinger",
+          "notes": "mudtooth chat full reward"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/GunslingersCharm/Amulet_GunslingersCharm",
+          "notes": "mudtooth chat full reward"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/GunslingersRing/Ring_GunslingersRing",
+          "notes": "mudtooth chat half reward"
+        },
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Handler",
+          "notes": "buy Old Whistle from Mudtooth"
+        }
+      ],
+      "Brabus": [
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Hunter",
+          "notes": "buy Rusty Medal from Brabus"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/Repeater/Weapon_Repeater_Rusty"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/Revolver/Weapon_Revolver"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/LeverAction/Weapon_LeverAction_Rusty"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/LeverAction/Weapon_LeverAction"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Hatchet/Hatchet/Weapon_Hatchet"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/ServicePistol/Weapon_ServicePistol"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/LMG/Weapon_LMG"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Flail/Flail_Steel_Base/Weapon_Flail"
+        }
+      ],
+      "Reggie": [
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Challenger",
+          "notes": "buy Old Metal Tool from Reggie"
         },
         {
           "name": "/Items/Trinkets/Rings/01_Graveyard/RingOfTheAdmiral/Ring_RingOfTheAdmiral"
@@ -1487,6 +1517,10 @@
         },
         {
           "name": "/Items/Trinkets/Rings/GroundingStone/Ring_GroundingStone"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/ButchersFetish/Amulet_ButchersFetish",
+          "notes": "Beat the game"
         }
       ],
       "Cass": [
@@ -1529,10 +1563,6 @@
         {
           "name": "/Items/Trinkets/Rings/MechanicsCog/Ring_MechanicsCog",
           "notes": "cass 65%"
-        },
-        {
-          "name": "/Items/Trinkets/Amulets/ButchersFetish/Amulet_ButchersFetish",
-          "notes": "Beat the game"
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/EnlargedHeart/Relic_Consumable_EnlargedHeart",

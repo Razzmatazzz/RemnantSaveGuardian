@@ -486,4 +486,10 @@
 	<data name="Are you sure you want to delete backup {backupName}?" xml:space="preserve">
 		<value>確定刪除備份{backupName}嗎?</value>
 	</data>
+	<data name="Location" xml:space="preserve">
+		<value>地區</value>
+	</data>
+	<data name="Type" xml:space="preserve">
+		<value>類型</value>
+	</data>
 </root>

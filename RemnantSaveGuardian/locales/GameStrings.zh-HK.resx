@@ -126,7 +126,7 @@
     <comment />
   </data>
 	<data name="Alchemist" xml:space="preserve">
-    <value>煉金術士</value>
+    <value>煉金術師</value>
     <comment />
   </data>
 	<data name="AllFatherStory" xml:space="preserve">
@@ -374,7 +374,7 @@
     <comment />
   </data>
 	<data name="Armor_Alchemist" xml:space="preserve">
-    <value>煉金術士</value>
+    <value>煉金術師</value>
     <comment />
   </data>
 	<data name="Armor_Archon" xml:space="preserve">
@@ -614,7 +614,7 @@
     <comment />
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Alchemist" xml:space="preserve">
-    <value>煉金術士</value>
+    <value>煉金術師</value>
     <comment />
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Archon" xml:space="preserve">
@@ -682,7 +682,7 @@
     <comment />
   </data>
 	<data name="ManyFaces" xml:space="preserve">
-    <value>ManyFaces/MotherBrain</value>
+    <value>四手傀儡/腐化者</value>
     <comment />
   </data>
 	<data name="Material_ThaenLeaf" xml:space="preserve">
@@ -1146,7 +1146,7 @@
     <comment />
   </data>
 	<data name="Ring_DrzyrSniperSigil" xml:space="preserve">
-    <value>Drzyr Sniper Sigil</value>
+    <value>澤厄爾狙擊手魔符</value>
     <comment />
   </data>
 	<data name="Ring_DyingEmber" xml:space="preserve">
@@ -2062,5 +2062,188 @@
 	</data>
 	<data name="Amulet_03" xml:space="preserve">
 		<value>{Amulet_EmergencySwitch}</value>
+	</data>
+	<data name="Cass" xml:space="preserve">
+		<value>卡莎</value>
+	</data>
+	<data name="Home" xml:space="preserve">
+		<value>家園</value>
+	</data>
+	<data name="Story" xml:space="preserve">
+		<value>故事</value>
+	</data>
+	<data name="Injectable" xml:space="preserve">
+		<value>隨機事件</value>
+	</data>
+	<data name="Item" xml:space="preserve">
+		<value>物品</value>
+	</data>
+	<data name="Miniboss" xml:space="preserve">
+		<value>小王</value>
+	</data>
+	<data name="Merchant" xml:space="preserve">
+		<value>商人</value>
+	</data>
+	<data name="Abomination" xml:space="preserve">
+		<value>醜惡</value>
+	</data>
+	<data name="Shockwire" xml:space="preserve">
+		<value>斷裂電纜</value>
+	</data>
+	<data name="OilField" xml:space="preserve">
+		<value>開採中樞</value>
+	</data>
+	<data name="Point of Interest" xml:space="preserve">
+		<value>興趣點</value>
+	</data>
+	<data name="StasisSiege" xml:space="preserve">
+		<value>怪物潮</value>
+	</data>
+	<data name="TheClaw" xml:space="preserve">
+		<value>機械手</value>
+	</data>
+	<data name="Extermination" xml:space="preserve">
+		<value>隔離事件</value>
+	</data>
+	<data name="EmpressStory" xml:space="preserve">
+		<value>女王故事</value>
+	</data>
+	<data name="Meidra" xml:space="preserve">
+		<value>梅德拉</value>
+	</data>
+	<data name="Shrewd" xml:space="preserve">
+		<value>精明</value>
+	</data>
+	<data name="CathedralOfSeasons" xml:space="preserve">
+		<value>預兆教堂</value>
+	</data>
+	<data name="HiddenMaze" xml:space="preserve">
+		<value>踏板門密室</value>
+	</data>
+	<data name="Fester" xml:space="preserve">
+		<value>潰爛</value>
+	</data>
+	<data name="Nimue" xml:space="preserve">
+		<value>尼姆埃</value>
+	</data>
+	<data name="Beatific Palace" xml:space="preserve">
+		<value>喜樂宮</value>
+	</data>
+	<data name="The Great Sewers" xml:space="preserve">
+		<value>巨型下水道</value>
+	</data>
+	<data name="Beatific Gallery" xml:space="preserve">
+		<value>幸福畫廊</value>
+	</data>
+	<data name="Malefic Gallery" xml:space="preserve">
+		<value>邪惡畫廊</value>
+	</data>
+	<data name="BloatKing" xml:space="preserve">
+		<value>腐脹之王</value>
+	</data>
+	<data name="Harvester's Reach" xml:space="preserve">
+		<value></value>
+	</data>
+	<data name="Butcher's Quarter" xml:space="preserve">
+		<value></value>
+	</data>
+	<data name="Malefic Palace" xml:space="preserve">
+		<value>邪惡宮殿</value>
+	</data>
+	<data name="Postulant's Parlor" xml:space="preserve">
+		<value></value>
+	</data>
+	<data name="Shattered Gallery" xml:space="preserve">
+		<value>破碎畫廊</value>
+	</data>
+	<data name="DrzyReplicator" xml:space="preserve">
+		<value>澤厄爾複製品</value>
+	</data>
+	<data name="TheDreamlessSleep" xml:space="preserve">
+		<value>變異體膠囊艙</value>
+	</data>
+	<data name="Void Vessel Facility" xml:space="preserve">
+		<value>虛空軀殼建築</value>
+	</data>
+	<data name="Astropath's Respite" xml:space="preserve">
+		<value></value>
+	</data>
+	<data name="KoaraKuri" xml:space="preserve">
+		<value>科亞拉庫里</value>
+	</data>
+	<data name="Flautist" xml:space="preserve">
+		<value>長笛手</value>
+	</data>
+	<data name="MotherMind" xml:space="preserve">
+		<value>靈智之母</value>
+	</data>
+	<data name="Harvester's Reach" xml:space="preserve">
+		<value>收穫者領域</value>
+	</data>
+	<data name="Butcher's Quarter" xml:space="preserve">
+		<value>屠夫區</value>
+	</data>
+	<data name="Postulant's Parlor" xml:space="preserve">
+		<value>發願者的客廳</value>
+	</data>
+	<data name="Astropath's Respite" xml:space="preserve">
+		<value>星語者的嘆息</value>
+	</data>
+	<data name="Armor_Arcanist" xml:space="preserve">
+		<value>迷宮</value>
+	</data>
+	<data name="Harvester's Reach" xml:space="preserve">
+		<value>收穫者領域</value>
+	</data>
+	<data name="Butcher's Quarter" xml:space="preserve">
+		<value>屠夫區</value>
+	</data>
+	<data name="Postulant's Parlor" xml:space="preserve">
+		<value>發願者的客廳</value>
+	</data>
+	<data name="Astropath's Respite" xml:space="preserve">
+		<value>星語者的嘆息</value>
+	</data>
+	<data name="FieryGraveyard" xml:space="preserve">
+		<value>燃燒墓地</value>
+	</data>
+	<data name="Harvester's Reach" xml:space="preserve">
+		<value>收穫者領域</value>
+	</data>
+	<data name="Butcher's Quarter" xml:space="preserve">
+		<value>屠夫區</value>
+	</data>
+	<data name="Postulant's Parlor" xml:space="preserve">
+		<value>發願者的客廳</value>
+	</data>
+	<data name="Astropath's Respite" xml:space="preserve">
+		<value>星語者的嘆息</value>
+	</data>
+	<data name="AsylumHouse" xml:space="preserve">
+		<value>莫洛療養院</value>
+	</data>
+	<data name="Harvester's Reach" xml:space="preserve">
+		<value>收穫者領域</value>
+	</data>
+	<data name="Butcher's Quarter" xml:space="preserve">
+		<value>屠夫區</value>
+	</data>
+	<data name="Postulant's Parlor" xml:space="preserve">
+		<value>發願者的客廳</value>
+	</data>
+	<data name="Astropath's Respite" xml:space="preserve">
+		<value>星語者的嘆息</value>
+	</data>
+	<data name="Harvester's Reach" xml:space="preserve">
+		<value>收穫者領域</value>
+	</data>
+	<data name="Butcher's Quarter" xml:space="preserve">
+		<value>屠夫區</value>
+	</data>
+	<data name="Postulant's Parlor" xml:space="preserve">
+		<value>發願者的客廳</value>
+	</data>
+	<data name="Astropath's Respite" xml:space="preserve">
+		<value>星語者的嘆息</value>
 	</data>
 </root>
