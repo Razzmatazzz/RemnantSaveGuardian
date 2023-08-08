@@ -1431,6 +1431,9 @@
   <data name="TowerOfTheUnseen" xml:space="preserve">
     <value>Tower of the Unseen</value>
   </data>
+  <data name="Towers_ElevatorShaft" xml:space="preserve">
+    <value>Elevator Shaft</value>
+  </data>
   <data name="TownTurnedToDust" xml:space="preserve">
     <value>Man in the Sewers</value>
   </data>
