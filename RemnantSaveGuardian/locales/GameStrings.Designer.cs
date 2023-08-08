@@ -97,7 +97,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Jester.
+        ///   Looks up a localized string similar to Palace &amp; Jester.
         /// </summary>
         public static string AllFatherStory {
             get {
@@ -1618,6 +1618,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to McCabe.
+        /// </summary>
+        public static string McCabe {
+            get {
+                return ResourceManager.GetString("McCabe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Medic.
         /// </summary>
         public static string Medic {
@@ -1834,6 +1843,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Concussive Shot.
+        /// </summary>
+        public static string Mod_ConcussiveShot {
+            get {
+                return ResourceManager.GetString("Mod_ConcussiveShot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Corrosive Rounds.
         /// </summary>
         public static string Mod_CorrosiveRounds {
@@ -1888,11 +1906,29 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Healing Shot.
+        /// </summary>
+        public static string Mod_HealingShot {
+            get {
+                return ResourceManager.GetString("Mod_HealingShot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Helix.
         /// </summary>
         public static string Mod_Helix {
             get {
                 return ResourceManager.GetString("Mod_Helix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hotshot.
+        /// </summary>
+        public static string Mod_Hotshot {
+            get {
+                return ResourceManager.GetString("Mod_Hotshot", resourceCulture);
             }
         }
         
@@ -1929,6 +1965,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Mod_RottedArrow {
             get {
                 return ResourceManager.GetString("Mod_RottedArrow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scrap Shot.
+        /// </summary>
+        public static string Mod_ScrapShot {
+            get {
+                return ResourceManager.GetString("Mod_ScrapShot", resourceCulture);
             }
         }
         
@@ -3243,6 +3288,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Ring_ReserveBoostingGem {
             get {
                 return ResourceManager.GetString("Ring_ReserveBoostingGem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ring of Accord.
+        /// </summary>
+        public static string Ring_RingOfAccord {
+            get {
+                return ResourceManager.GetString("Ring_RingOfAccord", resourceCulture);
             }
         }
         

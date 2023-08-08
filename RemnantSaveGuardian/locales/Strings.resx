@@ -186,6 +186,9 @@
   <data name="chkCreateLogFile_ToolTip" xml:space="preserve">
     <value>Whether a log.txt file should be created</value>
   </data>
+  <data name="chkShowCoopItems_Content" xml:space="preserve">
+    <value>Show co-op items in world analyzer</value>
+  </data>
   <data name="chkShowPossibleItems_Content" xml:space="preserve">
     <value>Show Possible Items column in analyzer</value>
   </data>

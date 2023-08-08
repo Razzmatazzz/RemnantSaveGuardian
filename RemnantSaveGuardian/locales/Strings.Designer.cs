@@ -268,6 +268,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show co-op items in world analyzer.
+        /// </summary>
+        public static string chkShowCoopItems_Content {
+            get {
+                return ResourceManager.GetString("chkShowCoopItems_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Possible Items column in analyzer.
         /// </summary>
         public static string chkShowPossibleItems_Content {

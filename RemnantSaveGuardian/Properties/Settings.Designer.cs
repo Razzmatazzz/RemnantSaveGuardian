@@ -250,5 +250,17 @@ namespace RemnantSaveGuardian.Properties {
                 this["StartPage"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowCoopItems {
+            get {
+                return ((bool)(this["ShowCoopItems"]));
+            }
+            set {
+                this["ShowCoopItems"] = value;
+            }
+        }
     }
 }

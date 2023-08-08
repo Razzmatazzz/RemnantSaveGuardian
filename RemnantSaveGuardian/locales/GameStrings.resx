@@ -130,7 +130,7 @@
     <value>{AllFatherStory}</value>
   </data>
   <data name="AllFatherStory" xml:space="preserve">
-    <value>Jester</value>
+    <value>Palace &amp; Jester</value>
   </data>
   <data name="Amulets" xml:space="preserve">
     <value>Amulets</value>
@@ -636,6 +636,9 @@
   <data name="Material_ThaenLeaf" xml:space="preserve">
     <value>ThaenLeaf</value>
   </data>
+  <data name="McCabe" xml:space="preserve">
+    <value>McCabe</value>
+  </data>
   <data name="Medic" xml:space="preserve">
     <value>Medic</value>
   </data>
@@ -711,6 +714,9 @@
   <data name="Mod_Bore" xml:space="preserve">
     <value>Bore</value>
   </data>
+  <data name="Mod_ConcussiveShot" xml:space="preserve">
+    <value>Concussive Shot</value>
+  </data>
   <data name="Mod_CorrosiveRounds" xml:space="preserve">
     <value>Corrosive Rounds</value>
   </data>
@@ -729,8 +735,14 @@
   <data name="Mod_Firestorm" xml:space="preserve">
     <value>Firestorm</value>
   </data>
+  <data name="Mod_HealingShot" xml:space="preserve">
+    <value>Healing Shot</value>
+  </data>
   <data name="Mod_Helix" xml:space="preserve">
     <value>Helix</value>
+  </data>
+  <data name="Mod_Hotshot" xml:space="preserve">
+    <value>Hotshot</value>
   </data>
   <data name="Mod_Overflow" xml:space="preserve">
     <value>Overflow</value>
@@ -743,6 +755,9 @@
   </data>
   <data name="Mod_RottedArrow" xml:space="preserve">
     <value>Rotted Arrow</value>
+  </data>
+  <data name="Mod_ScrapShot" xml:space="preserve">
+    <value>Scrap Shot</value>
   </data>
   <data name="Mod_Skewer" xml:space="preserve">
     <value>Skewer 2.0</value>
@@ -1181,6 +1196,9 @@
   </data>
   <data name="Ring_ReserveBoostingGem" xml:space="preserve">
     <value>Reserve Boosting Gem</value>
+  </data>
+  <data name="Ring_RingOfAccord" xml:space="preserve">
+    <value>Ring of Accord</value>
   </data>
   <data name="Ring_RingOfCrisis" xml:space="preserve">
     <value>Ring of Crisis</value>
