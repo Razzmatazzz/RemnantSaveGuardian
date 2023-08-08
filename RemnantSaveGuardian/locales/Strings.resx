@@ -282,7 +282,7 @@
   <data name="lblBackupMins_ToolTip" xml:space="preserve">
     <value>Minimum amount of time that must have passed since last backup before a new backup is made</value>
   </data>
-  <data name="lblMissingItemColor_Content" xml:space="preserve">
+  <data name="lblMissingItemColor_Text" xml:space="preserve">
     <value>World analzyer missing item color</value>
   </data>
   <data name="lblStartPage_Text" xml:space="preserve">
