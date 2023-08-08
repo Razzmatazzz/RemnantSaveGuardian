@@ -1222,6 +1222,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quarantine.
+        /// </summary>
+        public static string Extermination {
+            get {
+                return ResourceManager.GetString("Extermination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Magister Dullain.
         /// </summary>
         public static string FaeArchon {
@@ -3990,6 +3999,15 @@ namespace RemnantSaveGuardian.locales {
         public static string TowerOfTheUnseen {
             get {
                 return ResourceManager.GetString("TowerOfTheUnseen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elevator Shaft.
+        /// </summary>
+        public static string Towers_ElevatorShaft {
+            get {
+                return ResourceManager.GetString("Towers_ElevatorShaft", resourceCulture);
             }
         }
         

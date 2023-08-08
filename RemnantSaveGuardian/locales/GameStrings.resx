@@ -504,6 +504,9 @@
   <data name="Explorer" xml:space="preserve">
     <value>Explorer</value>
   </data>
+  <data name="Extermination" xml:space="preserve">
+    <value>Quarantine</value>
+  </data>
   <data name="FaeArchon" xml:space="preserve">
     <value>Magister Dullain</value>
   </data>
