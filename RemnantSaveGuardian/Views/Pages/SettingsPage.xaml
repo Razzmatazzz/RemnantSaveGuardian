@@ -101,6 +101,9 @@
             <ui:ToggleSwitch Name="chkShowPossibleItems" Content="{lex:Loc}" IsChecked="{Binding ShowPossibleItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
         </WrapPanel>
         <WrapPanel>
+            <ui:ToggleSwitch Name="chkShowCoopItems" Content="{lex:Loc}" IsChecked="{Binding ShowCoopItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+        </WrapPanel>
+        <WrapPanel>
             <ComboBox Name="cmbMissingItemColor" VerticalAlignment="Top" Width="Auto" SelectionChanged="CmbMissingItemColor_SelectionChanged">
                 <ComboBox.Items>
                     <ComboBoxItem Content="{lex:Loc Text_Normal}" Tag="Normal"/>

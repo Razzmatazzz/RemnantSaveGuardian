@@ -145,6 +145,15 @@ namespace RemnantSaveGuardian.Views.Pages
                     checkAdventureTab();
                 });
             }
+            if (e.PropertyName == "ShowCoopItems")
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    Save.UpdateCharacters();
+                    reloadEventGrids();
+                    CharacterControl_SelectionChanged(null, null);
+                });
+            }
         }
 
         private void Data_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)

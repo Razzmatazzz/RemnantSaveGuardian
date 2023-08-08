@@ -162,7 +162,11 @@ namespace RemnantSaveGuardian
         {;
             if (GameInfo.EventItem.ContainsKey(this._name))
             {
-                return GameInfo.EventItem[this._name];
+                if (Properties.Settings.Default.ShowCoopItems)
+                {
+                    return GameInfo.EventItem[this._name];
+                }
+                return GameInfo.EventItem[_name].FindAll(item => item.Coop == false);
             }
             return new List<RemnantItem>();
         }
@@ -1126,7 +1130,7 @@ namespace RemnantSaveGuardian
             if (mode == ProcessMode.Campaign)
             {
                 // Add Ward 13 events
-                List<string> ward13Events = new() { "Ward13", "Cass", "Brabus", "Mudtooth", "Reggie", "Whispers" };
+                List<string> ward13Events = new() { "Ward13", "Cass", "Brabus", "Mudtooth", "Reggie", "Whispers", "McCabe" };
                 foreach (var eName in ward13Events)
                 {
                     var wardEvent = new RemnantWorldEvent(eName, "World_Earth", "Home");
