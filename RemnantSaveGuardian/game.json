@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "mainLocations": [
     "Quest_Global_TheHunterDream_Template01",
     "Quest_Story_AllFather_DranCity1_Template",
@@ -12,6 +12,7 @@
   "subLocations": {
     "Jungle": {
       "Shrewd": "TheExpandingGlade",
+      "RavagerStory": "RavagersLair",
       "RootHorror": "KaeulasRest",
       "RootCultist": "TheTwistedChantry",
       "MotherMind": "TheNamelessNest",
@@ -886,7 +887,7 @@
           "notes": "kill council members"
         },
         {
-          "name": "/Items/Weapons/Melee/Standard/Sword/AssassinsDagger/Weapon_AssassinsDagger"
+          "name": "/Items/Weapons/Melee/Standard/Sword/OrnateBlade/Weapon_OrnateBlade"
         }
       ],
       "AsylumHouse": [

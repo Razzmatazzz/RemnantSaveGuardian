@@ -168,7 +168,7 @@ namespace RemnantSaveGuardian
                 {
                     foreach (RemnantItem item in eventItems)
                     {
-                        if (!this.Inventory.Contains(item.Key))
+                        if (!this.Inventory.Contains(item.Key.ToLower()))
                         {
                             if (!missingItems.Contains(item))
                             {

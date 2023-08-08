@@ -2176,6 +2176,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ravager&apos;s Lair.
+        /// </summary>
+        public static string RavagersLair {
+            get {
+                return ResourceManager.GetString("RavagersLair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ravager &amp; Doe.
         /// </summary>
         public static string RavagerStory {
@@ -4647,6 +4656,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Weapon_Nightshade {
             get {
                 return ResourceManager.GetString("Weapon_Nightshade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ornate Blade.
+        /// </summary>
+        public static string Weapon_OrnateBlade {
+            get {
+                return ResourceManager.GetString("Weapon_OrnateBlade", resourceCulture);
             }
         }
         

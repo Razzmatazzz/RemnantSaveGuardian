@@ -45,12 +45,6 @@ namespace RemnantSaveGuardian
                 }
                 if (_type == "Armor")
                 {
-                    var armorParts = new List<string>() { 
-                        "Head",
-                        "Body",
-                        "Gloves",
-                        "Legs"
-                    };
                     var armorMatch = Regex.Match(_name, @"\w+_(?<armorPart>(?:Head|Body|Gloves|Legs))_\w+");
                     if (armorMatch.Success)
                     {
@@ -59,6 +53,13 @@ namespace RemnantSaveGuardian
                 }
                 return Loc.GameT(_name);
             } 
+        }
+        public string RawName
+        {
+            get
+            {
+                return _name;
+            }
         }
         public string Type
         {
@@ -115,6 +116,11 @@ namespace RemnantSaveGuardian
         }
 
         public override string ToString()
+        {
+            return Name;
+        }
+
+        public string TypeName()
         {
             if (_type == "")
             {

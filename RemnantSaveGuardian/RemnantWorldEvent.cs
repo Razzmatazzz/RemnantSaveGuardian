@@ -59,18 +59,24 @@ namespace RemnantSaveGuardian
                 return Loc.GameT(_name);
             }
         }
-        public string MissingItems
-        {
-            get
+        public List<RemnantItem> MissingItems {
+            get 
             {
-                return string.Join("\n", mItems);
+                return mItems;
             }
         }
-        public string PossibleItems
+        public string MissingItemsString
         {
             get
             {
-                return string.Join("\n", this.getPossibleItems());
+                return string.Join("\n", mItems.Select(i => i.TypeName()));
+            }
+        }
+        public string PossibleItemsString
+        {
+            get
+            {
+                return string.Join("\n", this.getPossibleItems().Select(i => i.TypeName()));
             }
         }
         public string RawWorld
@@ -856,7 +862,7 @@ namespace RemnantSaveGuardian
                 {
                     var wardEvent = new RemnantWorldEvent(eName, "World_Earth", "Home");
                     wardEvent.setMissingItems(character);
-                    if (wardEvent.MissingItems.Length > 0) eventList.Add(wardEvent);
+                    if (wardEvent.MissingItems.Count > 0) eventList.Add(wardEvent);
                 }
 
                 //Logger.Log(firstZone);
@@ -870,11 +876,11 @@ namespace RemnantSaveGuardian
                 // Add the Labyrinth
                 var lab = new RemnantWorldEvent("Labyrinth", "World_Labyrinth", "Location");
                 lab.setMissingItems(character);
-                if (lab.MissingItems.Length > 0) eventList.Add(lab);
+                if (lab.MissingItems.Count > 0) eventList.Add(lab);
 
                 RemnantWorldEvent lab2 = new RemnantWorldEvent("LabyrinthBackrooms", "World_Labyrinth", "Location");
                 lab2.setMissingItems(character);
-                if (lab2.MissingItems.Length > 0) eventList.Add(lab2);
+                if (lab2.MissingItems.Count > 0) eventList.Add(lab2);
                 //orderedEvents.Add(lab2);
 
                 // Add other zones
@@ -887,11 +893,11 @@ namespace RemnantSaveGuardian
                 // Add Root Earth
                 RemnantWorldEvent RootEarth1 = new RemnantWorldEvent("AshenWasteland", "World_RootEarth", "Location");
                 RootEarth1.setMissingItems(character);
-                if (RootEarth1.MissingItems.Length > 0) eventList.Add(RootEarth1);
+                if (RootEarth1.MissingItems.Count > 0) eventList.Add(RootEarth1);
 
                 RemnantWorldEvent RootEarth2 = new RemnantWorldEvent("CorruptedHarbor", "World_RootEarth", "Location");
                 RootEarth2.setMissingItems(character);
-                if (RootEarth2.MissingItems.Length > 0) eventList.Add(RootEarth2);
+                if (RootEarth2.MissingItems.Count > 0) eventList.Add(RootEarth2);
 
                 // Add back in root earth events filtered out above?
             }
@@ -1125,7 +1131,7 @@ namespace RemnantSaveGuardian
                 {
                     var wardEvent = new RemnantWorldEvent(eName, "World_Earth", "Home");
                     wardEvent.setMissingItems(character);
-                    if (wardEvent.MissingItems.Length > 0) eventList.Add(wardEvent);
+                    if (wardEvent.MissingItems.Count > 0) eventList.Add(wardEvent);
                 }
 
                 //Logger.Log(firstZone);
@@ -1139,11 +1145,11 @@ namespace RemnantSaveGuardian
                 // Add the Labyrinth
                 var lab = new RemnantWorldEvent("Labyrinth", "World_Labyrinth", "Location");
                 lab.setMissingItems(character);
-                if (lab.MissingItems.Length > 0) eventList.Add(lab);
+                if (lab.MissingItems.Count > 0) eventList.Add(lab);
 
                 RemnantWorldEvent lab2 = new RemnantWorldEvent("LabyrinthBackrooms", "World_Labyrinth", "Location");
                 lab2.setMissingItems(character);
-                if (lab2.MissingItems.Length > 0) eventList.Add(lab2);
+                if (lab2.MissingItems.Count > 0) eventList.Add(lab2);
                 //orderedEvents.Add(lab2);
 
                 // Add other zones
@@ -1156,11 +1162,11 @@ namespace RemnantSaveGuardian
                 // Add Root Earth
                 RemnantWorldEvent RootEarth1 = new RemnantWorldEvent("AshenWasteland", "World_RootEarth", "Location");
                 RootEarth1.setMissingItems(character);
-                if (RootEarth1.MissingItems.Length > 0) eventList.Add(RootEarth1);
+                if (RootEarth1.MissingItems.Count > 0) eventList.Add(RootEarth1);
 
                 RemnantWorldEvent RootEarth2 = new RemnantWorldEvent("CorruptedHarbor", "World_RootEarth", "Location");
                 RootEarth2.setMissingItems(character);
-                if (RootEarth2.MissingItems.Length > 0) eventList.Add(RootEarth2);
+                if (RootEarth2.MissingItems.Count > 0) eventList.Add(RootEarth2);
 
                 // Add back in root earth events filtered out above?
             }
@@ -1322,6 +1328,10 @@ namespace RemnantSaveGuardian
                                     RemnantWorldEvent fester = new RemnantWorldEvent("Fester", worldEvent.Locations, "Abberation");
                                     fester.setMissingItems(character);
                                     zoneEvents[zone].Add(fester);
+
+                                    RemnantWorldEvent archersCrest = new RemnantWorldEvent("Ring_ArchersCrest", worldEvent.Location, "Item");
+                                    archersCrest.setMissingItems(character);
+                                    zoneEvents[zone].Add(archersCrest);
                                 }
                                 else if (worldEvent.RawName.Equals("TheLament"))
                                 {
@@ -1360,11 +1370,11 @@ namespace RemnantSaveGuardian
                 // Add Ward 13 events
                 var ward13 = new RemnantWorldEvent("Ward13", "Ward13", "Home");
                 ward13.setMissingItems(character);
-                if (ward13.MissingItems.Length > 0) eventList.Add(ward13);
+                if (ward13.MissingItems.Count > 0) eventList.Add(ward13);
 
                 var cass = new RemnantWorldEvent("Cass", "Ward13", "Home");
                 cass.setMissingItems(character);
-                if (cass.MissingItems.Length > 0) eventList.Add(cass);
+                if (cass.MissingItems.Count > 0) eventList.Add(cass);
 
                 // Add the first zone events
                 for (int i = 0; firstZone != null && i < zoneEvents[firstZone].Count; i++)
@@ -1376,11 +1386,11 @@ namespace RemnantSaveGuardian
                 // Add the Labyrinth
                 var lab = new RemnantWorldEvent("Labyrinth", "Labyrinth", "Location");
                 lab.setMissingItems(character);
-                if (lab.MissingItems.Length > 0) eventList.Add(lab);
+                if (lab.MissingItems.Count > 0) eventList.Add(lab);
 
                 RemnantWorldEvent lab2 = new RemnantWorldEvent("LabyrinthBackrooms", "Labyrinth", "Location");
                 lab2.setMissingItems(character);
-                if (lab2.MissingItems.Length > 0) eventList.Add(lab2);
+                if (lab2.MissingItems.Count > 0) eventList.Add(lab2);
                 //orderedEvents.Add(lab2);
 
                 // Add other zones
@@ -1393,11 +1403,11 @@ namespace RemnantSaveGuardian
                 // Add Root Earth
                 RemnantWorldEvent RootEarth1 = new RemnantWorldEvent("RootEarthAshenWasteland", "RootEarth", "Location");
                 RootEarth1.setMissingItems(character);
-                if (RootEarth1.MissingItems.Length > 0) eventList.Add(RootEarth1);
+                if (RootEarth1.MissingItems.Count > 0) eventList.Add(RootEarth1);
 
                 RemnantWorldEvent RootEarth2 = new RemnantWorldEvent("RootEarthCorruptedHarbor", "RootEarth", "Location");
                 RootEarth2.setMissingItems(character);
-                if (RootEarth2.MissingItems.Length > 0) eventList.Add(RootEarth2);
+                if (RootEarth2.MissingItems.Count > 0) eventList.Add(RootEarth2);
             }
             else
             {
