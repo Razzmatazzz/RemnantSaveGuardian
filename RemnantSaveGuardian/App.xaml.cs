@@ -80,7 +80,8 @@ namespace RemnantSaveGuardian
         /// </summary>
         private async void OnStartup(object sender, StartupEventArgs e)
         {
-            var culture = CultureInfo.CurrentCulture; // new CultureInfo("ru");
+            var culture = CultureInfo.CurrentCulture;
+            //var culture = new CultureInfo("zh-TW");
             Thread.CurrentThread.CurrentCulture = culture;
             WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = culture;
             FrameworkElement.LanguageProperty.OverrideMetadata(

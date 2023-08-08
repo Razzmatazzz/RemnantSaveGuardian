@@ -118,285 +118,291 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutRSG" xml:space="preserve">
-    <value>About Remnant Save Guardian</value>
+    <value>关于</value>
   </data>
   <data name="Active" xml:space="preserve">
-    <value>Active</value>
+    <value>启用</value>
   </data>
   <data name="Adventure" xml:space="preserve">
-    <value>Adventure</value>
+    <value>冒险</value>
   </data>
   <data name="Are you sure you want to delete backup {backupName}?" xml:space="preserve">
-    <value>Are you sure you want to delete backup {backupName}?</value>
+    <value>您确定要删除备份 {backupName} 吗？</value>
   </data>
   <data name="Backup completed" xml:space="preserve">
-    <value>Backup completed</value>
+    <value>备份完成</value>
   </data>
   <data name="Backup Folder" xml:space="preserve">
-    <value>Backup Folder</value>
+    <value>备份文件夹</value>
   </data>
   <data name="Backup folder not set; reverting to default." xml:space="preserve">
-    <value>Backup folder not set; reverting to default.</value>
+    <value>未设置备份文件夹；恢复为默认。</value>
   </data>
   <data name="Backup restored" xml:space="preserve">
-    <value>Backup restored</value>
+    <value>备份已恢复</value>
   </data>
   <data name="Backups folder not found, creating..." xml:space="preserve">
-    <value>Backups folder not found, creating...</value>
+    <value>未找到备份文件夹，正在创建...</value>
   </data>
   <data name="Backups found" xml:space="preserve">
-    <value>Backups found</value>
+    <value>找到备份</value>
   </data>
   <data name="btnBackup_ToolTip" xml:space="preserve">
-    <value>Backup current save</value>
+    <value>备份当前保存</value>
   </data>
   <data name="btnCheckUpdate_Content" xml:space="preserve">
-    <value>Check Now</value>
+    <value>立即查看</value>
   </data>
   <data name="btnOpenBackupsFolder_ToolTip" xml:space="preserve">
-    <value>Open backups folder</value>
+    <value>打开备份文件夹</value>
   </data>
   <data name="btnStartGame_ToolTip" xml:space="preserve">
-    <value>Start game</value>
+    <value>开始游戏</value>
   </data>
   <data name="Campaign" xml:space="preserve">
-    <value>Campaign</value>
+    <value>战役</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="Character" xml:space="preserve">
-    <value>Character</value>
+    <value>角色</value>
   </data>
   <data name="Characters" xml:space="preserve">
-    <value>Characters</value>
+    <value>角色</value>
   </data>
   <data name="chkAutoBackup_Content" xml:space="preserve">
-    <value>Automatically backup save files</value>
+    <value>自动备份存档</value>
   </data>
   <data name="chkAutoBackup_ToolTip" xml:space="preserve">
-    <value>Monitor Remnant save files and back them up when they're changed</value>
+    <value>监控遗迹存档文件，并在文件更改时进行备份</value>
   </data>
   <data name="chkAutoCheckUpdate_Content" xml:space="preserve">
-    <value>Automatically check for program update</value>
+    <value>自动检查更新</value>
   </data>
   <data name="chkCreateLogFile_Content" xml:space="preserve">
-    <value>Create log file</value>
+    <value>创建日志文件</value>
   </data>
   <data name="chkCreateLogFile_ToolTip" xml:space="preserve">
-    <value>Whether a log.txt file should be created</value>
+    <value>是否创建log.txt文件</value>
   </data>
   <data name="chkShowPossibleItems_Content" xml:space="preserve">
-    <value>Show Possible Items column in analyzer</value>
+    <value>在分析器中显示可能出现的物品</value>
   </data>
   <data name="Choose a backup to restore from the list." xml:space="preserve">
-    <value>Choose a backup to restore from the list.</value>
+    <value>从列表中选择要还原的备份。</value>
   </data>
   <data name="Confirm Delete" xml:space="preserve">
-    <value>Confirm Delete</value>
+    <value>确认删除</value>
   </data>
   <data name="Copy" xml:space="preserve">
-    <value>Copy</value>
+    <value>复制</value>
   </data>
   <data name="Could not find save file location; please set manually" xml:space="preserve">
-    <value>Could not find save file location; please set manually</value>
+    <value>找不到存档文件的位置; 请手动设置</value>
   </data>
   <data name="Dark" xml:space="preserve">
-    <value>Dark</value>
+    <value>黑暗</value>
   </data>
   <data name="Date" xml:space="preserve">
-    <value>Date</value>
+    <value>日期</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>删除</value>
   </data>
   <data name="Deleting excess backup" xml:space="preserve">
-    <value>Deleting excess backup</value>
+    <value>删除多余备份</value>
   </data>
   <data name="Do you want to move your backups to this new folder?" xml:space="preserve">
-    <value>Do you want to move your backups to this new folder?</value>
+    <value>您想将备份移动到这个新文件夹吗？</value>
   </data>
   <data name="Error checking for new game info" xml:space="preserve">
-    <value>Error checking for new game info</value>
+    <value>检查新游戏信息时出错</value>
   </data>
   <data name="Error checking for new version" xml:space="preserve">
-    <value>Error checking for new version</value>
+    <value>检查新版本时出错</value>
   </data>
   <data name="Exit the game before restoring a save backup." xml:space="preserve">
-    <value>Exit the game before restoring a save backup.</value>
+    <value>在恢复存档备份前请退出游戏。</value>
   </data>
   <data name="Export save files as plaintext" xml:space="preserve">
-    <value>Export save files</value>
+    <value>导出存档文件</value>
   </data>
   <data name="Game Folder" xml:space="preserve">
-    <value>Game Folder</value>
+    <value>游戏文件夹</value>
   </data>
   <data name="Game info updated." xml:space="preserve">
-    <value>Game info updated.</value>
+    <value>游戏信息已更新。</value>
   </data>
   <data name="Hardcore" xml:space="preserve">
-    <value>Hardcore</value>
+    <value>硬核</value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Home</value>
+    <value>首页</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Info</value>
+    <value>信息</value>
   </data>
   <data name="Invalid backup restore type" xml:space="preserve">
-    <value>Invalid backup restore type</value>
+    <value>备份还原类型无效</value>
   </data>
   <data name="Invalid Folder" xml:space="preserve">
-    <value>Invalid Folder</value>
+    <value>无效文件夹</value>
   </data>
   <data name="InvalidBackupFolderNoBackupsInSaves" xml:space="preserve">
-    <value>Invalid folder: Backup folder cannot be the game's save folder.</value>
+    <value>文件夹无效：备份文件夹不能是游戏的存档文件夹。</value>
   </data>
   <data name="InvalidGameFolder" xml:space="preserve">
-    <value>Invalid folder: Select where your Remnant II game is installed.</value>
+    <value>文件夹无效：选择遗迹2的安装位置。</value>
   </data>
   <data name="InvalidSaveFolder" xml:space="preserve">
-    <value>Invalid folder: Select where your Remnant II saves are stored</value>
+    <value>文件夹无效：选择遗迹2存档位置</value>
   </data>
   <data name="InvalidSaveFolderNoSavesInBackups" xml:space="preserve">
-    <value>Invalid folder: Please select a folder other than the backup folder.</value>
+    <value>无效文件夹：请选择备份文件夹以外的文件夹。</value>
   </data>
   <data name="Keep" xml:space="preserve">
-    <value>Keep</value>
+    <value>保留</value>
   </data>
   <data name="Last backup save date" xml:space="preserve">
-    <value>Last backup save date</value>
+    <value>最后备份日期</value>
   </data>
   <data name="lblBackupLimit_Text" xml:space="preserve">
-    <value>Backups to keep (0 for unlimited)</value>
+    <value>要保留的备份（0 表示无限制）</value>
   </data>
   <data name="lblBackupLimit_ToolTip" xml:space="preserve">
-    <value>When your number of backups reaches this number, backups will automatically be deleted starting with the oldest</value>
+    <value>当备份数量达到此值时，将自动从最旧的备份开始删除。</value>
   </data>
   <data name="lblBackupMins_Text" xml:space="preserve">
-    <value>Minutes between backups</value>
+    <value>备份间隔时间</value>
   </data>
   <data name="lblBackupMins_ToolTip" xml:space="preserve">
-    <value>Minimum amount of time that must have passed since last backup before a new backup is made</value>
+    <value>自上次备份后必须经过的最短时间，然后才能进行新的备份</value>
   </data>
   <data name="lblMissingItemColor_Content" xml:space="preserve">
-    <value>World analzyer missing item color</value>
+    <value>世界分析器中未取得物品的颜色</value>
   </data>
   <data name="lblStartPage_Text" xml:space="preserve">
-    <value>Start page</value>
+    <value>起始页</value>
   </data>
   <data name="lblStartPage_ToolTip" xml:space="preserve">
-    <value>Which page to load on app start</value>
+    <value>应用程序启动时加载哪个页面</value>
   </data>
   <data name="Light" xml:space="preserve">
-    <value>Light</value>
+    <value>明亮</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>位置</value>
   </data>
   <data name="Log" xml:space="preserve">
-    <value>Log</value>
+    <value>日志</value>
   </data>
   <data name="menuRestoreAll_Header" xml:space="preserve">
-    <value>Everything</value>
+    <value>一切</value>
   </data>
   <data name="menuRestoreCharacters_Header" xml:space="preserve">
-    <value>Characters Only</value>
+    <value>仅角色</value>
   </data>
   <data name="menuRestoreWorlds_Header" xml:space="preserve">
-    <value>Worlds Only</value>
+    <value>仅世界</value>
   </data>
   <data name="menuRestore_Header" xml:space="preserve">
-    <value>Restore Backup</value>
+    <value>恢复备份</value>
   </data>
   <data name="Missing Items" xml:space="preserve">
-    <value>Missing Items</value>
+    <value>物品</value>
   </data>
   <data name="Move Backups" xml:space="preserve">
-    <value>Move Backups</value>
+    <value>移动备份</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>Name</value>
+    <value>名称</value>
   </data>
   <data name="New version available!" xml:space="preserve">
-    <value>New version available!</value>
+    <value>可以更新到新版本！</value>
   </data>
   <data name="Normal" xml:space="preserve">
-    <value>Normal</value>
+    <value>正常</value>
   </data>
   <data name="Open Folder" xml:space="preserve">
-    <value>Open Folder</value>
+    <value>打开文件夹</value>
   </data>
   <data name="Open wiki" xml:space="preserve">
-    <value>Open wiki</value>
+    <value>打开wiki</value>
   </data>
   <data name="Possible Items" xml:space="preserve">
-    <value>Possible Items</value>
+    <value>可能的项目</value>
   </data>
   <data name="Preferences" xml:space="preserve">
-    <value>Preferences</value>
+    <value>首选项</value>
   </data>
   <data name="processing save file change" xml:space="preserve">
-    <value>processing save file change</value>
+    <value>处理存档件更改</value>
   </data>
   <data name="Progression" xml:space="preserve">
-    <value>Progression</value>
+    <value>进度</value>
   </data>
   <data name="Red" xml:space="preserve">
-    <value>Red</value>
+    <value>红色</value>
   </data>
   <data name="Save Backups" xml:space="preserve">
-    <value>Save Backups</value>
+    <value>存档备份</value>
   </data>
   <data name="Save change detected; waiting {numMinutes} minutes until next backup" xml:space="preserve">
-    <value>Save change detected; waiting {numMinutes} minutes until next backup</value>
+    <value>检测到存档改变；距离下次备份还有 {numMinutes} 分钟</value>
   </data>
   <data name="Save file in use; waiting 0.5 seconds and retrying." xml:space="preserve">
-    <value>Save file in use; waiting 0.5 seconds and retrying.</value>
+    <value>存档文件正在使用中；等待 0.5 秒后重试。</value>
   </data>
   <data name="Save Folder" xml:space="preserve">
-    <value>Save Folder</value>
+    <value>存档文件夹</value>
   </data>
   <data name="Save plaintext data" xml:space="preserve">
-    <value>Save plaintext data</value>
+    <value>存储纯文本数据</value>
   </data>
   <data name="SaveDate" xml:space="preserve">
-    <value>Save Date</value>
+    <value>存档日期</value>
   </data>
   <data name="Saves" xml:space="preserve">
-    <value>Saves</value>
+    <value>存档</value>
   </data>
   <data name="Select a folder other than the game's save folder." xml:space="preserve">
-    <value>Select a folder other than the game's save folder.</value>
+    <value>选择游戏存档文件夹以外的文件夹。</value>
   </data>
   <data name="setting save file timer" xml:space="preserve">
-    <value>setting save file timer</value>
+    <value>设置存档文件计时器</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>设置</value>
   </data>
   <data name="Survival" xml:space="preserve">
-    <value>Survival</value>
+    <value>生存</value>
   </data>
   <data name="Text_Highlight" xml:space="preserve">
-    <value>Highlight</value>
+    <value>强调</value>
   </data>
   <data name="Text_Normal" xml:space="preserve">
-    <value>Normal</value>
+    <value>正常</value>
   </data>
   <data name="Theme" xml:space="preserve">
-    <value>Theme</value>
+    <value>主题</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>类型</value>
   </data>
   <data name="White" xml:space="preserve">
-    <value>White</value>
+    <value>白色</value>
   </data>
   <data name="World Analyzer" xml:space="preserve">
-    <value>World Analyzer</value>
+    <value>世界分析器</value>
   </data>
   <data name="WorldAnalyzerFilter_PlaceholderText" xml:space="preserve">
-    <value>Filter by events or items</value>
+    <value>筛选</value>
   </data>
   <data name="You must wait 5 minutes between update checks" xml:space="preserve">
-    <value>You must wait 5 minutes between update checks</value>
+    <value>两次更新检查之间必须等待5分钟</value>
   </data>
   <data name="Zoom" xml:space="preserve">
-    <value>Zoom</value>
+    <value>缩放</value>
   </data>
 </root>

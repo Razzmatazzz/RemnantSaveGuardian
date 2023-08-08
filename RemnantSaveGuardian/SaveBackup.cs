@@ -60,7 +60,7 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return string.Join(",", this.save.Characters);
+                return string.Join(", ", this.save.Characters);
             }
         }
         public bool Keep

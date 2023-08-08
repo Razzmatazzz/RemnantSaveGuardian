@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -20,13 +21,22 @@ namespace RemnantSaveGuardian
             {
                 ns = options["namespace"];
             }
+            var currentCulture = WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture;
+            if (options.Has("locale") && options["locale"] != currentCulture.ToString())
+            {
+                WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.SetCurrentThreadCulture = false;
+                WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = new CultureInfo(options["locale"]);
+                var translation = LocExtension.GetLocalizedValue<T>(Assembly.GetCallingAssembly().GetName().Name + $":{ns}:" + key);
+                WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = currentCulture;
+                return translation;
+            }
             //Debug.WriteLine($"{ns}:{key}");
             return LocExtension.GetLocalizedValue<T>(Assembly.GetCallingAssembly().GetName().Name + $":{ns}:" + key);
         }
         public static string T(string key, LocalizationOptions options)
         {
             var val = GetLocalizedValue<string>(key, options);
-            if (val == null)
+            if (val == null || val == "")
             {
                 return key;
                 /*if (resourceFile != "GameStrings")

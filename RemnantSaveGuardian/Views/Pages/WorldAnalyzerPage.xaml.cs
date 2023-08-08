@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Xml.Linq;
 using Wpf.Ui.Common.Interfaces;
 
 namespace RemnantSaveGuardian.Views.Pages
@@ -152,7 +155,9 @@ namespace RemnantSaveGuardian.Views.Pages
                 "RawWorld",
                 "RawType",
                 "Locations",
-                "World"
+                "World",
+                "MissingItems",
+                "PossibleItems"
             };
             if (cancelColumns.Contains(e.Column.Header))
             {
@@ -161,7 +166,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             var cellStyle = new Style(typeof(DataGridCell));
             cellStyle.Setters.Add(new Setter(FontSizeProperty, FontSizeSlider.Value));
-            if (e.Column.Header.Equals("MissingItems"))
+            if (e.Column.Header.Equals("MissingItemsString"))
             {
                 e.Column.Header = "Missing Items";
                 
@@ -171,7 +176,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     cellStyle.Setters.Add(new Setter(ForegroundProperty, new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(highlight.R, highlight.G, highlight.B))));
                 }
             }
-            else if (e.Column.Header.Equals("PossibleItems"))
+            else if (e.Column.Header.Equals("PossibleItemsString"))
             {
                 e.Column.Header = "Possible Items";
 
@@ -190,7 +195,6 @@ namespace RemnantSaveGuardian.Views.Pages
             //if (CharacterControl.SelectedIndex == -1 && listCharacters.Count > 0) return;
             if (CharacterControl.Items.Count > 0 && CharacterControl.SelectedIndex > -1)
             {
-                applyFilter();
                 checkAdventureTab();
                 applyFilter();
                 //txtMissingItems.Text = string.Join("\n", Save.Characters[CharacterControl.SelectedIndex].GetMissingItems());
@@ -205,7 +209,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     item.Header = rItem.Name;
                     if (!rItem.ItemNotes.Equals("")) item.ToolTip = rItem.ItemNotes;
                     item.ContextMenu = treeMissingItems.Resources["ItemContext"] as System.Windows.Controls.ContextMenu;
-                    item.Tag = "item";
+                    item.Tag = rItem;
                     TreeViewItem modeNode = ((TreeViewItem)treeMissingItems.Items[(int)rItem.ItemMode]);
                     TreeViewItem? itemTypeNode = null;
                     foreach (TreeViewItem typeNode in modeNode.Items)
@@ -227,9 +231,14 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                     itemTypeNode.Items.Add(item);
                 }
-                foreach (TreeViewItem item in treeMissingItems.Items)
+                foreach (TreeViewItem categoryNode in treeMissingItems.Items)
                 {
-                    item.Visibility = item.Items.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
+                    categoryNode.Visibility = categoryNode.Items.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
+                    categoryNode.Items.SortDescriptions.Add(new("Header", System.ComponentModel.ListSortDirection.Ascending));
+                    foreach (TreeViewItem typeNode in categoryNode.Items)
+                    {
+                        typeNode.Items.SortDescriptions.Add(new("Header", System.ComponentModel.ListSortDirection.Ascending));
+                    }
                 }
             }
         }
@@ -269,7 +278,7 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return "";
             }
-            if ((string)item.Tag == "item") return item.Header.ToString();
+            if (item.Tag.GetType().ToString() == "RemnantSaveGuardian.RemnantItem") return item.Header.ToString();
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(item.Header.ToString() + ":");
             foreach (TreeViewItem i in item.Items)
@@ -291,14 +300,33 @@ namespace RemnantSaveGuardian.Views.Pages
         private void SearchItem_Click(object sender, RoutedEventArgs e)
         {
             var treeItem = (TreeViewItem)treeMissingItems.SelectedItem;
-            var type = ((TreeViewItem)treeItem?.Parent)?.Header.ToString();
-            var itemname = treeItem?.Header.ToString();
+            var item = (RemnantItem)treeItem.Tag;
 
-            if (type == "Armor")
+            var itemname = treeItem?.Header.ToString();
+            if (!WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture.ToString().StartsWith("en"))
+            {
+                itemname = item.RawName;
+                var setFound = false;
+                if (item.RawType == "Armor")
+                {
+                    var armorMatch = Regex.Match(itemname, @"\w+_(?<armorPart>(?:Head|Body|Gloves|Legs))_\w+");
+                    if (armorMatch.Success)
+                    {
+                        itemname = itemname.Replace($"{armorMatch.Groups["armorPart"].Value}_", "");
+                        setFound = true;
+                    }
+                }
+                itemname = Loc.GameT(itemname, new() { { "locale", "en-US" } });
+                if (setFound)
+                {
+                    itemname += " (";
+                }
+            } 
+
+            if (item.RawType == "Armor")
             {
                 itemname = itemname?.Substring(0, itemname.IndexOf("(")) + "Set";
             }
-
             Process.Start("explorer.exe", $"https://remnant2.wiki.fextralife.com/{itemname}");
         }
 
@@ -318,6 +346,27 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             applyFilter();
         }
+        private bool eventPassesFilter(RemnantWorldEvent e)
+        {
+            var filter = WorldAnalyzerFilter.Text.ToLower();
+            if (filter.Length == 0)
+            {
+                return true;
+            }
+            if (e.MissingItemsString.ToLower().Contains(filter))
+            {
+                return true;
+            }
+            if (Properties.Settings.Default.ShowPossibleItems && e.PossibleItemsString.ToLower().Contains(filter))
+            {
+                return true;
+            }
+            if (e.Name.ToLower().Contains(filter))
+            {
+                return true;
+            }
+            return false;
+        }
         private void applyFilter()
         {
             if (CharacterControl.Items.Count == 0 || CharacterControl.SelectedIndex == -1)
@@ -329,11 +378,10 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return;
             }
-            var filter = WorldAnalyzerFilter.Text.ToLower();
             filteredCampaign.Clear();
-            filteredCampaign.AddRange(character.CampaignEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter)));
+            filteredCampaign.AddRange(character.CampaignEvents.FindAll(e => eventPassesFilter(e)));
             filteredAdventure.Clear();
-            filteredAdventure.AddRange(character.AdventureEvents.FindAll(e => e.MissingItems.ToLower().Contains(filter)));
+            filteredAdventure.AddRange(character.AdventureEvents.FindAll(e => eventPassesFilter(e)));
             reloadEventGrids();
         }
     }

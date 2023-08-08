@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Controls;
@@ -71,6 +72,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 dataBackups.BeginningEdit += DataBackups_BeginningEdit;
                 dataBackups.CellEditEnding += DataBackups_CellEditEnding;
                 dataBackups.AutoGeneratingColumn += DataBackups_AutoGeneratingColumn;
+                dataBackups.Items.SortDescriptions.Add(new SortDescription("SaveDate", ListSortDirection.Descending));
 
                 contextBackups.ContextMenuOpening += ContextBackups_ContextMenuOpening;
                 contextBackups.Opened += ContextBackups_Opened;
@@ -115,7 +117,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void DataBackups_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            e.Column.Header = Loc.T(e.Column.Header.ToString());
+            e.Column.Header = new LocalizedColumnHeader(e.Column.Header.ToString());
         }
 
         private void MenuAnalyze_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -218,7 +220,8 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void DataBackups_CellEditEnding(object? sender, System.Windows.Controls.DataGridCellEditEndingEventArgs e)
         {
-            if (e.Column.Header.ToString().Equals("Name") && e.EditAction == DataGridEditAction.Commit)
+            var header = (LocalizedColumnHeader)e.Column.Header;
+            if (header.Key == "Name" && e.EditAction == DataGridEditAction.Commit)
             {
                 SaveBackup sb = (SaveBackup)e.Row.Item;
                 if (sb.Name.Equals(""))
@@ -230,7 +233,12 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void DataBackups_BeginningEdit(object? sender, System.Windows.Controls.DataGridBeginningEditEventArgs e)
         {
-            if (e.Column.Header.ToString().Equals("SaveDate") || e.Column.Header.ToString().Equals("Active")) e.Cancel = true;
+            var header = (LocalizedColumnHeader)e.Column.Header;
+            var editableColumns = new List<string>() { 
+                "Name",
+                "Keep"
+            };
+            if (!editableColumns.Contains(header.Key)) e.Cancel = true;
         }
 
         private void BtnOpenBackupsFolder_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -274,7 +282,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             ResetActiveBackupStatus();
 
                             TimeSpan span = (newBackupTime - DateTime.Now);
-                            Logger.Log($"Save change detected, but {span.Minutes + Math.Round(span.Seconds / 60.0, 2)} minutes, left until next backup");
+                            Logger.Log(Loc.T("Save change detected; waiting {numMinutes} minutes until next backup", new() { { "numMinutes", $"{Math.Round(span.Minutes + (span.Seconds / 60.0), 2)}" } }));
                         }
                     }
                     else
@@ -310,14 +318,17 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void ResetActiveBackupStatus()
         {
-            this.ActiveSaveIsBackedUp = false;
-
-            foreach (SaveBackup backup in listBackups)
+            this.Dispatcher.Invoke(() =>
             {
-                if (backup.Active) backup.Active = false;
-            }
+                this.ActiveSaveIsBackedUp = false;
 
-            dataBackups.Items.Refresh();
+                foreach (SaveBackup backup in listBackups)
+                {
+                    if (backup.Active) backup.Active = false;
+                }
+
+                dataBackups.Items.Refresh();
+            });
         }
 
         private void loadBackups()
@@ -353,7 +364,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         activeBackup = backup;
                     }
 
-                    //backup.Updated += saveUpdated;
+                    backup.Updated += saveUpdated;
 
                     listBackups.Add(backup);
                 }
@@ -715,5 +726,31 @@ namespace RemnantSaveGuardian.Views.Pages
     public class BackupSaveViewedEventArgs : EventArgs
     {
         public SaveBackup SaveBackup { get; set; }
+    }
+
+    public class LocalizedColumnHeader
+    {
+        private string _key;
+        public string Key { 
+            get {
+                return _key;
+            } 
+        }
+        public string Name
+        {
+            get
+            {
+                return Loc.T(_key);
+            }
+        }
+        private string _name;
+        public LocalizedColumnHeader(string key)
+        {
+            _key = key;
+        }
+        override public string ToString()
+        {
+            return Name;
+        }
     }
 }

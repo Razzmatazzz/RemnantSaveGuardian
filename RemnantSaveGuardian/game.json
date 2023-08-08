@@ -1,12 +1,18 @@
 {
-  "version": 5,
+  "version": 10,
   "mainLocations": [
-    "FaeStarter",
-    "DranStarter"
+    "Quest_Global_TheHunterDream_Template01",
+    "Quest_Story_AllFather_DranCity1_Template",
+    "Quest_Story_AllFather_DranCity2_Template",
+    "Quest_Story_Empress_Zone01_Template01",
+    "Quest_Story_Empress_Zone02_Template01",
+    "Quest_Story_IAmLegend_Zone1_Template",
+    "Quest_Story_IAmLegend_Zone2_Template"
   ],
   "subLocations": {
     "Jungle": {
       "Shrewd": "TheExpandingGlade",
+      "RavagerStory": "RavagersLair",
       "RootHorror": "KaeulasRest",
       "RootCultist": "TheTwistedChantry",
       "MotherMind": "TheNamelessNest",
@@ -20,9 +26,12 @@
       "Sarcophagus": "TheLament",
       "TheChimney": "LaemirsLyceum",
       "WailingField": "ForgottenField",
-      "CathedralOfSeasons": "CathedralOfOmens"
+      "CathedralOfSeasons": "CathedralOfSeasons",
+      "Empress": "TheRedThrone",
+      "ManyFaces": "TheGreatBole"
     },
     "Fae": {
+      "AllFather": "BeatificPalace",
       "DranGrenadier": "CottonsKiln",
       "Ravenous": "TheGreatHall",
       "CharnelHouse": "HarvestersReach",
@@ -37,6 +46,7 @@
       "Settlement": "BairnsCrossing",
       "Nimue": "NimuesRetreat",
       "FaelinFaerlin": "BeatificPalace",
+      "Faerin": "MaleficGallery",
       "TheNest": "Sewers",
       "TownTurnedToDust": "TillersRest",
       "ThreeMenMorris": "PostulantsParlor"
@@ -49,7 +59,9 @@
       "CustodianEye": "SpectrumNexus",
       "TowerHeist": "TowerOfTheUnseen",
       "TheDreamlessSleep": "VoidVesselFacility",
-      "NerudGuardian": "ThresholdOfTheUnknown"
+      "NerudGuardian": "ThresholdOfTheUnknown",
+      "TheCustodian": "ThePhantomWasteland",
+      "TalRatha": "ForgottenPrison"
     }
   },
   "injectables": {
@@ -114,6 +126,11 @@
           "name": "/Items/Trinkets/Amulets/VengeanceIdol/Amulet_VengeanceIdol"
         }
       ],
+      "Ring_ArchersCrest": [
+        {
+          "name": "/Items/Trinkets/Rings/ArchersCrest/Ring_ArchersCrest"
+        }
+      ],
       "Ring_BloodStamp": [
         {
           "name": "/Items/Trinkets/Rings/WaxSealedRing/Ring_WaxSealedRing"
@@ -167,6 +184,11 @@
       "Ring_StrongArmBand": [
         {
           "name": "/Items/Trinkets/Rings/StrongArmBand/Ring_StrongArmBand"
+        }
+      ],
+      "Ring_LivingStone": [
+        {
+          "name": "/Items/Trinkets/Rings/LithicSignet/Ring_LithicSignet"
         }
       ],
       "ThaenLeaf": [
@@ -239,11 +261,6 @@
           "name": "/Items/Weapons/Melee/Special/Stonebreaker/Weapon_Stonebreaker"
         }
       ],
-      "Ring_LivingStone": [
-        {
-          "name": "/Items/Trinkets/Rings/LithicSignet/Ring_LithicSignet"
-        }
-      ],
       "Sarcophagus": [
         {
           "name": "/Items/Gems/Ranged/MetaGems/Extender/MetaGem_Extender"
@@ -289,11 +306,6 @@
         },
         {
           "name": "/Items/Trinkets/Rings/BandBand/Ring_BandBand"
-        }
-      ],
-      "HiddenChamber": [
-        {
-          "name": "/Items/Trinkets/Rings/ArchersCrest/Ring_ArchersCrest"
         }
       ],
       "Library": [
@@ -487,7 +499,8 @@
           "name": "/Items/Trinkets/Rings/RingOfRetribution/Ring_RingOfRetribution"
         },
         {
-          "name": "/Items/Trinkets/Rings/RingOfGrace/Ring_RingOfGrace"
+          "name": "/Items/Trinkets/Rings/RingOfGrace/Ring_RingOfGrace",
+          "notes":  "Give Dria's Anklet to Riewen'"
         },
         {
           "name": "/Items/Traits/Core/ArcaneStrike/Trait_ArcaneStrike"
@@ -648,11 +661,6 @@
           "name": "/Items/Trinkets/Amulets/IndignantFetish/Amulet_IndignantFetish"
         }
       ],
-      "Amulet_ShadeBloomFloret": [
-        {
-          "name": "/Items/Trinkets/Amulets/ShadeBloomFloret/Amulet_ShadeBloomCrystal"
-        }
-      ],
       "Amulet_SpiritWispAmulet": [
         {
           "name": "/Items/Trinkets/Amulets/SpiritWispAmulet/Amulet_SpiritWispAmulet"
@@ -684,6 +692,9 @@
         }
       ],
       "BoneHarvesterLair": [
+        {
+          "name": "/Items/Trinkets/Rings/DrakestonePearl/Ring_DrakestonePearl"
+        },
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Alchemist"
         },
@@ -792,9 +803,6 @@
       ],
       "FieryGraveyard": [
         {
-          "name": "/Items/Trinkets/Rings/DrakestonePearl/Ring_DrakestonePearl"
-        },
-        {
           "name": "/Items/Trinkets/Rings/BurdenOfTheWarlock/Ring_BurdenOfTheWarlock"
         }
       ],
@@ -879,7 +887,7 @@
           "notes": "kill council members"
         },
         {
-          "name": "/Items/Weapons/Melee/Standard/Sword/AssassinsDagger/Weapon_AssassinsDagger"
+          "name": "/Items/Weapons/Melee/Standard/Sword/OrnateBlade/Weapon_OrnateBlade"
         }
       ],
       "AsylumHouse": [
@@ -932,6 +940,10 @@
         {
           "name": "/Items/Armor/Base/RelicTesting/UnsulliedHeart/Relic_Consumable_UnsulliedHeart",
           "notes": "Wear OneTrueKing(AM) and both Faerin/Faelin(RI) in the Palace Courtyard"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/ShadeBloomFloret/Amulet_ShadeBloomCrystal",
+          "notes": "on the bone pile where the Jester sits in Beatific Palace"
         }
       ],
       "TheSafe": [
@@ -943,6 +955,9 @@
         {
           "name": "/Items/Weapons/HandGuns/Special/Meridian/Weapon_Meridian",
           "notes": "wait 90m for the water to rise"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheDivine/Ring_BurdenOfTheDivine"
         }
       ]
     },
@@ -1028,7 +1043,7 @@
           "name": "/Items/Trinkets/Rings/VacuumSeal/Ring_VacuumSeal"
         }
       ],
-      "Ring_ElevatorShaft": [
+      "Towers_ElevatorShaft": [
         {
           "name": "/Items/Trinkets/Rings/PropulsionLoop/Ring_PropulsionLoop"
         },
@@ -1126,7 +1141,7 @@
       "Extermination": [
         {
           "name": "/Quests/Quest_SideD_Extermination/Items/Quest_Item_Extermination_AICore",
-          "ignore":  true
+          "ignore": false
         },
         {
           "name": "/Items/Trinkets/Amulets/ToxicReleaseValve/Amulet_ToxicReleaseValve"
@@ -1204,7 +1219,7 @@
       "Train": [
         {
           "name": "/Quests/Quest_SideD_Train/Items/Quest_Item_Train_AICore",
-          "ignore":  true
+          "ignore": false
         },
         {
           "name": "/Items/Weapons/Melee/Standard/Hammer/AtomSmasher/Weapon_AtomSmasher"
@@ -1400,35 +1415,11 @@
       "Ward13": [
         {
           "name": "/Items/Trinkets/Rings/TarnishedRing/Ring_TarnishedRing",
-          "notes": "listen to earls rabbit story"
-        },
-        {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Gunslinger",
-          "notes": "mudtooth chat full reward"
-        },
-        {
-          "name": "/Items/Trinkets/Amulets/GunslingersCharm/Amulet_GunslingersCharm",
-          "notes": "mudtooth chat full reward"
-        },
-        {
-          "name": "/Items/Trinkets/Rings/GunslingersRing/Ring_GunslingersRing",
-          "notes": "mudtooth chat half reward"
-        },
-        {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Challenger",
-          "notes": "buy Old Metal Tool from Reggie"
-        },
-        {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Handler",
-          "notes":  "buy Old Whistle from Mudtooth"
-        },
-        {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Hunter",
-          "notes": "buy Rusty Medal from Brabus"
+          "notes": "listen to Earl's rabbit story"
         },
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Medic",
-          "notes":  "buy Medic Pin from Norah"
+          "notes": "buy Medic Pin from Norah"
         },
         {
           "name": "/Items/Weapons/LongGuns/Standard/TommyGun/Weapon_TommyGun",
@@ -1461,6 +1452,78 @@
         {
           "name": "/Items/Armor/Base/RelicTesting/LifelessHeart/Relic_Consumable_LifelessHeart",
           "notes": "eat fruit of death 3 times"
+        }
+      ],
+      "Mudtooth": [
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Gunslinger",
+          "notes": "mudtooth chat full reward"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/GunslingersCharm/Amulet_GunslingersCharm",
+          "notes": "mudtooth chat full reward"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/GunslingersRing/Ring_GunslingersRing",
+          "notes": "mudtooth chat half reward"
+        },
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Handler",
+          "notes": "buy Old Whistle from Mudtooth"
+        }
+      ],
+      "Brabus": [
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Hunter",
+          "notes": "buy Rusty Medal from Brabus"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/HuntingPistol/Weapon_HuntingPistol"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/Magnum/Weapon_Magnum"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/Repeater/Weapon_Repeater_Rusty"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/Revolver/Weapon_Revolver"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/ServicePistol/Weapon_ServicePistol"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/AssaultRifle/Weapon_AssaultRifle"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/Coachgun/Weapon_CoachGun"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/LeverAction/Weapon_LeverAction"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/LeverAction/Weapon_LeverAction_Rusty"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/LMG/Weapon_LMG"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Hatchet/Hatchet/Weapon_Hatchet"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Flail/Flail_Steel_Base/Weapon_Flail"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/GreatSword/IronGreatsword/Weapon_Greatsword"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Katana/Katana/Weapon_Katana"
+        }
+      ],
+      "Reggie": [
+        {
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Challenger",
+          "notes": "buy Old Metal Tool from Reggie"
         },
         {
           "name": "/Items/Trinkets/Rings/01_Graveyard/RingOfTheAdmiral/Ring_RingOfTheAdmiral"
@@ -1473,6 +1536,18 @@
         },
         {
           "name": "/Items/Trinkets/Rings/GroundingStone/Ring_GroundingStone"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/ButchersFetish/Amulet_ButchersFetish",
+          "notes": "Beat the game"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/LetosAmulet/Amulet_LetosAmulet",
+          "notes": "flop 100 times"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BlackCatBand/Ring_BlackCatBand",
+          "notes": "die 15 times"
         }
       ],
       "Cass": [
@@ -1517,10 +1592,6 @@
           "notes": "cass 65%"
         },
         {
-          "name": "/Items/Trinkets/Amulets/ButchersFetish/Amulet_ButchersFetish",
-          "notes": "Beat the game"
-        },
-        {
           "name": "/Items/Armor/Base/RelicTesting/EnlargedHeart/Relic_Consumable_EnlargedHeart",
           "notes": "Get to Root Earth"
         },
@@ -1551,6 +1622,71 @@
         {
           "name": "/Items/Trinkets/Rings/BurdenOfTheDestroyer/Ring_BurdenOfTheDestroyer",
           "notes": "cass 35%"
+        }
+      ],
+      "Whispers": [
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Head_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Body_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Gloves_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Legs_Gunslinger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Head_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Body_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Gloves_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Legs_Challenger"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Head_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Body_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Gloves_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Legs_Handler"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Head_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Body_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Gloves_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Legs_Hunter"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Head_Medic"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Body_Medic"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Gloves_Medic"
+        },
+        {
+          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Legs_Medic"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/AnastasijasInspiration/Ring_AnastasijasInspiration"
         }
       ],
       "Labyrinth": [
@@ -1627,66 +1763,6 @@
           "name": "/Items/Armor/Archetype/Explorer/Armor_Legs_Explorer"
         },
         {
-          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Head_Gunslinger"
-        },
-        {
-          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Body_Gunslinger"
-        },
-        {
-          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Gloves_Gunslinger"
-        },
-        {
-          "name": "/Items/Armor/Archetype/Gunslinger/Armor_Legs_Gunslinger"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Head_Challenger"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Body_Challenger"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Gloves_Challenger"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Challenger/Armor_Legs_Challenger"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Head_Handler"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Body_Handler"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Gloves_Handler"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Handler/Armor_Legs_Handler"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Head_Hunter"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Body_Hunter"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Gloves_Hunter"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Hunter/Armor_Legs_Hunter"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Head_Medic"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Body_Medic"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Gloves_Medic"
-        },
-        {
-          "name": "/Items/Armor/Archetype_Starting/Medic/Armor_Legs_Medic"
-        },
-        {
           "name": "/Items/Traits/Archetype/AmmoReserves/Trait_AmmoReserves"
         },
         {
@@ -1739,14 +1815,6 @@
         },
         {
           "name": "/Items/Traits/Core/Scholar/Trait_Scholar"
-        },
-        {
-          "name": "/Items/Trinkets/Amulets/LetosAmulet/Amulet_LetosAmulet",
-          "notes": "flop 100 times - Reggie"
-        },
-        {
-          "name": "/Items/Trinkets/Rings/BlackCatBand/Ring_BlackCatBand",
-          "notes": "die 15 times - Reggie"
         },
         {
           "name": "/Items/Trinkets/Rings/PanMageSigil/Ring_PanMageSigil",

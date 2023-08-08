@@ -745,6 +745,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save change detected; waiting {numMinutes} minutes until next backup.
+        /// </summary>
+        public static string Save_change_detected__waiting__numMinutes__minutes_until_next_backup {
+            get {
+                return ResourceManager.GetString("Save change detected; waiting {numMinutes} minutes until next backup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save file in use; waiting 0.5 seconds and retrying..
         /// </summary>
         public static string Save_file_in_use__waiting_0_5_seconds_and_retrying_ {
@@ -871,7 +880,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filter by missing items.
+        ///   Looks up a localized string similar to Filter by events or items.
         /// </summary>
         public static string WorldAnalyzerFilter_PlaceholderText {
             get {
