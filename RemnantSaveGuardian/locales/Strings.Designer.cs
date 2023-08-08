@@ -558,9 +558,9 @@ namespace RemnantSaveGuardian.locales {
         /// <summary>
         ///   Looks up a localized string similar to World analzyer missing item color.
         /// </summary>
-        public static string lblMissingItemColor_Content {
+        public static string lblMissingItemColor_Text {
             get {
-                return ResourceManager.GetString("lblMissingItemColor_Content", resourceCulture);
+                return ResourceManager.GetString("lblMissingItemColor_Text", resourceCulture);
             }
         }
         
