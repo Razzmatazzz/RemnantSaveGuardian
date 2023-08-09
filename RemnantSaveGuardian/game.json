@@ -52,6 +52,7 @@
       "ThreeMenMorris": "PostulantsParlor"
     },
     "Nerud": {
+      "Abomination": "ThePutridDomain",
       "Hatchery": "TheHatchery",
       "Extraction": "DarkConduit",
       "Extermination": "DormantNErudianFacility",
@@ -61,7 +62,9 @@
       "TheDreamlessSleep": "VoidVesselFacility",
       "NerudGuardian": "ThresholdOfTheUnknown",
       "TheCustodian": "ThePhantomWasteland",
-      "TalRatha": "ForgottenPrison"
+      "TalRatha": "ForgottenPrison",
+      "Phantom": "TheAstroPathsRespite",
+      "StasisSiege": "VaultOfTheFormless"
     }
   },
   "injectables": {
@@ -124,11 +127,6 @@
       "Amulet_VengeanceIdol": [
         {
           "name": "/Items/Trinkets/Amulets/VengeanceIdol/Amulet_VengeanceIdol"
-        }
-      ],
-      "Ring_ArchersCrest": [
-        {
-          "name": "/Items/Trinkets/Rings/ArchersCrest/Ring_ArchersCrest"
         }
       ],
       "Ring_BloodStamp": [
@@ -417,6 +415,10 @@
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/PulsingHeart/Relic_Consumable_PulsingHeart"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ArchersCrest/Ring_ArchersCrest",
+          "tileSet": "Quest_Injectable_Ziggurat_HiddenChamber"
         }
       ],
       "TheChimney": [
@@ -690,22 +692,28 @@
       ],
       "BoneHarvesterLair": [
         {
-          "name": "/Items/Trinkets/Rings/DrakestonePearl/Ring_DrakestonePearl"
+          "name": "/Items/Trinkets/Rings/DrakestonePearl/Ring_DrakestonePearl",
+          "tileSet": "Fae_Sewer_End_HarvesterLair"
         },
         {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Alchemist"
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Alchemist",
+          "tileSet": "City_End_HarvesterLair"
         },
         {
-          "name": "/Items/Armor/Archetype/Alchemist/Armor_Head_Alchemist"
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Head_Alchemist",
+          "tileSet": "Fae_Sewer_End_HarvesterLair"
         },
         {
-          "name": "/Items/Armor/Archetype/Alchemist/Armor_Body_Alchemist"
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Body_Alchemist",
+          "tileSet": "Fae_Sewer_End_HarvesterLair"
         },
         {
-          "name": "/Items/Armor/Archetype/Alchemist/Armor_Legs_Alchemist"
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Legs_Alchemist",
+          "tileSet": "Fae_Sewer_End_HarvesterLair"
         },
         {
-          "name": "/Items/Armor/Archetype/Alchemist/Armor_Gloves_Alchemist"
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Gloves_Alchemist",
+          "tileSet": "Fae_Sewer_End_HarvesterLair"
         }
       ],
       "CrimsonHarvest": [
@@ -1106,7 +1114,7 @@
           "name": "/Items/Gems/Melee/MetaGems/Disengage/MetaGem_Disengage"
         }
       ],
-      "TheClaw": [
+      "Underworld_TheClaw": [
         {
           "name": "/Items/Trinkets/Rings/MomentumDriver/Ring_MomentumDriver"
         },
@@ -1320,7 +1328,7 @@
           "notes": "get eaten by tal ratha"
         }
       ],
-      "Fog": [
+      "OverworldFog": [
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Engineer"
         },
@@ -1550,7 +1558,7 @@
           "notes": "die 15 times"
         },
         {
-          "name": "/Items/Trinkets/Rings/RingOfAccord/Ring_RingOfAccord",
+          "name": "/Items/Trinkets/Rings/BandOfAccord/Ring_BandOfAccord",
           "notes": "do High Five emote in co-op",
           "coop": true
         }

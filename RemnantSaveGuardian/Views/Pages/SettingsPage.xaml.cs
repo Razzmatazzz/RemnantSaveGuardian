@@ -54,7 +54,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
                 radThemeDark.IsChecked = Properties.Settings.Default.Theme != "Light";
 
-                lblVersion.Text = $"Remnant Save Guardian - {GetAssemblyVersion()}";
+                LinkToRepo.Content = $"{Loc.T("AboutRSG")} {GetAssemblyVersion()}";
 
                 Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
             } catch (Exception ex) {

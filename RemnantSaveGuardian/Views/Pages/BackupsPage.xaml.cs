@@ -18,6 +18,7 @@ namespace RemnantSaveGuardian.Views.Pages
             get;
         }
         public static event EventHandler<BackupSaveViewedEventArgs> BackupSaveViewed;
+        public static event EventHandler BackupSaveRestored;
         private static string defaultBackupFolder = @$"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\Save Backups\Remnant 2";
         private List<SaveBackup> listBackups;
         //private RemnantSave activeSave;
@@ -675,10 +676,8 @@ namespace RemnantSaveGuardian.Views.Pages
 
             dataBackups.Items.Refresh();
             Logger.Log(Loc.T("Backup restored"), LogType.Success);
-            if (Properties.Settings.Default.AutoBackup)
-            {
-                SaveWatcher.Resume();
-            }
+            SaveWatcher.Resume();
+            BackupSaveRestored?.Invoke(this, new());
         }
 
         private void menuDelete_Click(object sender, System.Windows.RoutedEventArgs e)

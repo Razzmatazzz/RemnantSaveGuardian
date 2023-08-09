@@ -61,7 +61,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Remnant Save Guardian.
+        ///   Looks up a localized string similar to Remnant Save Guardian.
         /// </summary>
         public static string AboutRSG {
             get {

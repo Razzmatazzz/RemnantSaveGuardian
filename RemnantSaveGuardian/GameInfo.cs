@@ -148,6 +148,10 @@ namespace RemnantSaveGuardian
                         {
                             rItem.Coop = item["coop"].GetValue<bool>();
                         }
+                        if (item["tileSet"] != null)
+                        {
+                            rItem.TileSet = item["tileSet"].ToString();
+                        }
                         eventItems.Add(rItem);
                     }
                     eventItem.Add(kvp.Key, eventItems);

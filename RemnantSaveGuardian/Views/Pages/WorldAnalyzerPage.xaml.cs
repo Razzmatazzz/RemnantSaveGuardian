@@ -68,6 +68,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         });
                     };
                     Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
+                    BackupsPage.BackupSaveRestored += BackupsPage_BackupSaveRestored;
                 }
                 CharacterControl.ItemsSource = Save.Characters;
                 Save.UpdateCharacters();
@@ -91,6 +92,18 @@ namespace RemnantSaveGuardian.Views.Pages
 
         }
 
+        private void BackupsPage_BackupSaveRestored(object? sender, EventArgs e)
+        {
+            var selectedIndex = CharacterControl.SelectedIndex;
+            Save.UpdateCharacters();
+            CharacterControl.Items.Refresh();
+            if (selectedIndex >= CharacterControl.Items.Count)
+            {
+                selectedIndex = 0;
+            }
+            CharacterControl.SelectedIndex = selectedIndex;
+        }
+
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel) : this(viewModel, null)
         {
             
@@ -110,22 +123,28 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void SavePlaintextButton_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            openFolderDialog.Description = Loc.T("Export save files as plaintext");
-            openFolderDialog.UseDescriptionForTitle = true;
-            System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
-            if (result != System.Windows.Forms.DialogResult.OK)
+            try
             {
-                return;
-            }
-            File.WriteAllText($@"{openFolderDialog.SelectedPath}\profile.txt", Save.GetProfileData());
-            File.Copy(Save.SaveProfilePath, $@"{openFolderDialog.SelectedPath}\profile.sav", true);
-            foreach (var filePath in Save.WorldSaves)
+                System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+                openFolderDialog.Description = Loc.T("Export save files as plaintext");
+                openFolderDialog.UseDescriptionForTitle = true;
+                System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
+                if (result != System.Windows.Forms.DialogResult.OK)
+                {
+                    return;
+                }
+                File.WriteAllText($@"{openFolderDialog.SelectedPath}\profile.txt", Save.GetProfileData());
+                File.Copy(Save.SaveProfilePath, $@"{openFolderDialog.SelectedPath}\profile.sav", true);
+                foreach (var filePath in Save.WorldSaves)
+                {
+                    File.WriteAllText($@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\")).Replace(".sav", ".txt")}", RemnantSave.DecompressSaveAsString(filePath));
+                    File.Copy(filePath, $@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\"))}", true);
+                }
+                Logger.Success(Loc.T($"Exported save files successfully to {openFolderDialog.SelectedPath}"));
+            } catch (Exception ex)
             {
-                File.WriteAllText($@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\")).Replace(".sav", ".txt")}", RemnantSave.DecompressSaveAsString(filePath));
-                File.Copy(filePath, $@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\"))}", true);
+                Logger.Error(ex);
             }
-            Logger.Success(Loc.T($"Exported save files successfully to {openFolderDialog.SelectedPath}"));
         }
 
         private void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)

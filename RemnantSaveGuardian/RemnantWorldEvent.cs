@@ -11,6 +11,7 @@ using System.Security.Policy;
 using System.IO;
 using System.Windows.Media.TextFormatting;
 using System.Diagnostics.Eventing.Reader;
+using Wpf.Ui.Controls;
 
 namespace RemnantSaveGuardian
 {
@@ -171,10 +172,14 @@ namespace RemnantSaveGuardian
             return new List<RemnantItem>();
         }
 
-        public void setMissingItems(RemnantCharacter charData)
+        public void setMissingItems(RemnantCharacter charData, string tileSet)
         {
             mItems.Clear();
             List<RemnantItem> possibleItems = this.getPossibleItems();
+            if (tileSet != null && tileSet != "")
+            {
+                possibleItems = possibleItems.FindAll(i => i.TileSet == "" || tileSet.Contains(i.TileSet));
+            }
             foreach (RemnantItem item in possibleItems)
             {
                 if (!charData.Inventory.Contains(item.Key.ToLower()))
@@ -188,6 +193,10 @@ namespace RemnantSaveGuardian
                 //RemnantItem ri = new RemnantItem("UnknownPotentialLoot");
                 //mItems.Add(ri);
             }
+        }
+        public void setMissingItems(RemnantCharacter charData)
+        {
+            setMissingItems(charData, "");
         }
 
         public override string ToString()
@@ -939,7 +948,6 @@ namespace RemnantSaveGuardian
             foreach (Match area in areas)
             {
                 var areaEvents = new List<RemnantWorldEvent>();
-                currentWorld = area.Groups["world"].Value;
                 currentSublocation = null;
                 string spawnTable = null;
                 var spawnTableMatch = Regex.Match(area.Groups["spawnTable"].Value, @"SpawnTable_[a-zA-Z0-9]+_(?<name>\w+)\d?");
@@ -947,11 +955,11 @@ namespace RemnantSaveGuardian
                 {
                     spawnTable = spawnTableMatch.Groups["name"].Value;
                 }
-                //MatchCollection eventMatches = Regex.Matches(areaText, @"/Game/(?<world>(?:World|Campaign)_\w+)/Quests/(?:\w+)/(?<eventDetails>(?:SpawnTable_)?(?:[a-zA-Z0-9]+_)?(?<eventType>[a-zA-Z0-9]+)_(?<eventName>\w+))\.\w+");
+                var start = DateTime.Now.Ticks;
                 MatchCollection eventMatches = Regex.Matches(area.Groups["events"].Value, @"/Game/(?<world>(?:World|Campaign)_\w+)/Quests/(?:Quest_)?(?<eventType>[a-zA-Z0-9]+)_(?<eventName>\w+)/(?<details>\w+)\.\w+");
-                //MatchCollection eventMatches = Regex.Matches(eventsText, @"/\w+/(?:\w+)_(?<world>\w+)/(?:\w+/)?([a-zA-Z0-9]+_(?<eventType>[a-zA-Z0-9]+)_(?<eventName>[a-zA-Z0-9_]+))/(?:Q)");
                 foreach (Match eventMatch in eventMatches)
                 {
+                    currentWorld = eventMatch.Groups["world"].Value;
                     var lastTemplate = lastTemplates.ContainsKey(eventMatch.Groups["world"].Value) ? lastTemplates[eventMatch.Groups["world"].Value] : null;
                     if (lastTemplate != null)
                     {
@@ -1006,7 +1014,7 @@ namespace RemnantSaveGuardian
                             worldEvent.Locations.Add(currentSublocation);
                         }
 
-                        worldEvent.setMissingItems(character);
+                        worldEvent.setMissingItems(character, area.Groups["tileSets"].Value);
                         areaEvents.Add(worldEvent);
 
                         // Add associated events
@@ -1077,7 +1085,7 @@ namespace RemnantSaveGuardian
                     }
                     catch (Exception ex)
                     {
-                        Logger.Error($"Error parsing save event on {area.Groups["events"]}: {ex}");
+                        Logger.Error($"Error parsing save event on {area.Groups["events"].Value}: {ex}");
 
                     }
                 }
@@ -1092,12 +1100,12 @@ namespace RemnantSaveGuardian
                 }
                 var invalidFirstZones = new List<string>() {
                     "World_RootEarth",
-                    "Labyrinth"
+                    "World_Labyrinth"
                 };
                 if (firstZone.Length == 0 && !invalidFirstZones.Contains(currentWorld))
                 {
                     firstZone = currentWorld;
-                    //Logger.Log($"Setting first zone to {firstZone} for {worldEvent.Name}");
+                    //Logger.Log($"Setting first zone to {firstZone}");
                 }
                 if (!zoneEvents.ContainsKey(currentWorld))
                 {
@@ -1106,7 +1114,8 @@ namespace RemnantSaveGuardian
                 var exclusiveTypes = new List<string>() {
                     "Boss",
                     "SideD",
-                    "Miniboss"
+                    "Miniboss",
+                    "Point of Interest"
                 };
                 var exclusiveEvent = areaEvents.Find(e => exclusiveTypes.Contains(e.RawType));
                 if (exclusiveEvent != null)
@@ -1140,7 +1149,7 @@ namespace RemnantSaveGuardian
 
                 //Logger.Log(firstZone);
                 // Add the first zone events
-                for (int i = 0; firstZone != null && i < zoneEvents[firstZone].Count; i++)
+                for (int i = 0; firstZone.Length != 0 && i < zoneEvents[firstZone].Count; i++)
                 {
                     // Debug.WriteLine($"{mode.ToString() + " " + firstZone}:" + String.Join(",", zoneEvents[firstZone].Select(x => x.eventKey)));
                     eventList.Add(zoneEvents[firstZone][i]);
@@ -1470,7 +1479,7 @@ namespace RemnantSaveGuardian
             for (var i = 0; i < eventStarts.Count; i++)
             {
                 var eventText = saveText[eventStarts[i].Index..eventEnds[i].Index];
-                var matches = Regex.Matches(eventText, @"/Game/World_(?!Base)(?<world>\w+)/SpawnTables/(?<spawnTable>\w+)\.\w+(?<events>.+)MapGen");
+                var matches = Regex.Matches(eventText, @"/Game/(?<world>[\w/]+)/SpawnTables/(?<spawnTable>[\w/]+)\.\w+(?<events>.+)MapGen[\w\W]+?/Script/Remnant\.ZoneActor.{10}(?<tileSets>(?:.\u0001....(?:/.+?))+).{9}ID");
                 eventGroupMatches.Add(matches);
             }
             var campaignIndex = 0;

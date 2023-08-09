@@ -85,6 +85,7 @@ namespace RemnantSaveGuardian
         public RemnantItemMode ItemMode { get; set; }
         public string ItemNotes { get; set; }
         public bool Coop { get; set;  }
+        public string TileSet { get; set; }
         public RemnantItem(string nameOrKey)
         {
             this._key = nameOrKey;
@@ -95,6 +96,7 @@ namespace RemnantSaveGuardian
             this.ItemMode = RemnantItemMode.Normal;
             this.ItemNotes = "";
             this.Coop = false;
+            TileSet = "";
             foreach (string pattern in ItemKeyPatterns) { 
                 var nameMatch = Regex.Match(nameOrKey, pattern);
                 if (!nameMatch.Success)
