@@ -16,4 +16,4 @@ Back up your Remnant 2 saves and view your world rolls.
 
 Thanks for [crackedmind](https://github.com/crackedmind) for the inflation code to convert saves into partial plaintext. 
 
-Thanks to AuriCrystal for event/item list.
+Thanks to [AuriCrystal](https://github.com/Auricrystal) for event/item list.
