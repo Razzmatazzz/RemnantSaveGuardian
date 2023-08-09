@@ -14,6 +14,6 @@ Back up your Remnant 2 saves and view your world rolls.
 - [Many events and items do not have well-formatted names](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/45)
 - [Some events not displaying or are erroneously displaying](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/44)
 
-Thanks for @crackedmind for the inflation code to convert saves into partial plaintext. 
+Thanks for [crackedmind](https://github.com/crackedmind) for the inflation code to convert saves into partial plaintext. 
 
 Thanks to AuriCrystal for event/item list.
