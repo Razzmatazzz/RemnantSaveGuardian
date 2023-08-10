@@ -291,13 +291,13 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void reloadEventGrids()
         {
-            var tempData = filteredCampaign;
+            var tempDataC = filteredCampaign;
             CampaignData.ItemsSource = null;
-            CampaignData.ItemsSource = tempData;
+            CampaignData.ItemsSource = tempDataC;
 
-            tempData = filteredAdventure;
+            var tempDataA = filteredAdventure;
             AdventureData.ItemsSource = null;
-            AdventureData.ItemsSource = tempData;
+            AdventureData.ItemsSource = tempDataA;
         }
 
         private string GetTreeItem(TreeViewItem item)

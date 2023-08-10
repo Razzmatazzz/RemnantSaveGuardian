@@ -437,11 +437,7 @@ namespace RemnantSaveGuardian
                 }
             }
 
-            List<RemnantWorldEvent> eventList = character.CampaignEvents;
-            if (mode == ProcessMode.Adventure)
-            {
-                eventList = character.AdventureEvents;
-            }
+            List<RemnantWorldEvent> eventList = mode==ProcessMode.Adventure?character.AdventureEvents:character.CampaignEvents;
             eventList.Clear();
 
             /*bool churchAdded = false;
