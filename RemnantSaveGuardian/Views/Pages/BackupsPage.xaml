@@ -61,7 +61,7 @@
                             </ui:MenuItem>
                         </Menu>
                     </ui:MenuItem>
-                    <ui:MenuItem Name="menuAnalyze" Header="{lex:Loc World Analyzer}" Visibility="Collapsed" Click="MenuAnalyze_Click">
+                    <ui:MenuItem Name="menuAnalyze" Header="{lex:Loc World Analyzer}" Visibility="Visible" Click="MenuAnalyze_Click">
                         <MenuItem.Icon>
                             <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Globe24" />
                         </MenuItem.Icon>

@@ -190,12 +190,11 @@ namespace RemnantSaveGuardian.Views.Windows
             navItem.ContextMenu.Items.Add(menuItem);
             navItem.Click += (clickSender, clickEvent) =>
             {
-                RootNavigation.NavigateExternal(page);
+                RootNavigation.Navigate(pageTag);
+                clickEvent.Handled = true;
             };
             ViewModel.NavigationItems.Add(navItem);
-            //RootFrame.Navigate(page);
-            RootNavigation.NavigateExternal(page);
-            navItem.IsActive = true;
+            RootNavigation.Navigate(pageTag);
         }
 
         private void Logger_MessageLogged(object? sender, MessageLoggedEventArgs e)
