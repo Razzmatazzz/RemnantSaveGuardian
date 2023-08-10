@@ -72,19 +72,6 @@ namespace RemnantSaveGuardian.Views.Pages
                 dataBackups.CanUserAddRows = false;
                 dataBackups.Items.SortDescriptions.Add(new SortDescription("SaveDate", ListSortDirection.Descending));
 
-                contextBackups.ContextMenuOpening += ContextBackups_ContextMenuOpening;
-                contextBackups.Opened += ContextBackups_Opened;
-
-                menuRestoreAll.Click += MenuRestoreAll_Click;
-                menuRestoreCharacters.Click += MenuRestoreCharacters_Click;
-                menuRestoreWorlds.Click += MenuRestoreWorlds_Click;
-
-                menuAnalyze.Click += MenuAnalyze_Click;
-
-                menuOpenBackup.Click += MenuOpenBackup_Click;
-
-                menuDelete.Click += MenuDelete_Click;
-
                 if (Properties.Settings.Default.BackupFolder.Length == 0)
                 {
                     Logger.Log(Loc.T("Backup folder not set; reverting to default."));
@@ -99,11 +86,6 @@ namespace RemnantSaveGuardian.Views.Pages
 
                 SaveWatcher.SaveUpdated += SaveWatcher_SaveUpdated;
 
-                btnBackup.Click += BtnBackup_Click;
-
-                btnOpenBackupsFolder.Click += BtnOpenBackupsFolder_Click;
-
-                btnStartGame.Click += BtnStartGame_Click;
                 btnStartGame.IsEnabled = !IsRemnantRunning();
 
                 loadBackups();
@@ -698,6 +680,7 @@ namespace RemnantSaveGuardian.Views.Pages
             messageBox.ButtonLeftName = Loc.T("Delete");
             messageBox.ButtonLeftClick += (send, updatedEvent) => {
                 DeleteBackup(backup);
+                Logger.Success(Loc.T("Backup deleted"));
                 messageBox.Close();
             };
             messageBox.ButtonRightName = Loc.T("Cancel");
@@ -714,7 +697,8 @@ namespace RemnantSaveGuardian.Views.Pages
                 Directory.Delete(backup.Save.SaveFolderPath, true);
 
                 listBackups.Remove(backup);
-                dataBackups.Items.Refresh();
+                dataBackups.ItemsSource = null;
+                dataBackups.ItemsSource = listBackups;
             }
             catch (Exception ex)
             {

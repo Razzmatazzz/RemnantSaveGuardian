@@ -106,6 +106,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup deleted.
+        /// </summary>
+        public static string Backup_deleted {
+            get {
+                return ResourceManager.GetString("Backup deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backup Folder.
         /// </summary>
         public static string Backup_Folder {

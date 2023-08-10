@@ -25,50 +25,50 @@
         </Grid.RowDefinitions>
         <WrapPanel Grid.Row="0">
             <ToolBar ToolBarTray.IsLocked="True" Height="Auto" Width="Auto">
-                <Button Name="btnBackup" ToolTip="{lex:Loc}">
+                <Button Name="btnBackup" ToolTip="{lex:Loc}" Click="BtnBackup_Click">
                     <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Save24" />
                 </Button>
-                <Button Name="btnOpenBackupsFolder" ToolTip="{lex:Loc}">
+                <Button Name="btnOpenBackupsFolder" ToolTip="{lex:Loc}" Click="BtnOpenBackupsFolder_Click">
                     <ui:SymbolIcon HorizontalAlignment="Left" Symbol="FolderOpen24" />
                 </Button>
-                <Button Name="btnStartGame" ToolTip="{lex:Loc}" Visibility="Collapsed">
+                <Button Name="btnStartGame" ToolTip="{lex:Loc}" Visibility="Collapsed" Click="BtnStartGame_Click">
                     <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Play24" />
                 </Button>
             </ToolBar>
         </WrapPanel>
         <DataGrid Grid.Row="1" Name="dataBackups" AutoGeneratingColumn="dataBackups_AutoGeneratingColumn" BeginningEdit="DataBackups_BeginningEdit" CellEditEnding="DataBackups_CellEditEnding" SelectionMode="Single" IsReadOnly="False" SelectionUnit="FullRow">
             <DataGrid.ContextMenu>
-                <ContextMenu Name="contextBackups">
+                <ContextMenu Name="contextBackups" Opened="ContextBackups_Opened" ContextMenuOpening="ContextBackups_ContextMenuOpening">
                     <ui:MenuItem Name="menuRestore" Header="{lex:Loc}">
                         <MenuItem.Icon>
                             <ui:SymbolIcon HorizontalAlignment="Left" Symbol="ArrowBounce24" />
                         </MenuItem.Icon>
                         <Menu>
-                            <ui:MenuItem Name="menuRestoreAll" Header="{lex:Loc}">
+                            <ui:MenuItem Name="menuRestoreAll" Header="{lex:Loc}" Click="MenuRestoreAll_Click">
                                 <MenuItem.Icon>
                                     <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Star24" />
                                 </MenuItem.Icon>
                             </ui:MenuItem>
-                            <ui:MenuItem Name="menuRestoreWorlds" Header="{lex:Loc}">
+                            <ui:MenuItem Name="menuRestoreWorlds" Header="{lex:Loc}" Click="MenuRestoreWorlds_Click">
                                 <MenuItem.Icon>
                                     <ui:SymbolIcon HorizontalAlignment="Left" Symbol="GlobeAdd24" />
                                 </MenuItem.Icon>
                             </ui:MenuItem>
-                            <ui:MenuItem Name="menuRestoreCharacters" Header="{lex:Loc}">
+                            <ui:MenuItem Name="menuRestoreCharacters" Header="{lex:Loc}" Click="MenuRestoreCharacters_Click">
                                 <MenuItem.Icon>
                                     <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Person24" />
                                 </MenuItem.Icon>
                             </ui:MenuItem>
                         </Menu>
                     </ui:MenuItem>
-                    <ui:MenuItem Name="menuAnalyze" Header="{lex:Loc World Analyzer}" Visibility="Collapsed">
+                    <ui:MenuItem Name="menuAnalyze" Header="{lex:Loc World Analyzer}" Visibility="Collapsed" Click="MenuAnalyze_Click">
                         <MenuItem.Icon>
                             <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Globe24" />
                         </MenuItem.Icon>
                     </ui:MenuItem>
-                    <ui:MenuItem Name="menuOpenBackup" Header="{lex:Loc Open Folder}">
+                    <ui:MenuItem Name="menuOpenBackup" Header="{lex:Loc Open Folder}" Click="MenuOpenBackup_Click">
                         <MenuItem.Icon>
-                            <ui:SymbolIcon HorizontalAlignment="Left" Symbol="FolderOpen24" />
+                            <ui:SymbolIcon HorizontalAlignment="Left" Symbol="FolderOpen24"/>
                         </MenuItem.Icon>
                     </ui:MenuItem>
                     <ui:MenuItem Name="menuDelete" Header="{lex:Loc Delete}" Click="menuDelete_Click">
