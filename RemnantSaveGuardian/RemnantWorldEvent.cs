@@ -101,6 +101,7 @@ namespace RemnantSaveGuardian
                 return _type;
             }
         }
+        public string TileSet { get; set; }
         public enum ProcessMode { Campaign, Adventure };
 
         public RemnantWorldEvent(string key, string name, List<string> locations, string type)
@@ -150,6 +151,7 @@ namespace RemnantSaveGuardian
                 _locations.Clear();
                 _locations.Add("World_RootEarth");
             }
+            TileSet = "";
         }
         public RemnantWorldEvent(string key, string world, string type) : this(key, key, null, type) {
             _locations.Add(world);
@@ -160,26 +162,27 @@ namespace RemnantSaveGuardian
         public RemnantWorldEvent(Match match, string location) : this(match.Value, match.Groups["eventName"].Value, new() { match.Groups["world"].Value, location }, match.Groups["eventType"].Value) { }
 
         public List<RemnantItem> getPossibleItems()
-        {;
+        {
             if (GameInfo.EventItem.ContainsKey(this._name))
             {
-                if (Properties.Settings.Default.ShowCoopItems)
+                var possibleItems = GameInfo.EventItem[_name];
+                if (!Properties.Settings.Default.ShowCoopItems)
                 {
-                    return GameInfo.EventItem[this._name];
+                    possibleItems = possibleItems.FindAll(item => item.Coop == false);
                 }
-                return GameInfo.EventItem[_name].FindAll(item => item.Coop == false);
+                if (TileSet != null && TileSet.Length > 0)
+                {
+                    possibleItems = possibleItems.FindAll(item => item.TileSet.Length == 0 || TileSet.Contains(item.TileSet));
+                }
+                return possibleItems;
             }
             return new List<RemnantItem>();
         }
 
-        public void setMissingItems(RemnantCharacter charData, string tileSet)
+        public void setMissingItems(RemnantCharacter charData)
         {
             mItems.Clear();
             List<RemnantItem> possibleItems = this.getPossibleItems();
-            if (tileSet != null && tileSet != "")
-            {
-                possibleItems = possibleItems.FindAll(i => i.TileSet == "" || tileSet.Contains(i.TileSet));
-            }
             foreach (RemnantItem item in possibleItems)
             {
                 if (!charData.Inventory.Contains(item.Key.ToLower()))
@@ -193,10 +196,6 @@ namespace RemnantSaveGuardian
                 //RemnantItem ri = new RemnantItem("UnknownPotentialLoot");
                 //mItems.Add(ri);
             }
-        }
-        public void setMissingItems(RemnantCharacter charData)
-        {
-            setMissingItems(charData, "");
         }
 
         public override string ToString()
@@ -955,7 +954,7 @@ namespace RemnantSaveGuardian
                 {
                     spawnTable = spawnTableMatch.Groups["name"].Value;
                 }
-                var start = DateTime.Now.Ticks;
+                var tileSets = string.Join(" ", area.Groups["tileSet"].Captures.Select(c => c.Value));
                 MatchCollection eventMatches = Regex.Matches(area.Groups["events"].Value, @"/Game/(?<world>(?:World|Campaign)_\w+)/Quests/(?:Quest_)?(?<eventType>[a-zA-Z0-9]+)_(?<eventName>\w+)/(?<details>\w+)\.\w+");
                 foreach (Match eventMatch in eventMatches)
                 {
@@ -996,6 +995,7 @@ namespace RemnantSaveGuardian
 
                         //eventStrings.Add(eventMatch.Value);
                         var worldEvent = new RemnantWorldEvent(eventMatch);//, currentArea.Groups["location"].Value.Trim());
+                        worldEvent.TileSet = tileSets;
                         if (areaEvents.FindIndex(e => e.RawName == worldEvent.RawName) != -1)
                         {
                             continue;
@@ -1014,7 +1014,7 @@ namespace RemnantSaveGuardian
                             worldEvent.Locations.Add(currentSublocation);
                         }
 
-                        worldEvent.setMissingItems(character, area.Groups["tileSets"].Value);
+                        worldEvent.setMissingItems(character);
                         areaEvents.Add(worldEvent);
 
                         // Add associated events
@@ -1479,7 +1479,8 @@ namespace RemnantSaveGuardian
             for (var i = 0; i < eventStarts.Count; i++)
             {
                 var eventText = saveText[eventStarts[i].Index..eventEnds[i].Index];
-                var matches = Regex.Matches(eventText, @"/Game/(?<world>[\w/]+)/SpawnTables/(?<spawnTable>[\w/]+)\.\w+(?<events>.+)MapGen[\w\W]+?/Script/Remnant\.ZoneActor.{10}(?<tileSets>(?:.\u0001....(?:/.+?))+).{9}ID");
+                //var matches = Regex.Matches(eventText, @"/Game/(?<world>[\w/]+)/SpawnTables/(?<spawnTable>[\w/]+)\.\w+(?<events>.+)MapGen[\w\W]+?/Script/Remnant\.ZoneActor.{10}(?<tileSets>(?:.\u0001....(?:/.+?))+).{9}ID");
+                var matches = Regex.Matches(eventText, @"/Game/(?<world>[\w/]+)/SpawnTables/(?<spawnTable>[\w/]+)\.\w+(?<events>.+)MapGen[\w\W]+?/Script/Remnant\.ZoneActor.{10}(?:.\u0001....(?<tileSet>/.+?))+.{9}ID");
                 eventGroupMatches.Add(matches);
             }
             var campaignIndex = 0;

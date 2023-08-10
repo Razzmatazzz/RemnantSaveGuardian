@@ -70,9 +70,6 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 dataBackups.CanUserDeleteRows = false;
                 dataBackups.CanUserAddRows = false;
-                dataBackups.BeginningEdit += DataBackups_BeginningEdit;
-                dataBackups.CellEditEnding += DataBackups_CellEditEnding;
-                dataBackups.AutoGeneratingColumn += DataBackups_AutoGeneratingColumn;
                 dataBackups.Items.SortDescriptions.Add(new SortDescription("SaveDate", ListSortDirection.Descending));
 
                 contextBackups.ContextMenuOpening += ContextBackups_ContextMenuOpening;
@@ -114,11 +111,6 @@ namespace RemnantSaveGuardian.Views.Pages
                 Logger.Error($"Error loading backups page: {ex}");
             }
 
-        }
-
-        private void DataBackups_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
-        {
-            e.Column.Header = new LocalizedColumnHeader(e.Column.Header.ToString());
         }
 
         private void MenuAnalyze_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -588,10 +580,19 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void dataBackups_AutoGeneratingColumn(object sender, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs e)
         {
-            if (e.Column.Header.Equals("Save"))
+            var allowColumns = new List<string>() { 
+                "Name",
+                "SaveDate",
+                "Progression",
+                "Keep",
+                "Active"
+            };
+            if (!allowColumns.Contains(e.Column.Header.ToString()))
             {
                 e.Cancel = true;
+                return;
             }
+            e.Column.Header = new LocalizedColumnHeader(e.Column.Header.ToString());
         }
 
         private bool IsRemnantRunning()
