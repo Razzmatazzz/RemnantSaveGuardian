@@ -177,17 +177,14 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void Data_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            var cancelColumns = new List<string>() {
-                "RawName",
-                "RawLocation",
-                "RawWorld",
-                "RawType",
-                "Locations",
-                "World",
-                "MissingItems",
-                "PossibleItems"
+            var allowColumns = new List<string>() {
+                "Location",
+                "Type",
+                "Name",
+                "MissingItemsString",
+                "PossibleItemsString"
             };
-            if (cancelColumns.Contains(e.Column.Header))
+            if (!allowColumns.Contains(e.Column.Header))
             {
                 e.Cancel = true;
                 return;
@@ -200,7 +197,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 
                 if (Properties.Settings.Default.MissingItemColor == "Highlight")
                 {
-                    var highlight = System.Drawing.SystemColors.Highlight;
+                    var highlight = System.Drawing.SystemColors.HotTrack;
                     cellStyle.Setters.Add(new Setter(ForegroundProperty, new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(highlight.R, highlight.G, highlight.B))));
                 }
             }

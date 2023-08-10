@@ -126,6 +126,9 @@
   <data name="Adventure" xml:space="preserve">
     <value>어드벤처</value>
   </data>
+  <data name="Are you sure you want to delete backup {backupName}?" xml:space="preserve">
+    <value>정말 {backupName}을/를 백업을 삭제합니까?</value>
+  </data>
   <data name="Backup completed" xml:space="preserve">
     <value>백업 완료</value>
   </data>
@@ -159,7 +162,13 @@
   <data name="Campaign" xml:space="preserve">
     <value>캠페인</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
   <data name="Character" xml:space="preserve">
+    <value>캐릭터</value>
+  </data>
+  <data name="Characters" xml:space="preserve">
     <value>캐릭터</value>
   </data>
   <data name="chkAutoBackup_Content" xml:space="preserve">
@@ -177,17 +186,29 @@
   <data name="chkCreateLogFile_ToolTip" xml:space="preserve">
     <value>log.txt 파일을 생성합니다</value>
   </data>
+  <data name="chkShowCoopItems_Content" xml:space="preserve">
+    <value>월드 판독기에 co-op 아이템 표시하기</value>
+  </data>
   <data name="chkShowPossibleItems_Content" xml:space="preserve">
     <value>판독기에 습득 가능 아이템 열 추가</value>
   </data>
   <data name="Choose a backup to restore from the list." xml:space="preserve">
     <value>목록에서 복원하고자 하는 백업을 선택하세요.</value>
   </data>
+  <data name="Confirm Delete" xml:space="preserve">
+    <value>삭제 확인</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>복사</value>
+  </data>
   <data name="Could not find save file location; please set manually" xml:space="preserve">
     <value>세이브 파일 경로를 찾지 못 했습니다; 수동으로 설정해 주세요.</value>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>다크 모드</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>날짜</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>삭제</value>
@@ -220,7 +241,10 @@
     <value>하드코어</value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Home</value>
+    <value>홈</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>정보</value>
   </data>
   <data name="Invalid backup restore type" xml:space="preserve">
     <value>유효하지 않은 백업 복원 타입</value>
@@ -259,7 +283,16 @@
     <value>다음 백업을 하기 위해 반드시 경과해야하는 최소 시간</value>
   </data>
   <data name="lblMissingItemColor_Content" xml:space="preserve">
-    <value>World analzyer missing item color</value>
+    <value>월드 판독기 미획득 아이템 색</value>
+  </data>
+  <data name="lblMissingItemColor_Text" xml:space="preserve">
+    <value>월드 판독기 미획득 아이템 색</value>
+  </data>
+  <data name="lblStartPage_Text" xml:space="preserve">
+    <value>시작 페이지</value>
+  </data>
+  <data name="lblStartPage_ToolTip" xml:space="preserve">
+    <value>앱 시작 시 표시할 페이지</value>
   </data>
   <data name="Light" xml:space="preserve">
     <value>라이트 모드</value>
@@ -292,16 +325,22 @@
     <value>새 버전이 사용 가능합니다!</value>
   </data>
   <data name="Normal" xml:space="preserve">
-    <value>Normal</value>
+    <value>보통</value>
   </data>
   <data name="Open Folder" xml:space="preserve">
     <value>폴더 열기</value>
+  </data>
+  <data name="Open wiki" xml:space="preserve">
+    <value>위키 열기</value>
+  </data>
+  <data name="Possible Items" xml:space="preserve">
+    <value>획득 가능 아이템</value>
   </data>
   <data name="Preferences" xml:space="preserve">
     <value>기본 설정</value>
   </data>
   <data name="processing save file change" xml:space="preserve">
-    <value>processing save file change</value>
+    <value>세이브 파일 변경 진행중</value>
   </data>
   <data name="Progression" xml:space="preserve">
     <value>진행 상황</value>
@@ -311,6 +350,9 @@
   </data>
   <data name="Save Backups" xml:space="preserve">
     <value>백업 저장</value>
+  </data>
+  <data name="Save change detected; waiting {numMinutes} minutes until next backup" xml:space="preserve">
+    <value>세이브 변경이 감지되었습니다; 다음 백업 전 {numMinutes} 분 동안 기다려주세요</value>
   </data>
   <data name="Save file in use; waiting 0.5 seconds and retrying." xml:space="preserve">
     <value>세이브 파일이 사용 중입니다; 0.5 초 후 다시 시도해주세요.</value>
@@ -325,10 +367,10 @@
     <value>세이브 데이터</value>
   </data>
   <data name="Saves" xml:space="preserve">
-    <value>Saves</value>
+    <value>세이브</value>
   </data>
   <data name="Select a folder other than the game's save folder." xml:space="preserve">
-    <value>Select a folder other than the game's save folder.</value>
+    <value>게임 세이브 폴더와 다른 폴더를 선택하세요.</value>
   </data>
   <data name="setting save file timer" xml:space="preserve">
     <value>세이브 파일 타이머 설정</value>
@@ -339,6 +381,12 @@
   <data name="Survival" xml:space="preserve">
     <value>서바이벌</value>
   </data>
+  <data name="Text_Highlight" xml:space="preserve">
+    <value>하이라이트</value>
+  </data>
+  <data name="Text_Normal" xml:space="preserve">
+    <value>보통</value>
+  </data>
   <data name="Theme" xml:space="preserve">
     <value>테마</value>
   </data>
@@ -347,6 +395,9 @@
   </data>
   <data name="World Analyzer" xml:space="preserve">
     <value>월드 판독기</value>
+  </data>
+  <data name="WorldAnalyzerFilter_PlaceholderText" xml:space="preserve">
+    <value>이벤트나 아이템으로 정렬하기</value>
   </data>
   <data name="You must wait 5 minutes between update checks" xml:space="preserve">
     <value>다시 체크하려면 5분 기다려주세요</value>

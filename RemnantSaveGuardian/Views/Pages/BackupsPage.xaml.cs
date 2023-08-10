@@ -70,23 +70,7 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 dataBackups.CanUserDeleteRows = false;
                 dataBackups.CanUserAddRows = false;
-                dataBackups.BeginningEdit += DataBackups_BeginningEdit;
-                dataBackups.CellEditEnding += DataBackups_CellEditEnding;
-                dataBackups.AutoGeneratingColumn += DataBackups_AutoGeneratingColumn;
                 dataBackups.Items.SortDescriptions.Add(new SortDescription("SaveDate", ListSortDirection.Descending));
-
-                contextBackups.ContextMenuOpening += ContextBackups_ContextMenuOpening;
-                contextBackups.Opened += ContextBackups_Opened;
-
-                menuRestoreAll.Click += MenuRestoreAll_Click;
-                menuRestoreCharacters.Click += MenuRestoreCharacters_Click;
-                menuRestoreWorlds.Click += MenuRestoreWorlds_Click;
-
-                menuAnalyze.Click += MenuAnalyze_Click;
-
-                menuOpenBackup.Click += MenuOpenBackup_Click;
-
-                menuDelete.Click += MenuDelete_Click;
 
                 if (Properties.Settings.Default.BackupFolder.Length == 0)
                 {
@@ -102,11 +86,6 @@ namespace RemnantSaveGuardian.Views.Pages
 
                 SaveWatcher.SaveUpdated += SaveWatcher_SaveUpdated;
 
-                btnBackup.Click += BtnBackup_Click;
-
-                btnOpenBackupsFolder.Click += BtnOpenBackupsFolder_Click;
-
-                btnStartGame.Click += BtnStartGame_Click;
                 btnStartGame.IsEnabled = !IsRemnantRunning();
 
                 loadBackups();
@@ -114,11 +93,6 @@ namespace RemnantSaveGuardian.Views.Pages
                 Logger.Error($"Error loading backups page: {ex}");
             }
 
-        }
-
-        private void DataBackups_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
-        {
-            e.Column.Header = new LocalizedColumnHeader(e.Column.Header.ToString());
         }
 
         private void MenuAnalyze_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -588,10 +562,19 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void dataBackups_AutoGeneratingColumn(object sender, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs e)
         {
-            if (e.Column.Header.Equals("Save"))
+            var allowColumns = new List<string>() { 
+                "Name",
+                "SaveDate",
+                "Progression",
+                "Keep",
+                "Active"
+            };
+            if (!allowColumns.Contains(e.Column.Header.ToString()))
             {
                 e.Cancel = true;
+                return;
             }
+            e.Column.Header = new LocalizedColumnHeader(e.Column.Header.ToString());
         }
 
         private bool IsRemnantRunning()
@@ -697,6 +680,7 @@ namespace RemnantSaveGuardian.Views.Pages
             messageBox.ButtonLeftName = Loc.T("Delete");
             messageBox.ButtonLeftClick += (send, updatedEvent) => {
                 DeleteBackup(backup);
+                Logger.Success(Loc.T("Backup deleted"));
                 messageBox.Close();
             };
             messageBox.ButtonRightName = Loc.T("Cancel");
@@ -713,7 +697,8 @@ namespace RemnantSaveGuardian.Views.Pages
                 Directory.Delete(backup.Save.SaveFolderPath, true);
 
                 listBackups.Remove(backup);
-                dataBackups.Items.Refresh();
+                dataBackups.ItemsSource = null;
+                dataBackups.ItemsSource = listBackups;
             }
             catch (Exception ex)
             {

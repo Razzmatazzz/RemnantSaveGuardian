@@ -132,6 +132,9 @@
   <data name="Backup completed" xml:space="preserve">
     <value>Backup completed</value>
   </data>
+  <data name="Backup deleted" xml:space="preserve">
+    <value>Backup deleted</value>
+  </data>
   <data name="Backup Folder" xml:space="preserve">
     <value>Backup Folder</value>
   </data>
