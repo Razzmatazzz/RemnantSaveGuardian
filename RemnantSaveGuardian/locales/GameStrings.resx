@@ -130,7 +130,7 @@
     <value>{AllFatherStory}</value>
   </data>
   <data name="AllFatherStory" xml:space="preserve">
-    <value>Jester</value>
+    <value>Palace &amp; Jester</value>
   </data>
   <data name="Amulets" xml:space="preserve">
     <value>Amulets</value>
@@ -402,6 +402,9 @@
   <data name="Armor_Void" xml:space="preserve">
     <value>Void</value>
   </data>
+  <data name="AshenWasteland" xml:space="preserve">
+    <value>Ashen Wasteland</value>
+  </data>
   <data name="Asylum" xml:space="preserve">
     <value>Asylum</value>
   </data>
@@ -462,6 +465,9 @@
   <data name="ClockTower" xml:space="preserve">
     <value>The Clock Tower</value>
   </data>
+  <data name="CorruptedHarbor" xml:space="preserve">
+    <value>Corrupted Harbor</value>
+  </data>
   <data name="CottonsKiln" xml:space="preserve">
     <value>Cotton's Kiln</value>
   </data>
@@ -489,6 +495,9 @@
   <data name="DranStarter" xml:space="preserve">
     <value>Dran City</value>
   </data>
+  <data name="DrzyrReplicator" xml:space="preserve">
+    <value>Drzyr Replicator</value>
+  </data>
   <data name="EmpressStory" xml:space="preserve">
     <value>The Eternal Empress</value>
   </data>
@@ -506,6 +515,9 @@
   </data>
   <data name="Extermination" xml:space="preserve">
     <value>Quarantine</value>
+  </data>
+  <data name="Extraction" xml:space="preserve">
+    <value>Supply Ship</value>
   </data>
   <data name="FaeArchon" xml:space="preserve">
     <value>Magister Dullain</value>
@@ -636,6 +648,9 @@
   <data name="Material_ThaenLeaf" xml:space="preserve">
     <value>ThaenLeaf</value>
   </data>
+  <data name="McCabe" xml:space="preserve">
+    <value>McCabe</value>
+  </data>
   <data name="Medic" xml:space="preserve">
     <value>Medic</value>
   </data>
@@ -711,6 +726,9 @@
   <data name="Mod_Bore" xml:space="preserve">
     <value>Bore</value>
   </data>
+  <data name="Mod_ConcussiveShot" xml:space="preserve">
+    <value>Concussive Shot</value>
+  </data>
   <data name="Mod_CorrosiveRounds" xml:space="preserve">
     <value>Corrosive Rounds</value>
   </data>
@@ -729,8 +747,14 @@
   <data name="Mod_Firestorm" xml:space="preserve">
     <value>Firestorm</value>
   </data>
+  <data name="Mod_HealingShot" xml:space="preserve">
+    <value>Healing Shot</value>
+  </data>
   <data name="Mod_Helix" xml:space="preserve">
     <value>Helix</value>
+  </data>
+  <data name="Mod_Hotshot" xml:space="preserve">
+    <value>Hotshot</value>
   </data>
   <data name="Mod_Overflow" xml:space="preserve">
     <value>Overflow</value>
@@ -743,6 +767,9 @@
   </data>
   <data name="Mod_RottedArrow" xml:space="preserve">
     <value>Rotted Arrow</value>
+  </data>
+  <data name="Mod_ScrapShot" xml:space="preserve">
+    <value>Scrap Shot</value>
   </data>
   <data name="Mod_Skewer" xml:space="preserve">
     <value>Skewer 2.0</value>
@@ -794,6 +821,9 @@
   </data>
   <data name="OraclesRefuge" xml:space="preserve">
     <value>Oracle's Refuge</value>
+  </data>
+  <data name="OverworldFog" xml:space="preserve">
+    <value>Overworld Fog</value>
   </data>
   <data name="OverworldPOI" xml:space="preserve">
     <value>OverworldPOI</value>
@@ -1084,7 +1114,7 @@
     <value>Flyweight's Sting</value>
   </data>
   <data name="Ring_FocusedJewel" xml:space="preserve">
-    <value>Focused Jewel</value>
+    <value>Focusing Shard</value>
   </data>
   <data name="Ring_FrivolousBand" xml:space="preserve">
     <value>Frivolous Band</value>
@@ -1181,6 +1211,9 @@
   </data>
   <data name="Ring_ReserveBoostingGem" xml:space="preserve">
     <value>Reserve Boosting Gem</value>
+  </data>
+  <data name="Ring_RingOfAccord" xml:space="preserve">
+    <value>Ring of Accord</value>
   </data>
   <data name="Ring_RingOfCrisis" xml:space="preserve">
     <value>Ring of Crisis</value>
@@ -1347,6 +1380,9 @@
   <data name="ShatteredGallery" xml:space="preserve">
     <value>Shattered Gallery</value>
   </data>
+  <data name="Shockwire" xml:space="preserve">
+    <value>Broken Cable</value>
+  </data>
   <data name="SideD" xml:space="preserve">
     <value>Dungeon</value>
   </data>
@@ -1355,6 +1391,9 @@
   </data>
   <data name="SpectrumNexus" xml:space="preserve">
     <value>Spectrum Nexus</value>
+  </data>
+  <data name="StasisSiege" xml:space="preserve">
+    <value>House Lythla Glyphdoor</value>
   </data>
   <data name="StoreRoom" xml:space="preserve">
     <value>The Progeny</value>
@@ -1371,11 +1410,17 @@
   <data name="The Twisted Chantry" xml:space="preserve">
     <value>TheTwistedChantry</value>
   </data>
+  <data name="TheAstroPathsRespite" xml:space="preserve">
+    <value>The Astropath's Respite</value>
+  </data>
   <data name="TheCustodian" xml:space="preserve">
     <value>The Custodian</value>
   </data>
   <data name="TheDappledGlade" xml:space="preserve">
     <value>The Dappled Glade</value>
+  </data>
+  <data name="TheDreamlessSleep" xml:space="preserve">
+    <value>Statis Pod</value>
   </data>
   <data name="TheExpandingGlade" xml:space="preserve">
     <value>The Expanding Glade</value>
@@ -1404,11 +1449,17 @@
   <data name="ThePhantomWasteland" xml:space="preserve">
     <value>The Phantom Wasteland</value>
   </data>
+  <data name="ThePutridDomain" xml:space="preserve">
+    <value>The Putrid Domain</value>
+  </data>
   <data name="TheRedThrone" xml:space="preserve">
     <value>The Red Throne</value>
   </data>
   <data name="TheSafe" xml:space="preserve">
     <value>Locked Safe</value>
+  </data>
+  <data name="TheTangle" xml:space="preserve">
+    <value>{ImperialGardens}</value>
   </data>
   <data name="TheTwistedChantry" xml:space="preserve">
     <value>The Twisted Chantry</value>
@@ -1428,6 +1479,9 @@
   <data name="Tower" xml:space="preserve">
     <value>The Elevator</value>
   </data>
+  <data name="TowerHeist" xml:space="preserve">
+    <value>E.D. Alpha</value>
+  </data>
   <data name="TowerOfTheUnseen" xml:space="preserve">
     <value>Tower of the Unseen</value>
   </data>
@@ -1436,6 +1490,9 @@
   </data>
   <data name="TownTurnedToDust" xml:space="preserve">
     <value>Man in the Sewers</value>
+  </data>
+  <data name="Train" xml:space="preserve">
+    <value>The Train</value>
   </data>
   <data name="TraitBook" xml:space="preserve">
     <value>Tome of Knowledge</value>
@@ -1539,8 +1596,17 @@
   <data name="Trait_Wayfarer" xml:space="preserve">
     <value>Wayfarer</value>
   </data>
+  <data name="Underworld_TheClaw" xml:space="preserve">
+    <value>The Claw</value>
+  </data>
+  <data name="VaultOfTheFormless" xml:space="preserve">
+    <value>Vault of the Formless</value>
+  </data>
   <data name="VoidVesselFacility" xml:space="preserve">
     <value>Void Vessel Facility</value>
+  </data>
+  <data name="WailingField" xml:space="preserve">
+    <value>The Laemir</value>
   </data>
   <data name="Ward13" xml:space="preserve">
     <value>Ward 13</value>

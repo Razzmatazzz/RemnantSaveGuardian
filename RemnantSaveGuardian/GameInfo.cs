@@ -144,6 +144,14 @@ namespace RemnantSaveGuardian
                         {
                             rItem.ItemMode = (RemnantItem.RemnantItemMode)Enum.Parse(typeof(RemnantItem.RemnantItemMode), item["mode"].ToString(), true);
                         }
+                        if (item["coop"] != null)
+                        {
+                            rItem.Coop = item["coop"].GetValue<bool>();
+                        }
+                        if (item["tileSet"] != null)
+                        {
+                            rItem.TileSet = item["tileSet"].ToString();
+                        }
                         eventItems.Add(rItem);
                     }
                     eventItem.Add(kvp.Key, eventItems);

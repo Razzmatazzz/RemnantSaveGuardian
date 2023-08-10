@@ -61,7 +61,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About Remnant Save Guardian.
+        ///   Looks up a localized string similar to Remnant Save Guardian.
         /// </summary>
         public static string AboutRSG {
             get {
@@ -264,6 +264,15 @@ namespace RemnantSaveGuardian.locales {
         public static string chkCreateLogFile_ToolTip {
             get {
                 return ResourceManager.GetString("chkCreateLogFile_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show co-op items in world analyzer.
+        /// </summary>
+        public static string chkShowCoopItems_Content {
+            get {
+                return ResourceManager.GetString("chkShowCoopItems_Content", resourceCulture);
             }
         }
         
@@ -549,9 +558,9 @@ namespace RemnantSaveGuardian.locales {
         /// <summary>
         ///   Looks up a localized string similar to World analzyer missing item color.
         /// </summary>
-        public static string lblMissingItemColor_Content {
+        public static string lblMissingItemColor_Text {
             get {
-                return ResourceManager.GetString("lblMissingItemColor_Content", resourceCulture);
+                return ResourceManager.GetString("lblMissingItemColor_Text", resourceCulture);
             }
         }
         

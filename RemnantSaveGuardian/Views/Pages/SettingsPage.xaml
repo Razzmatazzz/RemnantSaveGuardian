@@ -31,11 +31,11 @@
             FontWeight="Medium"
             Text="{lex:Loc Saves}" />
         <ui:ToggleSwitch Name="chkAutoBackup" Content="{lex:Loc}" IsChecked="{Binding AutoBackup}"/>
-        <WrapPanel>
+        <WrapPanel Margin="0,2,0,0">
             <ui:NumberBox Name="numBackupMins"  TextWrapping="Wrap" Text="{Binding BackupMinutes}" Width="110" DecimalPlaces="0" ClearButtonEnabled="False"/>
             <TextBlock Name="lblBackupMins" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
         </WrapPanel>
-        <WrapPanel>
+        <WrapPanel Margin="0,2,0,0">
             <ui:NumberBox Name="numBackupLimit"  TextWrapping="Wrap" Text="{Binding BackupLimit}" Width="110" DecimalPlaces="0" ClearButtonEnabled="False"/>
             <TextBlock x:Name="lblBackupLimit" TextWrapping="Wrap" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
         </WrapPanel>
@@ -97,10 +97,13 @@
             </ComboBox>
             <TextBlock Name="lblStartPage" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
         </WrapPanel>
-        <WrapPanel>
+        <WrapPanel Margin="0,2,0,0">
             <ui:ToggleSwitch Name="chkShowPossibleItems" Content="{lex:Loc}" IsChecked="{Binding ShowPossibleItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
         </WrapPanel>
-        <WrapPanel>
+        <WrapPanel Margin="0,2,0,0">
+            <ui:ToggleSwitch Name="chkShowCoopItems" Content="{lex:Loc}" IsChecked="{Binding ShowCoopItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+        </WrapPanel>
+        <WrapPanel Margin="0,2,0,0">
             <ComboBox Name="cmbMissingItemColor" VerticalAlignment="Top" Width="Auto" SelectionChanged="CmbMissingItemColor_SelectionChanged">
                 <ComboBox.Items>
                     <ComboBoxItem Content="{lex:Loc Text_Normal}" Tag="Normal"/>
@@ -109,29 +112,24 @@
             </ComboBox>
             <TextBlock Name="lblMissingItemColor" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
         </WrapPanel>
-        <WrapPanel>
-            <ui:ToggleSwitch Name="chkAutoCheckUpdate" Content="{lex:Loc}" IsChecked="{Binding AutoCheckUpdate}" VerticalAlignment="Center" Margin="0,0,5,0"/>
-            <Button Name="btnCheckUpdate" Content="{lex:Loc}" VerticalAlignment="Top" Click="BtnCheckUpdate_Click"/>
+        <WrapPanel Margin="0,2,0,0">
+            <ui:ToggleSwitch Name="chkAutoCheckUpdate" Content="{lex:Loc}" IsChecked="{Binding AutoCheckUpdate}" VerticalAlignment="Center"/>
+            <Button Name="btnCheckUpdate" Content="{lex:Loc}" VerticalAlignment="Top" Click="BtnCheckUpdate_Click" Margin="4,0,0,0"/>
         </WrapPanel>
-        <ui:ToggleSwitch Name="chkCreateLogFile" IsChecked="{Binding CreateLogFile}" Content="{lex:Loc}"/>
+        <ui:ToggleSwitch Name="chkCreateLogFile" IsChecked="{Binding CreateLogFile}" Content="{lex:Loc}" Margin="0,2,0,0"/>
         <TextBlock Margin="0,12,0,0" Text="{lex:Loc Theme}" />
         <RadioButton
             Name="radThemeLight"
-            Margin="0,12,0,0"
+            Margin="0,4,0,0"
             Content="{lex:Loc Light}"
             GroupName="themeSelect"
             Checked="RadThemeLight_Checked"/>
         <RadioButton
             Name="radThemeDark"
-            Margin="0,8,0,0"
+            Margin="0,4,0,0"
             Content="{lex:Loc Dark}"
             GroupName="themeSelect"
             Checked="RadThemeDark_Checked"/>
-        <TextBlock
-            Margin="0,24,0,0"
-            FontSize="20"
-            FontWeight="Medium"
-            Text="{lex:Loc AboutRSG}" />
-        <TextBlock Margin="0,12,0,0" Name="lblVersion" />
+        <ui:Anchor Name="LinkToRepo" Margin="0,8,0,8" Content="{lex:Loc AboutRSG}" NavigateUri="https://github.com/Razzmatazzz/RemnantSaveGuardian" />
     </StackPanel>
 </ui:UiPage>

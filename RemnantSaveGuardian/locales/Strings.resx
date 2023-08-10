@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutRSG" xml:space="preserve">
-    <value>About Remnant Save Guardian</value>
+    <value>Remnant Save Guardian</value>
   </data>
   <data name="Active" xml:space="preserve">
     <value>Active</value>
@@ -185,6 +185,9 @@
   </data>
   <data name="chkCreateLogFile_ToolTip" xml:space="preserve">
     <value>Whether a log.txt file should be created</value>
+  </data>
+  <data name="chkShowCoopItems_Content" xml:space="preserve">
+    <value>Show co-op items in world analyzer</value>
   </data>
   <data name="chkShowPossibleItems_Content" xml:space="preserve">
     <value>Show Possible Items column in analyzer</value>
@@ -279,7 +282,7 @@
   <data name="lblBackupMins_ToolTip" xml:space="preserve">
     <value>Minimum amount of time that must have passed since last backup before a new backup is made</value>
   </data>
-  <data name="lblMissingItemColor_Content" xml:space="preserve">
+  <data name="lblMissingItemColor_Text" xml:space="preserve">
     <value>World analzyer missing item color</value>
   </data>
   <data name="lblStartPage_Text" xml:space="preserve">

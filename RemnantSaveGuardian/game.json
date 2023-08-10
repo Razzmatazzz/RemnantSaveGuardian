@@ -52,6 +52,7 @@
       "ThreeMenMorris": "PostulantsParlor"
     },
     "Nerud": {
+      "Abomination": "ThePutridDomain",
       "Hatchery": "TheHatchery",
       "Extraction": "DarkConduit",
       "Extermination": "DormantNErudianFacility",
@@ -61,7 +62,9 @@
       "TheDreamlessSleep": "VoidVesselFacility",
       "NerudGuardian": "ThresholdOfTheUnknown",
       "TheCustodian": "ThePhantomWasteland",
-      "TalRatha": "ForgottenPrison"
+      "TalRatha": "ForgottenPrison",
+      "Phantom": "TheAstroPathsRespite",
+      "StasisSiege": "VaultOfTheFormless"
     }
   },
   "injectables": {
@@ -124,11 +127,6 @@
       "Amulet_VengeanceIdol": [
         {
           "name": "/Items/Trinkets/Amulets/VengeanceIdol/Amulet_VengeanceIdol"
-        }
-      ],
-      "Ring_ArchersCrest": [
-        {
-          "name": "/Items/Trinkets/Rings/ArchersCrest/Ring_ArchersCrest"
         }
       ],
       "Ring_BloodStamp": [
@@ -305,7 +303,8 @@
           "name": "/Items/Trinkets/Rings/WindHollowCirclet/Ring_WindHollowCirclet"
         },
         {
-          "name": "/Items/Trinkets/Rings/BandBand/Ring_BandBand"
+          "name": "/Items/Trinkets/Rings/BandBand/Ring_BandBand",
+          "coop": true
         }
       ],
       "Library": [
@@ -405,7 +404,8 @@
           "name": "/Items/Trinkets/Rings/TempestConduit/Ring_TempestConduit"
         },
         {
-          "name": "/Items/Trinkets/Rings/CaptainsInsignia/Ring_CaptainsInsignia"
+          "name": "/Items/Trinkets/Rings/CaptainsInsignia/Ring_CaptainsInsignia",
+          "coop": true
         },
         {
           "name": "/Items/Trinkets/Rings/EndairasEndlessLoop/Ring_EndairasEndlessLoop"
@@ -415,6 +415,10 @@
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/PulsingHeart/Relic_Consumable_PulsingHeart"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ArchersCrest/Ring_ArchersCrest",
+          "tileSet": "Quest_Injectable_Ziggurat_HiddenChamber"
         }
       ],
       "TheChimney": [
@@ -581,11 +585,6 @@
           "name": "/Items/Trinkets/Rings/FireStone/Ring_FireStone"
         }
       ],
-      "Ring_GameMastersPride": [
-        {
-          "name": "/Items/Trinkets/Rings/GameMastersPride/Ring_GameMastersPride"
-        }
-      ],
       "Ring_GroundingStone": [
         {
           "name": "/Items/Trinkets/Rings/GroundingStone/Ring_GroundingStone"
@@ -693,22 +692,28 @@
       ],
       "BoneHarvesterLair": [
         {
-          "name": "/Items/Trinkets/Rings/DrakestonePearl/Ring_DrakestonePearl"
+          "name": "/Items/Trinkets/Rings/DrakestonePearl/Ring_DrakestonePearl",
+          "tileSet": "Fae_Sewer_End_HarvesterLair"
         },
         {
-          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Alchemist"
+          "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Alchemist",
+          "tileSet": "City_End_HarvesterLair"
         },
         {
-          "name": "/Items/Armor/Archetype/Alchemist/Armor_Head_Alchemist"
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Head_Alchemist",
+          "tileSet": "Fae_Sewer_End_HarvesterLair"
         },
         {
-          "name": "/Items/Armor/Archetype/Alchemist/Armor_Body_Alchemist"
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Body_Alchemist",
+          "tileSet": "Fae_Sewer_End_HarvesterLair"
         },
         {
-          "name": "/Items/Armor/Archetype/Alchemist/Armor_Legs_Alchemist"
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Legs_Alchemist",
+          "tileSet": "Fae_Sewer_End_HarvesterLair"
         },
         {
-          "name": "/Items/Armor/Archetype/Alchemist/Armor_Gloves_Alchemist"
+          "name": "/Items/Armor/Archetype/Alchemist/Armor_Gloves_Alchemist",
+          "tileSet": "Fae_Sewer_End_HarvesterLair"
         }
       ],
       "CrimsonHarvest": [
@@ -754,7 +759,8 @@
           "name": "/Items/Trinkets/Rings/FeastmastersSignet/Ring_FeastmastersSignet"
         },
         {
-          "name": "/Items/Traits/Core/Glutton/Trait_Glutton"
+          "name": "/Items/Traits/Core/Glutton/Trait_Glutton",
+          "coop": true
         }
       ],
       "SilverGold": [
@@ -836,7 +842,8 @@
           "name": "/Items/Armor/FaeRoyal/Armor_Gloves_FaeRoyalGuard"
         },
         {
-          "name": "/Items/Trinkets/Rings/GameMastersPride/Ring_GameMastersPride"
+          "name": "/Items/Trinkets/Rings/GameMastersPride/Ring_GameMastersPride",
+          "coop": true
         },
         {
           "name": "/Items/Weapons/Longguns/Standard/Bow/Weapon_Bow"
@@ -923,11 +930,11 @@
       "AllFatherStory": [
         {
           "name": "/Items/Trinkets/Rings/CatalogersJewel/Ring_CatalogersJewel",
-          "notes": "backtrack joker door"
+          "notes": "near entrance to The Great Sewer in Beatific Palace"
         },
         {
           "name": "/Items/Trinkets/Amulets/JestersBell/Amulet_JestersBell",
-          "notes": "clap emote in front of jester"
+          "notes": "clap emote while Jester perfroms"
         },
         {
           "name": "/Items/Trinkets/Amulets/OneEyedJokerIdol/Amulet_OneEyedJokerIdol",
@@ -1107,7 +1114,7 @@
           "name": "/Items/Gems/Melee/MetaGems/Disengage/MetaGem_Disengage"
         }
       ],
-      "TheClaw": [
+      "Underworld_TheClaw": [
         {
           "name": "/Items/Trinkets/Rings/MomentumDriver/Ring_MomentumDriver"
         },
@@ -1154,7 +1161,8 @@
         },
         {
           "name": "/Items/Traits/Core/Resonance/Trait_Resonance",
-          "notes": "get killed by getting locked in the purge"
+          "notes": "get killed by getting locked in the purge",
+          "coop": true
         }
       ],
       "Extraction": [
@@ -1320,7 +1328,7 @@
           "notes": "get eaten by tal ratha"
         }
       ],
-      "Fog": [
+      "OverworldFog": [
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Engineer"
         },
@@ -1548,6 +1556,11 @@
         {
           "name": "/Items/Trinkets/Rings/BlackCatBand/Ring_BlackCatBand",
           "notes": "die 15 times"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BandOfAccord/Ring_BandOfAccord",
+          "notes": "do High Five emote in co-op",
+          "coop": true
         }
       ],
       "Cass": [
@@ -1689,6 +1702,20 @@
           "name": "/Items/Trinkets/Rings/AnastasijasInspiration/Ring_AnastasijasInspiration"
         }
       ],
+      "McCabe": [
+        {
+          "name": "/Items/Mods/ConcussiveShot/Mod_ConcussiveShot"
+        },
+        {
+          "name": "/Items/Mods/ScrapShot/Mod_ScrapShot"
+        },
+        {
+          "name": "/Items/Mods/HealingShot/Mod_HealingShot"
+        },
+        {
+          "name": "/Items/Mods/HotShot/Mod_Hotshot"
+        }
+      ],
       "Labyrinth": [
         {
           "name": "/Items/Trinkets/Rings/DenseSiliconRing/Ring_DenseSiliconRing"
@@ -1811,7 +1838,8 @@
           "name": "/Items/Traits/Core/Expertise/Trait_Expertise"
         },
         {
-          "name": "/Items/Traits/Core/Revivalist/Trait_Revivalist"
+          "name": "/Items/Traits/Core/Revivalist/Trait_Revivalist",
+          "coop": true
         },
         {
           "name": "/Items/Traits/Core/Scholar/Trait_Scholar"

@@ -10,12 +10,10 @@ Back up your Remnant 2 saves and view your world rolls.
 4. Run RemnantSaveGuardian.exe
 
 ## Known Issues
-- [Some items are erroneously shown as missing](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/16)
-- [Many events and items do not have well-formatted names](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/9)
-- [Some events (particularly bosses) are displayed that should not be](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/12)
-- [Some events are duplicated](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/14)
+- [Some items are missing from the world analyzer](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/43)
+- [Many events and items do not have well-formatted names](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/45)
+- [Some events not displaying or are erroneously displaying](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/44)
 
+Thanks for [crackedmind](https://github.com/crackedmind) for the inflation code to convert saves into partial plaintext. 
 
-Thanks for @crackedmind for the inflation code to convert saves into partial plaintext. 
-
-Thanks to AuriCrystal for event/item list.
+Thanks to [AuriCrystal](https://github.com/Auricrystal) for event/item list.
