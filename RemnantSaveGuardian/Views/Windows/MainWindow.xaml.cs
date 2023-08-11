@@ -125,7 +125,7 @@ namespace RemnantSaveGuardian.Views.Windows
                 };
             } catch (Exception ex)
             {
-                Logger.Error($"Error loading main window: {ex}");
+                Logger.Error($"Error loading main window: {ex.Message}");
             }
         }
 
@@ -144,7 +144,19 @@ namespace RemnantSaveGuardian.Views.Windows
 
         private void RootNavigation_Navigated([System.Diagnostics.CodeAnalysis.NotNull] INavigation sender, RoutedNavigationEventArgs e)
         {
-            //Logger.Log(e.CurrentPage.ToString());
+            // first navigation is to the backups page
+            // check to see if the user wants to start on another page
+            RootNavigation.Navigated -= RootNavigation_Navigated;
+            if (Properties.Settings.Default.StartPage == "backups")
+            {
+                return;
+            }
+            if (!ViewModel.NavigationItems.Any(nav => (nav as NavigationItem).PageTag == Properties.Settings.Default.StartPage))
+            {
+                Properties.Settings.Default.StartPage = "backups";
+                return;
+            }
+            RootNavigation.Navigate(Properties.Settings.Default.StartPage);
         }
 
         private void BackupsPage_BackupSaveViewed(object? sender, BackupSaveViewedEventArgs e)

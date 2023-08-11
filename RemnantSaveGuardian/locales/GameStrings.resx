@@ -570,6 +570,12 @@
   <data name="Hatchery" xml:space="preserve">
     <value>Primogenitor</value>
   </data>
+  <data name="HiddenChamber" xml:space="preserve">
+    <value>Hidden Chamber</value>
+  </data>
+  <data name="HiddenMaze" xml:space="preserve">
+    <value>Maze</value>
+  </data>
   <data name="Hunter" xml:space="preserve">
     <value>Hunter</value>
   </data>
@@ -584,6 +590,9 @@
   </data>
   <data name="IronGiant" xml:space="preserve">
     <value>Navigation Room</value>
+  </data>
+  <data name="IslandJump" xml:space="preserve">
+    <value>Island Jump Puzzle</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Alchemist" xml:space="preserve">
     <value>Alchemist</value>

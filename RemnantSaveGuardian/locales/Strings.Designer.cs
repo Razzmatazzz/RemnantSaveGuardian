@@ -394,6 +394,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error exporting save files: {errorMessage}.
+        /// </summary>
+        public static string Error_exporting_save_files___errorMessage_ {
+            get {
+                return ResourceManager.GetString("Error exporting save files: {errorMessage}", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit the game before restoring a save backup..
         /// </summary>
         public static string Exit_the_game_before_restoring_a_save_backup_ {

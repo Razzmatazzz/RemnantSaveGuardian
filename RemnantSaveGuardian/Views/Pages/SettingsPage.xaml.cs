@@ -47,8 +47,6 @@ namespace RemnantSaveGuardian.Views.Pages
                         cmbStartPage.SelectedItem = item;
                     }
                 }
-                cmbStartPage.Visibility = Visibility.Collapsed;
-                lblStartPage.Visibility = Visibility.Collapsed;
 
                 radThemeLight.IsChecked = Properties.Settings.Default.Theme == "Light";
 

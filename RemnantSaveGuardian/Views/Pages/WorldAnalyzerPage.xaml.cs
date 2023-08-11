@@ -143,7 +143,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 Logger.Success(Loc.T($"Exported save files successfully to {openFolderDialog.SelectedPath}"));
             } catch (Exception ex)
             {
-                Logger.Error(ex);
+                Logger.Error(Loc.T("Error exporting save files: {errorMessage}", new() { { "errorMessage", ex.Message } }));
             }
         }
 

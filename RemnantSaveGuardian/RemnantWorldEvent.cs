@@ -56,7 +56,7 @@ namespace RemnantSaveGuardian
             get
             {
                 //return $"{_name}\n{_key}";
-                //return Loc.GameT(_name)+"\n"+_key;
+                //return Loc.GameT(_name)+"\n"+_name+"\n"+_key;
                 return Loc.GameT(_name);
             }
         }
@@ -927,7 +927,7 @@ namespace RemnantSaveGuardian
 
             }
         }
-        static public void ProcessEvents(RemnantCharacter character, MatchCollection areas, ProcessMode mode)
+        static public void ProcessEvents(RemnantCharacter character, MatchCollection areas, Dictionary<ProcessMode, Dictionary<Match, Match>> allInjectables, ProcessMode mode)
         {
             Dictionary<string, Dictionary<string, string>> zones = new Dictionary<string, Dictionary<string, string>>();
             Dictionary<string, List<RemnantWorldEvent>> zoneEvents = new Dictionary<string, List<RemnantWorldEvent>>();
@@ -1128,6 +1128,43 @@ namespace RemnantSaveGuardian
                 zoneEvents[currentWorld].AddRange(areaEvents);
             }
             //File.WriteAllText($"events{character.WorldIndex}-{eventsIndex}.txt", string.Join("\n", eventStrings.ToArray()));
+
+            // add in injectables
+            foreach (var injectablePair in allInjectables[mode])
+            {
+                var injectable = new RemnantWorldEvent(injectablePair.Key);
+                var parent = new RemnantWorldEvent(injectablePair.Value);
+                var world = injectablePair.Key.Groups["world"].Value;
+                if (!zoneEvents.ContainsKey(world))
+                {
+                    //Logger.Warn($"Injectable world {world} not found in {mode} events");
+                    continue;
+                }
+                if (zoneEvents[world].Any(we => we._name == injectable._name))
+                {
+                    // injectable already exists
+                    continue;
+                }
+                var parentIndex = zoneEvents[world].FindIndex(we => we._name == parent._name);
+                RemnantWorldEvent parentEvent = null;
+                if (parentIndex < 0)
+                {
+                    parentIndex = zoneEvents[world].Count - 1;
+                    //Logger.Warn($"Could not find parent for {injectable._name}: {parent._key}");
+                }
+                else
+                {
+                    parentEvent = zoneEvents[world][parentIndex];
+                }
+                if (parentEvent != null && parentEvent.Locations.Count > 1)
+                {
+                    injectable.Locations.Clear();
+                    injectable.Locations.AddRange(parentEvent.Locations);
+                }
+
+                injectable.setMissingItems(character);
+                zoneEvents[world].Insert(parentIndex + 1, injectable);
+            }
 
             List<RemnantWorldEvent> eventList = character.CampaignEvents;
             if (mode == ProcessMode.Adventure)
@@ -1464,11 +1501,70 @@ namespace RemnantSaveGuardian
             //ProcessEvents(character, saveText, ProcessMode.Campaign);
             //ProcessEvents(character, saveText, ProcessMode.Adventure);
         }
+        static public Dictionary<ProcessMode, Dictionary<Match, Match>> GetInjectables(string saveText)
+        {
+            var injectables = new Dictionary<ProcessMode, Dictionary<Match, Match>>() { { ProcessMode.Campaign, new() }, { ProcessMode.Adventure, new() } };
+            var eventBlobs = new Dictionary<ProcessMode, string>();
+            string strCampaignEnd = "/Game/Campaign_Main/Quest_Campaign_Main.Quest_Campaign_Main_C";
+            int campaignEnd = saveText.IndexOf(strCampaignEnd);
+            string strCampaignStart = "/Game/World_Base/Quests/Quest_Ward13/Quest_Ward13.Quest_Ward13_C";
+            int campaignStart = saveText.IndexOf(strCampaignStart);
+            if (campaignStart != -1 && campaignEnd != -1)
+            {
+                var campaignBlob = saveText.Substring(0, campaignEnd);
+                campaignStart = campaignBlob.LastIndexOf(strCampaignStart);
+                eventBlobs[ProcessMode.Campaign] = campaignBlob.Substring(campaignStart);
+            }
+            var adventureMatch = Regex.Match(saveText, @"/Game/World_(?<world>\w+)/Quests/Quest_AdventureMode/Quest_AdventureMode_\w+.Quest_AdventureMode_\w+_C");
+            if (adventureMatch.Success)
+            {
+                int adventureEnd = adventureMatch.Index;
+                int adventureStart = campaignEnd;
+                if (adventureStart > adventureEnd)
+                {
+                    adventureStart = 0;
+                }
+                eventBlobs[ProcessMode.Adventure] = saveText[adventureStart..adventureEnd];
+            }
+            foreach (var processMode in eventBlobs.Keys)
+            {
+                var events = Regex.Matches(eventBlobs[processMode], @"/Game/(?<world>(?:World|Campaign)_\w+)/Quests/(?:Quest_)?(?<eventType>[a-zA-Z0-9]+)_(?<eventName>\w+)/(?<details>\w+)\.\w+");
+                for (var eventIndex = 0; eventIndex < events.Count; eventIndex++)
+                {
+                    if (eventIndex == 0)
+                    {
+                        continue;
+                    }
+                    var ev = events[eventIndex];
+                    Match parentEvent = events[eventIndex - 1];
+                    if (ev.Groups["eventType"].Value != "Injectable")
+                    {
+                        continue;
+                    }
+                    if (ev.Groups["world"].Value != parentEvent.Groups["world"].Value || parentEvent.Groups["eventType"].Value == "Injectable")
+                    {
+                        parentEvent = null;
+                        for (var parentIndex = eventIndex +1; parentIndex < events.Count; parentIndex++)
+                        {
+                            if (events[parentIndex].Groups["world"].Value == ev.Groups["world"].Value && events[parentIndex].Groups["eventType"].Value != "Injectable")
+                            {
+                                parentEvent = events[parentIndex];
+                                break;
+                            }
+                        }
+                    }
+                    if (parentEvent == null)
+                    {
+                        continue;
+                    }
+                    injectables[processMode].Add(ev, parentEvent);
+                }
+            }
+            return injectables;
+        }
         static public void ProcessEvents(RemnantCharacter character, string saveText)
         {
-
-            var eventsText = "";
-            var eventsIndex = 0;
+            var injectables = GetInjectables(saveText);
             var eventStarts = Regex.Matches(saveText, @"/Game/World_Base/Quests/Quest_Global/Quest_Global\.Quest_Global_C");
             var eventEnds = Regex.Matches(saveText, @"/Game/World_Base/Quests/Quest_Global/Quest_Global.{5}Quest_Global_C");
             if (eventStarts.Count == 0 || eventEnds.Count == 0)
@@ -1501,11 +1597,11 @@ namespace RemnantSaveGuardian
                     adventureIndex = 0;
                 }
             }
-            ProcessEvents(character, eventGroupMatches[campaignIndex], ProcessMode.Campaign);
+            ProcessEvents(character, eventGroupMatches[campaignIndex], injectables, ProcessMode.Campaign);
             //Logger.Log($"{mode}");
             if (adventureIndex != -1)
             {
-                ProcessEvents(character, eventGroupMatches[adventureIndex], ProcessMode.Adventure);
+                ProcessEvents(character, eventGroupMatches[adventureIndex], injectables, ProcessMode.Adventure);
             }
         }
         static public void ProcessEvents(RemnantCharacter character)

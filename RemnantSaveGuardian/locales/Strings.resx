@@ -228,6 +228,9 @@
   <data name="Error checking for new version" xml:space="preserve">
     <value>Error checking for new version</value>
   </data>
+  <data name="Error exporting save files: {errorMessage}" xml:space="preserve">
+    <value>Error exporting save files: {errorMessage}</value>
+  </data>
   <data name="Exit the game before restoring a save backup." xml:space="preserve">
     <value>Exit the game before restoring a save backup.</value>
   </data>

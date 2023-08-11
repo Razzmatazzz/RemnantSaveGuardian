@@ -467,7 +467,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                 }
                 checkBackupLimit();
-                dataBackups.Items.Refresh();
+                refreshBackups();
                 this.ActiveSaveIsBackedUp = true;
                 Logger.Success($"{Loc.T("Backup completed")} ({saveDate})!");
             }
@@ -659,7 +659,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 saveBackup.Active = false;
             }
 
-            dataBackups.Items.Refresh();
+            refreshBackups();
             Logger.Log(Loc.T("Backup restored"), LogType.Success);
             SaveWatcher.Resume();
             BackupSaveRestored?.Invoke(this, new());
@@ -699,10 +699,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 Directory.Delete(backup.Save.SaveFolderPath, true);
 
                 listBackups.Remove(backup);
-                var sorting = dataBackups.Items.SortDescriptions.First();
-                dataBackups.ItemsSource = null;
-                dataBackups.ItemsSource = listBackups;
-                dataBackups.Items.SortDescriptions.Add(sorting);
+                refreshBackups();
             }
             catch (Exception ex)
             {
@@ -757,6 +754,11 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             Logger.Success(Loc.T("Import_save_success"));
             listBackups.Add(backup);
+            refreshBackups();
+        }
+
+        private void refreshBackups()
+        {
             var sorting = dataBackups.Items.SortDescriptions.First();
             dataBackups.ItemsSource = null;
             dataBackups.ItemsSource = listBackups;
