@@ -186,9 +186,6 @@
   <data name="Base" xml:space="preserve">
     <value>Земля</value>
   </data>
-  <data name="CathedralOfOmens" xml:space="preserve">
-    <value>Собор Предзнаменований</value>
-  </data>
   <data name="Challenger" xml:space="preserve">
     <value>Боец</value>
   </data>
@@ -206,9 +203,6 @@
   </data>
   <data name="Explorer" xml:space="preserve">
     <value>Исследователь</value>
-  </data>
-  <data name="Fae" xml:space="preserve">
-    <value>Лосом</value>
   </data>
   <data name="FaelinFaerlin" xml:space="preserve">
     <value>Фэйлин</value>
@@ -313,7 +307,7 @@
     <value>Испорченная гавань</value>
   </data>
   <data name="RootNexus" xml:space="preserve">
-    <value>Корневой Нексус</value>
+    <value>Сплетение корня</value>
   </data>
   <data name="Sewer" xml:space="preserve">
     <value>Затопленная Канализация</value>
@@ -327,7 +321,7 @@
   <data name="TalRatha" xml:space="preserve">
     <value>Тал'Рата</value>
   </data>
-  <data name="The Twisted C	hantry" xml:space="preserve">
+  <data name="The Twisted C hantry" xml:space="preserve">
     <value>Искореженная часовня</value>
   </data>
   <data name="TheCustodian" xml:space="preserve">
@@ -359,5 +353,503 @@
   </data>
   <data name="WorldBoss" xml:space="preserve">
     <value>Мировой босс</value>
+  </data>
+  <data name="AboveBelow" xml:space="preserve">
+    <value>Палач</value>
+  </data>
+  <data name="Armor_Engineer" xml:space="preserve">
+    <value>Инженер</value>
+  </data>
+  <data name="Armor_Explorer" xml:space="preserve">
+    <value>Исследователь</value>
+  </data>
+  <data name="Gems" xml:space="preserve">
+    <value>Мутатор</value>
+  </data>
+  <data name="RedPrince" xml:space="preserve">
+    <value>Красный принц</value>
+  </data>
+  <data name="Armor_Leto2" xml:space="preserve">
+    <value>Лето (Модель II)</value>
+  </data>
+  <data name="Armor_PilotsHelm" xml:space="preserve">
+    <value>Шлем навигатора</value>
+  </data>
+  <data name="Relic_Consumable_ResonatingHeart" xml:space="preserve">
+    <value>Резонирующее сердце</value>
+  </data>
+  <data name="Relic_Consumable_ShieldedHeart" xml:space="preserve">
+    <value>Защищенное сердце</value>
+  </data>
+  <data name="Relic_Consumable_CrystalHeart" xml:space="preserve">
+    <value>Кристальное сердце</value>
+  </data>
+  <data name="Trait_AmmoReserves" xml:space="preserve">
+    <value>Резерв боеприпасов</value>
+  </data>
+  <data name="Trait_Amplitude" xml:space="preserve">
+    <value>Амплитуда</value>
+  </data>
+  <data name="Trait_ArcaneStrike" xml:space="preserve">
+    <value>Мистический удар</value>
+  </data>
+  <data name="Trait_Barkskin" xml:space="preserve">
+    <value>Прочная кожа</value>
+  </data>
+  <data name="Trait_BloodBond" xml:space="preserve">
+    <value>Кровное родство</value>
+  </data>
+  <data name="Trait_Bloodstream" xml:space="preserve">
+    <value>Кровоток</value>
+  </data>
+  <data name="Trait_Endurance" xml:space="preserve">
+    <value>Восстановление</value>
+  </data>
+  <data name="Trait_Glutton" xml:space="preserve">
+    <value>Обжора</value>
+  </data>
+  <data name="Trait_Expertise" xml:space="preserve">
+    <value>Экспертное знание</value>
+  </data>
+  <data name="Trait_Fitness" xml:space="preserve">
+    <value>Тонус</value>
+  </data>
+  <data name="Trait_Footwork" xml:space="preserve">
+    <value>Маневрирование</value>
+  </data>
+  <data name="Trait_Fortify" xml:space="preserve">
+    <value>Закалка</value>
+  </data>
+  <data name="Trait_Handling" xml:space="preserve">
+    <value>Стабильность</value>
+  </data>
+  <data name="Trait_Kinship" xml:space="preserve">
+    <value>Родство</value>
+  </data>
+  <data name="Trait_Regrowth" xml:space="preserve">
+    <value>Восполнение</value>
+  </data>
+  <data name="Trait_Revivalist" xml:space="preserve">
+    <value>Полевой доктор</value>
+  </data>
+  <data name="Trait_Rugged" xml:space="preserve">
+    <value>Суровость</value>
+  </data>
+  <data name="Trait_Scholar" xml:space="preserve">
+    <value>Ученый</value>
+  </data>
+  <data name="Trait_Shadeskin" xml:space="preserve">
+    <value>Грубая кожа</value>
+  </data>
+  <data name="Trait_Siphoner" xml:space="preserve">
+    <value>Вампиризм</value>
+  </data>
+  <data name="Trait_Wayfarer" xml:space="preserve">
+    <value>Путник</value>
+  </data>
+  <data name="Traits" xml:space="preserve">
+    <value>Талант</value>
+  </data>
+  <data name="Trait_Swiftness" xml:space="preserve">
+    <value>Проворство</value>
+  </data>
+  <data name="Trait_Triage" xml:space="preserve">
+    <value>Приоритеты</value>
+  </data>
+  <data name="Trait_Untouchable" xml:space="preserve">
+    <value>Недосягаемость</value>
+  </data>
+  <data name="Trait_Vigor" xml:space="preserve">
+    <value>Бодрость</value>
+  </data>
+  <data name="Trait_Spirit" xml:space="preserve">
+    <value>Дух</value>
+  </data>
+  <data name="Trait_StrongBack" xml:space="preserve">
+    <value>Крепкая спина</value>
+  </data>
+  <data name="Trait_Potency" xml:space="preserve">
+    <value>Продуктивность</value>
+  </data>
+  <data name="Trait_Longshot" xml:space="preserve">
+    <value>Дальний выстрел</value>
+  </data>
+  <data name="Trait_FlashCaster" xml:space="preserve">
+    <value>Ловкость рук</value>
+  </data>
+  <data name="Trait_Recovery" xml:space="preserve">
+    <value>Востанновление</value>
+  </data>
+  <data name="Trait_Resonance" xml:space="preserve">
+    <value>Резонанс</value>
+  </data>
+  <data name="MetaGem_Transpose" xml:space="preserve">
+    <value>Транспозиция</value>
+  </data>
+  <data name="MetaGem_Lithely" xml:space="preserve">
+    <value>Ловкость</value>
+  </data>
+  <data name="MetaGem_Momentum" xml:space="preserve">
+    <value>Импульс</value>
+  </data>
+  <data name="MetaGem_Refunder" xml:space="preserve">
+    <value>Возьмиститель</value>
+  </data>
+  <data name="MetaGem_Supercharger" xml:space="preserve">
+    <value>Сверхмощный заряд</value>
+  </data>
+  <data name="MetaGem_Timewave" xml:space="preserve">
+    <value>Волна времени</value>
+  </data>
+  <data name="MetaGem_TwistingWounds" xml:space="preserve">
+    <value>Калечащие раны</value>
+  </data>
+  <data name="Meidra" xml:space="preserve">
+    <value>Мейдра</value>
+  </data>
+  <data name="Brabus" xml:space="preserve">
+    <value>Брабус</value>
+  </data>
+  <data name="Briella's Garden" xml:space="preserve">
+    <value>Сад Бриэллы</value>
+  </data>
+  <data name="BriellasGarden" xml:space="preserve">
+    <value>Сад Бриэллы</value>
+  </data>
+  <data name="Armor_SpaceWorker" xml:space="preserve">
+    <value>Космический работник</value>
+  </data>
+  <data name="Armor_Summoner" xml:space="preserve">
+    <value>Призыватель</value>
+  </data>
+  <data name="Armor_RedWidow" xml:space="preserve">
+    <value>Красная вдова</value>
+  </data>
+  <data name="LemarkDistrict" xml:space="preserve">
+    <value>Квартал лемарков</value>
+  </data>
+  <data name="Mod_Witchfire" xml:space="preserve">
+    <value>Ведьмин огонь</value>
+  </data>
+  <data name="Mod_Helix" xml:space="preserve">
+    <value>Спираль</value>
+  </data>
+  <data name="DarkConduit" xml:space="preserve">
+    <value>Темный проводник</value>
+  </data>
+  <data name="Engrams" xml:space="preserve">
+    <value>Энграма</value>
+  </data>
+  <data name="Relic_Consumable_BloomingHeart" xml:space="preserve">
+    <value>Цветущее сердце</value>
+  </data>
+  <data name="Relic_Consumable_ReprocessedHeart" xml:space="preserve">
+    <value>Обработанное сердце</value>
+  </data>
+  <data name="Relic_Consumable_RunedHeart" xml:space="preserve">
+    <value>Руническое сердце</value>
+  </data>
+  <data name="Relic_Consumable_SalvagedHeart" xml:space="preserve">
+    <value>Спасенное сердце</value>
+  </data>
+  <data name="Relic_Consumable_EnlargedHeart" xml:space="preserve">
+    <value>Распухшее сердце</value>
+  </data>
+  <data name="Relic_Consumable_SiphonHeart" xml:space="preserve">
+    <value>Настороженное сердце</value>
+  </data>
+  <data name="Relic_Consumable_RipenedHeart" xml:space="preserve">
+    <value>Созревшее сердце</value>
+  </data>
+  <data name="Relic_Consumable_VoidHeart" xml:space="preserve">
+    <value>Опустошенное сердце</value>
+  </data>
+  <data name="Relic_Consumable_ConstrainedHeart" xml:space="preserve">
+    <value>Скованное сердце</value>
+  </data>
+  <data name="Relic_Consumable_QuiltedHeart" xml:space="preserve">
+    <value>Стеганное сердце</value>
+  </data>
+  <data name="Relic_Consumable_UnsulliedHeart" xml:space="preserve">
+    <value>Непорочное сердце</value>
+  </data>
+  <data name="SpectrumNexus" xml:space="preserve">
+    <value>Спектральное сплетение</value>
+  </data>
+  <data name="Ascension Spire" xml:space="preserve">
+    <value>Шпиль вознесения</value>
+  </data>
+  <data name="ThresholdOfTheUnknown" xml:space="preserve">
+    <value>Порог неизвсестного</value>
+  </data>
+  <data name="ThePutridDomain" xml:space="preserve">
+    <value>Смрадное царство</value>
+  </data>
+  <data name="ThePhantomWasteland" xml:space="preserve">
+    <value>Фантомная пустошь</value>
+  </data>
+  <data name="Timeless Horizon" xml:space="preserve">
+    <value>Вечный горизонт</value>
+  </data>
+  <data name="Seeker's Rest" xml:space="preserve">
+    <value>Покои искателя</value>
+  </data>
+  <data name="Amulet_AnkhOfPower" xml:space="preserve">
+    <value>Анх власти</value>
+  </data>
+  <data name="Amulet_BrokenPocketWatch" xml:space="preserve">
+    <value>Сломанные карманные часы</value>
+  </data>
+  <data name="World_Earth" xml:space="preserve">
+    <value>Земля</value>
+  </data>
+  <data name="World_Fae" xml:space="preserve">
+    <value>Лосом</value>
+  </data>
+  <data name="World_Jungle" xml:space="preserve">
+    <value>Йаэша</value>
+  </data>
+  <data name="World_Labyrinth" xml:space="preserve">
+    <value>Лабиринт</value>
+  </data>
+  <data name="World_Nerud" xml:space="preserve">
+    <value>Н'еруд</value>
+  </data>
+  <data name="World_RootEarth" xml:space="preserve">
+    <value>Мир корня</value>
+  </data>
+  <data name="AshenWasteland" xml:space="preserve">
+    <value>Пепельные пустоши</value>
+  </data>
+  <data name="Blackened Citadel" xml:space="preserve">
+    <value>Почерневшая цитадель</value>
+  </data>
+  <data name="CorruptedHarbor" xml:space="preserve">
+    <value>Искаженное убежище</value>
+  </data>
+  <data name="Extraction Hub" xml:space="preserve">
+    <value>Центр извлечения</value>
+  </data>
+  <data name="VoidVesselFacility" xml:space="preserve">
+    <value>Комплекс пустотного судна</value>
+  </data>
+  <data name="The Eon Vault" xml:space="preserve">
+    <value>Хранилище бесконечности</value>
+  </data>
+  <data name="VaultOfTheFormless" xml:space="preserve">
+    <value>Убежище бесформенных</value>
+  </data>
+  <data name="Tal'Ratha's Refuge" xml:space="preserve">
+    <value>Убежище Тал'Рата</value>
+  </data>
+  <data name="Abyssal Rift" xml:space="preserve">
+    <value>Разлом Бездны</value>
+  </data>
+  <data name="Mod_AstralBurst" xml:space="preserve">
+    <value>Звездный залп</value>
+  </data>
+  <data name="Mod_BloodDraw" xml:space="preserve">
+    <value>Кровопускание</value>
+  </data>
+  <data name="Mod_Bore" xml:space="preserve">
+    <value>Бур</value>
+  </data>
+  <data name="Mod_ConcussiveShot" xml:space="preserve">
+    <value>Сотрясающий выстрел</value>
+  </data>
+  <data name="Mod_CorrosiveRounds" xml:space="preserve">
+    <value>Разъедающие патроны</value>
+  </data>
+  <data name="Mod_Defrag" xml:space="preserve">
+    <value>Дефрагментация</value>
+  </data>
+  <data name="Mod_Familiar" xml:space="preserve">
+    <value>Фамильяр</value>
+  </data>
+  <data name="Mod_Firestorm" xml:space="preserve">
+    <value>Огненный смерч</value>
+  </data>
+  <data name="Mod_HealingShot" xml:space="preserve">
+    <value>Лечебный выстрел</value>
+  </data>
+  <data name="Mod_Overflow" xml:space="preserve">
+    <value>Переполнение</value>
+  </data>
+  <data name="Mod_PrismaticDriver" xml:space="preserve">
+    <value>Призменный луч</value>
+  </data>
+  <data name="Mod_Rootlash" xml:space="preserve">
+    <value>Плеть корня</value>
+  </data>
+  <data name="Mod_RottedArrow" xml:space="preserve">
+    <value>Гнилая стрела</value>
+  </data>
+  <data name="Mod_ScrapShot" xml:space="preserve">
+    <value>Выстрел ломом</value>
+  </data>
+  <data name="Mod_Skewer" xml:space="preserve">
+    <value>Вертел 2.0</value>
+  </data>
+  <data name="Mod_Soulbinder" xml:space="preserve">
+    <value>Духовная связь</value>
+  </data>
+  <data name="Mod_SpaceCrabs" xml:space="preserve">
+    <value>Космокрабы</value>
+  </data>
+  <data name="Mod_StasisBeam" xml:space="preserve">
+    <value>Стазис-луч</value>
+  </data>
+  <data name="Mod_TimeLapse" xml:space="preserve">
+    <value>Замедление времени</value>
+  </data>
+  <data name="Mod_Tremor" xml:space="preserve">
+    <value>Землетрясение</value>
+  </data>
+  <data name="Mod_VoltaicRondure" xml:space="preserve">
+    <value>Гальванический шар</value>
+  </data>
+  <data name="Mods" xml:space="preserve">
+    <value>Мод</value>
+  </data>
+  <data name="TheGreatBole" xml:space="preserve">
+    <value>Исполинский ствол</value>
+  </data>
+  <data name="TheRedThrone" xml:space="preserve">
+    <value>Красный трон</value>
+  </data>
+  <data name="Widow's Court" xml:space="preserve">
+    <value>Вдовий двор</value>
+  </data>
+  <data name="CathedralOfSeasons" xml:space="preserve">
+    <value>Собор Предзнаменований</value>
+  </data>
+  <data name="The Far Woods" xml:space="preserve">
+    <value>Дальний лес</value>
+  </data>
+  <data name="TheTwistedChantry" xml:space="preserve">
+    <value>Искаженная часовня</value>
+  </data>
+  <data name="The Withering Weald" xml:space="preserve">
+    <value>Увядающая пустошь</value>
+  </data>
+  <data name="BeatificPalace" xml:space="preserve">
+    <value>Галерея блаженства</value>
+  </data>
+  <data name="CouncilChamber" xml:space="preserve">
+    <value>Большой зал</value>
+  </data>
+  <data name="GildedChambers" xml:space="preserve">
+    <value>Разрушенная галерея</value>
+  </data>
+  <data name="Palace Courtyard" xml:space="preserve">
+    <value>Внутренний двор</value>
+  </data>
+  <data name="Malefic Palace" xml:space="preserve">
+    <value>Дворец пагубы</value>
+  </data>
+  <data name="NimuesRetreat" xml:space="preserve">
+    <value>Убежище Нимуэ</value>
+  </data>
+  <data name="Brocwithe Quarter" xml:space="preserve">
+    <value>Квартал Броквит</value>
+  </data>
+  <data name="Ironborough" xml:space="preserve">
+    <value>Айронборо</value>
+  </data>
+  <data name="Hewdas Clock" xml:space="preserve">
+    <value>Часы Хьюдаса</value>
+  </data>
+  <data name="TheGreatSewers" xml:space="preserve">
+    <value>Большая канализация</value>
+  </data>
+  <data name="TillersRest" xml:space="preserve">
+    <value>Убежище землевладельца</value>
+  </data>
+  <data name="HarvestersReach" xml:space="preserve">
+    <value>Предел жнеца</value>
+  </data>
+  <data name="TheHatchery" xml:space="preserve">
+    <value>Инкубатор</value>
+  </data>
+  <data name="TheAstroPathsRespite" xml:space="preserve">
+    <value>Убежище астропата</value>
+  </data>
+  <data name="Malefic Gallery" xml:space="preserve">
+    <value>Галерея пагубы</value>
+  </data>
+  <data name="ForgottenPrison" xml:space="preserve">
+    <value>Забытая тюрьма</value>
+  </data>
+  <data name="Relic" xml:space="preserve">
+    <value>Реликвия</value>
+  </data>
+  <data name="Reggie" xml:space="preserve">
+    <value>Реджи</value>
+  </data>
+  <data name="Ring_FaelinsSigil" xml:space="preserve">
+    <value>Символ Фэйлина</value>
+  </data>
+  <data name="Ring_FaerinsSigil" xml:space="preserve">
+    <value>Символ Фэйрина</value>
+  </data>
+  <data name="Amulet_OneTrueKingSigil" xml:space="preserve">
+    <value>Символ истинного короля</value>
+  </data>
+  <data name="DrzyrReplicator" xml:space="preserve">
+    <value>Репликатор джиров</value>
+  </data>
+  <data name="Merchant" xml:space="preserve">
+    <value>Продавец</value>
+  </data>
+  <data name="Armor" xml:space="preserve">
+    <value>Броня</value>
+  </data>
+  <data name="Weapons" xml:space="preserve">
+    <value>Оружие</value>
+  </data>
+  <data name="Amulets" xml:space="preserve">
+    <value>Амулет</value>
+  </data>
+  <data name="Weapon_Sorrow" xml:space="preserve">
+    <value>Печаль</value>
+  </data>
+  <data name="Weapon_TommyGun" xml:space="preserve">
+    <value>Пулемет Томпсона</value>
+  </data>
+  <data name="Weapon_AssaultRifle" xml:space="preserve">
+    <value>AR-47 "Черная пасть"</value>
+  </data>
+  <data name="Weapon_AtomSmasher" xml:space="preserve">
+    <value>Дробитель атомов</value>
+  </data>
+  <data name="Weapon_AtomSplitter" xml:space="preserve">
+    <value>Расщепитель атомов</value>
+  </data>
+  <data name="Weapon_BladeOfGul" xml:space="preserve">
+    <value>Клинок гулов</value>
+  </data>
+  <data name="Weapon_CubeGun" xml:space="preserve">
+    <value>Кубический пистолет</value>
+  </data>
+  <data name="Weapon_Dreamcatcher" xml:space="preserve">
+    <value>Ловец снов</value>
+  </data>
+  <data name="Weapon_Enigma" xml:space="preserve">
+    <value>Загадка</value>
+  </data>
+  <data name="Weapon_KrellAxe" xml:space="preserve">
+    <value>Топор креллов</value>
+  </data>
+  <data name="Weapon_LabyrinthStaff" xml:space="preserve">
+    <value>Посох лабиринта</value>
+  </data>
+  <data name="Weapon_RuptureCannon" xml:space="preserve">
+    <value>Разрывная пушка</value>
+  </data>
+  <data name="Weapon_Sagittarius" xml:space="preserve">
+    <value>Западная классика</value>
+  </data>
+  <data name="Weapon_CrescentMoon" xml:space="preserve">
+    <value>Полумесяц</value>
   </data>
 </root>
