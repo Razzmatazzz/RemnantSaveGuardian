@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Windows;
 using System.IO.Compression;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
 
 namespace RemnantSaveGuardian
 {
@@ -192,6 +187,7 @@ namespace RemnantSaveGuardian
                     using var decompressor = new ZLibStream(bufferStream, CompressionMode.Decompress);
                     decompressor.CopyTo(memstream);
                 }
+                fileStream.Dispose();
 
                 var res = memstream.ToArray();
 

@@ -2,23 +2,15 @@
 using RemnantSaveGuardian.ViewModels;
 using RemnantSaveGuardian.Views.Pages;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text.Json.Nodes;
-using System.Text.RegularExpressions;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 //using System.Windows.Forms;
 using Wpf.Ui.Common;
 using Wpf.Ui.Controls;
 using Wpf.Ui.Controls.Interfaces;
-using Wpf.Ui.Extensions;
 using Wpf.Ui.Mvvm.Contracts;
-using Wpf.Ui.Mvvm.Interfaces;
 using WPFLocalizeExtension.Engine;
 
 namespace RemnantSaveGuardian.Views.Windows
@@ -115,7 +107,6 @@ namespace RemnantSaveGuardian.Views.Windows
                 RootNavigation.Navigated += RootNavigation_Navigated;
 
                 UpdateCheck.NewVersion += UpdateCheck_NewVersion;
-                UpdateCheck.Error += UpdateCheck_Error;
                 if (Properties.Settings.Default.AutoCheckUpdate)
                 {
                     UpdateCheck.CheckForNewVersion();
@@ -127,11 +118,6 @@ namespace RemnantSaveGuardian.Views.Windows
             {
                 Logger.Error($"Error loading main window: {ex.Message}");
             }
-        }
-
-        private void UpdateCheck_Error(object? sender, UpdateCheckErrorEventArgs e)
-        {
-            Logger.Error($"{Loc.T("Error checking for new version")}: {e.Exception.Message}");
         }
 
         private void UpdateCheck_NewVersion(object? sender, NewVersionEventArgs e)

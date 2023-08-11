@@ -1,17 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
-using System.Xml;
-using System.Net;
-using System.Diagnostics;
-using System.Security.Policy;
-using System.IO;
-using System.Windows.Media.TextFormatting;
-using System.Diagnostics.Eventing.Reader;
-using Wpf.Ui.Controls;
 
 namespace RemnantSaveGuardian
 {
