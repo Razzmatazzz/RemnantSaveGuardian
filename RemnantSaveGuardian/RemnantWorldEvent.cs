@@ -1481,7 +1481,14 @@ namespace RemnantSaveGuardian
                 var eventText = saveText[eventStarts[i].Index..eventEnds[i].Index];
                 //var matches = Regex.Matches(eventText, @"/Game/(?<world>[\w/]+)/SpawnTables/(?<spawnTable>[\w/]+)\.\w+(?<events>.+)MapGen[\w\W]+?/Script/Remnant\.ZoneActor.{10}(?<tileSets>(?:.\u0001....(?:/.+?))+).{9}ID");
                 var matches = Regex.Matches(eventText, @"/Game/(?<world>[\w/]+)/SpawnTables/(?<spawnTable>[\w/]+)\.\w+(?<events>.+)MapGen[\w\W]+?/Script/Remnant\.ZoneActor.{10}(?:.\u0001....(?<tileSet>/.+?))+.{9}ID");
-                eventGroupMatches.Add(matches);
+                if (matches.Count > 7)
+                {
+                    eventGroupMatches.Add(matches);
+                }
+            }
+            if (eventGroupMatches.Count > 2)
+            {
+                Logger.Warn(Loc.T("Unexpected_event_group_number_warning_{numberOfEventGroups}", new() { { "numberOfEventGroups", eventGroupMatches.Count.ToString() } }));
             }
             var campaignIndex = 0;
             var adventureIndex = -1;

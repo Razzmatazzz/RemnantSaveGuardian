@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using Wpf.Ui.Common.Interfaces;
 
@@ -697,13 +699,68 @@ namespace RemnantSaveGuardian.Views.Pages
                 Directory.Delete(backup.Save.SaveFolderPath, true);
 
                 listBackups.Remove(backup);
+                var sorting = dataBackups.Items.SortDescriptions.First();
                 dataBackups.ItemsSource = null;
                 dataBackups.ItemsSource = listBackups;
+                dataBackups.Items.SortDescriptions.Add(sorting);
             }
             catch (Exception ex)
             {
                 Logger.Error($"{Loc.T("Could not delete backup:")} {ex.Message}");
             }
+        }
+
+        private void dataBackups_Drop(object sender, System.Windows.DragEventArgs e)
+        {
+            if (!e.Data.GetDataPresent(System.Windows.DataFormats.FileDrop))
+            {
+                //Logger.Log(string.Join("\n", e.Data.GetFormats()));
+                return;
+            }
+            var files = ((string[])e.Data.GetData(System.Windows.DataFormats.FileDrop)).ToList<string>();
+            if (!files.Any(file => file.EndsWith("profile.sav")))
+            {
+                Logger.Error(Loc.T("No_profile_sav_found_warning"));
+                return;
+            }
+            if (!files.Any(file => Regex.Match(file, @"save_\d.sav$").Success))
+            {
+                Logger.Error(Loc.T("No_world_found_warning"));
+                return;
+            }
+            DateTime saveDate = File.GetLastWriteTime(files[0]);
+            string backupFolder = $@"{Properties.Settings.Default.BackupFolder}\{saveDate.Ticks}";
+            if (Directory.Exists(backupFolder))
+            {
+                Logger.Error(Loc.T("Import_failed_backup_exists"));
+                return;
+            }
+            Directory.CreateDirectory(backupFolder);
+            foreach (string file in files)
+            {
+                if (!file.EndsWith(".sav"))
+                {
+                    continue;
+                }
+                File.Copy(file, $@"{backupFolder}\{System.IO.Path.GetFileName(file)}", true);
+            }
+            Dictionary<long, string> backupNames = getSavedBackupNames();
+            Dictionary<long, bool> backupKeeps = getSavedBackupKeeps();
+            SaveBackup backup = new SaveBackup(backupFolder);
+            if (backupNames.ContainsKey(backup.SaveDate.Ticks))
+            {
+                backup.Name = backupNames[backup.SaveDate.Ticks];
+            }
+            if (backupKeeps.ContainsKey(backup.SaveDate.Ticks))
+            {
+                backup.Keep = backupKeeps[backup.SaveDate.Ticks];
+            }
+            Logger.Success(Loc.T("Import_save_success"));
+            listBackups.Add(backup);
+            var sorting = dataBackups.Items.SortDescriptions.First();
+            dataBackups.ItemsSource = null;
+            dataBackups.ItemsSource = listBackups;
+            dataBackups.Items.SortDescriptions.Add(sorting);
         }
     }
 

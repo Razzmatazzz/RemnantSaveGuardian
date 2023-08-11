@@ -191,7 +191,8 @@
       ],
       "ThaenLeaf": [
         {
-          "name": "/Items/Materials/World/ThaenLeaf/Material_ThaenLeaf"
+          "name": "/Items/Materials/World/ThaenLeaf/Material_ThaenLeaf",
+          "ignore":  true
         }
       ],
       "EmpressStory": [

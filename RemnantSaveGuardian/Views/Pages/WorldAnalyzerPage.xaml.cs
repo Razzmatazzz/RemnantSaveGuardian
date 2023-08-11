@@ -27,9 +27,9 @@ namespace RemnantSaveGuardian.Views.Pages
         private RemnantSave Save;
         private List<RemnantWorldEvent> filteredCampaign;
         private List<RemnantWorldEvent> filteredAdventure;
-        private double midFontSize = 14;
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
+            Debug.WriteLine(pathToSaveFiles);
             ViewModel = viewModel;
 
             InitializeComponent();
