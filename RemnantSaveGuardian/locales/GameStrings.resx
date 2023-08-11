@@ -540,6 +540,9 @@
   <data name="FaeWarriorRing" xml:space="preserve">
     <value>Fae Warrior Ring</value>
   </data>
+  <data name="Flautist" xml:space="preserve">
+    <value>Root Nexus</value>
+  </data>
   <data name="ForgottenField" xml:space="preserve">
     <value>Forgotten Field</value>
   </data>
@@ -1424,6 +1427,9 @@
   </data>
   <data name="TheExpandingGlade" xml:space="preserve">
     <value>The Expanding Glade</value>
+  </data>
+  <data name="TheFarWoods" xml:space="preserve">
+    <value>The Far Woods</value>
   </data>
   <data name="TheGreatBole" xml:space="preserve">
     <value>The Great Bole</value>

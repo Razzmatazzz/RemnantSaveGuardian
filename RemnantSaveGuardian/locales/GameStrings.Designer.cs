@@ -1330,6 +1330,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Root Nexus.
+        /// </summary>
+        public static string Flautist {
+            get {
+                return ResourceManager.GetString("Flautist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forgotten Field.
         /// </summary>
         public static string ForgottenField {
@@ -3981,6 +3990,15 @@ namespace RemnantSaveGuardian.locales {
         public static string TheExpandingGlade {
             get {
                 return ResourceManager.GetString("TheExpandingGlade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Far Woods.
+        /// </summary>
+        public static string TheFarWoods {
+            get {
+                return ResourceManager.GetString("TheFarWoods", resourceCulture);
             }
         }
         
