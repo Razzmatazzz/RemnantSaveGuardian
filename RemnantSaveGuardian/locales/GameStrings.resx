@@ -433,7 +433,7 @@
     <value>Bloat King</value>
   </data>
   <data name="BloodMoon" xml:space="preserve">
-    <value>Blood Moon Altar</value>
+    <value>Bloodmoon Altar</value>
   </data>
   <data name="BoneHarvesterLair" xml:space="preserve">
     <value>Monster in the Drain</value>
@@ -481,13 +481,13 @@
     <value>The Custodian's Eye</value>
   </data>
   <data name="DarkConduit" xml:space="preserve">
-    <value>Dark Conduit</value>
+    <value>The Dark Conduit</value>
   </data>
   <data name="DormantNErudianFacility" xml:space="preserve">
     <value>Dormant N'Erudian Facility</value>
   </data>
   <data name="DranGrenadier" xml:space="preserve">
-    <value>Gwendil The Unburnt</value>
+    <value>Gwendil : The Unburnt</value>
   </data>
   <data name="DranOracle" xml:space="preserve">
     <value>Oracle of the Dran</value>
@@ -820,7 +820,7 @@
     <value>Mutators</value>
   </data>
   <data name="NerudGuardian" xml:space="preserve">
-    <value>Sha'Hala: Spectral Guardian of N'Erud</value>
+    <value>Sha'Hala : Spectral Guardian of N'Erud</value>
   </data>
   <data name="Nightweb" xml:space="preserve">
     <value>Nightweaver's Web</value>
@@ -958,7 +958,7 @@
     <value>Amber Moonstone</value>
   </data>
   <data name="Ring_AnastasijasInspiration" xml:space="preserve">
-    <value>Anastasia's Inspiration</value>
+    <value>Anastasija's Inspiration</value>
   </data>
   <data name="Ring_ArchersCrest" xml:space="preserve">
     <value>Archer's Crest</value>
@@ -1309,7 +1309,7 @@
     <value>Stone of Malevolence</value>
   </data>
   <data name="Ring_StreamCoupler" xml:space="preserve">
-    <value>Stream Coupler Ring</value>
+    <value>Stream Coupler</value>
   </data>
   <data name="Ring_StrongArmBand" xml:space="preserve">
     <value>Strong Arm Band</value>
@@ -1414,7 +1414,7 @@
     <value>Summoner</value>
   </data>
   <data name="TalRatha" xml:space="preserve">
-    <value>Tal Ratha</value>
+    <value>Tal'Ratha</value>
   </data>
   <data name="TerminusStation" xml:space="preserve">
     <value>Terminus Station</value>
@@ -1423,7 +1423,7 @@
     <value>TheTwistedChantry</value>
   </data>
   <data name="TheAstroPathsRespite" xml:space="preserve">
-    <value>The Astropath's Respite</value>
+    <value>Astropath's Respite</value>
   </data>
   <data name="TheCustodian" xml:space="preserve">
     <value>The Custodian</value>
@@ -1462,7 +1462,7 @@
     <value>The Nameless Nest</value>
   </data>
   <data name="ThePhantomWasteland" xml:space="preserve">
-    <value>The Phantom Wasteland</value>
+    <value>Phantom Wasteland</value>
   </data>
   <data name="ThePutridDomain" xml:space="preserve">
     <value>The Putrid Domain</value>
@@ -1489,7 +1489,7 @@
     <value>Tiller's Rest</value>
   </data>
   <data name="TormentedAsylum" xml:space="preserve">
-    <value>Tormented Asylum</value>
+    <value>The Tormented Asylum</value>
   </data>
   <data name="Tower" xml:space="preserve">
     <value>The Elevator</value>
@@ -1705,7 +1705,7 @@
     <value>Huntress Spear</value>
   </data>
   <data name="Weapon_Katana" xml:space="preserve">
-    <value>Katana</value>
+    <value>Steel Katana</value>
   </data>
   <data name="Weapon_KrellAxe" xml:space="preserve">
     <value>Krell Axe</value>
@@ -1765,7 +1765,7 @@
     <value>Rune Pistol</value>
   </data>
   <data name="Weapon_RuptureCannon" xml:space="preserve">
-    <value>Rupture Cannon</value>
+    <value>Rupture Canon</value>
   </data>
   <data name="Weapon_Sagittarius" xml:space="preserve">
     <value>Sagittarius</value>
@@ -1810,7 +1810,7 @@
     <value>Gas Giant</value>
   </data>
   <data name="Weapon_TommyGun" xml:space="preserve">
-    <value>Chicago Typewritter</value>
+    <value>Chicago Typewriter</value>
   </data>
   <data name="Weapon_TwistedArbalest" xml:space="preserve">
     <value>Twisted Arbalest</value>

@@ -1006,7 +1006,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blood Moon Altar.
+        ///   Looks up a localized string similar to Bloodmoon Altar.
         /// </summary>
         public static string BloodMoon {
             get {
@@ -1150,7 +1150,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dark Conduit.
+        ///   Looks up a localized string similar to The Dark Conduit.
         /// </summary>
         public static string DarkConduit {
             get {
@@ -1168,7 +1168,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gwendil The Unburnt.
+        ///   Looks up a localized string similar to Gwendil : The Unburnt.
         /// </summary>
         public static string DranGrenadier {
             get {
@@ -2167,7 +2167,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sha&apos;Hala: Spectral Guardian of N&apos;Erud.
+        ///   Looks up a localized string similar to Sha&apos;Hala : Spectral Guardian of N&apos;Erud.
         /// </summary>
         public static string NerudGuardian {
             get {
@@ -2572,7 +2572,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Anastasia&apos;s Inspiration.
+        ///   Looks up a localized string similar to Anastasija&apos;s Inspiration.
         /// </summary>
         public static string Ring_AnastasijasInspiration {
             get {
@@ -3625,7 +3625,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stream Coupler Ring.
+        ///   Looks up a localized string similar to Stream Coupler.
         /// </summary>
         public static string Ring_StreamCoupler {
             get {
@@ -3949,7 +3949,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tal Ratha.
+        ///   Looks up a localized string similar to Tal&apos;Ratha.
         /// </summary>
         public static string TalRatha {
             get {
@@ -3976,7 +3976,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Astropath&apos;s Respite.
+        ///   Looks up a localized string similar to Astropath&apos;s Respite.
         /// </summary>
         public static string TheAstroPathsRespite {
             get {
@@ -4093,7 +4093,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Phantom Wasteland.
+        ///   Looks up a localized string similar to Phantom Wasteland.
         /// </summary>
         public static string ThePhantomWasteland {
             get {
@@ -4174,7 +4174,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tormented Asylum.
+        ///   Looks up a localized string similar to The Tormented Asylum.
         /// </summary>
         public static string TormentedAsylum {
             get {
@@ -4813,7 +4813,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Katana.
+        ///   Looks up a localized string similar to Steel Katana.
         /// </summary>
         public static string Weapon_Katana {
             get {
@@ -4993,7 +4993,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rupture Cannon.
+        ///   Looks up a localized string similar to Rupture Canon.
         /// </summary>
         public static string Weapon_RuptureCannon {
             get {
@@ -5128,7 +5128,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chicago Typewritter.
+        ///   Looks up a localized string similar to Chicago Typewriter.
         /// </summary>
         public static string Weapon_TommyGun {
             get {
