@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Xml.Linq;
 using Wpf.Ui.Common.Interfaces;
 
 namespace RemnantSaveGuardian.Views.Pages
@@ -27,9 +23,9 @@ namespace RemnantSaveGuardian.Views.Pages
         private RemnantSave Save;
         private List<RemnantWorldEvent> filteredCampaign;
         private List<RemnantWorldEvent> filteredAdventure;
-        private double midFontSize = 14;
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
+            Debug.WriteLine(pathToSaveFiles);
             ViewModel = viewModel;
 
             InitializeComponent();
@@ -143,7 +139,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 Logger.Success(Loc.T($"Exported save files successfully to {openFolderDialog.SelectedPath}"));
             } catch (Exception ex)
             {
-                Logger.Error(ex);
+                Logger.Error(Loc.T("Error exporting save files: {errorMessage}", new() { { "errorMessage", ex.Message } }));
             }
         }
 
@@ -177,17 +173,14 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void Data_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            var cancelColumns = new List<string>() {
-                "RawName",
-                "RawLocation",
-                "RawWorld",
-                "RawType",
-                "Locations",
-                "World",
-                "MissingItems",
-                "PossibleItems"
+            var allowColumns = new List<string>() {
+                "Location",
+                "Type",
+                "Name",
+                "MissingItemsString",
+                "PossibleItemsString"
             };
-            if (cancelColumns.Contains(e.Column.Header))
+            if (!allowColumns.Contains(e.Column.Header))
             {
                 e.Cancel = true;
                 return;
@@ -200,7 +193,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 
                 if (Properties.Settings.Default.MissingItemColor == "Highlight")
                 {
-                    var highlight = System.Drawing.SystemColors.Highlight;
+                    var highlight = System.Drawing.SystemColors.HotTrack;
                     cellStyle.Setters.Add(new Setter(ForegroundProperty, new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(highlight.R, highlight.G, highlight.B))));
                 }
             }

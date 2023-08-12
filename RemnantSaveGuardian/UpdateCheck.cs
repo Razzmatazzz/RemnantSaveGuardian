@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json.Nodes;
-using System.Threading.Tasks;
 
 namespace RemnantSaveGuardian
 {
@@ -16,7 +12,6 @@ namespace RemnantSaveGuardian
         private static DateTime lastUpdateCheck = DateTime.MinValue;
 
         public static event EventHandler<NewVersionEventArgs> NewVersion;
-        public static event EventHandler<UpdateCheckErrorEventArgs> Error;
 
         public static bool OpenDownloadPage { get; set; } = true;
 
@@ -26,7 +21,8 @@ namespace RemnantSaveGuardian
             {
                 if (lastUpdateCheck.AddMinutes(5) > DateTime.Now)
                 {
-                    throw new Exception(Loc.T("You must wait 5 minutes between update checks"));
+                    Logger.Warn(Loc.T("You must wait 5 minutes between update checks"));
+                    return;
                 }
                 lastUpdateCheck = DateTime.Now;
                 GameInfo.CheckForNewGameInfo();
@@ -49,7 +45,7 @@ namespace RemnantSaveGuardian
             }
             catch (Exception ex)
             {
-                Error?.Invoke(null, new() { Exception = ex });
+                Logger.Error($"{Loc.T("Error checking for new version")}: {ex.Message}");
             }
         }
     }

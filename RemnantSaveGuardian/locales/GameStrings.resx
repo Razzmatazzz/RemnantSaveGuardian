@@ -540,6 +540,9 @@
   <data name="FaeWarriorRing" xml:space="preserve">
     <value>Fae Warrior Ring</value>
   </data>
+  <data name="Flautist" xml:space="preserve">
+    <value>Root Nexus</value>
+  </data>
   <data name="ForgottenField" xml:space="preserve">
     <value>Forgotten Field</value>
   </data>
@@ -567,6 +570,12 @@
   <data name="Hatchery" xml:space="preserve">
     <value>Primogenitor</value>
   </data>
+  <data name="HiddenChamber" xml:space="preserve">
+    <value>Hidden Chamber</value>
+  </data>
+  <data name="HiddenMaze" xml:space="preserve">
+    <value>Maze</value>
+  </data>
   <data name="Hunter" xml:space="preserve">
     <value>Hunter</value>
   </data>
@@ -581,6 +590,9 @@
   </data>
   <data name="IronGiant" xml:space="preserve">
     <value>Navigation Room</value>
+  </data>
+  <data name="IslandJump" xml:space="preserve">
+    <value>Island Jump Puzzle</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Alchemist" xml:space="preserve">
     <value>Alchemist</value>
@@ -1424,6 +1436,9 @@
   </data>
   <data name="TheExpandingGlade" xml:space="preserve">
     <value>The Expanding Glade</value>
+  </data>
+  <data name="TheFarWoods" xml:space="preserve">
+    <value>The Far Woods</value>
   </data>
   <data name="TheGreatBole" xml:space="preserve">
     <value>The Great Bole</value>

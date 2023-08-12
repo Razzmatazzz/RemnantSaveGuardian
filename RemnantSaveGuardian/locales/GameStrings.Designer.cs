@@ -1330,6 +1330,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Root Nexus.
+        /// </summary>
+        public static string Flautist {
+            get {
+                return ResourceManager.GetString("Flautist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forgotten Field.
         /// </summary>
         public static string ForgottenField {
@@ -1411,6 +1420,24 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hidden Chamber.
+        /// </summary>
+        public static string HiddenChamber {
+            get {
+                return ResourceManager.GetString("HiddenChamber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maze.
+        /// </summary>
+        public static string HiddenMaze {
+            get {
+                return ResourceManager.GetString("HiddenMaze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hunter.
         /// </summary>
         public static string Hunter {
@@ -1452,6 +1479,15 @@ namespace RemnantSaveGuardian.locales {
         public static string IronGiant {
             get {
                 return ResourceManager.GetString("IronGiant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Island Jump Puzzle.
+        /// </summary>
+        public static string IslandJump {
+            get {
+                return ResourceManager.GetString("IslandJump", resourceCulture);
             }
         }
         
@@ -3981,6 +4017,15 @@ namespace RemnantSaveGuardian.locales {
         public static string TheExpandingGlade {
             get {
                 return ResourceManager.GetString("TheExpandingGlade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Far Woods.
+        /// </summary>
+        public static string TheFarWoods {
+            get {
+                return ResourceManager.GetString("TheFarWoods", resourceCulture);
             }
         }
         

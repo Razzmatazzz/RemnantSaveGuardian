@@ -106,6 +106,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup deleted.
+        /// </summary>
+        public static string Backup_deleted {
+            get {
+                return ResourceManager.GetString("Backup deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backup Folder.
         /// </summary>
         public static string Backup_Folder {
@@ -385,6 +394,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error exporting save files: {errorMessage}.
+        /// </summary>
+        public static string Error_exporting_save_files___errorMessage_ {
+            get {
+                return ResourceManager.GetString("Error exporting save files: {errorMessage}", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit the game before restoring a save backup..
         /// </summary>
         public static string Exit_the_game_before_restoring_a_save_backup_ {
@@ -435,6 +453,24 @@ namespace RemnantSaveGuardian.locales {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not import save; backup with that timestamp already exists.
+        /// </summary>
+        public static string Import_failed_backup_exists {
+            get {
+                return ResourceManager.GetString("Import_failed_backup_exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save successfully imported to backups.
+        /// </summary>
+        public static string Import_save_success {
+            get {
+                return ResourceManager.GetString("Import_save_success", resourceCulture);
             }
         }
         
@@ -673,6 +709,24 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The files must include a profile.sav.
+        /// </summary>
+        public static string No_profile_sav_found_warning {
+            get {
+                return ResourceManager.GetString("No_profile_sav_found_warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The files must include at least one save_#.sav file.
+        /// </summary>
+        public static string No_world_found_warning {
+            get {
+                return ResourceManager.GetString("No_world_found_warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Normal.
         /// </summary>
         public static string Normal {
@@ -867,6 +921,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Theme {
             get {
                 return ResourceManager.GetString("Theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The world analyzer found {numberOfEventGroups} groups of events, but it expects a maximum of 2. Things might not work as intended..
+        /// </summary>
+        public static string Unexpected_event_group_number_warning__numberOfEventGroups_ {
+            get {
+                return ResourceManager.GetString("Unexpected_event_group_number_warning_{numberOfEventGroups}", resourceCulture);
             }
         }
         

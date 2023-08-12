@@ -132,6 +132,9 @@
   <data name="Backup completed" xml:space="preserve">
     <value>Backup completed</value>
   </data>
+  <data name="Backup deleted" xml:space="preserve">
+    <value>Backup deleted</value>
+  </data>
   <data name="Backup Folder" xml:space="preserve">
     <value>Backup Folder</value>
   </data>
@@ -225,6 +228,9 @@
   <data name="Error checking for new version" xml:space="preserve">
     <value>Error checking for new version</value>
   </data>
+  <data name="Error exporting save files: {errorMessage}" xml:space="preserve">
+    <value>Error exporting save files: {errorMessage}</value>
+  </data>
   <data name="Exit the game before restoring a save backup." xml:space="preserve">
     <value>Exit the game before restoring a save backup.</value>
   </data>
@@ -242,6 +248,12 @@
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="Import_failed_backup_exists" xml:space="preserve">
+    <value>Could not import save; backup with that timestamp already exists</value>
+  </data>
+  <data name="Import_save_success" xml:space="preserve">
+    <value>Save successfully imported to backups</value>
   </data>
   <data name="Info" xml:space="preserve">
     <value>Info</value>
@@ -324,6 +336,12 @@
   <data name="Normal" xml:space="preserve">
     <value>Normal</value>
   </data>
+  <data name="No_profile_sav_found_warning" xml:space="preserve">
+    <value>The files must include a profile.sav</value>
+  </data>
+  <data name="No_world_found_warning" xml:space="preserve">
+    <value>The files must include at least one save_#.sav file</value>
+  </data>
   <data name="Open Folder" xml:space="preserve">
     <value>Open Folder</value>
   </data>
@@ -386,6 +404,9 @@
   </data>
   <data name="Theme" xml:space="preserve">
     <value>Theme</value>
+  </data>
+  <data name="Unexpected_event_group_number_warning_{numberOfEventGroups}" xml:space="preserve">
+    <value>The world analyzer found {numberOfEventGroups} groups of events, but it expects a maximum of 2. Things might not work as intended.</value>
   </data>
   <data name="White" xml:space="preserve">
     <value>White</value>

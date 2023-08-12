@@ -73,7 +73,7 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         FontSize="28"
-                        Navigation="{Binding ElementName=RootNavigation, Mode=OneWay}" />
+                        Navigation="{Binding ElementName=RootNavigation, Mode=OneWay}"  />
                     <ui:Snackbar Name="snackbar" Appearance="Danger" Grid.Row="1" VerticalAlignment="Bottom" Timeout="10000"/>
                 </Grid>
             </Border>

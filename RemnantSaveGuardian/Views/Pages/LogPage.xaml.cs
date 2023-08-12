@@ -1,7 +1,5 @@
 ﻿//using System.Drawing;
 using System;
-using System.Diagnostics;
-using System.Windows.Media;
 using Wpf.Ui.Common.Interfaces;
 using Wpf.Ui.Controls;
 
