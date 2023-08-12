@@ -5,9 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using Wpf.Ui.Common;
 using Wpf.Ui.Common.Interfaces;
-using Wpf.Ui.Extensions;
 
 namespace RemnantSaveGuardian.Views.Pages
 {
@@ -47,8 +45,6 @@ namespace RemnantSaveGuardian.Views.Pages
                         cmbStartPage.SelectedItem = item;
                     }
                 }
-                cmbStartPage.Visibility = Visibility.Collapsed;
-                lblStartPage.Visibility = Visibility.Collapsed;
 
                 radThemeLight.IsChecked = Properties.Settings.Default.Theme == "Light";
 

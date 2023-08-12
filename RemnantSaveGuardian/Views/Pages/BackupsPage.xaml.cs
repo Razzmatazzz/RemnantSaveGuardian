@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using Wpf.Ui.Common.Interfaces;
 
@@ -70,23 +72,7 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 dataBackups.CanUserDeleteRows = false;
                 dataBackups.CanUserAddRows = false;
-                dataBackups.BeginningEdit += DataBackups_BeginningEdit;
-                dataBackups.CellEditEnding += DataBackups_CellEditEnding;
-                dataBackups.AutoGeneratingColumn += DataBackups_AutoGeneratingColumn;
                 dataBackups.Items.SortDescriptions.Add(new SortDescription("SaveDate", ListSortDirection.Descending));
-
-                contextBackups.ContextMenuOpening += ContextBackups_ContextMenuOpening;
-                contextBackups.Opened += ContextBackups_Opened;
-
-                menuRestoreAll.Click += MenuRestoreAll_Click;
-                menuRestoreCharacters.Click += MenuRestoreCharacters_Click;
-                menuRestoreWorlds.Click += MenuRestoreWorlds_Click;
-
-                menuAnalyze.Click += MenuAnalyze_Click;
-
-                menuOpenBackup.Click += MenuOpenBackup_Click;
-
-                menuDelete.Click += MenuDelete_Click;
 
                 if (Properties.Settings.Default.BackupFolder.Length == 0)
                 {
@@ -102,11 +88,6 @@ namespace RemnantSaveGuardian.Views.Pages
 
                 SaveWatcher.SaveUpdated += SaveWatcher_SaveUpdated;
 
-                btnBackup.Click += BtnBackup_Click;
-
-                btnOpenBackupsFolder.Click += BtnOpenBackupsFolder_Click;
-
-                btnStartGame.Click += BtnStartGame_Click;
                 btnStartGame.IsEnabled = !IsRemnantRunning();
 
                 loadBackups();
@@ -114,11 +95,6 @@ namespace RemnantSaveGuardian.Views.Pages
                 Logger.Error($"Error loading backups page: {ex}");
             }
 
-        }
-
-        private void DataBackups_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
-        {
-            e.Column.Header = new LocalizedColumnHeader(e.Column.Header.ToString());
         }
 
         private void MenuAnalyze_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -491,7 +467,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                 }
                 checkBackupLimit();
-                dataBackups.Items.Refresh();
+                refreshBackups();
                 this.ActiveSaveIsBackedUp = true;
                 Logger.Success($"{Loc.T("Backup completed")} ({saveDate})!");
             }
@@ -588,10 +564,19 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void dataBackups_AutoGeneratingColumn(object sender, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs e)
         {
-            if (e.Column.Header.Equals("Save"))
+            var allowColumns = new List<string>() { 
+                "Name",
+                "SaveDate",
+                "Progression",
+                "Keep",
+                "Active"
+            };
+            if (!allowColumns.Contains(e.Column.Header.ToString()))
             {
                 e.Cancel = true;
+                return;
             }
+            e.Column.Header = new LocalizedColumnHeader(e.Column.Header.ToString());
         }
 
         private bool IsRemnantRunning()
@@ -674,7 +659,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 saveBackup.Active = false;
             }
 
-            dataBackups.Items.Refresh();
+            refreshBackups();
             Logger.Log(Loc.T("Backup restored"), LogType.Success);
             SaveWatcher.Resume();
             BackupSaveRestored?.Invoke(this, new());
@@ -697,6 +682,7 @@ namespace RemnantSaveGuardian.Views.Pages
             messageBox.ButtonLeftName = Loc.T("Delete");
             messageBox.ButtonLeftClick += (send, updatedEvent) => {
                 DeleteBackup(backup);
+                Logger.Success(Loc.T("Backup deleted"));
                 messageBox.Close();
             };
             messageBox.ButtonRightName = Loc.T("Cancel");
@@ -713,12 +699,70 @@ namespace RemnantSaveGuardian.Views.Pages
                 Directory.Delete(backup.Save.SaveFolderPath, true);
 
                 listBackups.Remove(backup);
-                dataBackups.Items.Refresh();
+                refreshBackups();
             }
             catch (Exception ex)
             {
                 Logger.Error($"{Loc.T("Could not delete backup:")} {ex.Message}");
             }
+        }
+
+        private void dataBackups_Drop(object sender, System.Windows.DragEventArgs e)
+        {
+            if (!e.Data.GetDataPresent(System.Windows.DataFormats.FileDrop))
+            {
+                //Logger.Log(string.Join("\n", e.Data.GetFormats()));
+                return;
+            }
+            var files = ((string[])e.Data.GetData(System.Windows.DataFormats.FileDrop)).ToList<string>();
+            if (!files.Any(file => file.EndsWith("profile.sav")))
+            {
+                Logger.Error(Loc.T("No_profile_sav_found_warning"));
+                return;
+            }
+            if (!files.Any(file => Regex.Match(file, @"save_\d.sav$").Success))
+            {
+                Logger.Error(Loc.T("No_world_found_warning"));
+                return;
+            }
+            DateTime saveDate = File.GetLastWriteTime(files[0]);
+            string backupFolder = $@"{Properties.Settings.Default.BackupFolder}\{saveDate.Ticks}";
+            if (Directory.Exists(backupFolder))
+            {
+                Logger.Error(Loc.T("Import_failed_backup_exists"));
+                return;
+            }
+            Directory.CreateDirectory(backupFolder);
+            foreach (string file in files)
+            {
+                if (!file.EndsWith(".sav"))
+                {
+                    continue;
+                }
+                File.Copy(file, $@"{backupFolder}\{System.IO.Path.GetFileName(file)}", true);
+            }
+            Dictionary<long, string> backupNames = getSavedBackupNames();
+            Dictionary<long, bool> backupKeeps = getSavedBackupKeeps();
+            SaveBackup backup = new SaveBackup(backupFolder);
+            if (backupNames.ContainsKey(backup.SaveDate.Ticks))
+            {
+                backup.Name = backupNames[backup.SaveDate.Ticks];
+            }
+            if (backupKeeps.ContainsKey(backup.SaveDate.Ticks))
+            {
+                backup.Keep = backupKeeps[backup.SaveDate.Ticks];
+            }
+            Logger.Success(Loc.T("Import_save_success"));
+            listBackups.Add(backup);
+            refreshBackups();
+        }
+
+        private void refreshBackups()
+        {
+            var sorting = dataBackups.Items.SortDescriptions.First();
+            dataBackups.ItemsSource = null;
+            dataBackups.ItemsSource = listBackups;
+            dataBackups.Items.SortDescriptions.Add(sorting);
         }
     }
 
