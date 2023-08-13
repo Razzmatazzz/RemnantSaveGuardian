@@ -1848,4 +1848,7 @@
   <data name="Weapon_CoachGun" xml:space="preserve">
     <value>Coach Gun</value>
   </data>
+  <data name="Ring_BandOfAccord" xml:space="preserve">
+    <value>Band of Accord</value>
+  </data>
 </root>

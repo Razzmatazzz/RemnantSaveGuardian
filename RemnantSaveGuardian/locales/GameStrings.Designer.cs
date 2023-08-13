@@ -2608,6 +2608,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Band of Accord.
+        /// </summary>
+        public static string Ring_BandOfAccord {
+            get {
+                return ResourceManager.GetString("Ring_BandOfAccord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bisected Ring.
         /// </summary>
         public static string Ring_BisectedRing {
