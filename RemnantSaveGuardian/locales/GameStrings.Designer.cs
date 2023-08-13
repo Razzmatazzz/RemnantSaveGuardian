@@ -817,7 +817,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invader.
+        ///   Looks up a localized string similar to Dendroid.
         /// </summary>
         public static string Armor_Invader {
             get {
