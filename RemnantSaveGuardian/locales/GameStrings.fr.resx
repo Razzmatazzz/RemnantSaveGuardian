@@ -1,0 +1,1525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbandonedRuins" xml:space="preserve">
+    <value>Ruines abandonnées</value>
+  </data>
+  <data name="AboveBelow" xml:space="preserve">
+    <value>Le Bourreau</value>
+  </data>
+  <data name="Alchemist" xml:space="preserve">
+    <value>Alchimiste</value>
+  </data>
+  <data name="Amulet_AbrasiveWhetstone" xml:space="preserve">
+    <value>Pierre à aiguiser</value>
+  </data>
+  <data name="Amulet_AnkhOfPower" xml:space="preserve">
+    <value>Ankh de pouvoir</value>
+  </data>
+  <data name="Amulet_BrokenPocketWatch" xml:space="preserve">
+    <value>Montre à gousset cassée</value>
+  </data>
+  <data name="Amulet_ButchersFetish" xml:space="preserve">
+    <value>Fétiche du boucher</value>
+  </data>
+  <data name="Amulet_ChainsOfAmplification" xml:space="preserve">
+    <value>Chaînes d'amplification</value>
+  </data>
+  <data name="Amulet_CleansingStone" xml:space="preserve">
+    <value>Pierre purifiante</value>
+  </data>
+  <data name="Amulet_CoreBooster" xml:space="preserve">
+    <value>Amplificateur</value>
+  </data>
+  <data name="Amulet_DaredevilsCharm" xml:space="preserve">
+    <value>Charme du téméraire</value>
+  </data>
+  <data name="Amulet_DeathsEmbrace" xml:space="preserve">
+    <value>Étreinte de la Mort</value>
+  </data>
+  <data name="Amulet_DecayedMargin" xml:space="preserve">
+    <value>Vestige pourrissant</value>
+  </data>
+  <data name="Amulet_DetonationTrigger" xml:space="preserve">
+    <value>Détonateur</value>
+  </data>
+  <data name="Amulet_DifferenceEngine" xml:space="preserve">
+    <value>Moteur différentiel</value>
+  </data>
+  <data name="Amulet_DownwardSpiral" xml:space="preserve">
+    <value>Spirale noire</value>
+  </data>
+  <data name="Amulet_EffigyPendant" xml:space="preserve">
+    <value>Pendentif de l'effigie</value>
+  </data>
+  <data name="Amulet_EffluviumEnhancer" xml:space="preserve">
+    <value>Rehausseur d'effluves</value>
+  </data>
+  <data name="Amulet_EmergencySwitch" xml:space="preserve">
+    <value>Coupe-circuit</value>
+  </data>
+  <data name="Amulet_EnergizedNeckCoil" xml:space="preserve">
+    <value>Tour de cou énergisant</value>
+  </data>
+  <data name="Amulet_EnergyDiverter" xml:space="preserve">
+    <value>Inverseur d'énergie</value>
+  </data>
+  <data name="Amulet_EscalationProtocol" xml:space="preserve">
+    <value>Protocole d'intensification</value>
+  </data>
+  <data name="Amulet_FullMoonCirclet" xml:space="preserve">
+    <value>Couronne de la pleine lune</value>
+  </data>
+  <data name="Amulet_GoldenRibbon" xml:space="preserve">
+    <value>Ruban doré</value>
+  </data>
+  <data name="Amulet_GunfireSecurityLanyard" xml:space="preserve">
+    <value>Dragonne de sécurité</value>
+  </data>
+  <data name="Amulet_GunslingersCharm" xml:space="preserve">
+    <value>Charme du pistolero</value>
+  </data>
+  <data name="Amulet_HallowedEgg" xml:space="preserve">
+    <value>Œuf sanctifié</value>
+  </data>
+  <data name="Amulet_Hyperconductor" xml:space="preserve">
+    <value>Hyperconducteur</value>
+  </data>
+  <data name="Amulet_IndignantFetish" xml:space="preserve">
+    <value>Fétiche indigné</value>
+  </data>
+  <data name="Amulet_InertOvercharger" xml:space="preserve">
+    <value>Surchargeur inerte</value>
+  </data>
+  <data name="Amulet_InsulationDriver" xml:space="preserve">
+    <value>Générateur d'isolation</value>
+  </data>
+  <data name="Amulet_JestersBell" xml:space="preserve">
+    <value>Cloche du fou</value>
+  </data>
+  <data name="Amulet_KineticShieldExchanger" xml:space="preserve">
+    <value>Échangeur de bouclier cinétique</value>
+  </data>
+  <data name="Amulet_KuriKuriCharm" xml:space="preserve">
+    <value>Charme du kuri-kuri</value>
+  </data>
+  <data name="Amulet_LaemirCenser" xml:space="preserve">
+    <value>Encensoir des Laemirs</value>
+  </data>
+  <data name="Amulet_LetosAmulet" xml:space="preserve">
+    <value>Amulette de Leto</value>
+  </data>
+  <data name="Amulet_MatriarchsInsignia" xml:space="preserve">
+    <value>Insigne de la matriarche</value>
+  </data>
+  <data name="Amulet_NavigatorsPendant" xml:space="preserve">
+    <value>Pendentif du navigateur</value>
+  </data>
+  <data name="Amulet_NeckboneNecklace" xml:space="preserve">
+    <value>Collier de vertèbres</value>
+  </data>
+  <data name="Amulet_NecklaceOfFlowingLife" xml:space="preserve">
+    <value>Collier du bain de vie</value>
+  </data>
+  <data name="Amulet_NecklaceOfSupremacy" xml:space="preserve">
+    <value>Collier de suprématie</value>
+  </data>
+  <data name="Amulet_NightweaversGrudge" xml:space="preserve">
+    <value>Rancune de la Tisse-Nuit</value>
+  </data>
+  <data name="Amulet_NimuesRibbon" xml:space="preserve">
+    <value>Ruban de Nimuë</value>
+  </data>
+  <data name="Amulet_OneEyedJokerIdol" xml:space="preserve">
+    <value>Idole de clown à un œil</value>
+  </data>
+  <data name="Amulet_OneTrueKingSigil" xml:space="preserve">
+    <value>Sceau du Vrai Roi</value>
+  </data>
+  <data name="Amulet_RangeFinder" xml:space="preserve">
+    <value>Analyseur de portée</value>
+  </data>
+  <data name="Amulet_RavagersMark" xml:space="preserve">
+    <value>Marque du Ravageur</value>
+  </data>
+  <data name="Amulet_RedDoeSigil" xml:space="preserve">
+    <value>Sceau de la Biche rouge</value>
+  </data>
+  <data name="Amulet_RustedNavigatorsPendant" xml:space="preserve">
+    <value>Pendentif rouillé du navigateur</value>
+  </data>
+  <data name="Amulet_Samoflange" xml:space="preserve">
+    <value>Samophlange</value>
+  </data>
+  <data name="Amulet_ScavengersBauble" xml:space="preserve">
+    <value>Régal du récupérateur</value>
+  </data>
+  <data name="Amulet_ShadeBloomCrystal" xml:space="preserve">
+    <value>Cristal de fleur du Shaëd</value>
+  </data>
+  <data name="Amulet_ShockDevice" xml:space="preserve">
+    <value>Machine à électrochocs</value>
+  </data>
+  <data name="Amulet_SilverRibbon" xml:space="preserve">
+    <value>Ruban argenté</value>
+  </data>
+  <data name="Amulet_SpiritWispAmulet" xml:space="preserve">
+    <value>Amulette d'esprit follet</value>
+  </data>
+  <data name="Amulet_StalkersBrand" xml:space="preserve">
+    <value>Marque du prédateur</value>
+  </data>
+  <data name="Amulet_TalismanOfTheSun" xml:space="preserve">
+    <value>Talisman du soleil</value>
+  </data>
+  <data name="Amulet_ToxicReleaseValve" xml:space="preserve">
+    <value>Soupape toxique</value>
+  </data>
+  <data name="Amulet_TwistedIdol" xml:space="preserve">
+    <value>Idole enchevêtrée</value>
+  </data>
+  <data name="Amulet_VengeanceIdol" xml:space="preserve">
+    <value>Idole de la vengeance</value>
+  </data>
+  <data name="Amulet_WeightlessWeight" xml:space="preserve">
+    <value>Poids imperceptible</value>
+  </data>
+  <data name="Archon" xml:space="preserve">
+    <value>Archonte</value>
+  </data>
+  <data name="Armor" xml:space="preserve">
+    <value>Armure</value>
+  </data>
+  <data name="Armor_Alchemist" xml:space="preserve">
+    <value>Alchimiste</value>
+  </data>
+  <data name="Armor_Archon" xml:space="preserve">
+    <value>Archonte</value>
+  </data>
+  <data name="Armor_Body" xml:space="preserve">
+    <value>Corps</value>
+  </data>
+  <data name="Armor_Engineer" xml:space="preserve">
+    <value>Ingénieur</value>
+  </data>
+  <data name="Armor_Explorer" xml:space="preserve">
+    <value>Explorateur</value>
+  </data>
+  <data name="Armor_Head" xml:space="preserve">
+    <value>Tête</value>
+  </data>
+  <data name="Armor_Legs" xml:space="preserve">
+    <value>Jambes</value>
+  </data>
+  <data name="Armor_LodestoneCrown" xml:space="preserve">
+    <value>Couronne de magnétite</value>
+  </data>
+  <data name="Armor_Medic" xml:space="preserve">
+    <value>Médecin de terrain</value>
+  </data>
+  <data name="Armor_PilotsHelm" xml:space="preserve">
+    <value>Casque du navigateur</value>
+  </data>
+  <data name="Armor_RedPrince" xml:space="preserve">
+    <value>Couronne du Prince rouge</value>
+  </data>
+  <data name="Armor_Summoner" xml:space="preserve">
+    <value>Invocateur</value>
+  </data>
+  <data name="AshenWasteland" xml:space="preserve">
+    <value>Désert cendreux</value>
+  </data>
+  <data name="AsylumStory" xml:space="preserve">
+    <value>L'asile</value>
+  </data>
+  <data name="BairnsCrossing" xml:space="preserve">
+    <value>Carrefour du Marmouset</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>La Terre</value>
+  </data>
+  <data name="BeatificPalace" xml:space="preserve">
+    <value>Palais béatifique</value>
+  </data>
+  <data name="BloatKing" xml:space="preserve">
+    <value>Roi bouffi</value>
+  </data>
+  <data name="BloodMoon" xml:space="preserve">
+    <value>Autel de la lune de sang</value>
+  </data>
+  <data name="BriellasGarden" xml:space="preserve">
+    <value>Jardin de Briella</value>
+  </data>
+  <data name="ButchersQuarter" xml:space="preserve">
+    <value>Quartier du boucher</value>
+  </data>
+  <data name="CathedralOfSeasons" xml:space="preserve">
+    <value>Cathédrale des présages</value>
+  </data>
+  <data name="Challenger" xml:space="preserve">
+    <value>PAS ASSEZ D'ENGRAMMES</value>
+  </data>
+  <data name="CharnelHouse" xml:space="preserve">
+    <value>Barghest l'Infect</value>
+  </data>
+  <data name="CorruptedHarbor" xml:space="preserve">
+    <value>Port corrompu</value>
+  </data>
+  <data name="CottonsKiln" xml:space="preserve">
+    <value>Séchoir à coton</value>
+  </data>
+  <data name="CouncilChamber" xml:space="preserve">
+    <value>Chambre du Conseil</value>
+  </data>
+  <data name="CustodianEye" xml:space="preserve">
+    <value>L'Œil du Conservateur</value>
+  </data>
+  <data name="DarkConduit" xml:space="preserve">
+    <value>Conduit ténébreux</value>
+  </data>
+  <data name="DormantNErudianFacility" xml:space="preserve">
+    <value>Usine n'erudienne désactivée</value>
+  </data>
+  <data name="DranGrenadier" xml:space="preserve">
+    <value>Gwendil : l'Imbrûlée</value>
+  </data>
+  <data name="DrzyrReplicator" xml:space="preserve">
+    <value>Réplicateur drzyr</value>
+  </data>
+  <data name="EndairasEnd" xml:space="preserve">
+    <value>Fin d'Endaira</value>
+  </data>
+  <data name="Engineer" xml:space="preserve">
+    <value>Ingénieur</value>
+  </data>
+  <data name="Engrams" xml:space="preserve">
+    <value>Engrammes</value>
+  </data>
+  <data name="Explorer" xml:space="preserve">
+    <value>Explorateur</value>
+  </data>
+  <data name="FaeArchon" xml:space="preserve">
+    <value>Magistère Dullain</value>
+  </data>
+  <data name="FaeCouncil" xml:space="preserve">
+    <value>Le Conseil des Faës</value>
+  </data>
+  <data name="FaeShamanRing" xml:space="preserve">
+    <value>Bague de chaman faë</value>
+  </data>
+  <data name="FaeWarriorRing" xml:space="preserve">
+    <value>Bague de guerrier faë</value>
+  </data>
+  <data name="Flautist" xml:space="preserve">
+    <value>Nexus de la Racine</value>
+  </data>
+  <data name="ForgottenField" xml:space="preserve">
+    <value>Champ oublié</value>
+  </data>
+  <data name="ForgottenPrison" xml:space="preserve">
+    <value>Prison oubliée</value>
+  </data>
+  <data name="Gems" xml:space="preserve">
+    <value>Mutagemmes</value>
+  </data>
+  <data name="GildedChambers" xml:space="preserve">
+    <value>Chambres d'or</value>
+  </data>
+  <data name="GoldenHall_Nimue" xml:space="preserve">
+    <value>Retraite de Nimuë</value>
+  </data>
+  <data name="Gunslinger" xml:space="preserve">
+    <value>Pistolero</value>
+  </data>
+  <data name="Handler" xml:space="preserve">
+    <value>Maître-chien</value>
+  </data>
+  <data name="HarvestersReach" xml:space="preserve">
+    <value>Étendue du Moissonneur</value>
+  </data>
+  <data name="Hatchery" xml:space="preserve">
+    <value>Premier ancêtre</value>
+  </data>
+  <data name="Hunter" xml:space="preserve">
+    <value>Chasseur</value>
+  </data>
+  <data name="ImperialGardens" xml:space="preserve">
+    <value>Jardins impériaux</value>
+  </data>
+  <data name="IndignantFetish" xml:space="preserve">
+    <value>Fétiche indigné</value>
+  </data>
+  <data name="Invader" xml:space="preserve">
+    <value>Envahisseur</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Alchemist" xml:space="preserve">
+    <value>Alchimiste</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Archon" xml:space="preserve">
+    <value>Archonte</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Challenger" xml:space="preserve">
+    <value>PAS ASSEZ D'ENGRAMMES</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Engineer" xml:space="preserve">
+    <value>Ingénieur</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Gunslinger" xml:space="preserve">
+    <value>Pistolero</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Handler" xml:space="preserve">
+    <value>Maître-chien</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Hunter" xml:space="preserve">
+    <value>Chasseur</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Invader" xml:space="preserve">
+    <value>Envahisseur</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Medic" xml:space="preserve">
+    <value>Médecin</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Summoner" xml:space="preserve">
+    <value>Invocateur</value>
+  </data>
+  <data name="KaeulasRest" xml:space="preserve">
+    <value>Repos de Kaeula</value>
+  </data>
+  <data name="KoaraKuriNest" xml:space="preserve">
+    <value>Nid de koara-kuri</value>
+  </data>
+  <data name="LemarkDistrict" xml:space="preserve">
+    <value>Quartier des Lemark</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>Atrophie</value>
+  </data>
+  <data name="LurkerVents" xml:space="preserve">
+    <value>W.D. 109</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>La Terre</value>
+  </data>
+  <data name="MaleficGallery" xml:space="preserve">
+    <value>Galerie maléfique</value>
+  </data>
+  <data name="ManyFaces" xml:space="preserve">
+    <value>Corruption</value>
+  </data>
+  <data name="Materials" xml:space="preserve">
+    <value>Matériaux</value>
+  </data>
+  <data name="Medic" xml:space="preserve">
+    <value>Médecin</value>
+  </data>
+  <data name="MetaGem_Bandit" xml:space="preserve">
+    <value>Armure de bandit</value>
+  </data>
+  <data name="MetaGem_Bulletweaver" xml:space="preserve">
+    <value>Tisse-balles</value>
+  </data>
+  <data name="MetaGem_Disengage" xml:space="preserve">
+    <value>Désengagement</value>
+  </data>
+  <data name="MetaGem_Extender" xml:space="preserve">
+    <value>Extension</value>
+  </data>
+  <data name="MetaGem_Failsafe" xml:space="preserve">
+    <value>Mesure de sécurité</value>
+  </data>
+  <data name="MetaGem_Lithely" xml:space="preserve">
+    <value>Souplesse</value>
+  </data>
+  <data name="MetaGem_Misfortune" xml:space="preserve">
+    <value>Infortune</value>
+  </data>
+  <data name="MetaGem_Momentum" xml:space="preserve">
+    <value>Dans l'élan</value>
+  </data>
+  <data name="MetaGem_Overdrive" xml:space="preserve">
+    <value>Survitesse</value>
+  </data>
+  <data name="MetaGem_Refunder" xml:space="preserve">
+    <value>Restitution</value>
+  </data>
+  <data name="MetaGem_Reinvigorate" xml:space="preserve">
+    <value>Revigoration</value>
+  </data>
+  <data name="MetaGem_Steadfast" xml:space="preserve">
+    <value>Inébranlable</value>
+  </data>
+  <data name="MetaGem_Striker" xml:space="preserve">
+    <value>Assaillant</value>
+  </data>
+  <data name="MetaGem_Supercharger" xml:space="preserve">
+    <value>Surchargeur</value>
+  </data>
+  <data name="MetaGem_Timewave" xml:space="preserve">
+    <value>Onde temporelle</value>
+  </data>
+  <data name="MetaGem_Transference" xml:space="preserve">
+    <value>Transfert</value>
+  </data>
+  <data name="MetaGem_Transpose" xml:space="preserve">
+    <value>Transposition</value>
+  </data>
+  <data name="MetaGem_TwistingWounds" xml:space="preserve">
+    <value>Couteau dans la plaie</value>
+  </data>
+  <data name="MetaGem_VampireBlade" xml:space="preserve">
+    <value>Lame de Vampire</value>
+  </data>
+  <data name="MetaGem_VengefulStrike" xml:space="preserve">
+    <value>Frappe vindicative</value>
+  </data>
+  <data name="Mods" xml:space="preserve">
+    <value>Modificateurs</value>
+  </data>
+  <data name="Mod_AstralBurst" xml:space="preserve">
+    <value>Explosion astrale</value>
+  </data>
+  <data name="Mod_BloodDraw" xml:space="preserve">
+    <value>Saignée</value>
+  </data>
+  <data name="Mod_Bore" xml:space="preserve">
+    <value>Foreuse</value>
+  </data>
+  <data name="Mod_ConcussiveShot" xml:space="preserve">
+    <value>Tir assommant</value>
+  </data>
+  <data name="Mod_CorrosiveRounds" xml:space="preserve">
+    <value>Tirs corrosifs</value>
+  </data>
+  <data name="Mod_Defrag" xml:space="preserve">
+    <value>Défragmentation</value>
+  </data>
+  <data name="Mod_EnergyWall" xml:space="preserve">
+    <value>Mur d'énergie</value>
+  </data>
+  <data name="Mod_Familiar" xml:space="preserve">
+    <value>Familier</value>
+  </data>
+  <data name="Mod_Fargazer" xml:space="preserve">
+    <value>Scrutateur</value>
+  </data>
+  <data name="Mod_Firestorm" xml:space="preserve">
+    <value>Tempête de feu</value>
+  </data>
+  <data name="Mod_HealingShot" xml:space="preserve">
+    <value>Tir curatif</value>
+  </data>
+  <data name="Mod_Helix" xml:space="preserve">
+    <value>Spirale</value>
+  </data>
+  <data name="Mod_Overflow" xml:space="preserve">
+    <value>Débordement</value>
+  </data>
+  <data name="Mod_PrismaticDriver" xml:space="preserve">
+    <value>Générateur prismatique</value>
+  </data>
+  <data name="Mod_Rootlash" xml:space="preserve">
+    <value>Claquement de racine</value>
+  </data>
+  <data name="Mod_RottedArrow" xml:space="preserve">
+    <value>Flèche putréfiée</value>
+  </data>
+  <data name="Mod_ScrapShot" xml:space="preserve">
+    <value>Tir de ferraille</value>
+  </data>
+  <data name="Mod_Skewer" xml:space="preserve">
+    <value>À la broche 2.0</value>
+  </data>
+  <data name="Mod_SongOfEafir" xml:space="preserve">
+    <value>Chanson d'Eafir</value>
+  </data>
+  <data name="Mod_Soulbinder" xml:space="preserve">
+    <value>Lieur d'âme</value>
+  </data>
+  <data name="Mod_SpaceCrabs" xml:space="preserve">
+    <value>Crabes de l'espace</value>
+  </data>
+  <data name="Mod_StasisBeam" xml:space="preserve">
+    <value>Faisceau de stase</value>
+  </data>
+  <data name="Mod_TimeLapse" xml:space="preserve">
+    <value>Altération temporelle</value>
+  </data>
+  <data name="Mod_Tremor" xml:space="preserve">
+    <value>Tremblements</value>
+  </data>
+  <data name="Mod_VoltaicRondure" xml:space="preserve">
+    <value>Courbure voltaïque</value>
+  </data>
+  <data name="Mod_Witchfire" xml:space="preserve">
+    <value>Feu de sorcier</value>
+  </data>
+  <data name="MotherMind" xml:space="preserve">
+    <value>Esprit-mère</value>
+  </data>
+  <data name="Mudtooth" xml:space="preserve">
+    <value>Dent-Dure</value>
+  </data>
+  <data name="Mutators" xml:space="preserve">
+    <value>Mutagemmes</value>
+  </data>
+  <data name="NerudGuardian" xml:space="preserve">
+    <value>Sha'Hala : Protecteur spectral de N'Erud </value>
+  </data>
+  <data name="NimuesRetreat" xml:space="preserve">
+    <value>Retraite de Nimuë</value>
+  </data>
+  <data name="OraclesRefuge" xml:space="preserve">
+    <value>Refuge de l'Oracle</value>
+  </data>
+  <data name="Phantom" xml:space="preserve">
+    <value>L'Astropathe</value>
+  </data>
+  <data name="PostulantsParlor" xml:space="preserve">
+    <value>Salon du Postulant</value>
+  </data>
+  <data name="Quest_Global_TheHunterDream_Template01" xml:space="preserve">
+    <value>Palais béatifique</value>
+  </data>
+  <data name="Quest_Item_Extermination_AICore" xml:space="preserve">
+    <value>Noyau de mémoire II</value>
+  </data>
+  <data name="Quest_Item_Train_AICore" xml:space="preserve">
+    <value>Code du décorum</value>
+  </data>
+  <data name="Quest_Story_AllFather_DranCity1_Template" xml:space="preserve">
+    <value>Quartier de Brocwithe</value>
+  </data>
+  <data name="Quest_Story_AllFather_DranCity2_Template" xml:space="preserve">
+    <value>Ferbourg</value>
+  </data>
+  <data name="Quest_Story_Empress_Zone01_Template01" xml:space="preserve">
+    <value>Trône rouge</value>
+  </data>
+  <data name="RavagersLair" xml:space="preserve">
+    <value>Repaire du Ravageur</value>
+  </data>
+  <data name="Relic" xml:space="preserve">
+    <value>Relique</value>
+  </data>
+  <data name="Relic_Consumable_BloomingHeart" xml:space="preserve">
+    <value>Cœur épanoui</value>
+  </data>
+  <data name="Relic_Consumable_CrystalHeart" xml:space="preserve">
+    <value>Cœur cristallin</value>
+  </data>
+  <data name="Relic_Consumable_DecayedHeart" xml:space="preserve">
+    <value>Cœur pourri</value>
+  </data>
+  <data name="Relic_Consumable_EnlargedHeart" xml:space="preserve">
+    <value>Cœur élargi</value>
+  </data>
+  <data name="Relic_Consumable_LifelessHeart" xml:space="preserve">
+    <value>Cœur impur</value>
+  </data>
+  <data name="Relic_Consumable_PulsingHeart" xml:space="preserve">
+    <value>Cœur battant</value>
+  </data>
+  <data name="Relic_Consumable_QuiltedHeart" xml:space="preserve">
+    <value>Cœur cousu</value>
+  </data>
+  <data name="Relic_Consumable_ReprocessedHeart" xml:space="preserve">
+    <value>Cœur réaffecté</value>
+  </data>
+  <data name="Relic_Consumable_ResonatingHeart" xml:space="preserve">
+    <value>Cœur résonnant</value>
+  </data>
+  <data name="Relic_Consumable_RipenedHeart" xml:space="preserve">
+    <value>Cœur mûr</value>
+  </data>
+  <data name="Relic_Consumable_RunedHeart" xml:space="preserve">
+    <value>Cœur orné de runes</value>
+  </data>
+  <data name="Relic_Consumable_SalvagedHeart" xml:space="preserve">
+    <value>Cœur rapiécé</value>
+  </data>
+  <data name="Relic_Consumable_ShieldedHeart" xml:space="preserve">
+    <value>Cœur protégé</value>
+  </data>
+  <data name="Relic_Consumable_SiphonHeart" xml:space="preserve">
+    <value>Cœur siphonné</value>
+  </data>
+  <data name="Relic_Consumable_TormentedHeart" xml:space="preserve">
+    <value>Cœur tourmenté</value>
+  </data>
+  <data name="Relic_Consumable_TranquilHeart" xml:space="preserve">
+    <value>Cœur paisible</value>
+  </data>
+  <data name="Relic_Consumable_UnsulliedHeart" xml:space="preserve">
+    <value>Cœur pur</value>
+  </data>
+  <data name="Relic_Consumable_VoidHeart" xml:space="preserve">
+    <value>Cœur du néant</value>
+  </data>
+  <data name="RemainsBelow" xml:space="preserve">
+    <value>Esprit tourmenté</value>
+  </data>
+  <data name="Ring_AcidStone" xml:space="preserve">
+    <value>Pierre acide</value>
+  </data>
+  <data name="Ring_AkariWarBand" xml:space="preserve">
+    <value>Alliance de guerre des Akaris</value>
+  </data>
+  <data name="Ring_AlchemyStone" xml:space="preserve">
+    <value>Pierre alchimique</value>
+  </data>
+  <data name="Ring_AlumniRing" xml:space="preserve">
+    <value>Anneau du diplômé</value>
+  </data>
+  <data name="Ring_AmberMoonstone" xml:space="preserve">
+    <value>Pierre de lune d'ambre</value>
+  </data>
+  <data name="Ring_AnastasijasInspiration" xml:space="preserve">
+    <value>Inspiration d'Anastasija</value>
+  </data>
+  <data name="Ring_ArchersCrest" xml:space="preserve">
+    <value>Emblème de l'archer</value>
+  </data>
+  <data name="Ring_AssassinsSeal" xml:space="preserve">
+    <value>Sceau de l'assassin</value>
+  </data>
+  <data name="Ring_BandBand" xml:space="preserve">
+    <value>Bague d'orchestre</value>
+  </data>
+  <data name="Ring_BisectedRing" xml:space="preserve">
+    <value>Anneau scindé</value>
+  </data>
+  <data name="Ring_BlackCatBand" xml:space="preserve">
+    <value>Anneau du chat noir</value>
+  </data>
+  <data name="Ring_BlackoutRing" xml:space="preserve">
+    <value>Anneau d'extinction</value>
+  </data>
+  <data name="Ring_BlackPawnStamp" xml:space="preserve">
+    <value>Cachet du pion noir</value>
+  </data>
+  <data name="Ring_BlastingCapRing" xml:space="preserve">
+    <value>Anneau de détonation</value>
+  </data>
+  <data name="Ring_BlessedRing" xml:space="preserve">
+    <value>Anneau béni</value>
+  </data>
+  <data name="Ring_BloodJewel" xml:space="preserve">
+    <value>Joyau de sang</value>
+  </data>
+  <data name="Ring_BloodTingedRing" xml:space="preserve">
+    <value>Anneau teinté de sang</value>
+  </data>
+  <data name="Ring_BoosterRing" xml:space="preserve">
+    <value>Anneau de résistance</value>
+  </data>
+  <data name="Ring_BraidedThorns" xml:space="preserve">
+    <value>Épines tressées</value>
+  </data>
+  <data name="Ring_BurdenOfTheAudacious" xml:space="preserve">
+    <value>Fardeau de l'audacieux</value>
+  </data>
+  <data name="Ring_BurdenOfTheDestroyer" xml:space="preserve">
+    <value>Fardeau du destructeur</value>
+  </data>
+  <data name="Ring_BurdenOfTheDivine" xml:space="preserve">
+    <value>Fardeau du divin</value>
+  </data>
+  <data name="Ring_BurdenOfTheFollower" xml:space="preserve">
+    <value>Fardeau du croyant</value>
+  </data>
+  <data name="Ring_BurdenOfTheGambler" xml:space="preserve">
+    <value>Fardeau du parieur</value>
+  </data>
+  <data name="Ring_BurdenOfTheMariner" xml:space="preserve">
+    <value>Fardeau du marin</value>
+  </data>
+  <data name="Ring_BurdenOfTheRebel" xml:space="preserve">
+    <value>Fardeau du rebelle</value>
+  </data>
+  <data name="Ring_BurdenOfTheStargazer" xml:space="preserve">
+    <value>Fardeau de l'astronome</value>
+  </data>
+  <data name="Ring_BurdenOfTheWarlock" xml:space="preserve">
+    <value>Fardeau du sorcier</value>
+  </data>
+  <data name="Ring_CaptainsInsignia" xml:space="preserve">
+    <value>Insigne du capitaine</value>
+  </data>
+  <data name="Ring_CatalogersJewel" xml:space="preserve">
+    <value>Joyau du catalogueur</value>
+  </data>
+  <data name="Ring_CelerityStone" xml:space="preserve">
+    <value>Pierre de célérité</value>
+  </data>
+  <data name="Ring_CompulsionLoop" xml:space="preserve">
+    <value>Boucle d'exaltation</value>
+  </data>
+  <data name="Ring_ConservationSeal" xml:space="preserve">
+    <value>Sceau de conservation</value>
+  </data>
+  <data name="Ring_ConstantVariableRing" xml:space="preserve">
+    <value>Anneau de variable constante</value>
+  </data>
+  <data name="Ring_DeadKingsMemento" xml:space="preserve">
+    <value>Souvenir du roi mort</value>
+  </data>
+  <data name="Ring_DeceiversBand" xml:space="preserve">
+    <value>Alliance de l'imposture</value>
+  </data>
+  <data name="Ring_DeepPocketRing" xml:space="preserve">
+    <value>Anneau des poches sans fond</value>
+  </data>
+  <data name="Ring_DefensiveActionLoop" xml:space="preserve">
+    <value>Boucle de réaction défensive</value>
+  </data>
+  <data name="Ring_DenseSiliconRing" xml:space="preserve">
+    <value>Anneau en silicone épais </value>
+  </data>
+  <data name="Ring_DowngradedRing" xml:space="preserve">
+    <value>Étreinte de Sha'Hala</value>
+  </data>
+  <data name="Ring_DrakestonePearl" xml:space="preserve">
+    <value>Perle en pierre de dragon</value>
+  </data>
+  <data name="Ring_DranMemento" xml:space="preserve">
+    <value>Souvenir des Drans</value>
+  </data>
+  <data name="Ring_DranScavengerSigil" xml:space="preserve">
+    <value>Anneau de récupérateur dran</value>
+  </data>
+  <data name="Ring_DreadFont" xml:space="preserve">
+    <value>Source d'effroi</value>
+  </data>
+  <data name="Ring_DrzyrSniperSigil" xml:space="preserve">
+    <value>Sceau de tireur d'élite drzyr</value>
+  </data>
+  <data name="Ring_DyingEmber" xml:space="preserve">
+    <value>Braise à l'agonie</value>
+  </data>
+  <data name="Ring_EncryptedLoop" xml:space="preserve">
+    <value>Boucle codée</value>
+  </data>
+  <data name="Ring_EndairasEndlessLoop" xml:space="preserve">
+    <value>Boucle sans fin d'Endaira</value>
+  </data>
+  <data name="Ring_ExcessCoil" xml:space="preserve">
+    <value>Bobine de surplus</value>
+  </data>
+  <data name="Ring_FaeBruiserRing" xml:space="preserve">
+    <value>Bague de cogneur faë</value>
+  </data>
+  <data name="Ring_FaeHunterRing" xml:space="preserve">
+    <value>Bague de chasseur faë</value>
+  </data>
+  <data name="Ring_FaelinsSigil" xml:space="preserve">
+    <value>Sceau de Faelin</value>
+  </data>
+  <data name="Ring_FaeProtectorSignet" xml:space="preserve">
+    <value>Sceau du Protecteur des Faës</value>
+  </data>
+  <data name="Ring_FaerinsSigil" xml:space="preserve">
+    <value>Sceau de Faerin</value>
+  </data>
+  <data name="Ring_FaeShamanRing" xml:space="preserve">
+    <value>Bague de chaman faë</value>
+  </data>
+  <data name="Ring_FaeWarriorRing" xml:space="preserve">
+    <value>Bague de guerrier faë</value>
+  </data>
+  <data name="Ring_FeastmastersSignet" xml:space="preserve">
+    <value>Sceau du maître des festins</value>
+  </data>
+  <data name="Ring_FeedbackLoop" xml:space="preserve">
+    <value>Boucle de retour</value>
+  </data>
+  <data name="Ring_FireStone" xml:space="preserve">
+    <value>Pierre de feu</value>
+  </data>
+  <data name="Ring_FlyweightsSting" xml:space="preserve">
+    <value>Piqûre du poids plume</value>
+  </data>
+  <data name="Ring_FocusedJewel" xml:space="preserve">
+    <value>Éclat de concentration</value>
+  </data>
+  <data name="Ring_FrivolousBand" xml:space="preserve">
+    <value>Alliance frivole</value>
+  </data>
+  <data name="Ring_GalvanizedResupplyBand" xml:space="preserve">
+    <value>Bague de réapprovisionnement accéléré</value>
+  </data>
+  <data name="Ring_GameMastersPride" xml:space="preserve">
+    <value>Fierté du maître du jeu</value>
+  </data>
+  <data name="Ring_GeneratingBand" xml:space="preserve">
+    <value>Bague de génération spontanée</value>
+  </data>
+  <data name="Ring_GroundingStone" xml:space="preserve">
+    <value>Pierre d'isolation</value>
+  </data>
+  <data name="Ring_GuardiansRing" xml:space="preserve">
+    <value>Anneau du Protecteur</value>
+  </data>
+  <data name="Ring_GunslingersRing" xml:space="preserve">
+    <value>Anneau du pistolero</value>
+  </data>
+  <data name="Ring_HardcoreMetalBand" xml:space="preserve">
+    <value>Bague de métal hardcore</value>
+  </data>
+  <data name="Ring_HardenedCoil" xml:space="preserve">
+    <value>Bobine renforcée</value>
+  </data>
+  <data name="Ring_HaymakersRing" xml:space="preserve">
+    <value>Anneau du faneur</value>
+  </data>
+  <data name="Ring_HeartOfTheWolf" xml:space="preserve">
+    <value>Cœur du loup</value>
+  </data>
+  <data name="Ring_HexWard" xml:space="preserve">
+    <value>Sceau ensorcelé</value>
+  </data>
+  <data name="Ring_KineticCycleStone" xml:space="preserve">
+    <value>Pierre de cycle cinétique</value>
+  </data>
+  <data name="Ring_LithicSignet" xml:space="preserve">
+    <value>Sceau lithique</value>
+  </data>
+  <data name="Ring_LodestoneRing" xml:space="preserve">
+    <value>Anneau de magnétite</value>
+  </data>
+  <data name="Ring_LowYieldRecoveryRing" xml:space="preserve">
+    <value>Anneau de récupération à faible rendement</value>
+  </data>
+  <data name="Ring_MechanicsCog" xml:space="preserve">
+    <value>Engrenage du mécanicien</value>
+  </data>
+  <data name="Ring_MetalDriver" xml:space="preserve">
+    <value>Générateur de métal</value>
+  </data>
+  <data name="Ring_MeteoriteShardRing" xml:space="preserve">
+    <value>Anneau d'éclat de météorite</value>
+  </data>
+  <data name="Ring_Microcompressor" xml:space="preserve">
+    <value>Microcompresseur</value>
+  </data>
+  <data name="Ring_MomentumDriver" xml:space="preserve">
+    <value>Générateur d'élan</value>
+  </data>
+  <data name="Ring_OutcastRing" xml:space="preserve">
+    <value>Anneau du paria</value>
+  </data>
+  <data name="Ring_PanMageSigil" xml:space="preserve">
+    <value>Cristal des Ahanaés</value>
+  </data>
+  <data name="Ring_PointFocusRing" xml:space="preserve">
+    <value>Anneau de point focal</value>
+  </data>
+  <data name="Ring_PowerSaver" xml:space="preserve">
+    <value>Économies d'énergie</value>
+  </data>
+  <data name="Ring_ProbabilityCord" xml:space="preserve">
+    <value>Cordon de probabilité</value>
+  </data>
+  <data name="Ring_PropulsionLoop" xml:space="preserve">
+    <value>Boucle de propulsion</value>
+  </data>
+  <data name="Ring_ProvisionerRing" xml:space="preserve">
+    <value>Anneau de ravitaillement</value>
+  </data>
+  <data name="Ring_ReapingStone" xml:space="preserve">
+    <value>Pierre de moisson</value>
+  </data>
+  <data name="Ring_ReroutingCable" xml:space="preserve">
+    <value>Fil d'acheminement</value>
+  </data>
+  <data name="Ring_ReserveBoostingGem" xml:space="preserve">
+    <value>Gemme d'amélioration de réserve</value>
+  </data>
+  <data name="Ring_RingOfCrisis" xml:space="preserve">
+    <value>Anneau de crise</value>
+  </data>
+  <data name="Ring_RingOfDeflection" xml:space="preserve">
+    <value>Anneau de déviation</value>
+  </data>
+  <data name="Ring_RingOfDiversion" xml:space="preserve">
+    <value>Anneau de diversion</value>
+  </data>
+  <data name="Ring_RingOfFlawedBeauty" xml:space="preserve">
+    <value>Bague de beauté altérée</value>
+  </data>
+  <data name="Ring_RingOfGrace" xml:space="preserve">
+    <value>Anneau de grâce</value>
+  </data>
+  <data name="Ring_RingOfOmens" xml:space="preserve">
+    <value>Anneau des présages</value>
+  </data>
+  <data name="Ring_RingOfRestocking" xml:space="preserve">
+    <value>Anneau de réapprovisionnement</value>
+  </data>
+  <data name="Ring_RingOfRetribution" xml:space="preserve">
+    <value>Anneau de rétribution</value>
+  </data>
+  <data name="Ring_RingOfTheAdmiral" xml:space="preserve">
+    <value>Anneau usé de l'amiral</value>
+  </data>
+  <data name="Ring_RingOfTheForestSpirit" xml:space="preserve">
+    <value>Anneau de l'esprit de la forêt</value>
+  </data>
+  <data name="Ring_RingOfTheRobust" xml:space="preserve">
+    <value>Alliance des robustes</value>
+  </data>
+  <data name="Ring_RockOfAnguish" xml:space="preserve">
+    <value>Pierre d'angoisse</value>
+  </data>
+  <data name="Ring_RustedHeirloom" xml:space="preserve">
+    <value>Bijou de famille rouillé</value>
+  </data>
+  <data name="Ring_Sagestone" xml:space="preserve">
+    <value>Pierre de sagesse</value>
+  </data>
+  <data name="Ring_SealOfTheEmpress" xml:space="preserve">
+    <value>Sceau de l'impératrice</value>
+  </data>
+  <data name="Ring_ShaedBloomCrystal" xml:space="preserve">
+    <value>Cristal de fleur du Shaëd</value>
+  </data>
+  <data name="Ring_ShardBandedRing" xml:space="preserve">
+    <value>Anneau d'éclats</value>
+  </data>
+  <data name="Ring_ShinyHogLure" xml:space="preserve">
+    <value>Appât à porc luisant</value>
+  </data>
+  <data name="Ring_SingedRing" xml:space="preserve">
+    <value>Anneau roussi</value>
+  </data>
+  <data name="Ring_SoulLink" xml:space="preserve">
+    <value>Lien spirituel</value>
+  </data>
+  <data name="Ring_SpiritStone" xml:space="preserve">
+    <value>Pierre d'esprit</value>
+  </data>
+  <data name="Ring_StockpileCharger" xml:space="preserve">
+    <value>Chargeur de réserve</value>
+  </data>
+  <data name="Ring_StoneOfBalance" xml:space="preserve">
+    <value>Pierre d'équilibre</value>
+  </data>
+  <data name="Ring_StoneOfContinuance" xml:space="preserve">
+    <value>Pierre de continuité</value>
+  </data>
+  <data name="Ring_StoneOfExpanse" xml:space="preserve">
+    <value>Pierre d'étendue</value>
+  </data>
+  <data name="Ring_StoneOfMalevolence" xml:space="preserve">
+    <value>Pierre de malveillance</value>
+  </data>
+  <data name="Ring_StreamCoupler" xml:space="preserve">
+    <value>Coupleur de flux</value>
+  </data>
+  <data name="Ring_SubterfugeLink" xml:space="preserve">
+    <value>Lien de subterfuge</value>
+  </data>
+  <data name="Ring_SuppressionWard" xml:space="preserve">
+    <value>Sceau de suppression</value>
+  </data>
+  <data name="Ring_TargetingJewel" xml:space="preserve">
+    <value>Joyau de ciblage</value>
+  </data>
+  <data name="Ring_TarnishedRing" xml:space="preserve">
+    <value>Anneau terni</value>
+  </data>
+  <data name="Ring_TearOfKaeula" xml:space="preserve">
+    <value>Larme de Kaeula</value>
+  </data>
+  <data name="Ring_TempestConduit" xml:space="preserve">
+    <value>Catalyseur de la tempête</value>
+  </data>
+  <data name="Ring_TightlyWoundCoil" xml:space="preserve">
+    <value>Bobine fermement enroulée</value>
+  </data>
+  <data name="Ring_TimekeepersJewel" xml:space="preserve">
+    <value>Joyau du garde-temps</value>
+  </data>
+  <data name="Ring_TombDwellersRing" xml:space="preserve">
+    <value>Anneau du gardien des tombes</value>
+  </data>
+  <data name="Ring_VacuumSeal" xml:space="preserve">
+    <value>Joint hermétique</value>
+  </data>
+  <data name="Ring_VestigeOfPower" xml:space="preserve">
+    <value>Vestige de pouvoir</value>
+  </data>
+  <data name="Ring_WaxSealedRing" xml:space="preserve">
+    <value>Chevalière de cire</value>
+  </data>
+  <data name="Ring_WhitePawnStamp" xml:space="preserve">
+    <value>Cachet du pion blanc</value>
+  </data>
+  <data name="Ring_WindHollowCirclet" xml:space="preserve">
+    <value>Couronne de creuse-vent</value>
+  </data>
+  <data name="Ring_ZaniasMalice" xml:space="preserve">
+    <value>Malveillance de Zania</value>
+  </data>
+  <data name="Ring_ZoheesRing" xml:space="preserve">
+    <value>Anneau de Zohee</value>
+  </data>
+  <data name="RootCultist" xml:space="preserve">
+    <value>Légion</value>
+  </data>
+  <data name="RootEarthAshenWasteland" xml:space="preserve">
+    <value>Désert cendreux</value>
+  </data>
+  <data name="RootEarthCorruptedHarbor" xml:space="preserve">
+    <value>Port corrompu</value>
+  </data>
+  <data name="RootHorror" xml:space="preserve">
+    <value>Ombre de Kaeula</value>
+  </data>
+  <data name="RootNexus" xml:space="preserve">
+    <value>Nexus de la Racine</value>
+  </data>
+  <data name="Sarcophagus" xml:space="preserve">
+    <value>Putréfaction</value>
+  </data>
+  <data name="ShatteredGallery" xml:space="preserve">
+    <value>Galerie brisée</value>
+  </data>
+  <data name="SpectrumNexus" xml:space="preserve">
+    <value>Nexus du spectre</value>
+  </data>
+  <data name="StoreRoom" xml:space="preserve">
+    <value>La progéniture</value>
+  </data>
+  <data name="Summoner" xml:space="preserve">
+    <value>Invocateur</value>
+  </data>
+  <data name="TerminusStation" xml:space="preserve">
+    <value>Terminus</value>
+  </data>
+  <data name="TheAstroPathsRespite" xml:space="preserve">
+    <value>Répit des astropathes</value>
+  </data>
+  <data name="TheCustodian" xml:space="preserve">
+    <value>Le Conservateur</value>
+  </data>
+  <data name="TheDappledGlade" xml:space="preserve">
+    <value>Clairière tachetée</value>
+  </data>
+  <data name="TheExpandingGlade" xml:space="preserve">
+    <value>Clairière étendue</value>
+  </data>
+  <data name="TheFarWoods" xml:space="preserve">
+    <value>Bois reclus</value>
+  </data>
+  <data name="TheGreatBole" xml:space="preserve">
+    <value>Grand tronc</value>
+  </data>
+  <data name="TheGreatHall" xml:space="preserve">
+    <value>Grande salle</value>
+  </data>
+  <data name="TheGreatSewers" xml:space="preserve">
+    <value>Grands égouts</value>
+  </data>
+  <data name="TheHatchery" xml:space="preserve">
+    <value>Couveuse</value>
+  </data>
+  <data name="TheHunter" xml:space="preserve">
+    <value>La Chasseresse</value>
+  </data>
+  <data name="TheLament" xml:space="preserve">
+    <value>La Complainte</value>
+  </data>
+  <data name="TheNamelessNest" xml:space="preserve">
+    <value>Nid sans nom</value>
+  </data>
+  <data name="ThePhantomWasteland" xml:space="preserve">
+    <value>Désert fantomatique</value>
+  </data>
+  <data name="ThePutridDomain" xml:space="preserve">
+    <value>Domaine putride</value>
+  </data>
+  <data name="TheRedThrone" xml:space="preserve">
+    <value>Trône rouge</value>
+  </data>
+  <data name="TheTwistedChantry" xml:space="preserve">
+    <value>Chapelle noueuse</value>
+  </data>
+  <data name="ThresholdOfTheUnknown" xml:space="preserve">
+    <value>Seuil de l'inconnu</value>
+  </data>
+  <data name="TillersRest" xml:space="preserve">
+    <value>Repos du laboureur</value>
+  </data>
+  <data name="TormentedAsylum" xml:space="preserve">
+    <value>Asile tourmenté</value>
+  </data>
+  <data name="TowerHeist" xml:space="preserve">
+    <value>E.D. Alpha</value>
+  </data>
+  <data name="TowerOfTheUnseen" xml:space="preserve">
+    <value>Tour de l'invisible</value>
+  </data>
+  <data name="Train" xml:space="preserve">
+    <value>Le Train</value>
+  </data>
+  <data name="TraitBook" xml:space="preserve">
+    <value>Tome de connaissance</value>
+  </data>
+  <data name="Trait_AmmoReserves" xml:space="preserve">
+    <value>Réserves de munitions</value>
+  </data>
+  <data name="Trait_ArcaneStrike" xml:space="preserve">
+    <value>Frappe arcanique</value>
+  </data>
+  <data name="Trait_Barkskin" xml:space="preserve">
+    <value>Peau d'écorce</value>
+  </data>
+  <data name="Trait_BloodBond" xml:space="preserve">
+    <value>Lien de sang</value>
+  </data>
+  <data name="Trait_Bloodstream" xml:space="preserve">
+    <value>Rivière de sang</value>
+  </data>
+  <data name="Trait_Fitness" xml:space="preserve">
+    <value>Pas chassé</value>
+  </data>
+  <data name="Trait_FlashCaster" xml:space="preserve">
+    <value>Déclic</value>
+  </data>
+  <data name="Trait_Footwork" xml:space="preserve">
+    <value>Jeu de jambes</value>
+  </data>
+  <data name="Trait_Fortify" xml:space="preserve">
+    <value>Fortification</value>
+  </data>
+  <data name="Trait_Glutton" xml:space="preserve">
+    <value>Glouton</value>
+  </data>
+  <data name="Trait_Handling" xml:space="preserve">
+    <value>Maniement</value>
+  </data>
+  <data name="Trait_Kinship" xml:space="preserve">
+    <value>Déblocage de maîtrise d'archétype</value>
+  </data>
+  <data name="Trait_Longshot" xml:space="preserve">
+    <value>Déblocage de maîtrise d'archétype</value>
+  </data>
+  <data name="Trait_Potency" xml:space="preserve">
+    <value>Double dose</value>
+  </data>
+  <data name="Trait_Recovery" xml:space="preserve">
+    <value>Récupération</value>
+  </data>
+  <data name="Trait_Regrowth" xml:space="preserve">
+    <value>Renouveau</value>
+  </data>
+  <data name="Trait_Resonance" xml:space="preserve">
+    <value>Résonance</value>
+  </data>
+  <data name="Trait_Revivalist" xml:space="preserve">
+    <value>Réanimateur</value>
+  </data>
+  <data name="Trait_Rugged" xml:space="preserve">
+    <value>Robuste</value>
+  </data>
+  <data name="Trait_Scholar" xml:space="preserve">
+    <value>Érudit</value>
+  </data>
+  <data name="Trait_Shadeskin" xml:space="preserve">
+    <value>Peau d'ombre</value>
+  </data>
+  <data name="Trait_Siphoner" xml:space="preserve">
+    <value>Vampire</value>
+  </data>
+  <data name="Trait_Spirit" xml:space="preserve">
+    <value>Esprit</value>
+  </data>
+  <data name="Trait_StrongBack" xml:space="preserve">
+    <value>Déblocage de maîtrise d'archétype</value>
+  </data>
+  <data name="Trait_Swiftness" xml:space="preserve">
+    <value>Rapidité</value>
+  </data>
+  <data name="Trait_Triage" xml:space="preserve">
+    <value>Sélection naturelle</value>
+  </data>
+  <data name="Trait_Untouchable" xml:space="preserve">
+    <value>Intouchable</value>
+  </data>
+  <data name="Trait_Vigor" xml:space="preserve">
+    <value>Vitalité</value>
+  </data>
+  <data name="Trait_Wayfarer" xml:space="preserve">
+    <value>Voyageur</value>
+  </data>
+  <data name="VaultOfTheFormless" xml:space="preserve">
+    <value>Caveau du sans forme</value>
+  </data>
+  <data name="VoidVesselFacility" xml:space="preserve">
+    <value>Usine du vaisseau du néant</value>
+  </data>
+  <data name="Ward13" xml:space="preserve">
+    <value>Service 13</value>
+  </data>
+  <data name="Weapons" xml:space="preserve">
+    <value>Armes</value>
+  </data>
+  <data name="Weapon_Aphelion" xml:space="preserve">
+    <value>Aphélie</value>
+  </data>
+  <data name="Weapon_AssassinsDagger" xml:space="preserve">
+    <value>Dague d'assassin</value>
+  </data>
+  <data name="Weapon_AtomSmasher" xml:space="preserve">
+    <value>Briseur d'atomes</value>
+  </data>
+  <data name="Weapon_AtomSplitter" xml:space="preserve">
+    <value>Diviseur d'atomes</value>
+  </data>
+  <data name="Weapon_BladeOfGul" xml:space="preserve">
+    <value>Lame de Gul</value>
+  </data>
+  <data name="Weapon_BoltDriver" xml:space="preserve">
+    <value>Clé à chocs</value>
+  </data>
+  <data name="Weapon_BoneChopper" xml:space="preserve">
+    <value>Trancheur d'os</value>
+  </data>
+  <data name="Weapon_Bow" xml:space="preserve">
+    <value>Arc de chasse royal</value>
+  </data>
+  <data name="Weapon_CrescentMoon" xml:space="preserve">
+    <value>Croissant de lune</value>
+  </data>
+  <data name="Weapon_Crossbow" xml:space="preserve">
+    <value>Arbalète</value>
+  </data>
+  <data name="Weapon_CubeGun" xml:space="preserve">
+    <value>Fusil cubique</value>
+  </data>
+  <data name="Weapon_Deceit" xml:space="preserve">
+    <value>Traîtrise</value>
+  </data>
+  <data name="Weapon_Dreamcatcher" xml:space="preserve">
+    <value>Attrape-rêves</value>
+  </data>
+  <data name="Weapon_EdgeOfTheForest" xml:space="preserve">
+    <value>Lisière de la forêt</value>
+  </data>
+  <data name="Weapon_Enigma" xml:space="preserve">
+    <value>Énigme</value>
+  </data>
+  <data name="Weapon_FeralJudgment" xml:space="preserve">
+    <value>Jugement féral</value>
+  </data>
+  <data name="Weapon_Flail" xml:space="preserve">
+    <value>Fléau d'acier</value>
+  </data>
+  <data name="Weapon_Godsplitter" xml:space="preserve">
+    <value>Fendeur de dieu</value>
+  </data>
+  <data name="Weapon_Greatsword" xml:space="preserve">
+    <value>Épée à deux mains en fer</value>
+  </data>
+  <data name="Weapon_Hatchet" xml:space="preserve">
+    <value>Hachette de récupération</value>
+  </data>
+  <data name="Weapon_Hellfire" xml:space="preserve">
+    <value>Feu de l'enfer</value>
+  </data>
+  <data name="Weapon_HerosSword" xml:space="preserve">
+    <value>Épée héroïque</value>
+  </data>
+  <data name="Weapon_HuntingPistol" xml:space="preserve">
+    <value>Tir de précision</value>
+  </data>
+  <data name="Weapon_HuntressSpear" xml:space="preserve">
+    <value>Lance de la Chasseresse</value>
+  </data>
+  <data name="Weapon_Katana" xml:space="preserve">
+    <value>Katana d'acier</value>
+  </data>
+  <data name="Weapon_KrellAxe" xml:space="preserve">
+    <value>Hache krell</value>
+  </data>
+  <data name="Weapon_LabyrinthStaff" xml:space="preserve">
+    <value>Bâton du Labyrinthe</value>
+  </data>
+  <data name="Weapon_LeverAction_Rusty" xml:space="preserve">
+    <value>Fusil à levier rouillé</value>
+  </data>
+  <data name="Weapon_LMG" xml:space="preserve">
+    <value>XMG57 « Scie à os »</value>
+  </data>
+  <data name="Weapon_Magnum" xml:space="preserve">
+    <value>Silverback modèle 500</value>
+  </data>
+  <data name="Weapon_Merciless" xml:space="preserve">
+    <value>Sans pitié</value>
+  </data>
+  <data name="Weapon_Meridian" xml:space="preserve">
+    <value>Méridienne</value>
+  </data>
+  <data name="Weapon_Nebula" xml:space="preserve">
+    <value>Nébuleuse</value>
+  </data>
+  <data name="Weapon_Nightfall" xml:space="preserve">
+    <value>Crépuscule</value>
+  </data>
+  <data name="Weapon_Nightshade" xml:space="preserve">
+    <value>Belle-de-nuit</value>
+  </data>
+  <data name="Weapon_OrnateBlade" xml:space="preserve">
+    <value>Lame ornementée</value>
+  </data>
+  <data name="Weapon_PlasmaCutter" xml:space="preserve">
+    <value>Découpeur à plasma</value>
+  </data>
+  <data name="Weapon_PulseRifle" xml:space="preserve">
+    <value>Fusil à pulsation</value>
+  </data>
+  <data name="Weapon_RedDoeStaff" xml:space="preserve">
+    <value>Bâton de la Biche rouge</value>
+  </data>
+  <data name="Weapon_Repeater_Rusty" xml:space="preserve">
+    <value>Pistolet semi-automatique rouillé</value>
+  </data>
+  <data name="Weapon_Revolver" xml:space="preserve">
+    <value>Classique de Western</value>
+  </data>
+  <data name="Weapon_RoyalBroadsword" xml:space="preserve">
+    <value>Claymore royale</value>
+  </data>
+  <data name="Weapon_RunePistol" xml:space="preserve">
+    <value>Pistolet runique</value>
+  </data>
+  <data name="Weapon_RuptureCannon" xml:space="preserve">
+    <value>Déchireur</value>
+  </data>
+  <data name="Weapon_Sagittarius" xml:space="preserve">
+    <value>Sagittaire</value>
+  </data>
+  <data name="Weapon_Savior" xml:space="preserve">
+    <value>Sauveur</value>
+  </data>
+  <data name="Weapon_ServicePistol" xml:space="preserve">
+    <value>Pistolet de service</value>
+  </data>
+  <data name="Weapon_ShortBarrel" xml:space="preserve">
+    <value>Double canon</value>
+  </data>
+  <data name="Weapon_Shotgun" xml:space="preserve">
+    <value>Fusil de chasse de Ford</value>
+  </data>
+  <data name="Weapon_Smolder" xml:space="preserve">
+    <value>Immolateur</value>
+  </data>
+  <data name="Weapon_Sorrow" xml:space="preserve">
+    <value>Chagrin</value>
+  </data>
+  <data name="Weapon_SpectralBlade" xml:space="preserve">
+    <value>Lame spectrale</value>
+  </data>
+  <data name="Weapon_Sporebloom" xml:space="preserve">
+    <value>Éclat de spores</value>
+  </data>
+  <data name="Weapon_Starkiller" xml:space="preserve">
+    <value>Astricide</value>
+  </data>
+  <data name="Weapon_StarShot" xml:space="preserve">
+    <value>Tir étoilé</value>
+  </data>
+  <data name="Weapon_Stonebreaker" xml:space="preserve">
+    <value>Brise-pierre</value>
+  </data>
+  <data name="Weapon_TalRatha_Hammer" xml:space="preserve">
+    <value>Géante gazeuse</value>
+  </data>
+  <data name="Weapon_TommyGun" xml:space="preserve">
+    <value>Mitraillette</value>
+  </data>
+  <data name="Weapon_TwistedArbalest" xml:space="preserve">
+    <value>Arbalète noueuse</value>
+  </data>
+  <data name="Weapon_ViceGrips" xml:space="preserve">
+    <value>Poigne d'étau</value>
+  </data>
+  <data name="Weapon_WorldsEdge" xml:space="preserve">
+    <value>Fil du réel</value>
+  </data>
+  <data name="World_Earth" xml:space="preserve">
+    <value>La Terre</value>
+  </data>
+  <data name="World_Labyrinth" xml:space="preserve">
+    <value>Le Labyrinthe</value>
+  </data>
+  <data name="World_RootEarth" xml:space="preserve">
+    <value>Terre de la Racine</value>
+  </data>
+  <data name="Weapon_CoachGun" xml:space="preserve">
+    <value>Fusil de défense</value>
+  </data>
+  <data name="Ring_BandOfAccord" xml:space="preserve">
+    <value>Alliance d'accord</value>
+  </data>
+  <data name="Armor_Arcanist" xml:space="preserve">
+    <value>Le Labyrinthe</value>
+  </data>
+</root>
