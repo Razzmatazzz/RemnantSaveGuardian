@@ -1845,4 +1845,7 @@
   <data name="World_RootEarth" xml:space="preserve">
     <value>Root Earth</value>
   </data>
+  <data name="Weapon_CoachGun" xml:space="preserve">
+    <value>Coach Gun</value>
+  </data>
 </root>

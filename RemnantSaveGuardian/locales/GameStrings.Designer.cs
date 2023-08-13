@@ -4669,6 +4669,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Coach Gun.
+        /// </summary>
+        public static string Weapon_CoachGun {
+            get {
+                return ResourceManager.GetString("Weapon_CoachGun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Crescent Moon.
         /// </summary>
         public static string Weapon_CrescentMoon {
