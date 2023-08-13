@@ -5038,7 +5038,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shotgun.
+        ///   Looks up a localized string similar to Ford&apos;s Scattergun.
         /// </summary>
         public static string Weapon_Shotgun {
             get {
