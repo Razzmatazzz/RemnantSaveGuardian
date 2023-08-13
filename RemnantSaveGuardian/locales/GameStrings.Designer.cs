@@ -709,6 +709,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Labyrinth.
+        /// </summary>
+        public static string Armor_Arcanist {
+            get {
+                return ResourceManager.GetString("Armor_Arcanist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Archon.
         /// </summary>
         public static string Armor_Archon {

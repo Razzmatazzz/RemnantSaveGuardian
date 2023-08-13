@@ -1851,4 +1851,7 @@
   <data name="Ring_BandOfAccord" xml:space="preserve">
     <value>Band of Accord</value>
   </data>
+  <data name="Armor_Arcanist" xml:space="preserve">
+    <value>Labyrinth</value>
+  </data>
 </root>
