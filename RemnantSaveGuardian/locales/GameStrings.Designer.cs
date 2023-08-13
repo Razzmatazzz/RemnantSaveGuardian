@@ -169,7 +169,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chains of Amplification.
+        ///   Looks up a localized string similar to Chains Of Amplification.
         /// </summary>
         public static string Amulet_ChainsOfAmplification {
             get {
@@ -2167,7 +2167,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sha&apos;Hala : Spectral Guardian of N&apos;Erud.
+        ///   Looks up a localized string similar to Sha’Hala : Spectral Guardian of N’Erud.
         /// </summary>
         public static string NerudGuardian {
             get {
@@ -2761,7 +2761,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Burden of the Rebel.
+        ///   Looks up a localized string similar to Burden Of The Rebel.
         /// </summary>
         public static string Ring_BurdenOfTheRebel {
             get {
@@ -3175,7 +3175,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heart of the Wolf.
+        ///   Looks up a localized string similar to Heart Of The Wolf.
         /// </summary>
         public static string Ring_HeartOfTheWolf {
             get {
@@ -3436,7 +3436,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ring of Restocking.
+        ///   Looks up a localized string similar to Ring Of Restocking.
         /// </summary>
         public static string Ring_RingOfRestocking {
             get {
@@ -3472,7 +3472,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ring of the Robust.
+        ///   Looks up a localized string similar to Ring Of The Robust.
         /// </summary>
         public static string Ring_RingOfTheRobust {
             get {
@@ -3616,7 +3616,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stone of Malevolence.
+        ///   Looks up a localized string similar to Stone Of Malevolence.
         /// </summary>
         public static string Ring_StoneOfMalevolence {
             get {

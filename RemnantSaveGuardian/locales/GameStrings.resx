@@ -157,7 +157,7 @@
     <value>Butcher's Fetish</value>
   </data>
   <data name="Amulet_ChainsOfAmplification" xml:space="preserve">
-    <value>Chains of Amplification</value>
+    <value>Chains Of Amplification</value>
   </data>
   <data name="Amulet_CleansingStone" xml:space="preserve">
     <value>Cleansing Stone</value>
@@ -820,7 +820,7 @@
     <value>Mutators</value>
   </data>
   <data name="NerudGuardian" xml:space="preserve">
-    <value>Sha'Hala : Spectral Guardian of N'Erud</value>
+    <value>Sha’Hala : Spectral Guardian of N’Erud</value>
   </data>
   <data name="Nightweb" xml:space="preserve">
     <value>Nightweaver's Web</value>
@@ -1021,7 +1021,7 @@
     <value>Burden of the Mariner</value>
   </data>
   <data name="Ring_BurdenOfTheRebel" xml:space="preserve">
-    <value>Burden of the Rebel</value>
+    <value>Burden Of The Rebel</value>
   </data>
   <data name="Ring_BurdenOfTheStargazer" xml:space="preserve">
     <value>Burden of the Stargazer</value>
@@ -1159,7 +1159,7 @@
     <value>Haymaker's Ring</value>
   </data>
   <data name="Ring_HeartOfTheWolf" xml:space="preserve">
-    <value>Heart of the Wolf</value>
+    <value>Heart Of The Wolf</value>
   </data>
   <data name="Ring_HexWard" xml:space="preserve">
     <value>Hex Ward</value>
@@ -1246,7 +1246,7 @@
     <value>Ring of Omens</value>
   </data>
   <data name="Ring_RingOfRestocking" xml:space="preserve">
-    <value>Ring of Restocking</value>
+    <value>Ring Of Restocking</value>
   </data>
   <data name="Ring_RingOfRetribution" xml:space="preserve">
     <value>Ring of Retribution</value>
@@ -1258,7 +1258,7 @@
     <value>Ring of the Forest Spirit</value>
   </data>
   <data name="Ring_RingOfTheRobust" xml:space="preserve">
-    <value>Ring of the Robust</value>
+    <value>Ring Of The Robust</value>
   </data>
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Rock of Anguish</value>
@@ -1306,7 +1306,7 @@
     <value>Stone of Expanse</value>
   </data>
   <data name="Ring_StoneOfMalevolence" xml:space="preserve">
-    <value>Stone of Malevolence</value>
+    <value>Stone Of Malevolence</value>
   </data>
   <data name="Ring_StreamCoupler" xml:space="preserve">
     <value>Stream Coupler</value>
