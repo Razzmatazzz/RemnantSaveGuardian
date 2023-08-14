@@ -161,6 +161,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 Dispatcher.Invoke(() => {
                     Save = new(Properties.Settings.Default.SaveFolder);
                     Save.UpdateCharacters();
+                    reloadPage();
                     checkAdventureTab();
                 });
             }
@@ -271,7 +272,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private void checkAdventureTab()
         {
             Dispatcher.Invoke(() => {
-                if (Save.Characters[CharacterControl.SelectedIndex].AdventureEvents.Count > 0)
+                if (CharacterControl.SelectedIndex > -1 && Save.Characters[CharacterControl.SelectedIndex].AdventureEvents.Count > 0)
                 {
                     tabAdventure.IsEnabled = true;
                 }
@@ -285,7 +286,15 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
             });
         }
-
+        private void reloadPage()
+        {
+            CharacterControl.ItemsSource = null;
+            CharacterControl.ItemsSource = Save.Characters;
+            if (filteredCampaign == null) filteredCampaign = new();
+            if (filteredAdventure == null) filteredAdventure = new();
+            CharacterControl.SelectedIndex = 0;
+            CharacterControl.Items.Refresh();
+        }
         private void reloadEventGrids()
         {
             var tempData = filteredCampaign;

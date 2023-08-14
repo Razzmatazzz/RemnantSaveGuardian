@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.IO.Compression;
+using System.Runtime.InteropServices;
 
 namespace RemnantSaveGuardian
 {
@@ -14,6 +15,10 @@ namespace RemnantSaveGuardian
         private string profileFile;
         private RemnantSaveType saveType;
         private WindowsSave winSave;
+
+        public static readonly Guid FOLDERID_SavedGames = new(0x4C5C32FF, 0xBB9D, 0x43B0, 0xB5, 0xB4, 0x2D, 0x72, 0xE5, 0x4E, 0xAA, 0xA4);
+        [DllImport("shell32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, PreserveSig = false)]
+        static extern string SHGetKnownFolderPath([MarshalAs(UnmanagedType.LPStruct)] Guid rfid, uint dwFlags, IntPtr hToken = default);
 
         public RemnantSave(string path)
         {
@@ -123,12 +128,13 @@ namespace RemnantSaveGuardian
 
         public static string DefaultSaveFolder()
         {
-            var saveFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Saved Games\Remnant2";
+            var saveFolder = SHGetKnownFolderPath(FOLDERID_SavedGames, 0) + @"\Remnant2";
             if (Directory.Exists($@"{saveFolder}\Steam"))
             {
                 saveFolder += @"\Steam";
                 var userFolders = Directory.GetDirectories(saveFolder);
-                if (userFolders.Length > 0) {
+                if (userFolders.Length > 0)
+                {
                     return userFolders[0];
                 }
             }
