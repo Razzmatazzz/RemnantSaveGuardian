@@ -209,7 +209,7 @@ namespace RemnantSaveGuardian
             if (File.Exists("game.json"))
             {
                 var json = JsonNode.Parse(File.ReadAllText("game.json"));
-                if (json["version"].GetValue<int>() > embedJson["verson"].GetValue<int>())
+                if (json["version"].GetValue<int>() > embedJson["version"].GetValue<int>())
                 {
                     return json;
                 }
