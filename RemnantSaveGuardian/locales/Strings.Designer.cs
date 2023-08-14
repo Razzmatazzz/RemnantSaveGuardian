@@ -421,6 +421,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You cannot export to your save folder or a folder containing save backups..
+        /// </summary>
+        public static string export_save_invalid_folder_error {
+            get {
+                return ResourceManager.GetString("export_save_invalid_folder_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Game Folder.
         /// </summary>
         public static string Game_Folder {

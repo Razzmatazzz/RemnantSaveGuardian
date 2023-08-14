@@ -237,6 +237,9 @@
   <data name="Export save files as plaintext" xml:space="preserve">
     <value>Export save files</value>
   </data>
+  <data name="export_save_invalid_folder_error" xml:space="preserve">
+    <value>You cannot export to your save folder or a folder containing save backups.</value>
+  </data>
   <data name="Game Folder" xml:space="preserve">
     <value>Game Folder</value>
   </data>

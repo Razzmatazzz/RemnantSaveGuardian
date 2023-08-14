@@ -1124,6 +1124,10 @@ namespace RemnantSaveGuardian
             {
                 var injectable = new RemnantWorldEvent(injectablePair.Key);
                 var parent = new RemnantWorldEvent(injectablePair.Value);
+                if (GameInfo.InjectableParents.ContainsKey(injectable._name))
+                {
+                    //parent._name = GameInfo.InjectableParents[injectable._name];
+                }
                 var world = injectablePair.Key.Groups["world"].Value;
                 if (!zoneEvents.ContainsKey(world))
                 {
@@ -1166,7 +1170,7 @@ namespace RemnantSaveGuardian
             if (mode == ProcessMode.Campaign)
             {
                 // Add Ward 13 events
-                List<string> ward13Events = new() { "Ward13", "Cass", "Brabus", "Mudtooth", "Reggie", "Whispers", "McCabe" };
+                List<string> ward13Events = new() { "Ward13", "Cass", "Brabus", "Mudtooth", "Reggie", "Whispers", "McCabe", "Dwell" };
                 foreach (var eName in ward13Events)
                 {
                     var wardEvent = new RemnantWorldEvent(eName, "World_Earth", "Home");

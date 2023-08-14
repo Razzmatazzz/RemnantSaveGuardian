@@ -714,7 +714,14 @@ namespace RemnantSaveGuardian.Views.Pages
                 //Logger.Log(string.Join("\n", e.Data.GetFormats()));
                 return;
             }
-            var files = ((string[])e.Data.GetData(System.Windows.DataFormats.FileDrop)).ToList<string>();
+            var draggedFiles = ((string[])e.Data.GetData(System.Windows.DataFormats.FileDrop)).ToList<string>();
+            string folder;
+            FileAttributes attr = File.GetAttributes(draggedFiles[0]);
+            if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
+                folder = draggedFiles[0];
+            else
+                folder = Path.GetDirectoryName(draggedFiles[0]);
+            var files = Directory.GetFiles(folder);
             if (!files.Any(file => file.EndsWith("profile.sav")))
             {
                 Logger.Error(Loc.T("No_profile_sav_found_warning"));

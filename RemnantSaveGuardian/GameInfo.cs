@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Text.Json.Nodes;
 using System.Net.Http;
+using System.Reflection;
 
 namespace RemnantSaveGuardian
 {
@@ -17,6 +18,7 @@ namespace RemnantSaveGuardian
         private static Dictionary<string, string> injectables = new Dictionary<string, string>();
         private static List<string> mainLocations = new List<string>();
         private static Dictionary<string, string> archetypes = new Dictionary<string, string>();
+        private static Dictionary<string, string> injectableParents = new();
         public static Dictionary<string, string> Events
         {
             get
@@ -77,6 +79,17 @@ namespace RemnantSaveGuardian
                 return injectables;
             }
         }
+        public static Dictionary<string, string> InjectableParents
+        {
+            get
+            {
+                if (injectableParents.Count == 0)
+                {
+                    RefreshGameInfo();
+                }
+                return injectableParents;
+            }
+        }
         public static List<string> MainLocations
         {
             get
@@ -112,7 +125,9 @@ namespace RemnantSaveGuardian
             injectables.Clear();
             mainLocations.Clear();
             archetypes.Clear();
-            var json = JsonNode.Parse(File.ReadAllText("game.json"));
+            injectableParents.Clear();
+            //var json = JsonNode.Parse(File.ReadAllText("game.json"));
+            var json = GetGameInfoJson();
             var gameEvents = json["events"].AsObject();
             foreach (var worldkvp in gameEvents.AsEnumerable())
             {
@@ -173,8 +188,34 @@ namespace RemnantSaveGuardian
                     injectables.Add(kvp.Key, kvp.Value.ToString());
                 }
             }
+            var injectParents = json["injectableParents"].AsObject();
+            foreach (var kvp in injectParents.AsEnumerable())
+            {
+                injectableParents.Add(kvp.Key, kvp.Value.ToString());
+            }
         }
+        public static JsonNode GetGameInfoJson()
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "RemnantSaveGuardian.game.json";
 
+            string jsonFile;
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                jsonFile = reader.ReadToEnd(); //Make string equal to full file
+            }
+            var embedJson = JsonNode.Parse(jsonFile);
+            if (File.Exists("game.json"))
+            {
+                var json = JsonNode.Parse(File.ReadAllText("game.json"));
+                if (json["version"].GetValue<int>() > embedJson["verson"].GetValue<int>())
+                {
+                    return json;
+                }
+            }
+            return embedJson;
+        }
         public static async void CheckForNewGameInfo()
         {
             GameInfoUpdateEventArgs args = new GameInfoUpdateEventArgs()
@@ -191,7 +232,8 @@ namespace RemnantSaveGuardian
                 JsonNode gameJson = JsonNode.Parse(await response.Content.ReadAsStringAsync());
                 args.RemoteVersion = int.Parse(gameJson["version"].ToString());
 
-                var json = JsonNode.Parse(File.ReadAllText("game.json"));
+                //var json = JsonNode.Parse(File.ReadAllText("game.json"));
+                var json = GetGameInfoJson();
                 args.LocalVersion = int.Parse(json["version"].ToString());
 
                 if (args.RemoteVersion > args.LocalVersion)
@@ -199,12 +241,14 @@ namespace RemnantSaveGuardian
                     File.WriteAllText("game.json", gameJson.ToJsonString());
                     try {
                         RefreshGameInfo();
+                        args.Result = GameInfoUpdateResult.Updated;
+                        args.Message = Loc.T("Game info updated.");
                     } catch (Exception ex) {
-                        File.WriteAllText("game.json", json.ToString());
+                        //File.WriteAllText("game.json", json.ToString());
                         Logger.Error(Loc.T("Could not parse updated game data; check for new version of this app"));
+                        args.Result = GameInfoUpdateResult.Failed;
+                        args.Message = $"{Loc.T("Error checking for new game info")}: {ex.Message}";
                     }
-                    args.Result = GameInfoUpdateResult.Updated;
-                    args.Message = Loc.T("Game info updated.");
                 }
             }
             catch (Exception ex)

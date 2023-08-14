@@ -1854,4 +1854,55 @@
   <data name="Armor_Arcanist" xml:space="preserve">
     <value>Labyrinth</value>
   </data>
+  <data name="Dwell" xml:space="preserve">
+    <value>Dwell</value>
+  </data>
+  <data name="Amulet_OnyxPendulum" xml:space="preserve">
+    <value>Onyx Pendulum</value>
+  </data>
+  <data name="Amulet_SoulAnchor" xml:space="preserve">
+    <value>Soul Anchor</value>
+  </data>
+  <data name="Amulet_VoidIdol" xml:space="preserve">
+    <value>Void Idol</value>
+  </data>
+  <data name="Crypt_LivingStone" xml:space="preserve">
+    <value>Four Statues</value>
+  </data>
+  <data name="MetaGem_Battery" xml:space="preserve">
+    <value>Battery</value>
+  </data>
+  <data name="MetaGem_DeadlyCalm" xml:space="preserve">
+    <value>Deadly Calm</value>
+  </data>
+  <data name="MetaGem_Dervish" xml:space="preserve">
+    <value>Dervish</value>
+  </data>
+  <data name="MetaGem_Feedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="MetaGem_Harmonizer" xml:space="preserve">
+    <value>Harmonizer</value>
+  </data>
+  <data name="MetaGem_Resentment" xml:space="preserve">
+    <value>Resentment</value>
+  </data>
+  <data name="MetaGem_ShieldBreaker" xml:space="preserve">
+    <value>Shield Breaker</value>
+  </data>
+  <data name="MetaGem_Slayer" xml:space="preserve">
+    <value>Slayer</value>
+  </data>
+  <data name="MetaGem_WeaponLord" xml:space="preserve">
+    <value>Weapon Lord</value>
+  </data>
+  <data name="Relic_Consumable_DivertingHeart" xml:space="preserve">
+    <value>Diverting Heart</value>
+  </data>
+  <data name="Ring_SapphireDreamstone" xml:space="preserve">
+    <value>Sapphire Dreamstone</value>
+  </data>
+  <data name="Weapon_OrnateFlail" xml:space="preserve">
+    <value>Ornate Flail</value>
+  </data>
 </root>

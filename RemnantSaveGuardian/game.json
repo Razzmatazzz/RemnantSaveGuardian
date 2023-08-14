@@ -67,6 +67,9 @@
       "StasisSiege": "VaultOfTheFormless"
     }
   },
+  "injectableParents": {
+    "HiddenChamber": "HiddenMaze"
+  },
   "injectables": {
     "Jungle": {
       "TheChimney": "Crypt",
@@ -184,7 +187,7 @@
           "name": "/Items/Trinkets/Rings/StrongArmBand/Ring_StrongArmBand"
         }
       ],
-      "Ring_LivingStone": [
+      "Crypt_LivingStone": [
         {
           "name": "/Items/Trinkets/Rings/LithicSignet/Ring_LithicSignet"
         }
@@ -192,7 +195,7 @@
       "ThaenLeaf": [
         {
           "name": "/Items/Materials/World/ThaenLeaf/Material_ThaenLeaf",
-          "ignore":  true
+          "ignore": true
         }
       ],
       "EmpressStory": [
@@ -363,6 +366,9 @@
         },
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Summoner"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/SoulAnchor/Amulet_SoulAnchor"
         }
       ],
       "Meidra": [
@@ -506,7 +512,7 @@
         },
         {
           "name": "/Items/Trinkets/Rings/RingOfGrace/Ring_RingOfGrace",
-          "notes":  "Give Dria's Anklet to Riewen'"
+          "notes": "Give Dria's Anklet to Riewen'"
         },
         {
           "name": "/Items/Traits/Core/ArcaneStrike/Trait_ArcaneStrike"
@@ -515,6 +521,12 @@
       "AboveBelow": [
         {
           "name": "/Items/Gems/Melee/MetaGems/Steadfast/MetaGem_Steadfast"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Flail/OrnateFlail/Weapon_OrnateFlail"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/SapphireDreamstone/Ring_SapphireDreamstone"
         }
       ],
       "Ring_AlchemyStone": [
@@ -1113,7 +1125,7 @@
           "name": "/Items/Gems/Melee/MetaGems/Disengage/MetaGem_Disengage"
         }
       ],
-      "Underworld_TheClaw": [
+      "TheClaw": [
         {
           "name": "/Items/Trinkets/Rings/MomentumDriver/Ring_MomentumDriver"
         },
@@ -1303,6 +1315,9 @@
         },
         {
           "name": "/Items/Trinkets/Rings/SuppressionWard/Ring_SuppressionWard"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/VoidIdol/Amulet_VoidIdol"
         }
       ],
       "NerudGuardian": [
@@ -1560,6 +1575,10 @@
           "name": "/Items/Trinkets/Rings/BandOfAccord/Ring_BandOfAccord",
           "notes": "do High Five emote in co-op",
           "coop": true
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/OnyxPendulum/Amulet_OnyxPendulum",
+          "notes": "Complete the campaign on Nightmare difficulty"
         }
       ],
       "Cass": [
@@ -1634,6 +1653,10 @@
         {
           "name": "/Items/Trinkets/Rings/BurdenOfTheDestroyer/Ring_BurdenOfTheDestroyer",
           "notes": "cass 35%"
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/DivertingHeart/Relic_Consumable_DivertingHeart",
+          "notes": "Defeat 30 world bosses"
         }
       ],
       "Whispers": [
@@ -1713,6 +1736,35 @@
         },
         {
           "name": "/Items/Mods/HotShot/Mod_Hotshot"
+        }
+      ],
+      "Dwell": [
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Battery/MetaGem_Battery"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/DeadlyCalm/MetaGem_DeadlyCalm"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Dervish/MetaGem_Dervish"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Feedback/MetaGem_Feedback"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Harmonizer/MetaGem_Harmonizer"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Resentment/MetaGem_Resentment"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/ShieldBreaker/MetaGem_ShieldBreaker"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Slayer/MetaGem_Slayer"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/WeaponLord/MetaGem_WeaponLord"
         }
       ],
       "Labyrinth": [

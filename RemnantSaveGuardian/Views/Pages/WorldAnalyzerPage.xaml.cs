@@ -25,7 +25,6 @@ namespace RemnantSaveGuardian.Views.Pages
         private List<RemnantWorldEvent> filteredAdventure;
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
-            Debug.WriteLine(pathToSaveFiles);
             ViewModel = viewModel;
 
             InitializeComponent();
@@ -127,6 +126,11 @@ namespace RemnantSaveGuardian.Views.Pages
                 System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
                 if (result != System.Windows.Forms.DialogResult.OK)
                 {
+                    return;
+                }
+                if (openFolderDialog.SelectedPath == Properties.Settings.Default.SaveFolder || openFolderDialog.SelectedPath == Save.SaveFolderPath)
+                {
+                    Logger.Error(Loc.T("export_save_invalid_folder_error"));
                     return;
                 }
                 File.WriteAllText($@"{openFolderDialog.SelectedPath}\profile.txt", Save.GetProfileData());
