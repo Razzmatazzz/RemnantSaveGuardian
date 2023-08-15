@@ -1,8 +1,11 @@
-﻿using System;
+﻿using RemnantSaveGuardian.locales;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -37,13 +40,6 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
 
                 Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
-
-                foreach (TreeViewItem treeViewItem in treeMissingItems.Items)
-                {
-                    treeViewItem.IsExpanded = (bool)Properties.Settings.Default[$"{treeViewItem.Tag}_Expanded"];
-                    treeViewItem.Expanded += GameType_CollapsedExpanded;
-                    treeViewItem.Collapsed += GameType_CollapsedExpanded;
-                }
 
                 Save = new(pathToSaveFiles);
                 if (pathToSaveFiles == Properties.Settings.Default.SaveFolder)
@@ -110,10 +106,10 @@ namespace RemnantSaveGuardian.Views.Pages
             reloadEventGrids();
         }
 
-        private void GameType_CollapsedExpanded(object sender, RoutedEventArgs e)
+        private void GameType_CollapsedExpanded(object sender, PropertyChagedEventArgs e)
         {
-            TreeViewItem modeItem = (TreeViewItem)sender;
-            Properties.Settings.Default[$"{modeItem.Tag}_Expanded"] = modeItem.IsExpanded;
+            TreeListClass item = (TreeListClass)sender;
+            Properties.Settings.Default[$"{item.Tag}_Expanded"] = item.IsExpanded;
         }
 
         private void SavePlaintextButton_Click(object sender, RoutedEventArgs e)
@@ -216,6 +212,8 @@ namespace RemnantSaveGuardian.Views.Pages
             e.Column.Header = Loc.T(e.Column.Header.ToString());
         }
 
+        private static string[] ModeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
+        List<TreeListClass> itemModeNode = new List<TreeListClass>();
         private void CharacterControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //if (CharacterControl.SelectedIndex == -1 && listCharacters.Count > 0) return;
@@ -225,45 +223,66 @@ namespace RemnantSaveGuardian.Views.Pages
                 applyFilter();
                 //txtMissingItems.Text = string.Join("\n", Save.Characters[CharacterControl.SelectedIndex].GetMissingItems());
 
-                foreach (TreeViewItem item in treeMissingItems.Items)
+                itemModeNode.Clear();
+                List<TreeListClass>[] itemNode = new List<TreeListClass>[3] { new List<TreeListClass>(), new List<TreeListClass>(), new List<TreeListClass>() };
+                List<TreeListClass>[] itemChild = new List<TreeListClass>[20];
+                string[] Modes = { Strings.Normal, Strings.Hardcore, Strings.Survival };
+                for (int i = 0;i <= 2; i++)
                 {
-                    item.Items.Clear();
+                    TreeListClass item = new TreeListClass() { Name = Modes[i], Childnode = itemNode[i], Tag = ModeTags[i], IsExpanded = (bool)Properties.Settings.Default[$"{ModeTags[i]}_Expanded"] };
+                    item.Expanded += GameType_CollapsedExpanded;
+                    itemModeNode.Add(item);
                 }
+                var idx = -1;
+                string typeNodeTag = "";
+
+                Save.Characters[CharacterControl.SelectedIndex].GetMissingItems().Sort(new SortCompare());
                 foreach (RemnantItem rItem in Save.Characters[CharacterControl.SelectedIndex].GetMissingItems())
                 {
-                    var item = new TreeViewItem();
-                    item.Header = rItem.Name;
-                    if (!rItem.ItemNotes.Equals("")) item.ToolTip = rItem.ItemNotes;
-                    item.ContextMenu = treeMissingItems.Resources["ItemContext"] as System.Windows.Controls.ContextMenu;
-                    item.Tag = rItem;
-                    TreeViewItem modeNode = ((TreeViewItem)treeMissingItems.Items[(int)rItem.ItemMode]);
-                    TreeViewItem? itemTypeNode = null;
-                    foreach (TreeViewItem typeNode in modeNode.Items)
+                    string modeNode = ModeTags[(int)rItem.ItemMode];
+                    if (!typeNodeTag.Equals($"{modeNode}{rItem.RawType}"))
                     {
-                        if (typeNode.Tag.ToString().Equals($"{modeNode.Tag}{rItem.RawType}"))
+                        typeNodeTag = $"{modeNode}{rItem.RawType}";
+                        idx++;
+                        itemChild[idx] = new List<TreeListClass>();
+                        bool isExpanded = true;
+                        try
                         {
-                            itemTypeNode = typeNode;
-                            break;
+                            isExpanded = (bool)Properties.Settings.Default[$"{typeNodeTag}_Expanded"];
+                        } catch (Exception ex) {
+                            Logger.Warn($"Not found properties: {typeNodeTag}_Expand");
                         }
+                        TreeListClass item = new TreeListClass() { Name = rItem.Type, Childnode = itemChild[idx], Tag = typeNodeTag, IsExpanded = isExpanded };
+                        item.Expanded += GameType_CollapsedExpanded;
+                        itemNode[(int)rItem.ItemMode].Add(item) ;
                     }
-                    if (itemTypeNode == null)
-                    {
-                        itemTypeNode = new();
-                        itemTypeNode.Header = rItem.Type;
-                        itemTypeNode.IsExpanded = true;
-                        itemTypeNode.ContextMenu = treeMissingItems.Resources["ItemGroupContext"] as System.Windows.Controls.ContextMenu;
-                        itemTypeNode.Tag = $"{modeNode.Tag}{rItem.RawType}";
-                        modeNode.Items.Add(itemTypeNode);
-                    }
-                    itemTypeNode.Items.Add(item);
+                    itemChild[idx].Add(new TreeListClass() { Name = rItem.Name, Notes = $"{Loc.GameT(rItem.ItemNotes)}", Tag = rItem });
                 }
-                foreach (TreeViewItem categoryNode in treeMissingItems.Items)
+
+                treeMissingItems.ItemsSource = null;
+                treeMissingItems.ItemsSource = itemModeNode;
+
+                foreach (TreeListClass modeNode in itemModeNode)
                 {
-                    categoryNode.Visibility = categoryNode.Items.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
-                    categoryNode.Items.SortDescriptions.Add(new("Header", System.ComponentModel.ListSortDirection.Ascending));
-                    foreach (TreeViewItem typeNode in categoryNode.Items)
+                    if (modeNode != null)
                     {
-                        typeNode.Items.SortDescriptions.Add(new("Header", System.ComponentModel.ListSortDirection.Ascending));
+                        modeNode.Visibility = (modeNode.Childnode.Count == 0 ? Visibility.Collapsed : Visibility.Visible);
+                    }
+                }
+                foreach (List<TreeListClass> categoryNode in itemNode)
+                {
+                    if (categoryNode != null)
+                    {
+                        foreach (TreeListClass category in categoryNode)
+                        {
+                            category.Visibility = (category.Childnode.Count == 0 ? Visibility.Collapsed : Visibility.Visible);
+                        }
+                        categoryNode.Sort();
+                    }
+                }
+                foreach (List<TreeListClass> typeNode in itemChild) {
+                    if (typeNode != null) {
+                        typeNode.Sort();
                     }
                 }
             }
@@ -306,18 +325,18 @@ namespace RemnantSaveGuardian.Views.Pages
             AdventureData.ItemsSource = tempData;
         }
 
-        private string GetTreeItem(TreeViewItem item)
+        private string GetTreeListItem(TreeListClass item)
         {
             if (item == null)
             {
                 return "";
             }
-            if (item.Tag.GetType().ToString() == "RemnantSaveGuardian.RemnantItem") return item.Header.ToString();
+            if (item.Tag.GetType().ToString() == "RemnantSaveGuardian.RemnantItem") return item.Name;
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(item.Header.ToString() + ":");
-            foreach (TreeViewItem i in item.Items)
+            sb.AppendLine(item.Name + ":");
+            foreach (TreeListClass i in item.Childnode)
             {
-                sb.AppendLine("\t- " + GetTreeItem(i));
+                sb.AppendLine("\t- " + GetTreeListItem(i));
             }
             return sb.ToString();
         }
@@ -328,15 +347,15 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return;
             }
-            Clipboard.SetDataObject(GetTreeItem((TreeViewItem)treeMissingItems.SelectedItem));
+            Clipboard.SetDataObject(GetTreeListItem((TreeListClass)treeMissingItems.SelectedItem));
         }
 
         private void SearchItem_Click(object sender, RoutedEventArgs e)
         {
-            var treeItem = (TreeViewItem)treeMissingItems.SelectedItem;
+            var treeItem = (TreeListClass)treeMissingItems.SelectedItem;
             var item = (RemnantItem)treeItem.Tag;
 
-            var itemname = treeItem?.Header.ToString();
+            var itemname = treeItem.Name;
             if (!WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture.ToString().StartsWith("en"))
             {
                 itemname = item.RawName;
@@ -363,11 +382,33 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             Process.Start("explorer.exe", $"https://remnant2.wiki.fextralife.com/{itemname}");
         }
-
+        private void ExpandAllItem_Click(object sender, RoutedEventArgs e)
+        {
+            CollapseExpandAllItems(itemModeNode, true);
+        }
+        private void CollapseAllItem_Click(object sender, RoutedEventArgs e)
+        {
+            CollapseExpandAllItems(itemModeNode, false);
+        }
+        private void CollapseExpandAllItems(List<TreeListClass> lstItems, bool bExpand)
+        {
+            foreach (TreeListClass item in lstItems)
+            {
+                item.IsExpanded = bExpand;
+                if (item.Childnode != null) CollapseExpandAllItems(item.Childnode, bExpand);
+            }
+        }
         private void treeMissingItems_ContextMenuOpening(object sender, ContextMenuEventArgs e)
         {
-            var item = (TreeViewItem)e.Source;
-            menuMissingItemOpenWiki.Visibility = item.Items.Count > 0 ? Visibility.Collapsed : Visibility.Visible;
+            var item = (TreeListClass)treeMissingItems.SelectedItem;
+            if (item != null)
+            {
+                menuMissingItemOpenWiki.Visibility = item.Tag.GetType().ToString() != "RemnantSaveGuardian.RemnantItem" ? Visibility.Collapsed : Visibility.Visible;
+                menuMissingItemCopy.Visibility = Visibility.Visible;
+            } else {
+                menuMissingItemOpenWiki.Visibility = Visibility.Collapsed;
+                menuMissingItemCopy.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void treeMissingItems_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -417,6 +458,86 @@ namespace RemnantSaveGuardian.Views.Pages
             filteredAdventure.Clear();
             filteredAdventure.AddRange(character.AdventureEvents.FindAll(e => eventPassesFilter(e)));
             reloadEventGrids();
+        }
+        public class SortCompare : IComparer<RemnantItem>
+        {
+            public int Compare(RemnantItem? x, RemnantItem? y)
+            {
+                if (x.ItemMode != y.ItemMode)
+                {
+                    return x.ItemMode.CompareTo(y.ItemMode);
+                } else {
+                    return x.RawType.CompareTo(y.RawType);
+                }
+            }
+        }
+        public class TreeListClass : IComparable<TreeListClass>, INotifyPropertyChanged
+        {
+            public delegate void EventHandler(object sender, PropertyChagedEventArgs e);
+            public event EventHandler Expanded;
+            public event PropertyChangedEventHandler PropertyChanged;
+            private List<TreeListClass> _childnode;
+            private Object _tag;
+            private bool _isselected;
+            private bool _isexpanded;
+            private Visibility _visibility;
+            public String Name { get; set; }
+            public String? Notes { get; set; }
+            public Object Tag {
+                get { return _tag == null ? new object() : _tag; }
+                set { _tag = value; }
+            }
+            public List<TreeListClass> Childnode {
+                get { return _childnode == null ? new List<TreeListClass>(0) : _childnode; }
+                set { _childnode = value; }
+            }
+            public bool IsSelected {
+                get { return _isselected; }
+                set { _isselected = value; OnPropertyChanged(); }
+            }
+            public bool IsExpanded
+            {
+                get { return _isexpanded; }
+                set
+                {
+                    if (value != _isexpanded)
+                    {
+                        _isexpanded = value;
+                        OnPropertyChanged();
+                        PropertyChagedEventArgs ev = new PropertyChagedEventArgs("IsExpanded", _isexpanded, value);
+                        if (Expanded != null)
+                        {
+                            this.Expanded(this, ev);
+                        }
+                    }
+                }
+            }
+            public Visibility Visibility
+            {
+                get { return _visibility; }
+                set { _visibility = value; OnPropertyChanged(); }
+            }
+            protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+            {
+                if (this.PropertyChanged != null)
+                    this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+            public int CompareTo(TreeListClass other)
+            {
+                return Name.CompareTo(other.Name);
+            }
+        }
+        public class PropertyChagedEventArgs : EventArgs
+        {
+            public PropertyChagedEventArgs(string propertyName, object oldValue, object newValue)
+            {
+                PropertyName = propertyName;
+                OldValue = oldValue;
+                NewValue = newValue;
+            }
+            public string PropertyName { get; private set; }
+            public object OldValue { get; private set; }
+            public object NewValue { get; set; }
         }
     }
 }
