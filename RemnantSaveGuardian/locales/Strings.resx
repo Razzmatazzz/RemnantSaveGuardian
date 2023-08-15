@@ -201,6 +201,9 @@
   <data name="Confirm Delete" xml:space="preserve">
     <value>Confirm Delete</value>
   </data>
+  <data name="Collapse All" xml:space="preserve">
+    <value>Collapse All</value>
+  </data>
   <data name="Copy" xml:space="preserve">
     <value>Copy</value>
   </data>
@@ -233,6 +236,9 @@
   </data>
   <data name="Exit the game before restoring a save backup." xml:space="preserve">
     <value>Exit the game before restoring a save backup.</value>
+  </data>
+  <data name="Expand All" xml:space="preserve">
+    <value>Expand All</value>
   </data>
   <data name="Export save files as plaintext" xml:space="preserve">
     <value>Export save files</value>
