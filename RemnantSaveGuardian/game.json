@@ -19,7 +19,6 @@
       "Meidra": "TheDappledGlade",
       "Ruins": "AbandonedRuins",
       "KoaraKuri": "KoaraKuriNest",
-      "Flautist": "TheFarWoods",
       "HiddenMaze": "EndairasEnd",
       "TheTangle": "ImperialGardens",
       "TheLament": "TheLament",
@@ -187,7 +186,7 @@
           "name": "/Items/Trinkets/Rings/StrongArmBand/Ring_StrongArmBand"
         }
       ],
-      "Crypt_LivingStone": [
+      "LivingStone": [
         {
           "name": "/Items/Trinkets/Rings/LithicSignet/Ring_LithicSignet"
         }
@@ -342,13 +341,12 @@
           "name": "/Items/Mods/Mod_RottedArrow/Mod_RottedArrow"
         }
       ],
-      "BloodMoon": [
+      "Amulet_DeathsEmbrace": [
         {
           "name": "/Items/Trinkets/Amulets/DeathsEmbrace/Amulet_DeathsEmbrace"
-        },
-        {
-          "name": "/Items/Trinkets/Rings/BloodTingedRing/Ring_BloodTingedRing"
-        },
+        }
+      ],
+      "BloodMoon": [
         {
           "name": "/Items/Weapons/Melee/Standard/Sword/BladeOfGul/Weapon_BladeOfGul"
         },
@@ -489,6 +487,11 @@
         },
         {
           "name": "/Items/Traits/Core/Rugged/Trait_Rugged"
+        }
+      ],
+      "RedDoeStatue": [
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/GhostShell/MetaGem_GhostShell"
         }
       ]
     },
@@ -1579,6 +1582,14 @@
         {
           "name": "/Items/Trinkets/Amulets/OnyxPendulum/Amulet_OnyxPendulum",
           "notes": "Complete the campaign on Nightmare difficulty"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/NightmareSpiral/Amulet_NightmareSpiral",
+          "notes": "Defeat all bosses once"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BrightSteelRing/Ring_BrightSteelRing",
+          "notes": "Complete at least 15 biomes"
         }
       ],
       "Cass": [

@@ -640,7 +640,7 @@
     <value>Atrophy</value>
   </data>
   <data name="LivingStone" xml:space="preserve">
-    <value>WeepingAngels</value>
+    <value>Weeping Angels</value>
   </data>
   <data name="LurkerVents" xml:space="preserve">
     <value>W.D. 109</value>
@@ -1866,9 +1866,6 @@
   <data name="Amulet_VoidIdol" xml:space="preserve">
     <value>Void Idol</value>
   </data>
-  <data name="Crypt_LivingStone" xml:space="preserve">
-    <value>Four Statues</value>
-  </data>
   <data name="MetaGem_Battery" xml:space="preserve">
     <value>Battery</value>
   </data>
@@ -1880,6 +1877,9 @@
   </data>
   <data name="MetaGem_Feedback" xml:space="preserve">
     <value>Feedback</value>
+  </data>
+  <data name="MetaGem_GhostShell" xml:space="preserve">
+    <value>Ghost Shell</value>
   </data>
   <data name="MetaGem_Harmonizer" xml:space="preserve">
     <value>Harmonizer</value>
@@ -1896,6 +1896,9 @@
   <data name="MetaGem_WeaponLord" xml:space="preserve">
     <value>Weapon Lord</value>
   </data>
+  <data name="RedDoeStatue" xml:space="preserve">
+    <value>Red Doe Statue</value>
+  </data>
   <data name="Relic_Consumable_DivertingHeart" xml:space="preserve">
     <value>Diverting Heart</value>
   </data>
@@ -1904,5 +1907,8 @@
   </data>
   <data name="Weapon_OrnateFlail" xml:space="preserve">
     <value>Ornate Flail</value>
+  </data>
+  <data name="WidowsCourt" xml:space="preserve">
+    <value>The Widow's Court</value>
   </data>
 </root>

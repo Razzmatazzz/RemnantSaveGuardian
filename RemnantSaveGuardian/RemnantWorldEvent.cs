@@ -1115,6 +1115,13 @@ namespace RemnantSaveGuardian
                         continue;
                     }
                 }
+                if (areaEvents.Any(e => e._name == "EmpressStory"))
+                {
+                    var lastRedThrone = areaEvents.FindLastIndex(e => e.Locations.Contains("TheRedThrone"));
+                    RemnantWorldEvent widowsCourt = new RemnantWorldEvent("RedDoeStatue", new List<string>() { currentWorld, "WidowsCourt" }, "OverworldPOI");
+                    widowsCourt.setMissingItems(character);
+                    areaEvents.Insert(lastRedThrone+1, widowsCourt);
+                }
                 zoneEvents[currentWorld].AddRange(areaEvents);
             }
             //File.WriteAllText($"events{character.WorldIndex}-{eventsIndex}.txt", string.Join("\n", eventStrings.ToArray()));

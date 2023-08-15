@@ -1177,15 +1177,6 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Four Statues.
-        /// </summary>
-        public static string Crypt_LivingStone {
-            get {
-                return ResourceManager.GetString("Crypt_LivingStone", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The Custodian&apos;s Eye.
         /// </summary>
         public static string CustodianEye {
@@ -1681,7 +1672,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WeepingAngels.
+        ///   Looks up a localized string similar to Weeping Angels.
         /// </summary>
         public static string LivingStone {
             get {
@@ -1839,6 +1830,15 @@ namespace RemnantSaveGuardian.locales {
         public static string MetaGem_Feedback {
             get {
                 return ResourceManager.GetString("MetaGem_Feedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ghost Shell.
+        /// </summary>
+        public static string MetaGem_GhostShell {
+            get {
+                return ResourceManager.GetString("MetaGem_GhostShell", resourceCulture);
             }
         }
         
@@ -2469,6 +2469,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Ravenous {
             get {
                 return ResourceManager.GetString("Ravenous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Red Doe Statue.
+        /// </summary>
+        public static string RedDoeStatue {
+            get {
+                return ResourceManager.GetString("RedDoeStatue", resourceCulture);
             }
         }
         
@@ -5349,6 +5358,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Weapons {
             get {
                 return ResourceManager.GetString("Weapons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Widow&apos;s Court.
+        /// </summary>
+        public static string WidowsCourt {
+            get {
+                return ResourceManager.GetString("WidowsCourt", resourceCulture);
             }
         }
         
