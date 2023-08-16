@@ -58,9 +58,10 @@
             </TabItem>
             <TabItem Header="{lex:Loc Missing Items}">
                 <Grid>
-                    <TreeView Name="treeMissingItems" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.IsVirtualizing="True" ContextMenuOpening="treeMissingItems_ContextMenuOpening" MouseDown="treeMissingItems_MouseDown">
+                    <TreeView Name="treeMissingItems" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.IsVirtualizing="True" ContextMenuOpening="treeMissingItems_ContextMenuOpening">
                         <TreeView.Resources>
                             <Style TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
+                                <EventSetter Event="TreeViewItem.MouseDown" Handler="treeMissingItems_MouseDown"/>
                                 <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
                                 <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded, Mode=TwoWay}" />
                                 <Setter Property="Visibility" Value="{Binding Path=Visibility, Mode=TwoWay}" />

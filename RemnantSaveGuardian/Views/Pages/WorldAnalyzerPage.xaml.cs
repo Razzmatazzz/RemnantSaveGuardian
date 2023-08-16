@@ -395,7 +395,12 @@ namespace RemnantSaveGuardian.Views.Pages
             foreach (TreeListClass item in lstItems)
             {
                 item.IsExpanded = bExpand;
-                if (item.Childnode != null) CollapseExpandAllItems(item.Childnode, bExpand);
+                var child = item.Childnode;
+                if (child != null && child.Count > 0)
+                {
+                    var node = child[0].Childnode;
+                    if (node != null && node.Count > 0) { CollapseExpandAllItems(child, bExpand); }
+                }
             }
         }
         private void treeMissingItems_ContextMenuOpening(object sender, ContextMenuEventArgs e)
@@ -413,8 +418,15 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void treeMissingItems_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            var item = e.Source as TreeViewItem;
-            if (item != null) { item.IsSelected = true; }
+            var item = sender as TreeViewItem;
+            if (item != null)
+            {
+                var node = (TreeListClass)item.Header;
+                if (node != null) {
+                    node.IsSelected = true;
+                    e.Handled = true;
+                }
+            }
         }
 
         private void WorldAnalyzerFilter_TextChanged(object sender, TextChangedEventArgs e)
