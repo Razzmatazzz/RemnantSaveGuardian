@@ -59,6 +59,20 @@
             <TabItem Header="{lex:Loc Missing Items}">
                 <Grid>
                     <TreeView Name="treeMissingItems" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.IsVirtualizing="True" ContextMenuOpening="treeMissingItems_ContextMenuOpening" MouseDown="treeMissingItems_MouseDown">
+                        <TreeView.Resources>
+                            <Style TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
+                                <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
+                                <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded, Mode=TwoWay}" />
+                                <Setter Property="Visibility" Value="{Binding Path=Visibility, Mode=TwoWay}" />
+                                <Setter Property="ToolTip" Value="{Binding Path=Notes, Mode=OneWay}" />
+                                <Setter Property="FontSize" Value="{Binding ElementName=FontSizeSlider, Path=Value, Mode=OneWay}" />
+                                <Style.Triggers>
+                                    <Trigger Property="ToolTip" Value="">
+                                        <Setter Property="ToolTipService.IsEnabled" Value="False" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TreeView.Resources>
                         <TreeView.ContextMenu>
                             <ContextMenu StaysOpen="True">
                                 <ui:MenuItem Name="menuMissingItemOpenWiki" Header="{lex:Loc Open wiki}" Click="SearchItem_Click">
@@ -66,18 +80,35 @@
                                         <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Link24" />
                                     </MenuItem.Icon>
                                 </ui:MenuItem>
-                                <ui:MenuItem Header="{lex:Loc Copy}" Click="CopyItem_Click">
+                                <ui:MenuItem Name="menuMissingItemCopy" Header="{lex:Loc Copy}" Click="CopyItem_Click">
                                     <MenuItem.Icon>
                                         <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Copy24" />
                                     </MenuItem.Icon>
                                 </ui:MenuItem>
+                                <ui:MenuItem Header="{lex:Loc Expand All}" Click="ExpandAllItem_Click">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon HorizontalAlignment="Left" Symbol="TextExpand24" />
+                                    </MenuItem.Icon>
+                                </ui:MenuItem>
+                                <ui:MenuItem Header="{lex:Loc Collapse All}" Click="CollapseAllItem_Click">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon HorizontalAlignment="Left" Symbol="ArrowCollapseAll24" />
+                                    </MenuItem.Icon>
+                                </ui:MenuItem>
                             </ContextMenu>
                         </TreeView.ContextMenu>
-                        <TreeView.Items>
-                            <TreeViewItem Header="{lex:Loc Normal}" Tag="treeMissingNormal"/>
-                            <TreeViewItem Header="{lex:Loc Hardcore}" Tag="treeMissingHardcore"/>
-                            <TreeViewItem Header="{lex:Loc Survival}" Tag="treeMissingSurvival"/>
-                        </TreeView.Items>
+                        <TreeView.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding Childnode}">
+                                <Grid Width="{Binding ActualWidth, ElementName=treeMissingItems}" Margin="0,0,-80,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Name}" Grid.Column="0"/>
+                                    <TextBlock Text="{Binding Notes}" Grid.Column="1"/>
+                                </Grid>
+                            </HierarchicalDataTemplate>
+                        </TreeView.ItemTemplate>
                     </TreeView>
                 </Grid>
             </TabItem>
