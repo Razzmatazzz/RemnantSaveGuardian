@@ -1,0 +1,1558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbandonedRuins" xml:space="preserve">
+    <value>廃墟</value>
+  </data>
+  <data name="AboveBelow" xml:space="preserve">
+    <value>執行人</value>
+  </data>
+  <data name="Alchemist" xml:space="preserve">
+    <value>錬金術師</value>
+  </data>
+  <data name="Amulet_AbrasiveWhetstone" xml:space="preserve">
+    <value>砥石</value>
+  </data>
+  <data name="Amulet_AnkhOfPower" xml:space="preserve">
+    <value>力のアンク十字</value>
+  </data>
+  <data name="Amulet_BrokenPocketWatch" xml:space="preserve">
+    <value>壊れた懐中時計</value>
+  </data>
+  <data name="Amulet_ButchersFetish" xml:space="preserve">
+    <value>肉屋の呪物</value>
+  </data>
+  <data name="Amulet_ChainsOfAmplification" xml:space="preserve">
+    <value>増幅の連鎖</value>
+  </data>
+  <data name="Amulet_CleansingStone" xml:space="preserve">
+    <value>浄化の石</value>
+  </data>
+  <data name="Amulet_CoreBooster" xml:space="preserve">
+    <value>コアブースター</value>
+  </data>
+  <data name="Amulet_DaredevilsCharm" xml:space="preserve">
+    <value>命知らずの護符</value>
+  </data>
+  <data name="Amulet_DeathsEmbrace" xml:space="preserve">
+    <value>死の抱擁</value>
+  </data>
+  <data name="Amulet_DecayedMargin" xml:space="preserve">
+    <value>朽ちた余白</value>
+  </data>
+  <data name="Amulet_DetonationTrigger" xml:space="preserve">
+    <value>爆発の引き金</value>
+  </data>
+  <data name="Amulet_DifferenceEngine" xml:space="preserve">
+    <value>差分エンジン</value>
+  </data>
+  <data name="Amulet_DownwardSpiral" xml:space="preserve">
+    <value>下降スパイラル</value>
+  </data>
+  <data name="Amulet_EffigyPendant" xml:space="preserve">
+    <value>肖像ペンダント</value>
+  </data>
+  <data name="Amulet_EffluviumEnhancer" xml:space="preserve">
+    <value>剥離促進</value>
+  </data>
+  <data name="Amulet_EmergencySwitch" xml:space="preserve">
+    <value>非常スイッチ</value>
+  </data>
+  <data name="Amulet_EnergizedNeckCoil" xml:space="preserve">
+    <value>電動ネックコイル</value>
+  </data>
+  <data name="Amulet_EnergyDiverter" xml:space="preserve">
+    <value>エネルギー分流</value>
+  </data>
+  <data name="Amulet_EscalationProtocol" xml:space="preserve">
+    <value>拡大プロトコル</value>
+  </data>
+  <data name="Amulet_FullMoonCirclet" xml:space="preserve">
+    <value>満月のサークレット</value>
+  </data>
+  <data name="Amulet_GoldenRibbon" xml:space="preserve">
+    <value>金のリボン</value>
+  </data>
+  <data name="Amulet_GunfireSecurityLanyard" xml:space="preserve">
+    <value>銃撃安全祈願の紐</value>
+  </data>
+  <data name="Amulet_GunslingersCharm" xml:space="preserve">
+    <value>ガンスリンガーのチャーム</value>
+  </data>
+  <data name="Amulet_HallowedEgg" xml:space="preserve">
+    <value>神聖な卵</value>
+  </data>
+  <data name="Amulet_Hyperconductor" xml:space="preserve">
+    <value>高伝導体</value>
+  </data>
+  <data name="Amulet_IndignantFetish" xml:space="preserve">
+    <value>憤慨の呪物</value>
+  </data>
+  <data name="Amulet_InertOvercharger" xml:space="preserve">
+    <value>不活性オーバーチャージャー</value>
+  </data>
+  <data name="Amulet_InsulationDriver" xml:space="preserve">
+    <value>絶縁ドライバー</value>
+  </data>
+  <data name="Amulet_JestersBell" xml:space="preserve">
+    <value>道化師の鐘</value>
+  </data>
+  <data name="Amulet_KineticShieldExchanger" xml:space="preserve">
+    <value>動的シールド交換輪</value>
+  </data>
+  <data name="Amulet_KuriKuriCharm" xml:space="preserve">
+    <value>クリクリのお守り</value>
+  </data>
+  <data name="Amulet_LaemirCenser" xml:space="preserve">
+    <value>レミールのつり香炉</value>
+  </data>
+  <data name="Amulet_LetosAmulet" xml:space="preserve">
+    <value>レトのアミュレット</value>
+  </data>
+  <data name="Amulet_MatriarchsInsignia" xml:space="preserve">
+    <value>女家長の記章</value>
+  </data>
+  <data name="Amulet_NavigatorsPendant" xml:space="preserve">
+    <value>航海長のペンダント</value>
+  </data>
+  <data name="Amulet_NeckboneNecklace" xml:space="preserve">
+    <value>頸椎のネックレス</value>
+  </data>
+  <data name="Amulet_NecklaceOfFlowingLife" xml:space="preserve">
+    <value>流命のネックレス</value>
+  </data>
+  <data name="Amulet_NecklaceOfSupremacy" xml:space="preserve">
+    <value>至高のネックレス</value>
+  </data>
+  <data name="Amulet_NightweaversGrudge" xml:space="preserve">
+    <value>ナイトウィーバーの怨念</value>
+  </data>
+  <data name="Amulet_NimuesRibbon" xml:space="preserve">
+    <value>ニムエのリボン</value>
+  </data>
+  <data name="Amulet_OneEyedJokerIdol" xml:space="preserve">
+    <value>隻眼のジョーカーアイドル</value>
+  </data>
+  <data name="Amulet_OneTrueKingSigil" xml:space="preserve">
+    <value>真なる唯一の王のシジル</value>
+  </data>
+  <data name="Amulet_RangeFinder" xml:space="preserve">
+    <value>距離計</value>
+  </data>
+  <data name="Amulet_RavagersMark" xml:space="preserve">
+    <value>ラヴェジャーの印</value>
+  </data>
+  <data name="Amulet_RedDoeSigil" xml:space="preserve">
+    <value>レッド・ドーのシジル</value>
+  </data>
+  <data name="Amulet_RustedNavigatorsPendant" xml:space="preserve">
+    <value>錆びた航海長のペンダント</value>
+  </data>
+  <data name="Amulet_Samoflange" xml:space="preserve">
+    <value>サモフランジ</value>
+  </data>
+  <data name="Amulet_ScavengersBauble" xml:space="preserve">
+    <value>スカベンジャーのガラクタ</value>
+  </data>
+  <data name="Amulet_ShadeBloomCrystal" xml:space="preserve">
+    <value>陰の花のクリスタル</value>
+  </data>
+  <data name="Amulet_ShockDevice" xml:space="preserve">
+    <value>電撃装置</value>
+  </data>
+  <data name="Amulet_SilverRibbon" xml:space="preserve">
+    <value>銀のリボン</value>
+  </data>
+  <data name="Amulet_SpiritWispAmulet" xml:space="preserve">
+    <value>魂の束のアミュレット</value>
+  </data>
+  <data name="Amulet_StalkersBrand" xml:space="preserve">
+    <value>ストーカーの烙印</value>
+  </data>
+  <data name="Amulet_TalismanOfTheSun" xml:space="preserve">
+    <value>太陽のお守り</value>
+  </data>
+  <data name="Amulet_ToxicReleaseValve" xml:space="preserve">
+    <value>毒物排出弁</value>
+  </data>
+  <data name="Amulet_TwistedIdol" xml:space="preserve">
+    <value>ねじれた偶像</value>
+  </data>
+  <data name="Amulet_VengeanceIdol" xml:space="preserve">
+    <value>復讐の偶像</value>
+  </data>
+  <data name="Amulet_WeightlessWeight" xml:space="preserve">
+    <value>無重力の重量</value>
+  </data>
+  <data name="Archon" xml:space="preserve">
+    <value>アルコーン</value>
+  </data>
+  <data name="Armor" xml:space="preserve">
+    <value>アーマー</value>
+  </data>
+  <data name="Armor_Alchemist" xml:space="preserve">
+    <value>錬金術師</value>
+  </data>
+  <data name="Armor_Archon" xml:space="preserve">
+    <value>アルコーン</value>
+  </data>
+  <data name="Armor_Body" xml:space="preserve">
+    <value>本体</value>
+  </data>
+  <data name="Armor_Engineer" xml:space="preserve">
+    <value>エンジニア</value>
+  </data>
+  <data name="Armor_Explorer" xml:space="preserve">
+    <value>探検家</value>
+  </data>
+  <data name="Armor_Head" xml:space="preserve">
+    <value>頭</value>
+  </data>
+  <data name="Armor_Invader" xml:space="preserve">
+    <value>侵入者</value>
+  </data>
+  <data name="Armor_Legs" xml:space="preserve">
+    <value>脚部</value>
+  </data>
+  <data name="Armor_LodestoneCrown" xml:space="preserve">
+    <value>天然磁石の王冠</value>
+  </data>
+  <data name="Armor_Medic" xml:space="preserve">
+    <value>軍医</value>
+  </data>
+  <data name="Armor_PilotsHelm" xml:space="preserve">
+    <value>航海長の兜</value>
+  </data>
+  <data name="Armor_RedPrince" xml:space="preserve">
+    <value>赤の王子の王冠</value>
+  </data>
+  <data name="Armor_Summoner" xml:space="preserve">
+    <value>召喚士</value>
+  </data>
+  <data name="AshenWasteland" xml:space="preserve">
+    <value>灰の荒れ地</value>
+  </data>
+  <data name="AsylumChainsaw" xml:space="preserve">
+    <value>縦びきのこ</value>
+  </data>
+  <data name="AsylumStory" xml:space="preserve">
+    <value>保護施設</value>
+  </data>
+  <data name="BairnsCrossing" xml:space="preserve">
+    <value>バイルンの十字路</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>地球</value>
+  </data>
+  <data name="BeatificPalace" xml:space="preserve">
+    <value>至福の宮殿</value>
+  </data>
+  <data name="BloatKing" xml:space="preserve">
+    <value>ブロートキング</value>
+  </data>
+  <data name="BloodMoon" xml:space="preserve">
+    <value>ブラッドムーンの祭壇</value>
+  </data>
+  <data name="Brabus" xml:space="preserve">
+    <value>ブラバス</value>
+  </data>
+  <data name="BriellasGarden" xml:space="preserve">
+    <value>ブリエラの庭</value>
+  </data>
+  <data name="ButchersQuarter" xml:space="preserve">
+    <value>肉屋の住居</value>
+  </data>
+  <data name="Cass" xml:space="preserve">
+    <value>キャス</value>
+  </data>
+  <data name="CathedralOfSeasons" xml:space="preserve">
+    <value>予兆の大聖堂</value>
+  </data>
+  <data name="Challenger" xml:space="preserve">
+    <value>チャレンジャー</value>
+  </data>
+  <data name="CharnelHouse" xml:space="preserve">
+    <value>俗悪のバーゲスト</value>
+  </data>
+  <data name="CorruptedHarbor" xml:space="preserve">
+    <value>腐敗した港</value>
+  </data>
+  <data name="CottonsKiln" xml:space="preserve">
+    <value>綿の窯</value>
+  </data>
+  <data name="CouncilChamber" xml:space="preserve">
+    <value>評議会室</value>
+  </data>
+  <data name="CustodianEye" xml:space="preserve">
+    <value>カストディアンの眼</value>
+  </data>
+  <data name="DarkConduit" xml:space="preserve">
+    <value>闇の導管</value>
+  </data>
+  <data name="DormantNErudianFacility" xml:space="preserve">
+    <value>休眠状態のネルードの施設</value>
+  </data>
+  <data name="DranGrenadier" xml:space="preserve">
+    <value>グウェンディル : 燃えぬ者</value>
+  </data>
+  <data name="DrzyrReplicator" xml:space="preserve">
+    <value>ドラジールのレプリケーター</value>
+  </data>
+  <data name="EndairasEnd" xml:space="preserve">
+    <value>エンダイラの果て</value>
+  </data>
+  <data name="Engineer" xml:space="preserve">
+    <value>エンジニア</value>
+  </data>
+  <data name="Engrams" xml:space="preserve">
+    <value>エングラム</value>
+  </data>
+  <data name="Explorer" xml:space="preserve">
+    <value>探検家</value>
+  </data>
+  <data name="FaeArchon" xml:space="preserve">
+    <value>マジスター・デュレイン</value>
+  </data>
+  <data name="FaeCouncil" xml:space="preserve">
+    <value>フェー評議会。</value>
+  </data>
+  <data name="FaelinFaerlin" xml:space="preserve">
+    <value>フェーリン</value>
+  </data>
+  <data name="Faerin" xml:space="preserve">
+    <value>フェリン</value>
+  </data>
+  <data name="FaeShamanRing" xml:space="preserve">
+    <value>フェーシャーマンの指輪</value>
+  </data>
+  <data name="FaeWarriorRing" xml:space="preserve">
+    <value>フェー・ウォリアーの指輪</value>
+  </data>
+  <data name="Flautist" xml:space="preserve">
+    <value>ルートの中核</value>
+  </data>
+  <data name="ForgottenField" xml:space="preserve">
+    <value>忘れ去られた原野</value>
+  </data>
+  <data name="ForgottenPrison" xml:space="preserve">
+    <value>忘れられた監獄</value>
+  </data>
+  <data name="Gems" xml:space="preserve">
+    <value>変異誘発物</value>
+  </data>
+  <data name="GildedChambers" xml:space="preserve">
+    <value>金色の部屋</value>
+  </data>
+  <data name="GoldenHall_Nimue" xml:space="preserve">
+    <value>ニムエの隠れ家</value>
+  </data>
+  <data name="Gunslinger" xml:space="preserve">
+    <value>ガンスリンガー</value>
+  </data>
+  <data name="Handler" xml:space="preserve">
+    <value>調教師</value>
+  </data>
+  <data name="HarvestersReach" xml:space="preserve">
+    <value>収穫者の手の届く範囲</value>
+  </data>
+  <data name="Hatchery" xml:space="preserve">
+    <value>プリモジニター</value>
+  </data>
+  <data name="Hunter" xml:space="preserve">
+    <value>ハンター</value>
+  </data>
+  <data name="ImperialGardens" xml:space="preserve">
+    <value>宮廷庭園</value>
+  </data>
+  <data name="IndignantFetish" xml:space="preserve">
+    <value>憤慨の呪物</value>
+  </data>
+  <data name="Invader" xml:space="preserve">
+    <value>侵入者</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Alchemist" xml:space="preserve">
+    <value>錬金術師</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Archon" xml:space="preserve">
+    <value>アルコーン</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Challenger" xml:space="preserve">
+    <value>チャレンジャー</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Engineer" xml:space="preserve">
+    <value>エンジニア</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Gunslinger" xml:space="preserve">
+    <value>ガンスリンガー</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Handler" xml:space="preserve">
+    <value>調教師</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Hunter" xml:space="preserve">
+    <value>ハンター</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Invader" xml:space="preserve">
+    <value>侵入者</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Medic" xml:space="preserve">
+    <value>メディック</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Summoner" xml:space="preserve">
+    <value>召喚士</value>
+  </data>
+  <data name="KaeulasRest" xml:space="preserve">
+    <value>カエウラの休息</value>
+  </data>
+  <data name="KoaraKuriNest" xml:space="preserve">
+    <value>コアラ・クリ・ネスト</value>
+  </data>
+  <data name="LemarkDistrict" xml:space="preserve">
+    <value>レマーク地区</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>萎縮</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>地球</value>
+  </data>
+  <data name="MaleficGallery" xml:space="preserve">
+    <value>不吉なギャラリー</value>
+  </data>
+  <data name="ManyFaces" xml:space="preserve">
+    <value>破壊者</value>
+  </data>
+  <data name="Materials" xml:space="preserve">
+    <value>素材</value>
+  </data>
+  <data name="Medic" xml:space="preserve">
+    <value>メディック</value>
+  </data>
+  <data name="MetaGem_Bandit" xml:space="preserve">
+    <value>盗賊</value>
+  </data>
+  <data name="MetaGem_Bulletweaver" xml:space="preserve">
+    <value>バレットウィーバー</value>
+  </data>
+  <data name="MetaGem_Disengage" xml:space="preserve">
+    <value>離脱する</value>
+  </data>
+  <data name="MetaGem_Extender" xml:space="preserve">
+    <value>エクステンダー</value>
+  </data>
+  <data name="MetaGem_Failsafe" xml:space="preserve">
+    <value>フェイルセーフ</value>
+  </data>
+  <data name="MetaGem_Lithely" xml:space="preserve">
+    <value>柔軟</value>
+  </data>
+  <data name="MetaGem_Misfortune" xml:space="preserve">
+    <value>災難</value>
+  </data>
+  <data name="MetaGem_Momentum" xml:space="preserve">
+    <value>推進力</value>
+  </data>
+  <data name="MetaGem_Overdrive" xml:space="preserve">
+    <value>オーバードライブ</value>
+  </data>
+  <data name="MetaGem_Refunder" xml:space="preserve">
+    <value>リファンダー</value>
+  </data>
+  <data name="MetaGem_Reinvigorate" xml:space="preserve">
+    <value>再活性化</value>
+  </data>
+  <data name="MetaGem_Steadfast" xml:space="preserve">
+    <value>不動</value>
+  </data>
+  <data name="MetaGem_Striker" xml:space="preserve">
+    <value>ストライカー</value>
+  </data>
+  <data name="MetaGem_Supercharger" xml:space="preserve">
+    <value>スーパーチャージャー</value>
+  </data>
+  <data name="MetaGem_Timewave" xml:space="preserve">
+    <value>タイムウェーブ</value>
+  </data>
+  <data name="MetaGem_Transference" xml:space="preserve">
+    <value>転送</value>
+  </data>
+  <data name="MetaGem_Transpose" xml:space="preserve">
+    <value>トランスポーズ</value>
+  </data>
+  <data name="MetaGem_TwistingWounds" xml:space="preserve">
+    <value>ねじれる傷</value>
+  </data>
+  <data name="MetaGem_VampireBlade" xml:space="preserve">
+    <value>ヴァンパイア・ブレード</value>
+  </data>
+  <data name="MetaGem_VengefulStrike" xml:space="preserve">
+    <value>復讐の一撃</value>
+  </data>
+  <data name="Mods" xml:space="preserve">
+    <value>Mod</value>
+  </data>
+  <data name="Mod_AstralBurst" xml:space="preserve">
+    <value>星間爆発</value>
+  </data>
+  <data name="Mod_BloodDraw" xml:space="preserve">
+    <value>血の採取</value>
+  </data>
+  <data name="Mod_Bore" xml:space="preserve">
+    <value>掘削</value>
+  </data>
+  <data name="Mod_ConcussiveShot" xml:space="preserve">
+    <value>震とうショット</value>
+  </data>
+  <data name="Mod_CorrosiveRounds" xml:space="preserve">
+    <value>腐食性弾薬</value>
+  </data>
+  <data name="Mod_Defrag" xml:space="preserve">
+    <value>デフラグ</value>
+  </data>
+  <data name="Mod_EnergyWall" xml:space="preserve">
+    <value>エネルギーの壁</value>
+  </data>
+  <data name="Mod_Familiar" xml:space="preserve">
+    <value>使い魔</value>
+  </data>
+  <data name="Mod_Fargazer" xml:space="preserve">
+    <value>ファーゲイザー</value>
+  </data>
+  <data name="Mod_Firestorm" xml:space="preserve">
+    <value>ファイアストーム</value>
+  </data>
+  <data name="Mod_HealingShot" xml:space="preserve">
+    <value>ヒーリングショット</value>
+  </data>
+  <data name="Mod_Helix" xml:space="preserve">
+    <value>螺旋</value>
+  </data>
+  <data name="Mod_Overflow" xml:space="preserve">
+    <value>オーバーフロー</value>
+  </data>
+  <data name="Mod_PrismaticDriver" xml:space="preserve">
+    <value>プリズムドライバー</value>
+  </data>
+  <data name="Mod_Rootlash" xml:space="preserve">
+    <value>ルートラッシュ</value>
+  </data>
+  <data name="Mod_RottedArrow" xml:space="preserve">
+    <value>腐食矢</value>
+  </data>
+  <data name="Mod_ScrapShot" xml:space="preserve">
+    <value>スクラップショット</value>
+  </data>
+  <data name="Mod_Skewer" xml:space="preserve">
+    <value>串刺し2.0</value>
+  </data>
+  <data name="Mod_SongOfEafir" xml:space="preserve">
+    <value>イアフィールの歌</value>
+  </data>
+  <data name="Mod_Soulbinder" xml:space="preserve">
+    <value>魂縛</value>
+  </data>
+  <data name="Mod_SpaceCrabs" xml:space="preserve">
+    <value>宇宙カニ</value>
+  </data>
+  <data name="Mod_StasisBeam" xml:space="preserve">
+    <value>停滞ビーム</value>
+  </data>
+  <data name="Mod_TimeLapse" xml:space="preserve">
+    <value>タイムラプス</value>
+  </data>
+  <data name="Mod_Tremor" xml:space="preserve">
+    <value>微震</value>
+  </data>
+  <data name="Mod_VoltaicRondure" xml:space="preserve">
+    <value>流電気の円</value>
+  </data>
+  <data name="Mod_Witchfire" xml:space="preserve">
+    <value>篝火</value>
+  </data>
+  <data name="MotherMind" xml:space="preserve">
+    <value>マザーマインド</value>
+  </data>
+  <data name="Mudtooth" xml:space="preserve">
+    <value>マッドトゥース</value>
+  </data>
+  <data name="Mutators" xml:space="preserve">
+    <value>変異誘発物</value>
+  </data>
+  <data name="NimuesRetreat" xml:space="preserve">
+    <value>ニムエの隠れ家</value>
+  </data>
+  <data name="Oink" xml:space="preserve">
+    <value>ゴルジュ</value>
+  </data>
+  <data name="OraclesRefuge" xml:space="preserve">
+    <value>オラクルの避難</value>
+  </data>
+  <data name="Phantom" xml:space="preserve">
+    <value>アストロパス</value>
+  </data>
+  <data name="PostulantsParlor" xml:space="preserve">
+    <value>聖職志願者の間</value>
+  </data>
+  <data name="Quest_Global_TheHunterDream_Template01" xml:space="preserve">
+    <value>至福の宮殿</value>
+  </data>
+  <data name="Quest_Item_Extermination_AICore" xml:space="preserve">
+    <value>メモリーコアⅡ</value>
+  </data>
+  <data name="Quest_Item_Train_AICore" xml:space="preserve">
+    <value>デコラムサイファー</value>
+  </data>
+  <data name="Quest_Story_AllFather_DranCity1_Template" xml:space="preserve">
+    <value>ブロクウィッチの住居</value>
+  </data>
+  <data name="Quest_Story_AllFather_DranCity2_Template" xml:space="preserve">
+    <value>鉄の自治</value>
+  </data>
+  <data name="Quest_Story_Empress_Zone01_Template01" xml:space="preserve">
+    <value>赤い玉座</value>
+  </data>
+  <data name="RavagersLair" xml:space="preserve">
+    <value>ラヴェジャーの巣</value>
+  </data>
+  <data name="Reggie" xml:space="preserve">
+    <value>レジー</value>
+  </data>
+  <data name="Relic" xml:space="preserve">
+    <value>遺物</value>
+  </data>
+  <data name="Relic_Consumable_BloomingHeart" xml:space="preserve">
+    <value>花咲く心臓</value>
+  </data>
+  <data name="Relic_Consumable_CrystalHeart" xml:space="preserve">
+    <value>クリスタルの心臓</value>
+  </data>
+  <data name="Relic_Consumable_DecayedHeart" xml:space="preserve">
+    <value>朽ちた心臓</value>
+  </data>
+  <data name="Relic_Consumable_EnlargedHeart" xml:space="preserve">
+    <value>肥大した心臓</value>
+  </data>
+  <data name="Relic_Consumable_LifelessHeart" xml:space="preserve">
+    <value>命なき心臓</value>
+  </data>
+  <data name="Relic_Consumable_PulsingHeart" xml:space="preserve">
+    <value>脈打つ心臓</value>
+  </data>
+  <data name="Relic_Consumable_QuiltedHeart" xml:space="preserve">
+    <value>縫われた心臓</value>
+  </data>
+  <data name="Relic_Consumable_ReprocessedHeart" xml:space="preserve">
+    <value>再加工された心臓</value>
+  </data>
+  <data name="Relic_Consumable_ResonatingHeart" xml:space="preserve">
+    <value>共鳴する心臓</value>
+  </data>
+  <data name="Relic_Consumable_RipenedHeart" xml:space="preserve">
+    <value>熟成された心臓</value>
+  </data>
+  <data name="Relic_Consumable_RunedHeart" xml:space="preserve">
+    <value>ルーンの心臓</value>
+  </data>
+  <data name="Relic_Consumable_SalvagedHeart" xml:space="preserve">
+    <value>回収された心臓</value>
+  </data>
+  <data name="Relic_Consumable_ShieldedHeart" xml:space="preserve">
+    <value>守られた心臓</value>
+  </data>
+  <data name="Relic_Consumable_SiphonHeart" xml:space="preserve">
+    <value>サイフォンの心臓</value>
+  </data>
+  <data name="Relic_Consumable_TormentedHeart" xml:space="preserve">
+    <value>苦しめられた心臓</value>
+  </data>
+  <data name="Relic_Consumable_TranquilHeart" xml:space="preserve">
+    <value>平穏な心臓</value>
+  </data>
+  <data name="Relic_Consumable_UnsulliedHeart" xml:space="preserve">
+    <value>純潔な心臓</value>
+  </data>
+  <data name="Relic_Consumable_VoidHeart" xml:space="preserve">
+    <value>虚無の心臓</value>
+  </data>
+  <data name="RemainsBelow" xml:space="preserve">
+    <value>眠れぬ魂</value>
+  </data>
+  <data name="Ring_AcidStone" xml:space="preserve">
+    <value>酸の石</value>
+  </data>
+  <data name="Ring_AkariWarBand" xml:space="preserve">
+    <value>アカリウォーバンド</value>
+  </data>
+  <data name="Ring_AlchemyStone" xml:space="preserve">
+    <value>錬金術の石</value>
+  </data>
+  <data name="Ring_AlumniRing" xml:space="preserve">
+    <value>同窓指輪</value>
+  </data>
+  <data name="Ring_AmberMoonstone" xml:space="preserve">
+    <value>アンバームーンストーン</value>
+  </data>
+  <data name="Ring_AnastasijasInspiration" xml:space="preserve">
+    <value>アナスタシージャの霊感</value>
+  </data>
+  <data name="Ring_ArchersCrest" xml:space="preserve">
+    <value>アーチャーの紋章</value>
+  </data>
+  <data name="Ring_AssassinsSeal" xml:space="preserve">
+    <value>アサシンの紋章</value>
+  </data>
+  <data name="Ring_BandBand" xml:space="preserve">
+    <value>バンドバンド</value>
+  </data>
+  <data name="Ring_BisectedRing" xml:space="preserve">
+    <value>二重構造の指輪</value>
+  </data>
+  <data name="Ring_BlackCatBand" xml:space="preserve">
+    <value>黒猫バンド</value>
+  </data>
+  <data name="Ring_BlackoutRing" xml:space="preserve">
+    <value>ブラックアウトの指輪</value>
+  </data>
+  <data name="Ring_BlackPawnStamp" xml:space="preserve">
+    <value>黒ポーンの印章</value>
+  </data>
+  <data name="Ring_BlastingCapRing" xml:space="preserve">
+    <value>ブラストキャップの指輪</value>
+  </data>
+  <data name="Ring_BlessedRing" xml:space="preserve">
+    <value>祝福の指輪</value>
+  </data>
+  <data name="Ring_BloodJewel" xml:space="preserve">
+    <value>血の宝石</value>
+  </data>
+  <data name="Ring_BloodTingedRing" xml:space="preserve">
+    <value>血に染まった指輪</value>
+  </data>
+  <data name="Ring_BoosterRing" xml:space="preserve">
+    <value>ブースターの指輪</value>
+  </data>
+  <data name="Ring_BraidedThorns" xml:space="preserve">
+    <value>編み込まれたイバラ</value>
+  </data>
+  <data name="Ring_BurdenOfTheAudacious" xml:space="preserve">
+    <value>不適者の負担</value>
+  </data>
+  <data name="Ring_BurdenOfTheDestroyer" xml:space="preserve">
+    <value>破壊者の負担</value>
+  </data>
+  <data name="Ring_BurdenOfTheDivine" xml:space="preserve">
+    <value>神の負担</value>
+  </data>
+  <data name="Ring_BurdenOfTheFollower" xml:space="preserve">
+    <value>従者の負担</value>
+  </data>
+  <data name="Ring_BurdenOfTheGambler" xml:space="preserve">
+    <value>賭博師の負担</value>
+  </data>
+  <data name="Ring_BurdenOfTheMariner" xml:space="preserve">
+    <value>船員の負担</value>
+  </data>
+  <data name="Ring_BurdenOfTheRebel" xml:space="preserve">
+    <value>反逆者の負担</value>
+  </data>
+  <data name="Ring_BurdenOfTheStargazer" xml:space="preserve">
+    <value>占星家の負担</value>
+  </data>
+  <data name="Ring_BurdenOfTheWarlock" xml:space="preserve">
+    <value>魔術師の負担</value>
+  </data>
+  <data name="Ring_CaptainsInsignia" xml:space="preserve">
+    <value>指揮官の記章</value>
+  </data>
+  <data name="Ring_CatalogersJewel" xml:space="preserve">
+    <value>目録係員の宝石</value>
+  </data>
+  <data name="Ring_CelerityStone" xml:space="preserve">
+    <value>セレリティストーン</value>
+  </data>
+  <data name="Ring_CompulsionLoop" xml:space="preserve">
+    <value>強制ループ</value>
+  </data>
+  <data name="Ring_ConservationSeal" xml:space="preserve">
+    <value>保全の紋章</value>
+  </data>
+  <data name="Ring_ConstantVariableRing" xml:space="preserve">
+    <value>不断の変化の指輪</value>
+  </data>
+  <data name="Ring_DeadKingsMemento" xml:space="preserve">
+    <value>死の王の形見</value>
+  </data>
+  <data name="Ring_DeceiversBand" xml:space="preserve">
+    <value>欺瞞者のバンド</value>
+  </data>
+  <data name="Ring_DeepPocketRing" xml:space="preserve">
+    <value>ディープポケットリング</value>
+  </data>
+  <data name="Ring_DefensiveActionLoop" xml:space="preserve">
+    <value>防御アクションのループ</value>
+  </data>
+  <data name="Ring_DowngradedRing" xml:space="preserve">
+    <value>シャハラの抱擁</value>
+  </data>
+  <data name="Ring_DrakestonePearl" xml:space="preserve">
+    <value>ドレイクストーンのパール</value>
+  </data>
+  <data name="Ring_DranMemento" xml:space="preserve">
+    <value>ドランの形見</value>
+  </data>
+  <data name="Ring_DranScavengerSigil" xml:space="preserve">
+    <value>ドランスカベンジャーの指輪</value>
+  </data>
+  <data name="Ring_DreadFont" xml:space="preserve">
+    <value>恐怖のフォント</value>
+  </data>
+  <data name="Ring_DrzyrSniperSigil" xml:space="preserve">
+    <value>ドラジールスナイパーのシジル</value>
+  </data>
+  <data name="Ring_DyingEmber" xml:space="preserve">
+    <value>死にゆく琥珀</value>
+  </data>
+  <data name="Ring_EncryptedLoop" xml:space="preserve">
+    <value>暗号化ループ</value>
+  </data>
+  <data name="Ring_EndairasEndlessLoop" xml:space="preserve">
+    <value>エンダイラのエンドレスループ</value>
+  </data>
+  <data name="Ring_ExcessCoil" xml:space="preserve">
+    <value>余剰コイル</value>
+  </data>
+  <data name="Ring_FaeBruiserRing" xml:space="preserve">
+    <value>フェーのブルーザーの指輪</value>
+  </data>
+  <data name="Ring_FaeHunterRing" xml:space="preserve">
+    <value>フェーのハンターの指輪</value>
+  </data>
+  <data name="Ring_FaelinsSigil" xml:space="preserve">
+    <value>フェーリンのシジル</value>
+  </data>
+  <data name="Ring_FaeProtectorSignet" xml:space="preserve">
+    <value>フェープロテクターの認印</value>
+  </data>
+  <data name="Ring_FaerinsSigil" xml:space="preserve">
+    <value>フェリンのシジル</value>
+  </data>
+  <data name="Ring_FaeShamanRing" xml:space="preserve">
+    <value>フェーシャーマンの指輪</value>
+  </data>
+  <data name="Ring_FaeWarriorRing" xml:space="preserve">
+    <value>フェー・ウォリアーの指輪</value>
+  </data>
+  <data name="Ring_FeastmastersSignet" xml:space="preserve">
+    <value>フィーストマスターの認印</value>
+  </data>
+  <data name="Ring_FeedbackLoop" xml:space="preserve">
+    <value>フィードバックループ</value>
+  </data>
+  <data name="Ring_FireStone" xml:space="preserve">
+    <value>ファイアストーン</value>
+  </data>
+  <data name="Ring_FlyweightsSting" xml:space="preserve">
+    <value>フライウェイトのスティング</value>
+  </data>
+  <data name="Ring_FocusedJewel" xml:space="preserve">
+    <value>集中のシャード</value>
+  </data>
+  <data name="Ring_FrivolousBand" xml:space="preserve">
+    <value>軽薄なバンド</value>
+  </data>
+  <data name="Ring_GalvanizedResupplyBand" xml:space="preserve">
+    <value>亜鉛メッキのリサプライバンド</value>
+  </data>
+  <data name="Ring_GameMastersPride" xml:space="preserve">
+    <value>進行役のプライド</value>
+  </data>
+  <data name="Ring_GeneratingBand" xml:space="preserve">
+    <value>生成バンド</value>
+  </data>
+  <data name="Ring_GroundingStone" xml:space="preserve">
+    <value>接地石</value>
+  </data>
+  <data name="Ring_GuardiansRing" xml:space="preserve">
+    <value>守護者の指輪</value>
+  </data>
+  <data name="Ring_GunslingersRing" xml:space="preserve">
+    <value>ガンスリンガーの指輪</value>
+  </data>
+  <data name="Ring_HardcoreMetalBand" xml:space="preserve">
+    <value>ハードコアメタルバンド</value>
+  </data>
+  <data name="Ring_HardenedCoil" xml:space="preserve">
+    <value>硬化コイル</value>
+  </data>
+  <data name="Ring_HaymakersRing" xml:space="preserve">
+    <value>ヘイメーカーの指輪</value>
+  </data>
+  <data name="Ring_HeartOfTheWolf" xml:space="preserve">
+    <value>オオカミの心臓</value>
+  </data>
+  <data name="Ring_HexWard" xml:space="preserve">
+    <value>ヘックス・セクター</value>
+  </data>
+  <data name="Ring_KineticCycleStone" xml:space="preserve">
+    <value>静的サイクルストーン</value>
+  </data>
+  <data name="Ring_LithicSignet" xml:space="preserve">
+    <value>石の認印</value>
+  </data>
+  <data name="Ring_LodestoneRing" xml:space="preserve">
+    <value>天然磁石の指輪</value>
+  </data>
+  <data name="Ring_LowYieldRecoveryRing" xml:space="preserve">
+    <value>低収量回復の指輪</value>
+  </data>
+  <data name="Ring_MechanicsCog" xml:space="preserve">
+    <value>メカニックの歯車</value>
+  </data>
+  <data name="Ring_MetalDriver" xml:space="preserve">
+    <value>メタルドライバー</value>
+  </data>
+  <data name="Ring_MeteoriteShardRing" xml:space="preserve">
+    <value>流星群シャードの指輪</value>
+  </data>
+  <data name="Ring_Microcompressor" xml:space="preserve">
+    <value>マイクロコンプレッサー</value>
+  </data>
+  <data name="Ring_MomentumDriver" xml:space="preserve">
+    <value>推進力ドライバー</value>
+  </data>
+  <data name="Ring_OutcastRing" xml:space="preserve">
+    <value>見放されし者の指輪</value>
+  </data>
+  <data name="Ring_PanMageSigil" xml:space="preserve">
+    <value>アハナエクリスタル</value>
+  </data>
+  <data name="Ring_PointFocusRing" xml:space="preserve">
+    <value>ポイントフォーカス指輪</value>
+  </data>
+  <data name="Ring_PowerSaver" xml:space="preserve">
+    <value>パワーセーバー</value>
+  </data>
+  <data name="Ring_ProbabilityCord" xml:space="preserve">
+    <value>確率コード</value>
+  </data>
+  <data name="Ring_PropulsionLoop" xml:space="preserve">
+    <value>推進ループ</value>
+  </data>
+  <data name="Ring_ProvisionerRing" xml:space="preserve">
+    <value>プロビジョナー指輪</value>
+  </data>
+  <data name="Ring_ReapingStone" xml:space="preserve">
+    <value>収穫の石</value>
+  </data>
+  <data name="Ring_ReroutingCable" xml:space="preserve">
+    <value>ルート変更ケーブル</value>
+  </data>
+  <data name="Ring_ReserveBoostingGem" xml:space="preserve">
+    <value>予備弾薬ブーストジェム</value>
+  </data>
+  <data name="Ring_RingOfCrisis" xml:space="preserve">
+    <value>危機の指輪</value>
+  </data>
+  <data name="Ring_RingOfDeflection" xml:space="preserve">
+    <value>偏向の指輪</value>
+  </data>
+  <data name="Ring_RingOfDiversion" xml:space="preserve">
+    <value>陽動の指輪</value>
+  </data>
+  <data name="Ring_RingOfFlawedBeauty" xml:space="preserve">
+    <value>傷ついた美の指輪</value>
+  </data>
+  <data name="Ring_RingOfGrace" xml:space="preserve">
+    <value>恩寵の指輪</value>
+  </data>
+  <data name="Ring_RingOfOmens" xml:space="preserve">
+    <value>前兆の指輪</value>
+  </data>
+  <data name="Ring_RingOfRestocking" xml:space="preserve">
+    <value>補充の指輪</value>
+  </data>
+  <data name="Ring_RingOfRetribution" xml:space="preserve">
+    <value>復讐の指輪</value>
+  </data>
+  <data name="Ring_RingOfTheAdmiral" xml:space="preserve">
+    <value>古びた提督の指輪</value>
+  </data>
+  <data name="Ring_RingOfTheForestSpirit" xml:space="preserve">
+    <value>森の精の指輪</value>
+  </data>
+  <data name="Ring_RingOfTheRobust" xml:space="preserve">
+    <value>屈強の指輪</value>
+  </data>
+  <data name="Ring_RockOfAnguish" xml:space="preserve">
+    <value>苦悩の岩</value>
+  </data>
+  <data name="Ring_RustedHeirloom" xml:space="preserve">
+    <value>錆びた家宝</value>
+  </data>
+  <data name="Ring_Sagestone" xml:space="preserve">
+    <value>セイジストーン</value>
+  </data>
+  <data name="Ring_SealOfTheEmpress" xml:space="preserve">
+    <value>女皇のSeal</value>
+  </data>
+  <data name="Ring_ShaedBloomCrystal" xml:space="preserve">
+    <value>陰の花のクリスタル</value>
+  </data>
+  <data name="Ring_ShardBandedRing" xml:space="preserve">
+    <value>シャードバンド指輪</value>
+  </data>
+  <data name="Ring_ShinyHogLure" xml:space="preserve">
+    <value>シャイニーホッグルアー</value>
+  </data>
+  <data name="Ring_SingedRing" xml:space="preserve">
+    <value>歌われた指輪</value>
+  </data>
+  <data name="Ring_SoulLink" xml:space="preserve">
+    <value>ソウルリンク</value>
+  </data>
+  <data name="Ring_SpiritStone" xml:space="preserve">
+    <value>スピリットストーン</value>
+  </data>
+  <data name="Ring_StockpileCharger" xml:space="preserve">
+    <value>備蓄のチャージャー</value>
+  </data>
+  <data name="Ring_StoneOfBalance" xml:space="preserve">
+    <value>均衡の石</value>
+  </data>
+  <data name="Ring_StoneOfContinuance" xml:space="preserve">
+    <value>継続の石</value>
+  </data>
+  <data name="Ring_StoneOfExpanse" xml:space="preserve">
+    <value>拡張の石</value>
+  </data>
+  <data name="Ring_StoneOfMalevolence" xml:space="preserve">
+    <value>悪意の石</value>
+  </data>
+  <data name="Ring_StreamCoupler" xml:space="preserve">
+    <value>ストリームカプラ</value>
+  </data>
+  <data name="Ring_SubterfugeLink" xml:space="preserve">
+    <value>裏技リンク</value>
+  </data>
+  <data name="Ring_SuppressionWard" xml:space="preserve">
+    <value>抑制セクター</value>
+  </data>
+  <data name="Ring_TargetingJewel" xml:space="preserve">
+    <value>ターゲットの宝石</value>
+  </data>
+  <data name="Ring_TarnishedRing" xml:space="preserve">
+    <value>錆びた指輪</value>
+  </data>
+  <data name="Ring_TearOfKaeula" xml:space="preserve">
+    <value>カエウラの涙</value>
+  </data>
+  <data name="Ring_TempestConduit" xml:space="preserve">
+    <value>嵐の導管</value>
+  </data>
+  <data name="Ring_TightlyWoundCoil" xml:space="preserve">
+    <value>密巻きコイル</value>
+  </data>
+  <data name="Ring_TimekeepersJewel" xml:space="preserve">
+    <value>タイムキーパーの宝石</value>
+  </data>
+  <data name="Ring_TombDwellersRing" xml:space="preserve">
+    <value>墓地に住む者の指輪</value>
+  </data>
+  <data name="Ring_VacuumSeal" xml:space="preserve">
+    <value>真空Seal</value>
+  </data>
+  <data name="Ring_VestigeOfPower" xml:space="preserve">
+    <value>力の威信</value>
+  </data>
+  <data name="Ring_WaxSealedRing" xml:space="preserve">
+    <value>指輪印章</value>
+  </data>
+  <data name="Ring_WhitePawnStamp" xml:space="preserve">
+    <value>白ポーンの印章</value>
+  </data>
+  <data name="Ring_WindHollowCirclet" xml:space="preserve">
+    <value>ウィンドホローサークレット</value>
+  </data>
+  <data name="Ring_ZaniasMalice" xml:space="preserve">
+    <value>ゼニアの悪意</value>
+  </data>
+  <data name="Ring_ZoheesRing" xml:space="preserve">
+    <value>ゾーヒーの指輪</value>
+  </data>
+  <data name="RootCultist" xml:space="preserve">
+    <value>レギオン</value>
+  </data>
+  <data name="RootEarthAshenWasteland" xml:space="preserve">
+    <value>灰の荒れ地</value>
+  </data>
+  <data name="RootEarthCorruptedHarbor" xml:space="preserve">
+    <value>腐敗した港</value>
+  </data>
+  <data name="RootHorror" xml:space="preserve">
+    <value>カエウラの影</value>
+  </data>
+  <data name="RootNexus" xml:space="preserve">
+    <value>ルートの中核</value>
+  </data>
+  <data name="Sarcophagus" xml:space="preserve">
+    <value>腐食</value>
+  </data>
+  <data name="ShatteredGallery" xml:space="preserve">
+    <value>粉砕したギャラリー</value>
+  </data>
+  <data name="SpectrumNexus" xml:space="preserve">
+    <value>残像の中核</value>
+  </data>
+  <data name="StoreRoom" xml:space="preserve">
+    <value>ザ・プロジェニー</value>
+  </data>
+  <data name="Summoner" xml:space="preserve">
+    <value>召喚士</value>
+  </data>
+  <data name="TalRatha" xml:space="preserve">
+    <value>タルラータ</value>
+  </data>
+  <data name="TerminusStation" xml:space="preserve">
+    <value>終着駅</value>
+  </data>
+  <data name="TheAstroPathsRespite" xml:space="preserve">
+    <value>アストロパスの休息</value>
+  </data>
+  <data name="TheCustodian" xml:space="preserve">
+    <value>カストディアン</value>
+  </data>
+  <data name="TheDappledGlade" xml:space="preserve">
+    <value>まだらな空き地</value>
+  </data>
+  <data name="TheExpandingGlade" xml:space="preserve">
+    <value>拡大する空き地</value>
+  </data>
+  <data name="TheFarWoods" xml:space="preserve">
+    <value>はるかな森</value>
+  </data>
+  <data name="TheGreatBole" xml:space="preserve">
+    <value>偉大なる幹</value>
+  </data>
+  <data name="TheGreatHall" xml:space="preserve">
+    <value>大広間</value>
+  </data>
+  <data name="TheGreatSewers" xml:space="preserve">
+    <value>大下水道</value>
+  </data>
+  <data name="TheHatchery" xml:space="preserve">
+    <value>孵化場</value>
+  </data>
+  <data name="TheHunter" xml:space="preserve">
+    <value>ハントレス</value>
+  </data>
+  <data name="TheLament" xml:space="preserve">
+    <value>哀悼</value>
+  </data>
+  <data name="TheNamelessNest" xml:space="preserve">
+    <value>名もなき巣</value>
+  </data>
+  <data name="ThePhantomWasteland" xml:space="preserve">
+    <value>幻像の荒れ地</value>
+  </data>
+  <data name="ThePutridDomain" xml:space="preserve">
+    <value>腐敗した領域</value>
+  </data>
+  <data name="TheRedThrone" xml:space="preserve">
+    <value>赤い玉座</value>
+  </data>
+  <data name="TheTwistedChantry" xml:space="preserve">
+    <value>ねじれた礼拝堂</value>
+  </data>
+  <data name="ThresholdOfTheUnknown" xml:space="preserve">
+    <value>未知なる世界の閾値</value>
+  </data>
+  <data name="TillersRest" xml:space="preserve">
+    <value>ティラーの休息</value>
+  </data>
+  <data name="TormentedAsylum" xml:space="preserve">
+    <value>苦難に満ちた保護施設</value>
+  </data>
+  <data name="TowerHeist" xml:space="preserve">
+    <value>EDアルファ</value>
+  </data>
+  <data name="TowerOfTheUnseen" xml:space="preserve">
+    <value>見られずの塔</value>
+  </data>
+  <data name="Train" xml:space="preserve">
+    <value>列車</value>
+  </data>
+  <data name="TraitBook" xml:space="preserve">
+    <value>知識の本</value>
+  </data>
+  <data name="Traits" xml:space="preserve">
+    <value>特性</value>
+  </data>
+  <data name="Trait_AmmoReserves" xml:space="preserve">
+    <value>予備弾薬</value>
+  </data>
+  <data name="Trait_Amplitude" xml:space="preserve">
+    <value>アンプリチュード</value>
+  </data>
+  <data name="Trait_ArcaneStrike" xml:space="preserve">
+    <value>アーケインストライク</value>
+  </data>
+  <data name="Trait_Barkskin" xml:space="preserve">
+    <value>バークスキン</value>
+  </data>
+  <data name="Trait_BloodBond" xml:space="preserve">
+    <value>血の絆</value>
+  </data>
+  <data name="Trait_Bloodstream" xml:space="preserve">
+    <value>血流</value>
+  </data>
+  <data name="Trait_Endurance" xml:space="preserve">
+    <value>耐久</value>
+  </data>
+  <data name="Trait_Expertise" xml:space="preserve">
+    <value>ノウハウ</value>
+  </data>
+  <data name="Trait_Fitness" xml:space="preserve">
+    <value>適合性</value>
+  </data>
+  <data name="Trait_FlashCaster" xml:space="preserve">
+    <value>瞬間発動</value>
+  </data>
+  <data name="Trait_Footwork" xml:space="preserve">
+    <value>フットワーク</value>
+  </data>
+  <data name="Trait_Fortify" xml:space="preserve">
+    <value>要塞化</value>
+  </data>
+  <data name="Trait_Glutton" xml:space="preserve">
+    <value>大食漢</value>
+  </data>
+  <data name="Trait_Handling" xml:space="preserve">
+    <value>処理</value>
+  </data>
+  <data name="Trait_Kinship" xml:space="preserve">
+    <value>アーキタイプマスターアンロック</value>
+  </data>
+  <data name="Trait_Longshot" xml:space="preserve">
+    <value>アーキタイプマスターアンロック</value>
+  </data>
+  <data name="Trait_Potency" xml:space="preserve">
+    <value>秘めた力</value>
+  </data>
+  <data name="Trait_Recovery" xml:space="preserve">
+    <value>回復</value>
+  </data>
+  <data name="Trait_Regrowth" xml:space="preserve">
+    <value>再成長</value>
+  </data>
+  <data name="Trait_Resonance" xml:space="preserve">
+    <value>共鳴</value>
+  </data>
+  <data name="Trait_Revivalist" xml:space="preserve">
+    <value>リバイバリスト</value>
+  </data>
+  <data name="Trait_Rugged" xml:space="preserve">
+    <value>無骨</value>
+  </data>
+  <data name="Trait_Scholar" xml:space="preserve">
+    <value>スカラー</value>
+  </data>
+  <data name="Trait_Shadeskin" xml:space="preserve">
+    <value>シェードスキン</value>
+  </data>
+  <data name="Trait_Siphoner" xml:space="preserve">
+    <value>サイフォナー</value>
+  </data>
+  <data name="Trait_Spirit" xml:space="preserve">
+    <value>精神</value>
+  </data>
+  <data name="Trait_StrongBack" xml:space="preserve">
+    <value>アーキタイプマスターアンロック</value>
+  </data>
+  <data name="Trait_Swiftness" xml:space="preserve">
+    <value>逸足</value>
+  </data>
+  <data name="Trait_Triage" xml:space="preserve">
+    <value>トリアージ</value>
+  </data>
+  <data name="Trait_Untouchable" xml:space="preserve">
+    <value>アンタッチャブル</value>
+  </data>
+  <data name="Trait_Vigor" xml:space="preserve">
+    <value>活力</value>
+  </data>
+  <data name="Trait_Wayfarer" xml:space="preserve">
+    <value>徒歩旅行者</value>
+  </data>
+  <data name="VaultOfTheFormless" xml:space="preserve">
+    <value>無形の金庫</value>
+  </data>
+  <data name="VoidVesselFacility" xml:space="preserve">
+    <value>虚無の器の施設</value>
+  </data>
+  <data name="Ward13" xml:space="preserve">
+    <value>セクター13</value>
+  </data>
+  <data name="Weapons" xml:space="preserve">
+    <value>武器</value>
+  </data>
+  <data name="Weapon_Aphelion" xml:space="preserve">
+    <value>遠日点</value>
+  </data>
+  <data name="Weapon_AssassinsDagger" xml:space="preserve">
+    <value>アサシンのダガー</value>
+  </data>
+  <data name="Weapon_AssaultRifle" xml:space="preserve">
+    <value>ブラックマウAR-47</value>
+  </data>
+  <data name="Weapon_AtomSmasher" xml:space="preserve">
+    <value>アトムスマッシャー</value>
+  </data>
+  <data name="Weapon_AtomSplitter" xml:space="preserve">
+    <value>アトムスプリッター</value>
+  </data>
+  <data name="Weapon_BladeOfGul" xml:space="preserve">
+    <value>ガルの刃</value>
+  </data>
+  <data name="Weapon_BoltDriver" xml:space="preserve">
+    <value>ボルトドライバー</value>
+  </data>
+  <data name="Weapon_BoneChopper" xml:space="preserve">
+    <value>ボーンチョッパー</value>
+  </data>
+  <data name="Weapon_Bow" xml:space="preserve">
+    <value>ロイヤルハンティングボウ</value>
+  </data>
+  <data name="Weapon_CrescentMoon" xml:space="preserve">
+    <value>三日月</value>
+  </data>
+  <data name="Weapon_Crossbow" xml:space="preserve">
+    <value>クロスボウ</value>
+  </data>
+  <data name="Weapon_CubeGun" xml:space="preserve">
+    <value>キューブガン</value>
+  </data>
+  <data name="Weapon_Deceit" xml:space="preserve">
+    <value>ディシート</value>
+  </data>
+  <data name="Weapon_Dreamcatcher" xml:space="preserve">
+    <value>ドリームキャッチャー</value>
+  </data>
+  <data name="Weapon_EdgeOfTheForest" xml:space="preserve">
+    <value>フォレストエッジ</value>
+  </data>
+  <data name="Weapon_Enigma" xml:space="preserve">
+    <value>エニグマ</value>
+  </data>
+  <data name="Weapon_FeralJudgment" xml:space="preserve">
+    <value>野生の判断</value>
+  </data>
+  <data name="Weapon_Flail" xml:space="preserve">
+    <value>スチールフレイル</value>
+  </data>
+  <data name="Weapon_Godsplitter" xml:space="preserve">
+    <value>ゴッドスプリッター</value>
+  </data>
+  <data name="Weapon_Greatsword" xml:space="preserve">
+    <value>アイアングレートソード</value>
+  </data>
+  <data name="Weapon_Hatchet" xml:space="preserve">
+    <value>スクラップハチェット</value>
+  </data>
+  <data name="Weapon_Hellfire" xml:space="preserve">
+    <value>ヘルファイア</value>
+  </data>
+  <data name="Weapon_HerosSword" xml:space="preserve">
+    <value>勇者の剣</value>
+  </data>
+  <data name="Weapon_HuntingPistol" xml:space="preserve">
+    <value>シュアショット</value>
+  </data>
+  <data name="Weapon_HuntressSpear" xml:space="preserve">
+    <value>ハンターの槍</value>
+  </data>
+  <data name="Weapon_Katana" xml:space="preserve">
+    <value>スチールカタナ</value>
+  </data>
+  <data name="Weapon_KrellAxe" xml:space="preserve">
+    <value>クレルアックス</value>
+  </data>
+  <data name="Weapon_LabyrinthStaff" xml:space="preserve">
+    <value>ラビリンススタッフ</value>
+  </data>
+  <data name="Weapon_LeverAction" xml:space="preserve">
+    <value>ラングラー1860</value>
+  </data>
+  <data name="Weapon_LeverAction_Rusty" xml:space="preserve">
+    <value>錆びたレバーアクション</value>
+  </data>
+  <data name="Weapon_LMG" xml:space="preserve">
+    <value>XMG57 「ボーンソー」</value>
+  </data>
+  <data name="Weapon_Magnum" xml:space="preserve">
+    <value>シルバーバック モデル500</value>
+  </data>
+  <data name="Weapon_Merciless" xml:space="preserve">
+    <value>無慈悲</value>
+  </data>
+  <data name="Weapon_Meridian" xml:space="preserve">
+    <value>メリディアン</value>
+  </data>
+  <data name="Weapon_Nebula" xml:space="preserve">
+    <value>ネビュラ</value>
+  </data>
+  <data name="Weapon_Nightfall" xml:space="preserve">
+    <value>ナイトフォール</value>
+  </data>
+  <data name="Weapon_Nightshade" xml:space="preserve">
+    <value>ナイトシェード</value>
+  </data>
+  <data name="Weapon_OrnateBlade" xml:space="preserve">
+    <value>美しい刃</value>
+  </data>
+  <data name="Weapon_PlasmaCutter" xml:space="preserve">
+    <value>プラズマカッター</value>
+  </data>
+  <data name="Weapon_PulseRifle" xml:space="preserve">
+    <value>パルスライフル</value>
+  </data>
+  <data name="Weapon_RedDoeStaff" xml:space="preserve">
+    <value>レッド・ドーの杖</value>
+  </data>
+  <data name="Weapon_Repeater_Rusty" xml:space="preserve">
+    <value>錆びたリピーター</value>
+  </data>
+  <data name="Weapon_Revolver" xml:space="preserve">
+    <value>ウエスタンクラシック</value>
+  </data>
+  <data name="Weapon_RoyalBroadsword" xml:space="preserve">
+    <value>ロイヤルブロードソード</value>
+  </data>
+  <data name="Weapon_RunePistol" xml:space="preserve">
+    <value>ルーンピストル</value>
+  </data>
+  <data name="Weapon_RuptureCannon" xml:space="preserve">
+    <value>ラプチャーキャノン</value>
+  </data>
+  <data name="Weapon_Sagittarius" xml:space="preserve">
+    <value>サジタリウス</value>
+  </data>
+  <data name="Weapon_Savior" xml:space="preserve">
+    <value>救世者</value>
+  </data>
+  <data name="Weapon_ServicePistol" xml:space="preserve">
+    <value>サービスピストル</value>
+  </data>
+  <data name="Weapon_ShortBarrel" xml:space="preserve">
+    <value>ダブルバレル</value>
+  </data>
+  <data name="Weapon_Smolder" xml:space="preserve">
+    <value>スモルダー</value>
+  </data>
+  <data name="Weapon_Sorrow" xml:space="preserve">
+    <value>悲哀</value>
+  </data>
+  <data name="Weapon_SpectralBlade" xml:space="preserve">
+    <value>スペクトラルブレード</value>
+  </data>
+  <data name="Weapon_Sporebloom" xml:space="preserve">
+    <value>スポアブルーム</value>
+  </data>
+  <data name="Weapon_Starkiller" xml:space="preserve">
+    <value>スターキラー</value>
+  </data>
+  <data name="Weapon_StarShot" xml:space="preserve">
+    <value>スターショット</value>
+  </data>
+  <data name="Weapon_Stonebreaker" xml:space="preserve">
+    <value>ストーンブレイカー</value>
+  </data>
+  <data name="Weapon_TalRatha_Hammer" xml:space="preserve">
+    <value>ガス・ジャイアント</value>
+  </data>
+  <data name="Weapon_TommyGun" xml:space="preserve">
+    <value>シカゴタイプライター</value>
+  </data>
+  <data name="Weapon_TwistedArbalest" xml:space="preserve">
+    <value>ねじれた石弓</value>
+  </data>
+  <data name="Weapon_ViceGrips" xml:space="preserve">
+    <value>悪意の爪</value>
+  </data>
+  <data name="Weapon_WorldsEdge" xml:space="preserve">
+    <value>ワールドエッジ</value>
+  </data>
+  <data name="World_Earth" xml:space="preserve">
+    <value>地球</value>
+  </data>
+  <data name="World_Fae" xml:space="preserve">
+    <value>レソム</value>
+  </data>
+  <data name="World_Jungle" xml:space="preserve">
+    <value>ヤイシャ</value>
+  </data>
+  <data name="World_Labyrinth" xml:space="preserve">
+    <value>ラビリンス</value>
+  </data>
+  <data name="World_Nerud" xml:space="preserve">
+    <value>ネルード</value>
+  </data>
+  <data name="World_RootEarth" xml:space="preserve">
+    <value>ルート地球</value>
+  </data>
+</root>

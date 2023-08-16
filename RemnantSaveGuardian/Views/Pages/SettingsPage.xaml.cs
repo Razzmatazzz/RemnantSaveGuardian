@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Common.Interfaces;
@@ -168,17 +169,23 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         foreach (string file in backupFiles)
                         {
-                            string subFolderName = file.Substring(file.LastIndexOf(@"\"));
+                            FileAttributes attr = File.GetAttributes(file);
+                            if ((attr & FileAttributes.Directory) != FileAttributes.Directory)
+                            {
+                                // skip anything that's not a folder
+                                continue;
+                            }
+                            string subFolderName = Path.GetFileName(file);
                             DirectoryInfo currentBackupFolder = new DirectoryInfo(file);
-                            DirectoryInfo newBackupFolder = Directory.CreateDirectory(folderName + subFolderName);
+                            DirectoryInfo newBackupFolder = Directory.CreateDirectory(Path.Combine(folderName, subFolderName));
 
                             foreach (FileInfo fileInfo in currentBackupFolder.GetFiles())
                             {
                                 fileInfo.CopyTo(Path.Combine(newBackupFolder.FullName, fileInfo.Name), true);
                             }
 
-                            Directory.SetCreationTime(folderName + subFolderName, Directory.GetCreationTime(file));
-                            Directory.SetLastWriteTime(folderName + subFolderName, Directory.GetCreationTime(file));
+                            Directory.SetCreationTime(Path.Combine(folderName, subFolderName), Directory.GetCreationTime(file));
+                            Directory.SetLastWriteTime(Path.Combine(folderName, subFolderName), Directory.GetCreationTime(file));
                             Directory.Delete(file, true);
                         }
                         messageBox.Hide();
