@@ -413,8 +413,15 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void treeMissingItems_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            var item = e.Source as TreeViewItem;
-            if (item != null) { item.IsSelected = true; }
+            var item = sender as TreeViewItem;
+            if (item != null)
+            {
+                var node = (TreeListClass)item.Header;
+                if (node != null) {
+                    node.IsSelected = true;
+                    e.Handled = true;
+                }
+            }
         }
 
         private void WorldAnalyzerFilter_TextChanged(object sender, TextChangedEventArgs e)
