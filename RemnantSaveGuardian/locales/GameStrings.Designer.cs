@@ -484,6 +484,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nightmare Spiral.
+        /// </summary>
+        public static string Amulet_NightmareSpiral {
+            get {
+                return ResourceManager.GetString("Amulet_NightmareSpiral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nightweaver&apos;s Grudge.
         /// </summary>
         public static string Amulet_NightweaversGrudge {
@@ -2865,6 +2874,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Ring_BraidedThorns {
             get {
                 return ResourceManager.GetString("Ring_BraidedThorns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bright Steel Ring.
+        /// </summary>
+        public static string Ring_BrightSteelRing {
+            get {
+                return ResourceManager.GetString("Ring_BrightSteelRing", resourceCulture);
             }
         }
         
