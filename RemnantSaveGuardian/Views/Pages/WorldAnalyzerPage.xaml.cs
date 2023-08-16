@@ -256,7 +256,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         item.Expanded += GameType_CollapsedExpanded;
                         itemNode[(int)rItem.ItemMode].Add(item) ;
                     }
-                    itemChild[idx].Add(new TreeListClass() { Name = rItem.Name, Notes = $"{Loc.GameT(rItem.ItemNotes)}", Tag = rItem });
+                    itemChild[idx].Add(new TreeListClass() { Name = rItem.Name, Notes = Loc.GameTHas($"{rItem.RawName}_Notes") ? Loc.GameT($"{rItem.RawName}_Notes") : rItem.ItemNotes, Tag = rItem });
                 }
 
                 treeMissingItems.ItemsSource = null;
