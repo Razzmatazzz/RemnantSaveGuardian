@@ -395,7 +395,12 @@ namespace RemnantSaveGuardian.Views.Pages
             foreach (TreeListClass item in lstItems)
             {
                 item.IsExpanded = bExpand;
-                if (item.Childnode != null) CollapseExpandAllItems(item.Childnode, bExpand);
+                var child = item.Childnode;
+                if (child != null && child.Count > 0)
+                {
+                    var node = child[0].Childnode;
+                    if (node != null && node.Count > 0) { CollapseExpandAllItems(child, bExpand); }
+                }
             }
         }
         private void treeMissingItems_ContextMenuOpening(object sender, ContextMenuEventArgs e)
