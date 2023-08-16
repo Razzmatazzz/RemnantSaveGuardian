@@ -809,11 +809,11 @@
       ],
       "Rookery": [
         {
-          "name": "/Items/Trinkets/Amulets/EffigyPendant/Amulet_EffigyPendant"
+          "name": "/Items/Trinkets/Amulets/EffigyPendant/Amulet_EffigyPendant",
+          "notes": "Inside lockbox"
         },
         {
-          "name": "/Items/Trinkets/Amulets/CleansingStone/Amulet_CleansingStone",
-          "notes": "Inside lockbox"
+          "name": "/Items/Trinkets/Amulets/CleansingStone/Amulet_CleansingStone"
         }
       ],
       "FaeArchon": [
@@ -1288,7 +1288,7 @@
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/SiphonHeart/Relic_Consumable_SiphonHeart",
-          "notes": "give Shining Essence to Custodian"
+          "notes": "give Shining Essence Echo to Custodian"
         }
       ],
       "DrzyrReplicator": [
@@ -1320,7 +1320,8 @@
           "name": "/Items/Trinkets/Rings/SuppressionWard/Ring_SuppressionWard"
         },
         {
-          "name": "/Items/Trinkets/Amulets/VoidIdol/Amulet_VoidIdol"
+          "name": "/Items/Trinkets/Amulets/VoidIdol/Amulet_VoidIdol",
+          "notes": "use Shining Essence Echo to craft at Drzyr Replicator"
         }
       ],
       "NerudGuardian": [

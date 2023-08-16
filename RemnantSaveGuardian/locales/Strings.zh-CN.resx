@@ -201,6 +201,9 @@
   <data name="Confirm Delete" xml:space="preserve">
     <value>确认删除</value>
   </data>
+  <data name="Collapse All" xml:space="preserve">
+    <value>全部折叠</value>
+  </data>
   <data name="Copy" xml:space="preserve">
     <value>复制</value>
   </data>
@@ -233,6 +236,9 @@
   </data>
   <data name="Exit the game before restoring a save backup." xml:space="preserve">
     <value>请在恢复保存备份前退出游戏。</value>
+  </data>
+  <data name="Expand All" xml:space="preserve">
+    <value>全部展开</value>
   </data>
   <data name="Export save files as plaintext" xml:space="preserve">
     <value>将存档导出为纯文本</value>
