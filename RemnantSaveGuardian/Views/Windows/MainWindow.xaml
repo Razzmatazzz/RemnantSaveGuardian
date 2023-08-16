@@ -7,9 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pages="clr-namespace:RemnantSaveGuardian.Views.Pages"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:settings="clr-namespace:RemnantSaveGuardian.Properties"
     Title="{Binding ViewModel.ApplicationTitle, Mode=OneWay}"
-    Width="1100"
-    Height="650"
+    Width="{Binding Path=WindowWidth, Source={x:Static settings:Settings.Default}, Mode=TwoWay}"
+    Height="{Binding Path=WindowHeight, Source={x:Static settings:Settings.Default}, Mode=TwoWay}"
     d:DataContext="{d:DesignInstance local:MainWindow,
                                      IsDesignTimeCreatable=True}"
     d:Background="{DynamicResource ApplicationBackgroundBrush}"
