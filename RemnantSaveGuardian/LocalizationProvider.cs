@@ -77,6 +77,19 @@ namespace RemnantSaveGuardian
         {
             return T(key, new LocalizationOptions { { "namespace", "GameStrings" } });
         }
+        public static bool Has(string key, LocalizationOptions options)
+        {
+            var val = GetLocalizedValue<string>(key, options);
+            if (val == null || val == "")
+            {
+                return false;
+            }
+            return true;
+        }
+        public static bool GameTHas(string key)
+        {
+            return Has(key, new LocalizationOptions { { "namespace", "GameStrings" } });
+        }
     }
 
     public class LocalizationOptions : Dictionary<string, string>
