@@ -9,6 +9,11 @@ Back up your Remnant 2 saves and view your world rolls.
 3. Unzip the latest release to a folder of your choosing (probably not the same folder where you have the game installed)
 4. Run RemnantSaveGuardian.exe
 
+## Screenshots
+![image](https://github.com/Razzmatazzz/RemnantSaveGuardian/assets/35779878/cc428b0b-7573-4128-a2ae-02ef25ebda36)
+![image](https://github.com/Razzmatazzz/RemnantSaveGuardian/assets/35779878/48fc0eae-fc87-47be-bea3-89af08f102a6)
+![image](https://github.com/Razzmatazzz/RemnantSaveGuardian/assets/35779878/49ebd727-f994-4b7e-b5fc-7cd71c625f6d)
+
 ## Known Issues
 - [Some items are missing from the world analyzer](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/43)
 - [Many events and items do not have well-formatted names](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/45)
