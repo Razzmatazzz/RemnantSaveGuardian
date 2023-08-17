@@ -113,10 +113,16 @@
             <TextBlock Name="lblMissingItemColor" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
         </WrapPanel>
         <WrapPanel Margin="0,2,0,0">
+            <ComboBox Name="cmbSwitchLanguage" VerticalAlignment="Center" Width="Auto"/>
+            <TextBlock Name="lblSwitchLanguage" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+        </WrapPanel>
+        <WrapPanel Margin="0,2,0,0">
             <ui:ToggleSwitch Name="chkAutoCheckUpdate" Content="{lex:Loc}" IsChecked="{Binding AutoCheckUpdate}" VerticalAlignment="Center"/>
             <Button Name="btnCheckUpdate" Content="{lex:Loc}" VerticalAlignment="Top" Click="BtnCheckUpdate_Click" Margin="4,0,0,0"/>
         </WrapPanel>
-        <ui:ToggleSwitch Name="chkCreateLogFile" IsChecked="{Binding CreateLogFile}" Content="{lex:Loc}" Margin="0,2,0,0"/>
+        <WrapPanel Margin="0,2,0,0">
+            <ui:ToggleSwitch Name="chkCreateLogFile" IsChecked="{Binding CreateLogFile}" Content="{lex:Loc}" />
+        </WrapPanel>
         <TextBlock Margin="0,12,0,0" Text="{lex:Loc Theme}" />
         <RadioButton
             Name="radThemeLight"

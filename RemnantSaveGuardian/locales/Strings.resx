@@ -432,4 +432,10 @@
   <data name="Zoom" xml:space="preserve">
     <value>Zoom</value>
   </data>
+  <data name="lblSwitchLanguage_Text" xml:space="preserve">
+    <value>Select language</value>
+  </data>
+  <data name="Language_change_notice_{chosenLanguage}" xml:space="preserve">
+    <value>Language changed to {chosenLanguage}. You may have to restart to app for the change to fully apply.</value>
+  </data>
 </root>

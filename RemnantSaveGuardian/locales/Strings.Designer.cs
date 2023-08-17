@@ -304,6 +304,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Collapse All.
+        /// </summary>
+        public static string Collapse_All {
+            get {
+                return ResourceManager.GetString("Collapse All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm Delete.
         /// </summary>
         public static string Confirm_Delete {
@@ -408,6 +417,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Exit_the_game_before_restoring_a_save_backup_ {
             get {
                 return ResourceManager.GetString("Exit the game before restoring a save backup.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expand All.
+        /// </summary>
+        public static string Expand_All {
+            get {
+                return ResourceManager.GetString("Expand All", resourceCulture);
             }
         }
         
@@ -556,6 +574,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language changed to {chosenLanguage}. You may have to restart to app for the change to fully apply..
+        /// </summary>
+        public static string Language_change_notice__chosenLanguage_ {
+            get {
+                return ResourceManager.GetString("Language_change_notice_{chosenLanguage}", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last backup save date.
         /// </summary>
         public static string Last_backup_save_date {
@@ -624,6 +651,15 @@ namespace RemnantSaveGuardian.locales {
         public static string lblStartPage_ToolTip {
             get {
                 return ResourceManager.GetString("lblStartPage_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select language.
+        /// </summary>
+        public static string lblSwitchLanguage_Text {
+            get {
+                return ResourceManager.GetString("lblSwitchLanguage_Text", resourceCulture);
             }
         }
         

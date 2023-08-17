@@ -162,14 +162,23 @@
   <data name="Amulet_AbrasiveWhetstone" xml:space="preserve">
     <value>腐蚀磨石</value>
   </data>
+  <data name="Amulet_AbrasiveWhetstone_Notes" xml:space="preserve">
+    <value>{Cass35_Notes}</value>
+  </data>
   <data name="Amulet_AnkhOfPower" xml:space="preserve">
     <value>圣十字辉光</value>
   </data>
   <data name="Amulet_BrokenPocketWatch" xml:space="preserve">
     <value>破损怀表</value>
   </data>
+  <data name="Amulet_BrokenPocketWatch_Notes" xml:space="preserve">
+    <value>{Cass35_Notes}</value>
+  </data>
   <data name="Amulet_ButchersFetish" xml:space="preserve">
     <value>屠夫灵偶</value>
+  </data>
+  <data name="Amulet_ButchersFetish_Notes" xml:space="preserve">
+    <value>完成游戏</value>
   </data>
   <data name="Amulet_ChainsOfAmplification" xml:space="preserve">
     <value>增效锁链</value>
@@ -183,11 +192,17 @@
   <data name="Amulet_DaredevilsCharm" xml:space="preserve">
     <value>勇者神符</value>
   </data>
+  <data name="Amulet_DaredevilsCharm_Notes" xml:space="preserve">
+    <value>在硬核模式下完成游戏</value>
+  </data>
   <data name="Amulet_DeathsEmbrace" xml:space="preserve">
     <value>死亡之拥</value>
   </data>
   <data name="Amulet_DecayedMargin" xml:space="preserve">
     <value>腐朽边际</value>
+  </data>
+  <data name="Amulet_DecayedMargin_Notes" xml:space="preserve">
+    <value>{Cass35_Notes}</value>
   </data>
   <data name="Amulet_DetonationTrigger" xml:space="preserve">
     <value>引爆触发器</value>
@@ -200,6 +215,9 @@
   </data>
   <data name="Amulet_EffigyPendant" xml:space="preserve">
     <value>人形吊坠</value>
+  </data>
+  <data name="Amulet_EffigyPendant_Notes" xml:space="preserve">
+    <value>在木盒子里面，任务物品打开木盒子互动</value>
   </data>
   <data name="Amulet_EffluviumEnhancer" xml:space="preserve">
     <value>扩臭器</value>
@@ -228,6 +246,9 @@
   <data name="Amulet_GunslingersCharm" xml:space="preserve">
     <value>枪手神符</value>
   </data>
+  <data name="Amulet_GunslingersCharm_Notes" xml:space="preserve">
+    <value>完成与泥牙全部聊天奖励</value>
+  </data>
   <data name="Amulet_HallowedEgg" xml:space="preserve">
     <value>圣蛋</value>
   </data>
@@ -246,6 +267,9 @@
   <data name="Amulet_JestersBell" xml:space="preserve">
     <value>小丑的铃铛</value>
   </data>
+  <data name="Amulet_JestersBell_Notes" xml:space="preserve">
+    <value>在小丑表演时鼓掌</value>
+  </data>
   <data name="Amulet_KineticShieldExchanger" xml:space="preserve">
     <value>动能护盾交换器</value>
   </data>
@@ -261,11 +285,17 @@
   <data name="Amulet_LetosAmulet" xml:space="preserve">
     <value>莱托的项链</value>
   </data>
+  <data name="Amulet_LetosAmulet_Notes" xml:space="preserve">
+    <value>超重状态下飞扑100次后在老雷那里购买</value>
+  </data>
   <data name="Amulet_MatriarchsInsignia" xml:space="preserve">
     <value>主母的徽记</value>
   </data>
   <data name="Amulet_NavigatorsPendant" xml:space="preserve">
     <value>领航员吊坠</value>
+  </data>
+  <data name="Amulet_NavigatorsPendant_Notes" xml:space="preserve">
+    <value>佩戴生锈的领航员吊坠被达拉裟吃掉</value>
   </data>
   <data name="Amulet_NeckboneNecklace" xml:space="preserve">
     <value>颈骨项链</value>
@@ -276,17 +306,41 @@
   <data name="Amulet_NecklaceOfSupremacy" xml:space="preserve">
     <value>至境项链</value>
   </data>
+  <data name="Amulet_NightmareSpiral" xml:space="preserve">
+    <value>噩梦螺旋</value>
+  </data>
+  <data name="Amulet_NightmareSpiral_Notes" xml:space="preserve">
+    <value>打败所有的Boss一次后在老雷那里购买</value>
+  </data>
   <data name="Amulet_NightweaversGrudge" xml:space="preserve">
     <value>织夜者的仇怨</value>
+  </data>
+  <data name="Amulet_NightweaversGrudge_Notes" xml:space="preserve">
+    <value>织夜者的网 - 科尔凯特的剃刀</value>
   </data>
   <data name="Amulet_NimuesRibbon" xml:space="preserve">
     <value>尼姆埃缎带</value>
   </data>
+  <data name="Amulet_NimuesRibbon_Notes" xml:space="preserve">
+    <value>把银缎带和金缎带给尼姆埃</value>
+  </data>
   <data name="Amulet_OneEyedJokerIdol" xml:space="preserve">
     <value>独眼小丑像</value>
   </data>
+  <data name="Amulet_OneEyedJokerIdol_Notes" xml:space="preserve">
+    <value>小丑卡牌门 - 面具</value>
+  </data>
   <data name="Amulet_OneTrueKingSigil" xml:space="preserve">
     <value>独一真皇魔符</value>
+  </data>
+  <data name="Amulet_OneTrueKingSigil_Notes" xml:space="preserve">
+    <value>把翡凌魔符和翡麟魔符给尼姆埃</value>
+  </data>
+  <data name="Amulet_OnyxPendulum" xml:space="preserve">
+    <value>玛瑙钟摆</value>
+  </data>
+  <data name="Amulet_OnyxPendulum_Notes" xml:space="preserve">
+    <value>在噩梦难度下完成战役后在老雷那里购买</value>
   </data>
   <data name="Amulet_RangeFinder" xml:space="preserve">
     <value>远程探头</value>
@@ -309,11 +363,17 @@
   <data name="Amulet_ShadeBloomCrystal" xml:space="preserve">
     <value>刹邸绽放水晶</value>
   </data>
+  <data name="Amulet_ShadeBloomCrystal_Notes" xml:space="preserve">
+    <value>在喜乐宫里小丑坐的骨堆上</value>
+  </data>
   <data name="Amulet_ShockDevice" xml:space="preserve">
     <value>电击设备</value>
   </data>
   <data name="Amulet_SilverRibbon" xml:space="preserve">
     <value>银缎带</value>
+  </data>
+  <data name="Amulet_SoulAnchor" xml:space="preserve">
+    <value>灵魂之锚</value>
   </data>
   <data name="Amulet_SpiritWispAmulet" xml:space="preserve">
     <value>魂光项链</value>
@@ -330,8 +390,17 @@
   <data name="Amulet_TwistedIdol" xml:space="preserve">
     <value>扭曲神像</value>
   </data>
+  <data name="Amulet_TwistedIdol_Notes" xml:space="preserve">
+    <value>{Cass35_Notes}</value>
+  </data>
   <data name="Amulet_VengeanceIdol" xml:space="preserve">
     <value>复仇神像</value>
+  </data>
+  <data name="Amulet_VoidIdol" xml:space="preserve">
+    <value>虚空神像</value>
+  </data>
+  <data name="Amulet_VoidIdol_Notes" xml:space="preserve">
+    <value>在泽厄尔复制品处用闪耀精华回声制作</value>
   </data>
   <data name="Amulet_WeightlessWeight" xml:space="preserve">
     <value>无重之重</value>
@@ -346,55 +415,76 @@
     <value>护甲</value>
   </data>
   <data name="Armor_Alchemist" xml:space="preserve">
-    <value>学者</value>
+    <value>学者套装</value>
+  </data>
+  <data name="Armor_Arcanist" xml:space="preserve">
+    <value>迷宫套装</value>
   </data>
   <data name="Armor_Archon" xml:space="preserve">
-    <value>执政官</value>
+    <value>执政官套装</value>
   </data>
   <data name="Armor_Body" xml:space="preserve">
     <value>身体</value>
   </data>
+  <data name="Armor_Body_Leto2_Notes" xml:space="preserve">
+    <value>{Armor_Head_Leto2_Notes}</value>
+  </data>
   <data name="Armor_Challenger" xml:space="preserve">
-    <value>斗士</value>
+    <value>斗士套装</value>
   </data>
   <data name="Armor_Engineer" xml:space="preserve">
-    <value>技师</value>
+    <value>技师套装</value>
   </data>
   <data name="Armor_Explorer" xml:space="preserve">
-    <value>探索者</value>
+    <value>探索者套装</value>
   </data>
   <data name="Armor_FaeRoyalGuard" xml:space="preserve">
-    <value>翡族皇家</value>
+    <value>翡族皇家套装</value>
   </data>
   <data name="Armor_Gloves" xml:space="preserve">
     <value>手部</value>
   </data>
+  <data name="Armor_Gloves_Leto2_Notes" xml:space="preserve">
+    <value>{Armor_Head_Leto2_Notes}</value>
+  </data>
   <data name="Armor_Gunslinger" xml:space="preserve">
-    <value>正午</value>
+    <value>正午套装</value>
   </data>
   <data name="Armor_Handler" xml:space="preserve">
-    <value>驯兽员</value>
+    <value>驯兽员套装</value>
   </data>
   <data name="Armor_Head" xml:space="preserve">
     <value>头部</value>
   </data>
+  <data name="Armor_Head_Leto2_Notes" xml:space="preserve">
+    <value>货船传送门</value>
+  </data>
+  <data name="Armor_Head_LodestoneCrown_Notes" xml:space="preserve">
+    <value>在科尔凯特上锁房间头顶的船上</value>
+  </data>
+  <data name="Armor_Head_RedPrince_Notes" xml:space="preserve">
+    <value>用近战武器刺客匕首给红王子最后一击</value>
+  </data>
   <data name="Armor_Hunter" xml:space="preserve">
-    <value>夜行者</value>
+    <value>夜行者套装</value>
   </data>
   <data name="Armor_Invader" xml:space="preserve">
-    <value>入侵者</value>
+    <value>入侵者套装</value>
   </data>
   <data name="Armor_Legs" xml:space="preserve">
     <value>腿部</value>
   </data>
+  <data name="Armor_Legs_Leto2_Notes" xml:space="preserve">
+    <value>{Armor_Head_Leto2_Notes}</value>
+  </data>
   <data name="Armor_Leto2" xml:space="preserve">
-    <value>莱托2型</value>
+    <value>莱托2型套装</value>
   </data>
   <data name="Armor_LodestoneCrown" xml:space="preserve">
     <value>磁石王冠</value>
   </data>
   <data name="Armor_Medic" xml:space="preserve">
-    <value>战地医务兵</value>
+    <value>战地医务兵套装</value>
   </data>
   <data name="Armor_PilotsHelm" xml:space="preserve">
     <value>领航员头盔</value>
@@ -406,13 +496,13 @@
     <value>红王子的王冠</value>
   </data>
   <data name="Armor_RedWidow" xml:space="preserve">
-    <value>红寡妇</value>
+    <value>红寡妇套装</value>
   </data>
   <data name="Armor_SpaceWorker" xml:space="preserve">
-    <value>空间工作者</value>
+    <value>空间工作者套装</value>
   </data>
   <data name="Armor_Summoner" xml:space="preserve">
-    <value>长老</value>
+    <value>长老套装</value>
   </data>
   <data name="Armor_Void" xml:space="preserve">
     <value>虚空</value>
@@ -469,7 +559,7 @@
     <value>白骨收获者巢穴</value>
   </data>
   <data name="Boss" xml:space="preserve">
-    <value>首领</value>
+    <value>世界Boss</value>
   </data>
   <data name="Brabus" xml:space="preserve">
     <value>布拉巴斯</value>
@@ -495,6 +585,15 @@
   <data name="Cass" xml:space="preserve">
     <value>卡莎</value>
   </data>
+  <data name="Cass35_Notes" xml:space="preserve">
+    <value>卡莎35%几率刷新</value>
+  </data>
+  <data name="Cass65_Notes" xml:space="preserve">
+    <value>卡莎65%几率刷新</value>
+  </data>
+  <data name="Cass75_Notes" xml:space="preserve">
+    <value>卡莎75%几率刷新</value>
+  </data>
   <data name="CathedralOfSeasons" xml:space="preserve">
     <value>预兆教堂</value>
   </data>
@@ -512,33 +611,6 @@
   </data>
   <data name="ClockTower" xml:space="preserve">
     <value>钟楼</value>
-  </data>
-  <data name="Complete Labyrinth on HC" xml:space="preserve">
-    <value>在硬核模式下完成迷宫</value>
-  </data>
-  <data name="Complete Losomn on HC" xml:space="preserve">
-    <value>在硬核模式下完成洛斯曼</value>
-  </data>
-  <data name="Complete N'Erud on HC" xml:space="preserve">
-    <value>在硬核模式下完成涅鲁德</value>
-  </data>
-  <data name="Complete the game" xml:space="preserve">
-    <value>完成游戏</value>
-  </data>
-  <data name="Complete the game on Apocalypse" xml:space="preserve">
-    <value>在末日难度下完成游戏</value>
-  </data>
-  <data name="Complete the game on HC" xml:space="preserve">
-    <value>在硬核模式下完成游戏</value>
-  </data>
-  <data name="Complete the game on Veteran" xml:space="preserve">
-    <value>在老手难度下完成游戏</value>
-  </data>
-  <data name="Complete the game on Veteran HC" xml:space="preserve">
-    <value>在硬核老手难度下完成游戏</value>
-  </data>
-  <data name="Complete Yaesha on HC" xml:space="preserve">
-    <value>在硬核模式下完成耶莎</value>
   </data>
   <data name="CorruptedHarbor" xml:space="preserve">
     <value>腐败港湾</value>
@@ -581,6 +653,9 @@
   </data>
   <data name="DrzyrReplicator" xml:space="preserve">
     <value>泽厄尔复制品</value>
+  </data>
+  <data name="Dwell" xml:space="preserve">
+    <value>叨沃</value>
   </data>
   <data name="ElevatorShaft" xml:space="preserve">
     <value>电梯井</value>
@@ -702,11 +777,11 @@
   <data name="Hunter" xml:space="preserve">
     <value>猎人</value>
   </data>
+  <data name="IAmLegendStory" xml:space="preserve">
+    <value>我是传奇</value>
+  </data>
   <data name="ImperialGardens" xml:space="preserve">
     <value>皇家花园</value>
-  </data>
-  <data name="IAmLegendStory" xml:space="preserve">
-    <value>我是传奇故事</value>
   </data>
   <data name="IndignantFetish" xml:space="preserve">
     <value>愤怒灵偶</value>
@@ -741,23 +816,38 @@
   <data name="Item_HiddenContainer_Material_Engram_Challenger" xml:space="preserve">
     <value>挑战者</value>
   </data>
+  <data name="Item_HiddenContainer_Material_Engram_Challenger_Notes" xml:space="preserve">
+    <value>从老雷那里购买旧金属工具</value>
+  </data>
   <data name="Item_HiddenContainer_Material_Engram_Engineer" xml:space="preserve">
     <value>工程师</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Gunslinger" xml:space="preserve">
     <value>枪手</value>
   </data>
+  <data name="Item_HiddenContainer_Material_Engram_Gunslinger_Notes" xml:space="preserve">
+    <value>{Amulet_GunslingersCharm_Notes}</value>
+  </data>
   <data name="Item_HiddenContainer_Material_Engram_Handler" xml:space="preserve">
     <value>驯兽师</value>
   </data>
+  <data name="Item_HiddenContainer_Material_Engram_Handler_Notes" xml:space="preserve">
+    <value>从泥牙那里购买古老哨子</value>
+  </data>
   <data name="Item_HiddenContainer_Material_Engram_Hunter" xml:space="preserve">
     <value>猎人</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Hunter_Notes" xml:space="preserve">
+    <value>从布拉巴斯那里购买锈蚀奖章</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Invader" xml:space="preserve">
     <value>入侵者</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Medic" xml:space="preserve">
     <value>医务兵</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Medic_Notes" xml:space="preserve">
+    <value>从诺拉那里购买医务兵饰针</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Summoner" xml:space="preserve">
     <value>召唤师</value>
@@ -834,8 +924,17 @@
   <data name="MetaGem_Bandit" xml:space="preserve">
     <value>强盗</value>
   </data>
+  <data name="MetaGem_Battery" xml:space="preserve">
+    <value>电池</value>
+  </data>
   <data name="MetaGem_Bulletweaver" xml:space="preserve">
     <value>子弹织造者</value>
+  </data>
+  <data name="MetaGem_DeadlyCalm" xml:space="preserve">
+    <value>致命的平静</value>
+  </data>
+  <data name="MetaGem_Dervish" xml:space="preserve">
+    <value>德维士</value>
   </data>
   <data name="MetaGem_Disengage" xml:space="preserve">
     <value>拆解</value>
@@ -846,11 +945,23 @@
   <data name="MetaGem_Failsafe" xml:space="preserve">
     <value>失效保护</value>
   </data>
+  <data name="MetaGem_Feedback" xml:space="preserve">
+    <value>反馈</value>
+  </data>
+  <data name="MetaGem_GhostShell" xml:space="preserve">
+    <value>鬼魅甲壳</value>
+  </data>
+  <data name="MetaGem_Harmonizer" xml:space="preserve">
+    <value>调谐者</value>
+  </data>
   <data name="MetaGem_Lithely" xml:space="preserve">
     <value>轻盈</value>
   </data>
   <data name="MetaGem_Misfortune" xml:space="preserve">
     <value>不幸</value>
+  </data>
+  <data name="MetaGem_Misfortune_Notes" xml:space="preserve">
+    <value>小丑卡牌门 - 双角恶魔</value>
   </data>
   <data name="MetaGem_Momentum" xml:space="preserve">
     <value>动量</value>
@@ -863,6 +974,15 @@
   </data>
   <data name="MetaGem_Reinvigorate" xml:space="preserve">
     <value>重振精神</value>
+  </data>
+  <data name="MetaGem_Resentment" xml:space="preserve">
+    <value>怨恨</value>
+  </data>
+  <data name="MetaGem_ShieldBreaker" xml:space="preserve">
+    <value>破盾者</value>
+  </data>
+  <data name="MetaGem_Slayer" xml:space="preserve">
+    <value>屠杀者</value>
   </data>
   <data name="MetaGem_Steadfast" xml:space="preserve">
     <value>坚定</value>
@@ -891,8 +1011,11 @@
   <data name="MetaGem_VengefulStrike" xml:space="preserve">
     <value>复仇女神</value>
   </data>
+  <data name="MetaGem_WeaponLord" xml:space="preserve">
+    <value>武器之王</value>
+  </data>
   <data name="MiniBoss" xml:space="preserve">
-    <value>迷你首领</value>
+    <value>小Boss</value>
   </data>
   <data name="Mods" xml:space="preserve">
     <value>改装</value>
@@ -921,6 +1044,9 @@
   <data name="Mod_Familiar" xml:space="preserve">
     <value>使魔</value>
   </data>
+  <data name="Mod_Familiar_Notes" xml:space="preserve">
+    <value>对熟睡中的女猎人使用捕梦者</value>
+  </data>
   <data name="Mod_Fargazer" xml:space="preserve">
     <value>千里眼</value>
   </data>
@@ -938,6 +1064,9 @@
   </data>
   <data name="Mod_Overflow" xml:space="preserve">
     <value>喷溢</value>
+  </data>
+  <data name="Mod_Overflow_Notes" xml:space="preserve">
+    <value>乘坐泽厄尔复制品右边的电梯，然后沿着桥右侧的小路走，你会看到制作材料在机器上</value>
   </data>
   <data name="Mod_PrismaticDriver" xml:space="preserve">
     <value>棱镜驱动器</value>
@@ -1077,10 +1206,10 @@
   <data name="Ravager" xml:space="preserve">
     <value>劫掠者</value>
   </data>
-  <data name="RavagersLair" xml:space="preserve">
+  <data name="Ravager's Lair" xml:space="preserve">
     <value>劫掠者的巢穴</value>
   </data>
-  <data name="Ravager's Lair" xml:space="preserve">
+  <data name="RavagersLair" xml:space="preserve">
     <value>劫掠者的巢穴</value>
   </data>
   <data name="RavagerStory" xml:space="preserve">
@@ -1088,6 +1217,9 @@
   </data>
   <data name="Ravenous" xml:space="preserve">
     <value>盛宴</value>
+  </data>
+  <data name="RedDoeStatue" xml:space="preserve">
+    <value>红鹿雕像</value>
   </data>
   <data name="RedPrince" xml:space="preserve">
     <value>红王子</value>
@@ -1107,11 +1239,23 @@
   <data name="Relic_Consumable_DecayedHeart" xml:space="preserve">
     <value>腐朽之心</value>
   </data>
+  <data name="Relic_Consumable_DivertingHeart" xml:space="preserve">
+    <value>转变之心</value>
+  </data>
+  <data name="Relic_Consumable_DivertingHeart_Notes" xml:space="preserve">
+    <value>打败30个世界Boss后在卡沙那里购买</value>
+  </data>
   <data name="Relic_Consumable_EnlargedHeart" xml:space="preserve">
     <value>膨大心脏</value>
   </data>
+  <data name="Relic_Consumable_EnlargedHeart_Notes" xml:space="preserve">
+    <value>到达根蔓地球后在卡沙那里购买</value>
+  </data>
   <data name="Relic_Consumable_LifelessHeart" xml:space="preserve">
     <value>萎靡之心</value>
+  </data>
+  <data name="Relic_Consumable_LifelessHeart_Notes" xml:space="preserve">
+    <value>吃死亡之果3次</value>
   </data>
   <data name="Relic_Consumable_PulsingHeart" xml:space="preserve">
     <value>跳动之心</value>
@@ -1128,6 +1272,9 @@
   <data name="Relic_Consumable_RipenedHeart" xml:space="preserve">
     <value>成熟之心</value>
   </data>
+  <data name="Relic_Consumable_RipenedHeart_Notes" xml:space="preserve">
+    <value>塞恩树完全长大，结出神圣塞恩果3次后，再次成熟获得</value>
+  </data>
   <data name="Relic_Consumable_RunedHeart" xml:space="preserve">
     <value>符文之心</value>
   </data>
@@ -1140,14 +1287,26 @@
   <data name="Relic_Consumable_SiphonHeart" xml:space="preserve">
     <value>汲取之心</value>
   </data>
+  <data name="Relic_Consumable_SiphonHeart_Notes" xml:space="preserve">
+    <value>把闪耀精华回声给保管人</value>
+  </data>
   <data name="Relic_Consumable_TormentedHeart" xml:space="preserve">
     <value>折磨之心</value>
+  </data>
+  <data name="Relic_Consumable_TormentedHeart_Notes" xml:space="preserve">
+    <value>织夜者的网 - Override Pin (涅鲁德)</value>
   </data>
   <data name="Relic_Consumable_TranquilHeart" xml:space="preserve">
     <value>平稳之心</value>
   </data>
+  <data name="Relic_Consumable_TranquilHeart_Notes" xml:space="preserve">
+    <value>把圣物折磨之心给尼姆埃</value>
+  </data>
   <data name="Relic_Consumable_UnsulliedHeart" xml:space="preserve">
     <value>清白之心</value>
+  </data>
+  <data name="Relic_Consumable_UnsulliedHeart_Notes" xml:space="preserve">
+    <value>在宫殿庭院里同时佩戴独一真皇魔符(项链)、翡凌魔符(戒指)、翡麟魔符(戒指)</value>
   </data>
   <data name="Relic_Consumable_VoidHeart" xml:space="preserve">
     <value>虚空之心</value>
@@ -1167,6 +1326,9 @@
   <data name="Ring_AkariWarBand" xml:space="preserve">
     <value>阿卡里战争指环</value>
   </data>
+  <data name="Ring_AkariWarBand_Notes" xml:space="preserve">
+    <value>{Cass65_Notes}</value>
+  </data>
   <data name="Ring_AlchemyStone" xml:space="preserve">
     <value>炼金术之石</value>
   </data>
@@ -1175,6 +1337,9 @@
   </data>
   <data name="Ring_AmberMoonstone" xml:space="preserve">
     <value>琥珀月光石</value>
+  </data>
+  <data name="Ring_AmberMoonstone_Notes" xml:space="preserve">
+    <value>{Cass75_Notes}</value>
   </data>
   <data name="Ring_AnastasijasInspiration" xml:space="preserve">
     <value>阿纳斯塔西娅的灵感</value>
@@ -1185,14 +1350,26 @@
   <data name="Ring_AssassinsSeal" xml:space="preserve">
     <value>刺客封印</value>
   </data>
+  <data name="Ring_AssassinsSeal_Notes" xml:space="preserve">
+    <value>击杀议会成员</value>
+  </data>
   <data name="Ring_BandBand" xml:space="preserve">
     <value>团队指环</value>
+  </data>
+  <data name="Ring_BandOfAccord" xml:space="preserve">
+    <value>协调指环</value>
+  </data>
+  <data name="Ring_BandOfAccord_Notes" xml:space="preserve">
+    <value>联机中与队友完成击掌后在老雷那里购买</value>
   </data>
   <data name="Ring_BisectedRing" xml:space="preserve">
     <value>平分戒指</value>
   </data>
   <data name="Ring_BlackCatBand" xml:space="preserve">
     <value>黑猫指环</value>
+  </data>
+  <data name="Ring_BlackCatBand_Notes" xml:space="preserve">
+    <value>死亡15次后在老雷那里购买</value>
   </data>
   <data name="Ring_BlackoutRing" xml:space="preserve">
     <value>遮光戒指</value>
@@ -1205,6 +1382,9 @@
   </data>
   <data name="Ring_BlessedRing" xml:space="preserve">
     <value>祝福戒指</value>
+  </data>
+  <data name="Ring_BlessedRing_Notes" xml:space="preserve">
+    <value>{Cass65_Notes}</value>
   </data>
   <data name="Ring_BloodJewel" xml:space="preserve">
     <value>鲜血珠宝</value>
@@ -1221,11 +1401,26 @@
   <data name="Ring_BraidedThorns" xml:space="preserve">
     <value>编织棘刺</value>
   </data>
+  <data name="Ring_BraidedThorns_Notes" xml:space="preserve">
+    <value>{Cass65_Notes}</value>
+  </data>
+  <data name="Ring_BrightSteelRing" xml:space="preserve">
+    <value>亮钢戒指</value>
+  </data>
+  <data name="Ring_BrightSteelRing_Notes" xml:space="preserve">
+    <value>完成至少15个世界故事后在老雷那里购买</value>
+  </data>
   <data name="Ring_BurdenOfTheAudacious" xml:space="preserve">
     <value>冒险者之负担</value>
   </data>
+  <data name="Ring_BurdenOfTheAudacious_Notes" xml:space="preserve">
+    <value>{Cass35_Notes}</value>
+  </data>
   <data name="Ring_BurdenOfTheDestroyer" xml:space="preserve">
     <value>破坏者之负担</value>
+  </data>
+  <data name="Ring_BurdenOfTheDestroyer_Notes" xml:space="preserve">
+    <value>{Cass35_Notes}</value>
   </data>
   <data name="Ring_BurdenOfTheDivine" xml:space="preserve">
     <value>神职者之负担</value>
@@ -1235,6 +1430,9 @@
   </data>
   <data name="Ring_BurdenOfTheGambler" xml:space="preserve">
     <value>赌徒之负担</value>
+  </data>
+  <data name="Ring_BurdenOfTheGambler_Notes" xml:space="preserve">
+    <value>{Cass35_Notes}</value>
   </data>
   <data name="Ring_BurdenOfTheMariner" xml:space="preserve">
     <value>水手之负担</value>
@@ -1254,11 +1452,17 @@
   <data name="Ring_CatalogersJewel" xml:space="preserve">
     <value>编目员珠宝</value>
   </data>
+  <data name="Ring_CatalogersJewel_Notes" xml:space="preserve">
+    <value>在喜乐宫的巨型下水道入口附近</value>
+  </data>
   <data name="Ring_CelerityStone" xml:space="preserve">
     <value>迅捷之石</value>
   </data>
   <data name="Ring_CompulsionLoop" xml:space="preserve">
     <value>强制之环</value>
+  </data>
+  <data name="Ring_CompulsionLoop_Notes" xml:space="preserve">
+    <value>{Cass65_Notes}</value>
   </data>
   <data name="Ring_ConservationSeal" xml:space="preserve">
     <value>保存封印</value>
@@ -1269,8 +1473,14 @@
   <data name="Ring_DeadKingsMemento" xml:space="preserve">
     <value>先王的纪念品</value>
   </data>
+  <data name="Ring_DeadKingsMemento_Notes" xml:space="preserve">
+    <value>{Cass65_Notes}</value>
+  </data>
   <data name="Ring_DeceiversBand" xml:space="preserve">
     <value>欺骗者指环</value>
+  </data>
+  <data name="Ring_DeceiversBand_Notes" xml:space="preserve">
+    <value>{Cass65_Notes}</value>
   </data>
   <data name="Ring_DeepPocketRing" xml:space="preserve">
     <value>深袋戒指</value>
@@ -1293,11 +1503,17 @@
   <data name="Ring_DranScavengerSigil" xml:space="preserve">
     <value>德兰拾荒者戒指</value>
   </data>
+  <data name="Ring_DranScavengerSigil_Notes" xml:space="preserve">
+    <value>在硬核模式下完成洛斯曼</value>
+  </data>
   <data name="Ring_DreadFont" xml:space="preserve">
     <value>恐惧之泉</value>
   </data>
   <data name="Ring_DrzyrSniperSigil" xml:space="preserve">
     <value>泽厄尔狙击手魔符</value>
+  </data>
+  <data name="Ring_DrzyrSniperSigil_Notes" xml:space="preserve">
+    <value>在硬核模式下完成涅鲁德</value>
   </data>
   <data name="Ring_DyingEmber" xml:space="preserve">
     <value>将熄余烬</value>
@@ -1368,6 +1584,9 @@
   <data name="Ring_GunslingersRing" xml:space="preserve">
     <value>枪手戒指</value>
   </data>
+  <data name="Ring_GunslingersRing_Notes" xml:space="preserve">
+    <value>完成与泥牙一半聊天奖励</value>
+  </data>
   <data name="Ring_HardcoreMetalBand" xml:space="preserve">
     <value>硬核金属指环</value>
   </data>
@@ -1401,6 +1620,9 @@
   <data name="Ring_MechanicsCog" xml:space="preserve">
     <value>机械师的齿轮</value>
   </data>
+  <data name="Ring_MechanicsCog_Notes" xml:space="preserve">
+    <value>{Cass65_Notes}</value>
+  </data>
   <data name="Ring_MetalDriver" xml:space="preserve">
     <value>金属驱动</value>
   </data>
@@ -1419,6 +1641,9 @@
   <data name="Ring_PanMageSigil" xml:space="preserve">
     <value>阿哈内水晶</value>
   </data>
+  <data name="Ring_PanMageSigil_Notes" xml:space="preserve">
+    <value>在硬核模式下完成耶莎</value>
+  </data>
   <data name="Ring_PointFocusRing" xml:space="preserve">
     <value>对焦戒指</value>
   </data>
@@ -1433,6 +1658,9 @@
   </data>
   <data name="Ring_ProvisionerRing" xml:space="preserve">
     <value>供应者戒指</value>
+  </data>
+  <data name="Ring_ProvisionerRing_Notes" xml:space="preserve">
+    <value>在硬核模式下完成迷宫</value>
   </data>
   <data name="Ring_ReapingStone" xml:space="preserve">
     <value>收割之石</value>
@@ -1458,8 +1686,14 @@
   <data name="Ring_RingOfFlawedBeauty" xml:space="preserve">
     <value>缺陷美戒指</value>
   </data>
+  <data name="Ring_RingOfFlawedBeauty_Notes" xml:space="preserve">
+    <value>{Cass65_Notes}</value>
+  </data>
   <data name="Ring_RingOfGrace" xml:space="preserve">
     <value>优雅戒指</value>
+  </data>
+  <data name="Ring_RingOfGrace_Notes" xml:space="preserve">
+    <value>把德瑞雅的脚链给瑞文</value>
   </data>
   <data name="Ring_RingOfOmens" xml:space="preserve">
     <value>预兆戒指</value>
@@ -1469,6 +1703,9 @@
   </data>
   <data name="Ring_RingOfRetribution" xml:space="preserve">
     <value>报应戒指</value>
+  </data>
+  <data name="Ring_RingOfRetribution_Notes" xml:space="preserve">
+    <value>织夜者的网 - 德瑞雅的脚链</value>
   </data>
   <data name="Ring_RingOfTheAdmiral" xml:space="preserve">
     <value>破损的上将戒指</value>
@@ -1482,11 +1719,17 @@
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>痛苦之岩</value>
   </data>
+  <data name="Ring_RockOfAnguish_Notes" xml:space="preserve">
+    <value>{Cass65_Notes}</value>
+  </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>锈蚀传家宝</value>
   </data>
   <data name="Ring_Sagestone" xml:space="preserve">
     <value>贤者之石</value>
+  </data>
+  <data name="Ring_SapphireDreamstone" xml:space="preserve">
+    <value>蓝宝梦石</value>
   </data>
   <data name="Ring_SealOfTheEmpress" xml:space="preserve">
     <value>女皇封印</value>
@@ -1544,6 +1787,9 @@
   </data>
   <data name="Ring_TarnishedRing" xml:space="preserve">
     <value>污秽戒指</value>
+  </data>
+  <data name="Ring_TarnishedRing_Notes" xml:space="preserve">
+    <value>听睡觉哥讲完兔子的故事</value>
   </data>
   <data name="Ring_TearOfKaeula" xml:space="preserve">
     <value>库埃拉之泪</value>
@@ -1893,6 +2139,9 @@
   <data name="Trait_Resonance" xml:space="preserve">
     <value>回响</value>
   </data>
+  <data name="Trait_Resonance_Notes" xml:space="preserve">
+    <value>在涅鲁德沉睡设施中被手动净化程序杀死</value>
+  </data>
   <data name="Trait_Revivalist" xml:space="preserve">
     <value>复活师</value>
   </data>
@@ -1938,11 +2187,11 @@
   <data name="Underground_Stasis" xml:space="preserve">
     <value>静滞</value>
   </data>
-  <data name="Underworld_TheClaw" xml:space="preserve">
-    <value>巨型机械爪</value>
-  </data>
   <data name="Underworld" xml:space="preserve">
     <value>地下城</value>
+  </data>
+  <data name="Underworld_TheClaw" xml:space="preserve">
+    <value>巨型机械爪</value>
   </data>
   <data name="VaultOfTheFormless" xml:space="preserve">
     <value>无形者的地下室</value>
@@ -1965,6 +2214,9 @@
   <data name="Weapon_AssassinsDagger" xml:space="preserve">
     <value>刺客匕首</value>
   </data>
+  <data name="Weapon_AssassinsDagger_Notes" xml:space="preserve">
+    <value>把在议会厅镜子世界获得的刺客匕首给尼姆埃</value>
+  </data>
   <data name="Weapon_AssaultRifle" xml:space="preserve">
     <value>黑噬 AR-47</value>
   </data>
@@ -1986,8 +2238,14 @@
   <data name="Weapon_Bow" xml:space="preserve">
     <value>皇家猎弓</value>
   </data>
+  <data name="Weapon_CoachGun" xml:space="preserve">
+    <value>双管霰弹枪</value>
+  </data>
   <data name="Weapon_CrescentMoon" xml:space="preserve">
     <value>新月</value>
+  </data>
+  <data name="Weapon_CrescentMoon_Notes" xml:space="preserve">
+    <value>对熟睡中的尼姆埃使用捕梦者</value>
   </data>
   <data name="Weapon_Crossbow" xml:space="preserve">
     <value>弩</value>
@@ -2000,6 +2258,9 @@
   </data>
   <data name="Weapon_Dreamcatcher" xml:space="preserve">
     <value>捕梦者</value>
+  </data>
+  <data name="Weapon_Dreamcatcher_Notes" xml:space="preserve">
+    <value>织夜者的网 - 织夜者石像</value>
   </data>
   <data name="Weapon_EdgeOfTheForest" xml:space="preserve">
     <value>森之缘</value>
@@ -2027,6 +2288,9 @@
   </data>
   <data name="Weapon_HerosSword" xml:space="preserve">
     <value>英雄长剑</value>
+  </data>
+  <data name="Weapon_HerosSword_Notes" xml:space="preserve">
+    <value>完成游戏</value>
   </data>
   <data name="Weapon_HuntingPistol" xml:space="preserve">
     <value>弹无虚发</value>
@@ -2061,6 +2325,9 @@
   <data name="Weapon_Meridian" xml:space="preserve">
     <value>巅峰</value>
   </data>
+  <data name="Weapon_Meridian_Notes" xml:space="preserve">
+    <value>打掉堵塞排水口的怪物，等待90分钟等到大水灌满</value>
+  </data>
   <data name="Weapon_Nebula" xml:space="preserve">
     <value>星云</value>
   </data>
@@ -2072,6 +2339,9 @@
   </data>
   <data name="Weapon_OrnateBlade" xml:space="preserve">
     <value>华丽利刃</value>
+  </data>
+  <data name="Weapon_OrnateFlail" xml:space="preserve">
+    <value>精巧锤矛</value>
   </data>
   <data name="Weapon_PlasmaCutter" xml:space="preserve">
     <value>等离子切割者</value>
@@ -2094,6 +2364,9 @@
   <data name="Weapon_RunePistol" xml:space="preserve">
     <value>符文手枪</value>
   </data>
+  <data name="Weapon_RunePistol_Notes" xml:space="preserve">
+    <value>织夜者的网 - 贪婪勋章</value>
+  </data>
   <data name="Weapon_RuptureCannon" xml:space="preserve">
     <value>破裂炮</value>
   </data>
@@ -2102,6 +2375,9 @@
   </data>
   <data name="Weapon_Savior" xml:space="preserve">
     <value>拯救者</value>
+  </data>
+  <data name="Weapon_Savior_Notes" xml:space="preserve">
+    <value>在硬核老手难度下完成游戏</value>
   </data>
   <data name="Weapon_ServicePistol" xml:space="preserve">
     <value>服役手枪</value>
@@ -2115,8 +2391,14 @@
   <data name="Weapon_SMG" xml:space="preserve">
     <value>MP60-R</value>
   </data>
+  <data name="Weapon_SMG_Notes" xml:space="preserve">
+    <value>货船</value>
+  </data>
   <data name="Weapon_Smolder" xml:space="preserve">
     <value>阴燃</value>
+  </data>
+  <data name="Weapon_Smolder_Notes" xml:space="preserve">
+    <value>完成游戏</value>
   </data>
   <data name="Weapon_Sorrow" xml:space="preserve">
     <value>哀痛</value>
@@ -2124,11 +2406,20 @@
   <data name="Weapon_SpectralBlade" xml:space="preserve">
     <value>幽灵利刃</value>
   </data>
+  <data name="Weapon_SpectralBlade_Notes" xml:space="preserve">
+    <value>不插入超载钥匙</value>
+  </data>
   <data name="Weapon_Sporebloom" xml:space="preserve">
     <value>孢子喷射</value>
   </data>
+  <data name="Weapon_Sporebloom_Notes" xml:space="preserve">
+    <value>在老手难度下完成游戏</value>
+  </data>
   <data name="Weapon_Starkiller" xml:space="preserve">
     <value>弑星者</value>
+  </data>
+  <data name="Weapon_Starkiller_Notes" xml:space="preserve">
+    <value>在硬核模式下完成游戏</value>
   </data>
   <data name="Weapon_StarShot" xml:space="preserve">
     <value>星辰射击</value>
@@ -2139,8 +2430,14 @@
   <data name="Weapon_TalRatha_Hammer" xml:space="preserve">
     <value>气巨人</value>
   </data>
+  <data name="Weapon_TalRatha_Hammer_Notes" xml:space="preserve">
+    <value>被达拉裟吃掉</value>
+  </data>
   <data name="Weapon_TommyGun" xml:space="preserve">
     <value>芝加哥打字机</value>
+  </data>
+  <data name="Weapon_TommyGun_Notes" xml:space="preserve">
+    <value>{Armor_Head_Leto2_Notes}</value>
   </data>
   <data name="Weapon_TwistedArbalest" xml:space="preserve">
     <value>扭曲劲弩</value>
@@ -2151,8 +2448,14 @@
   <data name="Weapon_WorldsEdge" xml:space="preserve">
     <value>世界之刃</value>
   </data>
+  <data name="Weapon_WorldsEdge_Notes" xml:space="preserve">
+    <value>在末日难度下完成游戏</value>
+  </data>
   <data name="Whispers" xml:space="preserve">
     <value>低语</value>
+  </data>
+  <data name="WidowsCourt" xml:space="preserve">
+    <value>红寡妇王庭</value>
   </data>
   <data name="WindHollow" xml:space="preserve">
     <value>风笛塔</value>
@@ -2161,7 +2464,7 @@
     <value>凋零</value>
   </data>
   <data name="WorldBoss" xml:space="preserve">
-    <value>世界首领</value>
+    <value>世界Boss</value>
   </data>
   <data name="World_Earth" xml:space="preserve">
     <value>地球</value>
@@ -2180,65 +2483,5 @@
   </data>
   <data name="World_RootEarth" xml:space="preserve">
     <value>根蔓地球</value>
-  </data>
-  <data name="Weapon_CoachGun" xml:space="preserve">
-    <value>双管霰弹枪</value>
-  </data>
-  <data name="Ring_BandOfAccord" xml:space="preserve">
-    <value>协调指环</value>
-  </data>
-  <data name="Armor_Arcanist" xml:space="preserve">
-    <value>迷宫</value>
-  </data>
-  <data name="Dwell" xml:space="preserve">
-    <value>叨沃</value>
-  </data>
-  <data name="Amulet_OnyxPendulum" xml:space="preserve">
-    <value>玛瑙钟摆</value>
-  </data>
-  <data name="Amulet_SoulAnchor" xml:space="preserve">
-    <value>灵魂之锚</value>
-  </data>
-  <data name="Amulet_VoidIdol" xml:space="preserve">
-    <value>虚空神像</value>
-  </data>
-  <data name="Crypt_LivingStone" xml:space="preserve">
-    <value>四座雕像</value>
-  </data>
-  <data name="MetaGem_Battery" xml:space="preserve">
-    <value>电池</value>
-  </data>
-  <data name="MetaGem_DeadlyCalm" xml:space="preserve">
-    <value>致命的平静</value>
-  </data>
-  <data name="MetaGem_Dervish" xml:space="preserve">
-    <value>德维士</value>
-  </data>
-  <data name="MetaGem_Feedback" xml:space="preserve">
-    <value>反馈</value>
-  </data>
-  <data name="MetaGem_Harmonizer" xml:space="preserve">
-    <value>调谐者</value>
-  </data>
-  <data name="MetaGem_Resentment" xml:space="preserve">
-    <value>怨恨</value>
-  </data>
-  <data name="MetaGem_ShieldBreaker" xml:space="preserve">
-    <value>破盾者</value>
-  </data>
-  <data name="MetaGem_Slayer" xml:space="preserve">
-    <value>屠杀者</value>
-  </data>
-  <data name="MetaGem_WeaponLord" xml:space="preserve">
-    <value>武器之王</value>
-  </data>
-  <data name="Relic_Consumable_DivertingHeart" xml:space="preserve">
-    <value>转变之心</value>
-  </data>
-  <data name="Ring_SapphireDreamstone" xml:space="preserve">
-    <value>蓝宝梦石</value>
-  </data>
-  <data name="Weapon_OrnateFlail" xml:space="preserve">
-    <value>精巧锤矛</value>
   </data>
 </root>
