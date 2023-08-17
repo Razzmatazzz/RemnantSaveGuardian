@@ -89,7 +89,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 SaveWatcher.SaveUpdated += SaveWatcher_SaveUpdated;
 
                 btnStartGame.IsEnabled = !IsRemnantRunning();
-
+                Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
                 loadBackups();
             } catch (Exception ex) {
                 Logger.Error($"Error loading backups page: {ex}");
@@ -770,6 +770,12 @@ namespace RemnantSaveGuardian.Views.Pages
             dataBackups.ItemsSource = null;
             dataBackups.ItemsSource = listBackups;
             dataBackups.Items.SortDescriptions.Add(sorting);
+        }
+
+        private void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if(e.PropertyName == "Language")
+                dataBackups.Items.Refresh();
         }
     }
 

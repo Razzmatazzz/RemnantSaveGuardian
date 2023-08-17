@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Common.Interfaces;
@@ -19,6 +20,8 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             get;
         }
+
+        private CultureInfo[] AvailableCultures = new CultureInfo[] { };
 
         public SettingsPage(ViewModels.SettingsViewModel viewModel)
         {
@@ -45,6 +48,23 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         cmbStartPage.SelectedItem = item;
                     }
+                }
+
+                var langs = Application.Current.Properties["langs"] as CultureInfo[];
+
+                cmbSwitchLanguage.ItemsSource = langs.Select(e => e.NativeName);
+                if (Properties.Settings.Default.Language != "")
+                {
+                    cmbSwitchLanguage.SelectedItem = langs.First(e => Properties.Settings.Default.Language == e.Name).NativeName;
+                }
+                else
+                {
+                    var culture = Thread.CurrentThread.CurrentCulture;
+
+                    if (culture.Parent != null || culture.Name != "pt-BR")
+                        cmbSwitchLanguage.SelectedItem = culture.Parent.NativeName;
+                    else
+                        cmbSwitchLanguage.SelectedItem = culture.NativeName;
                 }
 
                 radThemeLight.IsChecked = Properties.Settings.Default.Theme == "Light";
@@ -281,6 +301,20 @@ namespace RemnantSaveGuardian.Views.Pages
                 return;
             }
             Properties.Settings.Default.StartPage = startPage;
+        }
+
+        private void cmbSwitchLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbSwitchLanguage.SelectedIndex > -1)
+            {
+                var langs = Application.Current.Properties["langs"] as CultureInfo[];
+                var culture = langs[cmbSwitchLanguage.SelectedIndex];
+
+                Thread.CurrentThread.CurrentCulture = culture;
+                WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = culture;
+                Application.Current.MainWindow.Language = System.Windows.Markup.XmlLanguage.GetLanguage(culture.IetfLanguageTag);
+                Properties.Settings.Default.Language = langs[cmbSwitchLanguage.SelectedIndex].Name;
+            }
         }
     }
 }

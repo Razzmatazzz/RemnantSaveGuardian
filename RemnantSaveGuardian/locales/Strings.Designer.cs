@@ -628,6 +628,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select language.
+        /// </summary>
+        public static string lblSwitchLanguage_Text {
+            get {
+                return ResourceManager.GetString("lblSwitchLanguage_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Light.
         /// </summary>
         public static string Light {
