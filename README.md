@@ -12,6 +12,7 @@ Back up your Remnant 2 saves and view your world rolls.
 ## Screenshots
 ![image](https://github.com/Razzmatazzz/RemnantSaveGuardian/assets/35779878/cc428b0b-7573-4128-a2ae-02ef25ebda36)
 ![image](https://github.com/Razzmatazzz/RemnantSaveGuardian/assets/35779878/48fc0eae-fc87-47be-bea3-89af08f102a6)
+![image](https://github.com/Razzmatazzz/RemnantSaveGuardian/assets/35779878/45d46b50-f3d2-4341-847e-ae3dd4f6df2c)
 
 ## Known Issues
 - [Some items are missing from the world analyzer](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/43)
