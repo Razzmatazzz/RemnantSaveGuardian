@@ -170,6 +170,15 @@ namespace RemnantSaveGuardian.Views.Pages
                     CharacterControl_SelectionChanged(null, null);
                 });
             }
+
+            if(e.PropertyName == "Language")
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    reloadEventGrids();
+                    CharacterControl_SelectionChanged(null, null);
+                });
+            }
         }
 
         private void Data_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)

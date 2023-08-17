@@ -432,4 +432,7 @@
   <data name="Zoom" xml:space="preserve">
     <value>Zoom</value>
   </data>
+  <data name="lblSwitchLanguage_Text" xml:space="preserve">
+    <value>Select language</value>
+  </data>
 </root>
