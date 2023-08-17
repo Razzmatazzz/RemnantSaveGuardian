@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using WPFLocalizeExtension.Extensions;
@@ -76,6 +77,12 @@ namespace RemnantSaveGuardian
         public static string GameT(string key)
         {
             return T(key, new LocalizationOptions { { "namespace", "GameStrings" } });
+        }
+
+        public static List<string> AvailableLocalizations()
+        {
+            var cultures = WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.MergedAvailableCultures;
+            return cultures.Select(c => c.Name).ToList();
         }
     }
 

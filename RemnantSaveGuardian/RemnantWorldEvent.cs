@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -969,6 +970,9 @@ namespace RemnantSaveGuardian
                         if (GameInfo.SubLocations.ContainsKey(eventMatch.Groups["eventName"].Value))
                         {
                             currentSublocation = GameInfo.SubLocations[eventMatch.Groups["eventName"].Value];
+                        } else if (currentMainLocation == null)
+                        {
+                            currentSublocation = area.Groups["locationName"].Value;
                         }
                         if (currentSublocation == null && eventMatch.Groups["eventType"].Value != "OverworldPOI")
                         {
@@ -1105,20 +1109,27 @@ namespace RemnantSaveGuardian
                     "Boss",
                     "SideD",
                     "Miniboss",
-                    "Point of Interest"
+                    "Point of Interest",
+                    "OverworldPOI"
                 };
-                var exclusiveEvent = areaEvents.Find(e => exclusiveTypes.Contains(e.RawType));
-                if (exclusiveEvent != null)
+                var exclusiveEvents = areaEvents.FindAll(e => exclusiveTypes.Contains(e.RawType));
+                if (exclusiveEvents.Count > 0)
                 {
-                    if (zoneEvents[currentWorld].FindIndex(e => e._name == exclusiveEvent._name) != -1)
+                    var previousIndex = zoneEvents[currentWorld].FindIndex(e => e._name == exclusiveEvents[0]._name);
+                    if (previousIndex != -1)
                     {
+                        areaEvents = areaEvents.FindAll(e => !exclusiveEvents.Contains(e) || !zoneEvents[currentWorld].Any(prev => prev._name == e._name));
+                        if (areaEvents.Count > 0)
+                        {
+                            zoneEvents[currentWorld].InsertRange(previousIndex + 1, areaEvents);
+                        }
                         continue;
                     }
                 }
                 if (areaEvents.Any(e => e._name == "EmpressStory"))
                 {
-                    var lastRedThrone = areaEvents.FindLastIndex(e => e.Locations.Contains("TheRedThrone"));
-                    RemnantWorldEvent widowsCourt = new RemnantWorldEvent("RedDoeStatue", new List<string>() { currentWorld, "WidowsCourt" }, "OverworldPOI");
+                    var lastRedThrone = areaEvents.FindLastIndex(e => e.Locations.Contains("The Red Throne"));
+                    RemnantWorldEvent widowsCourt = new RemnantWorldEvent("RedDoeStatue", new List<string>() { currentWorld, "Widow's Court" }, "OverworldPOI");
                     widowsCourt.setMissingItems(character);
                     areaEvents.Insert(lastRedThrone+1, widowsCourt);
                 }
@@ -1576,8 +1587,8 @@ namespace RemnantSaveGuardian
             for (var i = 0; i < eventStarts.Count; i++)
             {
                 var eventText = saveText[eventStarts[i].Index..eventEnds[i].Index];
-                //var matches = Regex.Matches(eventText, @"/Game/(?<world>[\w/]+)/SpawnTables/(?<spawnTable>[\w/]+)\.\w+(?<events>.+)MapGen[\w\W]+?/Script/Remnant\.ZoneActor.{10}(?<tileSets>(?:.\u0001....(?:/.+?))+).{9}ID");
-                var matches = Regex.Matches(eventText, @"/Game/(?<world>[\w/]+)/SpawnTables/(?<spawnTable>[\w/]+)\.\w+(?<events>.+)MapGen[\w\W]+?/Script/Remnant\.ZoneActor.{10}(?:.\u0001....(?<tileSet>/.+?))+.{9}ID");
+                //var matches = Regex.Matches(eventText, @"/Game/(?<world>[\w/]+)/SpawnTables/(?<spawnTable>[\w/]+)\.\w+(?<events>.+)MapGen[\w\W]+?/Script/Remnant\.ZoneActor.{10}(?:.\u0001....(?<tileSet>/.+?))+.{9}ID");
+                var matches = Regex.Matches(eventText, @"[A-Z0-9]{32}.{5}(?<locationName>[a-zA-Z0-9 ']+)\x00.+?(?:\n.+?)?/Game/(?<world>[\w/]+)/SpawnTables/(?<spawnTable>[\w/]+)\.\w+.{5}(?<events>/.+).{20}MapGen[\w\W]+?/Script/Remnant\.ZoneActor.{10}(?:.\u0001....(?<tileSet>/.+?))+.{9}ID");
                 if (matches.Count > 7)
                 {
                     eventGroupMatches.Add(matches);
