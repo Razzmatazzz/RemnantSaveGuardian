@@ -7,6 +7,7 @@
     xmlns:local="clr-namespace:RemnantSaveGuardian.Views.Pages"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:ctrl="clr-namespace:RemnantSaveGuardian.Views.UserControls"
     lex:LocalizeDictionary.DesignCulture="en"
     lex:ResxLocalizationProvider.DefaultAssembly="RemnantSaveGuardian"
     lex:ResxLocalizationProvider.DefaultDictionary="Strings"
@@ -106,7 +107,7 @@
                                         <ColumnDefinition Width="3*"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="{Binding Name}" Grid.Column="0"/>
-                                    <TextBlock Text="{Binding Notes}" Grid.Column="1"/>
+                                    <ctrl:TextBlockPlus Text="{Binding Notes}" RollingSpeed="250" RollbackSpeed="1000" Grid.Column="1"/>
                                 </Grid>
                             </HierarchicalDataTemplate>
                         </TreeView.ItemTemplate>
