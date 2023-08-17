@@ -113,7 +113,7 @@
             <TextBlock Name="lblMissingItemColor" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
         </WrapPanel>
         <WrapPanel Margin="0,2,0,0">
-            <ComboBox Name="cmbSwitchLanguage" VerticalAlignment="Center" Width="Auto" SelectionChanged="cmbSwitchLanguage_SelectionChanged"/>
+            <ComboBox Name="cmbSwitchLanguage" VerticalAlignment="Center" Width="Auto"/>
             <TextBlock Name="lblSwitchLanguage" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
         </WrapPanel>
         <WrapPanel Margin="0,2,0,0">

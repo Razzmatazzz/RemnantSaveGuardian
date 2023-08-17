@@ -66,6 +66,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     else
                         cmbSwitchLanguage.SelectedItem = culture.NativeName;
                 }
+                cmbSwitchLanguage.SelectionChanged += cmbSwitchLanguage_SelectionChanged;
 
                 radThemeLight.IsChecked = Properties.Settings.Default.Theme == "Light";
 
@@ -314,6 +315,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = culture;
                 Application.Current.MainWindow.Language = System.Windows.Markup.XmlLanguage.GetLanguage(culture.IetfLanguageTag);
                 Properties.Settings.Default.Language = langs[cmbSwitchLanguage.SelectedIndex].Name;
+                Logger.Success(Loc.T("Language_change_notice_{chosenLanguage}", new() { { "chosenLanguage", culture.DisplayName } }));
             }
         }
     }
