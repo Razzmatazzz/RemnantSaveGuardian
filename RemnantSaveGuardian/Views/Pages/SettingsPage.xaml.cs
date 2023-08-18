@@ -78,7 +78,6 @@ namespace RemnantSaveGuardian.Views.Pages
             } catch (Exception ex) {
                 Logger.Error($"Error initializing settings page: {ex}");
             }
-            Logger.Log(string.Join(", ", Loc.AvailableLocalizations()));
         }
 
         private void BtnCheckUpdate_Click(object sender, RoutedEventArgs e)
