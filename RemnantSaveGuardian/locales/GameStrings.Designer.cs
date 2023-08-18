@@ -2779,6 +2779,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Berserker&apos;s Crest.
+        /// </summary>
+        public static string Ring_BerserkersCrest {
+            get {
+                return ResourceManager.GetString("Ring_BerserkersCrest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bisected Ring.
         /// </summary>
         public static string Ring_BisectedRing {

@@ -1,5 +1,6 @@
 ﻿//using System.Drawing;
 using System;
+using System.Text.RegularExpressions;
 using Wpf.Ui.Common.Interfaces;
 using Wpf.Ui.Controls;
 

@@ -1917,4 +1917,7 @@
   <data name="WidowsCourt" xml:space="preserve">
     <value>The Widow's Court</value>
   </data>
+  <data name="Ring_BerserkersCrest" xml:space="preserve">
+    <value>Berserker's Crest</value>
+  </data>
 </root>

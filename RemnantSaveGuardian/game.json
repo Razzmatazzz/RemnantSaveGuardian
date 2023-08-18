@@ -11,6 +11,7 @@
   ],
   "subLocations": {
     "Jungle": {
+      "Corruptor": "The Great Bole",
       "Shrewd": "The Expanding Glade",
       "RavagerStory": "Ravager's Lair",
       "RootHorror": "Kaeula's Rest",
@@ -22,10 +23,10 @@
       "HiddenMaze": "Endaira's End",
       "TheTangle": "Imperial Gardens",
       "TheLament": "The Lament",
-      "Sarcophagus": "The Lament",
-      "TheChimney": "Laemir's Lyceum",
+      "__Sarcophagus": "The Lament",
+      "__TheChimney": "Laemir's Lyceum",
       "WailingField": "Forgotten Field",
-      "CathedralOfSeasons": "Cathedral Of Seasons",
+      "CathedralOfSeasons": "Cathedral of Omens",
       "Empress": "The Red Throne",
       "ManyFaces": "The Great Bole"
     },
@@ -208,9 +209,6 @@
           "name": "/Items/Trinkets/Rings/SealOfTheEmpress/Ring_SealOfTheEmpress"
         },
         {
-          "name": "/Items/Trinkets/Amulets/MatriarchsInsignia/Amulet_MatriarchsInsignia"
-        },
-        {
           "name": "/Items/Trinkets/Amulets/RedDoeSigil/Amulet_RedDoeSigil",
           "notes": "Awarded after giving the Ornate Lockbox item (unopened) found in The Widow's Court location on Yaesha, to The Eternal Empress at the Red Throne location on Yaesha."
         },
@@ -268,6 +266,9 @@
       "Sarcophagus": [
         {
           "name": "/Items/Gems/Ranged/MetaGems/Extender/MetaGem_Extender"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BerserkersCrest/Ring_BerserkersCrest"
         }
       ],
       "CryptHidden": [
@@ -499,6 +500,11 @@
       "RedDoeStatue": [
         {
           "name": "/Items/Gems/Ranged/MetaGems/GhostShell/MetaGem_GhostShell"
+        }
+      ],
+      "Amulet_MatriarchsInsignia": [
+        {
+          "name": "/Items/Trinkets/Amulets/MatriarchsInsignia/Amulet_MatriarchsInsignia"
         }
       ]
     },
