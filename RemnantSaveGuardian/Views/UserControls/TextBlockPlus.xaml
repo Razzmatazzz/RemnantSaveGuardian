@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="400">
     <StackPanel DataContext="{Binding ElementName=current}">
-        <ScrollViewer Background="Transparent" Margin="0,0,80,0" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+        <ScrollViewer Background="Transparent" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
             <TextBlock Text="{Binding Text}" Width="Auto" TextWrapping="NoWrap">
                 <i:Interaction.Behaviors>
                     <local:RollingTextBlockBehavior rollingSpeed="{Binding RollingSpeed}" rollbackSpeed="{Binding RollbackSpeed}"/>
