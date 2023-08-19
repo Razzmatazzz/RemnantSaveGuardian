@@ -148,7 +148,7 @@ namespace RemnantSaveGuardian
                         RemnantItem rItem = new RemnantItem(item["name"].ToString());
                         if (item["notes"] != null)
                         {
-                            rItem.ItemNotes = item["notes"].ToString();
+                            rItem.ItemNotes = Loc.GameTHas($"{rItem.RawName}_Notes") ? Loc.GameT($"{rItem.RawName}_Notes") : item["notes"].ToString();
                         }
                         if (item["mode"] != null)
                         {

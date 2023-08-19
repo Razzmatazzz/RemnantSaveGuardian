@@ -263,9 +263,9 @@ namespace RemnantSaveGuardian.Views.Pages
                         }
                         TreeListClass item = new TreeListClass() { Name = rItem.Type, Childnode = itemChild[idx], Tag = typeNodeTag, IsExpanded = isExpanded };
                         item.Expanded += GameType_CollapsedExpanded;
-                        itemNode[(int)rItem.ItemMode].Add(item) ;
+                        itemNode[(int)rItem.ItemMode].Add(item);
                     }
-                    itemChild[idx].Add(new TreeListClass() { Name = rItem.Name, Notes = Loc.GameTHas($"{rItem.RawName}_Notes") ? Loc.GameT($"{rItem.RawName}_Notes") : rItem.ItemNotes, Tag = rItem });
+                    itemChild[idx].Add(new TreeListClass() { Name = rItem.Name, Notes = rItem.ItemNotes, Tag = rItem });
                 }
 
                 treeMissingItems.ItemsSource = null;
