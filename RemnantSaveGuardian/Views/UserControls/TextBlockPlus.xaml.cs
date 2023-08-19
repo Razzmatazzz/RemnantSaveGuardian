@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
 
 namespace RemnantSaveGuardian.Views.UserControls
@@ -145,6 +146,19 @@ namespace RemnantSaveGuardian.Views.UserControls
                     var scrollViewer = textBlock.Parent as ScrollViewer;
                     storyBoard.Pause(scrollViewer);
                 }
+
+                MouseButton button = MouseButton.Middle;
+                if (e.LeftButton == MouseButtonState.Pressed)
+                {
+                    button = MouseButton.Left;
+                } else if (e.RightButton == MouseButtonState.Pressed) {
+                    button = MouseButton.Right;
+                }
+                var eBack = new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, button);
+                eBack.RoutedEvent = UIElement.MouseDownEvent;
+
+                var ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
+                ui.RaiseEvent(eBack);
             }
         }
         private void AssociatedObject_MouseUp(object sender, MouseButtonEventArgs e)
@@ -157,6 +171,22 @@ namespace RemnantSaveGuardian.Views.UserControls
                     var scrollViewer = textBlock.Parent as ScrollViewer;
                     storyBoard.Resume(scrollViewer);
                 }
+
+                MouseButton button = MouseButton.Middle;
+                if (e.LeftButton == MouseButtonState.Released)
+                {
+                    button = MouseButton.Left;
+                }
+                else if (e.RightButton == MouseButtonState.Released)
+                {
+                    button = MouseButton.Right;
+                }
+
+                var eBack = new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, button);
+                eBack.RoutedEvent = UIElement.MouseUpEvent;
+
+                var ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
+                ui.RaiseEvent(eBack);
             }
         }
         private void AssociatedObject_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
@@ -166,10 +196,16 @@ namespace RemnantSaveGuardian.Views.UserControls
             var eBack = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
             eBack.RoutedEvent = UIElement.MouseWheelEvent;
 
-            var textBlock = this.AssociatedObject as TextBlock;
-            var scrollViewer = textBlock.Parent as ScrollViewer;
-            var ui = scrollViewer.Parent as UIElement;
+            var ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
             ui.RaiseEvent(eBack);
+        }
+        private DependencyObject VisualUpwardSearch<T>(DependencyObject source)
+        {
+            while (source != null && source.GetType() != typeof(T))
+            {
+                source = VisualTreeHelper.GetParent(source);
+            }
+            return source;
         }
     }
     public static class ScrollViewerBehavior

@@ -10,6 +10,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Input;
+using System.Windows.Media;
 using Wpf.Ui.Common.Interfaces;
 
 namespace RemnantSaveGuardian.Views.Pages
@@ -17,7 +20,7 @@ namespace RemnantSaveGuardian.Views.Pages
     /// <summary>
     /// Interaction logic for WorldAnalyzerPage.xaml
     /// </summary>
-    public partial class WorldAnalyzerPage : INavigableView<ViewModels.WorldAnalyzerViewModel>
+    public partial class WorldAnalyzerPage : INavigableView<ViewModels.WorldAnalyzerViewModel>, INotifyPropertyChanged
     {
         public ViewModels.WorldAnalyzerViewModel ViewModel
         {
@@ -26,6 +29,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private RemnantSave Save;
         private List<RemnantWorldEvent> filteredCampaign;
         private List<RemnantWorldEvent> filteredAdventure;
+        private ListViewItem menuSrcItem;
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
             ViewModel = viewModel;
@@ -99,6 +103,20 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             
         }
+
+        #region INotifiedProperty Block
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        #endregion
 
         private void FontSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -180,44 +198,95 @@ namespace RemnantSaveGuardian.Views.Pages
                 });
             }
         }
+        private void ListView_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            var eBack = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+            eBack.RoutedEvent = UIElement.MouseWheelEvent;
 
+            var src = e.Source as ListView;
+            var ui = src.Parent as UIElement;
+            ui.RaiseEvent(eBack);
+        }
+        private void ListViewItem_Selected(object sender, RoutedEventArgs e)
+        {
+            var item = (ListViewItem)e.Source;
+            if (menuSrcItem != null && !item.Equals(menuSrcItem))
+            {
+                menuSrcItem.IsSelected = false;
+            }
+            menuSrcItem = item;
+        }
+        private DataGridTemplateColumn GeneratingColumn(string strHeader, string strProperty, string strStyle)
+        {
+            var stackPanelFactory = new FrameworkElementFactory(typeof(StackPanel));
+            stackPanelFactory.SetValue(StackPanel.OrientationProperty, Orientation.Vertical);
+            var listView = new FrameworkElementFactory(typeof(ListView));
+
+            Style style = (Style)this.Resources[strStyle];
+            listView.SetValue(StyleProperty, style);
+            listView.SetValue(ContextMenuProperty, this.Resources["CommonContextMenu"]);
+            listView.SetBinding(ListView.ItemsSourceProperty,
+                new Binding()
+                {
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+                    Path = new PropertyPath(strProperty),
+                    Mode = BindingMode.OneWay
+                }
+                );
+            listView.AddHandler(MouseWheelEvent, new MouseWheelEventHandler(ListView_PreviewMouseWheel), true);
+
+            stackPanelFactory.AppendChild(listView);
+
+            var dataTemplate = new DataTemplate
+            {
+                VisualTree = stackPanelFactory
+            };
+            var templateColumn = new DataGridTemplateColumn
+            {
+                Header = strHeader,
+                CellTemplate = dataTemplate
+            };
+            return templateColumn;
+        }
+        #region missingItemsTextColor
+        private Brush _missingItemsTextColor;
+        public Brush missingItemsTextColor
+        {
+            get { return _missingItemsTextColor; }
+            set { _missingItemsTextColor = value; OnPropertyChanged("missingItemsTextColor"); }
+        }
+        #endregion
         private void Data_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             var allowColumns = new List<string>() {
                 "Location",
                 "Type",
                 "Name",
-                "MissingItemsString",
-                "PossibleItemsString"
+                "MissingItems",
+                "PossibleItems"
             };
             if (!allowColumns.Contains(e.Column.Header))
             {
                 e.Cancel = true;
                 return;
             }
-            var cellStyle = new Style(typeof(DataGridCell));
-            cellStyle.Setters.Add(new Setter(FontSizeProperty, FontSizeSlider.Value));
-            if (e.Column.Header.Equals("MissingItemsString"))
+
+            //Replace the MissingItems column with a custom template column.
+            if (e.PropertyName == "MissingItems")
             {
-                e.Column.Header = "Missing Items";
-                
+                e.Column = GeneratingColumn("Missing Items", "MissingItems", "lvMissingItemsStyle");
                 if (Properties.Settings.Default.MissingItemColor == "Highlight")
                 {
-                    var highlight = System.Drawing.SystemColors.HotTrack;
-                    cellStyle.Setters.Add(new Setter(ForegroundProperty, new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(highlight.R, highlight.G, highlight.B))));
+                    var highlight = Brushes.RoyalBlue;
+                    missingItemsTextColor = highlight;
+                } else {
+                    Brush brush = (Brush)FindResource("TextFillColorPrimaryBrush");
+                    missingItemsTextColor = brush;
                 }
+            } else if (e.PropertyName == "PossibleItems") {
+                e.Column = GeneratingColumn("Possible Items", "PossibleItems", "lvPossibleItemsStyle");
             }
-            else if (e.Column.Header.Equals("PossibleItemsString"))
-            {
-                e.Column.Header = "Possible Items";
 
-                if (!Properties.Settings.Default.ShowPossibleItems)
-                {
-                    e.Cancel = true;
-                    return;
-                }
-            }
-            e.Column.CellStyle = cellStyle;
             e.Column.Header = Loc.T(e.Column.Header.ToString());
         }
 
@@ -263,9 +332,9 @@ namespace RemnantSaveGuardian.Views.Pages
                         }
                         TreeListClass item = new TreeListClass() { Name = rItem.Type, Childnode = itemChild[idx], Tag = typeNodeTag, IsExpanded = isExpanded };
                         item.Expanded += GameType_CollapsedExpanded;
-                        itemNode[(int)rItem.ItemMode].Add(item) ;
+                        itemNode[(int)rItem.ItemMode].Add(item);
                     }
-                    itemChild[idx].Add(new TreeListClass() { Name = rItem.Name, Notes = Loc.GameTHas($"{rItem.RawName}_Notes") ? Loc.GameT($"{rItem.RawName}_Notes") : rItem.ItemNotes, Tag = rItem });
+                    itemChild[idx].Add(new TreeListClass() { Name = rItem.Name, Notes = rItem.ItemNotes, Tag = rItem });
                 }
 
                 treeMissingItems.ItemsSource = null;
@@ -350,6 +419,21 @@ namespace RemnantSaveGuardian.Views.Pages
             return sb.ToString();
         }
 
+        private void CommonCopyItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (menuSrcItem == null) { return; }
+            var item = menuSrcItem.Content as RemnantItem;
+            Clipboard.SetDataObject(item.Name);
+        }
+
+        private void CommonSearchItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (menuSrcItem == null) { return; }
+            var lstItem = menuSrcItem.Content as RemnantItem;
+            if (lstItem == null) { return; }
+            SearchItem(lstItem);
+        }
+
         private void CopyItem_Click(object sender, RoutedEventArgs e)
         {
             if (treeMissingItems.SelectedItem == null)
@@ -358,13 +442,15 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             Clipboard.SetDataObject(GetTreeListItem((TreeListClass)treeMissingItems.SelectedItem));
         }
-
         private void SearchItem_Click(object sender, RoutedEventArgs e)
         {
             var treeItem = (TreeListClass)treeMissingItems.SelectedItem;
             var item = (RemnantItem)treeItem.Tag;
-
-            var itemname = treeItem.Name;
+            SearchItem(item);
+        }
+        private void SearchItem(RemnantItem item)
+        {
+            var itemname = item.Name;
             if (!WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture.ToString().StartsWith("en"))
             {
                 itemname = item.RawName;
@@ -383,7 +469,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     itemname += " (";
                 }
-            } 
+            }
 
             if (item.RawType == "Armor")
             {

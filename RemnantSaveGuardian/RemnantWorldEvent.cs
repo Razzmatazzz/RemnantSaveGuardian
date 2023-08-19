@@ -57,6 +57,13 @@ namespace RemnantSaveGuardian
                 return mItems;
             }
         }
+        public List<RemnantItem> PossibleItems
+        {
+            get
+            {
+                return getPossibleItems();
+            }
+        }
         public string MissingItemsString
         {
             get
