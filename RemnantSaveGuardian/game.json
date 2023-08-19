@@ -181,11 +181,6 @@
           "name": "/Items/Trinkets/Rings/StoneofBalance/Ring_StoneOfBalance"
         }
       ],
-      "Ring_StrongArmBand": [
-        {
-          "name": "/Items/Trinkets/Rings/StrongArmBand/Ring_StrongArmBand"
-        }
-      ],
       "LivingStone": [
         {
           "name": "/Items/Trinkets/Rings/LithicSignet/Ring_LithicSignet",
@@ -773,6 +768,9 @@
       "TheNest": [
         {
           "name": "/Items/Trinkets/Rings/StockpileDelayLoop/Ring_StockpileCharger"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/StrongArmBand/Ring_StrongArmBand"
         }
       ],
       "Ravenous": [
