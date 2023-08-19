@@ -88,7 +88,7 @@ namespace RemnantSaveGuardian
             var culture = CultureInfo.CurrentCulture;
             var cultures = EnumerateSupportedCultures();
             Current.Properties["langs"] = cultures;
-            if (cultures.Contains(culture.Parent))
+            if (!cultures.Contains(culture) && cultures.Contains(culture.Parent))
             {
                 culture = culture.Parent;
             }
