@@ -88,7 +88,11 @@ namespace RemnantSaveGuardian
             var culture = CultureInfo.CurrentCulture;
             var cultures = EnumerateSupportedCultures();
             Current.Properties["langs"] = cultures;
-            if(Settings.Default.Language != "")
+            if (cultures.Contains(culture.Parent))
+            {
+                culture = culture.Parent;
+            }
+            if (Settings.Default.Language != "")
             {
                 culture = cultures.First(e => e.Name == Settings.Default.Language);
             }
