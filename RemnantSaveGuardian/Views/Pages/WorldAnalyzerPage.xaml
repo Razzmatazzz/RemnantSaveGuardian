@@ -107,7 +107,7 @@
                                         <ColumnDefinition Width="3*"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="{Binding Name}" Grid.Column="0"/>
-                                    <ctrl:TextBlockPlus Text="{Binding Notes}" RollingSpeed="250" RollbackSpeed="1000" Grid.Column="1"/>
+                                    <ctrl:TextBlockPlus Text="{Binding Notes}" RollingSpeed="250" RollbackSpeed="1000" Grid.Column="1" Margin="0,0,80,0" />
                                 </Grid>
                             </HierarchicalDataTemplate>
                         </TreeView.ItemTemplate>
