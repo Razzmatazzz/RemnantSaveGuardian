@@ -773,6 +773,9 @@
       "TheNest": [
         {
           "name": "/Items/Trinkets/Rings/StockpileDelayLoop/Ring_StockpileCharger"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/StrongArmBand/Ring_StrongArmBand"
         }
       ],
       "Ravenous": [
