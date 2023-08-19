@@ -119,11 +119,13 @@ namespace RemnantSaveGuardian.Views.Pages
         private void RadThemeDark_Checked(object sender, RoutedEventArgs e)
         {
             ChangeTheme("Dark");
+            CmbMissingItemColor_SelectionChanged(sender, null);
         }
 
         private void RadThemeLight_Checked(object sender, RoutedEventArgs e)
         {
             ChangeTheme("Light");
+            CmbMissingItemColor_SelectionChanged(sender, null);
         }
         private void ChangeTheme(string parameter)
         {

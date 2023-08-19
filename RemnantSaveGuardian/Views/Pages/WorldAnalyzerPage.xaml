@@ -8,15 +8,129 @@
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     xmlns:lex="http://wpflocalizeextension.codeplex.com"
     xmlns:ctrl="clr-namespace:RemnantSaveGuardian.Views.UserControls"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     lex:LocalizeDictionary.DesignCulture="en"
     lex:ResxLocalizationProvider.DefaultAssembly="RemnantSaveGuardian"
     lex:ResxLocalizationProvider.DefaultDictionary="Strings"
-    mc:Ignorable="d" 
+    mc:Ignorable="d"
+    Name="analyzer"
     d:DesignHeight="450" d:DesignWidth="800"
     d:Background="{DynamicResource ApplicationBackgroundBrush}"
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     Title="{lex:Loc World Analyzer}"
     Scrollable="False">
+    
+    <ui:UiPage.Resources>
+        <Style x:Key="lvItemStyle" TargetType="ListViewItem">
+            <EventSetter Event="Selected" Handler="ListViewItem_Selected"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Border x:Name="Border" Padding="0" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ContentPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#FF7C3E" />
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Foreground" Value="#59F2A6" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="lvMissingItemsStyle" BasedOn="{StaticResource {x:Type ListView}}" TargetType="ListView">
+            <Setter Property="FontSize" Value="{Binding ElementName=FontSizeSlider, Path=Value, Mode=OneWay}" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="Margin" Value="5,0,5,0" />
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Border>
+                            <ctrl:TextBlockPlus Text="{Binding Name}" ToolTip="{Binding ItemNotes}">
+                                <ctrl:TextBlockPlus.Style>
+                                    <Style TargetType="ctrl:TextBlockPlus">
+                                        <Setter Property="Cursor" Value="Help" />
+                                        <Style.Triggers>
+                                            <Trigger Property="ToolTip" Value="">
+                                                <Setter Property="ToolTipService.IsEnabled" Value="False" />
+                                                <Setter Property="Cursor" Value="Arrow" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ctrl:TextBlockPlus.Style>
+                            </ctrl:TextBlockPlus>
+                        </Border>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style BasedOn="{StaticResource lvItemStyle}" TargetType="ListViewItem">
+                        <Style.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="False" />
+                                    <Condition Property="IsSelected" Value="False" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Foreground" Value="{Binding ElementName=analyzer, Path=missingItemsTextColor, UpdateSourceTrigger=PropertyChanged}" />
+                            </MultiTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="lvPossibleItemsStyle" BasedOn="{StaticResource lvMissingItemsStyle}" TargetType="ListView">
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style BasedOn="{StaticResource lvItemStyle}"  TargetType="ListViewItem">
+                        <Style.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="False" />
+                                    <Condition Property="IsSelected" Value="False" />
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
+                            </MultiTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DataGridStyle" BasedOn="{StaticResource {x:Type DataGrid}}" TargetType="{x:Type DataGrid}">
+            <Setter Property="RowStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="FontSize" Value="{Binding ElementName=FontSizeSlider, Path=Value, Mode=OneWay}" />
+                        <Setter Property="Margin" Value="0,2,0,2" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="menuStyle" BasedOn="{StaticResource {x:Type ContextMenu}}" TargetType="ContextMenu">
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <ContextMenu x:Key="CommonContextMenu" StaysOpen="True" Style="{StaticResource menuStyle}">
+            <ui:MenuItem Name="menuAnalyzerOpenWiki" Header="{lex:Loc Open wiki}" Click="CommonSearchItem_Click">
+                <MenuItem.Icon>
+                    <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Link24" />
+                </MenuItem.Icon>
+            </ui:MenuItem>
+            <ui:MenuItem Name="menuAnalyzerCopy" Header="{lex:Loc Copy}" Click="CommonCopyItem_Click">
+                <MenuItem.Icon>
+                    <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Copy24" />
+                </MenuItem.Icon>
+            </ui:MenuItem>
+        </ContextMenu>
+    </ui:UiPage.Resources>
 
     <Grid Margin="23,0" >
         <Grid.RowDefinitions>
@@ -49,12 +163,12 @@
         <TabControl Name="tabAnalyzer" Grid.Row="1" Margin="0,4,0,0">
             <TabItem Header="{lex:Loc Campaign}">
                 <Grid>
-                    <DataGrid Name="CampaignData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn"/>
+                    <DataGrid Name="CampaignData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
                 </Grid>
             </TabItem>
             <TabItem Name="tabAdventure" Header="{lex:Loc Adventure}">
                 <Grid>
-                    <DataGrid Name="AdventureData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn"/>
+                    <DataGrid Name="AdventureData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
                 </Grid>
             </TabItem>
             <TabItem Header="{lex:Loc Missing Items}">
@@ -76,7 +190,7 @@
                             </Style>
                         </TreeView.Resources>
                         <TreeView.ContextMenu>
-                            <ContextMenu StaysOpen="True">
+                            <ContextMenu StaysOpen="True" Style="{StaticResource menuStyle}">
                                 <ui:MenuItem Name="menuMissingItemOpenWiki" Header="{lex:Loc Open wiki}" Click="SearchItem_Click">
                                     <MenuItem.Icon>
                                         <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Link24" />
