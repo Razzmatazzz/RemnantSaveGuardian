@@ -209,9 +209,6 @@
           "name": "/Items/Trinkets/Rings/SealOfTheEmpress/Ring_SealOfTheEmpress"
         },
         {
-          "name": "/Items/Trinkets/Amulets/MatriarchsInsignia/Amulet_MatriarchsInsignia"
-        },
-        {
           "name": "/Items/Trinkets/Amulets/RedDoeSigil/Amulet_RedDoeSigil",
           "notes": "Rewarded by giving the Ornate Lockbox item (unopened) found in The Widow's Court location on Yaesha, to The Eternal Empress at the Red Throne location on Yaesha."
         },
@@ -505,6 +502,11 @@
         {
           "name": "/Items/Gems/Ranged/MetaGems/GhostShell/MetaGem_GhostShell",
           "notes": "Rewarded by interacting with the Rotten Thaen Fruit item. The item can be found in The Widow's Court location on Yaesha at the end of a secret passage. To unlock the passage, wear the Red Doe's Sigil amulet in front of the statue of the Ravager and the Red Doe."
+        }
+      ],
+      "Amulet_MatriarchsInsignia": [
+        {
+          "name": "/Items/Trinkets/Amulets/MatriarchsInsignia/Amulet_MatriarchsInsignia"
         }
       ]
     },
