@@ -11,59 +11,59 @@
   ],
   "subLocations": {
     "Jungle": {
-      "Shrewd": "TheExpandingGlade",
-      "RavagerStory": "RavagersLair",
-      "RootHorror": "KaeulasRest",
-      "RootCultist": "TheTwistedChantry",
-      "MotherMind": "TheNamelessNest",
-      "Meidra": "TheDappledGlade",
-      "Ruins": "AbandonedRuins",
-      "KoaraKuri": "KoaraKuriNest",
-      "HiddenMaze": "EndairasEnd",
-      "TheTangle": "ImperialGardens",
-      "TheLament": "TheLament",
-      "Sarcophagus": "TheLament",
-      "TheChimney": "LaemirsLyceum",
-      "WailingField": "ForgottenField",
-      "CathedralOfSeasons": "CathedralOfSeasons",
-      "Empress": "TheRedThrone",
-      "ManyFaces": "TheGreatBole"
+      "Corruptor": "The Great Bole",
+      "Shrewd": "The Expanding Glade",
+      "RavagerStory": "Ravager's Lair",
+      "RootHorror": "Kaeula's Rest",
+      "RootCultist": "The Twisted Chantry",
+      "MotherMind": "The Nameless Nest",
+      "Meidra": "The Dappled Glade",
+      "Ruins": "Abandoned Ruins",
+      "KoaraKuri": "Koara Kuri Nest",
+      "HiddenMaze": "Endaira's End",
+      "TheTangle": "Imperial Gardens",
+      "TheLament": "The Lament",
+      "__Sarcophagus": "The Lament",
+      "__TheChimney": "Laemir's Lyceum",
+      "WailingField": "Forgotten Field",
+      "CathedralOfSeasons": "Cathedral of Omens",
+      "Empress": "The Red Throne",
+      "ManyFaces": "The Great Bole"
     },
     "Fae": {
-      "AllFather": "BeatificPalace",
-      "DranGrenadier": "CottonsKiln",
-      "Ravenous": "TheGreatHall",
-      "CharnelHouse": "HarvestersReach",
-      "TheHunter": "BriellasGarden",
-      "ClockTower": "LemarkDistrict",
-      "BloatKing": "TheGreatSewers",
-      "CrimsonHarvest": "ButchersQuarter",
-      "FaeArchon": "ShatteredGallery",
-      "FaeCouncil": "CouncilChamber",
-      "RedPrince": "GildedChambers",
-      "DranOracle": "OraclesRefuge",
-      "Settlement": "BairnsCrossing",
-      "Nimue": "NimuesRetreat",
-      "FaelinFaerlin": "BeatificPalace",
-      "Faerin": "MaleficGallery",
-      "TheNest": "Sewers",
-      "TownTurnedToDust": "TillersRest",
-      "ThreeMenMorris": "PostulantsParlor"
+      "AllFather": "Beatific Palace",
+      "DranGrenadier": "Cotton's Kiln",
+      "Ravenous": "The Great Hall",
+      "CharnelHouse": "Harvester's Reach",
+      "TheHunter": "Briella's Garden",
+      "BloatKing": "The Great Sewers",
+      "CrimsonHarvest": "Butcher's Quarter",
+      "FaeArchon": "Shattered Gallery",
+      "FaeCouncil": "Council Chamber",
+      "RedPrince": "Gilded Chambers",
+      "DranOracle": "Oracle'' sRefuge",
+      "Settlement": "Bairn's Crossing",
+      "Nimue": "Nimue's Retreat",
+      "FaelinFaerlin": "Beatific Palace",
+      "Faerin": "Malefic Gallery",
+      "__TheNest": "Sewers",
+      "TownTurnedToDust": "Tiller's Rest",
+      "ThreeMenMorris": "Postulant's Parlor"
     },
     "Nerud": {
-      "Abomination": "ThePutridDomain",
-      "Hatchery": "TheHatchery",
-      "Extraction": "DarkConduit",
-      "Extermination": "DormantNErudianFacility",
-      "Train": "TerminusStation",
-      "CustodianEye": "SpectrumNexus",
-      "TowerHeist": "TowerOfTheUnseen",
-      "TheDreamlessSleep": "VoidVesselFacility",
-      "NerudGuardian": "ThresholdOfTheUnknown",
-      "TheCustodian": "ThePhantomWasteland",
-      "TalRatha": "ForgottenPrison",
-      "Phantom": "TheAstroPathsRespite",
-      "StasisSiege": "VaultOfTheFormless"
+      "Abomination": "The Putrid Domain",
+      "Hatchery": "The Hatchery",
+      "Extraction": "Dark Conduit",
+      "Extermination": "Dormant N'Erudian Facility",
+      "Train": "Terminus Station",
+      "CustodianEye": "Spectrum Nexus",
+      "TowerHeist": "Tower Of The Unseen",
+      "TheDreamlessSleep": "Void Vessel Facility",
+      "NerudGuardian": "Threshold Of The Unknown",
+      "TheCustodian": "The Phantom Wasteland",
+      "TalRatha": "Forgotten Prison",
+      "Phantom": "Astropath's Respite",
+      "StasisSiege": "Vault Of The Formless"
     }
   },
   "injectableParents": {
@@ -270,6 +270,9 @@
       "Sarcophagus": [
         {
           "name": "/Items/Gems/Ranged/MetaGems/Extender/MetaGem_Extender"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BerserkersCrest/Ring_BerserkersCrest"
         }
       ],
       "CryptHidden": [
@@ -1075,7 +1078,7 @@
           "name": "/Items/Trinkets/Rings/VacuumSeal/Ring_VacuumSeal"
         }
       ],
-      "Towers_ElevatorShaft": [
+      "ElevatorShaft": [
         {
           "name": "/Items/Trinkets/Rings/PropulsionLoop/Ring_PropulsionLoop",
           "note": "Found in the Astropath's Respite, Terminus Station, Tower of the Unseen, or Spectrum Nexus locations on N'Erud, in a hidden passage halfway up an elevator shaft. Jump from the elevator through the broken wall section then proceed onward. Eventually, you will find a second elevator which can go either up or down. In order to retrieve the ring you want to ride the elevator up which can accessed by triggering the elevator to go down first. Step on the elevator but step or dodge backward so as to not ride it down. Wait for the next elevator platform to arrive before taking it up and retrieving the ring."
@@ -1335,7 +1338,8 @@
           "name": "/Items/Trinkets/Rings/SuppressionWard/Ring_SuppressionWard"
         },
         {
-          "name": "/Items/Trinkets/Amulets/VoidIdol/Amulet_VoidIdol"
+          "name": "/Items/Trinkets/Amulets/VoidIdol/Amulet_VoidIdol",
+          "notes": "Crafted at the Drzyr Replicator at the Ascension Spire location on N'Erud. Requires the Shining Essence Echo item, granted after defeating Tal'Ratha. The Drzyr Replicator can be found in a hidden passage in the Custodian's tower."
         }
       ],
       "NerudGuardian": [
@@ -1650,7 +1654,7 @@
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/EnlargedHeart/Relic_Consumable_EnlargedHeart",
-          "notes": "Purchased from Cass at Ward 13 after completing 5 biomes. - Editors Note: Theres debate on whether the actual requirement is 5 biomes completed or 5 biomes unlocked, ie, reaching root earth in the campaign. Feel free to open an issue in the github repo if you have storng reason to believe one of these is the correct requirement."
+          "notes": "Purchased from Cass at Ward 13 after completing 5 biomes. - Editors Note: Theres debate on whether the actual requirement is 5 biomes completed or 5 biomes unlocked, ie, reaching Root Earth in the campaign. Feel free to open an issue in the github repo if you have strong reason to believe one of these is the correct requirement."
         },
         {
           "name": "/Items/Trinkets/Amulets/BrokenPocketWatch/Amulet_BrokenPocketWatch",
