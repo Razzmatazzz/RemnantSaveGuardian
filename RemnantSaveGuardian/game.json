@@ -824,11 +824,11 @@
       ],
       "Rookery": [
         {
-          "name": "/Items/Trinkets/Amulets/EffigyPendant/Amulet_EffigyPendant"
+          "name": "/Items/Trinkets/Amulets/EffigyPendant/Amulet_EffigyPendant",
+          "notes": "Inside lockbox"
         },
         {
-          "name": "/Items/Trinkets/Amulets/CleansingStone/Amulet_CleansingStone",
-          "notes": "Inside lockbox"
+          "name": "/Items/Trinkets/Amulets/CleansingStone/Amulet_CleansingStone"
         }
       ],
       "FaeArchon": [
