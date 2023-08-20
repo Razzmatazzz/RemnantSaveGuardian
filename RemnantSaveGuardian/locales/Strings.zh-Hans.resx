@@ -438,4 +438,10 @@
   <data name="Zoom" xml:space="preserve">
     <value>缩放</value>
   </data>
+  <data name="lblSwitchLanguage_Text" xml:space="preserve">
+    <value>选择语言</value>
+  </data>
+  <data name="Language_change_notice_{chosenLanguage}" xml:space="preserve">
+    <value>语言更改为“{chosenLanguage}”。可能需要重启程序才能全部生效。</value>
+  </data>
 </root>
