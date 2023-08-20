@@ -11,59 +11,59 @@
   ],
   "subLocations": {
     "Jungle": {
-      "Corruptor": "The Great Bole",
-      "Shrewd": "The Expanding Glade",
-      "RavagerStory": "Ravager's Lair",
-      "RootHorror": "Kaeula's Rest",
-      "RootCultist": "The Twisted Chantry",
-      "MotherMind": "The Nameless Nest",
-      "Meidra": "The Dappled Glade",
-      "Ruins": "Abandoned Ruins",
-      "KoaraKuri": "Koara Kuri Nest",
-      "HiddenMaze": "Endaira's End",
-      "TheTangle": "Imperial Gardens",
-      "TheLament": "The Lament",
-      "__Sarcophagus": "The Lament",
-      "__TheChimney": "Laemir's Lyceum",
-      "WailingField": "Forgotten Field",
-      "CathedralOfSeasons": "Cathedral of Omens",
-      "Empress": "The Red Throne",
-      "ManyFaces": "The Great Bole"
+      "Shrewd": "TheExpandingGlade",
+      "RavagerStory": "RavagersLair",
+      "RootHorror": "KaeulasRest",
+      "RootCultist": "TheTwistedChantry",
+      "MotherMind": "TheNamelessNest",
+      "Meidra": "TheDappledGlade",
+      "Ruins": "AbandonedRuins",
+      "KoaraKuri": "KoaraKuriNest",
+      "HiddenMaze": "EndairasEnd",
+      "TheTangle": "ImperialGardens",
+      "TheLament": "TheLament",
+      "Sarcophagus": "TheLament",
+      "TheChimney": "LaemirsLyceum",
+      "WailingField": "ForgottenField",
+      "CathedralOfSeasons": "CathedralOfSeasons",
+      "Empress": "TheRedThrone",
+      "ManyFaces": "TheGreatBole"
     },
     "Fae": {
-      "AllFather": "Beatific Palace",
-      "DranGrenadier": "Cotton's Kiln",
-      "Ravenous": "The Great Hall",
-      "CharnelHouse": "Harvester's Reach",
-      "TheHunter": "Briella's Garden",
-      "BloatKing": "The Great Sewers",
-      "CrimsonHarvest": "Butcher's Quarter",
-      "FaeArchon": "Shattered Gallery",
-      "FaeCouncil": "Council Chamber",
-      "RedPrince": "Gilded Chambers",
-      "DranOracle": "Oracle'' sRefuge",
-      "Settlement": "Bairn's Crossing",
-      "Nimue": "Nimue's Retreat",
-      "FaelinFaerlin": "Beatific Palace",
-      "Faerin": "Malefic Gallery",
-      "__TheNest": "Sewers",
-      "TownTurnedToDust": "Tiller's Rest",
-      "ThreeMenMorris": "Postulant's Parlor"
+      "AllFather": "BeatificPalace",
+      "DranGrenadier": "CottonsKiln",
+      "Ravenous": "TheGreatHall",
+      "CharnelHouse": "HarvestersReach",
+      "TheHunter": "BriellasGarden",
+      "ClockTower": "LemarkDistrict",
+      "BloatKing": "TheGreatSewers",
+      "CrimsonHarvest": "ButchersQuarter",
+      "FaeArchon": "ShatteredGallery",
+      "FaeCouncil": "CouncilChamber",
+      "RedPrince": "GildedChambers",
+      "DranOracle": "OraclesRefuge",
+      "Settlement": "BairnsCrossing",
+      "Nimue": "NimuesRetreat",
+      "FaelinFaerlin": "BeatificPalace",
+      "Faerin": "MaleficGallery",
+      "TheNest": "Sewers",
+      "TownTurnedToDust": "TillersRest",
+      "ThreeMenMorris": "PostulantsParlor"
     },
     "Nerud": {
-      "Abomination": "The Putrid Domain",
-      "Hatchery": "The Hatchery",
-      "Extraction": "Dark Conduit",
-      "Extermination": "Dormant N'Erudian Facility",
-      "Train": "Terminus Station",
-      "CustodianEye": "Spectrum Nexus",
-      "TowerHeist": "Tower Of The Unseen",
-      "TheDreamlessSleep": "Void Vessel Facility",
-      "NerudGuardian": "Threshold Of The Unknown",
-      "TheCustodian": "The Phantom Wasteland",
-      "TalRatha": "Forgotten Prison",
-      "Phantom": "Astropath's Respite",
-      "StasisSiege": "Vault Of The Formless"
+      "Abomination": "ThePutridDomain",
+      "Hatchery": "TheHatchery",
+      "Extraction": "DarkConduit",
+      "Extermination": "DormantNErudianFacility",
+      "Train": "TerminusStation",
+      "CustodianEye": "SpectrumNexus",
+      "TowerHeist": "TowerOfTheUnseen",
+      "TheDreamlessSleep": "VoidVesselFacility",
+      "NerudGuardian": "ThresholdOfTheUnknown",
+      "TheCustodian": "ThePhantomWasteland",
+      "TalRatha": "ForgottenPrison",
+      "Phantom": "TheAstroPathsRespite",
+      "StasisSiege": "VaultOfTheFormless"
     }
   },
   "injectableParents": {
@@ -209,8 +209,11 @@
           "name": "/Items/Trinkets/Rings/SealOfTheEmpress/Ring_SealOfTheEmpress"
         },
         {
+          "name": "/Items/Trinkets/Amulets/MatriarchsInsignia/Amulet_MatriarchsInsignia"
+        },
+        {
           "name": "/Items/Trinkets/Amulets/RedDoeSigil/Amulet_RedDoeSigil",
-          "notes": "Awarded after giving the Ornate Lockbox item (unopened) found in The Widow's Court location on Yaesha, to The Eternal Empress at the Red Throne location on Yaesha."
+          "notes": "Rewarded by giving the Ornate Lockbox item (unopened) found in The Widow's Court location on Yaesha, to The Eternal Empress at the Red Throne location on Yaesha."
         },
         {
           "name": "/Items/Trinkets/Rings/ZoheesRing/Ring_ZoheesRing"
@@ -221,11 +224,12 @@
       ],
       "RavagerStory": [
         {
-          "name": "/Items/Trinkets/Rings/FrivolousBand/Ring_FrivolousBand"
+          "name": "/Items/Trinkets/Rings/FrivolousBand/Ring_FrivolousBand",
+          "notes": "Rewarded by speaking with Bedel of the Vaunnt in The Forbidden Grove location on Yaesha, after reviving the Red Doe in the Corrupted Ravager boss fight. Upon first meeting Bedel in The Forbidden Grove, the player must choose funny / sarcastic dialogue options and accept his quest, prior to reviving the Doe. Then upon speaking with him again, the player must choose the \"Maybe...\" dialogue option when asked if the player saved the Doe."
         },
         {
           "name": "/Items/Trinkets/Rings/LodestoneRing/Ring_LodestoneRing",
-          "notes": "Awarded from speaking with Bedel of The Vaunnt in the Forbidden Grove location on Yaesha while wearing the Lodestone Crown armor piece."
+          "notes": "Rewarded by speaking with Bedel of The Vaunnt in the Forbidden Grove location on Yaesha while wearing the Lodestone Crown armor piece."
         },
         {
           "name": "/Items/Trinkets/Rings/BloodJewel/Ring_BloodJewel"
@@ -266,9 +270,6 @@
       "Sarcophagus": [
         {
           "name": "/Items/Gems/Ranged/MetaGems/Extender/MetaGem_Extender"
-        },
-        {
-          "name": "/Items/Trinkets/Rings/BerserkersCrest/Ring_BerserkersCrest"
         }
       ],
       "CryptHidden": [
@@ -499,12 +500,8 @@
       ],
       "RedDoeStatue": [
         {
-          "name": "/Items/Gems/Ranged/MetaGems/GhostShell/MetaGem_GhostShell"
-        }
-      ],
-      "Amulet_MatriarchsInsignia": [
-        {
-          "name": "/Items/Trinkets/Amulets/MatriarchsInsignia/Amulet_MatriarchsInsignia"
+          "name": "/Items/Gems/Ranged/MetaGems/GhostShell/MetaGem_GhostShell",
+          "notes": "Rewarded by interacting with the Rotten Thaen Fruit item. The item can be found in The Widow's Court location on Yaesha at the end of a secret passage. To unlock the passage, wear the Red Doe's Sigil amulet in front of the statue of the Ravager and the Red Doe."
         }
       ]
     },
@@ -822,11 +819,11 @@
       ],
       "Rookery": [
         {
-          "name": "/Items/Trinkets/Amulets/EffigyPendant/Amulet_EffigyPendant",
-          "notes": "Inside lockbox"
+          "name": "/Items/Trinkets/Amulets/EffigyPendant/Amulet_EffigyPendant"
         },
         {
-          "name": "/Items/Trinkets/Amulets/CleansingStone/Amulet_CleansingStone"
+          "name": "/Items/Trinkets/Amulets/CleansingStone/Amulet_CleansingStone",
+          "notes": "Inside lockbox"
         }
       ],
       "FaeArchon": [
@@ -935,23 +932,23 @@
       "Nightweb": [
         {
           "name": "/Items/Weapons/Melee/Special/Dreamcatcher/Weapon_Dreamcatcher",
-          "notes": "Awarded by offering the Nightweaver Stone Doll item found in the Tormented Asylum location on Losomn to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This can be done in any mode that has rolled both locations."
+          "notes": "Rewarded by offering the Nightweaver Stone Doll item found in the Tormented Asylum location on Losomn to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This can be done in any mode that has rolled both locations."
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/TormentedHeart/Relic_Consumable_TormentedHeart",
-          "notes": "Awarded by offering the Overide Pin item found in the Timeless Horizon location on N'Erud to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This must be done on a campaign that has rolled both locations."
+          "notes": "Rewarded by offering the Overide Pin item found in the Timeless Horizon location on N'Erud to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This must be done on a campaign that has rolled both locations."
         },
         {
           "name": "/Items/Trinkets/Rings/RingOfRetribution/Ring_RingOfRetribution",
-          "notes": "Awarded by offering the Dria's Anklet item found in the Harvester's Reach location on Losomn to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This can be done in any mode that has rolled both locations."
+          "notes": "Rewarded by offering the Dria's Anklet item found in the Harvester's Reach location on Losomn to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This can be done in any mode that has rolled both locations."
         },
         {
           "name": "/Items/Trinkets/Amulets/NightweaversGrudge/Amulet_NightweaversGrudge",
-          "notes": "Awarded by offering the Kolkets Razor item found in The Lament location on Yaesha to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This must be done on a campaign that has rolled both locations."
+          "notes": "Rewarded by offering the Kolkets Razor item found in The Lament location on Yaesha to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This must be done on a campaign that has rolled both locations."
         },
         {
           "name": "/Items/Weapons/HandGuns/Special/RunePistol/Weapon_RunePistol",
-          "notes": "Awarded by offering the Ravenous Medallion item found in the Great Hall location on Losomn to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This can be done in any mode that has rolled both locations."
+          "notes": "Rewarded by offering the Ravenous Medallion item found in the Great Hall location on Losomn to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This can be done in any mode that has rolled both locations."
         }
       ],
       "AllFatherStory": [
@@ -1003,7 +1000,8 @@
       ],
       "TheCoreStory": [
         {
-          "name": "/Items/Trinkets/Rings/DowngradedRing/Ring_DowngradedRing"
+          "name": "/Items/Trinkets/Rings/DowngradedRing/Ring_DowngradedRing",
+          "notes": "Rewarded by speaking with the Custodian at the Ascension Spire location on N'Erud, after defeating Sha'Hala."
         },
         {
           "name": "/Items/Mods/EnergyWall/Mod_EnergyWall"
@@ -1077,9 +1075,11 @@
           "name": "/Items/Trinkets/Rings/VacuumSeal/Ring_VacuumSeal"
         }
       ],
-      "ElevatorShaft": [
+      "Towers_ElevatorShaft": [
         {
-          "name": "/Items/Trinkets/Rings/PropulsionLoop/Ring_PropulsionLoop"
+          "name": "/Items/Trinkets/Rings/PropulsionLoop/Ring_PropulsionLoop",
+          "note": "Found in the Astropath's Respite, Terminus Station, Tower of the Unseen, or Spectrum Nexus locations on N'Erud, in a hidden passage halfway up an elevator shaft. Jump from the elevator through the broken wall section then proceed onward. Eventually, you will find a second elevator which can go either up or down. In order to retrieve the ring you want to ride the elevator up which can accessed by triggering the elevator to go down first. Step on the elevator but step or dodge backward so as to not ride it down. Wait for the next elevator platform to arrive before taking it up and retrieving the ring."
+
         },
         {
           "name": "/Items/Trinkets/Rings/LowYieldRecoveryRing/Ring_LowYieldRecoveryRing"
@@ -1299,11 +1299,11 @@
         },
         {
           "name": "/Items/Mods/Overflow/Mod_Overflow",
-          "notes": "take the elevator on the right of the vending machine, now take the path on the right of the bridge and you should see the crafting material on a machine"
+          "notes": "Crafted by McCabe at Ward 13. Requires the Escalation Circuit item, found in the Phantom Wasteland/Ascension Spire location on N'Erud, located in a secret room beneath the Custodian NPC. Once in the secret room, take the elevator on the right to travel down, then imediately look for a crawl space to the right."
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/SiphonHeart/Relic_Consumable_SiphonHeart",
-          "notes": "give Shining Essence Echo to Custodian"
+          "notes": "give Shining Essence to Custodian"
         }
       ],
       "DrzyrReplicator": [
@@ -1335,8 +1335,7 @@
           "name": "/Items/Trinkets/Rings/SuppressionWard/Ring_SuppressionWard"
         },
         {
-          "name": "/Items/Trinkets/Amulets/VoidIdol/Amulet_VoidIdol",
-          "notes": "use Shining Essence Echo to craft at Drzyr Replicator"
+          "name": "/Items/Trinkets/Amulets/VoidIdol/Amulet_VoidIdol"
         }
       ],
       "NerudGuardian": [
@@ -1456,7 +1455,7 @@
       "Ward13": [
         {
           "name": "/Items/Trinkets/Rings/TarnishedRing/Ring_TarnishedRing",
-          "notes": "Awarded from speaking with Earl at Ward 13 and listening to his rabbit story. He can either be found sleeping in bed, or hanging on the walk way above the merchant Whispers. He will not speak to you while he sleeps, and while away, he may be resistant at first to telling you his story."
+          "notes": "Rewarded by speaking with Earl at Ward 13 and listening to his rabbit story. He can either be found sleeping in bed, or hanging on the walk way above the merchant Whispers. He will not speak to you while he sleeps, and while away, he may be resistant at first to telling you his story."
         },
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Medic",
@@ -1488,7 +1487,7 @@
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/RipenedHeart/Relic_Consumable_RipenedHeart",
-          "notes": "thaen tree fully grown"
+          "notes": "Rewarded by the Thaen Fruit Tree event in Ward 13, after planting the Thaen Seed quest item in the ground of the garden in Ward 13. The Thaen Seed can be Rewarded by interacting with the Ornate Lock Box quest item, and inserting the Ornate Key quest item. Both of which can be found in the Widow's Court location on Yaesha. The player must grow and collect the Celestial Thaen Fruit consumable, a total of 3 times, before the Ripened Heart can be grown. Each fruit takes a set amount of real world hours to grow."
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/LifelessHeart/Relic_Consumable_LifelessHeart",
@@ -1502,11 +1501,11 @@
         },
         {
           "name": "/Items/Trinkets/Amulets/GunslingersCharm/Amulet_GunslingersCharm",
-          "notes": "Awarded from speaking with Mudtooth at Ward 13, and exhausting his second set of stories, in the campaign mode. The second set of stories is available to the player after completing their second biome in the campaign."
+          "notes": "Rewarded by speaking with Mudtooth at Ward 13, and exhausting his second set of stories, in the campaign mode. The second set of stories is available to the player after completing their second biome in the campaign."
         },
         {
           "name": "/Items/Trinkets/Rings/GunslingersRing/Ring_GunslingersRing",
-          "notes": "Awarded from speaking with Mudtooth at Ward 13, and exhausting his first set of stories, in the campaign mode."
+          "notes": "Rewarded by speaking with Mudtooth at Ward 13, and exhausting his first set of stories, in the campaign mode."
         },
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Handler",
@@ -1580,7 +1579,7 @@
         },
         {
           "name": "/Items/Trinkets/Amulets/ButchersFetish/Amulet_ButchersFetish",
-          "notes": "Purchased from Reggie at Ward 13 after completing 5 biomes."
+          "notes": "Purchased from Reggie at Ward 13 after completing the campaign on Veteran difficulty."
         },
         {
           "name": "/Items/Trinkets/Amulets/LetosAmulet/Amulet_LetosAmulet",
@@ -1651,7 +1650,7 @@
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/EnlargedHeart/Relic_Consumable_EnlargedHeart",
-          "notes": "Purchased from Cass at Ward 13 after unlocking the Root Earth location in the campaign."
+          "notes": "Purchased from Cass at Ward 13 after completing 5 biomes. - Editors Note: Theres debate on whether the actual requirement is 5 biomes completed or 5 biomes unlocked, ie, reaching root earth in the campaign. Feel free to open an issue in the github repo if you have storng reason to believe one of these is the correct requirement."
         },
         {
           "name": "/Items/Trinkets/Amulets/BrokenPocketWatch/Amulet_BrokenPocketWatch",
@@ -1868,47 +1867,51 @@
           "name": "/Items/Armor/Archetype/Explorer/Armor_Legs_Explorer"
         },
         {
-          "name": "/Items/Traits/Archetype/AmmoReserves/Trait_AmmoReserves"
+          "name": "/Items/Traits/Archetype/AmmoReserves/Trait_AmmoReserves",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Gunslinger archetype to 10."
         },
         {
           "name": "/Items/Traits/Archetype/Amplitude/Trait_Amplitude"
         },
         {
           "name": "/Items/Traits/Archetype/FlashCaster/Trait_FlashCaster",
-          "notes": "Unlocked automatically after leveling up the Archon archetype once."
+          "notes": "Unlocked automatically for all archetypes after leveling up the Archon archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Fortify/Trait_Fortify"
+          "name": "/Items/Traits/Archetype/Fortify/Trait_Fortify",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Engineer archetype to 10."
         },
         {
           "name": "/Items/Traits/Archetype/Kinship/Trait_Kinship",
-          "notes": "Unlocked automatically after leveling up the Handler archetype once."
+          "notes": "Unlocked automatically for all archetypes after leveling up the Handler archetype to 10."
         },
         {
           "name": "/Items/Traits/Archetype/Longshot/Trait_Longshot",
-          "notes": "Unlocked automatically after leveling up the Hunter archetype once."
+          "notes": "Unlocked automatically for all archetypes after leveling up the Hunter archetype to 10."
         },
         {
           "name": "/Items/Traits/Archetype/Potency/Trait_Potency",
-          "notes": "Unlocked automatically after leveling up the Alchemist archetype once."
+          "notes": "Unlocked automatically for all archetypes after leveling up the Alchemist archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Regrowth/Trait_Regrowth"
+          "name": "/Items/Traits/Archetype/Regrowth/Trait_Regrowth",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Regrowth archetype to 10."
         },
         {
           "name": "/Items/Traits/Archetype/StrongBack/Trait_StrongBack",
-          "notes": "Unlocked automatically after leveling up the Challenger archetype once."
+          "notes": "Unlocked automatically for all archetypes after leveling up the Challenger archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Swiftness/Trait_Swiftness"
+          "name": "/Items/Traits/Archetype/Swiftness/Trait_Swiftness",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Explorer archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Triage/Trait_Triage"
+          "name": "/Items/Traits/Archetype/Triage/Trait_Triage",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Medic archetype to 10."
         },
         {
           "name": "/Items/Traits/Archetype/Untouchable/Trait_Untouchable",
-          "notes": "Unlocked automatically after leveling up the Invader archetype once."
-
+          "notes": "Unlocked automatically for all archetypes after leveling up the Invader archetype to 10."
         },
         {
           "name": "/Items/Traits/Core/Vigor/Trait_Vigor"
@@ -1962,8 +1965,7 @@
         },
         {
           "name": "/Items/Weapons/Longguns/Special/Starkiller/Weapon_Starkiller",
-          "notes": "Purchased from Brabus at Ward 13 after completing the campaign on any difficulty in the Hardcore mode.",
-          "mode": "Hardcore"
+          "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Apocalypse difficulty."
         },
         {
           "name": "/Items/Weapons/Longguns/Special/Savior/Weapon_Savior",
