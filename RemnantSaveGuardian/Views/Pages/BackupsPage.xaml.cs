@@ -94,7 +94,6 @@ namespace RemnantSaveGuardian.Views.Pages
             } catch (Exception ex) {
                 Logger.Error($"Error loading backups page: {ex}");
             }
-
         }
 
         private void MenuAnalyze_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -672,9 +671,13 @@ namespace RemnantSaveGuardian.Views.Pages
             var invalidFiles = new List<string>();
             foreach (string file in Directory.GetFiles(Properties.Settings.Default.SaveFolder))
             {
-                if (!Regex.Match(file, @"^(profile|save_\d+)\.(sav|bak)$").Success)
+                var fileName = Path.GetFileName(file);
+                if (!Regex.Match(fileName, @"^(profile|save_\d+)\.(sav|bak\d?|onl)|steam_autocloud.vdf$").Success)
                 {
-                    invalidFiles.Add(file);
+                    if (fileName.EndsWith(".sav"))
+                    {
+                        invalidFiles.Add(fileName);
+                    }
                 }
             }
             if (invalidFiles.Count > 0)
