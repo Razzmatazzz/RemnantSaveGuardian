@@ -979,6 +979,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unrecognized files found in save folder: {fileList}. These files may interfere with the world analyzer..
+        /// </summary>
+        public static string Unrecognized_save_files_warning__fileList_ {
+            get {
+                return ResourceManager.GetString("Unrecognized_save_files_warning_{fileList}", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to White.
         /// </summary>
         public static string White {

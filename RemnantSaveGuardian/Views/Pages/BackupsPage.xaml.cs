@@ -432,7 +432,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
                 foreach (string file in Directory.GetFiles(Properties.Settings.Default.SaveFolder))
                 {
-                    if (!file.EndsWith(".sav"))
+                    if (Regex.Match(file, @"^(profile|save_\d+)\.sav$").Success)
                     {
                         continue;
                     }
@@ -470,6 +470,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 refreshBackups();
                 this.ActiveSaveIsBackedUp = true;
                 Logger.Success($"{Loc.T("Backup completed")} ({saveDate})!");
+                saveFolderUnrecognizedFilesCheck();
             }
             catch (IOException ex)
             {
@@ -663,6 +664,23 @@ namespace RemnantSaveGuardian.Views.Pages
             Logger.Log(Loc.T("Backup restored"), LogType.Success);
             SaveWatcher.Resume();
             BackupSaveRestored?.Invoke(this, new());
+            saveFolderUnrecognizedFilesCheck();
+        }
+
+        private void saveFolderUnrecognizedFilesCheck()
+        {
+            var invalidFiles = new List<string>();
+            foreach (string file in Directory.GetFiles(Properties.Settings.Default.SaveFolder))
+            {
+                if (!Regex.Match(file, @"^(profile|save_\d+)\.(sav|bak)$").Success)
+                {
+                    invalidFiles.Add(file);
+                }
+            }
+            if (invalidFiles.Count > 0)
+            {
+                Logger.Warn(Loc.T("Unrecognized_save_files_warning_{fileList}", new() { { "fileList", string.Join(", ", invalidFiles) } }));
+            }
         }
 
         private void menuDelete_Click(object sender, System.Windows.RoutedEventArgs e)
