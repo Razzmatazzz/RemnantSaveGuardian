@@ -168,6 +168,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 Dispatcher.Invoke(() =>
                 {
                     reloadEventGrids();
+                    CharacterControl_SelectionChanged(null, null);
                 });
             }
             if (e.PropertyName == "SaveFolder")
@@ -263,8 +264,11 @@ namespace RemnantSaveGuardian.Views.Pages
                 "Type",
                 "Name",
                 "MissingItems",
-                "PossibleItems"
             };
+            if (Properties.Settings.Default.ShowPossibleItems)
+            {
+                allowColumns.Add("PossibleItems");
+            }
             if (!allowColumns.Contains(e.Column.Header))
             {
                 e.Cancel = true;

@@ -1570,10 +1570,11 @@ namespace RemnantSaveGuardian
                     if (GameInfo.InjectableParents.ContainsKey(eventName))
                     {
                         var parentName = GameInfo.InjectableParents[eventName];
-                        parentEvent = events.First(e => (e.Groups["eventName"].Value.Contains("_") ? e.Groups["eventName"].Value.Split("_").Last() : e.Groups["eventName"].Value) == parentName);
+                        parentEvent = events.ToList().Find(e => (new RemnantWorldEvent(e)).RawName == parentName);
                         if (parentEvent != null)
                         {
-                            injectables[processMode].Add(events[eventIndex], parentEvent);
+                            //Debug.WriteLine($"found parent {parentEvent.Value}");
+                            injectables[processMode].Add(ev, parentEvent);
                             continue;
                         }
                     }
