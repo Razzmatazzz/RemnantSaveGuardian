@@ -217,7 +217,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             menuSrcItem = item;
         }
-        private DataGridTemplateColumn GeneratingColumn(string strHeader, string strProperty, string strStyle)
+        private DataGridTemplateColumn GeneratingColumn(string strHeader, string strProperty, string strStyle, string strSortBy)
         {
             var stackPanelFactory = new FrameworkElementFactory(typeof(StackPanel));
             stackPanelFactory.SetValue(StackPanel.OrientationProperty, Orientation.Vertical);
@@ -245,6 +245,8 @@ namespace RemnantSaveGuardian.Views.Pages
             var templateColumn = new DataGridTemplateColumn
             {
                 Header = strHeader,
+                CanUserSort = true,
+                SortMemberPath = strSortBy,
                 CellTemplate = dataTemplate
             };
             return templateColumn;
@@ -278,7 +280,7 @@ namespace RemnantSaveGuardian.Views.Pages
             //Replace the MissingItems column with a custom template column.
             if (e.PropertyName == "MissingItems")
             {
-                e.Column = GeneratingColumn("Missing Items", "MissingItems", "lvMissingItemsStyle");
+                e.Column = GeneratingColumn("Missing Items", "MissingItems", "lvMissingItemsStyle", "MissingItemsString");
                 if (Properties.Settings.Default.MissingItemColor == "Highlight")
                 {
                     var highlight = Brushes.RoyalBlue;
@@ -288,7 +290,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     missingItemsTextColor = brush;
                 }
             } else if (e.PropertyName == "PossibleItems") {
-                e.Column = GeneratingColumn("Possible Items", "PossibleItems", "lvPossibleItemsStyle");
+                e.Column = GeneratingColumn("Possible Items", "PossibleItems", "lvPossibleItemsStyle", "PossibleItemsString");
             }
 
             e.Column.Header = Loc.T(e.Column.Header.ToString());
