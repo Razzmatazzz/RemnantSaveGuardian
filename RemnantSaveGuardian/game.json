@@ -509,6 +509,9 @@
       "Oink": [
         {
           "name": "/Items/Gems/Ranged/MetaGems/TwistingWounds/MetaGem_TwistingWounds"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ShinyHogLure/Ring_ShinyHogLure"
         }
       ],
       "AsylumChainsaw": [
@@ -635,11 +638,6 @@
       "Ring_RingOfTheRobust": [
         {
           "name": "/Items/Trinkets/Rings/RingOfTheRobust/Ring_RingOfTheRobust"
-        }
-      ],
-      "Ring_ShinyHogLure": [
-        {
-          "name": "/Items/Trinkets/Rings/ShinyHogLure/Ring_ShinyHogLure"
         }
       ],
       "Ring_StoneOfMalevolence": [
