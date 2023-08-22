@@ -67,8 +67,11 @@ namespace RemnantSaveGuardian
             }
             set
             {
-                this.saveData.keep = value;
-                //OnUpdated(new UpdatedEventArgs("Keep"));
+                if (this.saveData.keep != value)
+                {
+                    this.saveData.keep = value;
+                    OnUpdated(new UpdatedEventArgs("Keep"));
+                }
             }
         }
         public bool Active
