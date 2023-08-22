@@ -36,7 +36,7 @@
                 </Button>
             </ToolBar>
         </WrapPanel>
-        <DataGrid Grid.Row="1" Name="dataBackups" AutoGeneratingColumn="dataBackups_AutoGeneratingColumn" BeginningEdit="DataBackups_BeginningEdit" CellEditEnding="DataBackups_CellEditEnding" Drop="dataBackups_Drop" AllowDrop="True" SelectionMode="Single" IsReadOnly="False" SelectionUnit="FullRow">
+        <DataGrid Grid.Row="1" Name="dataBackups" AutoGeneratingColumn="dataBackups_AutoGeneratingColumn" BeginningEdit="DataBackups_BeginningEdit" CellEditEnding="DataBackups_CellEditEnding" Drop="dataBackups_Drop" AllowDrop="True" SelectionMode="Single" IsReadOnly="False" CanUserReorderColumns="False" SelectionUnit="FullRow">
             <DataGrid.ContextMenu>
                 <ContextMenu Name="contextBackups" Opened="ContextBackups_Opened" ContextMenuOpening="ContextBackups_ContextMenuOpening">
                     <ui:MenuItem Name="menuRestore" Header="{lex:Loc}">

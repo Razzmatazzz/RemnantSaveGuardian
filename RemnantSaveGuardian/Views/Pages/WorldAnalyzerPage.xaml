@@ -163,12 +163,12 @@
         <TabControl Name="tabAnalyzer" Grid.Row="1" Margin="0,4,0,0">
             <TabItem Header="{lex:Loc Campaign}">
                 <Grid>
-                    <DataGrid Name="CampaignData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
+                    <DataGrid Name="CampaignData" IsReadOnly="True" CanUserReorderColumns="False" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
                 </Grid>
             </TabItem>
             <TabItem Name="tabAdventure" Header="{lex:Loc Adventure}">
                 <Grid>
-                    <DataGrid Name="AdventureData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
+                    <DataGrid Name="AdventureData" IsReadOnly="True" CanUserReorderColumns="False" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
                 </Grid>
             </TabItem>
             <TabItem Header="{lex:Loc Missing Items}">
