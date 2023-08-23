@@ -3,7 +3,7 @@ using System.Windows.Data;
 
 namespace RemnantSaveGuardian.Helpers
 {
-    public class CalculateConverter : IValueConverter
+    internal class CalculateConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
