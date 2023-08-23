@@ -441,4 +441,7 @@
   <data name="Unrecognized_save_files_warning_{fileList}" xml:space="preserve">
     <value>Unrecognized files found in save folder: {fileList}. These files may interfere with the world analyzer.</value>
   </data>
+  <data name="Always On Top" xml:space="preserve">
+    <value>Always On Top</value>
+  </data>
 </root>

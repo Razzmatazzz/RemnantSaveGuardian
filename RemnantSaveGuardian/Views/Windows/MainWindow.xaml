@@ -57,6 +57,51 @@
             </ui:TitleBar.Tray>
         </ui:TitleBar>
 
+        <ToggleButton
+            DataContext="{Binding Path=(settings:Settings.Default)}"
+            IsChecked="{Binding TopMost, Mode=TwoWay}"
+            ToolTip="{lex:Loc Always On Top}"
+            FontSize="16"
+            Grid.Column="1"
+            Width="44"
+            Height="30"
+            Margin="0,0,133,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right" Click="ToggleButton_Click">
+            <WrapPanel>
+                <ui:SymbolIcon Symbol="Pin32" />
+            </WrapPanel>
+            <ToggleButton.Template>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Name="border" BorderThickness="0" Padding="{TemplateBinding Padding}" CornerRadius="0,0,3,3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color" To="LightCoral" Duration="0:0:0" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color" Duration="0:0:0" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="Coral" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="Transparent" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </ToggleButton.Template>
+        </ToggleButton>
+
         <Grid Grid.Column="1">
             <Border
                 Margin="0,46,0,0"

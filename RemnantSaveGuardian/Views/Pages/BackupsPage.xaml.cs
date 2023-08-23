@@ -5,7 +5,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Input;
 using Wpf.Ui.Common.Interfaces;
 
 namespace RemnantSaveGuardian.Views.Pages
@@ -358,7 +361,6 @@ namespace RemnantSaveGuardian.Views.Pages
             ActiveSaveIsBackedUp = (activeBackup != null);
         }
 
-
         private Dictionary<long, string> getSavedBackupNames()
         {
             Dictionary<long, string> names = new Dictionary<long, string>();
@@ -562,6 +564,47 @@ namespace RemnantSaveGuardian.Views.Pages
             Properties.Settings.Default.Save();
         }
 
+        private void CheckBox_PreviewMouseDownEvent(object sender, MouseButtonEventArgs e)
+        {
+            // Mark handled to skip change checked state
+            e.Handled = true;
+        }
+        private DataGridTemplateColumn GeneratingColumn(string strHeader, bool bEditable)
+        {
+            var stackPanelFactory = new FrameworkElementFactory(typeof(StackPanel));
+            var checkBox = new FrameworkElementFactory(typeof(CheckBox));
+            
+            checkBox.SetValue(CheckBox.HorizontalAlignmentProperty, HorizontalAlignment.Center);
+            checkBox.SetBinding(CheckBox.IsCheckedProperty,
+                new Binding()
+                {
+                    Path = new PropertyPath(strHeader),
+                    Mode = BindingMode.TwoWay,
+                    UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
+                }
+                );
+
+            if (bEditable == false)
+            {
+                checkBox.SetValue(CheckBox.CursorProperty, Cursors.No);
+                checkBox.AddHandler(CheckBox.PreviewMouseDownEvent, new MouseButtonEventHandler(CheckBox_PreviewMouseDownEvent));
+            }
+
+            stackPanelFactory.SetValue(StackPanel.WidthProperty, (double)40);
+            stackPanelFactory.AppendChild(checkBox);
+
+            var dataTemplate = new DataTemplate
+            {
+                VisualTree = stackPanelFactory
+            };
+            var templateColumn = new DataGridTemplateColumn
+            {
+                Header = strHeader,
+                CellTemplate = dataTemplate
+            };
+            return templateColumn;
+        }
+
         private void dataBackups_AutoGeneratingColumn(object sender, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs e)
         {
             var allowColumns = new List<string>() { 
@@ -576,6 +619,15 @@ namespace RemnantSaveGuardian.Views.Pages
                 e.Cancel = true;
                 return;
             }
+            if (e.Column.Header.ToString() == "Keep")
+            {
+                e.Column = GeneratingColumn("Keep", true);
+            }
+            if (e.Column.Header.ToString() == "Active")
+            {
+                e.Column = GeneratingColumn("Active", false);
+            }
+
             e.Column.Header = new LocalizedColumnHeader(e.Column.Header.ToString());
         }
 
@@ -791,6 +843,14 @@ namespace RemnantSaveGuardian.Views.Pages
             dataBackups.ItemsSource = null;
             dataBackups.ItemsSource = listBackups;
             dataBackups.Items.SortDescriptions.Add(sorting);
+            foreach (SaveBackup backup in listBackups) {
+                if (backupActive(backup))
+                {
+                    backup.Active = true;
+                    dataBackups.SelectedItem = backup;
+                    break;
+                }
+            }
         }
 
         private void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)

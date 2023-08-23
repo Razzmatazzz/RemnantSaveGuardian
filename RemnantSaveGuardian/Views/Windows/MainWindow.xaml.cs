@@ -42,6 +42,8 @@ namespace RemnantSaveGuardian.Views.Windows
 
             navigationService.SetNavigationControl(RootNavigation);
 
+            this.Topmost = Properties.Settings.Default.TopMost;
+
             try
             {
                 Logger.MessageLogged += Logger_MessageLogged;
@@ -341,6 +343,11 @@ namespace RemnantSaveGuardian.Views.Windows
 
             // Remnant not found or not installed, clear path
             Properties.Settings.Default.GameFolder = "";
+        }
+
+        private void ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Topmost = Properties.Settings.Default.TopMost;
         }
     }
 }

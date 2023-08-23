@@ -5,6 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:local="clr-namespace:RemnantSaveGuardian.Views.Pages"
+    xmlns:helpers="clr-namespace:RemnantSaveGuardian.Helpers"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     xmlns:lex="http://wpflocalizeextension.codeplex.com"
     xmlns:ctrl="clr-namespace:RemnantSaveGuardian.Views.UserControls"
@@ -21,6 +22,7 @@
     Scrollable="False">
     
     <ui:UiPage.Resources>
+        <helpers:CalculateConverter x:Key="CalculateConverter" />
         <Style x:Key="lvItemStyle" TargetType="ListViewItem">
             <EventSetter Event="Selected" Handler="ListViewItem_Selected"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -106,6 +108,13 @@
             </Setter>
         </Style>
         <Style x:Key="DataGridStyle" BasedOn="{StaticResource {x:Type DataGrid}}" TargetType="{x:Type DataGrid}">
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DGridColumnHeader_Style}">
+                        <Setter Property="FontSize" Value="{Binding ElementName=FontSizeSlider, Path=Value, Mode=OneWay, Converter={StaticResource CalculateConverter}, ConverterParameter=-2}" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
             <Setter Property="RowStyle">
                 <Setter.Value>
                     <Style TargetType="DataGridRow">
@@ -163,12 +172,12 @@
         <TabControl Name="tabAnalyzer" Grid.Row="1" Margin="0,4,0,0">
             <TabItem Header="{lex:Loc Campaign}">
                 <Grid>
-                    <DataGrid Name="CampaignData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
+                    <DataGrid Name="CampaignData" IsReadOnly="True" CanUserReorderColumns="False" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
                 </Grid>
             </TabItem>
             <TabItem Name="tabAdventure" Header="{lex:Loc Adventure}">
                 <Grid>
-                    <DataGrid Name="AdventureData" IsReadOnly="True" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
+                    <DataGrid Name="AdventureData" IsReadOnly="True" CanUserReorderColumns="False" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
                 </Grid>
             </TabItem>
             <TabItem Header="{lex:Loc Missing Items}">
