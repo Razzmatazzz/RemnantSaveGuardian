@@ -88,6 +88,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Always On Top.
+        /// </summary>
+        public static string Always_On_Top {
+            get {
+                return ResourceManager.GetString("Always On Top", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to delete backup {backupName}?.
         /// </summary>
         public static string Are_you_sure_you_want_to_delete_backup__backupName__ {
