@@ -107,6 +107,18 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}">
+            <Setter Property="FontSize" Value="{Binding ElementName=FontSizeSlider, Path=Value, Mode=OneWay}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DataGridCell">
+                        <Grid Margin="2">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style x:Key="DataGridStyle" BasedOn="{StaticResource {x:Type DataGrid}}" TargetType="{x:Type DataGrid}">
             <Setter Property="ColumnHeaderStyle">
                 <Setter.Value>
@@ -115,14 +127,7 @@
                     </Style>
                 </Setter.Value>
             </Setter>
-            <Setter Property="RowStyle">
-                <Setter.Value>
-                    <Style TargetType="DataGridRow">
-                        <Setter Property="FontSize" Value="{Binding ElementName=FontSizeSlider, Path=Value, Mode=OneWay}" />
-                        <Setter Property="Margin" Value="0,2,0,2" />
-                    </Style>
-                </Setter.Value>
-            </Setter>
+            <Setter Property="CellStyle" Value="{StaticResource DataGridCellStyle}" />
         </Style>
         <Style x:Key="menuStyle" BasedOn="{StaticResource {x:Type ContextMenu}}" TargetType="ContextMenu">
             <Setter Property="FontSize" Value="14" />
