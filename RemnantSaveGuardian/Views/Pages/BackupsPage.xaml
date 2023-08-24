@@ -18,7 +18,7 @@
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     mc:Ignorable="d">
 
-    <Grid Margin="23,0" VerticalAlignment="Top">
+    <Grid Margin="23,0,23,23">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -92,5 +92,8 @@
                 </Style>
             </DataGrid.CellStyle>
         </DataGrid>
+        <Grid Grid.Row="1">
+            <ui:ProgressRing Name="progressRing" IsIndeterminate="True" Width="80" Height="80" />
+        </Grid>
     </Grid>
 </ui:UiPage>
