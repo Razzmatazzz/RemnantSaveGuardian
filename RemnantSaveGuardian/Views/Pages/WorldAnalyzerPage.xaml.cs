@@ -477,9 +477,12 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
             }
 
-            if (item.RawType == "Armor")
+            if (item.RawType == "Armor" && item.IsArmorSet)
             {
                 itemname = itemname?.Substring(0, itemname.IndexOf("(")) + "Set";
+            } else if (item.RawType == "Armor")
+            {
+                itemname = itemname?.Substring(0, itemname.IndexOf(" ("));
             }
             Process.Start("explorer.exe", $"https://remnant2.wiki.fextralife.com/{itemname}");
         }

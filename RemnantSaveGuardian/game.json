@@ -441,7 +441,8 @@
       "TheLament": [
         {
           "name": "/Items/Armor/Armor_Head_LodestoneCrown",
-          "notes": "On the boat inside Kolkets locked room"
+          "notes": "On the boat inside Kolkets locked room",
+          "armorSet":  false
         },
         {
           "name": "/Items/Trinkets/Rings/BloodTingedRing/Ring_BloodTingedRing"
@@ -883,7 +884,8 @@
         },
         {
           "name": "/Items/Armor/Misc/Armor_Head_RedPrince",
-          "notes": "kill with Assassins Dagger"
+          "notes": "kill with Assassins Dagger",
+          "armorSet":  false
         }
       ],
       "NightWeaver": [
@@ -1279,7 +1281,8 @@
       ],
       "OilField": [
         {
-          "name": "/Items/Armor/Nerud_Pilot/Armor_Head_PilotsHelm"
+          "name": "/Items/Armor/Nerud_Pilot/Armor_Head_PilotsHelm",
+          "armorSet":  false
         },
         {
           "name": "/Items/Trinkets/Amulets/DetonationTrigger/Amulet_DetonationTrigger"
