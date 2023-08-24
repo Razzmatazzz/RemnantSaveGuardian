@@ -121,7 +121,7 @@
             </ui:CardExpander.Header>
             <StackPanel>
                 <WrapPanel>
-                    <ComboBox Name="cmbStartPage" VerticalAlignment="Top" Width="150" SelectedIndex="0" SelectionChanged="cmbStartPage_SelectionChanged">
+                    <ComboBox Name="cmbStartPage" VerticalAlignment="Top" Width="150" SelectionChanged="cmbStartPage_SelectionChanged">
                         <ComboBoxItem Content="{lex:Loc Save Backups}" Tag="backups"/>
                         <ComboBoxItem Content="{lex:Loc World Analyzer}" Tag="world-analyzer"/>
                     </ComboBox>
