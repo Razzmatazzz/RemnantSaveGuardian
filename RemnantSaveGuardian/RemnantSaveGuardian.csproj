@@ -92,8 +92,8 @@
     </None>
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Release &quot;C:\Program Files\7-Zip\7z.exe&quot; a %25userprofile%25\Desktop\RemnantSaveGuardian.zip &quot;$(TargetDir)\*&quot;" />
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
+    <ZipDirectory SourceDirectory="$(TargetDir)" Overwrite="True" DestinationFile="$(UserProfile)\Desktop\RemnantSaveGuardian.zip" />
   </Target>
 
 </Project>
