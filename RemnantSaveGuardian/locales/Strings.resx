@@ -447,4 +447,22 @@
   <data name="Always On Top" xml:space="preserve">
     <value>Always On Top</value>
   </data>
+  <data name="chkAutoHideNaviAndTitleBar_Content" xml:space="preserve">
+    <value>Auto hide Navigation and TitleBar when inactive</value>
+  </data>
+  <data name="chkOpacity_Content" xml:space="preserve">
+    <value>Window Opacity</value>
+  </data>
+  <data name="chkOpacity_note_Text" xml:space="preserve">
+    <value>(Experimental, might cause instability)</value>
+  </data>
+  <data name="Opacity_toggle_notice" xml:space="preserve">
+    <value>Window opacity is changed. You have to restart app for the change to apply.</value>
+  </data>
+  <data name="lblOpacitySlider_Text" xml:space="preserve">
+    <value>Opacity</value>
+  </data>
+  <data name="chkOnlyInactive_Content" xml:space="preserve">
+    <value>Only when inactive</value>
+  </data>
 </root>

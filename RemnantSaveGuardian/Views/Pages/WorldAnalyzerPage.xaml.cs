@@ -36,6 +36,7 @@ namespace RemnantSaveGuardian.Views.Pages
             ViewModel = viewModel;
 
             InitializeComponent();
+            EventTransfer.Event += ChangeGridVisibility;
 
             try
             {
@@ -83,6 +84,24 @@ namespace RemnantSaveGuardian.Views.Pages
                 task.Start();
             } catch (Exception ex) {
                 Logger.Error($"Error initializing analzyer page: {ex}");
+            }
+        }
+        private void ChangeGridVisibility(Object sender, EventTransfer.MessageArgs message)
+        {
+            OptionGrid.Visibility = (Visibility)message._message;
+            if (message._message is Visibility.Visible)
+            {
+                tabGrid.Margin = new Thickness(23, 0, 23, 23);
+                tabCampaign.Visibility = Visibility.Visible;
+                tabAdventure.Visibility = Visibility.Visible;
+                tabMissing.Visibility = Visibility.Visible;
+            }
+            else if (message._message is Visibility.Collapsed)
+            {
+                tabGrid.Margin = new Thickness(4, 0, 4, 4);
+                tabCampaign.Visibility = Visibility.Collapsed;
+                tabAdventure.Visibility = Visibility.Collapsed;
+                tabMissing.Visibility = Visibility.Collapsed;
             }
         }
 

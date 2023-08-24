@@ -145,6 +145,32 @@
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkCreateLogFile" IsChecked="{Binding CreateLogFile}" Content="{lex:Loc}" />
                 </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkAutoHideNaviAndTitleBar" IsChecked="{Binding AutoHideNaviAndTitleBar}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <StackPanel Margin="0,16,0,0">
+                    <WrapPanel>
+                        <ui:ToggleSwitch Name="chkOpacity" Content="{lex:Loc}" IsChecked="{Binding EnableOpacity}"/>
+                        <TextBlock Name="chkOpacity_note" Text="{lex:Loc}" FontSize="12" FontStyle="Italic" Foreground="{ui:ThemeResource SystemFillColorCautionBrush}" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </WrapPanel>
+                    <WrapPanel Name="OpacityPanel"  Margin="48,0,0,0">
+                        <WrapPanel.Style>
+                            <Style TargetType="WrapPanel">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=chkOpacity,Path=IsChecked}" Value="True">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=chkOpacity,Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </WrapPanel.Style>
+                        <Slider Name="sldOpacitySlider" Value="{Binding Opacity, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Minimum="0.2" Maximum="1" LargeChange="0.1" Thumb.DragCompleted="sldOpacitySlider_DragCompleted"/>
+                        <TextBlock Name="lblOpacitySlider" Text="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0" />
+                        <CheckBox Name="chkOnlyInactive" IsChecked="{Binding OnlyInactive, Mode=TwoWay}"  Content="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0" />
+                    </WrapPanel>
+                </StackPanel>
             </StackPanel>
         </ui:CardExpander>
         <ui:CardAction Margin="0,8,0,0" Icon="CloudSync24" Click="BtnCheckUpdate_Click">

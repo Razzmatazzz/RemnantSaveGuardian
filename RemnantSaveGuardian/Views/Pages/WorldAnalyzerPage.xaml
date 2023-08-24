@@ -146,12 +146,12 @@
         </ContextMenu>
     </ui:UiPage.Resources>
 
-    <Grid Margin="23,0" >
+    <Grid Name="tabGrid" Margin="23,0,23,23" >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" x:Name="OptionGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
@@ -174,8 +174,8 @@
                 <ui:SymbolIcon Symbol="ZoomIn24"/>
             </WrapPanel>
         </Grid>
-        <TabControl Name="tabAnalyzer" Grid.Row="1" Margin="0,4,0,23">
-            <TabItem Header="{lex:Loc Campaign}">
+        <TabControl Name="tabAnalyzer" Grid.Row="1" Margin="0,4,0,0">
+            <TabItem Name="tabCampaign" Header="{lex:Loc Campaign}">
                 <Grid>
                     <DataGrid Name="CampaignData" IsReadOnly="True" CanUserReorderColumns="False" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
                     <ui:ProgressRing Name="progressRing" IsIndeterminate="True" Width="80" Height="80" />
@@ -186,7 +186,7 @@
                     <DataGrid Name="AdventureData" IsReadOnly="True" CanUserReorderColumns="False" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
                 </Grid>
             </TabItem>
-            <TabItem Header="{lex:Loc Missing Items}">
+            <TabItem Name="tabMissing" Header="{lex:Loc Missing Items}">
                 <Grid>
                     <TreeView Name="treeMissingItems" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.IsVirtualizing="True" ContextMenuOpening="treeMissingItems_ContextMenuOpening">
                         <TreeView.Resources>
