@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -66,7 +67,6 @@ namespace RemnantSaveGuardian.Views.Pages
                     BackupsPage.BackupSaveRestored += BackupsPage_BackupSaveRestored;
                 }
                 CharacterControl.ItemsSource = Save.Characters;
-                Save.UpdateCharacters();
 
                 //FontSizeSlider.Value = AdventureData.FontSize;
                 //FontSizeSlider.Minimum = 2.0;
@@ -79,12 +79,22 @@ namespace RemnantSaveGuardian.Views.Pages
                 CampaignData.ItemsSource = filteredCampaign;
                 AdventureData.ItemsSource = filteredAdventure;
 
-                CharacterControl.SelectedIndex = 0;
-                checkAdventureTab();
+                Task task = new Task(FirstLoad);
+                task.Start();
             } catch (Exception ex) {
                 Logger.Error($"Error initializing analzyer page: {ex}");
             }
+        }
 
+        private void FirstLoad()
+        {
+            System.Threading.Thread.Sleep(500); //Wait for UI render first
+            Save.UpdateCharacters();
+            Dispatcher.Invoke(() => { 
+                CharacterControl.SelectedIndex = 0;
+                checkAdventureTab();
+                progressRing.Visibility = Visibility.Collapsed;
+            });
         }
 
         private void BackupsPage_BackupSaveRestored(object? sender, EventArgs e)

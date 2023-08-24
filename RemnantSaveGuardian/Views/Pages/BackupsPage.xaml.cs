@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -28,6 +29,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private List<SaveBackup> listBackups;
         //private RemnantSave activeSave;
         private Process? gameProcess;
+        public static bool isDataLoaded;
 
         private bool ActiveSaveIsBackedUp
         {
@@ -93,7 +95,8 @@ namespace RemnantSaveGuardian.Views.Pages
 
                 btnStartGame.IsEnabled = !IsRemnantRunning();
                 Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
-                loadBackups();
+                Task task = new Task(loadBackups);
+                task.Start();
             } catch (Exception ex) {
                 Logger.Error($"Error loading backups page: {ex}");
             }
@@ -312,17 +315,17 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void loadBackups()
         {
+            System.Threading.Thread.Sleep(500); //Wait for UI render first
             if (!Directory.Exists(Properties.Settings.Default.BackupFolder))
             {
                 Logger.Log(Loc.T("Backups folder not found, creating..."));
                 Directory.CreateDirectory(Properties.Settings.Default.BackupFolder);
             }
-            dataBackups.ItemsSource = null;
-            listBackups.Clear();
             Dictionary<long, string> backupNames = getSavedBackupNames();
             Dictionary<long, bool> backupKeeps = getSavedBackupKeeps();
             string[] files = Directory.GetDirectories(Properties.Settings.Default.BackupFolder);
             SaveBackup? activeBackup = null;
+            List<SaveBackup> list = new List<SaveBackup>();
             for (int i = 0; i < files.Length; i++)
             {
                 if (RemnantSave.ValidSaveFolder(files[i]))
@@ -345,20 +348,28 @@ namespace RemnantSaveGuardian.Views.Pages
 
                     backup.Updated += saveUpdated;
 
-                    listBackups.Add(backup);
+                    list.Add(backup);
                 }
             }
-            dataBackups.ItemsSource = listBackups;
-            Logger.Log($"{Loc.T("Backups found")}: {listBackups.Count}");
-            if (listBackups.Count > 0)
+            this.Dispatcher.Invoke(() =>
             {
-                Logger.Log($"{Loc.T("Last backup save date")}: {listBackups[listBackups.Count - 1].SaveDate}");
-            }
-            if (activeBackup != null)
-            {
-                dataBackups.SelectedItem = activeBackup;
-            }
-            ActiveSaveIsBackedUp = (activeBackup != null);
+                listBackups.Clear();
+                listBackups = list;
+                dataBackups.ItemsSource = null;
+                dataBackups.ItemsSource = listBackups;
+                Logger.Log($"{Loc.T("Backups found")}: {listBackups.Count}"); 
+                if (listBackups.Count > 0)
+                {
+                    Logger.Log($"{Loc.T("Last backup save date")}: {listBackups[listBackups.Count - 1].SaveDate}");
+                }
+                if (activeBackup != null)
+                {
+                    dataBackups.SelectedItem = activeBackup;
+                }
+                ActiveSaveIsBackedUp = (activeBackup != null);
+                progressRing.Visibility = Visibility.Collapsed;
+                isDataLoaded = true;
+            });
         }
 
         private Dictionary<long, string> getSavedBackupNames()
