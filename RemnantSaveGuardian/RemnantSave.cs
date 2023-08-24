@@ -9,7 +9,11 @@ namespace RemnantSaveGuardian
 {
     public class RemnantSave
     {
-        public List<RemnantCharacter> Characters { get; }
+        private List<RemnantCharacter>? _Characters;
+        public List<RemnantCharacter> Characters {
+            get => _Characters ??= RemnantCharacter.GetCharactersFromSave(this, RemnantCharacter.CharacterProcessingMode.NoEvents);
+        }
+
         public static readonly string DefaultWgsSaveFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Packages\PerfectWorldEntertainment.RemnantFromtheAshes_jrajkyc4tsa6w\SystemAppData\wgs";
         private string savePath;
         private string profileFile;
@@ -47,7 +51,6 @@ namespace RemnantSaveGuardian
                 }
             }
             this.savePath = path;
-            Characters = RemnantCharacter.GetCharactersFromSave(this, RemnantCharacter.CharacterProcessingMode.NoEvents);
         }
 
         public string SaveFolderPath

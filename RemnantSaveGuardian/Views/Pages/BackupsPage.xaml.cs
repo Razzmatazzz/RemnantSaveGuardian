@@ -22,12 +22,12 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             get;
         }
-        public static event EventHandler<BackupSaveViewedEventArgs> BackupSaveViewed;
-        public static event EventHandler BackupSaveRestored;
+        public static event EventHandler<BackupSaveViewedEventArgs>? BackupSaveViewed;
+        public static event EventHandler? BackupSaveRestored;
         private static string defaultBackupFolder = @$"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\Save Backups\Remnant 2";
         private List<SaveBackup> listBackups;
         //private RemnantSave activeSave;
-        private Process gameProcess;
+        private Process? gameProcess;
 
         private bool ActiveSaveIsBackedUp
         {
@@ -37,7 +37,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 DateTime saveDate = File.GetLastWriteTime(activeSave.SaveProfilePath);
                 for (int i = 0; i < listBackups.Count; i++)
                 {
-                    DateTime backupDate = listBackups.ToArray()[i].SaveDate;
+                    DateTime backupDate = listBackups[i].SaveDate;
                     if (saveDate.Equals(backupDate))
                     {
                         return true;
@@ -322,7 +322,7 @@ namespace RemnantSaveGuardian.Views.Pages
             Dictionary<long, string> backupNames = getSavedBackupNames();
             Dictionary<long, bool> backupKeeps = getSavedBackupKeeps();
             string[] files = Directory.GetDirectories(Properties.Settings.Default.BackupFolder);
-            SaveBackup activeBackup = null;
+            SaveBackup? activeBackup = null;
             for (int i = 0; i < files.Length; i++)
             {
                 if (RemnantSave.ValidSaveFolder(files[i]))
@@ -506,7 +506,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
             }
         }
-        private void saveUpdated(object sender, UpdatedEventArgs args)
+        private void saveUpdated(object? sender, UpdatedEventArgs args)
         {
             if (args.FieldName.Equals("Name"))
             {
