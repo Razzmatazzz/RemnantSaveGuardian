@@ -162,6 +162,10 @@ namespace RemnantSaveGuardian
                         {
                             rItem.TileSet = item["tileSet"].ToString();
                         }
+                        if (item["armorSet"] != null)
+                        {
+                            rItem.IsArmorSet = item["armorSet"].GetValue<bool>();
+                        }
                         eventItems.Add(rItem);
                     }
                     eventItem.Add(kvp.Key, eventItems);
