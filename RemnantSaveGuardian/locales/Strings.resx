@@ -195,6 +195,9 @@
   <data name="chkShowPossibleItems_Content" xml:space="preserve">
     <value>Show Possible Items column in analyzer</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
   <data name="Choose a backup to restore from the list." xml:space="preserve">
     <value>Choose a backup to restore from the list.</value>
   </data>
