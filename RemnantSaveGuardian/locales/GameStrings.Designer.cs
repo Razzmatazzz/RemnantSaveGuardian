@@ -3076,6 +3076,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Devoured Loop.
+        /// </summary>
+        public static string Ring_DevouringLoop {
+            get {
+                return ResourceManager.GetString("Ring_DevouringLoop", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Embrace of Sha&apos;Hala.
         /// </summary>
         public static string Ring_DowngradedRing {
