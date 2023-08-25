@@ -178,7 +178,7 @@
     <value>屠夫灵偶</value>
   </data>
   <data name="Amulet_ButchersFetish_Notes" xml:space="preserve">
-    <value>完成游戏</value>
+    <value>完成战役</value>
   </data>
   <data name="Amulet_ChainsOfAmplification" xml:space="preserve">
     <value>增效锁链</value>
@@ -193,7 +193,7 @@
     <value>勇者神符</value>
   </data>
   <data name="Amulet_DaredevilsCharm_Notes" xml:space="preserve">
-    <value>在硬核模式下完成游戏</value>
+    <value>在硬核模式下完成战役</value>
   </data>
   <data name="Amulet_DeathsEmbrace" xml:space="preserve">
     <value>死亡之拥</value>
@@ -406,7 +406,7 @@
     <value>无重之重</value>
   </data>
   <data name="Archon" xml:space="preserve">
-    <value>执政官</value>
+    <value>执政官(心痕)</value>
   </data>
   <data name="Area {areaNumber}" xml:space="preserve">
     <value>区域{areaNumber}</value>
@@ -601,7 +601,7 @@
     <value>预兆教堂</value>
   </data>
   <data name="Challenger" xml:space="preserve">
-    <value>挑战者</value>
+    <value>挑战者(心痕)</value>
   </data>
   <data name="CharnelHouse" xml:space="preserve">
     <value>卑鄙犬魔</value>
@@ -670,7 +670,7 @@
     <value>恩达瑞亚的终结</value>
   </data>
   <data name="Engineer" xml:space="preserve">
-    <value>工程师</value>
+    <value>工程师(心痕)</value>
   </data>
   <data name="Engrams" xml:space="preserve">
     <value>心痕</value>
@@ -754,7 +754,7 @@
     <value>枪手</value>
   </data>
   <data name="Handler" xml:space="preserve">
-    <value>驯兽师</value>
+    <value>驯兽师(心痕)</value>
   </data>
   <data name="Hardcore" xml:space="preserve">
     <value>硬核</value>
@@ -814,7 +814,7 @@
     <value>物品</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Alchemist" xml:space="preserve">
-    <value>炼金术师</value>
+    <value>炼金术师(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Archon" xml:space="preserve">
     <value>执政官</value>
@@ -841,22 +841,22 @@
     <value>从泥牙那里购买古老哨子</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Hunter" xml:space="preserve">
-    <value>猎人</value>
+    <value>猎人(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Hunter_Notes" xml:space="preserve">
     <value>从布拉巴斯那里购买锈蚀奖章</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Invader" xml:space="preserve">
-    <value>入侵者</value>
+    <value>入侵者(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Medic" xml:space="preserve">
-    <value>医务兵</value>
+    <value>医务兵(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Medic_Notes" xml:space="preserve">
     <value>从诺拉那里购买医务兵饰针</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Summoner" xml:space="preserve">
-    <value>召唤师</value>
+    <value>召唤师(心痕)</value>
   </data>
   <data name="Jungle" xml:space="preserve">
     <value>丛林</value>
@@ -1502,6 +1502,12 @@
   </data>
   <data name="Ring_DenseSiliconRing" xml:space="preserve">
     <value>密硅戒指</value>
+  </data>
+  <data name="Ring_DevouringLoop" xml:space="preserve">
+    <value>吞噬戒指</value>
+  </data>
+  <data name="Ring_DevouringLoop_Notes" xml:space="preserve">
+    <value>在末日难度下完成战役后在老雷那里购买（进战役后打通前不进冒险）</value>
   </data>
   <data name="Ring_DowngradedRing" xml:space="preserve">
     <value>沙哈拉的拥抱</value>
@@ -2308,7 +2314,7 @@
     <value>英雄长剑</value>
   </data>
   <data name="Weapon_HerosSword_Notes" xml:space="preserve">
-    <value>完成游戏</value>
+    <value>完成战役</value>
   </data>
   <data name="Weapon_HuntingPistol" xml:space="preserve">
     <value>弹无虚发</value>
@@ -2395,7 +2401,7 @@
     <value>拯救者</value>
   </data>
   <data name="Weapon_Savior_Notes" xml:space="preserve">
-    <value>在硬核老手难度下完成游戏</value>
+    <value>在硬核老手难度下完成战役</value>
   </data>
   <data name="Weapon_ServicePistol" xml:space="preserve">
     <value>服役手枪</value>
@@ -2416,7 +2422,7 @@
     <value>阴燃</value>
   </data>
   <data name="Weapon_Smolder_Notes" xml:space="preserve">
-    <value>完成游戏</value>
+    <value>完成战役</value>
   </data>
   <data name="Weapon_Sorrow" xml:space="preserve">
     <value>哀痛</value>
@@ -2431,13 +2437,13 @@
     <value>孢子喷射</value>
   </data>
   <data name="Weapon_Sporebloom_Notes" xml:space="preserve">
-    <value>在老手难度下完成游戏</value>
+    <value>在老手难度下完成战役</value>
   </data>
   <data name="Weapon_Starkiller" xml:space="preserve">
     <value>弑星者</value>
   </data>
   <data name="Weapon_Starkiller_Notes" xml:space="preserve">
-    <value>在硬核模式下完成游戏</value>
+    <value>在末日难度下完成战役</value>
   </data>
   <data name="Weapon_StarShot" xml:space="preserve">
     <value>星辰射击</value>
@@ -2467,7 +2473,7 @@
     <value>世界之刃</value>
   </data>
   <data name="Weapon_WorldsEdge_Notes" xml:space="preserve">
-    <value>在末日难度下完成游戏</value>
+    <value>在末日难度下完成战役</value>
   </data>
   <data name="Whispers" xml:space="preserve">
     <value>低语</value>
