@@ -198,6 +198,9 @@
   <data name="Choose a backup to restore from the list." xml:space="preserve">
     <value>从列表中选择要还原的备份。</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
   <data name="Confirm Delete" xml:space="preserve">
     <value>确认删除</value>
   </data>
@@ -364,7 +367,7 @@
     <value>可能出现的物品</value>
   </data>
   <data name="Preferences" xml:space="preserve">
-    <value>首选项</value>
+    <value>偏好设置</value>
   </data>
   <data name="processing save file change" xml:space="preserve">
     <value>处理存档变更</value>
@@ -443,5 +446,17 @@
   </data>
   <data name="Language_change_notice_{chosenLanguage}" xml:space="preserve">
     <value>语言更改为“{chosenLanguage}”。可能需要重启程序才能全部生效。</value>
+  </data>
+  <data name="Unrecognized_save_files_warning_{fileList}" xml:space="preserve">
+    <value>在存档文件夹中找到无法识别的文件: {fileList}。这些文件可能会干扰世界资源分析器。</value>
+  </data>
+  <data name="Always On Top" xml:space="preserve">
+    <value>总是置顶</value>
+  </data>
+  <data name="lblOpacitySlider_Text" xml:space="preserve">
+    <value>窗口透明度</value>
+  </data>
+  <data name="chkOnlyInactive_Content" xml:space="preserve">
+    <value>只在非活动时</value>
   </data>
 </root>
