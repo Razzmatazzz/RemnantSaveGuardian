@@ -1920,4 +1920,7 @@
   <data name="Ring_BerserkersCrest" xml:space="preserve">
     <value>Berserker's Crest</value>
   </data>
+  <data name="Ring_DevouringLoop" xml:space="preserve">
+    <value>Devoured Loop</value>
+  </data>
 </root>

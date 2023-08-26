@@ -1608,8 +1608,12 @@
           "notes": "Purchased from Reggie at Ward 13 after defeating all bosses at least once."
         },
         {
-          "name": "/Items/Trinkets/Rings/BrightSteelRing/Ring_BrightSteelRing",
-          "notes": "Purchased from Reggie at Ward 13 after completing 15 biomes on any difficulty."
+            "name": "/Items/Trinkets/Rings/BrightSteelRing/Ring_BrightSteelRing",
+            "notes": "Purchased from Reggie at Ward 13 after completing 15 biomes on any difficulty."
+        },
+        {
+            "name": "/Items/Trinkets/Rings/DevouringLoop/Ring_DevouringLoop",
+            "notes": "Purchased from Reggie at Ward 13 after completing the campaign on Apocalypse difficulty."
         }
       ],
       "Cass": [
