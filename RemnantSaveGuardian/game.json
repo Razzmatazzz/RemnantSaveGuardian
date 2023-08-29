@@ -224,6 +224,10 @@
           "notes": "Rewarded by speaking with Bedel of The Vaunnt in the Forbidden Grove location on Yaesha while wearing the Lodestone Crown armor piece."
         },
         {
+          "name": "/Items/Weapons/Melee/Standard/Spear/RebellionSpear/Weapon_RebellionSpear",
+          "notes": "Granted as Reward by Bedel of the Vaunnt for saving the Doe during the Corrupted Ravager boss fight."
+        },
+        {
           "name": "/Items/Trinkets/Rings/BloodJewel/Ring_BloodJewel"
         },
         {
@@ -1455,6 +1459,9 @@
         },
         {
           "name": "/Items/Traits/Core/Wayfarer/Trait_Wayfarer"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Claws/DecayedClaws/Weapon_DecayedClaws"
         }
       ],
       "Ward13": [
@@ -1532,6 +1539,9 @@
           "name": "/Items/Weapons/Handguns/Standard/Repeater/Weapon_Repeater_Rusty"
         },
         {
+          "name": "/Items/Weapons/Handguns/Standard/Repeater/Weapon_Repeater"
+        },
+        {
           "name": "/Items/Weapons/Handguns/Standard/Revolver/Weapon_Revolver"
         },
         {
@@ -1563,6 +1573,36 @@
         },
         {
           "name": "/Items/Weapons/Melee/Standard/Katana/Katana/Weapon_Katana"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/MachinePistol/Weapon_MachinePistol"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/Huntmaster/Weapon_Huntmaster"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Sword/Sword/Weapon_Sword"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Claws/RustedClaws/Weapon_Claws"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Hammer/Hammer/Weapon_Hammer"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Spear/Spear/Weapon_Spear"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Staff/Weapon_Staff"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Claws/KnuckleDusters/Weapon_KnuckleDusters"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/AutoShotgun/Weapon_AutoShotgun"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/Sniper_Rifle/Weapon_SniperRifle"
         }
       ],
       "Reggie": [
@@ -1983,6 +2023,10 @@
         },
         {
           "name": "/Items/Weapons/Melee/Special/HerosSword/Weapon_HerosSword",
+          "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Nightmare difficulty."
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Special/Repulsor/Weapon_Repulsor",
           "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Nightmare difficulty."
         },
         {

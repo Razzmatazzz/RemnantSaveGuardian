@@ -1923,4 +1923,46 @@
   <data name="Ring_DevouringLoop" xml:space="preserve">
     <value>Devoured Loop</value>
   </data>
+  <data name="Weapon_RebellionSpear" xml:space="preserve">
+    <value>Rebellion Spear</value>
+  </data>
+  <data name="Weapon_Repeater" xml:space="preserve">
+    <value>Repeater pistol</value>
+  </data>
+  <data name="Weapon_MachinePistol" xml:space="preserve">
+    <value>Tech 22</value>
+  </data>
+  <data name="Weapon_Repulsor" xml:space="preserve">
+    <value>Repulsor</value>
+  </data>
+  <data name="Weapon_Huntmaster" xml:space="preserve">
+    <value>Huntmaster M1</value>
+  </data>
+  <data name="Weapon_Sword" xml:space="preserve">
+    <value>Steel Sword</value>
+  </data>
+  <data name="Weapon_Claws" xml:space="preserve">
+    <value>Rusted Claws</value>
+  </data>
+  <data name="Weapon_DecayedClaws" xml:space="preserve">
+    <value>Decayed Claws</value>
+  </data>
+  <data name="Weapon_Hammer" xml:space="preserve">
+    <value>Scrap Hammer</value>
+  </data>
+  <data name="Weapon_Spear" xml:space="preserve">
+    <value>Steel Spear</value>
+  </data>
+  <data name="Weapon_Staff" xml:space="preserve">
+    <value>Scrap Staff</value>
+  </data>
+  <data name="Weapon_KnuckleDusters" xml:space="preserve">
+    <value>Knuckle Dusters</value>
+  </data>
+  <data name="Weapon_AutoShotgun" xml:space="preserve">
+    <value>AS-10 "Bulldog"</value>
+  </data>
+  <data name="Weapon_SniperRifle" xml:space="preserve">
+    <value>Widowmaker</value>
+  </data>
 </root>
