@@ -1033,6 +1033,16 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?.
+        /// </summary>
+        public static string The_latest_version_of_Remnant_Save_Guardian_is__CurrentVersion___You_are_using_version__LocalVersion___Do_you_want_to_upgrade_the_application_now_ {
+            get {
+                return ResourceManager.GetString("The latest version of Remnant Save Guardian is {CurrentVersion}. You are using ve" +
+                        "rsion {LocalVersion}. Do you want to upgrade the application now?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Theme.
         /// </summary>
         public static string Theme {

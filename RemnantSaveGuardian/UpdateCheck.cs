@@ -1,7 +1,11 @@
-﻿using System;
+﻿using AutoUpdaterDotNET;
+using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Net.Http;
 using System.Text.Json.Nodes;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace RemnantSaveGuardian
 {
@@ -11,9 +15,7 @@ namespace RemnantSaveGuardian
         private static readonly HttpClient client = new();
         private static DateTime lastUpdateCheck = DateTime.MinValue;
 
-        public static event EventHandler<NewVersionEventArgs> NewVersion;
-
-        public static bool OpenDownloadPage { get; set; } = true;
+        public static event EventHandler<NewVersionEventArgs>? NewVersion;
 
         public static async void CheckForNewVersion()
         {
@@ -37,10 +39,40 @@ namespace RemnantSaveGuardian
                 if (localVersion.CompareTo(remoteVersion) == -1)
                 {
                     NewVersion?.Invoke(null, new() { Version = remoteVersion, Uri = new(latestRelease["html_url"].ToString()) });
-                    if (OpenDownloadPage)
+                    var messageBox = new Wpf.Ui.Controls.MessageBox();
+                    messageBox.Title = Loc.T("Update available");
+                    messageBox.Content = new TextBlock()
                     {
-                        Process.Start("explorer", "https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/latest");
-                    }
+                        Text = Loc.T("The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?",
+                            new LocalizationOptions()
+                            {
+                                {
+                                    "CurrentVersion", remoteVersion.ToString()
+                                },
+                                {
+                                    "LocalVersion", localVersion.ToString()
+                                }
+                            }
+                        ),
+                        TextWrapping = System.Windows.TextWrapping.WrapWithOverflow
+                    };
+                    messageBox.ButtonLeftName = Loc.T("Update");
+                    messageBox.ButtonLeftClick += (send, updatedEvent) => {
+                        UpdateInfoEventArgs args = new()
+                        {
+                            InstalledVersion = localVersion,
+                            CurrentVersion = remoteVersion.ToString(),
+                            DownloadURL = $"https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/download/{remoteVersion}/RemnantSaveGuardian.zip"
+                        };
+                        messageBox.Close();
+                        AutoUpdater.DownloadUpdate(args);
+                        Application.Current.Shutdown();
+                    };
+                    messageBox.ButtonRightName = Loc.T("Cancel");
+                    messageBox.ButtonRightClick += (send, updatedEvent) => {
+                        messageBox.Close();
+                    };
+                    messageBox.ShowDialog();
                 }
             }
             catch (Exception ex)
