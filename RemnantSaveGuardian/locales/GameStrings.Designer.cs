@@ -2518,6 +2518,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Constrained Heart.
+        /// </summary>
+        public static string Relic_Consumable_ConstrainedHeart {
+            get {
+                return ResourceManager.GetString("Relic_Consumable_ConstrainedHeart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Crystal Heart.
         /// </summary>
         public static string Relic_Consumable_CrystalHeart {

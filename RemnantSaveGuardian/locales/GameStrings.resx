@@ -1965,4 +1965,7 @@
   <data name="Weapon_SniperRifle" xml:space="preserve">
     <value>Widowmaker</value>
   </data>
+  <data name="Relic_Consumable_ConstrainedHeart" xml:space="preserve">
+    <value>Constrained Heart</value>
+  </data>
 </root>
