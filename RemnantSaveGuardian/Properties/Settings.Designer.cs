@@ -479,5 +479,52 @@ namespace RemnantSaveGuardian.Properties {
             }
         }
         
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoHideNaviAndTitleBar {
+            get {
+                return ((bool)(this["AutoHideNaviAndTitleBar"]));
+            }
+            set {
+                this["AutoHideNaviAndTitleBar"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EnableOpacity {
+            get {
+                return ((bool)(this["EnableOpacity"]));
+            }
+            set {
+                this["EnableOpacity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public float Opacity {
+            get {
+                return ((float)(this["Opacity"]));
+            }
+            set {
+                this["Opacity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool OnlyInactive {
+            get {
+                return ((bool)(this["OnlyInactive"]));
+            }
+            set {
+                this["OnlyInactive"] = value;
+            }
+        }
     }
 }

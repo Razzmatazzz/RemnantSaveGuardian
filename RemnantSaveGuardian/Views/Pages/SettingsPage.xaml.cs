@@ -8,6 +8,8 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Common.Interfaces;
+using RemnantSaveGuardian.Views.Windows;
+using RemnantSaveGuardian.Helpers;
 
 namespace RemnantSaveGuardian.Views.Pages
 {
@@ -113,6 +115,32 @@ namespace RemnantSaveGuardian.Views.Pages
             if (e.PropertyName == "BackupFolder")
             {
                 txtBackupFolder.ContextMenu.IsEnabled = Directory.Exists(Properties.Settings.Default.BackupFolder) && Properties.Settings.Default.BackupFolder.Length > 0;
+            }
+            if (e.PropertyName == "EnableOpacity")
+            {
+                Logger.Log(Loc.T("Opacity_toggle_notice"));
+            }
+            if (e.PropertyName == "Opacity" || e.PropertyName == "OnlyInactive" || e.PropertyName == "Theme")
+            {
+                if (Properties.Settings.Default.EnableOpacity == false) { return; }
+                var value = Properties.Settings.Default.Opacity;
+                var mainWindow = Application.Current.MainWindow;
+                if (value == 1 || (e.PropertyName == "OnlyInactive" && Properties.Settings.Default.OnlyInactive == true))
+                {
+                    WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UXMaterials.Mica);
+                }
+                else
+                {
+                    WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UXMaterials.None);
+                }
+                if (e.PropertyName == "OnlyInactive" && Properties.Settings.Default.OnlyInactive == true)
+                {
+                    mainWindow.Opacity = 1;
+                }
+                else
+                {
+                    mainWindow.Opacity = value;
+                }
             }
         }
 
@@ -318,6 +346,16 @@ namespace RemnantSaveGuardian.Views.Pages
                 Application.Current.MainWindow.Language = System.Windows.Markup.XmlLanguage.GetLanguage(culture.IetfLanguageTag);
                 Properties.Settings.Default.Language = langs[cmbSwitchLanguage.SelectedIndex].Name;
                 Logger.Success(Loc.T("Language_change_notice_{chosenLanguage}", new() { { "chosenLanguage", culture.DisplayName } }));
+            }
+        }
+
+        private void sldOpacitySlider_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
+        {
+            if (Properties.Settings.Default.OnlyInactive == true)
+            {
+                var mainWindow = Application.Current.MainWindow;
+                mainWindow.Opacity = 1;
+                WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UXMaterials.Mica);
             }
         }
     }
