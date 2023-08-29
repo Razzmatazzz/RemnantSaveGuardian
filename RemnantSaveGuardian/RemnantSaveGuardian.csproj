@@ -6,7 +6,8 @@
     <Nullable>enable</Nullable>
     <LangVersion>10.0</LangVersion>
     <UseWPF>true</UseWPF>
-	<UseWindowsForms>true</UseWindowsForms>
+    <UseWindowsForms>true</UseWindowsForms>
+    <SatelliteResourceLanguages>en;ru;de;es;fr;it;ja;ko;pt-BR;zh-Hans;zh-Hant</SatelliteResourceLanguages>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\256.ico</ApplicationIcon>
     <AssemblyVersion>1.1.4.0</AssemblyVersion>
@@ -22,6 +23,7 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
     <PackageReference Include="WPFLocalizeExtension" Version="3.10.0" />
+    <PackageReference Include="Autoupdater.NET.Official" Version="1.8.4"/>
   </ItemGroup>
 
   <ItemGroup>
