@@ -453,8 +453,20 @@
   <data name="Always On Top" xml:space="preserve">
     <value>总是置顶</value>
   </data>
-  <data name="lblOpacitySlider_Text" xml:space="preserve">
+  <data name="chkAutoHideNaviAndTitleBar_Content" xml:space="preserve">
+    <value>窗口非活动时自动隐藏导航栏和标题栏</value>
+  </data>
+  <data name="chkOpacity_Content" xml:space="preserve">
     <value>窗口透明度</value>
+  </data>
+  <data name="chkOpacity_note_Text" xml:space="preserve">
+    <value>(实验功能，可能造成程序不稳定)</value>
+  </data>
+  <data name="Opacity_toggle_notice" xml:space="preserve">
+    <value>窗口透明度功能开启状态已经更改，必须重启程序才能生效。</value>
+  </data>
+  <data name="lblOpacitySlider_Text" xml:space="preserve">
+    <value>透明度</value>
   </data>
   <data name="chkOnlyInactive_Content" xml:space="preserve">
     <value>只在非活动时</value>

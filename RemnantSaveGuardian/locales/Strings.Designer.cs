@@ -268,6 +268,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto Hide Navigation and TitleBar.
+        /// </summary>
+        public static string chkAutoHideNaviAndTitleBar_Content {
+            get {
+                return ResourceManager.GetString("chkAutoHideNaviAndTitleBar_Content", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Create log file.
         /// </summary>
         public static string chkCreateLogFile_Content {
@@ -285,6 +294,33 @@ namespace RemnantSaveGuardian.locales {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Only when inactive.
+        /// </summary>
+        public static string chkOnlyInactive_Content {
+            get {
+                return ResourceManager.GetString("chkOnlyInactive_Content", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Window Opacity.
+        /// </summary>
+        public static string chkOpacity_Content {
+            get {
+                return ResourceManager.GetString("chkOpacity_Content", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to (Experimental, might cause instability).
+        /// </summary>
+        public static string chkOpacity_note_Text {
+            get {
+                return ResourceManager.GetString("chkOpacity_note_Text", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Show co-op items in world analyzer.
         /// </summary>
@@ -312,6 +348,15 @@ namespace RemnantSaveGuardian.locales {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Collapse All.
         /// </summary>
@@ -644,6 +689,15 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("lblMissingItemColor_Text", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Opacity.
+        /// </summary>
+        public static string lblOpacitySlider_Text {
+            get {
+                return ResourceManager.GetString("lblMissingItemColor_Text", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Start page.
@@ -784,6 +838,15 @@ namespace RemnantSaveGuardian.locales {
         ///   Looks up a localized string similar to Normal.
         /// </summary>
         public static string Normal {
+            get {
+                return ResourceManager.GetString("Normal", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Window opacity is changed. You have to restart app for the change to apply..
+        /// </summary>
+        public static string Opacity_toggle_notice {
             get {
                 return ResourceManager.GetString("Normal", resourceCulture);
             }
