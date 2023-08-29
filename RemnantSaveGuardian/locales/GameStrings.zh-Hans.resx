@@ -2511,4 +2511,49 @@
   <data name="World_RootEarth" xml:space="preserve">
     <value>根蔓地球</value>
   </data>
+  <data name="Weapon_RebellionSpear" xml:space="preserve">
+    <value>叛乱长矛</value>
+  </data>
+  <data name="Weapon_Repeater" xml:space="preserve">
+    <value>连发手枪</value>
+  </data>
+  <data name="Weapon_MachinePistol" xml:space="preserve">
+    <value>技-22</value>
+  </data>
+  <data name="Weapon_Repulsor" xml:space="preserve">
+    <value>反击者</value>
+  </data>
+  <data name="Weapon_Huntmaster" xml:space="preserve">
+    <value>狩猎大师-M1</value>
+  </data>
+  <data name="Weapon_Sword" xml:space="preserve">
+    <value>精钢长剑</value>
+  </data>
+  <data name="Weapon_Claws" xml:space="preserve">
+    <value>锈蚀利爪</value>
+  </data>
+  <data name="Weapon_DecayedClaws" xml:space="preserve">
+    <value>腐朽利爪</value>
+  </data>
+  <data name="Weapon_Hammer" xml:space="preserve">
+    <value>废铁锤</value>
+  </data>
+  <data name="Weapon_Spear" xml:space="preserve">
+    <value>精钢长矛</value>
+  </data>
+  <data name="Weapon_Staff" xml:space="preserve">
+    <value>废料法杖</value>
+  </data>
+  <data name="Weapon_KnuckleDusters" xml:space="preserve">
+    <value>指节拂尘</value>
+  </data>
+  <data name="Weapon_AutoShotgun" xml:space="preserve">
+    <value>AS-10 "斗牛犬"</value>
+  </data>
+  <data name="Weapon_SniperRifle" xml:space="preserve">
+    <value>寡妇制造者</value>
+  </data>
+  <data name="Relic_Consumable_ConstrainedHeart" xml:space="preserve">
+    <value>约束之心</value>
+  </data>
 </root>
