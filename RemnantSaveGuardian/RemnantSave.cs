@@ -153,23 +153,40 @@ namespace RemnantSaveGuardian
         }
 
         // Credit to https://gist.github.com/crackedmind
+
+        internal class FileHeader
+        {
+            public uint Crc32;
+            public uint TotalSize;
+            public uint Unknown;
+
+            public static FileHeader ReadFromStream(Stream stream)
+            {
+                FileHeader header = new();
+                using var reader = new BinaryReader(stream, Encoding.UTF8, true);
+                header.Crc32 = reader.ReadUInt32();
+                header.TotalSize = reader.ReadUInt32();
+                header.Unknown = reader.ReadUInt32();
+                return header;
+            }
+        }
         internal class ChunkHeader
         {
-            public ulong unknown;
-            public ulong unknown2;
-            public byte unknown3;
+            public ulong ChunkHeaderTag; // always 0x222222229E2A83C1
+            public ulong ChunkSize;      // always 0x20000
+            public byte DecompressionMethod; // 3 - zlib
             public ulong CompressedSize1;
-            public ulong DecompressedSize1; // only valid for profile.sav with 1 chunk?
+            public ulong DecompressedSize1; // <= ChunkSize
             public ulong CompressedSize2;
-            public ulong DecompressedSize2; // only valid for profile.sav with 1 chunk?
+            public ulong DecompressedSize2; // <= ChunkSize
 
             public static ChunkHeader ReadFromStream(Stream stream)
             {
                 ChunkHeader header = new ChunkHeader();
                 using var reader = new BinaryReader(stream, Encoding.UTF8, true);
-                header.unknown = reader.ReadUInt64();
-                header.unknown2 = reader.ReadUInt64();
-                header.unknown3 = reader.ReadByte();
+                header.ChunkHeaderTag = reader.ReadUInt64();
+                header.ChunkSize = reader.ReadUInt64();
+                header.DecompressionMethod = reader.ReadByte();
                 header.CompressedSize1 = reader.ReadUInt64();
                 header.DecompressedSize1 = reader.ReadUInt64();
                 header.CompressedSize2 = reader.ReadUInt64();
@@ -182,10 +199,11 @@ namespace RemnantSaveGuardian
         {
             if (File.Exists(saveFilePath))
             {
-                using var memstream = new MemoryStream();
                 using var fileStream = File.Open(saveFilePath, FileMode.Open);
+                var fileHeader = FileHeader.ReadFromStream(fileStream);
 
-                fileStream.Seek(0xC, SeekOrigin.Current);
+                var saveContent = new byte[fileHeader.TotalSize];
+                using var memstream = new MemoryStream(saveContent);
                 while (fileStream.Position < fileStream.Length)
                 {
                     ChunkHeader header = ChunkHeader.ReadFromStream(fileStream);
@@ -196,13 +214,10 @@ namespace RemnantSaveGuardian
                     using var decompressor = new ZLibStream(bufferStream, CompressionMode.Decompress);
                     decompressor.CopyTo(memstream);
                 }
-                fileStream.Dispose();
 
-                var res = memstream.ToArray();
-
-                return res;
+                return saveContent;
             }
-            return new byte[] { };
+            return Array.Empty<byte>();
         }
         public static string DecompressSaveAsString(string saveFilePath)
         {
