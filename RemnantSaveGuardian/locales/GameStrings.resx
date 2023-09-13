@@ -1968,4 +1968,7 @@
   <data name="Relic_Consumable_ConstrainedHeart" xml:space="preserve">
     <value>Constrained Heart</value>
   </data>
+  <data name="TheNest" xml:space="preserve">
+    <value>Severed Hand</value>
+  </data>
 </root>

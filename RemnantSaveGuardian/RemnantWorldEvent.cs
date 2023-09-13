@@ -942,6 +942,7 @@ namespace RemnantSaveGuardian
             RemnantWorldEvent lastEventTree;
             //List<string> excludeTypes = new() { "Global", "Earth" };
             List<string> excludeWorlds = new() { "World_Base", "World_Labyrinth" };
+            List<string> excludeEventDetails = new() { "TheHunterDream" };
             var unknownAreaCount = 0;
             foreach (Match area in areas)
             {
@@ -958,7 +959,7 @@ namespace RemnantSaveGuardian
                 foreach (Match eventMatch in eventMatches)
                 {
                     currentWorld = eventMatch.Groups["world"].Value;
-                    if (excludeWorlds.Contains(currentWorld))
+                    if (currentWorld == null || excludeWorlds.Contains(currentWorld))
                     {
                         continue;
                     }
@@ -977,7 +978,7 @@ namespace RemnantSaveGuardian
                         if (eventMatch.Value.Contains("EventTree"))
                         {
                             //Debug.WriteLine(eventMatch.Value);
-                            //continue;
+                            continue;
                         }
                         if (GameInfo.SubLocations.ContainsKey(eventMatch.Groups["eventName"].Value))
                         {
@@ -997,6 +998,11 @@ namespace RemnantSaveGuardian
                                 unknownAreaCount++;
                                 currentSublocation = Loc.GameT("Area {areaNumber}", new() { { "areaNumber", unknownAreaCount.ToString() } });
                             }
+                        }
+                        if (excludeEventDetails.Any(detailString => eventMatch.Groups["details"].Value.Contains(detailString)))
+                        {
+                            //Logger.Log(eventMatch.Value);
+                            continue;
                         }
 
                         //eventStrings.Add(eventMatch.Value);
@@ -1095,6 +1101,10 @@ namespace RemnantSaveGuardian
 
                     }
                 }
+                if (areaEvents.Count == 0)
+                {
+                    continue;
+                }
                 var ignoreSoloEventTypes = new List<string>() {
                     "Injectable",
                     "OverworldPOI",
@@ -1150,7 +1160,18 @@ namespace RemnantSaveGuardian
                     matriarch.setMissingItems(character);
                     areaEvents.Insert(lastRedThrone+2, matriarch);
                 }
-                zoneEvents[currentWorld].AddRange(areaEvents);
+                //zoneEvents[currentWorld].AddRange(areaEvents);
+                foreach (var newEvent in areaEvents)
+                {
+                    var insertPosition = zoneEvents[currentWorld].Count;
+                    var locationIndex = zoneEvents[currentWorld].FindLastIndex(e => e.Locations.Last() == newEvent.Locations.Last());
+                    if (locationIndex != -1)
+                    {
+                        //Debug.WriteLine($"{newEvent.Locations.Last()} {newEvent.Name} = {insertPosition}, {locationIndex}; matched to {zoneEvents[currentWorld][locationIndex].Name}");
+                        insertPosition = locationIndex + 1;
+                    }
+                    zoneEvents[currentWorld].Insert(insertPosition, newEvent);
+                }
             }
             //File.WriteAllText($"events{character.WorldIndex}-{eventsIndex}.txt", string.Join("\n", eventStrings.ToArray()));
 

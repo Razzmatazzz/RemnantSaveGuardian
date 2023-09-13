@@ -4309,6 +4309,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Severed Hand.
+        /// </summary>
+        public static string TheNest {
+            get {
+                return ResourceManager.GetString("TheNest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phantom Wasteland.
         /// </summary>
         public static string ThePhantomWasteland {
