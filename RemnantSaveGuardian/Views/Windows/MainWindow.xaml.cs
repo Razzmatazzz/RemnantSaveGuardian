@@ -1,4 +1,5 @@
-﻿using RemnantSaveGuardian.Services;
+﻿using RemnantSaveGuardian.Helpers;
+using RemnantSaveGuardian.Services;
 using RemnantSaveGuardian.ViewModels;
 using RemnantSaveGuardian.Views.Pages;
 using System;
@@ -6,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Media;
 //using System.Windows.Forms;
 using Wpf.Ui.Common;
 using Wpf.Ui.Controls;
@@ -25,6 +28,21 @@ namespace RemnantSaveGuardian.Views.Windows
             get;
         }
 
+        #region background
+        private Brush _background;
+        public Brush background
+        {
+            get { return _background; }
+            set {
+                //Avoid WPF-UI override
+                if (_background != value && value.ToString().ToUpper() != "#00FFFFFF")
+                {
+                    _background = value;
+                }
+            }
+        }
+        #endregion
+
         public MainWindow(ViewModels.MainWindowViewModel viewModel, IPageService pageService, INavigationService navigationService)
         {
             ViewModel = viewModel;
@@ -37,13 +55,26 @@ namespace RemnantSaveGuardian.Views.Windows
                 Properties.Settings.Default.Save();
             }
 
-            InitializeComponent();
+            InitializeComponent();            
             SetPageService(pageService);
 
             navigationService.SetNavigationControl(RootNavigation);
 
-            try
+            this.Topmost = Properties.Settings.Default.TopMost;
+
+            if (Properties.Settings.Default.EnableOpacity == true)
             {
+                var binding = new Binding("background");
+                binding.Mode = BindingMode.TwoWay;
+                this.SetBinding(BackgroundProperty, binding);
+                this.AllowsTransparency = true;
+                this.WindowStyle = WindowStyle.None;
+                this.ResizeMode = ResizeMode.CanMinimize;
+                WindowDwmHelper.RestoreBackground(this);
+            }
+
+            try
+            {                
                 Logger.MessageLogged += Logger_MessageLogged;
 
                 var theme = Properties.Settings.Default.Theme;
@@ -120,6 +151,57 @@ namespace RemnantSaveGuardian.Views.Windows
             }
         }
 
+        protected override void OnContentRendered(EventArgs e)
+        {
+            base.OnContentRendered(e);
+            if (Properties.Settings.Default.EnableOpacity == false) { return; }
+            if (Properties.Settings.Default.OnlyInactive == true || Properties.Settings.Default.Opacity == 1)
+            {
+                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UXMaterials.Mica);
+            }
+            else
+            {
+                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UXMaterials.None);
+                this.Opacity = Properties.Settings.Default.Opacity;
+            }
+        }
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+            if (Properties.Settings.Default.AutoHideNaviAndTitleBar == true) {
+                TitleBar.Visibility = Visibility.Visible;
+                RootNavigation.Visibility = Visibility.Visible;
+                BtnAlwayOnTop.Visibility = Visibility.Visible;
+                Caption.Visibility = Visibility.Visible;
+                Border.Margin = new Thickness(0,46,0,0);
+                EventTransfer.Transfer(Visibility.Visible);
+            }
+            if (Properties.Settings.Default.EnableOpacity == false) { return; }
+            if (Properties.Settings.Default.OnlyInactive == true)
+            {
+                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UXMaterials.Mica);
+                this.Opacity = 1;
+            }
+        }
+        protected override void OnDeactivated(EventArgs e)
+        {
+            base.OnDeactivated(e);
+            if (Properties.Settings.Default.AutoHideNaviAndTitleBar == true)
+            {
+                TitleBar.Visibility = Visibility.Collapsed;
+                RootNavigation.Visibility = Visibility.Collapsed;
+                BtnAlwayOnTop.Visibility = Visibility.Collapsed;
+                Caption.Visibility = Visibility.Collapsed;
+                Border.Margin = new Thickness(0);
+                EventTransfer.Transfer(Visibility.Collapsed);
+            }
+            if (Properties.Settings.Default.EnableOpacity == false) { return; }
+            if (Properties.Settings.Default.OnlyInactive == true && Properties.Settings.Default.Opacity < 1)
+            {
+                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UXMaterials.None);
+                this.Opacity = Properties.Settings.Default.Opacity;
+            }
+        }
         private void UpdateCheck_NewVersion(object? sender, NewVersionEventArgs e)
         {
             Dispatcher.Invoke(() =>
@@ -341,6 +423,11 @@ namespace RemnantSaveGuardian.Views.Windows
 
             // Remnant not found or not installed, clear path
             Properties.Settings.Default.GameFolder = "";
+        }
+
+        private void ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Topmost = Properties.Settings.Default.TopMost;
         }
     }
 }

@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Common.Interfaces;
+using RemnantSaveGuardian.Views.Windows;
+using RemnantSaveGuardian.Helpers;
 
 namespace RemnantSaveGuardian.Views.Pages
 {
@@ -18,6 +22,8 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             get;
         }
+
+        private CultureInfo[] AvailableCultures = new CultureInfo[] { };
 
         public SettingsPage(ViewModels.SettingsViewModel viewModel)
         {
@@ -45,6 +51,24 @@ namespace RemnantSaveGuardian.Views.Pages
                         cmbStartPage.SelectedItem = item;
                     }
                 }
+
+                var langs = Application.Current.Properties["langs"] as CultureInfo[];
+
+                cmbSwitchLanguage.ItemsSource = langs.Select(e => e.NativeName);
+                if (Properties.Settings.Default.Language != "")
+                {
+                    cmbSwitchLanguage.SelectedItem = langs.First(e => Properties.Settings.Default.Language == e.Name).NativeName;
+                }
+                else
+                {
+                    var culture = Thread.CurrentThread.CurrentCulture;
+
+                    if (culture.Parent != null || culture.Name != "pt-BR")
+                        cmbSwitchLanguage.SelectedItem = culture.Parent.NativeName;
+                    else
+                        cmbSwitchLanguage.SelectedItem = culture.NativeName;
+                }
+                cmbSwitchLanguage.SelectionChanged += cmbSwitchLanguage_SelectionChanged;
 
                 radThemeLight.IsChecked = Properties.Settings.Default.Theme == "Light";
 
@@ -92,16 +116,44 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 txtBackupFolder.ContextMenu.IsEnabled = Directory.Exists(Properties.Settings.Default.BackupFolder) && Properties.Settings.Default.BackupFolder.Length > 0;
             }
+            if (e.PropertyName == "EnableOpacity")
+            {
+                Logger.Log(Loc.T("Opacity_toggle_notice"));
+            }
+            if (e.PropertyName == "Opacity" || e.PropertyName == "OnlyInactive" || e.PropertyName == "Theme")
+            {
+                if (Properties.Settings.Default.EnableOpacity == false) { return; }
+                var value = Properties.Settings.Default.Opacity;
+                var mainWindow = Application.Current.MainWindow;
+                if (value == 1 || (e.PropertyName == "OnlyInactive" && Properties.Settings.Default.OnlyInactive == true))
+                {
+                    WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UXMaterials.Mica);
+                }
+                else
+                {
+                    WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UXMaterials.None);
+                }
+                if (e.PropertyName == "OnlyInactive" && Properties.Settings.Default.OnlyInactive == true)
+                {
+                    mainWindow.Opacity = 1;
+                }
+                else
+                {
+                    mainWindow.Opacity = value;
+                }
+            }
         }
 
         private void RadThemeDark_Checked(object sender, RoutedEventArgs e)
         {
             ChangeTheme("Dark");
+            CmbMissingItemColor_SelectionChanged(sender, null);
         }
 
         private void RadThemeLight_Checked(object sender, RoutedEventArgs e)
         {
             ChangeTheme("Light");
+            CmbMissingItemColor_SelectionChanged(sender, null);
         }
         private void ChangeTheme(string parameter)
         {
@@ -168,17 +220,23 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         foreach (string file in backupFiles)
                         {
-                            string subFolderName = file.Substring(file.LastIndexOf(@"\"));
+                            FileAttributes attr = File.GetAttributes(file);
+                            if ((attr & FileAttributes.Directory) != FileAttributes.Directory)
+                            {
+                                // skip anything that's not a folder
+                                continue;
+                            }
+                            string subFolderName = Path.GetFileName(file);
                             DirectoryInfo currentBackupFolder = new DirectoryInfo(file);
-                            DirectoryInfo newBackupFolder = Directory.CreateDirectory(folderName + subFolderName);
+                            DirectoryInfo newBackupFolder = Directory.CreateDirectory(Path.Combine(folderName, subFolderName));
 
                             foreach (FileInfo fileInfo in currentBackupFolder.GetFiles())
                             {
                                 fileInfo.CopyTo(Path.Combine(newBackupFolder.FullName, fileInfo.Name), true);
                             }
 
-                            Directory.SetCreationTime(folderName + subFolderName, Directory.GetCreationTime(file));
-                            Directory.SetLastWriteTime(folderName + subFolderName, Directory.GetCreationTime(file));
+                            Directory.SetCreationTime(Path.Combine(folderName, subFolderName), Directory.GetCreationTime(file));
+                            Directory.SetLastWriteTime(Path.Combine(folderName, subFolderName), Directory.GetCreationTime(file));
                             Directory.Delete(file, true);
                         }
                         messageBox.Hide();
@@ -274,6 +332,31 @@ namespace RemnantSaveGuardian.Views.Pages
                 return;
             }
             Properties.Settings.Default.StartPage = startPage;
+        }
+
+        private void cmbSwitchLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbSwitchLanguage.SelectedIndex > -1)
+            {
+                var langs = Application.Current.Properties["langs"] as CultureInfo[];
+                var culture = langs[cmbSwitchLanguage.SelectedIndex];
+
+                Thread.CurrentThread.CurrentCulture = culture;
+                WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = culture;
+                Application.Current.MainWindow.Language = System.Windows.Markup.XmlLanguage.GetLanguage(culture.IetfLanguageTag);
+                Properties.Settings.Default.Language = langs[cmbSwitchLanguage.SelectedIndex].Name;
+                Logger.Success(Loc.T("Language_change_notice_{chosenLanguage}", new() { { "chosenLanguage", culture.DisplayName } }));
+            }
+        }
+
+        private void sldOpacitySlider_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
+        {
+            if (Properties.Settings.Default.OnlyInactive == true)
+            {
+                var mainWindow = Application.Current.MainWindow;
+                mainWindow.Opacity = 1;
+                WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UXMaterials.Mica);
+            }
         }
     }
 }

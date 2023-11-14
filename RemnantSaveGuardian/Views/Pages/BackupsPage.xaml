@@ -18,7 +18,7 @@
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     mc:Ignorable="d">
 
-    <Grid Margin="23,0" VerticalAlignment="Top">
+    <Grid Margin="23,0,23,23">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -36,7 +36,7 @@
                 </Button>
             </ToolBar>
         </WrapPanel>
-        <DataGrid Grid.Row="1" Name="dataBackups" AutoGeneratingColumn="dataBackups_AutoGeneratingColumn" BeginningEdit="DataBackups_BeginningEdit" CellEditEnding="DataBackups_CellEditEnding" Drop="dataBackups_Drop" AllowDrop="True" SelectionMode="Single" IsReadOnly="False" SelectionUnit="FullRow">
+        <DataGrid Grid.Row="1" Name="dataBackups" ColumnHeaderStyle="{StaticResource DGridColumnHeader_Style}" RowStyle="{StaticResource DGridRow_Style}" AutoGeneratingColumn="dataBackups_AutoGeneratingColumn" BeginningEdit="DataBackups_BeginningEdit" CellEditEnding="DataBackups_CellEditEnding" Drop="dataBackups_Drop" AllowDrop="True" SelectionMode="Single" IsReadOnly="False" CanUserReorderColumns="False" SelectionUnit="FullRow">
             <DataGrid.ContextMenu>
                 <ContextMenu Name="contextBackups" Opened="ContextBackups_Opened" ContextMenuOpening="ContextBackups_ContextMenuOpening">
                     <ui:MenuItem Name="menuRestore" Header="{lex:Loc}">
@@ -78,6 +78,22 @@
                     </ui:MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="DataGridCell">
+                                <Grid Margin="5">
+                                    <ContentPresenter VerticalAlignment="Center" />
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.CellStyle>
         </DataGrid>
+        <Grid Grid.Row="1">
+            <ui:ProgressRing Name="progressRing" IsIndeterminate="True" Width="80" Height="80" />
+        </Grid>
     </Grid>
 </ui:UiPage>

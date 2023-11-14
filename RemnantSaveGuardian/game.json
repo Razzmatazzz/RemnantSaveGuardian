@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 17,
   "mainLocations": [
     "Quest_Global_TheHunterDream_Template01",
     "Quest_Story_AllFather_DranCity1_Template",
@@ -11,61 +11,63 @@
   ],
   "subLocations": {
     "Jungle": {
-      "Shrewd": "TheExpandingGlade",
-      "RavagerStory": "RavagersLair",
-      "RootHorror": "KaeulasRest",
-      "RootCultist": "TheTwistedChantry",
-      "MotherMind": "TheNamelessNest",
-      "Meidra": "TheDappledGlade",
-      "Ruins": "AbandonedRuins",
-      "KoaraKuri": "KoaraKuriNest",
-      "Flautist": "TheFarWoods",
-      "HiddenMaze": "EndairasEnd",
-      "TheTangle": "ImperialGardens",
-      "TheLament": "TheLament",
-      "Sarcophagus": "TheLament",
-      "TheChimney": "LaemirsLyceum",
-      "WailingField": "ForgottenField",
-      "CathedralOfSeasons": "CathedralOfSeasons",
-      "Empress": "TheRedThrone",
-      "ManyFaces": "TheGreatBole"
+      "Corruptor": "The Great Bole",
+      "Shrewd": "The Expanding Glade",
+      "RavagerStory": "Ravager's Lair",
+      "RootHorror": "Kaeula's Rest",
+      "RootCultist": "The Twisted Chantry",
+      "MotherMind": "The Nameless Nest",
+      "Meidra": "The Dappled Glade",
+      "Ruins": "Abandoned Ruins",
+      "KoaraKuri": "Koara Kuri Nest",
+      "HiddenMaze": "Endaira's End",
+      "TheTangle": "Imperial Gardens",
+      "TheLament": "The Lament",
+      "__Sarcophagus": "The Lament",
+      "__TheChimney": "Laemir's Lyceum",
+      "WailingField": "Forgotten Field",
+      "CathedralOfSeasons": "Cathedral of Omens",
+      "Empress": "The Red Throne",
+      "ManyFaces": "The Great Bole"
     },
     "Fae": {
-      "AllFather": "BeatificPalace",
-      "DranGrenadier": "CottonsKiln",
-      "Ravenous": "TheGreatHall",
-      "CharnelHouse": "HarvestersReach",
-      "TheHunter": "BriellasGarden",
-      "ClockTower": "LemarkDistrict",
-      "BloatKing": "TheGreatSewers",
-      "CrimsonHarvest": "ButchersQuarter",
-      "FaeArchon": "ShatteredGallery",
-      "FaeCouncil": "CouncilChamber",
-      "RedPrince": "GildedChambers",
-      "DranOracle": "OraclesRefuge",
-      "Settlement": "BairnsCrossing",
-      "Nimue": "NimuesRetreat",
-      "FaelinFaerlin": "BeatificPalace",
-      "Faerin": "MaleficGallery",
-      "TheNest": "Sewers",
-      "TownTurnedToDust": "TillersRest",
-      "ThreeMenMorris": "PostulantsParlor"
+      "AllFather": "Beatific Palace",
+      "DranGrenadier": "Cotton's Kiln",
+      "Ravenous": "The Great Hall",
+      "CharnelHouse": "Harvester's Reach",
+      "TheHunter": "Briella's Garden",
+      "BloatKing": "The Great Sewers",
+      "CrimsonHarvest": "Butcher's Quarter",
+      "FaeArchon": "Shattered Gallery",
+      "FaeCouncil": "Council Chamber",
+      "RedPrince": "Gilded Chambers",
+      "DranOracle": "Oracle's Refuge",
+      "Settlement": "Bairn's Crossing",
+      "Nimue": "Nimue's Retreat",
+      "FaelinFaerlin": "Beatific Palace",
+      "Faerin": "Malefic Gallery",
+      "__TheNest": "Sewers",
+      "TownTurnedToDust": "Tiller's Rest",
+      "ThreeMenMorris": "Postulant's Parlor"
     },
     "Nerud": {
-      "Abomination": "ThePutridDomain",
-      "Hatchery": "TheHatchery",
-      "Extraction": "DarkConduit",
-      "Extermination": "DormantNErudianFacility",
-      "Train": "TerminusStation",
-      "CustodianEye": "SpectrumNexus",
-      "TowerHeist": "TowerOfTheUnseen",
-      "TheDreamlessSleep": "VoidVesselFacility",
-      "NerudGuardian": "ThresholdOfTheUnknown",
-      "TheCustodian": "ThePhantomWasteland",
-      "TalRatha": "ForgottenPrison",
-      "Phantom": "TheAstroPathsRespite",
-      "StasisSiege": "VaultOfTheFormless"
+      "Abomination": "The Putrid Domain",
+      "Hatchery": "The Hatchery",
+      "Extraction": "Dark Conduit",
+      "Extermination": "Dormant N'Erudian Facility",
+      "Train": "Terminus Station",
+      "CustodianEye": "Spectrum Nexus",
+      "TowerHeist": "Tower Of The Unseen",
+      "TheDreamlessSleep": "Void Vessel Facility",
+      "NerudGuardian": "Threshold Of The Unknown",
+      "TheCustodian": "The Phantom Wasteland",
+      "TalRatha": "Forgotten Prison",
+      "Phantom": "Astropath's Respite",
+      "StasisSiege": "Vault Of The Formless"
     }
+  },
+  "injectableParents": {
+    "HiddenChamber": "HiddenMaze"
   },
   "injectables": {
     "Jungle": {
@@ -179,20 +181,16 @@
           "name": "/Items/Trinkets/Rings/StoneofBalance/Ring_StoneOfBalance"
         }
       ],
-      "Ring_StrongArmBand": [
+      "LivingStone": [
         {
-          "name": "/Items/Trinkets/Rings/StrongArmBand/Ring_StrongArmBand"
-        }
-      ],
-      "Ring_LivingStone": [
-        {
-          "name": "/Items/Trinkets/Rings/LithicSignet/Ring_LithicSignet"
+          "name": "/Items/Trinkets/Rings/LithicSignet/Ring_LithicSignet",
+          "notes": "Found in The Lament, The Twisted Chantry, or The Chimney locations on Yaesha at the end of a hidden passageway. To open the passageway, locate a room with 4 statues of Pan Warriors and shoot the crystals in their foreheads, opening a hidden stair case in the middle of the room."
         }
       ],
       "ThaenLeaf": [
         {
           "name": "/Items/Materials/World/ThaenLeaf/Material_ThaenLeaf",
-          "ignore":  true
+          "ignore": true
         }
       ],
       "EmpressStory": [
@@ -206,10 +204,8 @@
           "name": "/Items/Trinkets/Rings/SealOfTheEmpress/Ring_SealOfTheEmpress"
         },
         {
-          "name": "/Items/Trinkets/Amulets/MatriarchsInsignia/Amulet_MatriarchsInsignia"
-        },
-        {
-          "name": "/Items/Trinkets/Amulets/RedDoeSigil/Amulet_RedDoeSigil"
+          "name": "/Items/Trinkets/Amulets/RedDoeSigil/Amulet_RedDoeSigil",
+          "notes": "Rewarded by giving the Ornate Lockbox item (unopened) found in The Widow's Court location on Yaesha, to The Eternal Empress at the Red Throne location on Yaesha."
         },
         {
           "name": "/Items/Trinkets/Rings/ZoheesRing/Ring_ZoheesRing"
@@ -220,10 +216,16 @@
       ],
       "RavagerStory": [
         {
-          "name": "/Items/Trinkets/Rings/FrivolousBand/Ring_FrivolousBand"
+          "name": "/Items/Trinkets/Rings/FrivolousBand/Ring_FrivolousBand",
+          "notes": "Rewarded by speaking with Bedel of the Vaunnt in The Forbidden Grove location on Yaesha, after reviving the Red Doe in the Corrupted Ravager boss fight. Upon first meeting Bedel in The Forbidden Grove, the player must choose funny / sarcastic dialogue options and accept his quest, prior to reviving the Doe. Then upon speaking with him again, the player must choose the \"Maybe...\" dialogue option when asked if the player saved the Doe."
         },
         {
-          "name": "/Items/Trinkets/Rings/LodestoneRing/Ring_LodestoneRing"
+          "name": "/Items/Trinkets/Rings/LodestoneRing/Ring_LodestoneRing",
+          "notes": "Rewarded by speaking with Bedel of The Vaunnt in the Forbidden Grove location on Yaesha while wearing the Lodestone Crown armor piece."
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Spear/RebellionSpear/Weapon_RebellionSpear",
+          "notes": "Granted as Reward by Bedel of the Vaunnt for saving the Doe during the Corrupted Ravager boss fight."
         },
         {
           "name": "/Items/Trinkets/Rings/BloodJewel/Ring_BloodJewel"
@@ -243,7 +245,8 @@
           "name": "/Items/Trinkets/Amulets/RavagersMark/Amulet_RavagersMark"
         },
         {
-          "name": "/Items/Weapons/Melee/Special/FeralJudgment/Weapon_FeralJudgment"
+          "name": "/Items/Weapons/Melee/Special/FeralJudgment/Weapon_FeralJudgment",
+          "notes": "Crafted by McCabe at Ward 13. Requires the Ravager's Maw item, obtained from performing an Alt Kill on the Corrupted Ravager boss in the Ravager's Lair location on Yaesha. The Alt Kill is performed by shooting the Ravager to initate the fight, killing the Red Doe before the Ravager is able to eat it, and then killing the Ravager boss."
         },
         {
           "name": "/Items/Weapons/Melee/Special/RedDoeStaff/Weapon_RedDoeStaff"
@@ -263,6 +266,9 @@
       "Sarcophagus": [
         {
           "name": "/Items/Gems/Ranged/MetaGems/Extender/MetaGem_Extender"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BerserkersCrest/Ring_BerserkersCrest"
         }
       ],
       "CryptHidden": [
@@ -328,7 +334,8 @@
       ],
       "RootHorror": [
         {
-          "name": "/Items/Trinkets/Rings/TearOfKaeula/Ring_TearOfKaeula"
+          "name": "/Items/Trinkets/Rings/TearOfKaeula/Ring_TearOfKaeula",
+          "notes": "Found in the Kaeula's Rest location on Yaesha, at the foot of a statue, beneath a waterfall."
         },
         {
           "name": "/Items/Mods/Mod_Rootlash/Mod_Rootlash"
@@ -339,13 +346,12 @@
           "name": "/Items/Mods/Mod_RottedArrow/Mod_RottedArrow"
         }
       ],
-      "BloodMoon": [
+      "Amulet_DeathsEmbrace": [
         {
           "name": "/Items/Trinkets/Amulets/DeathsEmbrace/Amulet_DeathsEmbrace"
-        },
-        {
-          "name": "/Items/Trinkets/Rings/BloodTingedRing/Ring_BloodTingedRing"
-        },
+        }
+      ],
+      "BloodMoon": [
         {
           "name": "/Items/Weapons/Melee/Standard/Sword/BladeOfGul/Weapon_BladeOfGul"
         },
@@ -363,6 +369,9 @@
         },
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Summoner"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/SoulAnchor/Amulet_SoulAnchor"
         }
       ],
       "Meidra": [
@@ -394,7 +403,8 @@
           "name": "/Items/Mods/Mod_AstralBurst/Mod_AstralBurst"
         },
         {
-          "name": "/Items/Trinkets/Rings/RingOfOmens/Ring_RingOfOmens"
+          "name": "/Items/Trinkets/Rings/RingOfOmens/Ring_RingOfOmens",
+          "notes": "Found in the Cathedral of Omens location on Yaesha, behind a red trap door on the ground, after solving the Blood Moon puzzle. The trapdoor will only open during the Blood Moon event."
         },
         {
           "name": "/Items/Weapons/LongGuns/Special/Sagittarius/Weapon_Sagittarius"
@@ -428,13 +438,15 @@
           "name": "/Items/Mods/Mod_Soulbinder/Mod_Soulbinder"
         },
         {
-          "name": "/Items/Trinkets/Amulets/DownwardSpiral/Amulet_DownwardSpiral"
+          "name": "/Items/Trinkets/Amulets/DownwardSpiral/Amulet_DownwardSpiral",
+          "notes": "Found in the Chimney location on Yaesha, hidden halfway down the staircase in the Crystal Elevator event."
         }
       ],
       "TheLament": [
         {
           "name": "/Items/Armor/Armor_Head_LodestoneCrown",
-          "notes": "On the boat inside Kolkets locked room"
+          "notes": "On the boat inside Kolkets locked room",
+          "armorSet":  false
         },
         {
           "name": "/Items/Trinkets/Rings/BloodTingedRing/Ring_BloodTingedRing"
@@ -457,7 +469,8 @@
       ],
       "TheTangle": [
         {
-          "name": "/Items/Trinkets/Amulets/FullMoonCirclet/Amulet_FullMoonCirclet"
+          "name": "/Items/Trinkets/Amulets/FullMoonCirclet/Amulet_FullMoonCirclet",
+          "notes": "Found in The Imperial Gardens location on Yaesha, in a hidden room below a trapdoor marked with a golden full moon crest. The trapdoor will only open during the Blood Moon event."
         },
         {
           "name": "/Items/Weapons/Melee/Standard/Katana/EdgeOfTheForest/Weapon_EdgeOfTheForest"
@@ -484,12 +497,26 @@
         {
           "name": "/Items/Traits/Core/Rugged/Trait_Rugged"
         }
+      ],
+      "RedDoeStatue": [
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/GhostShell/MetaGem_GhostShell",
+          "notes": "Rewarded by interacting with the Rotten Thaen Fruit item. The item can be found in The Widow's Court location on Yaesha at the end of a secret passage. To unlock the passage, wear the Red Doe's Sigil amulet in front of the statue of the Ravager and the Red Doe."
+        }
+      ],
+      "Amulet_MatriarchsInsignia": [
+        {
+          "name": "/Items/Trinkets/Amulets/MatriarchsInsignia/Amulet_MatriarchsInsignia"
+        }
       ]
     },
     "Fae": {
       "Oink": [
         {
           "name": "/Items/Gems/Ranged/MetaGems/TwistingWounds/MetaGem_TwistingWounds"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ShinyHogLure/Ring_ShinyHogLure"
         }
       ],
       "AsylumChainsaw": [
@@ -506,7 +533,7 @@
         },
         {
           "name": "/Items/Trinkets/Rings/RingOfGrace/Ring_RingOfGrace",
-          "notes":  "Give Dria's Anklet to Riewen'"
+          "notes": "Give Dria's Anklet to Riewen'"
         },
         {
           "name": "/Items/Traits/Core/ArcaneStrike/Trait_ArcaneStrike"
@@ -515,6 +542,12 @@
       "AboveBelow": [
         {
           "name": "/Items/Gems/Melee/MetaGems/Steadfast/MetaGem_Steadfast"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Flail/OrnateFlail/Weapon_OrnateFlail"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/SapphireDreamstone/Ring_SapphireDreamstone"
         }
       ],
       "Ring_AlchemyStone": [
@@ -610,11 +643,6 @@
       "Ring_RingOfTheRobust": [
         {
           "name": "/Items/Trinkets/Rings/RingOfTheRobust/Ring_RingOfTheRobust"
-        }
-      ],
-      "Ring_ShinyHogLure": [
-        {
-          "name": "/Items/Trinkets/Rings/ShinyHogLure/Ring_ShinyHogLure"
         }
       ],
       "Ring_StoneOfMalevolence": [
@@ -745,6 +773,9 @@
       "TheNest": [
         {
           "name": "/Items/Trinkets/Rings/StockpileDelayLoop/Ring_StockpileCharger"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/StrongArmBand/Ring_StrongArmBand"
         }
       ],
       "Ravenous": [
@@ -794,11 +825,11 @@
       ],
       "Rookery": [
         {
-          "name": "/Items/Trinkets/Amulets/EffigyPendant/Amulet_EffigyPendant"
+          "name": "/Items/Trinkets/Amulets/EffigyPendant/Amulet_EffigyPendant",
+          "notes": "Inside lockbox"
         },
         {
-          "name": "/Items/Trinkets/Amulets/CleansingStone/Amulet_CleansingStone",
-          "notes": "Inside lockbox"
+          "name": "/Items/Trinkets/Amulets/CleansingStone/Amulet_CleansingStone"
         }
       ],
       "FaeArchon": [
@@ -857,7 +888,8 @@
         },
         {
           "name": "/Items/Armor/Misc/Armor_Head_RedPrince",
-          "notes": "kill with Assassins Dagger"
+          "notes": "kill with Assassins Dagger",
+          "armorSet":  false
         }
       ],
       "NightWeaver": [
@@ -907,23 +939,23 @@
       "Nightweb": [
         {
           "name": "/Items/Weapons/Melee/Special/Dreamcatcher/Weapon_Dreamcatcher",
-          "notes": "Nightweb - Nightweaver Stone Doll"
+          "notes": "Rewarded by offering the Nightweaver Stone Doll item found in the Tormented Asylum location on Losomn to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This can be done in any mode that has rolled both locations."
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/TormentedHeart/Relic_Consumable_TormentedHeart",
-          "notes": "Nightweb - Override Pin (Nerud)"
+          "notes": "Rewarded by offering the Overide Pin item found in the Timeless Horizon location on N'Erud to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This must be done on a campaign that has rolled both locations."
         },
         {
           "name": "/Items/Trinkets/Rings/RingOfRetribution/Ring_RingOfRetribution",
-          "notes": "Nightweb - Charnel House Anklet"
+          "notes": "Rewarded by offering the Dria's Anklet item found in the Harvester's Reach location on Losomn to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This can be done in any mode that has rolled both locations."
         },
         {
           "name": "/Items/Trinkets/Amulets/NightweaversGrudge/Amulet_NightweaversGrudge",
-          "notes": "Nightweb - Kolkets Razor (Yaesha)"
+          "notes": "Rewarded by offering the Kolkets Razor item found in The Lament location on Yaesha to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This must be done on a campaign that has rolled both locations."
         },
         {
           "name": "/Items/Weapons/HandGuns/Special/RunePistol/Weapon_RunePistol",
-          "notes": "Nightweb - Ravenous Medallion"
+          "notes": "Rewarded by offering the Ravenous Medallion item found in the Great Hall location on Losomn to the Nightweaver's Web event found in the Tormented Asylum location on Losomn. This can be done in any mode that has rolled both locations."
         }
       ],
       "AllFatherStory": [
@@ -975,7 +1007,8 @@
       ],
       "TheCoreStory": [
         {
-          "name": "/Items/Trinkets/Rings/DowngradedRing/Ring_DowngradedRing"
+          "name": "/Items/Trinkets/Rings/DowngradedRing/Ring_DowngradedRing",
+          "notes": "Rewarded by speaking with the Custodian at the Ascension Spire location on N'Erud, after defeating Sha'Hala."
         },
         {
           "name": "/Items/Mods/EnergyWall/Mod_EnergyWall"
@@ -1049,9 +1082,11 @@
           "name": "/Items/Trinkets/Rings/VacuumSeal/Ring_VacuumSeal"
         }
       ],
-      "Towers_ElevatorShaft": [
+      "ElevatorShaft": [
         {
-          "name": "/Items/Trinkets/Rings/PropulsionLoop/Ring_PropulsionLoop"
+          "name": "/Items/Trinkets/Rings/PropulsionLoop/Ring_PropulsionLoop",
+          "note": "Found in the Astropath's Respite, Terminus Station, Tower of the Unseen, or Spectrum Nexus locations on N'Erud, in a hidden passage halfway up an elevator shaft. Jump from the elevator through the broken wall section then proceed onward. Eventually, you will find a second elevator which can go either up or down. In order to retrieve the ring you want to ride the elevator up which can accessed by triggering the elevator to go down first. Step on the elevator but step or dodge backward so as to not ride it down. Wait for the next elevator platform to arrive before taking it up and retrieving the ring."
+
         },
         {
           "name": "/Items/Trinkets/Rings/LowYieldRecoveryRing/Ring_LowYieldRecoveryRing"
@@ -1091,7 +1126,8 @@
           "name": "/Items/Trinkets/Amulets/InsulationDriver/Amulet_InsulationDriver"
         },
         {
-          "name": "/Items/Trinkets/Rings/GeneratingBand/Ring_GeneratingBand"
+          "name": "/Items/Trinkets/Rings/GeneratingBand/Ring_GeneratingBand",
+          "notes": "Found in The Hatchery, Void Vessel Facility, Vault of the Formless, or The Putrid Domain locations on N'Erud during the Flooded Room event. Once the event starts, you will have one chance to collect the items in the room before it fills with water."
         },
         {
           "name": "/Items/Trinkets/Rings/SubterfugeLink/Ring_SubterfugeLink"
@@ -1113,7 +1149,7 @@
           "name": "/Items/Gems/Melee/MetaGems/Disengage/MetaGem_Disengage"
         }
       ],
-      "Underworld_TheClaw": [
+      "TheClaw": [
         {
           "name": "/Items/Trinkets/Rings/MomentumDriver/Ring_MomentumDriver"
         },
@@ -1232,7 +1268,8 @@
           "name": "/Items/Weapons/Melee/Standard/Hammer/AtomSmasher/Weapon_AtomSmasher"
         },
         {
-          "name": "/Items/Trinkets/Amulets/Hyperconductor/Amulet_Hyperconductor"
+          "name": "/Items/Trinkets/Amulets/Hyperconductor/Amulet_Hyperconductor",
+          "notes": "Found in the Terminus Station location on N'Erud, hidden in a crawlspace to the left of a ladder, in the Train event."
         },
         {
           "name": "/Items/Traits/Core/Footwork/Trait_Footwork"
@@ -1248,7 +1285,8 @@
       ],
       "OilField": [
         {
-          "name": "/Items/Armor/Nerud_Pilot/Armor_Head_PilotsHelm"
+          "name": "/Items/Armor/Nerud_Pilot/Armor_Head_PilotsHelm",
+          "armorSet":  false
         },
         {
           "name": "/Items/Trinkets/Amulets/DetonationTrigger/Amulet_DetonationTrigger"
@@ -1269,7 +1307,7 @@
         },
         {
           "name": "/Items/Mods/Overflow/Mod_Overflow",
-          "notes": "take the elevator on the right of the vending machine, now take the path on the right of the bridge and you should see the crafting material on a machine"
+          "notes": "Crafted by McCabe at Ward 13. Requires the Escalation Circuit item, found in the Phantom Wasteland/Ascension Spire location on N'Erud, located in a secret room beneath the Custodian NPC. Once in the secret room, take the elevator on the right to travel down, then imediately look for a crawl space to the right."
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/SiphonHeart/Relic_Consumable_SiphonHeart",
@@ -1303,6 +1341,10 @@
         },
         {
           "name": "/Items/Trinkets/Rings/SuppressionWard/Ring_SuppressionWard"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/VoidIdol/Amulet_VoidIdol",
+          "notes": "Crafted at the Drzyr Replicator at the Ascension Spire location on N'Erud. Requires the Shining Essence Echo item, granted after defeating Tal'Ratha. The Drzyr Replicator can be found in a hidden passage in the Custodian's tower."
         }
       ],
       "NerudGuardian": [
@@ -1417,12 +1459,15 @@
         },
         {
           "name": "/Items/Traits/Core/Wayfarer/Trait_Wayfarer"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Claws/DecayedClaws/Weapon_DecayedClaws"
         }
       ],
       "Ward13": [
         {
           "name": "/Items/Trinkets/Rings/TarnishedRing/Ring_TarnishedRing",
-          "notes": "listen to Earl's rabbit story"
+          "notes": "Rewarded by speaking with Earl at Ward 13 and listening to his rabbit story. He can either be found sleeping in bed, or hanging on the walk way above the merchant Whispers. He will not speak to you while he sleeps, and while away, he may be resistant at first to telling you his story."
         },
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Medic",
@@ -1454,7 +1499,7 @@
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/RipenedHeart/Relic_Consumable_RipenedHeart",
-          "notes": "thaen tree fully grown"
+          "notes": "Rewarded by the Thaen Fruit Tree event in Ward 13, after planting the Thaen Seed quest item in the ground of the garden in Ward 13. The Thaen Seed can be Rewarded by interacting with the Ornate Lock Box quest item, and inserting the Ornate Key quest item. Both of which can be found in the Widow's Court location on Yaesha. The player must grow and collect the Celestial Thaen Fruit consumable, a total of 3 times, before the Ripened Heart can be grown. Each fruit takes a set amount of real world hours to grow."
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/LifelessHeart/Relic_Consumable_LifelessHeart",
@@ -1464,25 +1509,25 @@
       "Mudtooth": [
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Gunslinger",
-          "notes": "mudtooth chat full reward"
+          "notes": "Crafted by Wallace at Ward 13. Requires the Worn Cylinder item, purchased from Mudtooth at Ward 13. Available for purchase after exhausting his second set of stories."
         },
         {
           "name": "/Items/Trinkets/Amulets/GunslingersCharm/Amulet_GunslingersCharm",
-          "notes": "mudtooth chat full reward"
+          "notes": "Rewarded by speaking with Mudtooth at Ward 13, and exhausting his second set of stories, in the campaign mode. The second set of stories is available to the player after completing their second biome in the campaign."
         },
         {
           "name": "/Items/Trinkets/Rings/GunslingersRing/Ring_GunslingersRing",
-          "notes": "mudtooth chat half reward"
+          "notes": "Rewarded by speaking with Mudtooth at Ward 13, and exhausting his first set of stories, in the campaign mode."
         },
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Handler",
-          "notes": "buy Old Whistle from Mudtooth"
+          "notes": "Crafted by Wallace at Ward 13. Requires the Old Whistle item, purchased from Mudtooth at Ward 13."
         }
       ],
       "Brabus": [
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Hunter",
-          "notes": "buy Rusty Medal from Brabus"
+          "notes": "Crafted by Wallace at Ward 13. Requires the Rusty Medal item, purchased from Brabus at Ward 13."
         },
         {
           "name": "/Items/Weapons/Handguns/Standard/HuntingPistol/Weapon_HuntingPistol"
@@ -1492,6 +1537,9 @@
         },
         {
           "name": "/Items/Weapons/Handguns/Standard/Repeater/Weapon_Repeater_Rusty"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/Repeater/Weapon_Repeater"
         },
         {
           "name": "/Items/Weapons/Handguns/Standard/Revolver/Weapon_Revolver"
@@ -1525,12 +1573,42 @@
         },
         {
           "name": "/Items/Weapons/Melee/Standard/Katana/Katana/Weapon_Katana"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Standard/MachinePistol/Weapon_MachinePistol"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/Huntmaster/Weapon_Huntmaster"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Sword/Sword/Weapon_Sword"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Claws/RustedClaws/Weapon_Claws"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Hammer/Hammer/Weapon_Hammer"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Spear/Spear/Weapon_Spear"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Staff/Weapon_Staff"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Standard/Claws/KnuckleDusters/Weapon_KnuckleDusters"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/AutoShotgun/Weapon_AutoShotgun"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Standard/Sniper_Rifle/Weapon_SniperRifle"
         }
       ],
       "Reggie": [
         {
           "name": "/Items/Materials/Engrams/Item_HiddenContainer_Material_Engram_Challenger",
-          "notes": "buy Old Metal Tool from Reggie"
+          "notes": "Crafted by Wallace at Ward 13. Requires the Old Metal Tool item, purchased from Reggie at Ward 13."
         },
         {
           "name": "/Items/Trinkets/Rings/01_Graveyard/RingOfTheAdmiral/Ring_RingOfTheAdmiral"
@@ -1546,94 +1624,118 @@
         },
         {
           "name": "/Items/Trinkets/Amulets/ButchersFetish/Amulet_ButchersFetish",
-          "notes": "Beat the game"
+          "notes": "Purchased from Reggie at Ward 13 after completing the campaign on Veteran difficulty."
         },
         {
           "name": "/Items/Trinkets/Amulets/LetosAmulet/Amulet_LetosAmulet",
-          "notes": "flop 100 times"
+          "notes": "Purchased from Reggie at Ward 13 after performing a failed roll 100 times, while wearing the Leto Mark II armor set."
         },
         {
           "name": "/Items/Trinkets/Rings/BlackCatBand/Ring_BlackCatBand",
-          "notes": "die 15 times"
+          "notes": "Purchased from Reggie at Ward 13 after dying 15 times."
         },
         {
           "name": "/Items/Trinkets/Rings/BandOfAccord/Ring_BandOfAccord",
-          "notes": "do High Five emote in co-op",
+          "notes": "Purchased from Reggie at Ward 13 after performing the High Five emote in co-op.",
           "coop": true
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/OnyxPendulum/Amulet_OnyxPendulum",
+          "notes": "Purchased from Reggie at Ward 13 after completing the campaign on Nightmare difficulty."
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/NightmareSpiral/Amulet_NightmareSpiral",
+          "notes": "Purchased from Reggie at Ward 13 after defeating all bosses at least once."
+        },
+        {
+            "name": "/Items/Trinkets/Rings/BrightSteelRing/Ring_BrightSteelRing",
+            "notes": "Purchased from Reggie at Ward 13 after completing 15 biomes on any difficulty."
+        },
+        {
+            "name": "/Items/Trinkets/Rings/DevouringLoop/Ring_DevouringLoop",
+            "notes": "Purchased from Reggie at Ward 13 after completing the campaign on Apocalypse difficulty."
         }
       ],
       "Cass": [
         {
           "name": "/Items/Trinkets/Rings/AmberMoonstone/Ring_AmberMoonstone",
-          "notes": "cass 75%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/BraidedThorns/Ring_BraidedThorns",
-          "notes": "cass 65%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/AkariWarBand/Ring_AkariWarBand",
-          "notes": "cass 65%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/CompulsionLoop/Ring_CompulsionLoop",
-          "notes": "cass 65%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/RockOfAnguish/Ring_RockOfAnguish",
-          "notes": "cass 65%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/DeceiversBand/Ring_DeceiversBand",
-          "notes": "cass 65%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/BlessedRing/Ring_BlessedRing",
-          "notes": "cass 65%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/RingOfFlawedBeauty/Ring_RingOfFlawedBeauty",
-          "notes": "cass 65%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/DeadKingsMemento/Ring_DeadKingsMemento",
-          "notes": "cass 65%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/MechanicsCog/Ring_MechanicsCog",
-          "notes": "cass 65%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Armor/Base/RelicTesting/EnlargedHeart/Relic_Consumable_EnlargedHeart",
-          "notes": "Get to Root Earth"
+          "notes": "Purchased from Cass at Ward 13 after completing 5 biomes. - Editors Note: Theres debate on whether the actual requirement is 5 biomes completed or 5 biomes unlocked, ie, reaching Root Earth in the campaign. Feel free to open an issue in the github repo if you have strong reason to believe one of these is the correct requirement."
         },
         {
           "name": "/Items/Trinkets/Amulets/BrokenPocketWatch/Amulet_BrokenPocketWatch",
-          "notes": "cass 35%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Amulets/AbrasiveWhetstone/Amulet_AbrasiveWhetstone",
-          "notes": "cass 35%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Amulets/DecayedMargin/Amulet_DecayedMargin",
-          "notes": "cass 35%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Amulets/TwistedIdol/Amulet_TwistedIdol",
-          "notes": "cass 35%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/BurdenOfTheGambler/Ring_BurdenOfTheGambler",
-          "notes": "cass 35%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/BurdenOfTheAudacious/Ring_BurdenOfTheAudacious",
-          "notes": "cass 35%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
         },
         {
           "name": "/Items/Trinkets/Rings/BurdenOfTheDestroyer/Ring_BurdenOfTheDestroyer",
-          "notes": "cass 35%"
+          "notes": "Purchased from Cass at Ward 13. Merchant has a random chance to have this item in stock."
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/DivertingHeart/Relic_Consumable_DivertingHeart",
+          "notes": "Purchased from Cass at Ward 13 after defeating 30 world bosses on any difficulty."
+        },
+        {
+          "name": "/Items/Armor/Base/RelicTesting/ConstrainedHeart/Relic_Consumable_ConstrainedHeart",
+          "notes": "Purchased from Cass at Ward 13 after defeating 12 world bosses on any difficulty."
         }
       ],
       "Whispers": [
@@ -1715,6 +1817,35 @@
           "name": "/Items/Mods/HotShot/Mod_Hotshot"
         }
       ],
+      "Dwell": [
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Battery/MetaGem_Battery"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/DeadlyCalm/MetaGem_DeadlyCalm"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Dervish/MetaGem_Dervish"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Feedback/MetaGem_Feedback"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Harmonizer/MetaGem_Harmonizer"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Resentment/MetaGem_Resentment"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/ShieldBreaker/MetaGem_ShieldBreaker"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Slayer/MetaGem_Slayer"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/WeaponLord/MetaGem_WeaponLord"
+        }
+      ],
       "Labyrinth": [
         {
           "name": "/Items/Trinkets/Rings/DenseSiliconRing/Ring_DenseSiliconRing"
@@ -1789,40 +1920,51 @@
           "name": "/Items/Armor/Archetype/Explorer/Armor_Legs_Explorer"
         },
         {
-          "name": "/Items/Traits/Archetype/AmmoReserves/Trait_AmmoReserves"
+          "name": "/Items/Traits/Archetype/AmmoReserves/Trait_AmmoReserves",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Gunslinger archetype to 10."
         },
         {
           "name": "/Items/Traits/Archetype/Amplitude/Trait_Amplitude"
         },
         {
-          "name": "/Items/Traits/Archetype/FlashCaster/Trait_FlashCaster"
+          "name": "/Items/Traits/Archetype/FlashCaster/Trait_FlashCaster",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Archon archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Fortify/Trait_Fortify"
+          "name": "/Items/Traits/Archetype/Fortify/Trait_Fortify",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Engineer archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Kinship/Trait_Kinship"
+          "name": "/Items/Traits/Archetype/Kinship/Trait_Kinship",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Handler archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Longshot/Trait_Longshot"
+          "name": "/Items/Traits/Archetype/Longshot/Trait_Longshot",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Hunter archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Potency/Trait_Potency"
+          "name": "/Items/Traits/Archetype/Potency/Trait_Potency",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Alchemist archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Regrowth/Trait_Regrowth"
+          "name": "/Items/Traits/Archetype/Regrowth/Trait_Regrowth",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Regrowth archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/StrongBack/Trait_StrongBack"
+          "name": "/Items/Traits/Archetype/StrongBack/Trait_StrongBack",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Challenger archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Swiftness/Trait_Swiftness"
+          "name": "/Items/Traits/Archetype/Swiftness/Trait_Swiftness",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Explorer archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Triage/Trait_Triage"
+          "name": "/Items/Traits/Archetype/Triage/Trait_Triage",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Medic archetype to 10."
         },
         {
-          "name": "/Items/Traits/Archetype/Untouchable/Trait_Untouchable"
+          "name": "/Items/Traits/Archetype/Untouchable/Trait_Untouchable",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Invader archetype to 10."
         },
         {
           "name": "/Items/Traits/Core/Vigor/Trait_Vigor"
@@ -1838,61 +1980,66 @@
         },
         {
           "name": "/Items/Traits/Core/Revivalist/Trait_Revivalist",
+          "notes": "Unlocked automatically after reviving a teammate 15 times.",
           "coop": true
         },
         {
-          "name": "/Items/Traits/Core/Scholar/Trait_Scholar"
+          "name": "/Items/Traits/Core/Scholar/Trait_Scholar",
+          "notes": "Unlocked automatically after defeating the Annihilation Boss on any difficulty."
         },
         {
           "name": "/Items/Trinkets/Rings/PanMageSigil/Ring_PanMageSigil",
-          "notes": "Complete Yaesha on HC",
+          "notes": "Purchased from Reggie at Ward 13 after defeating a Yaesha World Boss on any difficulty in the Hardcore mode.",
           "mode": "Hardcore"
         },
         {
           "name": "/Items/Trinkets/Rings/DranScavengerSigil/Ring_DranScavengerSigil",
-          "notes": "Complete Losomn on HC",
+          "notes": "Purchased from Reggie at Ward 13 after defeating a Losomn World Boss on any difficulty in the Hardcore mode.",
           "mode": "Hardcore"
         },
         {
           "name": "/Items/Trinkets/Rings/DrzyrSniperSigil/Ring_DrzyrSniperSigil",
-          "notes": "Complete N'Erud on HC",
+          "notes": "Purchased from Reggie at Ward 13 after defeating a N'Erud World Boss on any difficulty in the Hardcore mode.",
           "mode": "Hardcore"
         },
         {
           "name": "/Items/Trinkets/Rings/02_OnHold/ProvisionerRing/Ring_ProvisionerRing",
-          "notes": "Complete Labyrinth on HC",
+          "notes": "Purchased from Reggie at Ward 13 after defeating the Labyrinth Sentinel on any difficulty in the Hardcore mode.",
           "mode": "Hardcore"
         },
         {
           "name": "/Items/Trinkets/Amulets/DaredevilsCharm/Amulet_DaredevilsCharm",
-          "notes": "Complete the game on HC",
+          "notes": "Purchased from Reggie at Ward 13 after completing the campaign on any difficulty in the Hardcore mode.",
           "mode": "Hardcore"
         },
         {
           "name": "/Items/Weapons/Longguns/Special/Sporebloom/Weapon_Sporebloom",
-          "notes": "Complete the game on Veteran"
+          "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Veteran difficulty."
         },
         {
           "name": "/Items/Weapons/Longguns/Special/Starkiller/Weapon_Starkiller",
-          "notes": "Complete the game on HC",
-          "mode": "Hardcore"
+          "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Apocalypse difficulty."
         },
         {
           "name": "/Items/Weapons/Longguns/Special/Savior/Weapon_Savior",
-          "notes": "Complete the game on Veteran HC",
+          "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Veteran difficulty in the Hardcore mode.",
           "mode": "Hardcore"
         },
         {
           "name": "/Items/Weapons/Melee/Special/HerosSword/Weapon_HerosSword",
-          "notes": "Complete the game"
+          "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Nightmare difficulty."
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Special/Repulsor/Weapon_Repulsor",
+          "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Nightmare difficulty."
         },
         {
           "name": "/Items/Weapons/Melee/Special/Smolder/Weapon_Smolder",
-          "notes": "Complete the game"
+          "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Veteran difficulty."
         },
         {
           "name": "/Items/Weapons/Melee/Special/WorldsEdge/Weapon_WorldsEdge",
-          "notes": "Complete the game on Apocalypse"
+          "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Apocalypse difficulty."
         }
       ]
     }

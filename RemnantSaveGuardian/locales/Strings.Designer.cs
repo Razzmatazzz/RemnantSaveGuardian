@@ -88,6 +88,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Always On Top.
+        /// </summary>
+        public static string Always_On_Top {
+            get {
+                return ResourceManager.GetString("Always On Top", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to delete backup {backupName}?.
         /// </summary>
         public static string Are_you_sure_you_want_to_delete_backup__backupName__ {
@@ -259,6 +268,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto Hide Navigation and TitleBar.
+        /// </summary>
+        public static string chkAutoHideNaviAndTitleBar_Content {
+            get {
+                return ResourceManager.GetString("chkAutoHideNaviAndTitleBar_Content", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Create log file.
         /// </summary>
         public static string chkCreateLogFile_Content {
@@ -276,6 +294,33 @@ namespace RemnantSaveGuardian.locales {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Only when inactive.
+        /// </summary>
+        public static string chkOnlyInactive_Content {
+            get {
+                return ResourceManager.GetString("chkOnlyInactive_Content", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Window Opacity.
+        /// </summary>
+        public static string chkOpacity_Content {
+            get {
+                return ResourceManager.GetString("chkOpacity_Content", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to (Experimental, might cause instability).
+        /// </summary>
+        public static string chkOpacity_note_Text {
+            get {
+                return ResourceManager.GetString("chkOpacity_note_Text", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Show co-op items in world analyzer.
         /// </summary>
@@ -300,6 +345,24 @@ namespace RemnantSaveGuardian.locales {
         public static string Choose_a_backup_to_restore_from_the_list_ {
             get {
                 return ResourceManager.GetString("Choose a backup to restore from the list.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Collapse All.
+        /// </summary>
+        public static string Collapse_All {
+            get {
+                return ResourceManager.GetString("Collapse All", resourceCulture);
             }
         }
         
@@ -412,11 +475,29 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expand All.
+        /// </summary>
+        public static string Expand_All {
+            get {
+                return ResourceManager.GetString("Expand All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Export save files.
         /// </summary>
         public static string Export_save_files_as_plaintext {
             get {
                 return ResourceManager.GetString("Export save files as plaintext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot export to your save folder or a folder containing save backups..
+        /// </summary>
+        public static string export_save_invalid_folder_error {
+            get {
+                return ResourceManager.GetString("export_save_invalid_folder_error", resourceCulture);
             }
         }
         
@@ -547,6 +628,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language changed to {chosenLanguage}. You may have to restart to app for the change to fully apply..
+        /// </summary>
+        public static string Language_change_notice__chosenLanguage_ {
+            get {
+                return ResourceManager.GetString("Language_change_notice_{chosenLanguage}", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last backup save date.
         /// </summary>
         public static string Last_backup_save_date {
@@ -599,6 +689,15 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("lblMissingItemColor_Text", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Opacity.
+        /// </summary>
+        public static string lblOpacitySlider_Text {
+            get {
+                return ResourceManager.GetString("lblMissingItemColor_Text", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Start page.
@@ -615,6 +714,15 @@ namespace RemnantSaveGuardian.locales {
         public static string lblStartPage_ToolTip {
             get {
                 return ResourceManager.GetString("lblStartPage_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select language.
+        /// </summary>
+        public static string lblSwitchLanguage_Text {
+            get {
+                return ResourceManager.GetString("lblSwitchLanguage_Text", resourceCulture);
             }
         }
         
@@ -730,6 +838,15 @@ namespace RemnantSaveGuardian.locales {
         ///   Looks up a localized string similar to Normal.
         /// </summary>
         public static string Normal {
+            get {
+                return ResourceManager.GetString("Normal", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Window opacity is changed. You have to restart app for the change to apply..
+        /// </summary>
+        public static string Opacity_toggle_notice {
             get {
                 return ResourceManager.GetString("Normal", resourceCulture);
             }
@@ -916,6 +1033,16 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?.
+        /// </summary>
+        public static string The_latest_version_of_Remnant_Save_Guardian_is__CurrentVersion___You_are_using_version__LocalVersion___Do_you_want_to_upgrade_the_application_now_ {
+            get {
+                return ResourceManager.GetString("The latest version of Remnant Save Guardian is {CurrentVersion}. You are using ve" +
+                        "rsion {LocalVersion}. Do you want to upgrade the application now?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Theme.
         /// </summary>
         public static string Theme {
@@ -930,6 +1057,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Unexpected_event_group_number_warning__numberOfEventGroups_ {
             get {
                 return ResourceManager.GetString("Unexpected_event_group_number_warning_{numberOfEventGroups}", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unrecognized files found in save folder: {fileList}. These files may interfere with the world analyzer..
+        /// </summary>
+        public static string Unrecognized_save_files_warning__fileList_ {
+            get {
+                return ResourceManager.GetString("Unrecognized_save_files_warning_{fileList}", resourceCulture);
             }
         }
         

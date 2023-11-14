@@ -133,7 +133,10 @@ namespace RemnantSaveGuardian
             {
                 if (ex.Message.Contains("being used by another process"))
                 {
-                    Logger.Warn(Loc.T("Save file in use; waiting 0.5 seconds and retrying."));
+                    if (Views.Pages.BackupsPage.isDataLoaded == true)
+                    {
+                        Logger.Warn(Loc.T("Save file in use; waiting 0.5 seconds and retrying."));
+                    }
                     System.Threading.Thread.Sleep(500);
                     charData = GetCharactersFromSave(remnantSave, mode);
                 }

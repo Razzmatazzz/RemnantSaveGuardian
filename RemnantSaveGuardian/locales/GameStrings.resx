@@ -157,7 +157,7 @@
     <value>Butcher's Fetish</value>
   </data>
   <data name="Amulet_ChainsOfAmplification" xml:space="preserve">
-    <value>Chains of Amplification</value>
+    <value>Chains Of Amplification</value>
   </data>
   <data name="Amulet_CleansingStone" xml:space="preserve">
     <value>Cleansing Stone</value>
@@ -367,7 +367,7 @@
     <value>Nightstalker</value>
   </data>
   <data name="Armor_Invader" xml:space="preserve">
-    <value>Invader</value>
+    <value>Dendroid</value>
   </data>
   <data name="Armor_Legs" xml:space="preserve">
     <value>Legs</value>
@@ -433,7 +433,7 @@
     <value>Bloat King</value>
   </data>
   <data name="BloodMoon" xml:space="preserve">
-    <value>Blood Moon Altar</value>
+    <value>Bloodmoon Altar</value>
   </data>
   <data name="BoneHarvesterLair" xml:space="preserve">
     <value>Monster in the Drain</value>
@@ -481,13 +481,13 @@
     <value>The Custodian's Eye</value>
   </data>
   <data name="DarkConduit" xml:space="preserve">
-    <value>Dark Conduit</value>
+    <value>The Dark Conduit</value>
   </data>
   <data name="DormantNErudianFacility" xml:space="preserve">
     <value>Dormant N'Erudian Facility</value>
   </data>
   <data name="DranGrenadier" xml:space="preserve">
-    <value>Gwendil The Unburnt</value>
+    <value>Gwendil : The Unburnt</value>
   </data>
   <data name="DranOracle" xml:space="preserve">
     <value>Oracle of the Dran</value>
@@ -640,7 +640,7 @@
     <value>Atrophy</value>
   </data>
   <data name="LivingStone" xml:space="preserve">
-    <value>WeepingAngels</value>
+    <value>Weeping Angels</value>
   </data>
   <data name="LurkerVents" xml:space="preserve">
     <value>W.D. 109</value>
@@ -820,7 +820,7 @@
     <value>Mutators</value>
   </data>
   <data name="NerudGuardian" xml:space="preserve">
-    <value>Sha'Hala: Spectral Guardian of N'Erud</value>
+    <value>Sha’Hala : Spectral Guardian of N’Erud</value>
   </data>
   <data name="Nightweb" xml:space="preserve">
     <value>Nightweaver's Web</value>
@@ -958,7 +958,7 @@
     <value>Amber Moonstone</value>
   </data>
   <data name="Ring_AnastasijasInspiration" xml:space="preserve">
-    <value>Anastasia's Inspiration</value>
+    <value>Anastasija's Inspiration</value>
   </data>
   <data name="Ring_ArchersCrest" xml:space="preserve">
     <value>Archer's Crest</value>
@@ -1021,7 +1021,7 @@
     <value>Burden of the Mariner</value>
   </data>
   <data name="Ring_BurdenOfTheRebel" xml:space="preserve">
-    <value>Burden of the Rebel</value>
+    <value>Burden Of The Rebel</value>
   </data>
   <data name="Ring_BurdenOfTheStargazer" xml:space="preserve">
     <value>Burden of the Stargazer</value>
@@ -1159,7 +1159,7 @@
     <value>Haymaker's Ring</value>
   </data>
   <data name="Ring_HeartOfTheWolf" xml:space="preserve">
-    <value>Heart of the Wolf</value>
+    <value>Heart Of The Wolf</value>
   </data>
   <data name="Ring_HexWard" xml:space="preserve">
     <value>Hex Ward</value>
@@ -1246,7 +1246,7 @@
     <value>Ring of Omens</value>
   </data>
   <data name="Ring_RingOfRestocking" xml:space="preserve">
-    <value>Ring of Restocking</value>
+    <value>Ring Of Restocking</value>
   </data>
   <data name="Ring_RingOfRetribution" xml:space="preserve">
     <value>Ring of Retribution</value>
@@ -1258,7 +1258,7 @@
     <value>Ring of the Forest Spirit</value>
   </data>
   <data name="Ring_RingOfTheRobust" xml:space="preserve">
-    <value>Ring of the Robust</value>
+    <value>Ring Of The Robust</value>
   </data>
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Rock of Anguish</value>
@@ -1306,13 +1306,13 @@
     <value>Stone of Expanse</value>
   </data>
   <data name="Ring_StoneOfMalevolence" xml:space="preserve">
-    <value>Stone of Malevolence</value>
+    <value>Stone Of Malevolence</value>
   </data>
   <data name="Ring_StreamCoupler" xml:space="preserve">
-    <value>Stream Coupler Ring</value>
+    <value>Stream Coupler</value>
   </data>
   <data name="Ring_StrongArmBand" xml:space="preserve">
-    <value>Strong Arm Band</value>
+    <value>Ring Of The Damned</value>
   </data>
   <data name="Ring_SubterfugeLink" xml:space="preserve">
     <value>Subterfuge Link</value>
@@ -1414,7 +1414,7 @@
     <value>Summoner</value>
   </data>
   <data name="TalRatha" xml:space="preserve">
-    <value>Tal Ratha</value>
+    <value>Tal'Ratha</value>
   </data>
   <data name="TerminusStation" xml:space="preserve">
     <value>Terminus Station</value>
@@ -1423,7 +1423,7 @@
     <value>TheTwistedChantry</value>
   </data>
   <data name="TheAstroPathsRespite" xml:space="preserve">
-    <value>The Astropath's Respite</value>
+    <value>Astropath's Respite</value>
   </data>
   <data name="TheCustodian" xml:space="preserve">
     <value>The Custodian</value>
@@ -1462,7 +1462,7 @@
     <value>The Nameless Nest</value>
   </data>
   <data name="ThePhantomWasteland" xml:space="preserve">
-    <value>The Phantom Wasteland</value>
+    <value>Phantom Wasteland</value>
   </data>
   <data name="ThePutridDomain" xml:space="preserve">
     <value>The Putrid Domain</value>
@@ -1489,7 +1489,7 @@
     <value>Tiller's Rest</value>
   </data>
   <data name="TormentedAsylum" xml:space="preserve">
-    <value>Tormented Asylum</value>
+    <value>The Tormented Asylum</value>
   </data>
   <data name="Tower" xml:space="preserve">
     <value>The Elevator</value>
@@ -1705,7 +1705,7 @@
     <value>Huntress Spear</value>
   </data>
   <data name="Weapon_Katana" xml:space="preserve">
-    <value>Katana</value>
+    <value>Steel Katana</value>
   </data>
   <data name="Weapon_KrellAxe" xml:space="preserve">
     <value>Krell Axe</value>
@@ -1765,7 +1765,7 @@
     <value>Rune Pistol</value>
   </data>
   <data name="Weapon_RuptureCannon" xml:space="preserve">
-    <value>Rupture Cannon</value>
+    <value>Rupture Canon</value>
   </data>
   <data name="Weapon_Sagittarius" xml:space="preserve">
     <value>Sagittarius</value>
@@ -1780,7 +1780,7 @@
     <value>Double Barrel</value>
   </data>
   <data name="Weapon_Shotgun" xml:space="preserve">
-    <value>Shotgun</value>
+    <value>Ford's Scattergun</value>
   </data>
   <data name="Weapon_SMG" xml:space="preserve">
     <value>MP60-R</value>
@@ -1810,7 +1810,7 @@
     <value>Gas Giant</value>
   </data>
   <data name="Weapon_TommyGun" xml:space="preserve">
-    <value>Chicago Typewritter</value>
+    <value>Chicago Typewriter</value>
   </data>
   <data name="Weapon_TwistedArbalest" xml:space="preserve">
     <value>Twisted Arbalest</value>
@@ -1844,5 +1844,131 @@
   </data>
   <data name="World_RootEarth" xml:space="preserve">
     <value>Root Earth</value>
+  </data>
+  <data name="Weapon_CoachGun" xml:space="preserve">
+    <value>Coach Gun</value>
+  </data>
+  <data name="Ring_BandOfAccord" xml:space="preserve">
+    <value>Band of Accord</value>
+  </data>
+  <data name="Armor_Arcanist" xml:space="preserve">
+    <value>Labyrinth</value>
+  </data>
+  <data name="Dwell" xml:space="preserve">
+    <value>Dwell</value>
+  </data>
+  <data name="Amulet_NightmareSpiral" xml:space="preserve">
+    <value>Nightmare Spiral</value>
+  </data>
+  <data name="Amulet_OnyxPendulum" xml:space="preserve">
+    <value>Onyx Pendulum</value>
+  </data>
+  <data name="Amulet_SoulAnchor" xml:space="preserve">
+    <value>Soul Anchor</value>
+  </data>
+  <data name="Amulet_VoidIdol" xml:space="preserve">
+    <value>Void Idol</value>
+  </data>
+  <data name="MetaGem_Battery" xml:space="preserve">
+    <value>Battery</value>
+  </data>
+  <data name="MetaGem_DeadlyCalm" xml:space="preserve">
+    <value>Deadly Calm</value>
+  </data>
+  <data name="MetaGem_Dervish" xml:space="preserve">
+    <value>Dervish</value>
+  </data>
+  <data name="MetaGem_Feedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="MetaGem_GhostShell" xml:space="preserve">
+    <value>Ghost Shell</value>
+  </data>
+  <data name="MetaGem_Harmonizer" xml:space="preserve">
+    <value>Harmonizer</value>
+  </data>
+  <data name="MetaGem_Resentment" xml:space="preserve">
+    <value>Resentment</value>
+  </data>
+  <data name="MetaGem_ShieldBreaker" xml:space="preserve">
+    <value>Shield Breaker</value>
+  </data>
+  <data name="MetaGem_Slayer" xml:space="preserve">
+    <value>Slayer</value>
+  </data>
+  <data name="MetaGem_WeaponLord" xml:space="preserve">
+    <value>Weapon Lord</value>
+  </data>
+  <data name="RedDoeStatue" xml:space="preserve">
+    <value>Red Doe Statue</value>
+  </data>
+  <data name="Relic_Consumable_DivertingHeart" xml:space="preserve">
+    <value>Diverting Heart</value>
+  </data>
+  <data name="Ring_BrightSteelRing" xml:space="preserve">
+    <value>Bright Steel Ring</value>
+  </data>
+  <data name="Ring_SapphireDreamstone" xml:space="preserve">
+    <value>Sapphire Dreamstone</value>
+  </data>
+  <data name="Weapon_OrnateFlail" xml:space="preserve">
+    <value>Ornate Flail</value>
+  </data>
+  <data name="WidowsCourt" xml:space="preserve">
+    <value>The Widow's Court</value>
+  </data>
+  <data name="Ring_BerserkersCrest" xml:space="preserve">
+    <value>Berserker's Crest</value>
+  </data>
+  <data name="Ring_DevouringLoop" xml:space="preserve">
+    <value>Devoured Loop</value>
+  </data>
+  <data name="Weapon_RebellionSpear" xml:space="preserve">
+    <value>Rebellion Spear</value>
+  </data>
+  <data name="Weapon_Repeater" xml:space="preserve">
+    <value>Repeater pistol</value>
+  </data>
+  <data name="Weapon_MachinePistol" xml:space="preserve">
+    <value>Tech 22</value>
+  </data>
+  <data name="Weapon_Repulsor" xml:space="preserve">
+    <value>Repulsor</value>
+  </data>
+  <data name="Weapon_Huntmaster" xml:space="preserve">
+    <value>Huntmaster M1</value>
+  </data>
+  <data name="Weapon_Sword" xml:space="preserve">
+    <value>Steel Sword</value>
+  </data>
+  <data name="Weapon_Claws" xml:space="preserve">
+    <value>Rusted Claws</value>
+  </data>
+  <data name="Weapon_DecayedClaws" xml:space="preserve">
+    <value>Decayed Claws</value>
+  </data>
+  <data name="Weapon_Hammer" xml:space="preserve">
+    <value>Scrap Hammer</value>
+  </data>
+  <data name="Weapon_Spear" xml:space="preserve">
+    <value>Steel Spear</value>
+  </data>
+  <data name="Weapon_Staff" xml:space="preserve">
+    <value>Scrap Staff</value>
+  </data>
+  <data name="Weapon_KnuckleDusters" xml:space="preserve">
+    <value>Knuckle Dusters</value>
+  </data>
+  <data name="Weapon_AutoShotgun" xml:space="preserve">
+    <value>AS-10 "Bulldog"</value>
+  </data>
+  <data name="Weapon_SniperRifle" xml:space="preserve">
+    <value>Widowmaker</value>
+  </data>
+  <data name="Relic_Consumable_ConstrainedHeart" xml:space="preserve">
+    <value>Constrained Heart</value>
+  </data>
+  <data name="TheNest" xml:space="preserve">
+    <value>Severed Hand</value>
   </data>
 </root>

@@ -7,9 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pages="clr-namespace:RemnantSaveGuardian.Views.Pages"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:settings="clr-namespace:RemnantSaveGuardian.Properties"
     Title="{Binding ViewModel.ApplicationTitle, Mode=OneWay}"
-    Width="1100"
-    Height="650"
+    Width="{Binding Path=WindowWidth, Source={x:Static settings:Settings.Default}, Mode=TwoWay}"
+    Height="{Binding Path=WindowHeight, Source={x:Static settings:Settings.Default}, Mode=TwoWay}"
     d:DataContext="{d:DesignInstance local:MainWindow,
                                      IsDesignTimeCreatable=True}"
     d:Background="{DynamicResource ApplicationBackgroundBrush}"
@@ -37,6 +38,7 @@
             Items="{Binding ViewModel.NavigationItems, Mode=TwoWay}" />
 
         <ui:TitleBar
+            x:Name="TitleBar"
             Title="{Binding ViewModel.ApplicationTitle, Mode=OneWay}"
             Grid.Row="0"
             Grid.Column="0"
@@ -56,8 +58,55 @@
             </ui:TitleBar.Tray>
         </ui:TitleBar>
 
+        <ToggleButton
+            x:Name="BtnAlwayOnTop"
+            DataContext="{Binding Path=(settings:Settings.Default)}"
+            IsChecked="{Binding TopMost, Mode=TwoWay}"
+            ToolTip="{lex:Loc Always On Top}"
+            FontSize="16"
+            Grid.Column="1"
+            Width="44"
+            Height="30"
+            Margin="0,0,133,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right" Click="ToggleButton_Click">
+            <WrapPanel>
+                <ui:SymbolIcon Symbol="Pin32" />
+            </WrapPanel>
+            <ToggleButton.Template>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Name="border" BorderThickness="0" Padding="{TemplateBinding Padding}" CornerRadius="0,0,3,3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color" To="LightCoral" Duration="0:0:0" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color" Duration="0:0:0" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="Coral" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="border" Property="Background" Value="Transparent" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </ToggleButton.Template>
+        </ToggleButton>
+
         <Grid Grid.Column="1">
             <Border
+                x:Name="Border"
                 Margin="0,46,0,0"
                 Background="{DynamicResource ControlFillColorDefaultBrush}"
                 CornerRadius="8,0,0,0">
@@ -68,6 +117,7 @@
                     </Grid.RowDefinitions>
                     <Frame x:Name="RootFrame" Grid.Row="1" />
                     <ui:Breadcrumb
+                        x:Name="Caption"
                         Grid.Row="0"
                         Margin="23,16"
                         HorizontalAlignment="Left"

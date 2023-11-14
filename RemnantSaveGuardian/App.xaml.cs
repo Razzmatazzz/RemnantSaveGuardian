@@ -2,11 +2,16 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RemnantSaveGuardian.Models;
+using RemnantSaveGuardian.Properties;
 using RemnantSaveGuardian.Services;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows;
 using System.Windows.Markup;
@@ -81,13 +86,34 @@ namespace RemnantSaveGuardian
         private async void OnStartup(object sender, StartupEventArgs e)
         {
             var culture = CultureInfo.CurrentCulture;
-            //var culture = new CultureInfo("zh-TW");
+            var cultures = EnumerateSupportedCultures();
+            Current.Properties["langs"] = cultures;
+            if (!cultures.Contains(culture) && cultures.Contains(culture.Parent))
+            {
+                culture = culture.Parent;
+            }
+            if (Settings.Default.Language != "")
+            {
+                culture = cultures.First(e => e.Name == Settings.Default.Language);
+            }
+
             Thread.CurrentThread.CurrentCulture = culture;
             WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = culture;
+
             FrameworkElement.LanguageProperty.OverrideMetadata(
                 typeof(FrameworkElement),
-                new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
+                new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(culture.IetfLanguageTag)));
             await _host.StartAsync();
+        }
+
+        private CultureInfo[] EnumerateSupportedCultures()
+        {
+            CultureInfo[] culture = CultureInfo.GetCultures(CultureTypes.AllCultures);
+
+            string exeLocation = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
+
+            var c = culture.Where(cultureInfo => Directory.Exists(Path.Combine(exeLocation, cultureInfo.Name)) && cultureInfo.Name != "").ToArray();
+            return c;
         }
 
         /// <summary>
