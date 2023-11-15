@@ -1,5 +1,5 @@
 {
-  "version": 17,
+  "version": 18,
   "mainLocations": [
     "Quest_Global_TheHunterDream_Template01",
     "Quest_Story_AllFather_DranCity1_Template",
@@ -64,6 +64,8 @@
       "TalRatha": "Forgotten Prison",
       "Phantom": "Astropath's Respite",
       "StasisSiege": "Vault Of The Formless"
+    },
+    "DLC1": {
     }
   },
   "injectableParents": {
@@ -446,7 +448,7 @@
         {
           "name": "/Items/Armor/Armor_Head_LodestoneCrown",
           "notes": "On the boat inside Kolkets locked room",
-          "armorSet":  false
+          "armorSet": false
         },
         {
           "name": "/Items/Trinkets/Rings/BloodTingedRing/Ring_BloodTingedRing"
@@ -509,6 +511,18 @@
           "name": "/Items/Trinkets/Amulets/MatriarchsInsignia/Amulet_MatriarchsInsignia"
         }
       ]
+    },
+    "DLC1": {
+      "Ring_WoodRing": [
+        {
+          "name": "/Items/Trinkets/Rings/WoodRing/Ring_WoodRing",
+          "notes": "Can be found as a random drop in Losomn."
+        }
+      ],
+      "Weapon_AbyssalHook": {
+        "name": "/Items/Weapons/Melee/Special/AbyssalHook/Weapon_AbyssalHook",
+        "notes":  ""
+      }
     },
     "Fae": {
       "Oink": [
@@ -888,8 +902,8 @@
         },
         {
           "name": "/Items/Armor/Misc/Armor_Head_RedPrince",
-          "notes": "kill with Assassins Dagger",
-          "armorSet":  false
+          "notes": "Rewarded by killing the Red Prince with the 'Assassin's Dagger' melee weapon.",
+          "armorSet": false
         }
       ],
       "NightWeaver": [
@@ -1286,7 +1300,7 @@
       "OilField": [
         {
           "name": "/Items/Armor/Nerud_Pilot/Armor_Head_PilotsHelm",
-          "armorSet":  false
+          "armorSet": false
         },
         {
           "name": "/Items/Trinkets/Amulets/DetonationTrigger/Amulet_DetonationTrigger"
@@ -1648,8 +1662,8 @@
           "notes": "Purchased from Reggie at Ward 13 after defeating all bosses at least once."
         },
         {
-            "name": "/Items/Trinkets/Rings/BrightSteelRing/Ring_BrightSteelRing",
-            "notes": "Purchased from Reggie at Ward 13 after completing 15 biomes on any difficulty."
+          "name": "/Items/Trinkets/Rings/BrightSteelRing/Ring_BrightSteelRing",
+          "notes": "Purchased from Reggie at Ward 13 after completing 15 biomes on any difficulty."
         },
         {
             "name": "/Items/Trinkets/Rings/DevouringLoop/Ring_DevouringLoop",

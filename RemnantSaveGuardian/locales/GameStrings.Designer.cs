@@ -3985,6 +3985,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wood Ring.
+        /// </summary>
+        public static string Ring_WoodRing {
+            get {
+                return ResourceManager.GetString("Ring_WoodRing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zania&apos;s Malice.
         /// </summary>
         public static string Ring_ZaniasMalice {
@@ -4813,6 +4822,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abyssal Hook.
+        /// </summary>
+        public static string Weapon_AbyssalHook {
+            get {
+                return ResourceManager.GetString("Weapon_AbyssalHook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aphelion.
         /// </summary>
         public static string Weapon_Aphelion {
@@ -5556,6 +5574,15 @@ namespace RemnantSaveGuardian.locales {
         public static string WindHollow {
             get {
                 return ResourceManager.GetString("WindHollow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Awakened King DLC.
+        /// </summary>
+        public static string World_DLC1 {
+            get {
+                return ResourceManager.GetString("World_DLC1", resourceCulture);
             }
         }
         

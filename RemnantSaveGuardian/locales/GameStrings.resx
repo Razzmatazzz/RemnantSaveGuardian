@@ -1971,4 +1971,13 @@
   <data name="TheNest" xml:space="preserve">
     <value>Severed Hand</value>
   </data>
+  <data name="Ring_WoodRing" xml:space="preserve">
+    <value>Wood Ring</value>
+  </data>
+  <data name="World_DLC1" xml:space="preserve">
+    <value>The Awakened King DLC</value>
+  </data>
+  <data name="Weapon_AbyssalHook" xml:space="preserve">
+    <value>Abyssal Hook</value>
+  </data>
 </root>
