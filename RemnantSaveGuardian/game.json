@@ -521,7 +521,19 @@
       ],
       "Weapon_AbyssalHook": {
         "name": "/Items/Weapons/Melee/Special/AbyssalHook/Weapon_AbyssalHook",
-        "notes":  ""
+        "notes": ""
+      },
+      "Material_Engram_Ritualist": {
+        "name": "/Items/Archetypes/Ritualist/Engram/Material_Engram_Ritualist",
+        "notes": ""
+      },
+      "Ring_ElevatedRing": {
+        "name": "/Items/Trinkets/Rings/ElevatedRing/Ring_ElevatedRing",
+        "notes": ""
+      },
+      "Ring_CrimsonDreamstone": {
+        "name": "/Items/Trinkets/Rings/CrimsonDreamstone/Ring_CrimsonDreamstone",
+        "notes": ""
       }
     },
     "Fae": {

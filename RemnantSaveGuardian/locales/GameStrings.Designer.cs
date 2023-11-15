@@ -1544,6 +1544,15 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("IslandJump", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Alchemist.
+        /// </summary>
+        public static string Material_Engram_Ritualist {
+            get {
+                return ResourceManager.GetString("Material_Engram_Ritualist", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Alchemist.
@@ -2697,6 +2706,24 @@ namespace RemnantSaveGuardian.locales {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Acid Stone.
+        /// </summary>
+        public static string Ring_ElevatedRing {
+            get {
+                return ResourceManager.GetString("Ring_ElevatedRing", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Acid Stone.
+        /// </summary>
+        public static string Ring_CrimsonDreamstone {
+            get {
+                return ResourceManager.GetString("Ring_CrimsonDreamstone", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Acid Stone.
         /// </summary>

@@ -1980,4 +1980,13 @@
   <data name="Weapon_AbyssalHook" xml:space="preserve">
     <value>Abyssal Hook</value>
   </data>
+  <data name="Material_Engram_Ritualist" xml:space="preserve">
+    <value>Ritualist</value>
+  </data>
+  <data name="Ring_ElevatedRing" xml:space="preserve">
+    <value>Elevated Ring</value>
+  </data>
+  <data name="Ring_CrimsonDreamstone" xml:space="preserve">
+    <value>Crimson Dreamstone</value>
+  </data>  
 </root>
