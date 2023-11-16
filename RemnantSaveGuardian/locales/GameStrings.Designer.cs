@@ -311,7 +311,25 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("Amulet_FullMoonCirclet", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Gift Of Melancholy.
+        /// </summary>
+        public static string Amulet_GiftOfMelancholy {
+            get {
+                return ResourceManager.GetString("Amulet_GiftOfMelancholy", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Gift Of Euphoria.
+        /// </summary>
+        public static string Amulet_GiftOfEuphoria {
+            get {
+                return ResourceManager.GetString("Amulet_GiftOfEuphoria", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Golden Ribbon.
         /// </summary>
@@ -3616,6 +3634,33 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ring of The Castaway.
+        /// </summary>
+        public static string Ring_RingOfTheCastaway {
+            get {
+                return ResourceManager.GetString("Ring_RingOfTheCastaway", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to LightHouse Keeper's Ring.
+        /// </summary>
+        public static string Ring_LightHouseKeepersRing {
+            get {
+                return ResourceManager.GetString("Ring_LightHouseKeepersRing", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to AtonementFold.
+        /// </summary>
+        public static string Ring_AtonementFold {
+            get {
+                return ResourceManager.GetString("Ring_AtonementFold", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Ring of Crisis.
         /// </summary>
         public static string Ring_RingOfCrisis {
@@ -4856,7 +4901,16 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("Weapon_AbyssalHook", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Sparkfire Shotgun.
+        /// </summary>
+        public static string Weapon_Sparkfire {
+            get {
+                return ResourceManager.GetString("Weapon_Sparkfire", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Aphelion.
         /// </summary>

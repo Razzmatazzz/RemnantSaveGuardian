@@ -1989,4 +1989,23 @@
   <data name="Ring_CrimsonDreamstone" xml:space="preserve">
     <value>Crimson Dreamstone</value>
   </data>  
+  <data name="Ring_RingOfTheCastaway" xml:space="preserve">
+    <value>Ring Of The Castaway</value>
+  </data>  
+  <data name="Ring_LightHouseKeepersRing" xml:space="preserve">
+    <value>Lighthouse Keeper's Ring</value>
+  </data>  
+  <data name="Ring_AtonementFold" xml:space="preserve">
+    <value>Atonement Fold</value>
+  </data> 
+  <data name="Amulet_GiftOfMelancholy" xml:space="preserve">
+    <value>Gift Of Melancholy</value>
+  </data> 
+  <data name="Amulet_GiftOfEuphoria" xml:space="preserve">
+    <value>Gift Of Euphoria</value>
+  </data>
+  <data name="Weapon_Sparkfire" xml:space="preserve">
+    <value>Sparkfire Shotgun</value>
+  </data> 
+
 </root>
