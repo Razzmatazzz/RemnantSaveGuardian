@@ -519,46 +519,66 @@
           "notes": "Can be found as a random drop in Losomn."
         }
       ],
-      "Weapon_AbyssalHook": {
-        "name": "/Items/Weapons/Melee/Special/AbyssalHook/Weapon_AbyssalHook",
-        "notes": ""
-      },
-      "Material_Engram_Ritualist": {
-        "name": "/Items/Archetypes/Ritualist/Engram/Material_Engram_Ritualist",
-        "notes": ""
-      },
-      "Ring_ElevatedRing": {
-        "name": "/Items/Trinkets/Rings/ElevatedRing/Ring_ElevatedRing",
-        "notes": ""
-      },
-      "Ring_CrimsonDreamstone": {
-        "name": "/Items/Trinkets/Rings/CrimsonDreamstone/Ring_CrimsonDreamstone",
-        "notes": ""
-      },
-      "Ring_RingOfTheCastaway": {
-        "name": "/Items/Trinkets/Rings/RingOfTheCastaway/Ring_RingOfTheCastaway",
-        "notes": ""
-      },
-      "Ring_LightHouseKeepersRing": {
-        "name": "/Items/Trinkets/Rings/LightHouseKeepersRing/Ring_LightHouseKeepersRing",
-        "notes": ""
-      },
-      "Ring_AtonementFold": {
-        "name": "/Items/Trinkets/Rings/AtonementFold/Ring_AtonementFold",
-        "notes": ""
-      },
-      "Amulet_GiftOfMelancholy": {
-        "name": "/Items/Trinkets/Amulets/GiftOfMelancholy/Amulet_GiftOfMelancholy",
-        "notes": ""
-      },
-      "Amulet_GiftOfEuphoria": {
-        "name": "/Items/Trinkets/Amulets/GiftOfEuphoria/Amulet_GiftOfEuphoria",
-        "notes": ""
-      },
-      "Weapon_Sparkfire": {
-        "name": "/Items/Weapons/Buster/Weapon_Sparkfire",
-        "notes": ""
-      }
+      "Weapon_AbyssalHook":[
+        {
+          "name": "/Items/Weapons/Melee/Special/AbyssalHook/Weapon_AbyssalHook",
+          "notes": ""
+        }
+      ],
+      "Material_Engram_Ritualist": [
+        {
+          "name": "/Items/Archetypes/Ritualist/Engram/Material_Engram_Ritualist",
+          "notes": ""
+        }
+      ],
+      "Ring_ElevatedRing": [
+        {
+          "name": "/Items/Trinkets/Rings/ElevatedRing/Ring_ElevatedRing",
+          "notes": ""
+        }
+      ],
+      "Ring_CrimsonDreamstone": [
+        {
+          "name": "/Items/Trinkets/Rings/CrimsonDreamstone/Ring_CrimsonDreamstone",
+          "notes": ""
+        }
+      ],
+      "Ring_RingOfTheCastaway": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfTheCastaway/Ring_RingOfTheCastaway",
+          "notes": ""
+        }
+      ],
+      "Ring_LightHouseKeepersRing": [
+        {
+          "name": "/Items/Trinkets/Rings/LightHouseKeepersRing/Ring_LightHouseKeepersRing",
+          "notes": ""
+        }
+      ],
+      "Ring_AtonementFold": [
+        {
+          "name": "/Items/Trinkets/Rings/AtonementFold/Ring_AtonementFold",
+          "notes": ""
+        }
+      ],
+      "Amulet_GiftOfMelancholy": [
+        {
+          "name": "/Items/Trinkets/Amulets/GiftOfMelancholy/Amulet_GiftOfMelancholy",
+          "notes": ""
+        }
+      ],
+      "Amulet_GiftOfEuphoria": [
+        {
+          "name": "/Items/Trinkets/Amulets/GiftOfEuphoria/Amulet_GiftOfEuphoria",
+          "notes": ""
+        }
+      ],
+      "Weapon_Sparkfire": [
+        {
+          "name": "/Items/Weapons/Buster/Weapon_Sparkfire",
+          "notes": ""
+        }
+      ]
     },
     "Fae": {
       "Oink": [
