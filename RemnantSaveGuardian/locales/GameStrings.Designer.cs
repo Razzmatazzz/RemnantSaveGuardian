@@ -311,7 +311,25 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("Amulet_FullMoonCirclet", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Gift Of Melancholy.
+        /// </summary>
+        public static string Amulet_GiftOfMelancholy {
+            get {
+                return ResourceManager.GetString("Amulet_GiftOfMelancholy", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Gift Of Euphoria.
+        /// </summary>
+        public static string Amulet_GiftOfEuphoria {
+            get {
+                return ResourceManager.GetString("Amulet_GiftOfEuphoria", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Golden Ribbon.
         /// </summary>
@@ -1544,6 +1562,15 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("IslandJump", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Alchemist.
+        /// </summary>
+        public static string Material_Engram_Ritualist {
+            get {
+                return ResourceManager.GetString("Material_Engram_Ritualist", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Alchemist.
@@ -2700,6 +2727,24 @@ namespace RemnantSaveGuardian.locales {
         /// <summary>
         ///   Looks up a localized string similar to Acid Stone.
         /// </summary>
+        public static string Ring_ElevatedRing {
+            get {
+                return ResourceManager.GetString("Ring_ElevatedRing", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Acid Stone.
+        /// </summary>
+        public static string Ring_CrimsonDreamstone {
+            get {
+                return ResourceManager.GetString("Ring_CrimsonDreamstone", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Acid Stone.
+        /// </summary>
         public static string Ring_AcidStone {
             get {
                 return ResourceManager.GetString("Ring_AcidStone", resourceCulture);
@@ -3589,6 +3634,33 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ring of The Castaway.
+        /// </summary>
+        public static string Ring_RingOfTheCastaway {
+            get {
+                return ResourceManager.GetString("Ring_RingOfTheCastaway", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to LightHouse Keeper's Ring.
+        /// </summary>
+        public static string Ring_LightHouseKeepersRing {
+            get {
+                return ResourceManager.GetString("Ring_LightHouseKeepersRing", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to AtonementFold.
+        /// </summary>
+        public static string Ring_AtonementFold {
+            get {
+                return ResourceManager.GetString("Ring_AtonementFold", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Ring of Crisis.
         /// </summary>
         public static string Ring_RingOfCrisis {
@@ -3981,6 +4053,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Ring_WindHollowCirclet {
             get {
                 return ResourceManager.GetString("Ring_WindHollowCirclet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wood Ring.
+        /// </summary>
+        public static string Ring_WoodRing {
+            get {
+                return ResourceManager.GetString("Ring_WoodRing", resourceCulture);
             }
         }
         
@@ -4813,6 +4894,24 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abyssal Hook.
+        /// </summary>
+        public static string Weapon_AbyssalHook {
+            get {
+                return ResourceManager.GetString("Weapon_AbyssalHook", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Sparkfire Shotgun.
+        /// </summary>
+        public static string Weapon_Sparkfire {
+            get {
+                return ResourceManager.GetString("Weapon_Sparkfire", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Aphelion.
         /// </summary>
         public static string Weapon_Aphelion {
@@ -5560,6 +5659,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Awakened King DLC.
+        /// </summary>
+        public static string World_DLC1 {
+            get {
+                return ResourceManager.GetString("World_DLC1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Earth.
         /// </summary>
         public static string World_Earth {
@@ -5619,6 +5727,349 @@ namespace RemnantSaveGuardian.locales {
         public static string WorldBoss {
             get {
                 return ResourceManager.GetString("WorldBoss", resourceCulture);
+            }
+        }
+
+
+        /// <summary>
+        ///   Looks up a localized string similar to Anguish.
+        /// </summary>
+        public static string Material_OccultVessel {
+            get {
+                return ResourceManager.GetString("Material_OccultVessel", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Burden Of The Sciolist.
+        /// </summary>
+        public static string Ring_BurdenOfTheSciolist {
+            get {
+                return ResourceManager.GetString("Ring_BurdenOfTheSciolist", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Offering Stone.
+        /// </summary>
+        public static string Ring_OfferingStone {
+            get {
+                return ResourceManager.GetString("Ring_OfferingStone", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Ring Of The Vain.
+        /// </summary>
+        public static string Ring_RingOfTheVain {
+            get {
+                return ResourceManager.GetString("Ring_RingOfTheVain", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Painless Obsidian.
+        /// </summary>
+        public static string Ring_PainlessObsidian {
+            get {
+                return ResourceManager.GetString("Ring_PainlessObsidian", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Red Ring Of Death.
+        /// </summary>
+        public static string Ring_RedRingOfDeath {
+            get {
+                return ResourceManager.GetString("Ring_RedRingOfDeath", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Bitter Memento.
+        /// </summary>
+        public static string Ring_BitterMemento {
+            get {
+                return ResourceManager.GetString("Ring_BitterMemento", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to <<PLACEHOLDER VALUE>>.
+        /// </summary>
+        public static string Ring_DriedClayRing {
+            get {
+                return ResourceManager.GetString("Ring_DriedClayRing", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Digested Hog Lure.
+        /// </summary>
+        public static string Ring_DigestedHogLure {
+            get {
+                return ResourceManager.GetString("Ring_DigestedHogLure", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Shadow Of Misery.
+        /// </summary>
+        public static string Ring_ShadowOfMisery {
+            get {
+                return ResourceManager.GetString("Ring_ShadowOfMisery", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Burden of the Departed.
+        /// </summary>
+        public static string Ring_BurdenOfTheDeparted {
+            get {
+                return ResourceManager.GetString("Ring_BurdenOfTheDeparted", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Band Of The Fanatic.
+        /// </summary>
+        public static string Ring_BandOfTheFanatic {
+            get {
+                return ResourceManager.GetString("Ring_BandOfTheFanatic", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Bridge Wardens Crest.
+        /// </summary>
+        public static string Ring_BridgeWardensCrest {
+            get {
+                return ResourceManager.GetString("Ring_BridgeWardensCrest", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to White Glass Bead.
+        /// </summary>
+        public static string Ring_WhiteGlassBead {
+            get {
+                return ResourceManager.GetString("Ring_WhiteGlassBead", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Death Soaked Idol.
+        /// </summary>
+        public static string Amulet_DeathSoakedIdol {
+            get {
+                return ResourceManager.GetString("Amulet_DeathSoakedIdol", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Gift Of The Unbound.
+        /// </summary>
+        public static string Amulet_GiftOfTheUnbound {
+            get {
+                return ResourceManager.GetString("Amulet_GiftOfTheUnbound", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Index Of The Scribe.
+        /// </summary>
+        public static string Amulet_IndexOfTheScribe {
+            get {
+                return ResourceManager.GetString("Amulet_IndexOfTheScribe", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Birthright Of The Lost.
+        /// </summary>
+        public static string Amulet_BirthrightOfTheLost {
+            get {
+                return ResourceManager.GetString("Amulet_BirthrightOfTheLost", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Whispering Marble.
+        /// </summary>
+        public static string Amulet_WhisperingMarble {
+            get {
+                return ResourceManager.GetString("Amulet_WhisperingMarble", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Brewmasters Cork.
+        /// </summary>
+        public static string Amulet_BrewmastersCork {
+            get {
+                return ResourceManager.GetString("Amulet_BrewmastersCork", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Participation Medal.
+        /// </summary>
+        public static string Amulet_ParticipationMedal {
+            get {
+                return ResourceManager.GetString("Amulet_ParticipationMedal", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Legacy Protocol.
+        /// </summary>
+        public static string Amulet_LegacyProtocol {
+            get {
+                return ResourceManager.GetString("Amulet_LegacyProtocol", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Guts.
+        /// </summary>
+        public static string MetaGem_Guts {
+            get {
+                return ResourceManager.GetString("MetaGem_Guts", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Dreadful.
+        /// </summary>
+        public static string MetaGem_Dreadful {
+            get {
+                return ResourceManager.GetString("MetaGem_Dreadful", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Maelstrom.
+        /// </summary>
+        public static string MetaGem_Maelstrom {
+            get {
+                return ResourceManager.GetString("MetaGem_Maelstrom", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Prophecy.
+        /// </summary>
+        public static string MetaGem_Prophecy {
+            get {
+                return ResourceManager.GetString("MetaGem_Prophecy", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Fetid Wounds.
+        /// </summary>
+        public static string MetaGem_FetidWounds {
+            get {
+                return ResourceManager.GetString("MetaGem_FetidWounds", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Tainted Blade.
+        /// </summary>
+        public static string MetaGem_TaintedBlade {
+            get {
+                return ResourceManager.GetString("MetaGem_TaintedBlade", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Sleeper.
+        /// </summary>
+        public static string MetaGem_Sleeper {
+            get {
+                return ResourceManager.GetString("MetaGem_Sleeper", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Ritualist Scythe.
+        /// </summary>
+        public static string Weapon_RitualistScythe {
+            get {
+                return ResourceManager.GetString("Weapon_RitualistScythe", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Wrathbringer.
+        /// </summary>
+        public static string Weapon_Wrathbringer {
+            get {
+                return ResourceManager.GetString("Weapon_Wrathbringer", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Steel Scythe.
+        /// </summary>
+        public static string Weapon_Scythe {
+            get {
+                return ResourceManager.GetString("Weapon_Scythe", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Monarch.
+        /// </summary>
+        public static string Weapon_Monarch {
+            get {
+                return ResourceManager.GetString("Weapon_Monarch", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Creeping Mist.
+        /// </summary>
+        public static string Mod_CreepingMist {
+            get {
+                return ResourceManager.GetString("Mod_CreepingMist", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Chain Of Command.
+        /// </summary>
+        public static string Mod_ChainOfCommand {
+            get {
+                return ResourceManager.GetString("Mod_ChainOfCommand", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Paper Heart.
+        /// </summary>
+        public static string Relic_Consumable_PaperHeart {
+            get {
+                return ResourceManager.GetString("Relic_Consumable_PaperHeart", resourceCulture);
+            }
+        }
+    
+        /// <summary>
+        ///   Looks up a localized string similar to Broken Heart.
+        /// </summary>
+        public static string Relic_Consumable_BrokenHeart {
+            get {
+                return ResourceManager.GetString("Relic_Consumable_BrokenHeart", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Affliction.
+        /// </summary>
+        public static string Trait_Affliction {
+            get {
+                return ResourceManager.GetString("Trait_Affliction", resourceCulture);
             }
         }
     }
