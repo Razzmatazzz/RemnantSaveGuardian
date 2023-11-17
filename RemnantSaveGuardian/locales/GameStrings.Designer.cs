@@ -151,6 +151,24 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Birthright Of The Lost.
+        /// </summary>
+        public static string Amulet_BirthrightOfTheLost {
+            get {
+                return ResourceManager.GetString("Amulet_BirthrightOfTheLost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brewmasters Cork.
+        /// </summary>
+        public static string Amulet_BrewmastersCork {
+            get {
+                return ResourceManager.GetString("Amulet_BrewmastersCork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Broken Pocket Watch.
         /// </summary>
         public static string Amulet_BrokenPocketWatch {
@@ -196,6 +214,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cost Of Betrayal.
+        /// </summary>
+        public static string Amulet_CostOfBetrayal {
+            get {
+                return ResourceManager.GetString("Amulet_CostOfBetrayal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Daredevil&apos;s Charm.
         /// </summary>
         public static string Amulet_DaredevilsCharm {
@@ -210,6 +237,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Amulet_DeathsEmbrace {
             get {
                 return ResourceManager.GetString("Amulet_DeathsEmbrace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Death Soaked Idol.
+        /// </summary>
+        public static string Amulet_DeathSoakedIdol {
+            get {
+                return ResourceManager.GetString("Amulet_DeathSoakedIdol", resourceCulture);
             }
         }
         
@@ -313,6 +349,33 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gift Of Euphoria.
+        /// </summary>
+        public static string Amulet_GiftOfEuphoria {
+            get {
+                return ResourceManager.GetString("Amulet_GiftOfEuphoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gift Of Melancholy.
+        /// </summary>
+        public static string Amulet_GiftOfMelancholy {
+            get {
+                return ResourceManager.GetString("Amulet_GiftOfMelancholy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gift Of The Unbound.
+        /// </summary>
+        public static string Amulet_GiftOfTheUnbound {
+            get {
+                return ResourceManager.GetString("Amulet_GiftOfTheUnbound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Golden Ribbon.
         /// </summary>
         public static string Amulet_GoldenRibbon {
@@ -354,6 +417,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Amulet_Hyperconductor {
             get {
                 return ResourceManager.GetString("Amulet_Hyperconductor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Index Of The Scribe.
+        /// </summary>
+        public static string Amulet_IndexOfTheScribe {
+            get {
+                return ResourceManager.GetString("Amulet_IndexOfTheScribe", resourceCulture);
             }
         }
         
@@ -426,6 +498,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Amulet_LaemirCenser {
             get {
                 return ResourceManager.GetString("Amulet_LaemirCenser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Legacy Protocol.
+        /// </summary>
+        public static string Amulet_LegacyProtocol {
+            get {
+                return ResourceManager.GetString("Amulet_LegacyProtocol", resourceCulture);
             }
         }
         
@@ -538,6 +619,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Participation Medal.
+        /// </summary>
+        public static string Amulet_ParticipationMedal {
+            get {
+                return ResourceManager.GetString("Amulet_ParticipationMedal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Range Finder.
         /// </summary>
         public static string Amulet_RangeFinder {
@@ -619,6 +709,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sinister Totem.
+        /// </summary>
+        public static string Amulet_SinisterTotem {
+            get {
+                return ResourceManager.GetString("Amulet_SinisterTotem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Soul Anchor.
         /// </summary>
         public static string Amulet_SoulAnchor {
@@ -696,6 +795,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Amulet_WeightlessWeight {
             get {
                 return ResourceManager.GetString("Amulet_WeightlessWeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Whispering Marble.
+        /// </summary>
+        public static string Amulet_WhisperingMarble {
+            get {
+                return ResourceManager.GetString("Amulet_WhisperingMarble", resourceCulture);
             }
         }
         
@@ -925,11 +1033,29 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Crimson Guard.
+        /// </summary>
+        public static string Armor_RedPrinceArmor {
+            get {
+                return ResourceManager.GetString("Armor_RedPrinceArmor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Red Widow.
         /// </summary>
         public static string Armor_RedWidow {
             get {
                 return ResourceManager.GetString("Armor_RedWidow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zealot&apos;s .
+        /// </summary>
+        public static string Armor_Ritualist {
+            get {
+                return ResourceManager.GetString("Armor_Ritualist", resourceCulture);
             }
         }
         
@@ -1092,6 +1218,15 @@ namespace RemnantSaveGuardian.locales {
         public static string BrokenTomb {
             get {
                 return ResourceManager.GetString("BrokenTomb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ethereal Manor.
+        /// </summary>
+        public static string BurningCity_DLC {
+            get {
+                return ResourceManager.GetString("BurningCity_DLC", resourceCulture);
             }
         }
         
@@ -1411,6 +1546,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Maze.
+        /// </summary>
+        public static string GardenMaze {
+            get {
+                return ResourceManager.GetString("GardenMaze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mutators.
         /// </summary>
         public static string Gems {
@@ -1443,6 +1587,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Gunslinger {
             get {
                 return ResourceManager.GetString("Gunslinger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mirror Floor.
+        /// </summary>
+        public static string Halls_DLC {
+            get {
+                return ResourceManager.GetString("Halls_DLC", resourceCulture);
             }
         }
         
@@ -1497,6 +1650,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Hunter {
             get {
                 return ResourceManager.GetString("Hunter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bruin, Blade of The King.
+        /// </summary>
+        public static string Impaler {
+            get {
+                return ResourceManager.GetString("Impaler", resourceCulture);
             }
         }
         
@@ -1677,6 +1839,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Library {
             get {
                 return ResourceManager.GetString("Library", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Derelict Lighthouse.
+        /// </summary>
+        public static string Lighthouse {
+            get {
+                return ResourceManager.GetString("Lighthouse", resourceCulture);
             }
         }
         
@@ -2347,6 +2518,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The One True King.
+        /// </summary>
+        public static string OneTrueKingStory {
+            get {
+                return ResourceManager.GetString("OneTrueKingStory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Oracle&apos;s Refuge.
         /// </summary>
         public static string OraclesRefuge {
@@ -2401,6 +2581,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter the Dream.
+        /// </summary>
+        public static string Quest_Item_DLC_DreamLevel {
+            get {
+                return ResourceManager.GetString("Quest_Item_DLC_DreamLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Memory Core II.
         /// </summary>
         public static string Quest_Item_Extermination_AICore {
@@ -2442,6 +2631,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Quest_Story_Empress_Zone01_Template01 {
             get {
                 return ResourceManager.GetString("Quest_Story_Empress_Zone01_Template01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Losomn: Forlorn Coast.
+        /// </summary>
+        public static string Quest_Story_OTK {
+            get {
+                return ResourceManager.GetString("Quest_Story_OTK", resourceCulture);
             }
         }
         
@@ -2518,6 +2716,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Broken Heart.
+        /// </summary>
+        public static string Relic_Consumable_BrokenHeart {
+            get {
+                return ResourceManager.GetString("Relic_Consumable_BrokenHeart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Constrained Heart.
         /// </summary>
         public static string Relic_Consumable_ConstrainedHeart {
@@ -2568,6 +2775,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Relic_Consumable_LifelessHeart {
             get {
                 return ResourceManager.GetString("Relic_Consumable_LifelessHeart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PaperHeart.
+        /// </summary>
+        public static string Relic_Consumable_PaperHeart {
+            get {
+                return ResourceManager.GetString("Relic_Consumable_PaperHeart", resourceCulture);
             }
         }
         
@@ -4093,6 +4309,24 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sewer Hole.
+        /// </summary>
+        public static string Sewer_DLC {
+            get {
+                return ResourceManager.GetString("Sewer_DLC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Befouled Altar.
+        /// </summary>
+        public static string SewerChamber {
+            get {
+                return ResourceManager.GetString("SewerChamber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shattered Gallery.
         /// </summary>
         public static string ShatteredGallery {
@@ -5556,6 +5790,24 @@ namespace RemnantSaveGuardian.locales {
         public static string WindHollow {
             get {
                 return ResourceManager.GetString("WindHollow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sunken Witch.
+        /// </summary>
+        public static string Witch {
+            get {
+                return ResourceManager.GetString("Witch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Losomn: Forlorn Coast.
+        /// </summary>
+        public static string World_DLC1 {
+            get {
+                return ResourceManager.GetString("World_DLC1", resourceCulture);
             }
         }
         

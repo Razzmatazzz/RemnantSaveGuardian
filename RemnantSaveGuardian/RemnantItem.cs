@@ -10,12 +10,14 @@ namespace RemnantSaveGuardian
             @"/Items/Trinkets/(?<itemType>\w+)/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // rings and amulets
             @"/Items/(?<itemType>Mods)/\w+/(?<itemName>\w+)(?:\.|$)", // weapon mods
             @"/Items/(?<itemType>Archetypes)/\w+/(?<itemName>Archetype_\w+)(?:\.|$)", // archetypes
+            @"/Items/(?<itemType>Archetypes)/(?<armorSet>\w+)/Armor/(?<itemName>\w+)(?:\.|$)", // armors
             @"/Items/Archetypes/(?<archetypeName>\w+)/(?<itemType>\w+)/\w+/(?<itemName>\w+)(?:\.|$)", // perks and skills
             @"/Items/(?<itemType>Traits)/(?<traitType>\w+)/\w+/(?<itemName>\w+)(?:\.|$)", // traits
             @"/Items/(?<itemType>Armor)/(?:\w+/)?(?:(?<armorSet>\w+)/)?(?<itemName>\w+)(?:\.|$)", // armor
             @"/Items/(?<itemType>Weapons)/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // weapons
             @"/Items/(?<itemType>Gems)/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // gems
             @"/Items/Armor/(?:\w+/)?(?<itemType>Relic)Testing/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // relics
+            @"/Items/(?<itemType>Relic)s/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // relics
             @"/Items/Materials/(?<itemType>Engrams)/(?<itemName>\w+)(?:\.|$)", // engrams
             @"/(?<itemType>Quests)/Quest_\w+/Items/(?<itemName>\w+)(?:\.|$)", // quest items
             @"/Items/(?<itemType>Materials)/World/\w+/(?<itemName>\w+)(?:\.|$)", // materials

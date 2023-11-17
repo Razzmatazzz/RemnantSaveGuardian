@@ -1971,4 +1971,88 @@
   <data name="TheNest" xml:space="preserve">
     <value>Severed Hand</value>
   </data>
+  <data name="Amulet_BirthrightOfTheLost" xml:space="preserve">
+    <value>Birthright Of The Lost</value>
+  </data>
+  <data name="Amulet_BrewmastersCork" xml:space="preserve">
+    <value>Brewmasters Cork</value>
+  </data>
+  <data name="Amulet_CostOfBetrayal" xml:space="preserve">
+    <value>Cost Of Betrayal</value>
+  </data>
+  <data name="Amulet_DeathSoakedIdol" xml:space="preserve">
+    <value>Death Soaked Idol</value>
+  </data>
+  <data name="Amulet_GiftOfEuphoria" xml:space="preserve">
+    <value>Gift Of Euphoria</value>
+  </data>
+  <data name="Amulet_GiftOfMelancholy" xml:space="preserve">
+    <value>Gift Of Melancholy</value>
+  </data>
+  <data name="Amulet_GiftOfTheUnbound" xml:space="preserve">
+    <value>Gift Of The Unbound</value>
+  </data>
+  <data name="Amulet_IndexOfTheScribe" xml:space="preserve">
+    <value>Index Of The Scribe</value>
+  </data>
+  <data name="Amulet_LegacyProtocol" xml:space="preserve">
+    <value>Legacy Protocol</value>
+  </data>
+  <data name="Amulet_ParticipationMedal" xml:space="preserve">
+    <value>Participation Medal</value>
+  </data>
+  <data name="Amulet_SinisterTotem" xml:space="preserve">
+    <value>Sinister Totem</value>
+  </data>
+  <data name="Amulet_WhisperingMarble" xml:space="preserve">
+    <value>Whispering Marble</value>
+  </data>
+  <data name="Armor_RedPrinceArmor" xml:space="preserve">
+    <value>Crimson Guard</value>
+  </data>
+  <data name="Armor_Ritualist" xml:space="preserve">
+    <value>Zealot's </value>
+  </data>
+  <data name="BurningCity_DLC" xml:space="preserve">
+    <value>Ethereal Manor</value>
+  </data>
+  <data name="GardenMaze" xml:space="preserve">
+    <value>The Maze</value>
+  </data>
+  <data name="Halls_DLC" xml:space="preserve">
+    <value>Mirror Floor</value>
+  </data>
+  <data name="Impaler" xml:space="preserve">
+    <value>Bruin, Blade of The King</value>
+  </data>
+  <data name="Lighthouse" xml:space="preserve">
+    <value>Derelict Lighthouse</value>
+  </data>
+  <data name="OneTrueKingStory" xml:space="preserve">
+    <value>The One True King</value>
+  </data>
+  <data name="Quest_Item_DLC_DreamLevel" xml:space="preserve">
+    <value>Enter the Dream</value>
+  </data>
+  <data name="Quest_Story_OTK" xml:space="preserve">
+    <value>Losomn: Forlorn Coast</value>
+  </data>
+  <data name="Relic_Consumable_BrokenHeart" xml:space="preserve">
+    <value>Broken Heart</value>
+  </data>
+  <data name="Relic_Consumable_PaperHeart" xml:space="preserve">
+    <value>PaperHeart</value>
+  </data>
+  <data name="SewerChamber" xml:space="preserve">
+    <value>Befouled Altar</value>
+  </data>
+  <data name="Sewer_DLC" xml:space="preserve">
+    <value>Sewer Hole</value>
+  </data>
+  <data name="Witch" xml:space="preserve">
+    <value>Sunken Witch</value>
+  </data>
+  <data name="World_DLC1" xml:space="preserve">
+    <value>Losomn: Forlorn Coast</value>
+  </data>
 </root>

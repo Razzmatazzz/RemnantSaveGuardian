@@ -51,8 +51,9 @@ namespace RemnantSaveGuardian
                 return Loc.GameT(_name);
             }
         }
-        public List<RemnantItem> MissingItems {
-            get 
+        public List<RemnantItem> MissingItems
+        {
+            get
             {
                 return mItems;
             }
@@ -114,9 +115,15 @@ namespace RemnantSaveGuardian
             }
             if (locations != null)
             {
-                _locations.AddRange(locations);
+                foreach (var item in locations)
+                {
+                    if (!item.Contains("DLC"))
+                        _locations.Add(item);
+                }
+
             }
-            if (_name.Contains("_Spawntable")) {
+            if (_name.Contains("_Spawntable"))
+            {
                 _name = _name.Replace("_Spawntable", "");
             }
             _type = type;
@@ -137,8 +144,9 @@ namespace RemnantSaveGuardian
             {
                 _name += "Story";
             }
-            if (type.Contains("Injectable") || type.Contains("Abberation"))
+            if (type.Contains("Injectable") && !name.Contains("DLC") || type.Contains("Abberation"))
             {
+                //Debug.WriteLine($"InjectableName:{name}");
                 _name = _name.Split('_').Last();
             }
             if (type == "RootEarth")
@@ -150,8 +158,14 @@ namespace RemnantSaveGuardian
                 _locations.Add("World_RootEarth");
             }
             TileSet = "";
+            //try
+            //{
+            //    Debug.WriteLine($"Object Created:{key}:{name}:{type}\n{string.Join(",", locations)} ");
+            //}
+            //catch (Exception e) { }
         }
-        public RemnantWorldEvent(string key, string world, string type) : this(key, key, null, type) {
+        public RemnantWorldEvent(string key, string world, string type) : this(key, key, null, type)
+        {
             _locations.Add(world);
         }
         public RemnantWorldEvent(string key, List<string> locations, string type) : this(key, key, locations, type) { }
@@ -539,7 +553,7 @@ namespace RemnantSaveGuardian
 
             foreach (var zone in zoneEvents.Keys)
             {
-                foreach(var worldEvent in zoneEvents[zone])
+                foreach (var worldEvent in zoneEvents[zone])
                 {
                     eventList.Add(worldEvent);
                 }
@@ -595,7 +609,7 @@ namespace RemnantSaveGuardian
             {
                 return;
             }
-            
+
             if (eventEnds.Count != eventStarts.Count)
             {
                 return;
@@ -638,14 +652,16 @@ namespace RemnantSaveGuardian
                     if (lastTemplate != null)
                     {
                         currentMainLocation = lastTemplate.RawName;
-                    } else
+                    }
+                    else
                     {
                         //Debug.WriteLine($"No last template for {eventMatch.Value}");
                         currentMainLocation = null;
                     }
                     try
                     {
-                        if (eventMatch.Value.Contains("TileInfo") || eventMatch.Value.Contains("Template") || eventMatch.Value.Contains("EventTree") || eventMatch.Value.EndsWith("_Cxxx")) {
+                        if (eventMatch.Value.Contains("TileInfo") || eventMatch.Value.Contains("Template") || eventMatch.Value.Contains("EventTree") || eventMatch.Value.EndsWith("_Cxxx"))
+                        {
                             if (true || !eventMatch.Value.EndsWith("C"))
                             {
                                 if (eventMatch.Value.Contains("Template"))
@@ -774,7 +790,8 @@ namespace RemnantSaveGuardian
                         {
                             worldEvent = new RemnantWorldEvent(eventMatch, currentSublocation);
                         }*/
-                        if (firstZone.Length == 0 && worldEvent.RawWorld != "World_RootEarth") {
+                        if (firstZone.Length == 0 && worldEvent.RawWorld != "World_RootEarth")
+                        {
                             firstZone = worldEvent.RawWorld;
                             //Logger.Log($"Setting first zone to {firstZone} for {worldEvent.Name}");
                         }
@@ -867,7 +884,7 @@ namespace RemnantSaveGuardian
             if (mode == ProcessMode.Campaign)
             {
                 // Add Ward 13 events
-                List<string> ward13Events = new(){ "Ward13", "Cass", "Brabus", "Mudtooth", "Reggie" };
+                List<string> ward13Events = new() { "Ward13", "Cass", "Brabus", "Mudtooth", "Reggie" };
                 foreach (var eName in ward13Events)
                 {
                     var wardEvent = new RemnantWorldEvent(eName, "World_Earth", "Home");
@@ -936,16 +953,15 @@ namespace RemnantSaveGuardian
             string currentWorld = null;
             string currentMainLocation = null;
             string currentSublocation = null;
-            var faelinCount = 0;
-            Dictionary<string, RemnantWorldEvent> lastTemplates = new();
-            RemnantWorldEvent lastTileInfo;
-            RemnantWorldEvent lastEventTree;
-            //List<string> excludeTypes = new() { "Global", "Earth" };
+
+            List<string> excludeTypes = new() { "Global", "Earth" };
             List<string> excludeWorlds = new() { "World_Base", "World_Labyrinth" };
             List<string> excludeEventDetails = new() { "TheHunterDream" };
             var unknownAreaCount = 0;
             foreach (Match area in areas)
             {
+                //if (currentMainLocation != null)
+                    //Debug.WriteLine($"MainLoc: {currentMainLocation}");
                 var areaEvents = new List<RemnantWorldEvent>();
                 currentSublocation = null;
                 string spawnTable = null;
@@ -958,21 +974,21 @@ namespace RemnantSaveGuardian
                 MatchCollection eventMatches = Regex.Matches(area.Groups["events"].Value, @"/Game/(?<world>(?:World|Campaign)_\w+)/Quests/(?:Quest_)?(?<eventType>[a-zA-Z0-9]+)_(?<eventName>\w+)/(?<details>\w+)\.\w+");
                 foreach (Match eventMatch in eventMatches)
                 {
-                    currentWorld = eventMatch.Groups["world"].Value;
+                    if (currentWorld is null || eventMatch.Groups["world"].Value != "World_DLC1")
+                        currentWorld = eventMatch.Groups["world"].Value;
+                    else
+                    {
+                        //Debug.WriteLine($"Skipping: {eventMatch.Groups["world"].Value}");
+
+                    }
+
+                    //Debug.WriteLine($"Type: {eventMatch.Groups["eventType"].Value} Event: {eventMatch.Groups["eventName"].Value}");
                     if (currentWorld == null || excludeWorlds.Contains(currentWorld))
                     {
                         continue;
                     }
-                    var lastTemplate = lastTemplates.ContainsKey(eventMatch.Groups["world"].Value) ? lastTemplates[eventMatch.Groups["world"].Value] : null;
-                    if (lastTemplate != null)
-                    {
-                        currentMainLocation = lastTemplate.RawName;
-                    }
-                    else
-                    {
-                        //Debug.WriteLine($"No last template for {eventMatch.Value}");
-                        currentMainLocation = null;
-                    }
+
+
                     try
                     {
                         if (eventMatch.Value.Contains("EventTree"))
@@ -983,9 +999,11 @@ namespace RemnantSaveGuardian
                         if (GameInfo.SubLocations.ContainsKey(eventMatch.Groups["eventName"].Value))
                         {
                             currentSublocation = GameInfo.SubLocations[eventMatch.Groups["eventName"].Value];
-                        } else if (currentMainLocation == null)
+                        }
+                        else if (currentMainLocation == null)
                         {
                             currentSublocation = area.Groups["locationName"].Value;
+                            //Debug.WriteLine($"Setting Sublocation: {currentSublocation}");
                         }
                         if (currentSublocation == null && eventMatch.Groups["eventType"].Value != "OverworldPOI")
                         {
@@ -1008,6 +1026,8 @@ namespace RemnantSaveGuardian
                         //eventStrings.Add(eventMatch.Value);
                         var worldEvent = new RemnantWorldEvent(eventMatch);//, currentArea.Groups["location"].Value.Trim());
                         worldEvent.TileSet = tileSets;
+                        if (!worldEvent.Locations.Contains(currentWorld))
+                            worldEvent.Locations.Add(currentWorld);
                         if (areaEvents.FindIndex(e => e.RawName == worldEvent.RawName) != -1)
                         {
                             continue;
@@ -1106,7 +1126,6 @@ namespace RemnantSaveGuardian
                     continue;
                 }
                 var ignoreSoloEventTypes = new List<string>() {
-                    "Injectable",
                     "OverworldPOI",
                     "Story"
                 };
@@ -1154,11 +1173,11 @@ namespace RemnantSaveGuardian
                     var lastRedThrone = areaEvents.FindLastIndex(e => e.Locations.Contains("The Red Throne"));
                     RemnantWorldEvent widowsCourt = new RemnantWorldEvent("RedDoeStatue", new List<string>() { currentWorld, "Widow's Court" }, "OverworldPOI");
                     widowsCourt.setMissingItems(character);
-                    areaEvents.Insert(lastRedThrone+1, widowsCourt);
+                    areaEvents.Insert(lastRedThrone + 1, widowsCourt);
 
                     var matriarch = new RemnantWorldEvent("Amulet_MatriarchsInsignia", new List<string>() { currentWorld, "Widow's Court" }, "Item");
                     matriarch.setMissingItems(character);
-                    areaEvents.Insert(lastRedThrone+2, matriarch);
+                    areaEvents.Insert(lastRedThrone + 2, matriarch);
                 }
                 //zoneEvents[currentWorld].AddRange(areaEvents);
                 foreach (var newEvent in areaEvents)
@@ -1323,7 +1342,7 @@ namespace RemnantSaveGuardian
                         firstZone = zone;
                     }
                     //Debug.WriteLine("Parse: " + textLine);
-                   
+
                     if (textLine.Contains("Ring") || textLine.Contains("Amulet"))
                     {
                         //eventName = textLine.Split('/')[4].Split('_')[3];
@@ -1519,9 +1538,9 @@ namespace RemnantSaveGuardian
 
             }
         }
-        static private Dictionary<ProcessMode,string> GetEventsFromSave(string saveText)
+        static private Dictionary<ProcessMode, string> GetEventsFromSave(string saveText)
         {
-            var events = new Dictionary<ProcessMode,string>();
+            var events = new Dictionary<ProcessMode, string>();
             var campaignStart = saveText.IndexOf("/Game/World_Base/Quests/Quest_Ward13/Quest_Ward13.Quest_Ward13_C");
             var campaignEnd = saveText.IndexOf("/Game/Campaign_Main/Quest_Campaign_Main.Quest_Campaign_Main_C");
             if (campaignStart == -1 || campaignEnd == -1)
@@ -1586,7 +1605,7 @@ namespace RemnantSaveGuardian
                     {
                         continue;
                     }
-                    var eventName = ev.Groups["eventName"].Value.Split("_").Last();
+                    var eventName = ev.Groups["eventName"].Value.Contains("DLC") ? ev.Groups["eventName"].Value : ev.Groups["eventName"].Value.Split("_").Last();
                     Match parentEvent;
                     if (GameInfo.InjectableParents.ContainsKey(eventName))
                     {
@@ -1603,7 +1622,7 @@ namespace RemnantSaveGuardian
                     if (ev.Groups["world"].Value != parentEvent.Groups["world"].Value || parentEvent.Groups["eventType"].Value == "Injectable")
                     {
                         parentEvent = null;
-                        for (var parentIndex = eventIndex +1; parentIndex < events.Count; parentIndex++)
+                        for (var parentIndex = eventIndex + 1; parentIndex < events.Count; parentIndex++)
                         {
                             if (events[parentIndex].Groups["world"].Value == ev.Groups["world"].Value && events[parentIndex].Groups["eventType"].Value != "Injectable")
                             {
@@ -1681,7 +1700,7 @@ namespace RemnantSaveGuardian
             ProcessEvents(character, savetext);
         }
 
-        private static void addEventToZones(Dictionary <string, List<RemnantWorldEvent>> zoneEvents, RemnantWorldEvent worldEvent)
+        private static void addEventToZones(Dictionary<string, List<RemnantWorldEvent>> zoneEvents, RemnantWorldEvent worldEvent)
         {
             var world = worldEvent.RawWorld;
             if (!zoneEvents.ContainsKey(world))
