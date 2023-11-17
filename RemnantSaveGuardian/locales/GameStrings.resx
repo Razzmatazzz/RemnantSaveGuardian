@@ -2007,5 +2007,118 @@
   <data name="Weapon_Sparkfire" xml:space="preserve">
     <value>Sparkfire Shotgun</value>
   </data> 
-
+  <data name="Material_OccultVessel" xml:space="preserve">
+    <value>Anguish</value>
+  </data> 
+  <data name="Ring_BurdenOfTheSciolist" xml:space="preserve">
+    <value>Burden Of The Sciolist</value>
+  </data> 
+  <data name="Ring_OfferingStone" xml:space="preserve">
+    <value>Offering Stone</value>
+  </data> 
+  <data name="Ring_RingOfTheVain" xml:space="preserve">
+    <value>Ring Of The Vain</value>
+  </data> 
+  <data name="Ring_PainlessObsidian" xml:space="preserve">
+    <value>Painless Obsidian</value>
+  </data> 
+  <data name="Ring_RedRingOfDeath" xml:space="preserve">
+    <value>Red Ring Of Death</value>
+  </data> 
+  <data name="Ring_BitterMemento" xml:space="preserve">
+    <value>Bitter Memento</value>
+  </data> 
+  <data name="Ring_DriedClayRing" xml:space="preserve">
+    <value>Dried Clay Ring</value>
+  </data> 
+  <data name="Ring_DigestedHogLure" xml:space="preserve">
+    <value>Digested Hog Lure</value>
+  </data> 
+  <data name="Ring_ShadowOfMisery" xml:space="preserve">
+    <value>Shadow Of Misery</value>
+  </data> 
+  <data name="Ring_BurdenOfTheDeparted" xml:space="preserve">
+    <value>Burden of the Departed</value>
+  </data> 
+  <data name="Ring_BandOfTheFanatic" xml:space="preserve">
+    <value>Band Of The Fanatic</value>
+  </data> 
+  <data name="Ring_BridgeWardensCrest" xml:space="preserve">
+    <value>Bridge Wardens Crest</value>
+  </data> 
+  <data name="Ring_WhiteGlassBead" xml:space="preserve">
+    <value>White Glass Bead</value>
+  </data> 
+  <data name="Amulet_DeathSoakedIdol" xml:space="preserve">
+    <value>Death Soaked Idol</value>
+  </data> 
+  <data name="Amulet_GiftOfTheUnbound" xml:space="preserve">
+    <value>Gift Of The Unbound</value>
+  </data> 
+  <data name="Amulet_IndexOfTheScribe" xml:space="preserve">
+    <value>{PLACEHOLDER VALUE}</value>
+  </data> 
+  <data name="Amulet_BirthrightOfTheLost" xml:space="preserve">
+    <value>Birthright Of The Lost</value>
+  </data> 
+  <data name="Amulet_WhisperingMarble" xml:space="preserve">
+    <value>Whispering Marble</value>
+  </data> 
+  <data name="Amulet_BrewmastersCork" xml:space="preserve">
+    <value>Brewmasters Cork</value>
+  </data> 
+  <data name="Amulet_ParticipationMedal" xml:space="preserve">
+    <value>Participation Medal</value>
+  </data> 
+  <data name="Amulet_LegacyProtocol" xml:space="preserve">
+    <value>Legacy Protocol</value>
+  </data> 
+  <data name="MetaGem_Guts" xml:space="preserve">
+    <value>Guts</value>
+  </data> 
+  <data name="MetaGem_Dreadful" xml:space="preserve">
+    <value>Dreadful</value>
+  </data> 
+  <data name="MetaGem_Maelstrom" xml:space="preserve">
+    <value>Maelstrom</value>
+  </data> 
+  <data name="MetaGem_Prophecy" xml:space="preserve">
+    <value>Prophecy</value>
+  </data> 
+  <data name="MetaGem_FetidWounds" xml:space="preserve">
+    <value>Fetid Wounds</value>
+  </data> 
+  <data name="MetaGem_TaintedBlade" xml:space="preserve">
+    <value>Tainted Blade</value>
+  </data> 
+  <data name="MetaGem_Sleeper" xml:space="preserve">
+    <value>Sleeper</value>
+  </data> 
+  <data name="Weapon_RitualistScythe" xml:space="preserve">
+    <value>Ritualist Scythe</value>
+  </data> 
+  <data name="Weapon_Wrathbringer" xml:space="preserve">
+    <value>Wrathbringer </value>
+  </data> 
+  <data name="Weapon_Scythe" xml:space="preserve">
+    <value>Steel Scythe</value>
+  </data> 
+  <data name="Weapon_Monarch" xml:space="preserve">
+    <value>Monarch</value>
+  </data> 
+  <data name="Mod_CreepingMist" xml:space="preserve">
+    <value>Creeping Mist</value>
+  </data> 
+  <data name="Mod_ChainOfCommand" xml:space="preserve">
+    <value>Chain Of Command</value>
+  </data> 
+  <data name="Relic_Consumable_PaperHeart" xml:space="preserve">
+    <value>Paper Heart</value>
+  </data> 
+  <data name="Relic_Consumable_BrokenHeart" xml:space="preserve">
+    <value>Broken Heart</value>
+  </data>
+  <data name="Trait_Affliction" xml:space="preserve">
+    <value>Affliction</value>
+  </data>  
 </root>

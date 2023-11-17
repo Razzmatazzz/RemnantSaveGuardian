@@ -578,7 +578,241 @@
           "name": "/Items/Weapons/Buster/Weapon_Sparkfire",
           "notes": ""
         }
-      ]
+      ],
+      "Material_OccultVessel": [
+        {
+            "name": "/Items/CraftingMaterial/World/OccultVessel/Material_OccultVessel",
+            "notes": ""
+        }
+      ],
+      "Ring_BurdenOfTheSciolist": [
+          {
+              "name": "/Items/Trinkets/Rings/BurdenOfTheSciolist/Ring_BurdenOfTheSciolist",
+              "notes": ""
+          }
+      ],
+      "Ring_OfferingStone": [
+          {
+              "name": "/Items/Trinkets/Rings/Offering_Stone/Ring_OfferingStone",
+              "notes": ""
+          }
+      ],
+      "Ring_RingOfTheVain": [
+          {
+              "name": "/Items/Trinkets/Rings/RingOfTheVain/Ring_RingOfTheVain",
+              "notes": ""
+          }
+      ],
+      "Ring_PainlessObsidian": [
+          {
+              "name": "/Items/Trinkets/Rings/PainlessObsidian/Ring_PainlessObsidian",
+              "notes": ""
+          }
+      ],
+      "Ring_RedRingOfDeath": [
+          {
+              "name": "/Items/Trinkets/Rings/RedRingofDeath/Ring_RedRingOfDeath",
+              "notes": ""
+          }
+      ],
+      "Ring_BitterMemento": [
+          {
+              "name": "/Items/Trinkets/Rings/BitterMemento/Ring_BitterMemento",
+              "notes": ""
+          }
+      ],
+      "Ring_DriedClayRing": [
+          {
+              "name": "/Items/Trinkets/Rings/DriedClayRing/Ring_DriedClayRing",
+              "notes": ""
+          }
+      ],
+      "Ring_DigestedHogLure": [
+          {
+              "name": "/Items/Trinkets/Rings/DigestedHogLure/Ring_DigestedHogLure",
+              "notes": ""
+          }
+      ],
+      "Ring_ShadowOfMisery": [
+          {
+              "name": "/Items/Trinkets/Rings/ShadowOfMisery/Ring_ShadowOfMisery",
+              "notes": ""
+          }
+      ],
+      "Ring_BurdenOfTheDeparted": [
+          {
+              "name": "/Items/Trinkets/Rings/BurdenOfTheDeparted/Ring_BurdenOfTheDeparted",
+              "notes": ""
+          }
+      ],
+      "Ring_BandOfTheFanatic": [
+          {
+              "name": "/Items/Trinkets/Rings/BandOfTheFanatic/Ring_BandOfTheFanatic",
+              "notes": ""
+          }
+      ],
+      "Ring_BridgeWardensCrest": [
+          {
+              "name": "/Items/Trinkets/Rings/BridgeWardensCrest/Ring_BridgeWardensCrest",
+              "notes": ""
+          }
+      ],
+      "Ring_WhiteGlassBead": [
+          {
+              "name": "/Items/Trinkets/Rings/WhiteGlassBead/Ring_WhiteGlassBead",
+              "notes": ""
+          }
+      ],
+      "Amulet_DeathSoakedIdol": [
+          {
+              "name": "/Items/Trinkets/Amulets/DeathSoakedIdol/Amulet_DeathSoakedIdol",
+              "notes": ""
+          }
+      ],
+      "Amulet_GiftOfTheUnbound": [
+          {
+              "name": "/Items/Trinkets/Amulets/GiftOfTheUnbound/Amulet_GiftOfTheUnbound",
+              "notes": ""
+          }
+      ],
+      "Amulet_IndexOfTheScribe": [
+          {
+              "name": "/Items/Trinkets/Amulets/IndexOfTheScribe/Amulet_IndexOfTheScribe",
+              "notes": ""
+          }
+      ],
+      "Amulet_BirthrightOfTheLost": [
+          {
+              "name": "/Items/Trinkets/Amulets/BirthrightOfTheLost/Amulet_BirthrightOfTheLost",
+              "notes": ""
+          }
+      ],
+      "Amulet_WhisperingMarble": [
+          {
+              "name": "/Items/Trinkets/Amulets/WhisperingMarble/Amulet_WhisperingMarble",
+              "notes": ""
+          }
+      ],
+      "Amulet_BrewmastersCork": [
+          {
+              "name": "/Items/Trinkets/Amulets/BrewmastersCork/Amulet_BrewmastersCork",
+              "notes": ""
+          }
+      ],
+      "Amulet_ParticipationMedal": [
+          {
+              "name": "/Items/Trinkets/Amulets/ParticipationMedal/Amulet_ParticipationMedal",
+              "notes": ""
+          }
+      ],
+      "Amulet_LegacyProtocol": [
+          {
+              "name": "/Items/Trinkets/Amulets/LegacyProtocol/Amulet_LegacyProtocol",
+              "notes": ""
+          }
+      ],
+      "MetaGem_Guts": [
+          {
+              "name": "/Items/Gems/Melee/Guts/MetaGem_Guts",
+              "notes": ""
+          }
+      ],
+      "MetaGem_Dreadful": [
+          {
+              "name": "/Items/Gems/Ranged/Dreadful/MetaGem_Dreadful",
+              "notes": ""
+          }
+      ],
+      "MetaGem_Maelstrom": [
+          {
+              "name": "/Items/Gems/Ranged/Maelstrom/MetaGem_Maelstrom",
+              "notes": ""
+          }
+      ],
+      "MetaGem_Prophecy": [
+          {
+              "name": "/Items/Gems/Ranged/Prophecy/MetaGem_Prophecy",
+              "notes": ""
+          }
+      ],
+      "MetaGem_FetidWounds": [
+          {
+              "name": "/Items/Gems/Ranged/FetidWounds/MetaGem_FetidWounds",
+              "notes": ""
+          }
+      ],
+      "MetaGem_TaintedBlade": [
+          {
+              "name": "/Items/Gems/Melee/TaintedBlade/MetaGem_TaintedBlade",
+              "notes": ""
+          }
+      ],
+      "MetaGem_Sleeper": [
+          {
+              "name": "/Items/Gems/Ranged/Sleeper/MetaGem_Sleeper",
+              "notes": ""
+          }
+      ],
+      "Weapon_RitualistScythe": [
+          {
+              "name": "/Items/Weapons/Melee/Scythe/Scythe_Ritualist/Weapon_RitualistScythe",
+              "notes": ""
+          }
+      ],
+      "Weapon_Wrathbringer": [
+          {
+              "name": "/Items/Weapons/Melee/Special/Wrathbringer/Weapon_Wrathbringer",
+              "notes": ""
+          }
+      ],
+      "Weapon_Scythe": [
+          {
+              "name": "/Items/Weapons/Melee/Scythe/Scythe/Weapon_Scythe",
+              "notes": ""
+          }
+      ],
+      "Weapon_Monarch": [
+          {
+              "name": "/Items/Weapons/Monarch/Blueprints/Weapon_Monarch",
+              "notes": ""
+          }
+      ],
+      "Mod_CreepingMist": [
+          {
+              "name": "/Items/Mods/Mod_CreepingMist/Mod_CreepingMist",
+              "notes": ""
+          }
+      ],
+      "Mod_ChainOfCommand": [
+          {
+              "name": "/Items/Weapons/Monarch/Mod_Monarch/Mod_ChainOfCommand",
+              "notes": ""
+          }
+      ],
+      "Relic_Consumable_PaperHeart": [
+          {
+              "name": "/Items/Relics/PaperHeart/Relic_Consumable_PaperHeart",
+              "notes": ""
+          }
+      ],
+      "Relic_Consumable_BrokenHeart": [
+          {
+              "name": "/Items/Relics/BrokenHeart/Relic_Consumable_BrokenHeart",
+              "notes": ""
+          }
+      ],
+      "Armor_Head_CrimsonGuard": [
+          {
+              "name": "/Items/Armor/RedPrinceArmor/Armor_Head_CrimsonGuard",
+              "notes": ""
+          }
+      ],
+      "Trait_Affliction": [
+          {
+              "name": "/Items/Traits/Affliction/Trait_Affliction",
+              "notes": ""
+          }
+      ]  
     },
     "Fae": {
       "Oink": [
