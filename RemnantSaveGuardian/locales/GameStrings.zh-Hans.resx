@@ -2598,6 +2598,42 @@
   <data name="MetaGem_TopHeavy" xml:space="preserve">
     <value>重装上阵</value>
   </data>
+  <data name="MetaGem_BottomFeeder_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_BottomHeavy_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_Edgelord_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_Ingenuity_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_KillSwitch_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_Latency_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_Opportunist_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_SequencedShot_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_Shocker_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_Stormbringer_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_TopHeavy_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_SpiritHealer_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
   <data name="Weapon_CorruptedAphelion" xml:space="preserve">
     <value>腐化远日点</value>
   </data>
