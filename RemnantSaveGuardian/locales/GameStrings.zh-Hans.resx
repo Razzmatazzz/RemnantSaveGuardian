@@ -2655,7 +2655,7 @@
   <data name="Weapon_AbyssalHook" xml:space="preserve">
     <value>深渊之钩</value>
   </data>
-  <data name="Material_Engram_Ritualist" xml:space="preserve">
+  <data name="Item_HiddenContainer_Material_Engram_Ritualist" xml:space="preserve">
     <value>祭祀者</value>
   </data>
   <data name="Ring_ElevatedRing" xml:space="preserve">
