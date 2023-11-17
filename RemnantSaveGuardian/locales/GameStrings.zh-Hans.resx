@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1417,7 +1417,7 @@
     <value>{Cass65_Notes}</value>
   </data>
   <data name="Ring_BrightSteelRing" xml:space="preserve">
-    <value>亮钢戒指</value>
+    <value>暗淡钢戒</value>
   </data>
   <data name="Ring_BrightSteelRing_Notes" xml:space="preserve">
     <value>完成至少15个世界故事后在老雷那里购买</value>
@@ -2555,5 +2555,41 @@
   </data>
   <data name="Relic_Consumable_ConstrainedHeart" xml:space="preserve">
     <value>约束之心</value>
+  </data>
+  <data name="Ring_WoodRing" xml:space="preserve">
+    <value>木质戒指</value>
+  </data>
+  <data name="World_DLC1" xml:space="preserve">
+    <value>真皇的苏醒DLC</value>
+  </data>
+  <data name="Weapon_AbyssalHook" xml:space="preserve">
+    <value>深渊之钩</value>
+  </data>
+  <data name="Material_Engram_Ritualist" xml:space="preserve">
+    <value>祭祀者</value>
+  </data>
+  <data name="Ring_ElevatedRing" xml:space="preserve">
+    <value>高升戒指</value>
+  </data>
+  <data name="Ring_CrimsonDreamstone" xml:space="preserve">
+    <value>绯红梦石</value>
+  </data>
+  <data name="Ring_RingOfTheCastaway" xml:space="preserve">
+    <value>Ring Of The Castaway</value>
+  </data>
+  <data name="Ring_LightHouseKeepersRing" xml:space="preserve">
+    <value>灯塔守卫的戒指</value>
+  </data>
+  <data name="Ring_AtonementFold" xml:space="preserve">
+    <value>赎罪皱襞</value>
+  </data>
+  <data name="Amulet_GiftOfMelancholy" xml:space="preserve">
+      <value>忧郁的礼物</value>
+  </data>
+  <data name="Amulet_GiftOfEuphoria" xml:space="preserve">
+      <value>极乐的礼物</value>
+  </data>
+  <data name="Weapon_Sparkfire" xml:space="preserve">
+      <value>星火霰弹枪</value>
   </data>
 </root>
