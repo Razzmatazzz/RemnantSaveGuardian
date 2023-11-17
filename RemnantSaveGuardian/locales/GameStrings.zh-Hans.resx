@@ -817,25 +817,25 @@
     <value>炼金术师(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Archon" xml:space="preserve">
-    <value>执政官</value>
+    <value>执政官(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Challenger" xml:space="preserve">
-    <value>挑战者</value>
+    <value>挑战者(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Challenger_Notes" xml:space="preserve">
     <value>从老雷那里购买旧金属工具</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Engineer" xml:space="preserve">
-    <value>工程师</value>
+    <value>工程师(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Gunslinger" xml:space="preserve">
-    <value>枪手</value>
+    <value>枪手(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Gunslinger_Notes" xml:space="preserve">
     <value>{Amulet_GunslingersCharm_Notes}</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Handler" xml:space="preserve">
-    <value>驯兽师</value>
+    <value>驯兽师(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Handler_Notes" xml:space="preserve">
     <value>从泥牙那里购买古老哨子</value>
@@ -2656,7 +2656,7 @@
     <value>深渊之钩</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Ritualist" xml:space="preserve">
-    <value>祭祀者</value>
+    <value>祭祀者(心痕)</value>
   </data>
   <data name="Ring_ElevatedRing" xml:space="preserve">
     <value>高升戒指</value>
