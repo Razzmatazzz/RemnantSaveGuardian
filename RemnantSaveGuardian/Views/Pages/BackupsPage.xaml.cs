@@ -442,13 +442,9 @@ namespace RemnantSaveGuardian.Views.Pages
                         }
                     }
                 }
-                foreach (string file in Directory.GetFiles(Properties.Settings.Default.SaveFolder))
+                foreach (string file in Directory.GetFiles(Properties.Settings.Default.SaveFolder, "*.sav"))
                 {
-                    if (Regex.Match(file, @"^(profile|save_\d+)\.sav$").Success)
-                    {
-                        continue;
-                    }
-                    File.Copy(file, $@"{backupFolder}\{System.IO.Path.GetFileName(file)}", true);
+                    File.Copy(file, $@"{backupFolder}\{Path.GetFileName(file)}", true);
                 }
                 if (RemnantSave.ValidSaveFolder(backupFolder))
                 {
