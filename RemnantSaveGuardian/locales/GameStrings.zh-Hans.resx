@@ -2682,4 +2682,43 @@
   <data name="Weapon_Sparkfire" xml:space="preserve">
       <value>星火霰弹枪</value>
   </data>
+  <data name="Derelict Lighthouse" xml:space="preserve">
+    <value>秘密灯塔</value>
+  </data>
+  <data name="Drowned Wen" xml:space="preserve">
+    <value>淹没之城</value>
+  </data>
+  <data name="Forlorn Coast" xml:space="preserve">
+    <value>凄凉海岸</value>
+  </data>
+  <data name="Glistering Cloister" xml:space="preserve">
+    <value>闪光回廊</value>
+  </data>
+  <data name="Mournful Promenade" xml:space="preserve">
+    <value>哀悼长廊</value>
+  </data>
+  <data name="Pathway of the Fallen" xml:space="preserve">
+    <value>堕落之路</value>
+  </data>
+  <data name="Palace of the One True King" xml:space="preserve">
+    <value>独一真皇的宫殿</value>
+  </data>
+  <data name="Sunken Haunt" xml:space="preserve">
+    <value>失落之地</value>
+  </data>
+  <data name="The Forgotten Commune" xml:space="preserve">
+    <value>被遗忘的公社</value>
+  </data>
+  <data name="Walk of Remembrance" xml:space="preserve">
+    <value>纪念之行</value>
+  </data>
+  <data name="Ethereal Manor" xml:space="preserve">
+    <value>飘渺庄园</value>
+  </data>
+  <data name="Consecrated Throne" xml:space="preserve">
+    <value>祝圣王座</value>
+  </data>
+  <data name="Forgotten Null" xml:space="preserve">
+    <value>忘却之无</value>
+  </data>
 </root>
