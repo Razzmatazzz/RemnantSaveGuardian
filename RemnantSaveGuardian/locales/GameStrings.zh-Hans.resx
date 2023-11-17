@@ -507,6 +507,12 @@
   <data name="Armor_Void" xml:space="preserve">
     <value>虚空</value>
   </data>
+  <data name="Armor_Head_LodestoneCrown_Notes" xml:space="preserve">
+    <value>在科尔凯特上锁房间的船上</value>
+  </data>
+  <data name="Ring_WoodRing_Notes" xml:space="preserve">
+    <value>洛斯曼随机掉落</value>
+  </data>
   <data name="Ascension Spire" xml:space="preserve">
     <value>升天尖塔</value>
   </data>
