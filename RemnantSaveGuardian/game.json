@@ -1844,6 +1844,21 @@
         },
         {
           "name": "/Items/Gems/Melee/MetaGems/WeaponLord/MetaGem_WeaponLord"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Special/CorruptedAphelion/Weapon_CorruptedAphelion"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Special/CorruptedDeceit/Weapon_CorruptedDeceit"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Special/CorruptedMerciless/Weapon_CorruptedMerciless"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Special/CorruptedMeridian/Weapon_CorruptedMeridian"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Special/CorruptedRunePistol/Weapon_CorruptedRunePistol"
         }
       ],
       "Labyrinth": [
@@ -2040,6 +2055,54 @@
         {
           "name": "/Items/Weapons/Melee/Special/WorldsEdge/Weapon_WorldsEdge",
           "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Apocalypse difficulty."
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/BottomFeeder/MetaGem_BottomFeeder",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/BottomHeavy/MetaGem_BottomHeavy",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Edgelord/MetaGem_Edgelord",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Ingenuity/MetaGem_Ingenuity",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/KillSwitch/MetaGem_KillSwitch",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Latency/MetaGem_Latency",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Opportunist/MetaGem_Opportunist.",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/SequencedShot/MetaGem_SequencedShot",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Shocker/MetaGem_Shocker",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Stormbringer/MetaGem_Stormbringer",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/TopHeavy/MetaGem_TopHeavy",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/SpiritHealer/MetaGem_SpiritHealer",
+          "notes": "Random drop by aberrations"
         }
       ]
     }
