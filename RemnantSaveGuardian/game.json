@@ -801,12 +801,6 @@
               "notes": ""
           }
       ],
-      "Armor_Head_CrimsonGuard": [
-          {
-              "name": "/Items/Armor/RedPrinceArmor/Armor_Head_CrimsonGuard",
-              "notes": ""
-          }
-      ],
       "Trait_Affliction": [
           {
               "name": "/Items/Traits/Affliction/Trait_Affliction",

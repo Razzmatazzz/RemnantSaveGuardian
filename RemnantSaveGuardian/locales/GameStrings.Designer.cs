@@ -5876,7 +5876,7 @@ namespace RemnantSaveGuardian.locales {
         }
     
         /// <summary>
-        ///   Looks up a localized string similar to <<PLACEHOLDER VALUE>>.
+        ///   Looks up a localized string similar to Index Of The Scribe.
         /// </summary>
         public static string Amulet_IndexOfTheScribe {
             get {
