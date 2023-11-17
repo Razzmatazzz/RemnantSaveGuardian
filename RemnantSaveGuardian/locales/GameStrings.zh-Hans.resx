@@ -2556,6 +2556,57 @@
   <data name="Relic_Consumable_ConstrainedHeart" xml:space="preserve">
     <value>约束之心</value>
   </data>
+  <data name="MetaGem_BottomFeeder" xml:space="preserve">
+    <value>底栖摄食者</value>
+  </data>
+  <data name="MetaGem_BottomHeavy" xml:space="preserve">
+    <value>轻装上阵</value>
+  </data>
+  <data name="MetaGem_Edgelord" xml:space="preserve">
+    <value>边缘行走</value>
+  </data>
+  <data name="MetaGem_Ingenuity" xml:space="preserve">
+    <value>独创精神</value>
+  </data>
+  <data name="MetaGem_KillSwitch" xml:space="preserve">
+    <value>杀戮开关</value>
+  </data>
+  <data name="MetaGem_Latency" xml:space="preserve">
+    <value>延迟</value>
+  </data>
+  <data name="MetaGem_Opportunist" xml:space="preserve">
+    <value>投机者</value>
+  </data>
+  <data name="MetaGem_SequencedShot" xml:space="preserve">
+    <value>鬼魅甲壳</value>
+  </data>
+  <data name="MetaGem_Shocker" xml:space="preserve">
+    <value>震颤者</value>
+  </data>
+  <data name="MetaGem_SpiritHealer" xml:space="preserve">
+    <value>灵魂医者</value>
+  </data>
+  <data name="MetaGem_Stormbringer" xml:space="preserve">
+    <value>风暴使者</value>
+  </data>
+  <data name="MetaGem_TopHeavy" xml:space="preserve">
+    <value>重装上阵</value>
+  </data>
+  <data name="Weapon_CorruptedAphelion" xml:space="preserve">
+    <value>腐化远日点</value>
+  </data>
+  <data name="Weapon_CorruptedDeceit" xml:space="preserve">
+    <value>腐化诡诈</value>
+  </data>
+  <data name="Weapon_CorruptedMerciless" xml:space="preserve">
+    <value>腐化无情</value>
+  </data>
+  <data name="Weapon_CorruptedMeridian" xml:space="preserve">
+    <value>腐化巅峰</value>
+  </data>
+  <data name="Weapon_CorruptedRunePistol" xml:space="preserve">
+    <value>腐化符文手枪</value>
+  </data>
   <data name="Ring_WoodRing" xml:space="preserve">
     <value>木质戒指</value>
   </data>
