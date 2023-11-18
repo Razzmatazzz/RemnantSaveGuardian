@@ -2721,6 +2721,15 @@
   <data name="Ring_WhiteGlassBead" xml:space="preserve">
     <value>白色玻璃珠</value>
   </data>
+  <data name="Ring_PowerComplex" xml:space="preserve">
+    <value>能量园区</value>
+  </data>
+  <data name="Ring_LegacyProtocol" xml:space="preserve">
+    <value>旧日协议</value>
+  </data>
+  <data name="Ring_ATaeriiBooster" xml:space="preserve">
+    <value>阿泰里助推</value>
+  </data>
   <data name="Amulet_DeathSoakedIdol" xml:space="preserve">
     <value>浸透死亡的神像</value>
   </data>
