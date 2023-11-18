@@ -2730,6 +2730,15 @@
   <data name="Ring_ATaeriiBooster" xml:space="preserve">
     <value>阿泰里助推</value>
   </data>
+  <data name="Ring_BrawlersPride" xml:space="preserve">
+    <value>格斗家的骄傲</value>
+  </data>
+  <data name="Amulet_SinisterTotem" xml:space="preserve">
+    <value>罪恶图腾</value>
+  </data>
+  <data name="Ring_SoulShard" xml:space="preserve">
+    <value>灵魂碎片</value>
+  </data>
   <data name="Amulet_DeathSoakedIdol" xml:space="preserve">
     <value>浸透死亡的神像</value>
   </data>
@@ -2801,9 +2810,6 @@
   </data>
   <data name="Amulet_CostOfBetrayal" xml:space="preserve">
     <value>背叛的代价</value>
-  </data>
-  <data name="Amulet_SinisterTotem" xml:space="preserve">
-    <value>Sinister Totem</value>
   </data>
   <data name="Armor_RedPrinceArmor" xml:space="preserve">
     <value>绯红守卫套装</value>
