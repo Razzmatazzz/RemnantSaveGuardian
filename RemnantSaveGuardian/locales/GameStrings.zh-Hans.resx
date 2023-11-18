@@ -2859,4 +2859,16 @@
   <data name="Witch" xml:space="preserve">
     <value>失落女巫</value>
   </data>
+  <data name="GardenMaze" xml:space="preserve">
+    <value>The Maze</value>
+  </data>
+  <data name="Halls_DLC" xml:space="preserve">
+    <value>Mirror Floor</value>
+  </data>
+  <data name="Sewer_DLC" xml:space="preserve">
+    <value>Sewer Hole</value>
+  </data>
+  <data name="Quest_Item_DLC_DreamLevel" xml:space="preserve">
+    <value>Enter the Dream</value>
+  </data>
 </root>
