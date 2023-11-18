@@ -2796,6 +2796,18 @@
   <data name="Trait_Affliction" xml:space="preserve">
     <value>折磨</value>
   </data>
+  <data name="Amulet_CostOfBetrayal" xml:space="preserve">
+    <value>背叛的代价</value>
+  </data>
+  <data name="Amulet_SinisterTotem" xml:space="preserve">
+    <value>Sinister Totem</value>
+  </data>
+  <data name="Armor_RedPrinceArmor" xml:space="preserve">
+    <value>绯红守卫套装</value>
+  </data>
+  <data name="Armor_Ritualist" xml:space="preserve">
+    <value>狂热者套装</value>
+  </data>
   <data name="Derelict Lighthouse" xml:space="preserve">
     <value>秘密灯塔</value>
   </data>
