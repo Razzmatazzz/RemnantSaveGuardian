@@ -2808,13 +2808,13 @@
   <data name="Armor_Ritualist" xml:space="preserve">
     <value>狂热者套装</value>
   </data>
-  <data name="Derelict Lighthouse" xml:space="preserve">
+  <data name="Lighthouse" xml:space="preserve">
     <value>秘密灯塔</value>
   </data>
   <data name="Drowned Wen" xml:space="preserve">
     <value>淹没之城</value>
   </data>
-  <data name="Forlorn Coast" xml:space="preserve">
+  <data name="Quest_Story_OTK" xml:space="preserve">
     <value>凄凉海岸</value>
   </data>
   <data name="Glistering Cloister" xml:space="preserve">
@@ -2838,7 +2838,7 @@
   <data name="Walk of Remembrance" xml:space="preserve">
     <value>纪念之行</value>
   </data>
-  <data name="Ethereal Manor" xml:space="preserve">
+  <data name="BurningCity_DLC" xml:space="preserve">
     <value>飘渺庄园</value>
   </data>
   <data name="Consecrated Throne" xml:space="preserve">
