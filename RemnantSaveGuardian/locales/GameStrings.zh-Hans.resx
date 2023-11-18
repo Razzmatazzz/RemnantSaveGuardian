@@ -2646,9 +2646,6 @@
   <data name="Ring_WoodRing" xml:space="preserve">
     <value>木质戒指</value>
   </data>
-  <data name="Ring_WoodRing_Notes" xml:space="preserve">
-    <value>洛斯曼随机掉落</value>
-  </data>
   <data name="World_DLC1" xml:space="preserve">
     <value>真皇的苏醒DLC</value>
   </data>
