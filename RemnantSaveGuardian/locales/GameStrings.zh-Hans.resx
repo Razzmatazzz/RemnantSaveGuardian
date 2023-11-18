@@ -564,23 +564,14 @@
   <data name="Brabus" xml:space="preserve">
     <value>布拉巴斯</value>
   </data>
-  <data name="Briella's Garden" xml:space="preserve">
-    <value>布瑞拉的花园</value>
-  </data>
   <data name="Briella's Reverie" xml:space="preserve">
     <value>布瑞拉的梦</value>
-  </data>
-  <data name="Briella's Garden" xml:space="preserve">
-    <value>布瑞拉的花园</value>
   </data>
   <data name="BrokenTomb" xml:space="preserve">
     <value>旷野潜行者/枝节弓箭手</value>
   </data>
   <data name="BurningCity" xml:space="preserve">
     <value>燃烧的城市</value>
-  </data>
-  <data name="Butcher's Quarter" xml:space="preserve">
-    <value>屠夫区</value>
   </data>
   <data name="Cass" xml:space="preserve">
     <value>卡莎</value>
@@ -732,17 +723,8 @@
   <data name="Foesaken Quarter" xml:space="preserve">
     <value>废弃区</value>
   </data>
-  <data name="Forgotten Field" xml:space="preserve">
-    <value>忘却之地</value>
-  </data>
-  <data name="Forgotten Prison" xml:space="preserve">
-    <value>遗忘监牢</value>
-  </data>
   <data name="Gems" xml:space="preserve">
     <value>突变因子</value>
-  </data>
-  <data name="Gilded Chambers" xml:space="preserve">
-    <value>鎏金大厅</value>
   </data>
   <data name="GoldenHall" xml:space="preserve">
     <value>黄金殿堂</value>
@@ -758,9 +740,6 @@
   </data>
   <data name="Hardcore" xml:space="preserve">
     <value>硬核</value>
-  </data>
-  <data name="Harvester's Reach" xml:space="preserve">
-    <value>收获者领域</value>
   </data>
   <data name="Hatchery" xml:space="preserve">
     <value>始祖</value>
@@ -1188,9 +1167,6 @@
   <data name="Point of Interest" xml:space="preserve">
     <value>兴趣点</value>
   </data>
-  <data name="Postulant's Parlor" xml:space="preserve">
-    <value>发愿者的客厅</value>
-  </data>
   <data name="Quests" xml:space="preserve">
     <value>任务</value>
   </data>
@@ -1214,9 +1190,6 @@
   </data>
   <data name="Ravager" xml:space="preserve">
     <value>劫掠者</value>
-  </data>
-  <data name="Ravager's Lair" xml:space="preserve">
-    <value>劫掠者的巢穴</value>
   </data>
   <data name="RavagersLair" xml:space="preserve">
     <value>劫掠者的巢穴</value>
@@ -1881,9 +1854,6 @@
   <data name="Seeker's Rest" xml:space="preserve">
     <value>追寻者的休憩</value>
   </data>
-  <data name="Sentinel's Keep" xml:space="preserve">
-    <value>哨兵要塞</value>
-  </data>
   <data name="SewageFacility" xml:space="preserve">
     <value>被淹没的房间</value>
   </data>
@@ -1926,9 +1896,6 @@
   <data name="TalRatha" xml:space="preserve">
     <value>达拉裟</value>
   </data>
-  <data name="Terminus Station" xml:space="preserve">
-    <value>终点站</value>
-  </data>
   <data name="The Chimney" xml:space="preserve">
     <value>烟囱</value>
   </data>
@@ -1950,47 +1917,11 @@
   <data name="The Forbidden Grove" xml:space="preserve">
     <value>禁林</value>
   </data>
-  <data name="The Great Bole" xml:space="preserve">
-    <value>巨树</value>
-  </data>
-  <data name="The Great Hall" xml:space="preserve">
-    <value>大厅</value>
-  </data>
-  <data name="The Great Sewers" xml:space="preserve">
-    <value>巨型下水道</value>
-  </data>
-  <data name="The Hatchery" xml:space="preserve">
-    <value>孵化体</value>
-  </data>
-  <data name="The Lament" xml:space="preserve">
-    <value>挽歌</value>
-  </data>
   <data name="TheLament" xml:space="preserve">
     <value>挽歌</value>
   </data>
   <data name="The Lost Temple" xml:space="preserve">
     <value>失落神庙</value>
-  </data>
-  <data name="The Nameless Nest" xml:space="preserve">
-    <value>无名巢穴</value>
-  </data>
-  <data name="The Putrid Domain" xml:space="preserve">
-    <value>腐烂领域</value>
-  </data>
-  <data name="The Tormented Asylum" xml:space="preserve">
-    <value>苦痛精神病院</value>
-  </data>
-  <data name="The Twisted Chantry" xml:space="preserve">
-    <value>扭曲教堂</value>
-  </data>
-  <data name="The Widow's Court" xml:space="preserve">
-    <value>红寡妇王庭</value>
-  </data>
-  <data name="The Withering Weald" xml:space="preserve">
-    <value>枯萎原野</value>
-  </data>
-  <data name="Astropath's Respite" xml:space="preserve">
-    <value>星语者的喘息</value>
   </data>
   <data name="TheChimney" xml:space="preserve">
     <value>烟囱</value>
@@ -2004,50 +1935,17 @@
   <data name="TheCustodian" xml:space="preserve">
     <value>保管人</value>
   </data>
-  <data name="The Dappled Glade" xml:space="preserve">
-    <value>斑驳林地</value>
-  </data>
   <data name="TheDreamlessSleep" xml:space="preserve">
     <value>静滞舱</value>
-  </data>
-  <data name="The Expanding Glade" xml:space="preserve">
-    <value>扩张的林地</value>
   </data>
   <data name="TheFarWoods" xml:space="preserve">
     <value>遥远森林</value>
   </data>
-  <data name="The Great Bole" xml:space="preserve">
-    <value>巨树</value>
-  </data>
-  <data name="The Great Hall" xml:space="preserve">
-    <value>大厅</value>
-  </data>
-  <data name="The Great Sewers" xml:space="preserve">
-    <value>巨型下水道</value>
-  </data>
-  <data name="The Hatchery" xml:space="preserve">
-    <value>孵化体</value>
-  </data>
   <data name="TheHunter" xml:space="preserve">
     <value>女猎人</value>
   </data>
-  <data name="The Lament" xml:space="preserve">
-    <value>挽歌</value>
-  </data>
-  <data name="The Nameless Nest" xml:space="preserve">
-    <value>无名巢穴</value>
-  </data>
   <data name="TheNest" xml:space="preserve">
     <value>巢穴</value>
-  </data>
-  <data name="The Phantom Wasteland" xml:space="preserve">
-    <value>幽影荒原</value>
-  </data>
-  <data name="The Putrid Domain" xml:space="preserve">
-    <value>腐烂领域</value>
-  </data>
-  <data name="The Red Throne" xml:space="preserve">
-    <value>红王座</value>
   </data>
   <data name="TheSafe" xml:space="preserve">
     <value>保险箱</value>
@@ -2055,17 +1953,8 @@
   <data name="TheTangle" xml:space="preserve">
     <value>{ImperialGardens}</value>
   </data>
-  <data name="The Twisted Chantry" xml:space="preserve">
-    <value>扭曲教堂</value>
-  </data>
   <data name="ThreeMenMorris" xml:space="preserve">
     <value>发愿者</value>
-  </data>
-  <data name="Threshold Of The Unknown" xml:space="preserve">
-    <value>未知的启示</value>
-  </data>
-  <data name="Tiller's Rest" xml:space="preserve">
-    <value>耕作者之息</value>
   </data>
   <data name="Timeless Horizon" xml:space="preserve">
     <value>永恒地平线</value>
@@ -2481,9 +2370,6 @@
   <data name="WidowsCourt" xml:space="preserve">
     <value>红寡妇王庭</value>
   </data>
-  <data name="Widow's Court" xml:space="preserve">
-    <value>红寡妇王庭</value>
-  </data>
   <data name="WindHollow" xml:space="preserve">
     <value>风笛塔</value>
   </data>
@@ -2555,5 +2441,71 @@
   </data>
   <data name="Relic_Consumable_ConstrainedHeart" xml:space="preserve">
     <value>约束之心</value>
+  </data>
+  <data name="PostulantsParlor" xml:space="preserve">
+    <value>发愿者的客厅</value>
+  </data>
+  <data name="SentinelsKeep" xml:space="preserve">
+    <value>哨兵要塞</value>
+  </data>
+  <data name="TillersRest" xml:space="preserve">
+    <value>耕作者之息</value>
+  </data>
+  <data name="ThresholdOfTheUnknown" xml:space="preserve">
+    <value>未知的启示</value>
+  </data>
+  <data name="TheTwistedChantry" xml:space="preserve">
+    <value>扭曲教堂</value>
+  </data>
+  <data name="ThePutridDomain" xml:space="preserve">
+    <value>腐烂领域</value>
+  </data>
+  <data name="TheRedThrone" xml:space="preserve">
+    <value>红王座</value>
+  </data>
+  <data name="ThePhantomWasteland" xml:space="preserve">
+    <value>幽影荒原</value>
+  </data>
+  <data name="TheNamelessNest" xml:space="preserve">
+    <value>无名巢穴</value>
+  </data>
+  <data name="TheHatchery" xml:space="preserve">
+    <value>孵化体</value>
+  </data>
+  <data name="TheGreatSewers" xml:space="preserve">
+    <value>巨型下水道</value>
+  </data>
+  <data name="TheGreatHall" xml:space="preserve">
+    <value>大厅</value>
+  </data>
+  <data name="TheGreatBole" xml:space="preserve">
+    <value>巨树</value>
+  </data>
+  <data name="TheExpandingGlade" xml:space="preserve">
+    <value>扩张的林地</value>
+  </data>
+  <data name="TheDappledGlade" xml:space="preserve">
+    <value>斑驳林地</value>
+  </data>
+  <data name="TerminusStation" xml:space="preserve">
+    <value>终点站</value>
+  </data>
+  <data name="BriellasGarden" xml:space="preserve">
+    <value>布瑞拉的花园</value>
+  </data>
+  <data name="HarvestersReach" xml:space="preserve">
+    <value>收获者领域</value>
+  </data>
+  <data name="ForgottenPrison" xml:space="preserve">
+    <value>遗忘监牢</value>
+  </data>
+  <data name="ForgottenField" xml:space="preserve">
+    <value>忘却之地</value>
+  </data>
+  <data name="GildedChambers" xml:space="preserve">
+    <value>鎏金大厅</value>
+  </data>
+  <data name="ButchersQuarter" xml:space="preserve">
+    <value>屠夫区</value>
   </data>
 </root>

@@ -7,7 +7,9 @@
     "Quest_Story_Empress_Zone01_Template01",
     "Quest_Story_Empress_Zone02_Template01",
     "Quest_Story_IAmLegend_Zone1_Template",
-    "Quest_Story_IAmLegend_Zone2_Template"
+    "Quest_Story_IAmLegend_Zone2_Template",
+    "Quest_Story_OTK_Castle",
+    "Quest_Story_OTK"
   ],
   "subLocations": {
     "Jungle": {
@@ -64,6 +66,14 @@
       "TalRatha": "Forgotten Prison",
       "Phantom": "Astropath's Respite",
       "StasisSiege": "Vault Of The Formless"
+    },
+    "DLC1": {
+      "GardenMaze": "Pathway of the Fallen",
+      "Lighthouse": "Derelict Lighthouse",
+      "SewerChamber": "The Forgotten Commune",
+      "Impaler": "Glistering Cloister",
+      "Witch": "Sunken Haunt",
+      "OneTrueKing": "Palace of the One True King"
     }
   },
   "injectableParents": {
@@ -446,7 +456,7 @@
         {
           "name": "/Items/Armor/Armor_Head_LodestoneCrown",
           "notes": "On the boat inside Kolkets locked room",
-          "armorSet":  false
+          "armorSet": false
         },
         {
           "name": "/Items/Trinkets/Rings/BloodTingedRing/Ring_BloodTingedRing"
@@ -889,7 +899,7 @@
         {
           "name": "/Items/Armor/Misc/Armor_Head_RedPrince",
           "notes": "kill with Assassins Dagger",
-          "armorSet":  false
+          "armorSet": false
         }
       ],
       "NightWeaver": [
@@ -898,6 +908,10 @@
         },
         {
           "name": "/Items/Weapons/Melee/Special/Nightshade/Weapon_Nightshade"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BitterMemento/Ring_BitterMemento",
+          "notes": "Offer Memoriam Medallion Key to Nightweaver's Web."
         }
       ],
       "FaelinFaerlin": [
@@ -1286,7 +1300,7 @@
       "OilField": [
         {
           "name": "/Items/Armor/Nerud_Pilot/Armor_Head_PilotsHelm",
-          "armorSet":  false
+          "armorSet": false
         },
         {
           "name": "/Items/Trinkets/Amulets/DetonationTrigger/Amulet_DetonationTrigger"
@@ -1384,6 +1398,306 @@
         },
         {
           "name": "/Items/Armor/Archetype/Engineer/Armor_Gloves_Engineer"
+        }
+      ]
+    },
+    "DLC1": {
+      "Dranception": [
+        {
+          "name": "/Items/Weapons/Anguish/Weapon_Anguish",
+          "notes": "enter the FinalDream"
+        }
+      ],
+      "Amulet_BrewmastersCork": [
+        {
+          "name": "/Items/Trinkets/Amulets/BrewmastersCork/Amulet_BrewmastersCork"
+        }
+      ],
+      "Amulet_BirthrightOfTheLost": [
+        {
+          "name": "/Items/Trinkets/Amulets/BirthrightOfTheLost/Amulet_BirthrightOfTheLost"
+        }
+      ],
+      "Amulet_LegacyProtocol": [
+        {
+          "name": "/Items/Trinkets/Amulets/LegacyProtocol/Amulet_LegacyProtocol"
+        }
+      ],
+      "Amulet_SinisterTotem": [
+        {
+          "name": "/Items/Trinkets/Amulets/SinisterTotem/Amulet_SinisterTotem"
+        }
+      ],
+      "Amulet_WhisperingMarble": [
+        {
+          "name": "/Items/Trinkets/Amulets/WhisperingMarble/Amulet_WhisperingMarble"
+        }
+      ],
+      "Ring_ATaeriiBooster": [
+        {
+          "name": "/Items/Trinkets/Rings/AtaeriiBooster/Ring_ATaeriiBooster"
+        }
+      ],
+      "Ring_BrawlersPride": [
+        {
+          "name": "/Items/Trinkets/Rings/BrawlersPride/Ring_BrawlersPride"
+        }
+      ],
+      "Ring_DriedClayRing": [
+        {
+          "name": "/Items/Trinkets/Rings/DriedClayRing/Ring_DriedClayRing"
+        }
+      ],
+      "Ring_OfferingStone": [
+        {
+          "name": "/Items/Trinkets/Rings/Offering_Stone/Ring_OfferingStone"
+        }
+      ],
+      "Ring_PainlessObsidian": [
+        {
+          "name": "/Items/Trinkets/Rings/PainlessObsidian/Ring_PainlessObsidian"
+        }
+      ],
+      "Ring_PowerComplex": [
+        {
+          "name": "/Items/Trinkets/Rings/PowerComplex/Ring_PowerComplex"
+        }
+      ],
+      "Ring_RedRingOfDeath": [
+        {
+          "name": "/Items/Trinkets/Rings/RedRingofDeath/Ring_RedRingOfDeath"
+        }
+      ],
+      "Ring_RingOfTheVain": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfTheVain/Ring_RingOfTheVain"
+        }
+      ],
+      "Ring_RingOfTheCastaway": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfTheCastaway/Ring_RingOfTheCastaway"
+        }
+      ],
+      "Ring_ShadowOfMisery": [
+        {
+          "name": "/Items/Trinkets/Rings/ShadowOfMisery/Ring_ShadowOfMisery"
+        }
+      ],
+      "Ring_SoulShard": [
+        {
+          "name": "/Items/Trinkets/Rings/SoulShard/Ring_SoulShard"
+        }
+      ],
+      "Ring_WoodRing": [
+        {
+          "name": "/Items/Trinkets/Rings/WoodRing/Ring_WoodRing"
+        }
+      ],
+      "BurningCity": [
+        {
+          "name": "/Quests/Quest_Event_Dranception/Items/Quest_Item_DLC_DreamLevel",
+          "ignore": false,
+          "notes": "Liquid escape in the Manor, then Escape the dream through the crystal"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/CrimsonDreamstone/Ring_CrimsonDreamstone",
+          "notes": "Use liquid escape in the manor"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/DeathSoakedIdol/Amulet_DeathSoakedIdol"
+        }
+      ],
+      "Halls": [
+        {
+          "name": "/Items/Trinkets/Rings/ShaedStone/Ring_ShaedStone",
+          "notes": "Shoot the invisible golden pot in the reflection you see on the floor at the entrance to the room"
+        }
+      ],
+      "Sewer": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfTheCastaway/Ring_RingOfTheCastaway"
+        }
+      ],
+      "Impaler": [
+        {
+          "name": "/Items/Mods/Mod_RingOfSpears/Mod_RingOfSpears"
+        }
+      ],
+      "Witch": [
+        {
+          "name": "/Items/Mods/Mod_CreepingMist/Mod_CreepingMist"
+        }
+      ],
+      "GardenMaze": [
+        {
+          "name": "/Items/Trinkets/Amulets/GiftOfMelancholy/Amulet_GiftOfMelancholy",
+          "notes": "Medallion Shaed Reward"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/GiftOfEuphoria/Amulet_GiftOfEuphoria",
+          "notes": "Medallion Gold Reward"
+        },
+        {
+          "name": "/Items/Mods/Mod_KnightGuard/Mod_KnightGuard",
+          "notes": "Wear the Red Prince crown in the room on Gold Hall"
+        },
+        {
+          "name": "/Items/Gems/Ranged/Prophecy/MetaGem_Prophecy"
+        }
+
+      ],
+      "Lighthouse": [
+        {
+          "name": "/Items/Weapons/Buster/Weapon_Sparkfire",
+          "notes": "outside the lighthouse down the path, around a rock face is a secret door, flip the key to open the door"
+        },
+        {
+          "name": "/Items/Gems/Ranged/Sleeper/MetaGem_Sleeper"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/LightHouseKeepersRing/Ring_LightHouseKeepersRing"
+        }
+      ],
+      "SewerChamber": [
+        {
+          "name": "/Items/Weapons/Melee/Scythe/Scythe_Ritualist/Weapon_RitualistScythe"
+        },
+        {
+          "name": "/Items/Gems/Melee/Guts/MetaGem_Guts",
+          "notes": "return to dran woman after destroying both totems"
+        }
+      ],
+      "ForlornCoast": [
+        {
+          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Head_Ritualist",
+          "notes": "Shoot hanging body under the bridge before nimue"
+        },
+        {
+          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Body_Ritualist",
+          "notes": "Shoot hanging body under the bridge before nimue"
+        },
+        {
+          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Legs_Ritualist",
+          "notes": "Shoot hanging body under the bridge before nimue"
+        },
+        {
+          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Gloves_Ritualist",
+          "notes": "Shoot hanging body under the bridge before nimue"
+        }
+      ],
+      "OneTrueKingStory": [
+        {
+          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Head_Ritualist",
+          "notes": "Shoot hanging body under the bridge before nimue"
+        },
+        {
+          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Body_Ritualist",
+          "notes": "Shoot hanging body under the bridge before nimue"
+        },
+        {
+          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Legs_Ritualist",
+          "notes": "Shoot hanging body under the bridge before nimue"
+        },
+        {
+          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Gloves_Ritualist",
+          "notes": "Shoot hanging body under the bridge before nimue"
+        },
+        {
+          "name": "/Items/Armor/RedPrinceArmor/Armor_Head_CrimsonGuard",
+          "notes": "Kill one true king, give red prince 3 coins, then return to palace"
+        },
+        {
+          "name": "/Items/Armor/RedPrinceArmor/Armor_Body_CrimsonGuard",
+          "notes": "Kill one true king, give red prince 3 coins, then return to palace"
+        },
+        {
+          "name": "/Items/Armor/RedPrinceArmor/Armor_Legs_CrimsonGuard",
+          "notes": "Kill one true king, give red prince 3 coins, then return to palace"
+        },
+        {
+          "name": "/Items/Armor/RedPrinceArmor/Armor_Gloves_CrimsonGuard",
+          "notes": "Kill one true king, give red prince 3 coins, then return to palace"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/DigestedHogLure/Ring_DigestedHogLure",
+          "notes": "Kill all the pigs by the Anchor statue"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/AtonementFold/Ring_AtonementFold",
+          "notes": "Purchase from Leywise"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/WhiteGlassBead/Ring_WhiteGlassBead",
+          "notes": "bring the feastmaster leftovers to Leywise"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/IndexOfTheScribe/Amulet_IndexOfTheScribe",
+          "notes": "Bring the Scribes Tome back to Leywise, do not open the tome"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheDeparted/Ring_BurdenOfTheDeparted",
+          "notes": "Defeat The One True King while having Burden of the Divine equipped."
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheSciolist/Ring_BurdenOfTheSciolist",
+          "notes": "Open the Scribes Tome and give the medallion to leywise immediately"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RingOfInfiniteDamage/Ring_RingOfInfiniteDamage",
+          "notes": "Open the Scribes Tome and give the medallion to leywise the second time he asks, reject the first time"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BandOfTheFanatic/Ring_BandOfTheFanatic",
+          "notes": "Wear full Zealot armor, then speak to Preacher after his speech"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BridgeWardensCrest/Ring_BridgeWardensCrest",
+          "notes": "Get to the top of the bridge without killing any fae, speak to feastmaster elite"
+        },
+        {
+          "name": "/Items/Relics/PaperHeart/Relic_Consumable_PaperHeart",
+          "notes": "Find the scribes book and get the medallion out of it, then open the door in the palace"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/Cost_Of_Betrayal/Amulet_CostOfBetrayal",
+          "notes": "Shoot one of the dead council members bodies"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/Wrathbringer/Weapon_Wrathbringer",
+          "notes": "True king Alt kill reward"
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/AbyssalHook/Weapon_AbyssalHook",
+          "notes": "It can be found in one of the rooms of the sewer-like area, in the manticore lair."
+        },
+        {
+          "name": "/Items/Weapons/Monarch/Blueprints/Weapon_Monarch"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/GiftOfTheUnbound/Amulet_GiftOfTheUnbound",
+          "notes": "Agree to kill Nimue, then change mind, then kill true king and return"
+        },
+        {
+          "name": "/Items/Relics/BrokenHeart/Relic_Consumable_BrokenHeart",
+          "notes": "Kill Nimue"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/JewelOfTheBeholden/Ring_JewelOfTheBeholden",
+          "notes": "Kill True king, then speak to Nimue"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ElevatedRing/Ring_ElevatedRing",
+          "notes": "Forlorn Coast- Mournful Promenade down the ladders, ride an elevator"
+        },
+        {
+          "name": "/Items/Gems/Ranged/Dreadful/MetaGem_Dreadful",
+          "notes": "Dropped by Dire Fiend"
+        },
+        {
+          "name": "/Items/Gems/Ranged/Maelstrom/MetaGem_Maelstrom"
+        },
+        {
+          "name": "/Items/Gems/Melee/Executor/MetaGem_Executor"
         }
       ]
     },
@@ -1584,6 +1898,9 @@
           "name": "/Items/Weapons/Melee/Standard/Sword/Sword/Weapon_Sword"
         },
         {
+          "name": "/Items/Weapons/Melee/Scythe/Scythe/Weapon_Scythe"
+        },
+        {
           "name": "/Items/Weapons/Melee/Standard/Claws/RustedClaws/Weapon_Claws"
         },
         {
@@ -1648,12 +1965,12 @@
           "notes": "Purchased from Reggie at Ward 13 after defeating all bosses at least once."
         },
         {
-            "name": "/Items/Trinkets/Rings/BrightSteelRing/Ring_BrightSteelRing",
-            "notes": "Purchased from Reggie at Ward 13 after completing 15 biomes on any difficulty."
+          "name": "/Items/Trinkets/Rings/BrightSteelRing/Ring_BrightSteelRing",
+          "notes": "Purchased from Reggie at Ward 13 after completing 15 biomes on any difficulty."
         },
         {
-            "name": "/Items/Trinkets/Rings/DevouringLoop/Ring_DevouringLoop",
-            "notes": "Purchased from Reggie at Ward 13 after completing the campaign on Apocalypse difficulty."
+          "name": "/Items/Trinkets/Rings/DevouringLoop/Ring_DevouringLoop",
+          "notes": "Purchased from Reggie at Ward 13 after completing the campaign on Apocalypse difficulty."
         }
       ],
       "Cass": [
@@ -1844,6 +2161,12 @@
         },
         {
           "name": "/Items/Gems/Melee/MetaGems/WeaponLord/MetaGem_WeaponLord"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/TaintedBlade/MetaGem_TaintedBlade"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/FetidWounds/MetaGem_FetidWounds"
         }
       ],
       "Labyrinth": [
@@ -2040,6 +2363,10 @@
         {
           "name": "/Items/Weapons/Melee/Special/WorldsEdge/Weapon_WorldsEdge",
           "notes": "Purchased from Brabus at Ward 13 after completing the campaign on Apocalypse difficulty."
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/ParticipationMedal/Amulet_ParticipationMedal",
+          "notes": "Die to a boss 10 times on Apocalypse difficulty."
         }
       ]
     }

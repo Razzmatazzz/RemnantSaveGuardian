@@ -1419,9 +1419,6 @@
   <data name="TerminusStation" xml:space="preserve">
     <value>Terminus Station</value>
   </data>
-  <data name="The Twisted Chantry" xml:space="preserve">
-    <value>TheTwistedChantry</value>
-  </data>
   <data name="TheAstroPathsRespite" xml:space="preserve">
     <value>Astropath's Respite</value>
   </data>
@@ -1970,5 +1967,245 @@
   </data>
   <data name="TheNest" xml:space="preserve">
     <value>Severed Hand</value>
+  </data>
+  <data name="Trait_Affliction" xml:space="preserve">
+    <value>Affliction</value>
+  </data>
+  <data name="Ritualist" xml:space="preserve">
+    <value>Ritualist</value>
+  </data>
+  <data name="Weapon_AbyssalHook" xml:space="preserve">
+    <value>Abyssal Hook</value>
+  </data>
+  <data name="Weapon_Anguish" xml:space="preserve">
+    <value>Anguish</value>
+  </data>
+  <data name="Weapon_Monarch" xml:space="preserve">
+    <value>Monarch</value>
+  </data>
+  <data name="Weapon_RitualistScythe" xml:space="preserve">
+    <value>Ritualist Scythe</value>
+  </data>
+  <data name="Weapon_Sparkfire" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Weapon_Scythe" xml:space="preserve">
+    <value>Steel Scythe</value>
+  </data>
+  <data name="Amulet_BirthrightOfTheLost" xml:space="preserve">
+    <value>Birthright Of The Lost</value>
+  </data>
+  <data name="Amulet_BrewmastersCork" xml:space="preserve">
+    <value>Brewmasters Cork</value>
+  </data>
+  <data name="Amulet_CostOfBetrayal" xml:space="preserve">
+    <value>Cost Of Betrayal</value>
+  </data>
+  <data name="Amulet_DeathSoakedIdol" xml:space="preserve">
+    <value>Death-Soaked Idol</value>
+  </data>
+  <data name="Amulet_GiftOfEuphoria" xml:space="preserve">
+    <value>Gift Of Euphoria</value>
+  </data>
+  <data name="Amulet_GiftOfMelancholy" xml:space="preserve">
+    <value>Gift Of Melancholy</value>
+  </data>
+  <data name="Amulet_GiftOfTheUnbound" xml:space="preserve">
+    <value>Gift Of The Unbound</value>
+  </data>
+  <data name="Amulet_IndexOfTheScribe" xml:space="preserve">
+    <value>Index Of The Scribe</value>
+  </data>
+  <data name="Amulet_LegacyProtocol" xml:space="preserve">
+    <value>Legacy Protocol</value>
+  </data>
+  <data name="Amulet_ParticipationMedal" xml:space="preserve">
+    <value>Participation Medal</value>
+  </data>
+  <data name="Amulet_SinisterTotem" xml:space="preserve">
+    <value>Sinister Totem</value>
+  </data>
+  <data name="Amulet_WhisperingMarble" xml:space="preserve">
+    <value>Whispering Marble</value>
+  </data>
+  <data name="Armor_RedPrinceArmor" xml:space="preserve">
+    <value>Crimson Guard</value>
+  </data>
+  <data name="Armor_Ritualist" xml:space="preserve">
+    <value>Zealot</value>
+  </data>
+  <data name="Impaler" xml:space="preserve">
+    <value>Bruin, Blade of The King</value>
+  </data>
+  <data name="GardenMaze" xml:space="preserve">
+    <value>The Maze</value>
+  </data>
+  <data name="BurningCity_DLC" xml:space="preserve">
+    <value>Ethereal Manor</value>
+  </data>
+  <data name="Halls_DLC" xml:space="preserve">
+    <value>Mirror Floor</value>
+  </data>
+  <data name="BurningCity" xml:space="preserve">
+    <value>Ethereal Manor</value>
+  </data>
+  <data name="Lighthouse" xml:space="preserve">
+    <value>Derelict Lighthouse</value>
+  </data>
+  <data name="OneTrueKingStory" xml:space="preserve">
+    <value>The One True King</value>
+  </data>
+  <data name="Quest_Item_DLC_DreamLevel" xml:space="preserve">
+    <value>Enter the Dream</value>
+  </data>
+  <data name="Quest_Story_OTK" xml:space="preserve">
+    <value>Losomn: Forlorn Coast</value>
+  </data>
+  <data name="Relic_Consumable_BrokenHeart" xml:space="preserve">
+    <value>Broken Heart</value>
+  </data>
+  <data name="Relic_Consumable_PaperHeart" xml:space="preserve">
+    <value>Paper Heart</value>
+  </data>
+  <data name="Item_Material_Engram_Ritualist" xml:space="preserve">
+    <value>Ritualist</value>
+  </data>
+  <data name="SewerChamber" xml:space="preserve">
+    <value>Befouled Altar</value>
+  </data>
+  <data name="SentinelsKeep" xml:space="preserve">
+    <value>Sentinel's Keep</value>
+  </data>
+  <data name="TheChimney" xml:space="preserve">
+    <value>The Chimney</value>
+  </data>
+  <data name="Sewer_DLC" xml:space="preserve">
+    <value>Sewer Hole</value>
+  </data>
+  <data name="Sewer" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Witch" xml:space="preserve">
+    <value>Sunken Witch</value>
+  </data>
+  <data name="World_DLC1" xml:space="preserve">
+    <value>(DLC1)</value>
+  </data>
+  <data name="Armor_CrimsonGuard" xml:space="preserve">
+    <value>Crimson Guard</value>
+  </data>
+  <data name="Weapon_Wrathbringer" xml:space="preserve">
+    <value>Wrathbringer</value>
+  </data>
+  <data name="Mod_CreepingMist" xml:space="preserve">
+    <value>Creeping Mist</value>
+  </data>
+  <data name="Mod_KnightGuard" xml:space="preserve">
+    <value>Knight Guard</value>
+  </data>
+  <data name="Mod_RingOfSpears" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MetaGem_Dreadful" xml:space="preserve">
+    <value>Dreadful</value>
+  </data>
+  <data name="MetaGem_Executor" xml:space="preserve">
+    <value>Executor</value>
+  </data>
+  <data name="MetaGem_FetidWounds" xml:space="preserve">
+    <value>Fetid Wounds</value>
+  </data>
+  <data name="MetaGem_Guts" xml:space="preserve">
+    <value>Guts</value>
+  </data>
+  <data name="MetaGem_Maelstrom" xml:space="preserve">
+    <value>Maelstrom</value>
+  </data>
+  <data name="MetaGem_Prophecy" xml:space="preserve">
+    <value>Prophecy</value>
+  </data>
+  <data name="MetaGem_Sleeper" xml:space="preserve">
+    <value>Sleeper</value>
+  </data>
+  <data name="MetaGem_TaintedBlade" xml:space="preserve">
+    <value>Tainted Blade</value>
+  </data>
+  <data name="Ring_AtonementFold" xml:space="preserve">
+    <value>Atonement Fold</value>
+  </data>
+  <data name="Ring_BandOfTheFanatic" xml:space="preserve">
+    <value>Band Of The Fanatic</value>
+  </data>
+  <data name="Ring_BitterMemento" xml:space="preserve">
+    <value>Bitter Memento</value>
+  </data>
+  <data name="Ring_BridgeWardensCrest" xml:space="preserve">
+    <value>Bridge Wardens Crest</value>
+  </data>
+  <data name="Ring_BrawlersPride" xml:space="preserve">
+    <value>Brawler's Pride</value>
+  </data>
+  <data name="Ring_BurdenOfTheDeparted" xml:space="preserve">
+    <value>Burden of the Departed</value>
+  </data>
+  <data name="Ring_BurdenOfTheSciolist" xml:space="preserve">
+    <value>Burden Of The Sciolist</value>
+  </data>
+  <data name="Ring_CrimsonDreamstone" xml:space="preserve">
+    <value>Crimson Dreamstone</value>
+  </data>
+  <data name="Ring_DigestedHogLure" xml:space="preserve">
+    <value>Digested Hog Lure</value>
+  </data>
+  <data name="Ring_DriedClayRing" xml:space="preserve">
+    <value>Dried Clay Ring</value>
+  </data>
+  <data name="Ring_ElevatedRing" xml:space="preserve">
+    <value>Elevated Ring</value>
+  </data>
+  <data name="Ring_JewelOfTheBeholden" xml:space="preserve">
+    <value>Jewel Of The Beholden</value>
+  </data>
+  <data name="Ring_LighthouseKeepersRing" xml:space="preserve">
+    <value>Lighthouse Keeper's Ring</value>
+  </data>
+  <data name="Ring_OfferingStone" xml:space="preserve">
+    <value>Offering Stone</value>
+  </data>
+  <data name="Ring_PainlessObsidian" xml:space="preserve">
+    <value>Painless Obsidian</value>
+  </data>
+  <data name="Ring_PowerComplex" xml:space="preserve">
+    <value>Power Complex</value>
+  </data>
+  <data name="Ring_RingOfInfiniteDamage" xml:space="preserve">
+    <value>Ring Of Infinite Damage</value>
+  </data>
+  <data name="Ring_RingOfTheCastaway" xml:space="preserve">
+    <value>Ring Of The Castaway</value>
+  </data>
+  <data name="Ring_RingOfTheVain" xml:space="preserve">
+    <value>Ring Of The Vain</value>
+  </data>
+  <data name="Ring_ShadowOfMisery" xml:space="preserve">
+    <value>Shadow Of Misery</value>
+  </data>
+  <data name="Ring_ShaedStone" xml:space="preserve">
+    <value>Shaed Stone</value>
+  </data>
+  <data name="Ring_SoulShard" xml:space="preserve">
+    <value>Soul Shard</value>
+  </data>
+  <data name="Ring_WoodRing" xml:space="preserve">
+    <value>Wood Ring</value>
+  </data>
+  <data name="Ring_RedRingOfDeath" xml:space="preserve">
+    <value>Red Ring Of Death</value>
+  </data>
+  <data name="Ring_WhiteGlassBead" xml:space="preserve">
+    <value>White Glass Bead</value>
+  </data>
+  <data name="Leywise" xml:space="preserve">
+    <value></value>
   </data>
 </root>
