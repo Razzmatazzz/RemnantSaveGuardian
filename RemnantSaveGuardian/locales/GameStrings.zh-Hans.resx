@@ -2847,4 +2847,16 @@
   <data name="Forgotten Null" xml:space="preserve">
     <value>忘却之无</value>
   </data>
+  <data name="Impaler" xml:space="preserve">
+    <value>布鲁恩，国王之刃</value>
+  </data>
+  <data name="OneTrueKingStory" xml:space="preserve">
+    <value>独一真皇</value>
+  </data>
+  <data name="SewerChamber" xml:space="preserve">
+    <value>被玷污的祭坛</value>
+  </data>
+  <data name="Witch" xml:space="preserve">
+    <value>失落女巫</value>
+  </data>
 </root>
