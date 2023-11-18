@@ -2658,6 +2658,9 @@
   <data name="Relic_Consumable_PaperHeart" xml:space="preserve">
     <value>纸之心</value>
   </data>
+  <data name="Trait_DarkPact" xml:space="preserve">
+    <value>黑暗契约</value>
+  </data>
   <data name="Weapon_Sparkfire" xml:space="preserve">
       <value>星火霰弹枪</value>
   </data>
@@ -2700,8 +2703,17 @@
   <data name="MetaGem_Sleeper" xml:space="preserve">
     <value>沉睡者</value>
   </data>
+  <data name="MetaGem_Executor" xml:space="preserve">
+    <value>执行者</value>
+  </data>
   <data name="Mod_CreepingMist" xml:space="preserve">
     <value>蔓延迷雾</value>
+  </data>
+  <data name="Mod_KnightGuard" xml:space="preserve">
+    <value>骑士守卫</value>
+  </data>
+  <data name="Mod_RingOfSpears" xml:space="preserve">
+    <value>长矛戒指</value>
   </data>
   <data name="Mod_ChainOfCommand" xml:space="preserve">
     <value>命令链</value>
@@ -2772,6 +2784,9 @@
   <data name="Ring_ElevatedRing" xml:space="preserve">
     <value>高升戒指</value>
   </data>
+  <data name="Ring_JewelOfTheBeholden" xml:space="preserve">
+    <value>感恩珠宝</value>
+  </data>
   <data name="Ring_LightHouseKeepersRing" xml:space="preserve">
     <value>灯塔守卫的戒指</value>
   </data>
@@ -2784,6 +2799,9 @@
   <data name="Ring_RedRingOfDeath" xml:space="preserve">
     <value>死亡红戒</value>
   </data>
+  <data name="Ring_RingOfInfiniteDamage" xml:space="preserve">
+    <value>无限伤害戒指</value>
+  </data>
   <data name="Ring_RingOfTheCastaway" xml:space="preserve">
     <value>放逐者戒指</value>
   </data>
@@ -2792,6 +2810,9 @@
   </data>
   <data name="Ring_ShadowOfMisery" xml:space="preserve">
     <value>痛苦之影</value>
+  </data>
+  <data name="Ring_ShaedStone" xml:space="preserve">
+    <value>刹邸之石</value>
   </data>
   <data name="Ring_WhiteGlassBead" xml:space="preserve">
     <value>白色玻璃珠</value>
