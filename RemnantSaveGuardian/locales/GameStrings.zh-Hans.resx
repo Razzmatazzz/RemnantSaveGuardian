@@ -2724,7 +2724,7 @@
   <data name="Ring_PowerComplex" xml:space="preserve">
     <value>能量园区</value>
   </data>
-  <data name="Ring_LegacyProtocol" xml:space="preserve">
+  <data name="Amulet_LegacyProtocol" xml:space="preserve">
     <value>旧日协议</value>
   </data>
   <data name="Ring_ATaeriiBooster" xml:space="preserve">
@@ -2750,9 +2750,6 @@
   </data>
   <data name="Amulet_ParticipationMedal" xml:space="preserve">
     <value>参与奖章</value>
-  </data>
-  <data name="Amulet_LegacyProtocol" xml:space="preserve">
-    <value>旧日协议</value>
   </data>
   <data name="MetaGem_Guts" xml:space="preserve">
     <value>越战越勇</value>
