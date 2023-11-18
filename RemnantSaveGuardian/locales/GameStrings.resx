@@ -1971,4 +1971,55 @@
   <data name="TheNest" xml:space="preserve">
     <value>Severed Hand</value>
   </data>
+  <data name="MetaGem_BottomFeeder" xml:space="preserve">
+    <value>Bottom Feeder</value>
+  </data>
+  <data name="MetaGem_BottomHeavy" xml:space="preserve">
+    <value>Bottom Heavy</value>
+  </data>
+  <data name="MetaGem_Edgelord" xml:space="preserve">
+    <value>Edgelord</value>
+  </data>
+  <data name="MetaGem_Ingenuity" xml:space="preserve">
+    <value>Ingenuity</value>
+  </data>
+  <data name="MetaGem_KillSwitch" xml:space="preserve">
+    <value>Kill Switch</value>
+  </data>
+  <data name="MetaGem_Latency" xml:space="preserve">
+    <value>Latency</value>
+  </data>
+  <data name="MetaGem_Opportunist" xml:space="preserve">
+    <value>Opportunist</value>
+  </data>
+  <data name="MetaGem_SequencedShot" xml:space="preserve">
+    <value>SequencedShot</value>
+  </data>
+  <data name="MetaGem_Shocker" xml:space="preserve">
+    <value>Shocker</value>
+  </data>
+  <data name="MetaGem_SpiritHealer" xml:space="preserve">
+    <value>Spirit Healer</value>
+  </data>
+  <data name="MetaGem_Stormbringer" xml:space="preserve">
+    <value>Stormbringer</value>
+  </data>
+  <data name="MetaGem_TopHeavy" xml:space="preserve">
+    <value>Top Heavy</value>
+  </data>
+  <data name="Weapon_CorruptedAphelion" xml:space="preserve">
+    <value>Corrupted Aphelion</value>
+  </data>
+  <data name="Weapon_CorruptedDeceit" xml:space="preserve">
+    <value>Corrupted Deceit</value>
+  </data>
+  <data name="Weapon_CorruptedMerciless" xml:space="preserve">
+    <value>Corrupted Merciless</value>
+  </data>
+  <data name="Weapon_CorruptedMeridian" xml:space="preserve">
+    <value>Corrupted Meridian</value>
+  </data>
+  <data name="Weapon_CorruptedRunePistol" xml:space="preserve">
+    <value>Corrupted Rune Pistol</value>
+  </data>
 </root>
