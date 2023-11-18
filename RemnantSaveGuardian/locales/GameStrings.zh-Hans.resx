@@ -2682,6 +2682,120 @@
   <data name="Weapon_Sparkfire" xml:space="preserve">
       <value>星火霰弹枪</value>
   </data>
+  <data name="Material_OccultVessel" xml:space="preserve">
+    <value>痛苦</value>
+  </data>
+  <data name="Ring_BurdenOfTheSciolist" xml:space="preserve">
+    <value>伪智者之负担</value>
+  </data>
+  <data name="Ring_OfferingStone" xml:space="preserve">
+    <value>Offering Stone</value>
+  </data>
+  <data name="Ring_RingOfTheVain" xml:space="preserve">
+    <value>Ring Of The Vain</value>
+  </data>
+  <data name="Ring_PainlessObsidian" xml:space="preserve">
+    <value>无痛黑曜石</value>
+  </data>
+  <data name="Ring_RedRingOfDeath" xml:space="preserve">
+    <value>死亡红戒</value>
+  </data>
+  <data name="Ring_BitterMemento" xml:space="preserve">
+    <value>苦涩的纪念品</value>
+  </data>
+  <data name="Ring_DriedClayRing" xml:space="preserve">
+    <value>Dried Clay Ring</value>
+  </data>
+  <data name="Ring_DigestedHogLure" xml:space="preserve">
+    <value>已消化的猪饵料</value>
+  </data>
+  <data name="Ring_ShadowOfMisery" xml:space="preserve">
+    <value>痛苦之影</value>
+  </data>
+  <data name="Ring_BurdenOfTheDeparted" xml:space="preserve">
+    <value>逝去者之负担</value>
+  </data>
+  <data name="Ring_BandOfTheFanatic" xml:space="preserve">
+    <value>狂热者指环</value>
+  </data>
+  <data name="Ring_BridgeWardensCrest" xml:space="preserve">
+    <value>守桥者纹章</value>
+  </data>
+  <data name="Ring_WhiteGlassBead" xml:space="preserve">
+    <value>白色玻璃珠</value>
+  </data>
+  <data name="Amulet_DeathSoakedIdol" xml:space="preserve">
+    <value>浸透死亡的神像</value>
+  </data>
+  <data name="Amulet_GiftOfTheUnbound" xml:space="preserve">
+    <value>不羁者的礼物</value>
+  </data>
+  <data name="Amulet_IndexOfTheScribe" xml:space="preserve">
+    <value>抄写员的索引</value>
+  </data>
+  <data name="Amulet_BirthrightOfTheLost" xml:space="preserve">
+    <value>失落者天权</value>
+  </data>
+  <data name="Amulet_WhisperingMarble" xml:space="preserve">
+    <value>低语大理石</value>
+  </data>
+  <data name="Amulet_BrewmastersCork" xml:space="preserve">
+    <value>酿酒大师的瓶塞</value>
+  </data>
+  <data name="Amulet_ParticipationMedal" xml:space="preserve">
+    <value>参与奖章</value>
+  </data>
+  <data name="Amulet_LegacyProtocol" xml:space="preserve">
+    <value>Legacy Protocol</value>
+  </data>
+  <data name="MetaGem_Guts" xml:space="preserve">
+    <value>越战越勇</value>
+  </data>
+  <data name="MetaGem_Dreadful" xml:space="preserve">
+    <value>可怖</value>
+  </data>
+  <data name="MetaGem_Maelstrom" xml:space="preserve">
+    <value>大漩涡</value>
+  </data>
+  <data name="MetaGem_Prophecy" xml:space="preserve">
+    <value>预言</value>
+  </data>
+  <data name="MetaGem_FetidWounds" xml:space="preserve">
+    <value>恶臭伤痕</value>
+  </data>
+  <data name="MetaGem_TaintedBlade" xml:space="preserve">
+    <value>污秽之刃</value>
+  </data>
+  <data name="MetaGem_Sleeper" xml:space="preserve">
+    <value>沉睡者</value>
+  </data>
+  <data name="Weapon_RitualistScythe" xml:space="preserve">
+    <value>祭祀者镰刀</value>
+  </data>
+  <data name="Weapon_Wrathbringer" xml:space="preserve">
+    <value>狂怒使者</value>
+  </data>
+  <data name="Weapon_Scythe" xml:space="preserve">
+    <value>钢镰刀</value>
+  </data>
+  <data name="Weapon_Monarch" xml:space="preserve">
+    <value>君王</value>
+  </data>
+  <data name="Mod_CreepingMist" xml:space="preserve">
+    <value>蔓延迷雾</value>
+  </data>
+  <data name="Mod_ChainOfCommand" xml:space="preserve">
+    <value>命令链</value>
+  </data>
+  <data name="Relic_Consumable_PaperHeart" xml:space="preserve">
+    <value>纸之心</value>
+  </data>
+  <data name="Relic_Consumable_BrokenHeart" xml:space="preserve">
+    <value>破碎之心</value>
+  </data>
+  <data name="Trait_Affliction" xml:space="preserve">
+    <value>折磨</value>
+  </data>
   <data name="Derelict Lighthouse" xml:space="preserve">
     <value>秘密灯塔</value>
   </data>
