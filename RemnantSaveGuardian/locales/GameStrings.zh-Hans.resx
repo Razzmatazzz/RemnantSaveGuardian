@@ -2955,6 +2955,9 @@
   <data name="Palace of the One True King" xml:space="preserve">
     <value>独一真皇的宫殿</value>
   </data>
+  <data name="Chamber of the Faithless" xml:space="preserve">
+    <value>无信者之间</value>
+  </data>
   <data name="Sunken Haunt" xml:space="preserve">
     <value>失落之地</value>
   </data>
