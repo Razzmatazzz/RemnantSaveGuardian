@@ -2655,6 +2655,12 @@
   <data name="Armor_RedPrinceArmor_Notes" xml:space="preserve">
     <value>在鎏金大厅给红王子三个硬币，去无信者之间杀死独一真皇，刷新地图后返回无信者之间找红王子</value>
   </data>
+  <data name="Armor_CrimsonGuard" xml:space="preserve">
+    <value>绯红守卫套装</value>
+  </data>
+  <data name="Armor_CrimsonGuard_Notes" xml:space="preserve">
+    <value>在鎏金大厅给红王子三个硬币，去无信者之间杀死独一真皇，刷新地图后返回无信者之间找红王子</value>
+  </data>
   <data name="Relic_Consumable_BrokenHeart" xml:space="preserve">
     <value>破碎之心</value>
   </data>
