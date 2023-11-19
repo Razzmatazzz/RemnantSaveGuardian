@@ -2838,6 +2838,9 @@
   <data name="Lighthouse" xml:space="preserve">
     <value>秘密灯塔</value>
   </data>
+  <data name="Derelict Lighthouse" xml:space="preserve">
+    <value>秘密灯塔</value>
+  </data>
   <data name="Drowned Wen" xml:space="preserve">
     <value>淹没之城</value>
   </data>
