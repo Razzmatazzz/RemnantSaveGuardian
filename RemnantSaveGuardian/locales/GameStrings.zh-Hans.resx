@@ -2646,29 +2646,59 @@
   <data name="Armor_Ritualist" xml:space="preserve">
     <value>狂热者套装</value>
   </data>
+  <data name="Armor_Ritualist_Notes" xml:space="preserve">
+    <value>射击到达尼姆埃前的桥下悬挂的尸体</value>
+  </data>
   <data name="Armor_RedPrinceArmor" xml:space="preserve">
     <value>绯红守卫套装</value>
+  </data>
+  <data name="Armor_RedPrinceArmor_Notes" xml:space="preserve">
+    <value>在鎏金大厅给红王子三个硬币，去无信者之间杀死独一真皇，刷新地图后返回无信者之间找红王子</value>
   </data>
   <data name="Relic_Consumable_BrokenHeart" xml:space="preserve">
     <value>破碎之心</value>
   </data>
+  <data name="Relic_Consumable_BrokenHeart_Notes" xml:space="preserve">
+    <value>答应独一真皇杀死尼姆埃，与尼姆埃交谈并杀死她</value>
+  </data>
   <data name="Relic_Consumable_PaperHeart" xml:space="preserve">
     <value>纸之心</value>
+  </data>
+  <data name="Relic_Consumable_PaperHeart_Notes" xml:space="preserve">
+    <value>互动打开错置的回忆录获得书缘勋章，打开无信者之间锁着的门</value>
   </data>
   <data name="Trait_DarkPact" xml:space="preserve">
     <value>黑暗契约</value>
   </data>
+  <data name="Trait_DarkPact_Notes" xml:space="preserve">
+    <value>在凄凉海岸找到并敲响三个钟</value>
+  </data>
   <data name="Weapon_Sparkfire" xml:space="preserve">
-      <value>星火霰弹枪</value>
+    <value>星火霰弹枪</value>
+  </data>
+  <data name="Weapon_Sparkfire_Notes" xml:space="preserve">
+    <value>互动灯塔钥匙打开秘密灯塔外锁着的地下室</value>
   </data>
   <data name="Weapon_Monarch" xml:space="preserve">
     <value>君王</value>
   </data>
   <data name="Material_OccultVessel" xml:space="preserve">
+    <value>神秘容器</value>
+  </data>
+  <data name="Material_OccultVessel_Notes" xml:space="preserve">
+    <value>在飘渺庄园使用水遁进入祝圣王座后返回13区，在每个世界找到德兰人并最终获得德兰人的梦</value>
+  </data>
+  <data name="Weapon_Anguish" xml:space="preserve">
     <value>痛苦</value>
+  </data>
+  <data name="Weapon_Anguish_Notes" xml:space="preserve">
+    <value>使用德兰人的梦中找到的神秘容器制作</value>
   </data>
   <data name="Weapon_Wrathbringer" xml:space="preserve">
     <value>狂怒使者</value>
+  </data>
+  <data name="Weapon_Wrathbringer_Notes" xml:space="preserve">
+    <value>在锤子被打碎的时候击杀独一真皇</value>
   </data>
   <data name="Weapon_AbyssalHook" xml:space="preserve">
     <value>深渊之钩</value>
@@ -2681,6 +2711,9 @@
   </data>
   <data name="MetaGem_Guts" xml:space="preserve">
     <value>越战越勇</value>
+  </data>
+  <data name="MetaGem_Guts_Notes" xml:space="preserve">
+    <value>打败地图中两个被玷污的祭坛后击败哭泣女NPC变成的被诅咒的小人</value>
   </data>
   <data name="MetaGem_TaintedBlade" xml:space="preserve">
     <value>污秽之刃</value>
@@ -2709,6 +2742,9 @@
   <data name="Mod_KnightGuard" xml:space="preserve">
     <value>骑士守卫</value>
   </data>
+  <data name="Mod_KnightGuard_Notes" xml:space="preserve">
+    <value>使用纪念章钥匙打开纪念之行中的塔楼门并佩戴红王子的王冠</value>
+  </data>
   <data name="Mod_RingOfSpears" xml:space="preserve">
     <value>长矛戒指</value>
   </data>
@@ -2724,23 +2760,41 @@
   <data name="Amulet_CostOfBetrayal" xml:space="preserve">
     <value>背叛的代价</value>
   </data>
+  <data name="Amulet_CostOfBetrayal_Notes" xml:space="preserve">
+    <value>射击无信者之间里的三个议员尸体</value>
+  </data>
   <data name="Amulet_DeathSoakedIdol" xml:space="preserve">
     <value>浸透死亡的神像</value>
   </data>
   <data name="Amulet_GiftOfEuphoria" xml:space="preserve">
-      <value>极乐的礼物</value>
+    <value>极乐的礼物</value>
+  </data>
+  <data name="Amulet_GiftOfEuphoria_Notes" xml:space="preserve">
+    <value>使用纪念章钥匙打开纪念之行中的塔楼门</value>
   </data>
   <data name="Amulet_GiftOfMelancholy" xml:space="preserve">
-      <value>忧郁的礼物</value>
+    <value>忧郁的礼物</value>
+  </data>
+  <data name="Amulet_GiftOfMelancholy_Notes" xml:space="preserve">
+    <value>使用纪念章钥匙打开堕落之路中的塔楼门</value>
   </data>
   <data name="Amulet_GiftOfTheUnbound" xml:space="preserve">
     <value>不羁者的礼物</value>
   </data>
+  <data name="Amulet_GiftOfTheUnbound_Notes" xml:space="preserve">
+    <value>答应独一真皇杀死尼姆埃，与尼姆埃交谈并放过她，返回击杀独一真皇后与尼姆埃交谈</value>
+  </data>
   <data name="Amulet_IndexOfTheScribe" xml:space="preserve">
     <value>抄写员的索引</value>
   </data>
+  <data name="Amulet_IndexOfTheScribe_Notes" xml:space="preserve">
+    <value>不互动打开错置的回忆录直接交给雷维斯</value>
+  </data>
   <data name="Amulet_ParticipationMedal" xml:space="preserve">
     <value>参与奖章</value>
+  </data>
+  <data name="Amulet_ParticipationMedal_Notes" xml:space="preserve">
+    <value>在末日难度被同一个世界Boss杀死10次</value>
   </data>
   <data name="Amulet_WhisperingMarble" xml:space="preserve">
     <value>低语大理石</value>
@@ -2754,26 +2808,50 @@
   <data name="Ring_AtonementFold" xml:space="preserve">
     <value>赎罪皱襞</value>
   </data>
+  <data name="Ring_AtonementFold_Notes" xml:space="preserve">
+    <value>在雷维斯那里购买</value>
+  </data>
   <data name="Ring_BandOfTheFanatic" xml:space="preserve">
     <value>狂热者指环</value>
+  </data>
+  <data name="Ring_BandOfTheFanatic_Notes" xml:space="preserve">
+    <value>装备狂热者套装听完传道士的演讲，与传道士交谈</value>
   </data>
   <data name="Ring_BitterMemento" xml:space="preserve">
     <value>苦涩的纪念品</value>
   </data>
+  <data name="Ring_BitterMemento_Notes" xml:space="preserve">
+    <value>织夜者的网 - 纪念章钥匙</value>
+  </data>
   <data name="Ring_BridgeWardensCrest" xml:space="preserve">
     <value>守桥者纹章</value>
+  </data>
+  <data name="Ring_BridgeWardensCrest_Notes" xml:space="preserve">
+    <value>与守桥者交谈前不杀害任何翡族</value>
   </data>
   <data name="Ring_BurdenOfTheDeparted" xml:space="preserve">
     <value>逝去者之负担</value>
   </data>
+  <data name="Ring_BurdenOfTheDeparted_Notes" xml:space="preserve">
+    <value>装备神职者之负担击败独一真皇</value>
+  </data>
   <data name="Ring_BurdenOfTheSciolist" xml:space="preserve">
     <value>伪智者之负担</value>
+  </data>
+  <data name="Ring_BurdenOfTheSciolist_Notes" xml:space="preserve">
+    <value>互动打开错置的回忆录获得书缘勋章，直接交给雷维斯</value>
   </data>
   <data name="Ring_CrimsonDreamstone" xml:space="preserve">
     <value>绯红梦石</value>
   </data>
+  <data name="Ring_CrimsonDreamstone_Notes" xml:space="preserve">
+    <value>在飘渺庄园使用水遁进入祝圣王座</value>
+  </data>
   <data name="Ring_DigestedHogLure" xml:space="preserve">
     <value>已消化的猪饵料</value>
+  </data>
+  <data name="Ring_DigestedHogLure_Notes" xml:space="preserve">
+    <value>杀死船锚雕像旁的所有猪</value>
   </data>
   <data name="Ring_DriedClayRing" xml:space="preserve">
     <value>干陶戒指</value>
@@ -2781,8 +2859,14 @@
   <data name="Ring_ElevatedRing" xml:space="preserve">
     <value>高升戒指</value>
   </data>
+  <data name="Ring_ElevatedRing_Notes" xml:space="preserve">
+    <value>哀悼长廊坐电梯下去</value>
+  </data>
   <data name="Ring_JewelOfTheBeholden" xml:space="preserve">
     <value>感恩珠宝</value>
+  </data>
+  <data name="Ring_JewelOfTheBeholden_Notes" xml:space="preserve">
+    <value>直接击杀独一真皇，然后与尼姆埃交谈</value>
   </data>
   <data name="Ring_LightHouseKeepersRing" xml:space="preserve">
     <value>灯塔守卫的戒指</value>
@@ -2799,6 +2883,9 @@
   <data name="Ring_RingOfInfiniteDamage" xml:space="preserve">
     <value>无限伤害戒指</value>
   </data>
+  <data name="Ring_RingOfInfiniteDamage_Notes" xml:space="preserve">
+    <value>互动打开错置的回忆录获得书缘勋章，找到雷维斯后第一次拒绝雷维斯，第二次交给雷维斯</value>
+  </data>
   <data name="Ring_RingOfTheCastaway" xml:space="preserve">
     <value>放逐者戒指</value>
   </data>
@@ -2811,8 +2898,14 @@
   <data name="Ring_ShaedStone" xml:space="preserve">
     <value>刹邸之石</value>
   </data>
+  <data name="Ring_ShaedStone_Notes" xml:space="preserve">
+    <value>射击镜子地面中金色瓶子对应的空位置</value>
+  </data>
   <data name="Ring_WhiteGlassBead" xml:space="preserve">
     <value>白色玻璃珠</value>
+  </data>
+  <data name="Ring_WhiteGlassBead_Notes" xml:space="preserve">
+    <value>坚持让雷维斯收下宴会领事的残羹冷炙</value>
   </data>
   <data name="Ring_WoodRing" xml:space="preserve">
     <value>木质戒指</value>
@@ -2906,6 +2999,9 @@
   </data>
   <data name="Quest_Item_DLC_DreamLevel" xml:space="preserve">
     <value>进入梦境</value>
+  </data>
+  <data name="Quest_Item_DLC_DreamLevel_Notes" xml:space="preserve">
+    <value>在飘渺庄园使用水遁进入祝圣王座，摸水晶返回13区</value>
   </data>
   <data name="Dranception" xml:space="preserve">
     <value>德兰人的梦事件</value>
