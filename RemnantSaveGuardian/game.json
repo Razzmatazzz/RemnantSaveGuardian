@@ -1631,6 +1631,10 @@
           "notes": "Bring the feastmaster leftovers to Leywise."
         },
         {
+          "name": "/Items/Traits/DarkPact/Trait_DarkPact",
+          "notes": "Shoot all three bells in Forlorn Coast to complete the Bells event."
+        },
+        {
           "name": "/Items/Trinkets/Amulets/IndexOfTheScribe/Amulet_IndexOfTheScribe",
           "notes": "Bring the Scribes Tome back to Leywise, do NOT open the tome."
         },
@@ -2167,7 +2171,7 @@
         },
         {
           "name": "/Items/Gems/Melee/MetaGems/FetidWounds/MetaGem_FetidWounds"
-	},
+  },
         {
           "name": "/Items/Weapons/Longguns/Special/CorruptedAphelion/Weapon_CorruptedAphelion"
         },
@@ -2256,6 +2260,10 @@
         },
         {
           "name": "/Items/Armor/Archetype/Explorer/Armor_Legs_Explorer"
+        },
+        {
+          "name": "/Items/Traits/Affliction/Trait_Affliction",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Ritualist archetype to 10."
         },
         {
           "name": "/Items/Traits/Archetype/AmmoReserves/Trait_AmmoReserves",
@@ -2381,7 +2389,7 @@
         },
         {
           "name": "/Items/Trinkets/Amulets/ParticipationMedal/Amulet_ParticipationMedal",
-          "notes": "Die to a boss 10 times on Apocalypse difficulty.
+          "notes": "Die to a boss 10 times on Apocalypse difficulty."
         },
         {
           "name": "/Items/Gems/Ranged/MetaGems/BottomFeeder/MetaGem_BottomFeeder",

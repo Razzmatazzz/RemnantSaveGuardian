@@ -1987,6 +1987,24 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bottom Feeder.
+        /// </summary>
+        public static string MetaGem_BottomFeeder {
+            get {
+                return ResourceManager.GetString("MetaGem_BottomFeeder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom Heavy.
+        /// </summary>
+        public static string MetaGem_BottomHeavy {
+            get {
+                return ResourceManager.GetString("MetaGem_BottomHeavy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bulletweaver.
         /// </summary>
         public static string MetaGem_Bulletweaver {
@@ -2039,7 +2057,6 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("MetaGem_Edgelord", resourceCulture);
             }
         }
-
         
         /// <summary>
         ///   Looks up a localized string similar to Executor.
@@ -2283,7 +2300,6 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("MetaGem_SpiritHealer", resourceCulture);
             }
         }
-
         
         /// <summary>
         ///   Looks up a localized string similar to Steadfast.
@@ -4903,7 +4919,6 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("The Twisted Chantry", resourceCulture);
             }
         }
-
         
         /// <summary>
         ///   Looks up a localized string similar to Astropath&apos;s Respite.
@@ -5244,6 +5259,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Trait_Bloodstream {
             get {
                 return ResourceManager.GetString("Trait_Bloodstream", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark Pact.
+        /// </summary>
+        public static string Trait_DarkPact {
+            get {
+                return ResourceManager.GetString("Trait_DarkPact", resourceCulture);
             }
         }
         

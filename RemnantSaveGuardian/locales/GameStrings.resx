@@ -2262,4 +2262,7 @@
   <data name="Weapon_CorruptedRunePistol" xml:space="preserve">
     <value>Corrupted Rune Pistol</value>
   </data>
+  <data name="Trait_DarkPact" xml:space="preserve">
+    <value>Dark Pact</value>
+  </data>
 </root>
