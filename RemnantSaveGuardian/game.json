@@ -1405,7 +1405,7 @@
       "Dranception": [
         {
           "name": "/Items/Weapons/Anguish/Weapon_Anguish",
-          "notes": "enter the FinalDream"
+          "notes": "Enter the FinalDream and find the Drans in each world."
         }
       ],
       "Amulet_BrewmastersCork": [
@@ -1497,11 +1497,11 @@
         {
           "name": "/Quests/Quest_Event_Dranception/Items/Quest_Item_DLC_DreamLevel",
           "ignore": false,
-          "notes": "Liquid escape in the Manor, then Escape the dream through the crystal"
+          "notes": "Use liquid escape in the Manor, then Escape the dream through the crystal."
         },
         {
           "name": "/Items/Trinkets/Rings/CrimsonDreamstone/Ring_CrimsonDreamstone",
-          "notes": "Use liquid escape in the manor"
+          "notes": "Use liquid escape in the manor."
         },
         {
           "name": "/Items/Trinkets/Amulets/DeathSoakedIdol/Amulet_DeathSoakedIdol"
@@ -1510,7 +1510,7 @@
       "Halls": [
         {
           "name": "/Items/Trinkets/Rings/ShaedStone/Ring_ShaedStone",
-          "notes": "Shoot the invisible golden pot in the reflection you see on the floor at the entrance to the room"
+          "notes": "Shoot the invisible golden pot in the reflection you see on the mirrored floor."
         }
       ],
       "Sewer": [
@@ -1539,7 +1539,7 @@
         },
         {
           "name": "/Items/Mods/Mod_KnightGuard/Mod_KnightGuard",
-          "notes": "Wear the Red Prince crown in the room on Gold Hall"
+          "notes": "Wear the Red Prince Crown in the room on Golden Hall."
         },
         {
           "name": "/Items/Gems/Ranged/Prophecy/MetaGem_Prophecy"
@@ -1549,7 +1549,7 @@
       "Lighthouse": [
         {
           "name": "/Items/Weapons/Buster/Weapon_Sparkfire",
-          "notes": "outside the lighthouse down the path, around a rock face is a secret door, flip the key to open the door"
+          "notes": "Outside the lighthouse down the path, around a rock is a secret door, interact with item to get the key to open the door"
         },
         {
           "name": "/Items/Gems/Ranged/Sleeper/MetaGem_Sleeper"
@@ -1564,75 +1564,75 @@
         },
         {
           "name": "/Items/Gems/Melee/Guts/MetaGem_Guts",
-          "notes": "return to dran woman after destroying both totems"
+          "notes": "Return to dran the woman after destroying both of the totems."
         }
       ],
       "ForlornCoast": [
         {
           "name": "/Items/Archetypes/Ritualist/Armor/Armor_Head_Ritualist",
-          "notes": "Shoot hanging body under the bridge before nimue"
+          "notes": "Shoot hanging body under the bridge before Nimue."
         },
         {
           "name": "/Items/Archetypes/Ritualist/Armor/Armor_Body_Ritualist",
-          "notes": "Shoot hanging body under the bridge before nimue"
+          "notes": "Shoot hanging body under the bridge before Nimue."
         },
         {
           "name": "/Items/Archetypes/Ritualist/Armor/Armor_Legs_Ritualist",
-          "notes": "Shoot hanging body under the bridge before nimue"
+          "notes": "Shoot hanging body under the bridge before Nimue."
         },
         {
           "name": "/Items/Archetypes/Ritualist/Armor/Armor_Gloves_Ritualist",
-          "notes": "Shoot hanging body under the bridge before nimue"
+          "notes": "Shoot hanging body under the bridge before Nimue."
         }
       ],
       "OneTrueKingStory": [
         {
           "name": "/Items/Archetypes/Ritualist/Armor/Armor_Head_Ritualist",
-          "notes": "Shoot hanging body under the bridge before nimue"
+          "notes": "Shoot hanging body under the bridge before Nimue."
         },
         {
           "name": "/Items/Archetypes/Ritualist/Armor/Armor_Body_Ritualist",
-          "notes": "Shoot hanging body under the bridge before nimue"
+          "notes": "Shoot hanging body under the bridge before Nimue."
         },
         {
           "name": "/Items/Archetypes/Ritualist/Armor/Armor_Legs_Ritualist",
-          "notes": "Shoot hanging body under the bridge before nimue"
+          "notes": "Shoot hanging body under the bridge before Nimue."
         },
         {
           "name": "/Items/Archetypes/Ritualist/Armor/Armor_Gloves_Ritualist",
-          "notes": "Shoot hanging body under the bridge before nimue"
+          "notes": "Shoot hanging body under the bridge before Nimue."
         },
         {
           "name": "/Items/Armor/RedPrinceArmor/Armor_Head_CrimsonGuard",
-          "notes": "Kill one true king, give red prince 3 coins, then return to palace"
+          "notes": "Kill the one true king, give the red prince 3 coins, then return to the palace."
         },
         {
           "name": "/Items/Armor/RedPrinceArmor/Armor_Body_CrimsonGuard",
-          "notes": "Kill one true king, give red prince 3 coins, then return to palace"
+          "notes": "Kill the one true king, give the red prince 3 coins, then return to the palace."
         },
         {
           "name": "/Items/Armor/RedPrinceArmor/Armor_Legs_CrimsonGuard",
-          "notes": "Kill one true king, give red prince 3 coins, then return to palace"
+          "notes": "Kill the one true king, give the red prince 3 coins, then return to the palace."
         },
         {
           "name": "/Items/Armor/RedPrinceArmor/Armor_Gloves_CrimsonGuard",
-          "notes": "Kill one true king, give red prince 3 coins, then return to palace"
+          "notes": "Kill The One True King, give the red prince 3 coins, then return to the palace."
         },
         {
           "name": "/Items/Trinkets/Rings/DigestedHogLure/Ring_DigestedHogLure",
-          "notes": "Kill all the pigs by the Anchor statue"
+          "notes": "Kill all the hogs by the Anchor statue."
         },
         {
           "name": "/Items/Trinkets/Rings/AtonementFold/Ring_AtonementFold",
-          "notes": "Purchase from Leywise"
+          "notes": "Purchase from Leywise."
         },
         {
           "name": "/Items/Trinkets/Rings/WhiteGlassBead/Ring_WhiteGlassBead",
-          "notes": "bring the feastmaster leftovers to Leywise"
+          "notes": "Bring the feastmaster leftovers to Leywise."
         },
         {
           "name": "/Items/Trinkets/Amulets/IndexOfTheScribe/Amulet_IndexOfTheScribe",
-          "notes": "Bring the Scribes Tome back to Leywise, do not open the tome"
+          "notes": "Bring the Scribes Tome back to Leywise, do NOT open the tome."
         },
         {
           "name": "/Items/Trinkets/Rings/BurdenOfTheDeparted/Ring_BurdenOfTheDeparted",
@@ -1640,31 +1640,31 @@
         },
         {
           "name": "/Items/Trinkets/Rings/BurdenOfTheSciolist/Ring_BurdenOfTheSciolist",
-          "notes": "Open the Scribes Tome and give the medallion to leywise immediately"
+          "notes": "Open the Scribes Tome and give the medallion to Leywise immediately"
         },
         {
           "name": "/Items/Trinkets/Rings/RingOfInfiniteDamage/Ring_RingOfInfiniteDamage",
-          "notes": "Open the Scribes Tome and give the medallion to leywise the second time he asks, reject the first time"
+          "notes": "Open the Scribes Tome and reject the first time Leywise asks, then give the medallion to Leywise the second time he asks."
         },
         {
           "name": "/Items/Trinkets/Rings/BandOfTheFanatic/Ring_BandOfTheFanatic",
-          "notes": "Wear full Zealot armor, then speak to Preacher after his speech"
+          "notes": "Wear full Zealot armor, then speak to Preacher after his speech."
         },
         {
           "name": "/Items/Trinkets/Rings/BridgeWardensCrest/Ring_BridgeWardensCrest",
-          "notes": "Get to the top of the bridge without killing any fae, speak to feastmaster elite"
+          "notes": "Get to the top of the bridge without killing any fae, then speak to feastmaster elite."
         },
         {
           "name": "/Items/Relics/PaperHeart/Relic_Consumable_PaperHeart",
-          "notes": "Find the scribes book and get the medallion out of it, then open the door in the palace"
+          "notes": "Find the scribes book and get the medallion out of it, then open the door in the palace."
         },
         {
           "name": "/Items/Trinkets/Amulets/Cost_Of_Betrayal/Amulet_CostOfBetrayal",
-          "notes": "Shoot one of the dead council members bodies"
+          "notes": "Shoot one of the dead council members bodies."
         },
         {
           "name": "/Items/Weapons/Melee/Special/Wrathbringer/Weapon_Wrathbringer",
-          "notes": "True king Alt kill reward"
+          "notes": "The One True King Alt kill reward"
         },
         {
           "name": "/Items/Weapons/Melee/Special/AbyssalHook/Weapon_AbyssalHook",
@@ -1675,19 +1675,19 @@
         },
         {
           "name": "/Items/Trinkets/Amulets/GiftOfTheUnbound/Amulet_GiftOfTheUnbound",
-          "notes": "Agree to kill Nimue, then change mind, then kill true king and return"
+          "notes": "Agree to kill Nimue, but then kill The One True King instead and return to Nimue."
         },
         {
           "name": "/Items/Relics/BrokenHeart/Relic_Consumable_BrokenHeart",
-          "notes": "Kill Nimue"
+          "notes": "Kill Nimue."
         },
         {
           "name": "/Items/Trinkets/Rings/JewelOfTheBeholden/Ring_JewelOfTheBeholden",
-          "notes": "Kill True king, then speak to Nimue"
+          "notes": "Kill The One True King, then speak to Nimue"
         },
         {
           "name": "/Items/Trinkets/Rings/ElevatedRing/Ring_ElevatedRing",
-          "notes": "Forlorn Coast- Mournful Promenade down the ladders, ride an elevator"
+          "notes": "Forlorn Coast- Mournful Promenade, Use the Elevator at top to get there."
         },
         {
           "name": "/Items/Gems/Ranged/Dreadful/MetaGem_Dreadful",
@@ -2167,6 +2167,21 @@
         },
         {
           "name": "/Items/Gems/Melee/MetaGems/FetidWounds/MetaGem_FetidWounds"
+	},
+        {
+          "name": "/Items/Weapons/Longguns/Special/CorruptedAphelion/Weapon_CorruptedAphelion"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Special/CorruptedDeceit/Weapon_CorruptedDeceit"
+        },
+        {
+          "name": "/Items/Weapons/Longguns/Special/CorruptedMerciless/Weapon_CorruptedMerciless"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Special/CorruptedMeridian/Weapon_CorruptedMeridian"
+        },
+        {
+          "name": "/Items/Weapons/Handguns/Special/CorruptedRunePistol/Weapon_CorruptedRunePistol"
         }
       ],
       "Labyrinth": [
@@ -2366,7 +2381,55 @@
         },
         {
           "name": "/Items/Trinkets/Amulets/ParticipationMedal/Amulet_ParticipationMedal",
-          "notes": "Die to a boss 10 times on Apocalypse difficulty."
+          "notes": "Die to a boss 10 times on Apocalypse difficulty.
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/BottomFeeder/MetaGem_BottomFeeder",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/BottomHeavy/MetaGem_BottomHeavy",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Edgelord/MetaGem_Edgelord",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/Ingenuity/MetaGem_Ingenuity",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/KillSwitch/MetaGem_KillSwitch",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Latency/MetaGem_Latency",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Opportunist/MetaGem_Opportunist",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/SequencedShot/MetaGem_SequencedShot",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Shocker/MetaGem_Shocker",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Melee/MetaGems/Stormbringer/MetaGem_Stormbringer",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/TopHeavy/MetaGem_TopHeavy",
+          "notes": "Random drop by aberrations"
+        },
+        {
+          "name": "/Items/Gems/Ranged/MetaGems/SpiritHealer/MetaGem_SpiritHealer",
+          "notes": "Random drop by aberrations"
         }
       ]
     }

@@ -2032,6 +2032,16 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edgelord.
+        /// </summary>
+        public static string MetaGem_Edgelord {
+            get {
+                return ResourceManager.GetString("MetaGem_Edgelord", resourceCulture);
+            }
+        }
+
+        
+        /// <summary>
         ///   Looks up a localized string similar to Executor.
         /// </summary>
         public static string MetaGem_Executor {
@@ -2104,6 +2114,33 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ingenuity.
+        /// </summary>
+        public static string MetaGem_Ingenuity {
+            get {
+                return ResourceManager.GetString("MetaGem_Ingenuity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kill Switch.
+        /// </summary>
+        public static string MetaGem_KillSwitch {
+            get {
+                return ResourceManager.GetString("MetaGem_KillSwitch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latency.
+        /// </summary>
+        public static string MetaGem_Latency {
+            get {
+                return ResourceManager.GetString("MetaGem_Latency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lithely.
         /// </summary>
         public static string MetaGem_Lithely {
@@ -2136,6 +2173,15 @@ namespace RemnantSaveGuardian.locales {
         public static string MetaGem_Momentum {
             get {
                 return ResourceManager.GetString("MetaGem_Momentum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opportunist.
+        /// </summary>
+        public static string MetaGem_Opportunist {
+            get {
+                return ResourceManager.GetString("MetaGem_Opportunist", resourceCulture);
             }
         }
         
@@ -2185,11 +2231,29 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SequencedShot.
+        /// </summary>
+        public static string MetaGem_SequencedShot {
+            get {
+                return ResourceManager.GetString("MetaGem_SequencedShot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shield Breaker.
         /// </summary>
         public static string MetaGem_ShieldBreaker {
             get {
                 return ResourceManager.GetString("MetaGem_ShieldBreaker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shocker.
+        /// </summary>
+        public static string MetaGem_Shocker {
+            get {
+                return ResourceManager.GetString("MetaGem_Shocker", resourceCulture);
             }
         }
         
@@ -2212,11 +2276,30 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Spirit Healer.
+        /// </summary>
+        public static string MetaGem_SpiritHealer {
+            get {
+                return ResourceManager.GetString("MetaGem_SpiritHealer", resourceCulture);
+            }
+        }
+
+        
+        /// <summary>
         ///   Looks up a localized string similar to Steadfast.
         /// </summary>
         public static string MetaGem_Steadfast {
             get {
                 return ResourceManager.GetString("MetaGem_Steadfast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stormbringer.
+        /// </summary>
+        public static string MetaGem_Stormbringer {
+            get {
+                return ResourceManager.GetString("MetaGem_Stormbringer", resourceCulture);
             }
         }
         
@@ -2253,6 +2336,15 @@ namespace RemnantSaveGuardian.locales {
         public static string MetaGem_Timewave {
             get {
                 return ResourceManager.GetString("MetaGem_Timewave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top Heavy.
+        /// </summary>
+        public static string MetaGem_TopHeavy {
+            get {
+                return ResourceManager.GetString("MetaGem_TopHeavy", resourceCulture);
             }
         }
         
@@ -4804,6 +4896,16 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TheTwistedChantry.
+        /// </summary>
+        public static string The_Twisted_Chantry {
+            get {
+                return ResourceManager.GetString("The Twisted Chantry", resourceCulture);
+            }
+        }
+
+        
+        /// <summary>
         ///   Looks up a localized string similar to Astropath&apos;s Respite.
         /// </summary>
         public static string TheAstroPathsRespite {
@@ -5565,6 +5667,51 @@ namespace RemnantSaveGuardian.locales {
         public static string Weapon_CoachGun {
             get {
                 return ResourceManager.GetString("Weapon_CoachGun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corrupted Aphelion.
+        /// </summary>
+        public static string Weapon_CorruptedAphelion {
+            get {
+                return ResourceManager.GetString("Weapon_CorruptedAphelion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corrupted Deceit.
+        /// </summary>
+        public static string Weapon_CorruptedDeceit {
+            get {
+                return ResourceManager.GetString("Weapon_CorruptedDeceit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corrupted Merciless.
+        /// </summary>
+        public static string Weapon_CorruptedMerciless {
+            get {
+                return ResourceManager.GetString("Weapon_CorruptedMerciless", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corrupted Meridian.
+        /// </summary>
+        public static string Weapon_CorruptedMeridian {
+            get {
+                return ResourceManager.GetString("Weapon_CorruptedMeridian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corrupted Rune Pistol.
+        /// </summary>
+        public static string Weapon_CorruptedRunePistol {
+            get {
+                return ResourceManager.GetString("Weapon_CorruptedRunePistol", resourceCulture);
             }
         }
         

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -564,14 +564,23 @@
   <data name="Brabus" xml:space="preserve">
     <value>布拉巴斯</value>
   </data>
+  <data name="Briella's Garden" xml:space="preserve">
+    <value>布瑞拉的花园</value>
+  </data>
   <data name="Briella's Reverie" xml:space="preserve">
     <value>布瑞拉的梦</value>
+  </data>
+  <data name="Briella's Garden" xml:space="preserve">
+    <value>布瑞拉的花园</value>
   </data>
   <data name="BrokenTomb" xml:space="preserve">
     <value>旷野潜行者/枝节弓箭手</value>
   </data>
   <data name="BurningCity" xml:space="preserve">
     <value>燃烧的城市</value>
+  </data>
+  <data name="Butcher's Quarter" xml:space="preserve">
+    <value>屠夫区</value>
   </data>
   <data name="Cass" xml:space="preserve">
     <value>卡莎</value>
@@ -723,8 +732,17 @@
   <data name="Foesaken Quarter" xml:space="preserve">
     <value>废弃区</value>
   </data>
+  <data name="Forgotten Field" xml:space="preserve">
+    <value>忘却之地</value>
+  </data>
+  <data name="Forgotten Prison" xml:space="preserve">
+    <value>遗忘监牢</value>
+  </data>
   <data name="Gems" xml:space="preserve">
     <value>突变因子</value>
+  </data>
+  <data name="Gilded Chambers" xml:space="preserve">
+    <value>鎏金大厅</value>
   </data>
   <data name="GoldenHall" xml:space="preserve">
     <value>黄金殿堂</value>
@@ -740,6 +758,9 @@
   </data>
   <data name="Hardcore" xml:space="preserve">
     <value>硬核</value>
+  </data>
+  <data name="Harvester's Reach" xml:space="preserve">
+    <value>收获者领域</value>
   </data>
   <data name="Hatchery" xml:space="preserve">
     <value>始祖</value>
@@ -796,25 +817,25 @@
     <value>炼金术师(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Archon" xml:space="preserve">
-    <value>执政官</value>
+    <value>执政官(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Challenger" xml:space="preserve">
-    <value>挑战者</value>
+    <value>挑战者(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Challenger_Notes" xml:space="preserve">
     <value>从老雷那里购买旧金属工具</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Engineer" xml:space="preserve">
-    <value>工程师</value>
+    <value>工程师(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Gunslinger" xml:space="preserve">
-    <value>枪手</value>
+    <value>枪手(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Gunslinger_Notes" xml:space="preserve">
     <value>{Amulet_GunslingersCharm_Notes}</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Handler" xml:space="preserve">
-    <value>驯兽师</value>
+    <value>驯兽师(心痕)</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Handler_Notes" xml:space="preserve">
     <value>从泥牙那里购买古老哨子</value>
@@ -1167,6 +1188,9 @@
   <data name="Point of Interest" xml:space="preserve">
     <value>兴趣点</value>
   </data>
+  <data name="Postulant's Parlor" xml:space="preserve">
+    <value>发愿者的客厅</value>
+  </data>
   <data name="Quests" xml:space="preserve">
     <value>任务</value>
   </data>
@@ -1190,6 +1214,9 @@
   </data>
   <data name="Ravager" xml:space="preserve">
     <value>劫掠者</value>
+  </data>
+  <data name="Ravager's Lair" xml:space="preserve">
+    <value>劫掠者的巢穴</value>
   </data>
   <data name="RavagersLair" xml:space="preserve">
     <value>劫掠者的巢穴</value>
@@ -1390,7 +1417,7 @@
     <value>{Cass65_Notes}</value>
   </data>
   <data name="Ring_BrightSteelRing" xml:space="preserve">
-    <value>亮钢戒指</value>
+    <value>暗淡钢戒</value>
   </data>
   <data name="Ring_BrightSteelRing_Notes" xml:space="preserve">
     <value>完成至少15个世界故事后在老雷那里购买</value>
@@ -1854,6 +1881,9 @@
   <data name="Seeker's Rest" xml:space="preserve">
     <value>追寻者的休憩</value>
   </data>
+  <data name="Sentinel's Keep" xml:space="preserve">
+    <value>哨兵要塞</value>
+  </data>
   <data name="SewageFacility" xml:space="preserve">
     <value>被淹没的房间</value>
   </data>
@@ -1896,6 +1926,9 @@
   <data name="TalRatha" xml:space="preserve">
     <value>达拉裟</value>
   </data>
+  <data name="Terminus Station" xml:space="preserve">
+    <value>终点站</value>
+  </data>
   <data name="The Chimney" xml:space="preserve">
     <value>烟囱</value>
   </data>
@@ -1917,11 +1950,47 @@
   <data name="The Forbidden Grove" xml:space="preserve">
     <value>禁林</value>
   </data>
+  <data name="The Great Bole" xml:space="preserve">
+    <value>巨树</value>
+  </data>
+  <data name="The Great Hall" xml:space="preserve">
+    <value>大厅</value>
+  </data>
+  <data name="The Great Sewers" xml:space="preserve">
+    <value>巨型下水道</value>
+  </data>
+  <data name="The Hatchery" xml:space="preserve">
+    <value>孵化体</value>
+  </data>
+  <data name="The Lament" xml:space="preserve">
+    <value>挽歌</value>
+  </data>
   <data name="TheLament" xml:space="preserve">
     <value>挽歌</value>
   </data>
   <data name="The Lost Temple" xml:space="preserve">
     <value>失落神庙</value>
+  </data>
+  <data name="The Nameless Nest" xml:space="preserve">
+    <value>无名巢穴</value>
+  </data>
+  <data name="The Putrid Domain" xml:space="preserve">
+    <value>腐烂领域</value>
+  </data>
+  <data name="The Tormented Asylum" xml:space="preserve">
+    <value>苦痛精神病院</value>
+  </data>
+  <data name="The Twisted Chantry" xml:space="preserve">
+    <value>扭曲教堂</value>
+  </data>
+  <data name="The Widow's Court" xml:space="preserve">
+    <value>红寡妇王庭</value>
+  </data>
+  <data name="The Withering Weald" xml:space="preserve">
+    <value>枯萎原野</value>
+  </data>
+  <data name="Astropath's Respite" xml:space="preserve">
+    <value>星语者的喘息</value>
   </data>
   <data name="TheChimney" xml:space="preserve">
     <value>烟囱</value>
@@ -1935,17 +2004,50 @@
   <data name="TheCustodian" xml:space="preserve">
     <value>保管人</value>
   </data>
+  <data name="The Dappled Glade" xml:space="preserve">
+    <value>斑驳林地</value>
+  </data>
   <data name="TheDreamlessSleep" xml:space="preserve">
     <value>静滞舱</value>
+  </data>
+  <data name="The Expanding Glade" xml:space="preserve">
+    <value>扩张的林地</value>
   </data>
   <data name="TheFarWoods" xml:space="preserve">
     <value>遥远森林</value>
   </data>
+  <data name="The Great Bole" xml:space="preserve">
+    <value>巨树</value>
+  </data>
+  <data name="The Great Hall" xml:space="preserve">
+    <value>大厅</value>
+  </data>
+  <data name="The Great Sewers" xml:space="preserve">
+    <value>巨型下水道</value>
+  </data>
+  <data name="The Hatchery" xml:space="preserve">
+    <value>孵化体</value>
+  </data>
   <data name="TheHunter" xml:space="preserve">
     <value>女猎人</value>
   </data>
+  <data name="The Lament" xml:space="preserve">
+    <value>挽歌</value>
+  </data>
+  <data name="The Nameless Nest" xml:space="preserve">
+    <value>无名巢穴</value>
+  </data>
   <data name="TheNest" xml:space="preserve">
     <value>巢穴</value>
+  </data>
+  <data name="The Phantom Wasteland" xml:space="preserve">
+    <value>幽影荒原</value>
+  </data>
+  <data name="The Putrid Domain" xml:space="preserve">
+    <value>腐烂领域</value>
+  </data>
+  <data name="The Red Throne" xml:space="preserve">
+    <value>红王座</value>
   </data>
   <data name="TheSafe" xml:space="preserve">
     <value>保险箱</value>
@@ -1953,8 +2055,17 @@
   <data name="TheTangle" xml:space="preserve">
     <value>{ImperialGardens}</value>
   </data>
+  <data name="The Twisted Chantry" xml:space="preserve">
+    <value>扭曲教堂</value>
+  </data>
   <data name="ThreeMenMorris" xml:space="preserve">
     <value>发愿者</value>
+  </data>
+  <data name="Threshold Of The Unknown" xml:space="preserve">
+    <value>未知的启示</value>
+  </data>
+  <data name="Tiller's Rest" xml:space="preserve">
+    <value>耕作者之息</value>
   </data>
   <data name="Timeless Horizon" xml:space="preserve">
     <value>永恒地平线</value>
@@ -2370,6 +2481,9 @@
   <data name="WidowsCourt" xml:space="preserve">
     <value>红寡妇王庭</value>
   </data>
+  <data name="Widow's Court" xml:space="preserve">
+    <value>红寡妇王庭</value>
+  </data>
   <data name="WindHollow" xml:space="preserve">
     <value>风笛塔</value>
   </data>
@@ -2442,70 +2556,349 @@
   <data name="Relic_Consumable_ConstrainedHeart" xml:space="preserve">
     <value>约束之心</value>
   </data>
-  <data name="PostulantsParlor" xml:space="preserve">
-    <value>发愿者的客厅</value>
+  <data name="MetaGem_BottomFeeder" xml:space="preserve">
+    <value>底栖摄食者</value>
   </data>
-  <data name="SentinelsKeep" xml:space="preserve">
-    <value>哨兵要塞</value>
+  <data name="MetaGem_BottomHeavy" xml:space="preserve">
+    <value>轻装上阵</value>
   </data>
-  <data name="TillersRest" xml:space="preserve">
-    <value>耕作者之息</value>
+  <data name="MetaGem_Edgelord" xml:space="preserve">
+    <value>边缘行走</value>
   </data>
-  <data name="ThresholdOfTheUnknown" xml:space="preserve">
-    <value>未知的启示</value>
+  <data name="MetaGem_Ingenuity" xml:space="preserve">
+    <value>独创精神</value>
   </data>
-  <data name="TheTwistedChantry" xml:space="preserve">
-    <value>扭曲教堂</value>
+  <data name="MetaGem_KillSwitch" xml:space="preserve">
+    <value>杀戮开关</value>
   </data>
-  <data name="ThePutridDomain" xml:space="preserve">
-    <value>腐烂领域</value>
+  <data name="MetaGem_Latency" xml:space="preserve">
+    <value>延迟</value>
   </data>
-  <data name="TheRedThrone" xml:space="preserve">
-    <value>红王座</value>
+  <data name="MetaGem_Opportunist" xml:space="preserve">
+    <value>投机者</value>
   </data>
-  <data name="ThePhantomWasteland" xml:space="preserve">
-    <value>幽影荒原</value>
+  <data name="MetaGem_SequencedShot" xml:space="preserve">
+    <value>鬼魅甲壳</value>
   </data>
-  <data name="TheNamelessNest" xml:space="preserve">
-    <value>无名巢穴</value>
+  <data name="MetaGem_Shocker" xml:space="preserve">
+    <value>震颤者</value>
   </data>
-  <data name="TheHatchery" xml:space="preserve">
-    <value>孵化体</value>
+  <data name="MetaGem_SpiritHealer" xml:space="preserve">
+    <value>灵魂医者</value>
   </data>
-  <data name="TheGreatSewers" xml:space="preserve">
-    <value>巨型下水道</value>
+  <data name="MetaGem_Stormbringer" xml:space="preserve">
+    <value>风暴使者</value>
   </data>
-  <data name="TheGreatHall" xml:space="preserve">
-    <value>大厅</value>
+  <data name="MetaGem_TopHeavy" xml:space="preserve">
+    <value>重装上阵</value>
   </data>
-  <data name="TheGreatBole" xml:space="preserve">
-    <value>巨树</value>
+  <data name="MetaGem_BottomFeeder_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
   </data>
-  <data name="TheExpandingGlade" xml:space="preserve">
-    <value>扩张的林地</value>
+  <data name="MetaGem_BottomHeavy_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
   </data>
-  <data name="TheDappledGlade" xml:space="preserve">
-    <value>斑驳林地</value>
+  <data name="MetaGem_Edgelord_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
   </data>
-  <data name="TerminusStation" xml:space="preserve">
-    <value>终点站</value>
+  <data name="MetaGem_Ingenuity_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
   </data>
-  <data name="BriellasGarden" xml:space="preserve">
-    <value>布瑞拉的花园</value>
+  <data name="MetaGem_KillSwitch_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
   </data>
-  <data name="HarvestersReach" xml:space="preserve">
-    <value>收获者领域</value>
+  <data name="MetaGem_Latency_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
   </data>
-  <data name="ForgottenPrison" xml:space="preserve">
-    <value>遗忘监牢</value>
+  <data name="MetaGem_Opportunist_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
   </data>
-  <data name="ForgottenField" xml:space="preserve">
-    <value>忘却之地</value>
+  <data name="MetaGem_SequencedShot_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
   </data>
-  <data name="GildedChambers" xml:space="preserve">
-    <value>鎏金大厅</value>
+  <data name="MetaGem_Shocker_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
   </data>
-  <data name="ButchersQuarter" xml:space="preserve">
-    <value>屠夫区</value>
+  <data name="MetaGem_Stormbringer_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_TopHeavy_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="MetaGem_SpiritHealer_Notes" xml:space="preserve">
+    <value>畸变怪物随机掉落</value>
+  </data>
+  <data name="Weapon_CorruptedAphelion" xml:space="preserve">
+    <value>腐化远日点</value>
+  </data>
+  <data name="Weapon_CorruptedDeceit" xml:space="preserve">
+    <value>腐化诡诈</value>
+  </data>
+  <data name="Weapon_CorruptedMerciless" xml:space="preserve">
+    <value>腐化无情</value>
+  </data>
+  <data name="Weapon_CorruptedMeridian" xml:space="preserve">
+    <value>腐化巅峰</value>
+  </data>
+  <data name="Weapon_CorruptedRunePistol" xml:space="preserve">
+    <value>腐化符文手枪</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Ritualist" xml:space="preserve">
+    <value>祭祀者(心痕)</value>
+  </data>
+  <data name="Armor_Ritualist" xml:space="preserve">
+    <value>狂热者套装</value>
+  </data>
+  <data name="Armor_RedPrinceArmor" xml:space="preserve">
+    <value>绯红守卫套装</value>
+  </data>
+  <data name="Relic_Consumable_BrokenHeart" xml:space="preserve">
+    <value>破碎之心</value>
+  </data>
+  <data name="Relic_Consumable_PaperHeart" xml:space="preserve">
+    <value>纸之心</value>
+  </data>
+  <data name="Trait_DarkPact" xml:space="preserve">
+    <value>黑暗契约</value>
+  </data>
+  <data name="Weapon_Sparkfire" xml:space="preserve">
+      <value>星火霰弹枪</value>
+  </data>
+  <data name="Weapon_Monarch" xml:space="preserve">
+    <value>君王</value>
+  </data>
+  <data name="Material_OccultVessel" xml:space="preserve">
+    <value>痛苦</value>
+  </data>
+  <data name="Weapon_Wrathbringer" xml:space="preserve">
+    <value>狂怒使者</value>
+  </data>
+  <data name="Weapon_AbyssalHook" xml:space="preserve">
+    <value>深渊之钩</value>
+  </data>
+  <data name="Weapon_Scythe" xml:space="preserve">
+    <value>钢镰刀</value>
+  </data>
+  <data name="Weapon_RitualistScythe" xml:space="preserve">
+    <value>祭祀者镰刀</value>
+  </data>
+  <data name="MetaGem_Guts" xml:space="preserve">
+    <value>越战越勇</value>
+  </data>
+  <data name="MetaGem_TaintedBlade" xml:space="preserve">
+    <value>污秽之刃</value>
+  </data>
+  <data name="MetaGem_FetidWounds" xml:space="preserve">
+    <value>恶臭伤痕</value>
+  </data>
+  <data name="MetaGem_Prophecy" xml:space="preserve">
+    <value>预言</value>
+  </data>
+  <data name="MetaGem_Dreadful" xml:space="preserve">
+    <value>可怖</value>
+  </data>
+  <data name="MetaGem_Maelstrom" xml:space="preserve">
+    <value>大漩涡</value>
+  </data>
+  <data name="MetaGem_Sleeper" xml:space="preserve">
+    <value>沉睡者</value>
+  </data>
+  <data name="MetaGem_Executor" xml:space="preserve">
+    <value>执行者</value>
+  </data>
+  <data name="Mod_CreepingMist" xml:space="preserve">
+    <value>蔓延迷雾</value>
+  </data>
+  <data name="Mod_KnightGuard" xml:space="preserve">
+    <value>骑士守卫</value>
+  </data>
+  <data name="Mod_RingOfSpears" xml:space="preserve">
+    <value>长矛戒指</value>
+  </data>
+  <data name="Mod_ChainOfCommand" xml:space="preserve">
+    <value>命令链</value>
+  </data>
+  <data name="Amulet_BirthrightOfTheLost" xml:space="preserve">
+    <value>失落者天权</value>
+  </data>
+  <data name="Amulet_BrewmastersCork" xml:space="preserve">
+    <value>酿酒大师的瓶塞</value>
+  </data>
+  <data name="Amulet_CostOfBetrayal" xml:space="preserve">
+    <value>背叛的代价</value>
+  </data>
+  <data name="Amulet_DeathSoakedIdol" xml:space="preserve">
+    <value>浸透死亡的神像</value>
+  </data>
+  <data name="Amulet_GiftOfEuphoria" xml:space="preserve">
+      <value>极乐的礼物</value>
+  </data>
+  <data name="Amulet_GiftOfMelancholy" xml:space="preserve">
+      <value>忧郁的礼物</value>
+  </data>
+  <data name="Amulet_GiftOfTheUnbound" xml:space="preserve">
+    <value>不羁者的礼物</value>
+  </data>
+  <data name="Amulet_IndexOfTheScribe" xml:space="preserve">
+    <value>抄写员的索引</value>
+  </data>
+  <data name="Amulet_ParticipationMedal" xml:space="preserve">
+    <value>参与奖章</value>
+  </data>
+  <data name="Amulet_WhisperingMarble" xml:space="preserve">
+    <value>低语大理石</value>
+  </data>
+  <data name="Amulet_LegacyProtocol" xml:space="preserve">
+    <value>旧日协议</value>
+  </data>
+  <data name="Amulet_SinisterTotem" xml:space="preserve">
+    <value>罪恶图腾</value>
+  </data>
+  <data name="Ring_AtonementFold" xml:space="preserve">
+    <value>赎罪皱襞</value>
+  </data>
+  <data name="Ring_BandOfTheFanatic" xml:space="preserve">
+    <value>狂热者指环</value>
+  </data>
+  <data name="Ring_BitterMemento" xml:space="preserve">
+    <value>苦涩的纪念品</value>
+  </data>
+  <data name="Ring_BridgeWardensCrest" xml:space="preserve">
+    <value>守桥者纹章</value>
+  </data>
+  <data name="Ring_BurdenOfTheDeparted" xml:space="preserve">
+    <value>逝去者之负担</value>
+  </data>
+  <data name="Ring_BurdenOfTheSciolist" xml:space="preserve">
+    <value>伪智者之负担</value>
+  </data>
+  <data name="Ring_CrimsonDreamstone" xml:space="preserve">
+    <value>绯红梦石</value>
+  </data>
+  <data name="Ring_DigestedHogLure" xml:space="preserve">
+    <value>已消化的猪饵料</value>
+  </data>
+  <data name="Ring_DriedClayRing" xml:space="preserve">
+    <value>干陶戒指</value>
+  </data>
+  <data name="Ring_ElevatedRing" xml:space="preserve">
+    <value>高升戒指</value>
+  </data>
+  <data name="Ring_JewelOfTheBeholden" xml:space="preserve">
+    <value>感恩珠宝</value>
+  </data>
+  <data name="Ring_LightHouseKeepersRing" xml:space="preserve">
+    <value>灯塔守卫的戒指</value>
+  </data>
+  <data name="Ring_OfferingStone" xml:space="preserve">
+    <value>祭品之石</value>
+  </data>
+  <data name="Ring_PainlessObsidian" xml:space="preserve">
+    <value>无痛黑曜石</value>
+  </data>
+  <data name="Ring_RedRingOfDeath" xml:space="preserve">
+    <value>死亡红戒</value>
+  </data>
+  <data name="Ring_RingOfInfiniteDamage" xml:space="preserve">
+    <value>无限伤害戒指</value>
+  </data>
+  <data name="Ring_RingOfTheCastaway" xml:space="preserve">
+    <value>放逐者戒指</value>
+  </data>
+  <data name="Ring_RingOfTheVain" xml:space="preserve">
+    <value>虚无指环</value>
+  </data>
+  <data name="Ring_ShadowOfMisery" xml:space="preserve">
+    <value>痛苦之影</value>
+  </data>
+  <data name="Ring_ShaedStone" xml:space="preserve">
+    <value>刹邸之石</value>
+  </data>
+  <data name="Ring_WhiteGlassBead" xml:space="preserve">
+    <value>白色玻璃珠</value>
+  </data>
+  <data name="Ring_WoodRing" xml:space="preserve">
+    <value>木质戒指</value>
+  </data>
+  <data name="Ring_ATaeriiBooster" xml:space="preserve">
+    <value>阿泰里助推</value>
+  </data>
+  <data name="Ring_PowerComplex" xml:space="preserve">
+    <value>能量园区</value>
+  </data>
+  <data name="Ring_BrawlersPride" xml:space="preserve">
+    <value>格斗家的骄傲</value>
+  </data>
+  <data name="Ring_SoulShard" xml:space="preserve">
+    <value>灵魂碎片</value>
+  </data>
+  <data name="Trait_Affliction" xml:space="preserve">
+    <value>折磨</value>
+  </data>
+  <data name="World_DLC1" xml:space="preserve">
+    <value>真皇的苏醒DLC</value>
+  </data>
+  <data name="Lighthouse" xml:space="preserve">
+    <value>秘密灯塔</value>
+  </data>
+  <data name="Drowned Wen" xml:space="preserve">
+    <value>淹没之城</value>
+  </data>
+  <data name="Quest_Story_OTK" xml:space="preserve">
+    <value>凄凉海岸</value>
+  </data>
+  <data name="Glistering Cloister" xml:space="preserve">
+    <value>闪光回廊</value>
+  </data>
+  <data name="Mournful Promenade" xml:space="preserve">
+    <value>哀悼长廊</value>
+  </data>
+  <data name="Pathway of the Fallen" xml:space="preserve">
+    <value>堕落之路</value>
+  </data>
+  <data name="Palace of the One True King" xml:space="preserve">
+    <value>独一真皇的宫殿</value>
+  </data>
+  <data name="Sunken Haunt" xml:space="preserve">
+    <value>失落之地</value>
+  </data>
+  <data name="The Forgotten Commune" xml:space="preserve">
+    <value>被遗忘的公社</value>
+  </data>
+  <data name="Walk of Remembrance" xml:space="preserve">
+    <value>纪念之行</value>
+  </data>
+  <data name="BurningCity_DLC" xml:space="preserve">
+    <value>飘渺庄园</value>
+  </data>
+  <data name="Consecrated Throne" xml:space="preserve">
+    <value>祝圣王座</value>
+  </data>
+  <data name="Forgotten Null" xml:space="preserve">
+    <value>忘却之无</value>
+  </data>
+  <data name="Impaler" xml:space="preserve">
+    <value>布鲁恩，国王之刃</value>
+  </data>
+  <data name="OneTrueKingStory" xml:space="preserve">
+    <value>独一真皇</value>
+  </data>
+  <data name="SewerChamber" xml:space="preserve">
+    <value>被玷污的祭坛</value>
+  </data>
+  <data name="Witch" xml:space="preserve">
+    <value>失落女巫</value>
+  </data>
+  <data name="GardenMaze" xml:space="preserve">
+    <value>The Maze</value>
+  </data>
+  <data name="Halls_DLC" xml:space="preserve">
+    <value>Mirror Floor</value>
+  </data>
+  <data name="Sewer_DLC" xml:space="preserve">
+    <value>Sewer Hole</value>
+  </data>
+  <data name="Quest_Item_DLC_DreamLevel" xml:space="preserve">
+    <value>Enter the Dream</value>
   </data>
 </root>
