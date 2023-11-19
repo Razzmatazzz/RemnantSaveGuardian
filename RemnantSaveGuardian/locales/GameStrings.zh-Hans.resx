@@ -3012,4 +3012,7 @@
   <data name="Leywise" xml:space="preserve">
     <value>雷维斯</value>
   </data>
+  <data name="Preacher" xml:space="preserve">
+    <value>传道士</value>
+  </data>
 </root>
