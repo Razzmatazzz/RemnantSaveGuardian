@@ -576,9 +576,6 @@
   <data name="BrokenTomb" xml:space="preserve">
     <value>旷野潜行者/枝节弓箭手</value>
   </data>
-  <data name="BurningCity" xml:space="preserve">
-    <value>燃烧的城市</value>
-  </data>
   <data name="Butcher's Quarter" xml:space="preserve">
     <value>屠夫区</value>
   </data>
@@ -2845,6 +2842,9 @@
     <value>淹没之城</value>
   </data>
   <data name="Quest_Story_OTK" xml:space="preserve">
+    <value>洛斯曼：凄凉海岸</value>
+  </data>
+  <data name="Forlorn Coast" xml:space="preserve">
     <value>凄凉海岸</value>
   </data>
   <data name="Glistering Cloister" xml:space="preserve">
@@ -2868,6 +2868,9 @@
   <data name="Walk of Remembrance" xml:space="preserve">
     <value>纪念之行</value>
   </data>
+  <data name="BurningCity" xml:space="preserve">
+    <value>飘渺庄园</value>
+  </data>
   <data name="BurningCity_DLC" xml:space="preserve">
     <value>飘渺庄园</value>
   </data>
@@ -2890,15 +2893,18 @@
     <value>失落女巫</value>
   </data>
   <data name="GardenMaze" xml:space="preserve">
-    <value>The Maze</value>
+    <value>花园迷宫</value>
   </data>
   <data name="Halls_DLC" xml:space="preserve">
-    <value>Mirror Floor</value>
+    <value>镜子地面</value>
   </data>
   <data name="Sewer_DLC" xml:space="preserve">
-    <value>Sewer Hole</value>
+    <value>下水道口</value>
   </data>
   <data name="Quest_Item_DLC_DreamLevel" xml:space="preserve">
-    <value>Enter the Dream</value>
+    <value>进入梦境</value>
+  </data>
+  <data name="Dranception" xml:space="preserve">
+    <value>德兰人的梦事件</value>
   </data>
 </root>
