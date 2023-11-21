@@ -4912,15 +4912,6 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TheTwistedChantry.
-        /// </summary>
-        public static string The_Twisted_Chantry {
-            get {
-                return ResourceManager.GetString("The Twisted Chantry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Astropath&apos;s Respite.
         /// </summary>
         public static string TheAstroPathsRespite {

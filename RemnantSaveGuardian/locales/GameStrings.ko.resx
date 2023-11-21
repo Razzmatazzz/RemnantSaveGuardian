@@ -603,17 +603,23 @@
   <data name="Foesaken Quarter" xml:space="preserve">
     <value>버림받은 구역</value>
   </data>
+  <data name="Forgotten Prison" xml:space="preserve">
+    <value>잊힌 감옥</value>
+  </data>
   <data name="ForgottenField" xml:space="preserve">
     <value>잊힌 들판</value>
   </data>
   <data name="ForgottenPrison" xml:space="preserve">
-    <value>잊힌 감옥</value>
+    <value>Forgotten Prison</value>
   </data>
   <data name="Gems" xml:space="preserve">
     <value>변이체</value>
   </data>
-  <data name="GildedChambers" xml:space="preserve">
+  <data name="Gilded Chambers" xml:space="preserve">
     <value>금빛 방</value>
+  </data>
+  <data name="GildedChambers" xml:space="preserve">
+    <value>Gilded Chambers</value>
   </data>
   <data name="GoldenHall_Nimue" xml:space="preserve">
     <value>Nimue's Retreat</value>
@@ -1551,8 +1557,38 @@
   <data name="The Forbidden Grove" xml:space="preserve">
     <value>금단의 숲</value>
   </data>
+  <data name="The Great Bole" xml:space="preserve">
+    <value>위대한 줄기</value>
+  </data>
+  <data name="The Great Hall" xml:space="preserve">
+    <value>대회당</value>
+  </data>
+  <data name="The Great Sewers" xml:space="preserve">
+    <value>거대한 하수도</value>
+  </data>
+  <data name="The Hatchery" xml:space="preserve">
+    <value>부화장</value>
+  </data>
+  <data name="The Lament" xml:space="preserve">
+    <value>애도</value>
+  </data>
   <data name="The Lost Temple" xml:space="preserve">
     <value>잃어버린 사원</value>
+  </data>
+  <data name="The Nameless Nest" xml:space="preserve">
+    <value>이름 없는 둥지</value>
+  </data>
+  <data name="The Putrid Domain" xml:space="preserve">
+    <value>타락의 영역</value>
+  </data>
+  <data name="The Red Throne" xml:space="preserve">
+    <value>붉은 왕좌</value>
+  </data>
+  <data name="The Tormented Asylum" xml:space="preserve">
+    <value>고통스러운 정신병원</value>
+  </data>
+  <data name="The Twisted Chantry" xml:space="preserve">
+    <value>일그러진 예배당</value>
   </data>
   <data name="The Withering Weald" xml:space="preserve">
     <value>시들어가는 삼림지대</value>
@@ -1573,34 +1609,34 @@
     <value>팽창하는 빈터</value>
   </data>
   <data name="TheGreatBole" xml:space="preserve">
-    <value>위대한 줄기</value>
+    <value>The Great Bole</value>
   </data>
   <data name="TheGreatHall" xml:space="preserve">
-    <value>대회당</value>
+    <value>The Great Hall</value>
   </data>
   <data name="TheGreatSewers" xml:space="preserve">
-    <value>거대한 하수도</value>
+    <value>The Great Sewers</value>
   </data>
   <data name="TheHatchery" xml:space="preserve">
-    <value>부화장</value>
+    <value>The Hatchery</value>
   </data>
   <data name="TheHunter" xml:space="preserve">
     <value>The Huntress</value>
   </data>
   <data name="TheLament" xml:space="preserve">
-    <value>애도</value>
+    <value>The Lament</value>
   </data>
   <data name="TheNamelessNest" xml:space="preserve">
-    <value>이름 없는 둥지</value>
+    <value>The Nameless Nest</value>
   </data>
   <data name="ThePhantomWasteland" xml:space="preserve">
     <value>The Phantom Wasteland</value>
   </data>
   <data name="ThePutridDomain" xml:space="preserve">
-    <value>타락의 영역</value>
+    <value>The Putrid Domain</value>
   </data>
   <data name="TheRedThrone" xml:space="preserve">
-    <value>붉은 왕좌</value>
+    <value>The Red Throne</value>
   </data>
   <data name="TheSafe" xml:space="preserve">
     <value>Locked Safe</value>
@@ -1609,16 +1645,22 @@
     <value>{ImperialGardens}</value>
   </data>
   <data name="TheTwistedChantry" xml:space="preserve">
-    <value>일그러진 예배당</value>
+    <value>The Twisted Chantry</value>
   </data>
   <data name="ThreeMenMorris" xml:space="preserve">
     <value>The Postulant</value>
   </data>
-  <data name="ThresholdOfTheUnknown" xml:space="preserve">
+  <data name="Threshold of the Unknown" xml:space="preserve">
     <value>미지의 문턱</value>
   </data>
-  <data name="TillersRest" xml:space="preserve">
+  <data name="ThresholdOfTheUnknown" xml:space="preserve">
+    <value>Threshold of the Unknown</value>
+  </data>
+  <data name="Tiller's Rest" xml:space="preserve">
     <value>틸러의 휴식</value>
+  </data>
+  <data name="TillersRest" xml:space="preserve">
+    <value>Tiller's Rest</value>
   </data>
   <data name="Timeless Horizon" xml:space="preserve">
     <value>영원한 지평선</value>
@@ -1627,7 +1669,7 @@
     <value>타이탄의 구역</value>
   </data>
   <data name="TormentedAsylum" xml:space="preserve">
-    <value>고통스러운 정신병원</value>
+    <value>Tormented Asylum</value>
   </data>
   <data name="Tower" xml:space="preserve">
     <value>The Elevator</value>
@@ -1965,6 +2007,9 @@
   <data name="Weapon_WorldsEdge" xml:space="preserve">
     <value>세상의 끝</value>
   </data>
+  <data name="Widow's Court" xml:space="preserve">
+    <value>과부의 궐</value>
+  </data>
   <data name="WindHollow" xml:space="preserve">
     <value>Flute Tower</value>
   </data>
@@ -1989,10 +2034,7 @@
   <data name="World_RootEarth" xml:space="preserve">
     <value>루트 지구</value>
   </data>
-  <data name="Trait_Rugged" xml:space="preserve">
-    <value>다부짐</value>
-  </data>
-  <data name="WidowsCourt" xml:space="preserve">
-    <value>과부의 궐</value>
+  <data name="다부짐" xml:space="preserve">
+    <value>Rugged</value>
   </data>
 </root>
