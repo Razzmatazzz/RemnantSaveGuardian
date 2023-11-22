@@ -2167,11 +2167,11 @@
           "name": "/Items/Gems/Melee/MetaGems/WeaponLord/MetaGem_WeaponLord"
         },
         {
-          "name": "/Items/Gems/Melee/MetaGems/TaintedBlade/MetaGem_TaintedBlade"
+          "name": "/Items/Gems/Melee/TaintedBlade/MetaGem_TaintedBlade"
         },
         {
-          "name": "/Items/Gems/Melee/MetaGems/FetidWounds/MetaGem_FetidWounds"
-  },
+          "name": "/Items/Gems/Ranged/FetidWounds/MetaGem_FetidWounds"
+        },
         {
           "name": "/Items/Weapons/Longguns/Special/CorruptedAphelion/Weapon_CorruptedAphelion"
         },
