@@ -2104,7 +2104,7 @@
     <value>Knight Guard</value>
   </data>
   <data name="Mod_RingOfSpears" xml:space="preserve">
-    <value></value>
+    <value>Ring Of Spears</value>
   </data>
   <data name="MetaGem_Dreadful" xml:space="preserve">
     <value>Dreadful</value>
@@ -2264,5 +2264,8 @@
   </data>
   <data name="Ring_ATaeriiBooster" xml:space="preserve">
     <value>A'Taerii Booster</value>
+  </data>
+  <data name="Mod_ChainOfCommand" xml:space="preserve">
+    <value>Chain Of Command</value>
   </data>
 </root>
