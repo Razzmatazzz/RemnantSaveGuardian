@@ -1987,7 +1987,7 @@
     <value>Ritualist Scythe</value>
   </data>
   <data name="Weapon_Sparkfire" xml:space="preserve">
-    <value></value>
+    <value>Sparkfire Shotgun</value>
   </data>
   <data name="Weapon_Scythe" xml:space="preserve">
     <value>Steel Scythe</value>
@@ -2261,5 +2261,8 @@
   </data>
   <data name="Trait_DarkPact" xml:space="preserve">
     <value>Dark Pact</value>
+  </data>
+  <data name="Ring_ATaeriiBooster" xml:space="preserve">
+    <value>A'Taerii Booster</value>
   </data>
 </root>
