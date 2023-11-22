@@ -2446,6 +2446,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chain Of Command.
+        /// </summary>
+        public static string Mod_ChainOfCommand {
+            get {
+                return ResourceManager.GetString("Mod_ChainOfCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Concussive Shot.
         /// </summary>
         public static string Mod_ConcussiveShot {
@@ -2572,7 +2581,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Ring Of Spears.
         /// </summary>
         public static string Mod_RingOfSpears {
             get {
@@ -3229,6 +3238,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A&apos;Taerii Booster.
+        /// </summary>
+        public static string Ring_ATaeriiBooster {
+            get {
+                return ResourceManager.GetString("Ring_ATaeriiBooster", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Atonement Fold.
         /// </summary>
         public static string Ring_AtonementFold {
@@ -3400,7 +3418,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bright Steel Ring.
+        ///   Looks up a localized string similar to Dull Steel Ring.
         /// </summary>
         public static string Ring_BrightSteelRing {
             get {
@@ -6253,7 +6271,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Sparkfire Shotgun.
         /// </summary>
         public static string Weapon_Sparkfire {
             get {
