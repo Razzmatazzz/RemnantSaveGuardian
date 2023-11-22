@@ -52,7 +52,7 @@ namespace RemnantSaveGuardian
             }
         }
         public List<RemnantItem> MissingItems {
-            get 
+            get
             {
                 return mItems;
             }
@@ -139,7 +139,8 @@ namespace RemnantSaveGuardian
             }
             if (type.Contains("Injectable") || type.Contains("Abberation"))
             {
-                _name = _name.Split('_').Last();
+                var nameSplit = _name.Split('_');
+                _name = nameSplit.Last() == "DLC" ? nameSplit[nameSplit.Length-2] : nameSplit.Last();
             }
             if (type == "RootEarth")
             {
@@ -434,11 +435,7 @@ namespace RemnantSaveGuardian
                 }
             }
 
-            List<RemnantWorldEvent> eventList = character.CampaignEvents;
-            if (mode == ProcessMode.Adventure)
-            {
-                eventList = character.AdventureEvents;
-            }
+            List<RemnantWorldEvent> eventList = mode==ProcessMode.Adventure?character.AdventureEvents:character.CampaignEvents;
             eventList.Clear();
 
             /*bool churchAdded = false;
@@ -595,7 +592,7 @@ namespace RemnantSaveGuardian
             {
                 return;
             }
-            
+
             if (eventEnds.Count != eventStarts.Count)
             {
                 return;
@@ -942,7 +939,7 @@ namespace RemnantSaveGuardian
             RemnantWorldEvent lastEventTree;
             //List<string> excludeTypes = new() { "Global", "Earth" };
             List<string> excludeWorlds = new() { "World_Base", "World_Labyrinth" };
-            List<string> excludeEventDetails = new() { "TheHunterDream" };
+            List<string> excludeEventDetails = new() { "TheHunterDream", "Dranception" };
             var unknownAreaCount = 0;
             foreach (Match area in areas)
             {
@@ -958,12 +955,19 @@ namespace RemnantSaveGuardian
                 MatchCollection eventMatches = Regex.Matches(area.Groups["events"].Value, @"/Game/(?<world>(?:World|Campaign)_\w+)/Quests/(?:Quest_)?(?<eventType>[a-zA-Z0-9]+)_(?<eventName>\w+)/(?<details>\w+)\.\w+");
                 foreach (Match eventMatch in eventMatches)
                 {
+                    var prevWorld = currentWorld;
                     currentWorld = eventMatch.Groups["world"].Value;
                     if (currentWorld == null || excludeWorlds.Contains(currentWorld))
                     {
                         continue;
                     }
-                    var lastTemplate = lastTemplates.ContainsKey(eventMatch.Groups["world"].Value) ? lastTemplates[eventMatch.Groups["world"].Value] : null;
+
+                    if (currentWorld == "World_DLC1" && prevWorld != null)
+                    {
+                        currentWorld = prevWorld;
+
+                    }
+                    var lastTemplate = lastTemplates.ContainsKey(currentWorld) ? lastTemplates[currentWorld] : null;
                     if (lastTemplate != null)
                     {
                         currentMainLocation = lastTemplate.RawName;
@@ -987,6 +991,10 @@ namespace RemnantSaveGuardian
                         {
                             currentSublocation = area.Groups["locationName"].Value;
                         }
+                        if (currentSublocation == "Consecrated Throne")
+                        {
+                            continue;
+                        }
                         if (currentSublocation == null && eventMatch.Groups["eventType"].Value != "OverworldPOI")
                         {
                             if (spawnTable != null)
@@ -1006,7 +1014,8 @@ namespace RemnantSaveGuardian
                         }
 
                         //eventStrings.Add(eventMatch.Value);
-                        var worldEvent = new RemnantWorldEvent(eventMatch);//, currentArea.Groups["location"].Value.Trim());
+                        //var worldEvent = new RemnantWorldEvent(eventMatch);//, currentArea.Groups["location"].Value.Trim());
+                        var worldEvent = new RemnantWorldEvent(eventMatch.Value, eventMatch.Groups["eventName"].Value, new() { currentWorld }, eventMatch.Groups["eventType"].Value);
                         worldEvent.TileSet = tileSets;
                         if (areaEvents.FindIndex(e => e.RawName == worldEvent.RawName) != -1)
                         {
@@ -1323,7 +1332,7 @@ namespace RemnantSaveGuardian
                         firstZone = zone;
                     }
                     //Debug.WriteLine("Parse: " + textLine);
-                   
+
                     if (textLine.Contains("Ring") || textLine.Contains("Amulet"))
                     {
                         //eventName = textLine.Split('/')[4].Split('_')[3];
@@ -1561,7 +1570,7 @@ namespace RemnantSaveGuardian
                 campaignStart = campaignBlob.LastIndexOf(strCampaignStart);
                 eventBlobs[ProcessMode.Campaign] = campaignBlob.Substring(campaignStart);
             }
-            var adventureMatch = Regex.Match(saveText, @"/Game/World_(?<world>\w+)/Quests/Quest_AdventureMode/Quest_AdventureMode_\w+.Quest_AdventureMode_\w+_C");
+            var adventureMatch = Regex.Match(saveText, @"/Game/World_(?<world>\w+)/Quests/Quest_AdventureMode(_[a-zA-Z]+)?/Quest_AdventureMode(_[a-zA-Z]+)?_\w+.Quest_AdventureMode(_[a-zA-Z]+)?_\w+_C");
             if (adventureMatch.Success)
             {
                 int adventureEnd = adventureMatch.Index;
@@ -1586,7 +1595,9 @@ namespace RemnantSaveGuardian
                     {
                         continue;
                     }
-                    var eventName = ev.Groups["eventName"].Value.Split("_").Last();
+
+                    var eventNameSplitted = ev.Groups["eventName"].Value.Split("_");
+                    var eventName = eventNameSplitted.Last() == "DLC" ? eventNameSplitted[eventNameSplitted.Length-2] : eventNameSplitted.Last();
                     Match parentEvent;
                     if (GameInfo.InjectableParents.ContainsKey(eventName))
                     {
@@ -1677,7 +1688,9 @@ namespace RemnantSaveGuardian
         static public void ProcessEvents(RemnantCharacter character)
         {
             var savetext = RemnantSave.DecompressSaveAsString(character.Save.WorldSaves[character.WorldIndex]);
-            //File.WriteAllText(character.Save.WorldSaves[character.WorldIndex].Replace(".sav", ".txt"), savetext);
+    #if DEBUG
+            System.IO.File.WriteAllText(character.Save.WorldSaves[character.WorldIndex].Replace(".sav", ".txt"), savetext);
+    #endif
             ProcessEvents(character, savetext);
         }
 
