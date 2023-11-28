@@ -140,7 +140,7 @@ namespace RemnantSaveGuardian
             if (type.Contains("Injectable") || type.Contains("Abberation"))
             {
                 var nameSplit = _name.Split('_');
-                _name = nameSplit.Last() == "DLC" ? nameSplit[nameSplit.Length-2] : nameSplit.Last();
+                _name = nameSplit.Last() == "DLC" ? nameSplit[nameSplit.Length-2]+"_DLC" : nameSplit.Last();
             }
             if (type == "RootEarth")
             {
@@ -991,7 +991,7 @@ namespace RemnantSaveGuardian
                         {
                             currentSublocation = area.Groups["locationName"].Value;
                         }
-                        if (currentSublocation == "Consecrated Throne")
+                        if (currentSublocation == "Consecrated Throne"|| currentSublocation == "Forgotten Null")
                         {
                             continue;
                         }
@@ -1193,7 +1193,10 @@ namespace RemnantSaveGuardian
                 if (!zoneEvents.ContainsKey(world))
                 {
                     //Logger.Warn($"Injectable world {world} not found in {mode} events");
-                    continue;
+                    if (world == "World_DLC1")
+                        world = "World_Fae";
+                    else
+                        continue;
                 }
                 if (zoneEvents[world].Any(we => we._name == injectable._name))
                 {
