@@ -1,6 +1,8 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
+using lib.remnant2.analyzer;
 
 namespace RemnantSaveGuardian
 {
@@ -20,7 +22,9 @@ namespace RemnantSaveGuardian
         private bool inTxn = false;
         //private int[] progression;
         //private List<RemnantCharacter> charData;
-        private RemnantSave save;
+        private string progression;
+        private string savePath;
+
         public string Name
         {
             get
@@ -56,7 +60,7 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return string.Join(", ", this.save.Characters);
+                return string.Join(", ", progression);
             }
         }
         public bool Keep
@@ -87,18 +91,20 @@ namespace RemnantSaveGuardian
             }
         }
 
-        public RemnantSave Save
+        public string SaveFolderPath
         {
             get
             {
-                return save;
+                return savePath;
             }
         }
 
         //public SaveBackup(DateTime saveDate)
         public SaveBackup(string savePath)
         {
-            this.save = new RemnantSave(savePath);
+            this.savePath = savePath;
+
+            this.progression = Analyzer.GetProfileString(this.savePath);
             this.saveData = new SaveData();
             this.saveData.name = this.SaveDateTime.Ticks.ToString();
             this.saveData.date = this.SaveDateTime;
@@ -178,7 +184,7 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return File.GetLastWriteTime(save.SaveProfilePath);
+                return File.GetLastWriteTime(Path.Join(savePath, "profile.sav"));
             }
         }
     }

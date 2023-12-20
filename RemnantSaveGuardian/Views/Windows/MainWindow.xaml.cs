@@ -239,7 +239,7 @@ namespace RemnantSaveGuardian.Views.Windows
                 }
             }
             var viewM = Activator.CreateInstance(typeof(WorldAnalyzerViewModel)) as WorldAnalyzerViewModel;
-            object[] parameters = { viewM, e.SaveBackup.Save.SaveFolderPath };
+            object[] parameters = { viewM, e.SaveBackup.SaveFolderPath };
             var page = Activator.CreateInstance(typeof(WorldAnalyzerPage), parameters) as WorldAnalyzerPage;
 
             var navItem = new NavigationItem()

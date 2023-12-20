@@ -119,35 +119,35 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return;
             }
-            Process.Start("explorer.exe", @$"{backup.Save.SaveFolderPath}\");
+            Process.Start("explorer.exe", @$"{backup.SaveFolderPath}\");
         }
 
-        private void MenuDelete_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            var backup = dataBackups.SelectedItem as SaveBackup;
-            if (backup == null)
-            {
-                return;
-            }
-            var messageBox = new Wpf.Ui.Controls.MessageBox();
-            messageBox.Title = Loc.T("Confirm Delete");
-            messageBox.Content = new TextBlock()
-            {
-                Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {
-                    { "backupName", backup.Name } }) + $"\n{Loc.T("Characters")}: {string.Join(", ", backup.Save.Characters)}\n{Loc.T("Date")}: {backup.SaveDate.ToString()}",
-                TextWrapping = System.Windows.TextWrapping.WrapWithOverflow
-            };
-            messageBox.ButtonLeftName = Loc.T("Delete");
-            messageBox.ButtonLeftClick += (send, updatedEvent) => {
-                DeleteBackup(backup);
-                messageBox.Close();
-            };
-            messageBox.ButtonRightName = Loc.T("Cancel");
-            messageBox.ButtonRightClick += (send, updatedEvent) => {
-                messageBox.Close();
-            };
-            messageBox.ShowDialog();
-        }
+        //private void MenuDelete_Click(object sender, System.Windows.RoutedEventArgs e)
+        //{
+        //    var backup = dataBackups.SelectedItem as SaveBackup;
+        //    if (backup == null)
+        //    {
+        //        return;
+        //    }
+        //    var messageBox = new Wpf.Ui.Controls.MessageBox();
+        //    messageBox.Title = Loc.T("Confirm Delete");
+        //    messageBox.Content = new TextBlock()
+        //    {
+        //        Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {
+        //            { "backupName", backup.Name } }) + $"\n{Loc.T("Characters")}: {string.Join(", ", backup.Save.Characters)}\n{Loc.T("Date")}: {backup.SaveDate.ToString()}",
+        //        TextWrapping = System.Windows.TextWrapping.WrapWithOverflow
+        //    };
+        //    messageBox.ButtonLeftName = Loc.T("Delete");
+        //    messageBox.ButtonLeftClick += (send, updatedEvent) => {
+        //        DeleteBackup(backup);
+        //        messageBox.Close();
+        //    };
+        //    messageBox.ButtonRightName = Loc.T("Cancel");
+        //    messageBox.ButtonRightClick += (send, updatedEvent) => {
+        //        messageBox.Close();
+        //    };
+        //    messageBox.ShowDialog();
+        //}
 
         private void BtnStartGame_Click(object sender, System.Windows.RoutedEventArgs e)
         {
@@ -756,7 +756,7 @@ namespace RemnantSaveGuardian.Views.Pages
             messageBox.Title = Loc.T("Confirm Delete");
             messageBox.Content = new TextBlock() {
                 Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {
-                    { "backupName", backup.Name } })+$"\n{Loc.T("Characters")}: {string.Join(", ", backup.Save.Characters)}\n{Loc.T("Date")}: {backup.SaveDate.ToString()}", 
+                    { "backupName", backup.Name } })+$"\n{Loc.T("Characters")}: {backup.Progression}\n{Loc.T("Date")}: {backup.SaveDate.ToString()}", 
                 TextWrapping = System.Windows.TextWrapping.WrapWithOverflow 
             };
             messageBox.ButtonLeftName = Loc.T("Delete");
@@ -776,7 +776,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             try
             {
-                Directory.Delete(backup.Save.SaveFolderPath, true);
+                Directory.Delete(backup.SaveFolderPath, true);
 
                 listBackups.Remove(backup);
                 refreshBackups();
