@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using lib.remnant2.analyzer.Model;
 using Wpf.Ui.Common.Interfaces;
+using System.Diagnostics.CodeAnalysis;
 
 namespace RemnantSaveGuardian.Views.Pages
 {
@@ -621,11 +622,11 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         var newItem = new WorldAnalyzerGridData
                         {
-                            Location = l,
+                            Location = Loc.GameT(l),
                             MissingItems = new(),
                             PossibleItems = new(),
-                            Name = string.Join('\n', location.Connections),
-                            Type = "Connections"
+                            Name = string.Join('\n', location.Connections.Select(Loc.GameT)),
+                            Type = Loc.GameT("Connections")
                         };
                         if (eventPassesFilter(newItem))
                         {
@@ -636,11 +637,11 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         var newItem = new WorldAnalyzerGridData
                         {
-                            Location = l,
+                            Location = Loc.GameT(l),
                             MissingItems = new(),
                             PossibleItems = new(),
-                            Name = string.Join('\n', location.WorldStones),
-                            Type = "World Stones"
+                            Name = string.Join('\n', location.WorldStones.Select(Loc.GameT)),
+                            Type = Loc.GameT("World Stones")
                         };
                         if (eventPassesFilter(newItem))
                         {
@@ -651,11 +652,11 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         var newItem = new WorldAnalyzerGridData
                         {
-                            Location = l,
+                            Location = Loc.GameT(l),
                             MissingItems = new(),
                             PossibleItems = new(),
-                            Name = "Tome of Knowledge",
-                            Type = "Item"
+                            Name = Loc.GameT("TraitBook"),
+                            Type = Loc.GameT("Item")
                         };
                         if (eventPassesFilter(newItem))
                         {
@@ -667,11 +668,11 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         var newItem = new WorldAnalyzerGridData
                         {
-                            Location = l,
+                            Location = Loc.GameT(l),
                             MissingItems = new(),
                             PossibleItems = new(),
-                            Name = "Simulacrum",
-                            Type = "Item"
+                            Name = Loc.GameT("Simulacrum"),
+                            Type = Loc.GameT("Item")
                         };
                         if (eventPassesFilter(newItem))
                         {
@@ -688,11 +689,11 @@ namespace RemnantSaveGuardian.Views.Pages
                         }
                         var newItem = new WorldAnalyzerGridData
                         {
-                            Location = l,
-                            MissingItems = items.Where(x => missingIds.Contains(x.Item["Id"])).ToList(),
-                            PossibleItems = items,
-                            Name = $"{lg.Name}",
-                            Type = Regex.Replace(lg.Type, @"\b([a-z])", m => m.Value.ToUpper())
+                            Location = Loc.GameT(l),
+                            MissingItems = items.Where(x => missingIds.Contains(x.Item["Id"])).Select(x => new LocalisedLootItem(x)).ToList(),
+                            PossibleItems = items.Select(x => new LocalisedLootItem(x)).ToList(),
+                            Name = Loc.GameT(lg.Name),
+                            Type = Loc.GameT(Regex.Replace(lg.Type, @"\b([a-z])", m => m.Value.ToUpper()))
                         };
                         if (eventPassesFilter(newItem))
                         {
@@ -701,8 +702,18 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                 }
             }
-
             return result;
+        }
+
+        public class LocalisedLootItem : LootItem
+        {
+            [SetsRequiredMembers]
+            public LocalisedLootItem(LootItem item)
+            {
+                Item = item.Item;
+            }
+
+            public override string Name => Item["Id"] == Loc.GameT(Item["Id"]) ? base.Name : Loc.GameT(Item["Id"]);
         }
 
         public class SortCompare : IComparer<Dictionary<string, string>>
@@ -801,8 +812,8 @@ namespace RemnantSaveGuardian.Views.Pages
             public string Location { get; set; }
             public string Type { get; set; }
             public string Name { get; set; }
-            public List<LootItem> MissingItems { get; set; }
-            public List<LootItem> PossibleItems { get; set; }
+            public List<LocalisedLootItem> MissingItems { get; set; }
+            public List<LocalisedLootItem> PossibleItems { get; set; }
             public string MissingItemsString => string.Join("\n", MissingItems.Select(x => x.Name));
 
             public string PossibleItemsString => string.Join("\n", PossibleItems.Select(x => x.Name));

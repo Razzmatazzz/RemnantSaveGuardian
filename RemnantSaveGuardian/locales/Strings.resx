@@ -489,4 +489,13 @@
   <data name="chkShowWorldStones_Content" xml:space="preserve">
     <value>Show world stones</value>
   </data>
+  <data name="Connections" xml:space="preserve">
+    <value>Connections</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="World Stones" xml:space="preserve">
+    <value>World Stones</value>
+  </data>
 </root>

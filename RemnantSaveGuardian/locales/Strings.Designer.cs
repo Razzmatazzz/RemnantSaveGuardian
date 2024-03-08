@@ -439,6 +439,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connections.
+        /// </summary>
+        public static string Connections {
+            get {
+                return ResourceManager.GetString("Connections", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy.
         /// </summary>
         public static string Copy {
@@ -678,6 +687,15 @@ namespace RemnantSaveGuardian.locales {
         public static string InvalidSaveFolderNoSavesInBackups {
             get {
                 return ResourceManager.GetString("InvalidSaveFolderNoSavesInBackups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item.
+        /// </summary>
+        public static string Item {
+            get {
+                return ResourceManager.GetString("Item", resourceCulture);
             }
         }
         
@@ -1147,6 +1165,15 @@ namespace RemnantSaveGuardian.locales {
         public static string World_Analyzer {
             get {
                 return ResourceManager.GetString("World Analyzer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to World Stones.
+        /// </summary>
+        public static string World_Stones {
+            get {
+                return ResourceManager.GetString("World Stones", resourceCulture);
             }
         }
         
