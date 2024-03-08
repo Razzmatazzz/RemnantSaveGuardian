@@ -12,7 +12,7 @@ namespace RemnantSaveGuardian.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -134,12 +134,12 @@ namespace RemnantSaveGuardian.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingNormalAmulets_Expanded {
+        public bool treeMissingNormalAmulet_Expanded {
             get {
-                return ((bool)(this["treeMissingNormalAmulets_Expanded"]));
+                return ((bool)(this["treeMissingNormalAmulet_Expanded"]));
             }
             set {
-                this["treeMissingNormalAmulets_Expanded"] = value;
+                this["treeMissingNormalAmulet_Expanded"] = value;
             }
         }
         
@@ -158,48 +158,48 @@ namespace RemnantSaveGuardian.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingNormalEngrams_Expanded {
+        public bool treeMissingNormalEngram_Expanded {
             get {
-                return ((bool)(this["treeMissingNormalEngrams_Expanded"]));
+                return ((bool)(this["treeMissingNormalEngram_Expanded"]));
             }
             set {
-                this["treeMissingNormalEngrams_Expanded"] = value;
+                this["treeMissingNormalEngram_Expanded"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingNormalGems_Expanded {
+        public bool treeMissingNormalMutator_Expanded {
             get {
-                return ((bool)(this["treeMissingNormalGems_Expanded"]));
+                return ((bool)(this["treeMissingNormalMutator_Expanded"]));
             }
             set {
-                this["treeMissingNormalGems_Expanded"] = value;
+                this["treeMissingNormalMutator_Expanded"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingNormalMaterials_Expanded {
+        public bool treeMissingNormalMaterial_Expanded {
             get {
-                return ((bool)(this["treeMissingNormalMaterials_Expanded"]));
+                return ((bool)(this["treeMissingNormalMaterial_Expanded"]));
             }
             set {
-                this["treeMissingNormalMaterials_Expanded"] = value;
+                this["treeMissingNormalMaterial_Expanded"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingNormalMods_Expanded {
+        public bool treeMissingNormalMod_Expanded {
             get {
-                return ((bool)(this["treeMissingNormalMods_Expanded"]));
+                return ((bool)(this["treeMissingNormalMod_Expanded"]));
             }
             set {
-                this["treeMissingNormalMods_Expanded"] = value;
+                this["treeMissingNormalMod_Expanded"] = value;
             }
         }
         
@@ -218,48 +218,48 @@ namespace RemnantSaveGuardian.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingNormalRings_Expanded {
+        public bool treeMissingNormalRing_Expanded {
             get {
-                return ((bool)(this["treeMissingNormalRings_Expanded"]));
+                return ((bool)(this["treeMissingNormalRing_Expanded"]));
             }
             set {
-                this["treeMissingNormalRings_Expanded"] = value;
+                this["treeMissingNormalRing_Expanded"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingNormalTraits_Expanded {
+        public bool treeMissingNormalTrait_Expanded {
             get {
-                return ((bool)(this["treeMissingNormalTraits_Expanded"]));
+                return ((bool)(this["treeMissingNormalTrait_Expanded"]));
             }
             set {
-                this["treeMissingNormalTraits_Expanded"] = value;
+                this["treeMissingNormalTrait_Expanded"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingNormalWeapons_Expanded {
+        public bool treeMissingNormalWeapon_Expanded {
             get {
-                return ((bool)(this["treeMissingNormalWeapons_Expanded"]));
+                return ((bool)(this["treeMissingNormalWeapon_Expanded"]));
             }
             set {
-                this["treeMissingNormalWeapons_Expanded"] = value;
+                this["treeMissingNormalWeapon_Expanded"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingNormalQuests_Expanded {
+        public bool treeMissingNormalQuest_Expanded {
             get {
-                return ((bool)(this["treeMissingNormalQuests_Expanded"]));
+                return ((bool)(this["treeMissingNormalQuest_Expanded"]));
             }
             set {
-                this["treeMissingNormalQuests_Expanded"] = value;
+                this["treeMissingNormalQuest_Expanded"] = value;
             }
         }
         
@@ -278,36 +278,36 @@ namespace RemnantSaveGuardian.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingHardcoreAmulets_Expanded {
+        public bool treeMissingHardcoreAmulet_Expanded {
             get {
-                return ((bool)(this["treeMissingHardcoreAmulets_Expanded"]));
+                return ((bool)(this["treeMissingHardcoreAmulet_Expanded"]));
             }
             set {
-                this["treeMissingHardcoreAmulets_Expanded"] = value;
+                this["treeMissingHardcoreAmulet_Expanded"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingHardcoreRings_Expanded {
+        public bool treeMissingHardcoreRing_Expanded {
             get {
-                return ((bool)(this["treeMissingHardcoreRings_Expanded"]));
+                return ((bool)(this["treeMissingHardcoreRing_Expanded"]));
             }
             set {
-                this["treeMissingHardcoreRings_Expanded"] = value;
+                this["treeMissingHardcoreRing_Expanded"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool treeMissingHardcoreWeapons_Expanded {
+        public bool treeMissingHardcoreWeapon_Expanded {
             get {
-                return ((bool)(this["treeMissingHardcoreWeapons_Expanded"]));
+                return ((bool)(this["treeMissingHardcoreWeapon_Expanded"]));
             }
             set {
-                this["treeMissingHardcoreWeapons_Expanded"] = value;
+                this["treeMissingHardcoreWeapon_Expanded"] = value;
             }
         }
         

@@ -406,7 +406,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private bool backupActive(SaveBackup saveBackup)
         {
-            var activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder);
+            var activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder, true);
             if (DateTime.Compare(saveBackup.SaveDate, File.GetLastWriteTime(activeSave.SaveProfilePath)) == 0)
             {
                 return true;
@@ -418,7 +418,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             try
             {
-                var activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder);
+                var activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder, true);
                 if (!activeSave.Valid)
                 {
                     Logger.Log("Active save is not valid; backup skipped.");

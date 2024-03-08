@@ -14,6 +14,8 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Threading;
+using lib.remnant2.analyzer.Model;
 using Wpf.Ui.Common.Interfaces;
 
 namespace RemnantSaveGuardian.Views.Pages
@@ -28,8 +30,8 @@ namespace RemnantSaveGuardian.Views.Pages
             get;
         }
         private RemnantSave Save;
-        private List<RemnantWorldEvent> filteredCampaign;
-        private List<RemnantWorldEvent> filteredAdventure;
+        private List<WorldAnalyzerGridData> filteredCampaign;
+        private List<WorldAnalyzerGridData> filteredAdventure;
         private ListViewItem menuSrcItem;
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
@@ -67,7 +69,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
                     BackupsPage.BackupSaveRestored += BackupsPage_BackupSaveRestored;
                 }
-                CharacterControl.ItemsSource = Save.Characters;
+                CharacterControl.ItemsSource = Save.Dataset.Characters;
 
                 //FontSizeSlider.Value = AdventureData.FontSize;
                 //FontSizeSlider.Minimum = 2.0;
@@ -349,27 +351,36 @@ namespace RemnantSaveGuardian.Views.Pages
                 var idx = -1;
                 string typeNodeTag = "";
 
-                Save.Characters[CharacterControl.SelectedIndex].GetMissingItems().Sort(new SortCompare());
-                foreach (RemnantItem rItem in Save.Characters[CharacterControl.SelectedIndex].GetMissingItems())
+                var missingItems = Save.Dataset.Characters[CharacterControl.SelectedIndex].Profile.MissingItems;
+                missingItems.Sort(new SortCompare());
+                foreach (Dictionary<string, string> rItem in missingItems)
                 {
-                    string modeNode = ModeTags[(int)rItem.ItemMode];
-                    if (!typeNodeTag.Equals($"{modeNode}{rItem.RawType}"))
+                    int itemMode = rItem.ContainsKey("Hardcore") && rItem["Hardcore"] == "True" ? 1 : 0;
+                    string modeNode = "treeMissing" + (rItem.ContainsKey("Hardcore") && rItem["Hardcore"] == "True" ? "Hardcore" : "Normal");
+
+                    string itemType = Regex.Replace(rItem["Type"], @"\b([a-z])", m => m.Value.ToUpper());
+
+                    if (!typeNodeTag.Equals($"{modeNode}{itemType}"))
                     {
-                        typeNodeTag = $"{modeNode}{rItem.RawType}";
+                        typeNodeTag = $"{modeNode}{itemType}";
                         idx++;
                         itemChild[idx] = new List<TreeListClass>();
                         bool isExpanded = true;
                         try
                         {
                             isExpanded = (bool)Properties.Settings.Default[$"{typeNodeTag}_Expanded"];
-                        } catch (Exception ex) {
+                        }
+                        catch (Exception ex)
+                        {
                             Logger.Warn($"Not found properties: {typeNodeTag}_Expand");
                         }
-                        TreeListClass item = new TreeListClass() { Name = rItem.Type, Childnode = itemChild[idx], Tag = typeNodeTag, IsExpanded = isExpanded };
+                        TreeListClass item = new TreeListClass() { Name = itemType, Childnode = itemChild[idx], Tag = typeNodeTag, IsExpanded = isExpanded };
                         item.Expanded += GameType_CollapsedExpanded;
-                        itemNode[(int)rItem.ItemMode].Add(item);
+                        itemNode[itemMode].Add(item);
                     }
-                    itemChild[idx].Add(new TreeListClass() { Name = rItem.Name, Notes = rItem.ItemNotes, Tag = rItem });
+
+                    LootItem li = new() { Item = rItem };
+                    itemChild[idx].Add(new TreeListClass() { Name = li.Name, Notes = rItem["Note"], Tag = rItem });
                 }
 
                 treeMissingItems.ItemsSource = null;
@@ -404,7 +415,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private void checkAdventureTab()
         {
             Dispatcher.Invoke(() => {
-                if (CharacterControl.SelectedIndex > -1 && Save.Characters[CharacterControl.SelectedIndex].AdventureEvents.Count > 0)
+                if (CharacterControl.SelectedIndex > -1 && Save.Dataset.Characters[CharacterControl.SelectedIndex].Save.Adventure != null)
                 {
                     tabAdventure.IsEnabled = true;
                 }
@@ -421,7 +432,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private void reloadPage()
         {
             CharacterControl.ItemsSource = null;
-            CharacterControl.ItemsSource = Save.Characters;
+            CharacterControl.ItemsSource = Save.Dataset.Characters;
             if (filteredCampaign == null) filteredCampaign = new();
             if (filteredAdventure == null) filteredAdventure = new();
             CharacterControl.SelectedIndex = 0;
@@ -444,7 +455,7 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return "";
             }
-            if (item.Tag.GetType().ToString() == "RemnantSaveGuardian.RemnantItem") return item.Name;
+            if (item.Tag.GetType().ToString() == "System.Collections.Generic.Dictionary`2[System.String,System.String]") return item.Name;
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(item.Name + ":");
             foreach (TreeListClass i in item.Childnode)
@@ -457,14 +468,14 @@ namespace RemnantSaveGuardian.Views.Pages
         private void CommonCopyItem_Click(object sender, RoutedEventArgs e)
         {
             if (menuSrcItem == null) { return; }
-            var item = menuSrcItem.Content as RemnantItem;
+            var item = menuSrcItem.Content as LootItem;
             Clipboard.SetDataObject(item.Name);
         }
 
         private void CommonSearchItem_Click(object sender, RoutedEventArgs e)
         {
             if (menuSrcItem == null) { return; }
-            var lstItem = menuSrcItem.Content as RemnantItem;
+            var lstItem = menuSrcItem.Content as LootItem;
             if (lstItem == null) { return; }
             SearchItem(lstItem);
         }
@@ -480,39 +491,12 @@ namespace RemnantSaveGuardian.Views.Pages
         private void SearchItem_Click(object sender, RoutedEventArgs e)
         {
             var treeItem = (TreeListClass)treeMissingItems.SelectedItem;
-            var item = (RemnantItem)treeItem.Tag;
+            var item = new LootItem { Item = (Dictionary<string, string>)treeItem.Tag };
             SearchItem(item);
         }
-        private void SearchItem(RemnantItem item)
+        private void SearchItem(LootItem item)
         {
             var itemname = item.Name;
-            if (!WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture.ToString().StartsWith("en"))
-            {
-                itemname = item.RawName;
-                var setFound = false;
-                if (item.RawType == "Armor")
-                {
-                    var armorMatch = Regex.Match(itemname, @"\w+_(?<armorPart>(?:Head|Body|Gloves|Legs))_\w+");
-                    if (armorMatch.Success)
-                    {
-                        itemname = itemname.Replace($"{armorMatch.Groups["armorPart"].Value}_", "");
-                        setFound = true;
-                    }
-                }
-                itemname = Loc.GameT(itemname, new() { { "locale", "en-US" } });
-                if (setFound)
-                {
-                    itemname += " (";
-                }
-            }
-
-            if (item.RawType == "Armor" && item.IsArmorSet)
-            {
-                itemname = itemname?.Substring(0, itemname.IndexOf("(")) + "Set";
-            } else if (item.RawType == "Armor")
-            {
-                itemname = itemname?.Substring(0, itemname.IndexOf(" ("));
-            }
             Process.Start("explorer.exe", $"https://remnant2.wiki.fextralife.com/{itemname}");
         }
         private void ExpandAllItem_Click(object sender, RoutedEventArgs e)
@@ -541,7 +525,7 @@ namespace RemnantSaveGuardian.Views.Pages
             var item = (TreeListClass)treeMissingItems.SelectedItem;
             if (item != null)
             {
-                menuMissingItemOpenWiki.Visibility = item.Tag.GetType().ToString() != "RemnantSaveGuardian.RemnantItem" ? Visibility.Collapsed : Visibility.Visible;
+                menuMissingItemOpenWiki.Visibility = item.Tag.GetType().ToString() != "System.Collections.Generic.Dictionary`2[System.String,System.String]" ? Visibility.Collapsed : Visibility.Visible;
                 menuMissingItemCopy.Visibility = Visibility.Visible;
             } else {
                 menuMissingItemOpenWiki.Visibility = Visibility.Collapsed;
@@ -566,7 +550,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             applyFilter();
         }
-        private bool eventPassesFilter(RemnantWorldEvent e)
+        private bool eventPassesFilter(WorldAnalyzerGridData e)
         {
             var filter = WorldAnalyzerFilter.Text.ToLower();
             if (filter.Length == 0)
@@ -593,27 +577,71 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return;
             }
-            var character = Save.Characters[CharacterControl.SelectedIndex];
+            var character = Save.Dataset.Characters[CharacterControl.SelectedIndex];
             if (character == null)
             {
                 return;
             }
             filteredCampaign.Clear();
-            filteredCampaign.AddRange(character.CampaignEvents.FindAll(e => eventPassesFilter(e)));
+            filteredCampaign.AddRange(FilterGridData(character.Profile, character.Save.Campaign));
             filteredAdventure.Clear();
-            filteredAdventure.AddRange(character.AdventureEvents.FindAll(e => eventPassesFilter(e)));
+            filteredAdventure.AddRange(FilterGridData(character.Profile, character.Save.Adventure));
             reloadEventGrids();
         }
-        public class SortCompare : IComparer<RemnantItem>
+        private List<WorldAnalyzerGridData> FilterGridData(Profile profile, RolledWorld? world)
         {
-            public int Compare(RemnantItem? x, RemnantItem? y)
+            List<WorldAnalyzerGridData> result = new();
+            if (world == null) return result;
+
+            var missingIds = profile.MissingItems.Select(x => x["Id"]).ToList();
+
+            foreach (var zone in world.AllZones)
             {
-                if (x.ItemMode != y.ItemMode)
+                foreach (var location in zone.Locations)
                 {
-                    return x.ItemMode.CompareTo(y.ItemMode);
-                } else {
-                    return x.RawType.CompareTo(y.RawType);
+                    var l = location.World == "Ward 13" ? location.World : $"{location.World}: {location.Name}";
+                    foreach (var lg in location.LootGroups)
+                    {
+                        var newItem = new WorldAnalyzerGridData
+                        {
+                            Location = l,
+                            MissingItems = lg.Items.Where(x => missingIds.Contains(x.Item["Id"])).ToList(),
+                            PossibleItems = lg.Items,
+                            Name = $"{lg.Name}",
+                            Type = Regex.Replace(lg.Type, @"\b([a-z])", m => m.Value.ToUpper())
+                        };
+                        if (eventPassesFilter(newItem))
+                        {
+                            result.Add(newItem);
+                        }
+                    }
                 }
+            }
+
+            return result;
+        }
+
+        public class SortCompare : IComparer<Dictionary<string, string>>
+        {
+            public int Compare(Dictionary<string, string>? x, Dictionary<string, string>? y)
+            {
+                if (x == null && y == null) return 0;
+                if (x == null) return -1;
+                if (y == null) return 1;
+                string xmode = x.ContainsKey("Hardcore") && x["Hardcore"] == "True" ? "Hardcore" : "Normal";
+                string ymode = y.ContainsKey("Hardcore") && y["Hardcore"] == "True" ? "Hardcore" : "Normal";
+                if (xmode != ymode)
+                {
+                    return xmode.CompareTo(ymode);
+                }
+                if (x["Type"] != y["Type"])
+                {
+                    return x["Type"].CompareTo(y["Type"]);
+                }
+
+                LootItem xi = new() { Item = x };
+                LootItem yi = new() { Item = y };
+                return xi.Name.CompareTo(yi.Name);
             }
         }
         public class TreeListClass : IComparable<TreeListClass>, INotifyPropertyChanged
@@ -684,5 +712,17 @@ namespace RemnantSaveGuardian.Views.Pages
             public object OldValue { get; private set; }
             public object NewValue { get; set; }
         }
+        public class WorldAnalyzerGridData
+        {
+            public string Location { get; set; }
+            public string Type { get; set; }
+            public string Name { get; set; }
+            public List<LootItem> MissingItems { get; set; }
+            public List<LootItem> PossibleItems { get; set; }
+            public string MissingItemsString => string.Join("\n", MissingItems.Select(x => x.Name));
+
+            public string PossibleItemsString => string.Join("\n", PossibleItems.Select(x => x.Name));
+        }
+
     }
 }

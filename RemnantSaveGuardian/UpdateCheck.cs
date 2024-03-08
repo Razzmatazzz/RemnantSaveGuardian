@@ -27,7 +27,6 @@ namespace RemnantSaveGuardian
                     return;
                 }
                 lastUpdateCheck = DateTime.Now;
-                GameInfo.CheckForNewGameInfo();
                 var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.github.com/repos/{repo}/releases/latest");
                 request.Headers.Add("user-agent", "remnant-save-guardian");
                 var response = await client.SendAsync(request);

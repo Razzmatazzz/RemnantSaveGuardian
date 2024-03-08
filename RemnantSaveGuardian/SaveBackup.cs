@@ -104,7 +104,7 @@ namespace RemnantSaveGuardian
         {
             this.savePath = savePath;
 
-            this.progression = Analyzer.GetProfileString(this.savePath);
+            this.progression = Analyzer.GetProfileStringCombined(this.savePath);
             this.saveData = new SaveData();
             this.saveData.name = this.SaveDateTime.Ticks.ToString();
             this.saveData.date = this.SaveDateTime;

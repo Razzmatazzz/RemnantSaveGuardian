@@ -4,15 +4,15 @@ using System.Text;
 using System.IO;
 using System.IO.Compression;
 using System.Runtime.InteropServices;
+using lib.remnant2.analyzer.Model;
+using lib.remnant2.analyzer;
 
 namespace RemnantSaveGuardian
 {
     public class RemnantSave
     {
-        private List<RemnantCharacter>? _Characters;
-        public List<RemnantCharacter> Characters {
-            get => _Characters ??= RemnantCharacter.GetCharactersFromSave(this, RemnantCharacter.CharacterProcessingMode.NoEvents);
-        }
+        private Dataset remnantDataset;
+        public Dataset Dataset => remnantDataset;
 
         public static readonly string DefaultWgsSaveFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Packages\PerfectWorldEntertainment.RemnantFromtheAshes_jrajkyc4tsa6w\SystemAppData\wgs";
         private string savePath;
@@ -24,7 +24,7 @@ namespace RemnantSaveGuardian
         [DllImport("shell32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, PreserveSig = false)]
         static extern string SHGetKnownFolderPath([MarshalAs(UnmanagedType.LPStruct)] Guid rfid, uint dwFlags, IntPtr hToken = default);
 
-        public RemnantSave(string path)
+        public RemnantSave(string path, bool skipUpdate = false)
         {
             if (!Directory.Exists(path))
             {
@@ -51,6 +51,10 @@ namespace RemnantSaveGuardian
                 }
             }
             this.savePath = path;
+            if (!skipUpdate)
+            {
+                UpdateCharacters();
+            }
         }
 
         public string SaveFolderPath
@@ -120,8 +124,7 @@ namespace RemnantSaveGuardian
 
         public void UpdateCharacters()
         {
-            Characters.Clear();
-            Characters.AddRange(RemnantCharacter.GetCharactersFromSave(this));
+            remnantDataset = Analyzer.Analyze(savePath);
         }
 
         public string GetProfileData()
