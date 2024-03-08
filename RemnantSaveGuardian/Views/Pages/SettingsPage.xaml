@@ -137,12 +137,6 @@
                     <TextBlock Name="lblMissingItemColor" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
                 </WrapPanel>
                 <WrapPanel Margin="0,16,0,0">
-                    <ui:ToggleSwitch Name="chkShowPossibleItems" Content="{lex:Loc}" IsChecked="{Binding ShowPossibleItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                </WrapPanel>
-                <WrapPanel Margin="0,16,0,0">
-                    <ui:ToggleSwitch Name="chkShowCoopItems" Content="{lex:Loc}" IsChecked="{Binding ShowCoopItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                </WrapPanel>
-                <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkCreateLogFile" IsChecked="{Binding CreateLogFile}" Content="{lex:Loc}" />
                 </WrapPanel>
                 <WrapPanel Margin="0,16,0,0">
@@ -171,6 +165,50 @@
                         <CheckBox Name="chkOnlyInactive" IsChecked="{Binding OnlyInactive, Mode=TwoWay}"  Content="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0" />
                     </WrapPanel>
                 </StackPanel>
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,8,0,0" ExpandDirection="Down" IsExpanded="False">
+            <ui:CardExpander.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                        <ui:SymbolIcon FontSize="24" Margin="0,0,8,0" VerticalAlignment="Center" Symbol="WindowWrench24" />
+                        <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Medium" Text="{lex:Loc World Analyzer}" />
+                    </StackPanel>
+                </Grid>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowPossibleItems" Content="{lex:Loc}" IsChecked="{Binding ShowPossibleItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowCoopItems" Content="{lex:Loc}" IsChecked="{Binding ShowCoopItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowWard13" IsChecked="{Binding ShowWard13}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowLabyrinth" IsChecked="{Binding ShowShowLabyrinth}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowRootEarth" IsChecked="{Binding ShowRootEarth}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowConnections" IsChecked="{Binding ShowConnections}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowWorldStones" IsChecked="{Binding ShowWorldStones}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowTomes" IsChecked="{Binding ShowTomes}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowSimulacrums" IsChecked="{Binding ShowSimulacrums}" Content="{lex:Loc}" />
+                </WrapPanel>
             </StackPanel>
         </ui:CardExpander>
         <ui:CardAction Margin="0,8,0,0" Icon="CloudSync24" Click="BtnCheckUpdate_Click">

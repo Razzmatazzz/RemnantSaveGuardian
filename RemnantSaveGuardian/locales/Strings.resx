@@ -190,10 +190,10 @@
     <value>Whether a log.txt file should be created</value>
   </data>
   <data name="chkShowCoopItems_Content" xml:space="preserve">
-    <value>Show co-op items in world analyzer</value>
+    <value>Show co-op items</value>
   </data>
   <data name="chkShowPossibleItems_Content" xml:space="preserve">
-    <value>Show Possible Items column in analyzer</value>
+    <value>Show Possible Items column</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
@@ -467,5 +467,26 @@
   </data>
   <data name="The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?" xml:space="preserve">
     <value>The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?</value>
+  </data>
+  <data name="chkShowConnections_Content" xml:space="preserve">
+    <value>Show zone connections</value>
+  </data>
+  <data name="chkShowLabyrinth_Content" xml:space="preserve">
+    <value>Show Labyrinth items</value>
+  </data>
+  <data name="chkShowRootEarth_Content" xml:space="preserve">
+    <value>Show Root Earth items</value>
+  </data>
+  <data name="chkShowSimulacrums_Content" xml:space="preserve">
+    <value>Show Simulacrums</value>
+  </data>
+  <data name="chkShowTomes_Content" xml:space="preserve">
+    <value>Show Tomes of Knowledge</value>
+  </data>
+  <data name="chkShowWard13_Content" xml:space="preserve">
+    <value>Show Ward 13 items</value>
+  </data>
+  <data name="chkShowWorldStones_Content" xml:space="preserve">
+    <value>Show world stones</value>
   </data>
 </root>

@@ -526,5 +526,89 @@ namespace RemnantSaveGuardian.Properties {
                 this["OnlyInactive"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowWard13 {
+            get {
+                return ((bool)(this["ShowWard13"]));
+            }
+            set {
+                this["ShowWard13"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowConnections {
+            get {
+                return ((bool)(this["ShowConnections"]));
+            }
+            set {
+                this["ShowConnections"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowWorldStones {
+            get {
+                return ((bool)(this["ShowWorldStones"]));
+            }
+            set {
+                this["ShowWorldStones"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowTomes {
+            get {
+                return ((bool)(this["ShowTomes"]));
+            }
+            set {
+                this["ShowTomes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowSimulacrums {
+            get {
+                return ((bool)(this["ShowSimulacrums"]));
+            }
+            set {
+                this["ShowSimulacrums"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowShowLabyrinth {
+            get {
+                return ((bool)(this["ShowShowLabyrinth"]));
+            }
+            set {
+                this["ShowShowLabyrinth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowRootEarth {
+            get {
+                return ((bool)(this["ShowRootEarth"]));
+            }
+            set {
+                this["ShowRootEarth"] = value;
+            }
+        }
     }
 }

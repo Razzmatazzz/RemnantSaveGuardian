@@ -194,7 +194,16 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "ShowPossibleItems" || e.PropertyName == "MissingItemColor")
+            if (e.PropertyName == "ShowPossibleItems" 
+                || e.PropertyName == "MissingItemColor"
+                || e.PropertyName == "ShowWard13"
+                || e.PropertyName == "ShowShowLabyrinth"
+                || e.PropertyName == "ShowRootEarth"
+                || e.PropertyName == "ShowConnections"
+                || e.PropertyName == "ShowWorldStones"
+                || e.PropertyName == "ShowTomes"
+                || e.PropertyName == "ShowSimulacrums"
+                )
             {
                 Dispatcher.Invoke(() =>
                 {
@@ -352,6 +361,10 @@ namespace RemnantSaveGuardian.Views.Pages
                 string typeNodeTag = "";
 
                 var missingItems = Save.Dataset.Characters[CharacterControl.SelectedIndex].Profile.MissingItems;
+                if (!Properties.Settings.Default.ShowCoopItems)
+                {
+                    missingItems = missingItems.Where(x => x.ContainsKey("Coop") && x["Coop"] == "True").ToList();
+                }
                 missingItems.Sort(new SortCompare());
                 foreach (Dictionary<string, string> rItem in missingItems)
                 {
@@ -597,16 +610,87 @@ namespace RemnantSaveGuardian.Views.Pages
 
             foreach (var zone in world.AllZones)
             {
+                if (!Properties.Settings.Default.ShowWard13 && zone.Name == "Ward 13") continue;
+                if (!Properties.Settings.Default.ShowShowLabyrinth && zone.Name == "Labyrinth") continue;
+                if (!Properties.Settings.Default.ShowRootEarth && zone.Name == "Root Earth") continue;
                 foreach (var location in zone.Locations)
                 {
                     var l = location.World == "Ward 13" ? location.World : $"{location.World}: {location.Name}";
-                    foreach (var lg in location.LootGroups)
+
+                    if (Properties.Settings.Default.ShowConnections && location.Connections is { Count: > 0 })
                     {
                         var newItem = new WorldAnalyzerGridData
                         {
                             Location = l,
-                            MissingItems = lg.Items.Where(x => missingIds.Contains(x.Item["Id"])).ToList(),
-                            PossibleItems = lg.Items,
+                            MissingItems = new(),
+                            PossibleItems = new(),
+                            Name = string.Join('\n', location.Connections),
+                            Type = "Connections"
+                        };
+                        if (eventPassesFilter(newItem))
+                        {
+                            result.Add(newItem);
+                        }
+                    }
+                    if (Properties.Settings.Default.ShowWorldStones && location.WorldStones is { Count: > 0 })
+                    {
+                        var newItem = new WorldAnalyzerGridData
+                        {
+                            Location = l,
+                            MissingItems = new(),
+                            PossibleItems = new(),
+                            Name = string.Join('\n', location.WorldStones),
+                            Type = "World Stones"
+                        };
+                        if (eventPassesFilter(newItem))
+                        {
+                            result.Add(newItem);
+                        }
+                    }
+                    if (Properties.Settings.Default.ShowTomes && location.TraitBook)
+                    {
+                        var newItem = new WorldAnalyzerGridData
+                        {
+                            Location = l,
+                            MissingItems = new(),
+                            PossibleItems = new(),
+                            Name = "Tome of Knowledge",
+                            Type = "Item"
+                        };
+                        if (eventPassesFilter(newItem))
+                        {
+                            result.Add(newItem);
+                        }
+
+                    }
+                    if (Properties.Settings.Default.ShowSimulacrums && location.Simulacrum)
+                    {
+                        var newItem = new WorldAnalyzerGridData
+                        {
+                            Location = l,
+                            MissingItems = new(),
+                            PossibleItems = new(),
+                            Name = "Simulacrum",
+                            Type = "Item"
+                        };
+                        if (eventPassesFilter(newItem))
+                        {
+                            result.Add(newItem);
+                        }
+                    }
+                    foreach (var lg in location.LootGroups)
+                    {
+
+                        var items = lg.Items;
+                        if (!Properties.Settings.Default.ShowCoopItems)
+                        {
+                            items = items.Where(x => x.Item.ContainsKey("Coop") && x.Item["Coop"] == "True").ToList();
+                        }
+                        var newItem = new WorldAnalyzerGridData
+                        {
+                            Location = l,
+                            MissingItems = items.Where(x => missingIds.Contains(x.Item["Id"])).ToList(),
+                            PossibleItems = items,
                             Name = $"{lg.Name}",
                             Type = Regex.Replace(lg.Type, @"\b([a-z])", m => m.Value.ToUpper())
                         };

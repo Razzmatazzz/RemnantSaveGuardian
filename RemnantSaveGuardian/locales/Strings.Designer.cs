@@ -95,7 +95,7 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("Always On Top", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to delete backup {backupName}?.
         /// </summary>
@@ -268,14 +268,14 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto Hide Navigation and TitleBar.
+        ///   Looks up a localized string similar to Auto hide Navigation and TitleBar when inactive.
         /// </summary>
         public static string chkAutoHideNaviAndTitleBar_Content {
             get {
                 return ResourceManager.GetString("chkAutoHideNaviAndTitleBar_Content", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Create log file.
         /// </summary>
@@ -302,7 +302,7 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("chkOnlyInactive_Content", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Window Opacity.
         /// </summary>
@@ -311,7 +311,7 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("chkOpacity_Content", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to (Experimental, might cause instability).
         /// </summary>
@@ -320,9 +320,18 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("chkOpacity_note_Text", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Show co-op items in world analyzer.
+        ///   Looks up a localized string similar to Show zone connections.
+        /// </summary>
+        public static string chkShowConnections_Content {
+            get {
+                return ResourceManager.GetString("chkShowConnections_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show co-op items.
         /// </summary>
         public static string chkShowCoopItems_Content {
             get {
@@ -331,11 +340,65 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Possible Items column in analyzer.
+        ///   Looks up a localized string similar to Show Labyrinth items.
+        /// </summary>
+        public static string chkShowLabyrinth_Content {
+            get {
+                return ResourceManager.GetString("chkShowLabyrinth_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Possible Items column.
         /// </summary>
         public static string chkShowPossibleItems_Content {
             get {
                 return ResourceManager.GetString("chkShowPossibleItems_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Root Earth items.
+        /// </summary>
+        public static string chkShowRootEarth_Content {
+            get {
+                return ResourceManager.GetString("chkShowRootEarth_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Simulacrums.
+        /// </summary>
+        public static string chkShowSimulacrums_Content {
+            get {
+                return ResourceManager.GetString("chkShowSimulacrums_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Tomes of Knowledge.
+        /// </summary>
+        public static string chkShowTomes_Content {
+            get {
+                return ResourceManager.GetString("chkShowTomes_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Ward 13 items.
+        /// </summary>
+        public static string chkShowWard13_Content {
+            get {
+                return ResourceManager.GetString("chkShowWard13_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show world stones.
+        /// </summary>
+        public static string chkShowWorldStones_Content {
+            get {
+                return ResourceManager.GetString("chkShowWorldStones_Content", resourceCulture);
             }
         }
         
@@ -356,7 +419,7 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("Close", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Collapse All.
         /// </summary>
@@ -689,13 +752,13 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("lblMissingItemColor_Text", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Opacity.
         /// </summary>
         public static string lblOpacitySlider_Text {
             get {
-                return ResourceManager.GetString("lblMissingItemColor_Text", resourceCulture);
+                return ResourceManager.GetString("lblOpacitySlider_Text", resourceCulture);
             }
         }
         
@@ -842,13 +905,13 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("Normal", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Window opacity is changed. You have to restart app for the change to apply..
         /// </summary>
         public static string Opacity_toggle_notice {
             get {
-                return ResourceManager.GetString("Normal", resourceCulture);
+                return ResourceManager.GetString("Opacity_toggle_notice", resourceCulture);
             }
         }
         
