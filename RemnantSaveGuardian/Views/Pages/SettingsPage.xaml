@@ -188,6 +188,9 @@
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkShowCoopItems" Content="{lex:Loc}" IsChecked="{Binding ShowCoopItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
                 </WrapPanel>
+                <WrapPanel Margin="0,16,0,0" IsEnabled="False" Visibility="Collapsed">
+                    <ui:ToggleSwitch Name="chkShowLootedItems" Content="{lex:Loc}" IsChecked="{Binding ShowLootedItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </WrapPanel>
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkShowWard13" IsChecked="{Binding ShowWard13}" Content="{lex:Loc}" />
                 </WrapPanel>

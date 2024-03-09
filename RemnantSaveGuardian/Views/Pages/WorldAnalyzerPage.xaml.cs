@@ -59,6 +59,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         {
                             var selectedIndex = CharacterControl.SelectedIndex;
                             Save.UpdateCharacters();
+                            applyFilter();
                             CharacterControl.Items.Refresh();
                             if (selectedIndex >= CharacterControl.Items.Count)
                             {
@@ -645,11 +646,12 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                     if (Properties.Settings.Default.ShowTomes && location.TraitBook)
                     {
+                        //List<LocalisedLootItem> ll = new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") } } }) };
                         var newItem = new WorldAnalyzerGridData
                         {
                             Location = Loc.GameT(l),
                             MissingItems = new(),
-                            PossibleItems = new(),
+                            PossibleItems = location.TraitBookDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") }, {"Id", "Bogus"} } }) },
                             Name = Loc.GameT("TraitBook"),
                             Type = Loc.GameT("Item")
                         };
@@ -665,7 +667,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         {
                             Location = Loc.GameT(l),
                             MissingItems = new(),
-                            PossibleItems = new(),
+                            PossibleItems = location.SimulacrumDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("Simulacrum") }, { "Id", "Bogus" } } }) },
                             Name = Loc.GameT("Simulacrum"),
                             Type = Loc.GameT("Item")
                         };
@@ -674,6 +676,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             result.Add(newItem);
                         }
                     }
+                    
                     foreach (var lg in location.LootGroups)
                     {
 
@@ -681,6 +684,10 @@ namespace RemnantSaveGuardian.Views.Pages
                         if (!Properties.Settings.Default.ShowCoopItems)
                         {
                             items = items.Where(x => x.Item.ContainsKey("Coop") && x.Item["Coop"] == "True").ToList();
+                        }
+                        if (!Properties.Settings.Default.ShowLootedItems)
+                        {
+                            items = items.Where(x => !x.IsDeleted).ToList();
                         }
                         var newItem = new WorldAnalyzerGridData
                         {

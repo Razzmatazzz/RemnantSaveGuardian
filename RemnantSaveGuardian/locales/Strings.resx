@@ -507,4 +507,7 @@
   <data name="chkExportJson_Content" xml:space="preserve">
     <value>When exporting, export saves in json format</value>
   </data>
+  <data name="chkShowLootedItems_Content" xml:space="preserve">
+    <value>Show world drops / boss rewards no longer in save because they were already looted</value>
+  </data>
 </root>

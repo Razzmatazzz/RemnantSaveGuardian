@@ -376,6 +376,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show world drops / boss rewards no longer in save because they were already looted.
+        /// </summary>
+        public static string chkShowLootedItems_Content {
+            get {
+                return ResourceManager.GetString("chkShowLootedItems_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Possible Items column.
         /// </summary>
         public static string chkShowPossibleItems_Content {

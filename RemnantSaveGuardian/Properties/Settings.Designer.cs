@@ -646,5 +646,17 @@ namespace RemnantSaveGuardian.Properties {
                 this["ExportJson"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowLootedItems {
+            get {
+                return ((bool)(this["ShowLootedItems"]));
+            }
+            set {
+                this["ShowLootedItems"] = value;
+            }
+        }
     }
 }
