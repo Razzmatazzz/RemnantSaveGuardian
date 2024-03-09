@@ -610,5 +610,41 @@ namespace RemnantSaveGuardian.Properties {
                 this["ShowRootEarth"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ExportCopy {
+            get {
+                return ((bool)(this["ExportCopy"]));
+            }
+            set {
+                this["ExportCopy"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ExportDecoded {
+            get {
+                return ((bool)(this["ExportDecoded"]));
+            }
+            set {
+                this["ExportDecoded"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExportJson {
+            get {
+                return ((bool)(this["ExportJson"]));
+            }
+            set {
+                this["ExportJson"] = value;
+            }
+        }
     }
 }

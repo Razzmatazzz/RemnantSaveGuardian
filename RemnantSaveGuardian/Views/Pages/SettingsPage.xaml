@@ -209,6 +209,15 @@
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkShowSimulacrums" IsChecked="{Binding ShowSimulacrums}" Content="{lex:Loc}" />
                 </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkExportCopy" IsChecked="{Binding ExportCopy}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkExportDecoded" IsChecked="{Binding ExportDecoded}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkExportJson" IsChecked="{Binding ExportJson}" Content="{lex:Loc}" />
+                </WrapPanel>
             </StackPanel>
         </ui:CardExpander>
         <ui:CardAction Margin="0,8,0,0" Icon="CloudSync24" Click="BtnCheckUpdate_Click">

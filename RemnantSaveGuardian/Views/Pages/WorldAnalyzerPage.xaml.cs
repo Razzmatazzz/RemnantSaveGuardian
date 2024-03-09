@@ -18,6 +18,7 @@ using System.Windows.Threading;
 using lib.remnant2.analyzer.Model;
 using Wpf.Ui.Common.Interfaces;
 using System.Diagnostics.CodeAnalysis;
+using lib.remnant2.analyzer;
 
 namespace RemnantSaveGuardian.Views.Pages
 {
@@ -179,13 +180,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     Logger.Error(Loc.T("export_save_invalid_folder_error"));
                     return;
                 }
-                File.WriteAllText($@"{openFolderDialog.SelectedPath}\profile.txt", Save.GetProfileData());
-                File.Copy(Save.SaveProfilePath, $@"{openFolderDialog.SelectedPath}\profile.sav", true);
-                foreach (var filePath in Save.WorldSaves)
-                {
-                    File.WriteAllText($@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\")).Replace(".sav", ".txt")}", RemnantSave.DecompressSaveAsString(filePath));
-                    File.Copy(filePath, $@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\"))}", true);
-                }
+                Analyzer.Export(openFolderDialog.SelectedPath, Save.SaveFolderPath, Properties.Settings.Default.ExportCopy, Properties.Settings.Default.ExportDecoded, Properties.Settings.Default.ExportJson);
                 Logger.Success(Loc.T($"Exported save files successfully to {openFolderDialog.SelectedPath}"));
             } catch (Exception ex)
             {

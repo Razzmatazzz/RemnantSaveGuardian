@@ -498,4 +498,13 @@
   <data name="World Stones" xml:space="preserve">
     <value>World Stones</value>
   </data>
+  <data name="chkExportCopy_Content" xml:space="preserve">
+    <value>When exporting, export copies of saves</value>
+  </data>
+  <data name="chkExportDecoded_Content" xml:space="preserve">
+    <value>When exporting, export decompressed saves</value>
+  </data>
+  <data name="chkExportJson_Content" xml:space="preserve">
+    <value>When exporting, export saves in json format</value>
+  </data>
 </root>

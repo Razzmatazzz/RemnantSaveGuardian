@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
-using System.IO.Compression;
 using System.Runtime.InteropServices;
 using lib.remnant2.analyzer.Model;
 using lib.remnant2.analyzer;
@@ -76,21 +73,6 @@ namespace RemnantSaveGuardian
         {
             get { return this.saveType; }
         }
-        public string[] WorldSaves
-        {
-            get
-            {
-                if (this.saveType == RemnantSaveType.Normal)
-                {
-                    return Directory.GetFiles(SaveFolderPath, "save_*.sav");
-                }
-                else
-                {
-                    System.Console.WriteLine(this.winSave.Worlds.ToArray());
-                    return this.winSave.Worlds.ToArray();
-                }
-            }
-        }
 
         public bool Valid
         {
@@ -127,11 +109,6 @@ namespace RemnantSaveGuardian
             remnantDataset = Analyzer.Analyze(savePath);
         }
 
-        public string GetProfileData()
-        {
-            return DecompressSaveAsString(this.SaveProfilePath);
-        }
-
         public static string DefaultSaveFolder()
         {
             var saveFolder = SHGetKnownFolderPath(FOLDERID_SavedGames, 0) + @"\Remnant2";
@@ -153,78 +130,6 @@ namespace RemnantSaveGuardian
                 }
             }
             return saveFolder;
-        }
-
-        // Credit to https://gist.github.com/crackedmind
-
-        internal class FileHeader
-        {
-            public uint Crc32;
-            public uint TotalSize;
-            public uint Unknown;
-
-            public static FileHeader ReadFromStream(Stream stream)
-            {
-                FileHeader header = new();
-                using var reader = new BinaryReader(stream, Encoding.UTF8, true);
-                header.Crc32 = reader.ReadUInt32();
-                header.TotalSize = reader.ReadUInt32();
-                header.Unknown = reader.ReadUInt32();
-                return header;
-            }
-        }
-        internal class ChunkHeader
-        {
-            public ulong ChunkHeaderTag; // always 0x222222229E2A83C1
-            public ulong ChunkSize;      // always 0x20000
-            public byte DecompressionMethod; // 3 - zlib
-            public ulong CompressedSize1;
-            public ulong DecompressedSize1; // <= ChunkSize
-            public ulong CompressedSize2;
-            public ulong DecompressedSize2; // <= ChunkSize
-
-            public static ChunkHeader ReadFromStream(Stream stream)
-            {
-                ChunkHeader header = new ChunkHeader();
-                using var reader = new BinaryReader(stream, Encoding.UTF8, true);
-                header.ChunkHeaderTag = reader.ReadUInt64();
-                header.ChunkSize = reader.ReadUInt64();
-                header.DecompressionMethod = reader.ReadByte();
-                header.CompressedSize1 = reader.ReadUInt64();
-                header.DecompressedSize1 = reader.ReadUInt64();
-                header.CompressedSize2 = reader.ReadUInt64();
-                header.DecompressedSize2 = reader.ReadUInt64();
-                return header;
-            }
-        }
-
-        public static byte[] DecompressSave(string saveFilePath)
-        {
-            if (File.Exists(saveFilePath))
-            {
-                using var fileStream = File.Open(saveFilePath, FileMode.Open);
-                var fileHeader = FileHeader.ReadFromStream(fileStream);
-
-                var saveContent = new byte[fileHeader.TotalSize];
-                using var memstream = new MemoryStream(saveContent);
-                while (fileStream.Position < fileStream.Length)
-                {
-                    ChunkHeader header = ChunkHeader.ReadFromStream(fileStream);
-                    byte[] buffer = new byte[header.CompressedSize1];
-                    fileStream.Read(buffer);
-
-                    using var bufferStream = new MemoryStream(buffer);
-                    using var decompressor = new ZLibStream(bufferStream, CompressionMode.Decompress);
-                    decompressor.CopyTo(memstream);
-                }
-
-                return saveContent;
-            }
-            return Array.Empty<byte>();
-        }
-        public static string DecompressSaveAsString(string saveFilePath)
-        {
-            return Encoding.ASCII.GetString(DecompressSave(saveFilePath));
         }
     }
 

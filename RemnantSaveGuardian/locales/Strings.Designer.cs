@@ -295,6 +295,33 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to When exporting, export copies of saves.
+        /// </summary>
+        public static string chkExportCopy_Content {
+            get {
+                return ResourceManager.GetString("chkExportCopy_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When exporting, export decompressed saves.
+        /// </summary>
+        public static string chkExportDecoded_Content {
+            get {
+                return ResourceManager.GetString("chkExportDecoded_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When exporting, export saves in json format.
+        /// </summary>
+        public static string chkExportJson_Content {
+            get {
+                return ResourceManager.GetString("chkExportJson_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Only when inactive.
         /// </summary>
         public static string chkOnlyInactive_Content {
