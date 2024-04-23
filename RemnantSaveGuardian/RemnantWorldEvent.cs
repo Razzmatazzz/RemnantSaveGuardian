@@ -962,7 +962,7 @@ namespace RemnantSaveGuardian
                         continue;
                     }
 
-                    if (currentWorld == "World_DLC1" && prevWorld != null)
+                    if (currentWorld.Contains("_DLC") && prevWorld != null)
                     {
                         currentWorld = prevWorld;
 
@@ -1195,6 +1195,8 @@ namespace RemnantSaveGuardian
                     //Logger.Warn($"Injectable world {world} not found in {mode} events");
                     if (world == "World_DLC1")
                         world = "World_Fae";
+                    else if (world == "World_DLC2")
+                        world = "World_Jungle";
                     else
                         continue;
                 }
@@ -1573,7 +1575,7 @@ namespace RemnantSaveGuardian
                 campaignStart = campaignBlob.LastIndexOf(strCampaignStart);
                 eventBlobs[ProcessMode.Campaign] = campaignBlob.Substring(campaignStart);
             }
-            var adventureMatch = Regex.Match(saveText, @"/Game/World_(?<world>\w+)/Quests/Quest_AdventureMode(_[a-zA-Z]+)?/Quest_AdventureMode(_[a-zA-Z]+)?_\w+.Quest_AdventureMode(_[a-zA-Z]+)?_\w+_C");
+            var adventureMatch = Regex.Match(saveText, @"/Game/World_(?<world>\w+)/Quests/Quest_AdventureMode(_[a-zA-Z0-9]+)?/Quest_AdventureMode(_[a-zA-Z0-9]+)?_\w+.Quest_AdventureMode(_[a-zA-Z0-9]+)?_\w+_C");
             if (adventureMatch.Success)
             {
                 int adventureEnd = adventureMatch.Index;

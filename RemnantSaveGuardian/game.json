@@ -74,6 +74,9 @@
       "Impaler": "Glistering Cloister",
       "Witch": "Sunken Haunt",
       "OneTrueKing": "Palace of the One True King"
+    },
+    "DLC2": {
+
     }
   },
   "injectableParents": {
@@ -1507,7 +1510,7 @@
           "name": "/Items/Trinkets/Amulets/DeathSoakedIdol/Amulet_DeathSoakedIdol"
         }
       ],
-      "Halls": [
+      "ShaedHalls": [
         {
           "name": "/Items/Trinkets/Rings/ShaedStone/Ring_ShaedStone",
           "notes": "Shoot the invisible golden pot in the reflection you see on the mirrored floor."
