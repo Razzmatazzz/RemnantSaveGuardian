@@ -12,7 +12,7 @@ namespace RemnantSaveGuardian
 {
     internal class UpdateCheck
     {
-        private static string _repo = "Razzmatazzz/RemnantSaveGuardian";
+        private static readonly string _repo = "Razzmatazzz/RemnantSaveGuardian";
         private static readonly HttpClient Client = new();
         private static DateTime _lastUpdateCheck = DateTime.MinValue;
 
