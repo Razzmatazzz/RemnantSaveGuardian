@@ -39,7 +39,7 @@ namespace RemnantSaveGuardian
                 if (localVersion.CompareTo(remoteVersion) == -1)
                 {
                     NewVersion?.Invoke(null, new() { Version = remoteVersion, Uri = new(latestRelease["html_url"].ToString()) });
-                    MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+                    MessageBox messageBox = new MessageBox();
                     messageBox.Title = Loc.T("Update available");
                     Hyperlink hyperLink = new()
                     {

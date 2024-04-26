@@ -101,9 +101,9 @@ namespace RemnantSaveGuardian
         //public SaveBackup(DateTime saveDate)
         public SaveBackup(string savePath)
         {
-            this._savePath = savePath;
+            _savePath = savePath;
 
-            _progression = Analyzer.GetProfileStringCombined(this._savePath);
+            _progression = Analyzer.GetProfileStringCombined(_savePath);
             _saveData = new SaveData();
             _saveData.Name = SaveDateTime.Ticks.ToString();
             _saveData.Date = SaveDateTime;

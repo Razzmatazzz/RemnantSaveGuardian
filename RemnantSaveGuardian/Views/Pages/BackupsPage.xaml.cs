@@ -754,7 +754,7 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return;
             }
-            MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
+            MessageBox messageBox = new MessageBox();
             messageBox.Title = Loc.T("Confirm Delete");
             messageBox.Content = new TextBlock() {
                 Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {

@@ -158,23 +158,23 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private void ChangeTheme(string parameter)
         {
-            ThemeType currentTheme = (Wpf.Ui.Appearance.ThemeType)Enum.Parse(typeof(Wpf.Ui.Appearance.ThemeType), Properties.Settings.Default.Theme);
+            ThemeType currentTheme = (ThemeType)Enum.Parse(typeof(ThemeType), Properties.Settings.Default.Theme);
             switch (parameter)
             {
                 case "Light":
-                    if (currentTheme == Wpf.Ui.Appearance.ThemeType.Light)
+                    if (currentTheme == ThemeType.Light)
                         break;
 
-                    Wpf.Ui.Appearance.Theme.Apply(Wpf.Ui.Appearance.ThemeType.Light);
+                    Theme.Apply(ThemeType.Light);
                     Properties.Settings.Default.Theme = parameter;
 
                     break;
 
                 default:
-                    if (currentTheme == Wpf.Ui.Appearance.ThemeType.Dark)
+                    if (currentTheme == ThemeType.Dark)
                         break;
 
-                    Wpf.Ui.Appearance.Theme.Apply(Wpf.Ui.Appearance.ThemeType.Dark);
+                    Theme.Apply(ThemeType.Dark);
                     Properties.Settings.Default.Theme = parameter;
 
                     break;
@@ -207,7 +207,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 List<String> backupFiles = Directory.GetDirectories(Properties.Settings.Default.BackupFolder).ToList();
                 if (backupFiles.Count > 0)
                 {
-                    MessageBox messageBox = new Wpf.Ui.Controls.MessageBox()
+                    MessageBox messageBox = new MessageBox()
                     {
                         Title = Loc.T("Move Backups"),
                         Content = Loc.T("Do you want to move your backups to this new folder?"),

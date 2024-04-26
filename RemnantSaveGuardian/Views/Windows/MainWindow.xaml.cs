@@ -234,7 +234,7 @@ namespace RemnantSaveGuardian.Views.Windows
                 PageType = typeof(WorldAnalyzerPage),
             };
             navItem.ContextMenu = new();
-            MenuItem menuItem = new Wpf.Ui.Controls.MenuItem()
+            MenuItem menuItem = new MenuItem()
             {
                 Header = Loc.T("Close"),
                 Icon = new SymbolIcon() { Symbol = SymbolRegular.Prohibited24 },
