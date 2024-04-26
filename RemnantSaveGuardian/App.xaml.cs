@@ -93,7 +93,7 @@ namespace RemnantSaveGuardian
             await Host.StartAsync();
         }
 
-        private CultureInfo[] EnumerateSupportedCultures()
+        private static CultureInfo[] EnumerateSupportedCultures()
         {
             CultureInfo[] culture = CultureInfo.GetCultures(CultureTypes.AllCultures);
             string? exeLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
