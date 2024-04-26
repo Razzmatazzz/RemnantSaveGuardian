@@ -26,10 +26,7 @@ namespace RemnantSaveGuardian
 
         public string Name
         {
-            get
-            {
-                return _saveData.Name;
-            }
+            get => _saveData.Name;
             set
             {
                 if (value.Equals(""))
@@ -45,29 +42,15 @@ namespace RemnantSaveGuardian
         }
         public DateTime SaveDate
         {
-            get
-            {
-                return _saveData.Date;
-            }
-            set
-            {
-                _saveData.Date = value;
-                //OnUpdated(new UpdatedEventArgs("SaveDate"));
-            }
+            get => _saveData.Date;
+            set => _saveData.Date = value;
+            //OnUpdated(new UpdatedEventArgs("SaveDate"));
         }
-        public string Progression
-        {
-            get
-            {
-                return string.Join(", ", _progression);
-            }
-        }
+        public string Progression => string.Join(", ", _progression);
+
         public bool Keep
         {
-            get
-            {
-                return _saveData.Keep;
-            }
+            get => _saveData.Keep;
             set
             {
                 if (_saveData.Keep != value)
@@ -79,24 +62,12 @@ namespace RemnantSaveGuardian
         }
         public bool Active
         {
-            get
-            {
-                return _saveData.Active;
-            }
-            set
-            {
-                _saveData.Active = value;
-                //OnUpdated(new UpdatedEventArgs("Active"));
-            }
+            get => _saveData.Active;
+            set => _saveData.Active = value;
+            //OnUpdated(new UpdatedEventArgs("Active"));
         }
 
-        public string SaveFolderPath
-        {
-            get
-            {
-                return _savePath;
-            }
-        }
+        public string SaveFolderPath => _savePath;
 
         //public SaveBackup(DateTime saveDate)
         public SaveBackup(string savePath)
@@ -181,13 +152,7 @@ namespace RemnantSaveGuardian
             if (null != handler) handler(this, args);
         }
 
-        private DateTime SaveDateTime
-        {
-            get
-            {
-                return File.GetLastWriteTime(Path.Join(_savePath, "profile.sav"));
-            }
-        }
+        private DateTime SaveDateTime => File.GetLastWriteTime(Path.Join(_savePath, "profile.sav"));
     }
 
     public class UpdatedEventArgs : EventArgs
@@ -199,9 +164,6 @@ namespace RemnantSaveGuardian
             _fieldName = fieldName;
         }
 
-        public string FieldName
-        {
-            get { return _fieldName; }
-        }
+        public string FieldName => _fieldName;
     }
 }

@@ -22,23 +22,23 @@ namespace RemnantSaveGuardian.Views.UserControls
         [Category("Extend Properties")]
         public string Text
         {
-            get { return (string)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            get => (string)GetValue(TextProperty);
+            set => SetValue(TextProperty, value);
         }
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(TextBlockPlus), new PropertyMetadata(""));
         [Category("Extend Properties")]
         public int RollingSpeed
         {
-            get { return (int)GetValue(RollingSpeedProperty); }
-            set { SetValue(RollingSpeedProperty, value); }
+            get => (int)GetValue(RollingSpeedProperty);
+            set => SetValue(RollingSpeedProperty, value);
         }
         public static readonly DependencyProperty RollingSpeedProperty = DependencyProperty.Register("RollingSpeed", typeof(int), typeof(TextBlockPlus), new PropertyMetadata(250));
 
         [Category("Extend Properties")]
         public int RollbackSpeed
         {
-            get { return (int)GetValue(RollbackSpeedProperty); }
-            set { SetValue(RollbackSpeedProperty, value); }
+            get => (int)GetValue(RollbackSpeedProperty);
+            set => SetValue(RollbackSpeedProperty, value);
         }
         public static readonly DependencyProperty RollbackSpeedProperty = DependencyProperty.Register("RollbackSpeed", typeof(int), typeof(TextBlockPlus), new PropertyMetadata(1000));
         #endregion 
@@ -51,14 +51,14 @@ namespace RemnantSaveGuardian.Views.UserControls
     {
         public int RollingSpeed
         {
-            get { return (int)GetValue(RollingSpeedProperty); }
-            set { SetValue(RollingSpeedProperty, value); }
+            get => (int)GetValue(RollingSpeedProperty);
+            set => SetValue(RollingSpeedProperty, value);
         }
         public static readonly DependencyProperty RollingSpeedProperty = DependencyProperty.Register("RollingSpeed", typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(250));
         public int RollbackSpeed
         {
-            get { return (int)GetValue(RollbackSpeedProperty); }
-            set { SetValue(RollbackSpeedProperty, value); }
+            get => (int)GetValue(RollbackSpeedProperty);
+            set => SetValue(RollbackSpeedProperty, value);
         }
         public static readonly DependencyProperty RollbackSpeedProperty = DependencyProperty.Register("RollbackSpeed", typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(1000));
 

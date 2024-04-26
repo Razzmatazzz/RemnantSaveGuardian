@@ -10,7 +10,7 @@ namespace RemnantSaveGuardian
         public string Profile { get; set; }
         public List<string> Worlds { get; set; }
         private readonly bool _isValid;
-        public bool Valid { get { return _isValid; } }
+        public bool Valid => _isValid;
 
         public WindowsSave(string containerPath)
         {

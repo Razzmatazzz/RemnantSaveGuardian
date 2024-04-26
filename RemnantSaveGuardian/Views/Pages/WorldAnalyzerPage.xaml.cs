@@ -294,7 +294,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private Brush _missingItemsTextColor;
         public Brush MissingItemsTextColor
         {
-            get { return _missingItemsTextColor; }
+            get => _missingItemsTextColor;
             set { _missingItemsTextColor = value; OnPropertyChanged("missingItemsTextColor"); }
         }
         #endregion
@@ -755,20 +755,20 @@ namespace RemnantSaveGuardian.Views.Pages
             public String Name { get; set; }
             public String? Notes { get; set; }
             public Object Tag {
-                get { return _tag == null ? new object() : _tag; }
-                set { _tag = value; }
+                get => _tag == null ? new object() : _tag;
+                set => _tag = value;
             }
             public List<TreeListClass> Childnode {
-                get { return _childnode == null ? new List<TreeListClass>(0) : _childnode; }
-                set { _childnode = value; }
+                get => _childnode == null ? new List<TreeListClass>(0) : _childnode;
+                set => _childnode = value;
             }
             public bool IsSelected {
-                get { return _isselected; }
+                get => _isselected;
                 set { _isselected = value; OnPropertyChanged(); }
             }
             public bool IsExpanded
             {
-                get { return _isexpanded; }
+                get => _isexpanded;
                 set
                 {
                     if (value != _isexpanded)
@@ -785,7 +785,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             public Visibility Visibility
             {
-                get { return _visibility; }
+                get => _visibility;
                 set { _visibility = value; OnPropertyChanged(); }
             }
             protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

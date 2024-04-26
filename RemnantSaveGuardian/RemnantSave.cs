@@ -17,7 +17,7 @@ namespace RemnantSaveGuardian
         private readonly RemnantSaveType _saveType;
         private readonly WindowsSave _winSave;
 
-        public static readonly Guid FolderidSavedGames = new(0x4C5C32FF, 0xBB9D, 0x43B0, 0xB5, 0xB4, 0x2D, 0x72, 0xE5, 0x4E, 0xAA, 0xA4);
+        public static readonly Guid FolderIdSavedGames = new(0x4C5C32FF, 0xBB9D, 0x43B0, 0xB5, 0xB4, 0x2D, 0x72, 0xE5, 0x4E, 0xAA, 0xA4);
         [DllImport("shell32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, PreserveSig = false)]
         static extern string SHGetKnownFolderPath([MarshalAs(UnmanagedType.LPStruct)] Guid rfid, uint dwFlags, IntPtr hToken = default);
 
@@ -54,33 +54,13 @@ namespace RemnantSaveGuardian
             }
         }
 
-        public string SaveFolderPath
-        {
-            get
-            {
-                return _savePath;
-            }
-        }
+        public string SaveFolderPath => _savePath;
 
-        public string SaveProfilePath
-        {
-            get
-            {
-                return _savePath + $@"\{_profileFile}";
-            }
-        }
-        public RemnantSaveType SaveType
-        {
-            get { return _saveType; }
-        }
+        public string SaveProfilePath => _savePath + $@"\{_profileFile}";
 
-        public bool Valid
-        {
-            get
-            {
-                return _saveType == RemnantSaveType.Normal || _winSave.Valid;
-            }
-        }
+        public RemnantSaveType SaveType => _saveType;
+
+        public bool Valid => _saveType == RemnantSaveType.Normal || _winSave.Valid;
 
         public static bool ValidSaveFolder(string folder)
         {
@@ -111,7 +91,7 @@ namespace RemnantSaveGuardian
 
         public static string DefaultSaveFolder()
         {
-            string saveFolder = SHGetKnownFolderPath(FolderidSavedGames, 0) + @"\Remnant2";
+            string saveFolder = SHGetKnownFolderPath(FolderIdSavedGames, 0) + @"\Remnant2";
             if (Directory.Exists($@"{saveFolder}\Steam"))
             {
                 saveFolder += @"\Steam";

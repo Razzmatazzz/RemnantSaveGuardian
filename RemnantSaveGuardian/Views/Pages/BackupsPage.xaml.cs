@@ -49,10 +49,8 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
                 return false;
             }
-            set
-            {
-                btnBackup.IsEnabled = !value;
-                /*if (value)
+            set => btnBackup.IsEnabled = !value;
+            /*if (value)
                 {
                     lblStatus.ToolTip = "Backed Up";
                     lblStatus.Content = FindResource("StatusOK");
@@ -66,7 +64,6 @@ namespace RemnantSaveGuardian.Views.Pages
                     btnBackup.IsEnabled = true;
                     btnBackup.Content = FindResource("Save");
                 }*/
-            }
         }
 
         public BackupsPage(ViewModels.BackupsViewModel viewModel)
@@ -875,18 +872,10 @@ namespace RemnantSaveGuardian.Views.Pages
     public class LocalizedColumnHeader
     {
         private readonly string _key;
-        public string Key { 
-            get {
-                return _key;
-            } 
-        }
-        public string Name
-        {
-            get
-            {
-                return Loc.T(_key);
-            }
-        }
+        public string Key => _key;
+
+        public string Name => Loc.T(_key);
+
         public LocalizedColumnHeader(string key)
         {
             _key = key;
