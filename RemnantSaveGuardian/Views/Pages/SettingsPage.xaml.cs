@@ -67,7 +67,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     else
                         cmbSwitchLanguage.SelectedItem = culture.NativeName;
                 }
-                cmbSwitchLanguage.SelectionChanged += cmbSwitchLanguage_SelectionChanged;
+                cmbSwitchLanguage.SelectionChanged += CmbSwitchLanguage_SelectionChanged;
 
                 radThemeLight.IsChecked = Properties.Settings.Default.Theme == "Light";
 
@@ -324,7 +324,7 @@ namespace RemnantSaveGuardian.Views.Pages
             Process.Start("explorer.exe", @$"{path}\");
         }
 
-        private void cmbStartPage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CmbStartPage_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBoxItem? selected = cmbStartPage.SelectedItem as ComboBoxItem;
             if (selected == null)
@@ -339,7 +339,7 @@ namespace RemnantSaveGuardian.Views.Pages
             Properties.Settings.Default.StartPage = startPage;
         }
 
-        private void cmbSwitchLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CmbSwitchLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cmbSwitchLanguage.SelectedIndex > -1)
             {
@@ -354,7 +354,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void sldOpacitySlider_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
+        private void SldOpacitySlider_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
         {
             if (Properties.Settings.Default.OnlyInactive == true)
             {

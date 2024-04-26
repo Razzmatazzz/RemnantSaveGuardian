@@ -121,7 +121,7 @@
             </ui:CardExpander.Header>
             <StackPanel>
                 <WrapPanel>
-                    <ComboBox Name="cmbStartPage" VerticalAlignment="Top" Width="150" SelectionChanged="cmbStartPage_SelectionChanged">
+                    <ComboBox Name="cmbStartPage" VerticalAlignment="Top" Width="150" SelectionChanged="CmbStartPage_SelectionChanged">
                         <ComboBoxItem Content="{lex:Loc Save Backups}" Tag="backups"/>
                         <ComboBoxItem Content="{lex:Loc World Analyzer}" Tag="world-analyzer"/>
                     </ComboBox>
@@ -160,7 +160,7 @@
                                 </Style.Triggers>
                             </Style>
                         </WrapPanel.Style>
-                        <Slider Name="sldOpacitySlider" Value="{Binding Opacity, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Minimum="0.2" Maximum="1" LargeChange="0.1" Thumb.DragCompleted="sldOpacitySlider_DragCompleted"/>
+                        <Slider Name="sldOpacitySlider" Value="{Binding Opacity, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Minimum="0.2" Maximum="1" LargeChange="0.1" Thumb.DragCompleted="SldOpacitySlider_DragCompleted"/>
                         <TextBlock Name="lblOpacitySlider" Text="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0" />
                         <CheckBox Name="chkOnlyInactive" IsChecked="{Binding OnlyInactive, Mode=TwoWay}"  Content="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0" />
                     </WrapPanel>
