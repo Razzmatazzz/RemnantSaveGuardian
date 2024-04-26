@@ -9,21 +9,22 @@ namespace RemnantSaveGuardian
         public string Container { get; set; }
         public string Profile { get; set; }
         public List<string> Worlds { get; set; }
-        private readonly bool _isValid;
-        public bool Valid => _isValid;
+        public bool Valid { get; }
 
         public WindowsSave(string containerPath)
         {
             Worlds = new List<string>();
             Container = containerPath;
-            string folderPath = new FileInfo(containerPath).Directory.FullName;
+            DirectoryInfo directory = new FileInfo(containerPath).Directory ?? 
+                throw new ApplicationException($"Cannot find directory for container path {containerPath}");
+            string folderPath = directory.FullName;
             int offset = 136;
             byte[] byteBuffer = File.ReadAllBytes(Container);
             byte[] profileBytes = new byte[16];
             Array.Copy(byteBuffer, offset, profileBytes, 0, 16);
             Guid profileGuid = new(profileBytes);
             Profile = profileGuid.ToString().ToUpper().Replace("-", "");
-            _isValid = File.Exists($@"{folderPath}\{Profile}");
+            Valid = File.Exists($@"{folderPath}\{Profile}");
             offset += 160;
             while (offset + 16 < byteBuffer.Length)
             {

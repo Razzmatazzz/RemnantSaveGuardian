@@ -19,7 +19,9 @@ namespace RemnantSaveGuardian.Helpers
             /// <returns>If the window handle identifies an existing window, the return value is nonzero.</returns>
             [DllImport("user32.dll", CharSet = CharSet.Auto)]
             [return: MarshalAs(UnmanagedType.Bool)]
+#pragma warning disable SYSLIB1054 // Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time
             public static extern bool IsWindow([In] IntPtr hWnd);
+#pragma warning restore SYSLIB1054 // Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time
         }
         internal class Utilities
         {
@@ -27,6 +29,7 @@ namespace RemnantSaveGuardian.Helpers
 
             private static readonly Version OsVersion = Environment.OSVersion.Version;
 
+            // ReSharper disable UnusedMember.Global
             /// <summary>
             /// Whether the operating system is NT or newer. 
             /// </summary>
@@ -66,6 +69,7 @@ namespace RemnantSaveGuardian.Helpers
             /// Whether the operating system version is greater than or equal to 10.0* (build 22557).
             /// </summary>
             public static bool IsOsWindows11Insider2OrNewer => OsVersion.Build >= 22557;
+            // ReSharper restore UnusedMember.Global
         }
         internal enum UxMaterials
         {
@@ -110,7 +114,11 @@ namespace RemnantSaveGuardian.Helpers
             if (type == UxMaterials.None)
             {
                 RestoreBackground(window);
+
+#pragma warning disable CS0618 // Type or member is obsolete
                 return UnsafeNativeMethods.RemoveWindowBackdrop(handle);
+#pragma warning restore CS0618 // Type or member is obsolete
+
             }
             // First release of Windows 11
             if (!Utilities.IsOsWindows11Insider1OrNewer)
@@ -118,12 +126,16 @@ namespace RemnantSaveGuardian.Helpers
                 if (type == UxMaterials.Mica)
                 {
                     RemoveBackground(window);
+#pragma warning disable CS0618 // Type or member is obsolete
                     return UnsafeNativeMethods.ApplyWindowLegacyMicaEffect(handle);
+#pragma warning restore CS0618 // Type or member is obsolete
                 }
 
                 if (type == UxMaterials.Acrylic)
                 {
+#pragma warning disable CS0618 // Type or member is obsolete
                     return UnsafeNativeMethods.ApplyWindowLegacyMicaEffect(handle);
+#pragma warning restore CS0618 // Type or member is obsolete
                 }
 
                 return false;
@@ -131,7 +143,9 @@ namespace RemnantSaveGuardian.Helpers
 
             // Newer Windows 11 versions
             RemoveBackground(window);
+#pragma warning disable CS0618 // Type or member is obsolete
             return UnsafeNativeMethods.ApplyWindowBackdrop(handle, (BackgroundType)type);
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         /// <summary>
@@ -139,7 +153,7 @@ namespace RemnantSaveGuardian.Helpers
         /// </summary>
         /// <param name="window">Window to manipulate.</param>
         /// <returns><see langword="true"/> if operation was successful.</returns>
-        internal static void RemoveBackground(Window window)
+        internal static void RemoveBackground(Window? window)
         {
             if (window == null)
                 return;
@@ -147,7 +161,7 @@ namespace RemnantSaveGuardian.Helpers
             // Remove background from visual root
             window.Background = TransparentBrush;
         }
-        internal static void RestoreBackground(Window window)
+        internal static void RestoreBackground(Window? window)
         {
             if (window == null)
                 return;
@@ -160,7 +174,7 @@ namespace RemnantSaveGuardian.Helpers
 
             window.Background = (SolidColorBrush)backgroundBrush;
         }
-        private static Brush GetFallbackBackgroundBrush()
+        private static SolidColorBrush GetFallbackBackgroundBrush()
         {
             return Theme.GetAppTheme() == ThemeType.Dark
                 ? new SolidColorBrush(Color.FromArgb(0xFF, 0x20, 0x20, 0x20))

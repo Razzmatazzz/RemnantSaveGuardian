@@ -38,7 +38,7 @@
         </WrapPanel>
         <DataGrid Grid.Row="1" Name="dataBackups" ColumnHeaderStyle="{StaticResource DGridColumnHeader_Style}" RowStyle="{StaticResource DGridRow_Style}" AutoGeneratingColumn="DataBackups_AutoGeneratingColumn" BeginningEdit="DataBackups_BeginningEdit" CellEditEnding="DataBackups_CellEditEnding" Drop="DataBackups_Drop" AllowDrop="True" SelectionMode="Single" IsReadOnly="False" CanUserReorderColumns="False" SelectionUnit="FullRow">
             <DataGrid.ContextMenu>
-                <ContextMenu Name="contextBackups" Opened="ContextBackups_Opened" ContextMenuOpening="ContextBackups_ContextMenuOpening">
+                <ContextMenu Name="contextBackups" Opened="ContextBackups_Opened" >
                     <ui:MenuItem Name="menuRestore" Header="{lex:Loc}">
                         <MenuItem.Icon>
                             <ui:SymbolIcon HorizontalAlignment="Left" Symbol="ArrowBounce24" />

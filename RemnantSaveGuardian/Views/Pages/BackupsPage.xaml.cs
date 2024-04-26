@@ -189,13 +189,6 @@ namespace RemnantSaveGuardian.Views.Pages
             contextBackups.Visibility = Visibility.Visible;
         }
 
-        private void ContextBackups_ContextMenuOpening(object sender, ContextMenuEventArgs e)
-        {
-            if (dataBackups.SelectedItem is not SaveBackup save) {
-                return;
-            }
-        }
-
         private void DataBackups_CellEditEnding(object? sender, DataGridCellEditEndingEventArgs e)
         {
             LocalizedColumnHeader? header = (LocalizedColumnHeader)e.Column.Header;

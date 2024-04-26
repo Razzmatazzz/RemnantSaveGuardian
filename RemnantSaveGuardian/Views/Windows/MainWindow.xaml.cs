@@ -215,8 +215,9 @@ namespace RemnantSaveGuardian.Views.Windows
         private void BackupsPage_BackupSaveViewed(object? sender, BackupSaveViewedEventArgs e)
         {
             string pageTag = $"world-analyzer-{e.SaveBackup.SaveDate.Ticks}";
-            foreach (NavigationItem nav in ViewModel.NavigationItems)
+            foreach (INavigationControl navigationControl in ViewModel.NavigationItems)
             {
+                var nav = (NavigationItem)navigationControl;
                 if (nav.PageTag == pageTag)
                 {
                     RootNavigation.Navigate(pageTag);
@@ -242,8 +243,9 @@ namespace RemnantSaveGuardian.Views.Windows
                 Icon = new SymbolIcon() { Symbol = SymbolRegular.Prohibited24 },
             };
             menuItem.Click += (_, _) => {
-                foreach (NavigationItem nav in ViewModel.NavigationItems)
+                foreach (INavigationControl navigationControl in ViewModel.NavigationItems)
                 {
+                    var nav = (NavigationItem)navigationControl;
                     if (nav.PageTag == pageTag)
                     {
                         ViewModel.NavigationItems.Remove(navItem);
