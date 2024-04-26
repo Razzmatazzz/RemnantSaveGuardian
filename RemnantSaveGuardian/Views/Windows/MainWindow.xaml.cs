@@ -327,7 +327,7 @@ namespace RemnantSaveGuardian.Views.Windows
             Application.Current.Shutdown();
         }
 
-        private void TryToFindGameFolder()
+        private static void TryToFindGameFolder()
         {
             if (File.Exists(Properties.Settings.Default.GameFolder + @"\Remnant2.exe"))
             {

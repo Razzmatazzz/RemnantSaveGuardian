@@ -24,8 +24,6 @@ namespace RemnantSaveGuardian.Views.Pages
             get;
         }
 
-        private CultureInfo[] _availableCultures = new CultureInfo[] { };
-
         public SettingsPage(ViewModels.SettingsViewModel viewModel)
         {
             ViewModel = viewModel;
@@ -156,7 +154,7 @@ namespace RemnantSaveGuardian.Views.Pages
             ChangeTheme("Light");
             CmbMissingItemColor_SelectionChanged(sender, null);
         }
-        private void ChangeTheme(string parameter)
+        private static void ChangeTheme(string parameter)
         {
             ThemeType currentTheme = (ThemeType)Enum.Parse(typeof(ThemeType), Properties.Settings.Default.Theme);
             switch (parameter)
@@ -316,12 +314,12 @@ namespace RemnantSaveGuardian.Views.Pages
             Properties.Settings.Default.MissingItemColor = ((ComboBoxItem)cmbMissingItemColor.SelectedItem).Tag.ToString();
         }
 
-        private string GetAssemblyVersion()
+        private static string GetAssemblyVersion()
         {
             return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? String.Empty;
         }
 
-        private void OpenFolder(string path)
+        private static void OpenFolder(string path)
         {
             Process.Start("explorer.exe", @$"{path}\");
         }

@@ -205,7 +205,7 @@ namespace RemnantSaveGuardian.Views.UserControls
             TextBlockPlus? ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
             ui.RaiseEvent(eBack);
         }
-        private DependencyObject VisualUpwardSearch<T>(DependencyObject source)
+        private static DependencyObject VisualUpwardSearch<T>(DependencyObject source)
         {
             while (source != null && source.GetType() != typeof(T))
             {

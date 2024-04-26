@@ -374,7 +374,7 @@ namespace RemnantSaveGuardian.Views.Pages
             });
         }
 
-        private Dictionary<long, string> GetSavedBackupNames()
+        private static Dictionary<long, string> GetSavedBackupNames()
         {
             Dictionary<long, string> names = new();
             string savedString = Properties.Settings.Default.BackupName;
@@ -390,7 +390,7 @@ namespace RemnantSaveGuardian.Views.Pages
             return names;
         }
 
-        private Dictionary<long, bool> GetSavedBackupKeeps()
+        private static Dictionary<long, bool> GetSavedBackupKeeps()
         {
             Dictionary<long, bool> keeps = new();
             string savedString = Properties.Settings.Default.BackupKeep;
@@ -406,7 +406,7 @@ namespace RemnantSaveGuardian.Views.Pages
             return keeps;
         }
 
-        private bool BackupActive(SaveBackup saveBackup)
+        private static bool BackupActive(SaveBackup saveBackup)
         {
             RemnantSave activeSave = new(Properties.Settings.Default.SaveFolder, true);
             if (DateTime.Compare(saveBackup.SaveDate, File.GetLastWriteTime(activeSave.SaveProfilePath)) == 0)
@@ -640,7 +640,7 @@ namespace RemnantSaveGuardian.Views.Pages
             e.Column.Header = new LocalizedColumnHeader(e.Column.Header.ToString());
         }
 
-        private bool IsRemnantRunning()
+        private static bool IsRemnantRunning()
         {
             Process[] pname = Process.GetProcessesByName("Remnant2");
             if (pname.Length == 0)
@@ -727,7 +727,7 @@ namespace RemnantSaveGuardian.Views.Pages
             SaveFolderUnrecognizedFilesCheck();
         }
 
-        private void SaveFolderUnrecognizedFilesCheck()
+        private static void SaveFolderUnrecognizedFilesCheck()
         {
             List<string> invalidFiles = new();
             foreach (string file in Directory.GetFiles(Properties.Settings.Default.SaveFolder))

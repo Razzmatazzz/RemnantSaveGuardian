@@ -461,7 +461,7 @@ namespace RemnantSaveGuardian.Views.Pages
             AdventureData.ItemsSource = tempDataA;
         }
 
-        private string GetTreeListItem(TreeListClass item)
+        private static string GetTreeListItem(TreeListClass item)
         {
             if (item == null)
             {
@@ -506,7 +506,7 @@ namespace RemnantSaveGuardian.Views.Pages
             LootItem item = new() { Item = (Dictionary<string, string>)treeItem.Tag };
             SearchItem(item);
         }
-        private void SearchItem(LootItem item)
+        private static void SearchItem(LootItem item)
         {
             string itemname = item.Name;
             Process.Start("explorer.exe", $"https://remnant2.wiki.fextralife.com/{itemname}");
@@ -519,7 +519,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             CollapseExpandAllItems(_itemModeNode, false);
         }
-        private void CollapseExpandAllItems(List<TreeListClass> lstItems, bool bExpand)
+        private static void CollapseExpandAllItems(List<TreeListClass> lstItems, bool bExpand)
         {
             foreach (TreeListClass item in lstItems)
             {
