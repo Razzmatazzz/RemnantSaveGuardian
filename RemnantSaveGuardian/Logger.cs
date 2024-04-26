@@ -8,7 +8,7 @@ namespace RemnantSaveGuardian
     internal static class Logger
     {
         public static event EventHandler<MessageLoggedEventArgs> MessageLogged;
-        private static List<LogMessage> _messages = new ();
+        private static readonly List<LogMessage> _messages = new ();
         public static List<LogMessage> Messages { get { return _messages; } }
         static Logger()
         {

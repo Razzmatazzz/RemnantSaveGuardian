@@ -21,8 +21,8 @@ namespace RemnantSaveGuardian
         private bool _inTxn = false;
         //private int[] progression;
         //private List<RemnantCharacter> charData;
-        private string _progression;
-        private string _savePath;
+        private readonly string _progression;
+        private readonly string _savePath;
 
         public string Name
         {

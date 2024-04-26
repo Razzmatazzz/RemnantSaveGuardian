@@ -63,8 +63,8 @@ namespace RemnantSaveGuardian.Views.UserControls
         public static readonly DependencyProperty RollbackSpeedProperty = DependencyProperty.Register("RollbackSpeed", typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(1000));
 
         private TextBlock? _textBlock;
-        private Storyboard _storyBoard = new();
-        private DoubleAnimation _animation = new();
+        private readonly Storyboard _storyBoard = new();
+        private readonly DoubleAnimation _animation = new();
 
         protected override void OnAttached()
         {

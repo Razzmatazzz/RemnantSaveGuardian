@@ -335,8 +335,8 @@ namespace RemnantSaveGuardian.Views.Pages
             e.Column.Header = Loc.T(e.Column.Header.ToString());
         }
 
-        private static string[] _modeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
-        List<TreeListClass> _itemModeNode = new();
+        private static readonly string[] _modeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
+        readonly List<TreeListClass> _itemModeNode = new();
         private void CharacterControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //if (CharacterControl.SelectedIndex == -1 && listCharacters.Count > 0) return;

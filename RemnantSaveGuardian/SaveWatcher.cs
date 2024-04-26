@@ -6,12 +6,12 @@ namespace RemnantSaveGuardian
     internal static class SaveWatcher
     {
         public static event EventHandler SaveUpdated;
-        private static FileSystemWatcher _watcher = new ()
+        private static readonly FileSystemWatcher _watcher = new ()
         {
             //NotifyFilter = NotifyFilters.LastWrite,
             Filter = "profile.sav",
         };
-        private static System.Timers.Timer _saveTimer = new()
+        private static readonly System.Timers.Timer _saveTimer = new()
         {
             Interval = 2000,
             AutoReset = false,

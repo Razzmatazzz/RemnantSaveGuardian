@@ -12,10 +12,10 @@ namespace RemnantSaveGuardian
         public Dataset Dataset => _remnantDataset;
 
         public static readonly string DefaultWgsSaveFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Packages\PerfectWorldEntertainment.RemnantFromtheAshes_jrajkyc4tsa6w\SystemAppData\wgs";
-        private string _savePath;
-        private string _profileFile;
-        private RemnantSaveType _saveType;
-        private WindowsSave _winSave;
+        private readonly string _savePath;
+        private readonly string _profileFile;
+        private readonly RemnantSaveType _saveType;
+        private readonly WindowsSave _winSave;
 
         public static readonly Guid FolderidSavedGames = new(0x4C5C32FF, 0xBB9D, 0x43B0, 0xB5, 0xB4, 0x2D, 0x72, 0xE5, 0x4E, 0xAA, 0xA4);
         [DllImport("shell32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, PreserveSig = false)]

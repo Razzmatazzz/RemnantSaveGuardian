@@ -27,7 +27,7 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         public static event EventHandler<BackupSaveViewedEventArgs>? BackupSaveViewed;
         public static event EventHandler? BackupSaveRestored;
-        private static string _defaultBackupFolder = @$"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\Save Backups\Remnant 2";
+        private static readonly string _defaultBackupFolder = @$"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\Save Backups\Remnant 2";
         private List<SaveBackup> _listBackups;
         //private RemnantSave activeSave;
         private Process? _gameProcess;
@@ -874,7 +874,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
     public class LocalizedColumnHeader
     {
-        private string _key;
+        private readonly string _key;
         public string Key { 
             get {
                 return _key;
