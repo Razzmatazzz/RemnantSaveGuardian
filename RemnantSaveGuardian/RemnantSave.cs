@@ -8,18 +8,23 @@ namespace RemnantSaveGuardian
 {
     public class RemnantSave
     {
-        private Dataset _remnantDataset;
-        public Dataset Dataset => _remnantDataset;
+        private Dataset? _remnantDataset;
+        public Dataset? Dataset => _remnantDataset;
 
-        public static readonly string DefaultWgsSaveFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Packages\PerfectWorldEntertainment.RemnantFromtheAshes_jrajkyc4tsa6w\SystemAppData\wgs";
+        
+        // ReSharper disable CommentTypo
+        //public static readonly string DefaultWgsSaveFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Packages\PerfectWorldEntertainment.RemnantFromtheAshes_jrajkyc4tsa6w\SystemAppData\wgs";
+        // ReSharper restore CommentTypo
         private readonly string _savePath;
         private readonly string _profileFile;
         private readonly RemnantSaveType _saveType;
-        private readonly WindowsSave _winSave;
+        private readonly WindowsSave? _winSave;
 
         public static readonly Guid FolderIdSavedGames = new(0x4C5C32FF, 0xBB9D, 0x43B0, 0xB5, 0xB4, 0x2D, 0x72, 0xE5, 0x4E, 0xAA, 0xA4);
         [DllImport("shell32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, PreserveSig = false)]
+#pragma warning disable SYSLIB1054 // Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time
         static extern string SHGetKnownFolderPath([MarshalAs(UnmanagedType.LPStruct)] Guid rfid, uint dwFlags, IntPtr hToken = default);
+#pragma warning restore SYSLIB1054 // Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time
 
         public RemnantSave(string path, bool skipUpdate = false)
         {
@@ -58,9 +63,7 @@ namespace RemnantSaveGuardian
 
         public string SaveProfilePath => _savePath + $@"\{_profileFile}";
 
-        public RemnantSaveType SaveType => _saveType;
-
-        public bool Valid => _saveType == RemnantSaveType.Normal || _winSave.Valid;
+        public bool Valid => _saveType == RemnantSaveType.Normal || (_winSave?.Valid ?? false);
 
         public static bool ValidSaveFolder(string folder)
         {

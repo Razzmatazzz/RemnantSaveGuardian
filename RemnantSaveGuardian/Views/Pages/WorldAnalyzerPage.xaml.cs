@@ -141,12 +141,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         protected void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
@@ -776,10 +771,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         _isexpanded = value;
                         OnPropertyChanged();
                         PropertyChagedEventArgs ev = new("IsExpanded", _isexpanded, value);
-                        if (Expanded != null)
-                        {
-                            Expanded(this, ev);
-                        }
+                        Expanded?.Invoke(this, ev);
                     }
                 }
             }
@@ -790,8 +782,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
             {
-                if (PropertyChanged != null)
-                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
             public int CompareTo(TreeListClass other)
             {

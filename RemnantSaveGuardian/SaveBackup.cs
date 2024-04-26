@@ -15,10 +15,10 @@ namespace RemnantSaveGuardian
             internal bool Active;
         }
 
-        public event EventHandler<UpdatedEventArgs> Updated;
+        public event EventHandler<UpdatedEventArgs>? Updated;
         private SaveData _saveData;
         private SaveData _backupData;
-        private bool _inTxn = false;
+        private bool _inTxn;
         //private int[] progression;
         //private List<RemnantCharacter> charData;
         private readonly string _progression;
@@ -27,18 +27,8 @@ namespace RemnantSaveGuardian
         public string Name
         {
             get => _saveData.Name;
-            set
-            {
-                if (value.Equals(""))
-                {
-                    _saveData.Name = _saveData.Date.Ticks.ToString();
-                }
-                else
-                {
-                    _saveData.Name = value;
-                }
-                //OnUpdated(new UpdatedEventArgs("Name"));
-            }
+            set => _saveData.Name = value.Equals("") ? _saveData.Date.Ticks.ToString() : value;
+            //OnUpdated(new UpdatedEventArgs("Name"));
         }
         public DateTime SaveDate
         {
@@ -86,12 +76,12 @@ namespace RemnantSaveGuardian
         /*public void setProgression(List<List<string>> allItemList)
         {
 
-            int[] prog = new int[allItemList.Count];
+            int[] progression = new int[allItemList.Count];
             for (int i=0; i < allItemList.Count; i++)
             {
-                prog[i] = allItemList[i].Count;
+                progression[i] = allItemList[i].Count;
             }
-            this.progression = prog;
+            this.progression = progression;
         }
         public List<RemnantCharacter> GetCharacters()
         {
@@ -148,8 +138,7 @@ namespace RemnantSaveGuardian
 
         public void OnUpdated(UpdatedEventArgs args)
         {
-            EventHandler<UpdatedEventArgs> handler = Updated;
-            if (null != handler) handler(this, args);
+            Updated?.Invoke(this, args);
         }
 
         private DateTime SaveDateTime => File.GetLastWriteTime(Path.Join(_savePath, "profile.sav"));
@@ -157,13 +146,11 @@ namespace RemnantSaveGuardian
 
     public class UpdatedEventArgs : EventArgs
     {
-        private readonly string _fieldName;
-
         public UpdatedEventArgs(string fieldName)
         {
-            _fieldName = fieldName;
+            FieldName = fieldName;
         }
 
-        public string FieldName => _fieldName;
+        public string FieldName { get; }
     }
 }

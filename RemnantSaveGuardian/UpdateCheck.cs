@@ -32,20 +32,31 @@ namespace RemnantSaveGuardian
                 request.Headers.Add("user-agent", "remnant-save-guardian");
                 HttpResponseMessage response = await Client.SendAsync(request);
                 response.EnsureSuccessStatusCode();
-                JsonNode latestRelease = JsonNode.Parse(await response.Content.ReadAsStringAsync());
+                string responseString = await response.Content.ReadAsStringAsync();
+                JsonNode latestRelease = JsonNode.Parse(responseString) ?? 
+                    throw new ApplicationException($"Could not parse GitHub releases response string as json: {responseString}");
 
-                Version remoteVersion = new(latestRelease["tag_name"].ToString());
-                Version localVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                JsonNode tagName = latestRelease["tag_name"] ?? 
+                    throw new ApplicationException($"'tag_name' is not found in GitHub releases json: {responseString}");
+
+                JsonNode htmlUrl = latestRelease["html_url"] ??
+                                    throw new ApplicationException($"'html_url' is not found in GitHub releases json: {responseString}");
+
+                Version remoteVersion = new(tagName.GetValue<string>());
+                Version? localVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+
+                Debug.Assert(localVersion != null, nameof(localVersion) + " != null");
+
                 if (localVersion.CompareTo(remoteVersion) == -1)
                 {
-                    NewVersion?.Invoke(null, new() { Version = remoteVersion, Uri = new(latestRelease["html_url"].ToString()) });
+                    NewVersion?.Invoke(null, new(remoteVersion, new(htmlUrl.GetValue<string>())));
                     MessageBox messageBox = new()
                     {
                         Title = Loc.T("Update available")
                     };
                     Hyperlink hyperLink = new()
                     {
-                        NavigateUri = new Uri($"https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/tag/{remoteVersion}")
+                        NavigateUri = new Uri($"https://github.com/{Repo}/releases/tag/{remoteVersion}")
                     };
                     hyperLink.Inlines.Add(Loc.T("Changelog"));
                     hyperLink.RequestNavigate += (_, e) => Process.Start("explorer.exe", e.Uri.ToString());
@@ -72,7 +83,7 @@ namespace RemnantSaveGuardian
                         {
                             InstalledVersion = localVersion,
                             CurrentVersion = remoteVersion.ToString(),
-                            DownloadURL = $"https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/download/{remoteVersion}/RemnantSaveGuardian.zip"
+                            DownloadURL = $"https://github.com/{Repo}/releases/download/{remoteVersion}/RemnantSaveGuardian.zip"
                         };
                         messageBox.Close();
                         AutoUpdater.DownloadUpdate(args);
@@ -94,11 +105,13 @@ namespace RemnantSaveGuardian
 
     public class NewVersionEventArgs : EventArgs
     {
+        public NewVersionEventArgs(Version version, Uri uri)
+        {
+            Version = version;
+            Uri = uri;
+        }
+
         public Version Version { get; set; }
         public Uri Uri { get; set; }
-    }
-    public class UpdateCheckErrorEventArgs : EventArgs
-    {
-        public Exception Exception { get; set; }
     }
 }

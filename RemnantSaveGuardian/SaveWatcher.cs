@@ -5,7 +5,7 @@ namespace RemnantSaveGuardian
 {
     internal static class SaveWatcher
     {
-        public static event EventHandler SaveUpdated;
+        public static event EventHandler? SaveUpdated;
         private static readonly FileSystemWatcher Watcher = new ()
         {
             //NotifyFilter = NotifyFilters.LastWrite,
