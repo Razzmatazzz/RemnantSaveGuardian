@@ -9,9 +9,9 @@ namespace RemnantSaveGuardian
         {
             internal MessageArgs(object message)
             {
-                _message = message;
+                Message = message;
             }
-            internal object _message { get; set; }
+            internal object Message { get; set; }
 
         }
         internal static void Transfer(object s)

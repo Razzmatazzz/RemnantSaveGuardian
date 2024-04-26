@@ -22,7 +22,7 @@ namespace RemnantSaveGuardian.Views.Pages
             get;
         }
 
-        private CultureInfo[] AvailableCultures = new CultureInfo[] { };
+        private CultureInfo[] _availableCultures = new CultureInfo[] { };
 
         public SettingsPage(ViewModels.SettingsViewModel viewModel)
         {
@@ -126,11 +126,11 @@ namespace RemnantSaveGuardian.Views.Pages
                 var mainWindow = Application.Current.MainWindow;
                 if (value == 1 || (e.PropertyName == "OnlyInactive" && Properties.Settings.Default.OnlyInactive == true))
                 {
-                    WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UXMaterials.Mica);
+                    WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UxMaterials.Mica);
                 }
                 else
                 {
-                    WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UXMaterials.None);
+                    WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UxMaterials.None);
                 }
                 if (e.PropertyName == "OnlyInactive" && Properties.Settings.Default.OnlyInactive == true)
                 {
@@ -156,11 +156,11 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private void ChangeTheme(string parameter)
         {
-            var CurrentTheme = (Wpf.Ui.Appearance.ThemeType)Enum.Parse(typeof(Wpf.Ui.Appearance.ThemeType), Properties.Settings.Default.Theme);
+            var currentTheme = (Wpf.Ui.Appearance.ThemeType)Enum.Parse(typeof(Wpf.Ui.Appearance.ThemeType), Properties.Settings.Default.Theme);
             switch (parameter)
             {
                 case "Light":
-                    if (CurrentTheme == Wpf.Ui.Appearance.ThemeType.Light)
+                    if (currentTheme == Wpf.Ui.Appearance.ThemeType.Light)
                         break;
 
                     Wpf.Ui.Appearance.Theme.Apply(Wpf.Ui.Appearance.ThemeType.Light);
@@ -169,7 +169,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     break;
 
                 default:
-                    if (CurrentTheme == Wpf.Ui.Appearance.ThemeType.Dark)
+                    if (currentTheme == Wpf.Ui.Appearance.ThemeType.Dark)
                         break;
 
                     Wpf.Ui.Appearance.Theme.Apply(Wpf.Ui.Appearance.ThemeType.Dark);
@@ -354,7 +354,7 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 var mainWindow = Application.Current.MainWindow;
                 mainWindow.Opacity = 1;
-                WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UXMaterials.Mica);
+                WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UxMaterials.Mica);
             }
         }
     }

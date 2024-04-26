@@ -8,16 +8,16 @@ namespace RemnantSaveGuardian
 {
     public class RemnantSave
     {
-        private Dataset remnantDataset;
-        public Dataset Dataset => remnantDataset;
+        private Dataset _remnantDataset;
+        public Dataset Dataset => _remnantDataset;
 
         public static readonly string DefaultWgsSaveFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Packages\PerfectWorldEntertainment.RemnantFromtheAshes_jrajkyc4tsa6w\SystemAppData\wgs";
-        private string savePath;
-        private string profileFile;
-        private RemnantSaveType saveType;
-        private WindowsSave winSave;
+        private string _savePath;
+        private string _profileFile;
+        private RemnantSaveType _saveType;
+        private WindowsSave _winSave;
 
-        public static readonly Guid FOLDERID_SavedGames = new(0x4C5C32FF, 0xBB9D, 0x43B0, 0xB5, 0xB4, 0x2D, 0x72, 0xE5, 0x4E, 0xAA, 0xA4);
+        public static readonly Guid FolderidSavedGames = new(0x4C5C32FF, 0xBB9D, 0x43B0, 0xB5, 0xB4, 0x2D, 0x72, 0xE5, 0x4E, 0xAA, 0xA4);
         [DllImport("shell32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, PreserveSig = false)]
         static extern string SHGetKnownFolderPath([MarshalAs(UnmanagedType.LPStruct)] Guid rfid, uint dwFlags, IntPtr hToken = default);
 
@@ -30,24 +30,24 @@ namespace RemnantSaveGuardian
 
             if (File.Exists(path + @"\profile.sav"))
             {
-                saveType = RemnantSaveType.Normal;
-                profileFile = "profile.sav";
+                _saveType = RemnantSaveType.Normal;
+                _profileFile = "profile.sav";
             }
             else
             {
                 var winFiles = Directory.GetFiles(path, "container.*");
                 if (winFiles.Length > 0)
                 {
-                    winSave = new WindowsSave(winFiles[0]);
-                    saveType = RemnantSaveType.WindowsStore;
-                    profileFile = winSave.Profile;
+                    _winSave = new WindowsSave(winFiles[0]);
+                    _saveType = RemnantSaveType.WindowsStore;
+                    _profileFile = _winSave.Profile;
                 }
                 else
                 {
                     throw new Exception(path + " is not a valid save.");
                 }
             }
-            savePath = path;
+            _savePath = path;
             if (!skipUpdate)
             {
                 UpdateCharacters();
@@ -58,7 +58,7 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return savePath;
+                return _savePath;
             }
         }
 
@@ -66,19 +66,19 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return savePath + $@"\{profileFile}";
+                return _savePath + $@"\{_profileFile}";
             }
         }
         public RemnantSaveType SaveType
         {
-            get { return saveType; }
+            get { return _saveType; }
         }
 
         public bool Valid
         {
             get
             {
-                return saveType == RemnantSaveType.Normal || winSave.Valid;
+                return _saveType == RemnantSaveType.Normal || _winSave.Valid;
             }
         }
 
@@ -106,12 +106,12 @@ namespace RemnantSaveGuardian
 
         public void UpdateCharacters()
         {
-            remnantDataset = Analyzer.Analyze(savePath);
+            _remnantDataset = Analyzer.Analyze(_savePath);
         }
 
         public static string DefaultSaveFolder()
         {
-            var saveFolder = SHGetKnownFolderPath(FOLDERID_SavedGames, 0) + @"\Remnant2";
+            var saveFolder = SHGetKnownFolderPath(FolderidSavedGames, 0) + @"\Remnant2";
             if (Directory.Exists($@"{saveFolder}\Steam"))
             {
                 saveFolder += @"\Steam";

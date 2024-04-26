@@ -12,7 +12,7 @@
         <ScrollViewer Background="Transparent" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
             <TextBlock Text="{Binding Text}" Width="Auto" TextWrapping="NoWrap">
                 <i:Interaction.Behaviors>
-                    <local:RollingTextBlockBehavior rollingSpeed="{Binding RollingSpeed}" rollbackSpeed="{Binding RollbackSpeed}"/>
+                    <local:RollingTextBlockBehavior RollingSpeed="{Binding RollingSpeed}" RollbackSpeed="{Binding RollbackSpeed}"/>
                 </i:Interaction.Behaviors>
             </TextBlock>
         </ScrollViewer>

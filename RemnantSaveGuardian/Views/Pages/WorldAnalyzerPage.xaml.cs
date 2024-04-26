@@ -29,10 +29,10 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             get;
         }
-        private RemnantSave Save;
-        private List<WorldAnalyzerGridData> filteredCampaign;
-        private List<WorldAnalyzerGridData> filteredAdventure;
-        private ListViewItem menuSrcItem;
+        private RemnantSave _save;
+        private List<WorldAnalyzerGridData> _filteredCampaign;
+        private List<WorldAnalyzerGridData> _filteredAdventure;
+        private ListViewItem _menuSrcItem;
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
             ViewModel = viewModel;
@@ -49,15 +49,15 @@ namespace RemnantSaveGuardian.Views.Pages
 
                 Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
 
-                Save = new(pathToSaveFiles);
+                _save = new(pathToSaveFiles);
                 if (pathToSaveFiles == Properties.Settings.Default.SaveFolder)
                 {
                     SaveWatcher.SaveUpdated += (sender, eventArgs) => {
                         Dispatcher.Invoke(() =>
                         {
                             var selectedIndex = CharacterControl.SelectedIndex;
-                            Save.UpdateCharacters();
-                            applyFilter();
+                            _save.UpdateCharacters();
+                            ApplyFilter();
                             CharacterControl.Items.Refresh();
                             if (selectedIndex >= CharacterControl.Items.Count)
                             {
@@ -70,7 +70,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
                     BackupsPage.BackupSaveRestored += BackupsPage_BackupSaveRestored;
                 }
-                CharacterControl.ItemsSource = Save.Dataset.Characters;
+                CharacterControl.ItemsSource = _save.Dataset.Characters;
 
                 //FontSizeSlider.Value = AdventureData.FontSize;
                 //FontSizeSlider.Minimum = 2.0;
@@ -78,10 +78,10 @@ namespace RemnantSaveGuardian.Views.Pages
                 FontSizeSlider.Value = Properties.Settings.Default.AnalyzerFontSize;
                 FontSizeSlider.ValueChanged += FontSizeSlider_ValueChanged;
 
-                filteredCampaign = new();
-                filteredAdventure = new();
-                CampaignData.ItemsSource = filteredCampaign;
-                AdventureData.ItemsSource = filteredAdventure;
+                _filteredCampaign = new();
+                _filteredAdventure = new();
+                CampaignData.ItemsSource = _filteredCampaign;
+                AdventureData.ItemsSource = _filteredAdventure;
 
                 Task task = new Task(FirstLoad);
                 task.Start();
@@ -91,15 +91,15 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private void ChangeGridVisibility(Object sender, EventTransfer.MessageArgs message)
         {
-            OptionGrid.Visibility = (Visibility)message._message;
-            if (message._message is Visibility.Visible)
+            OptionGrid.Visibility = (Visibility)message.Message;
+            if (message.Message is Visibility.Visible)
             {
                 tabGrid.Margin = new Thickness(23, 0, 23, 23);
                 tabCampaign.Visibility = Visibility.Visible;
                 tabAdventure.Visibility = Visibility.Visible;
                 tabMissing.Visibility = Visibility.Visible;
             }
-            else if (message._message is Visibility.Collapsed)
+            else if (message.Message is Visibility.Collapsed)
             {
                 tabGrid.Margin = new Thickness(4, 0, 4, 4);
                 tabCampaign.Visibility = Visibility.Collapsed;
@@ -111,10 +111,10 @@ namespace RemnantSaveGuardian.Views.Pages
         private void FirstLoad()
         {
             System.Threading.Thread.Sleep(500); //Wait for UI render first
-            Save.UpdateCharacters();
+            _save.UpdateCharacters();
             Dispatcher.Invoke(() => { 
                 CharacterControl.SelectedIndex = 0;
-                checkAdventureTab();
+                CheckAdventureTab();
                 progressRing.Visibility = Visibility.Collapsed;
             });
         }
@@ -122,7 +122,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private void BackupsPage_BackupSaveRestored(object? sender, EventArgs e)
         {
             var selectedIndex = CharacterControl.SelectedIndex;
-            Save.UpdateCharacters();
+            _save.UpdateCharacters();
             CharacterControl.Items.Refresh();
             if (selectedIndex >= CharacterControl.Items.Count)
             {
@@ -153,7 +153,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private void FontSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             Properties.Settings.Default.AnalyzerFontSize = (int)Math.Round(FontSizeSlider.Value);
-            reloadEventGrids();
+            ReloadEventGrids();
         }
 
         private void GameType_CollapsedExpanded(object sender, PropertyChagedEventArgs e)
@@ -174,12 +174,12 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     return;
                 }
-                if (openFolderDialog.SelectedPath == Properties.Settings.Default.SaveFolder || openFolderDialog.SelectedPath == Save.SaveFolderPath)
+                if (openFolderDialog.SelectedPath == Properties.Settings.Default.SaveFolder || openFolderDialog.SelectedPath == _save.SaveFolderPath)
                 {
                     Logger.Error(Loc.T("export_save_invalid_folder_error"));
                     return;
                 }
-                Analyzer.Export(openFolderDialog.SelectedPath, Save.SaveFolderPath, Properties.Settings.Default.ExportCopy, Properties.Settings.Default.ExportDecoded, Properties.Settings.Default.ExportJson);
+                Analyzer.Export(openFolderDialog.SelectedPath, _save.SaveFolderPath, Properties.Settings.Default.ExportCopy, Properties.Settings.Default.ExportDecoded, Properties.Settings.Default.ExportJson);
                 Logger.Success(Loc.T($"Exported save files successfully to {openFolderDialog.SelectedPath}"));
             } catch (Exception ex)
             {
@@ -202,25 +202,25 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 Dispatcher.Invoke(() =>
                 {
-                    reloadEventGrids();
+                    ReloadEventGrids();
                     CharacterControl_SelectionChanged(null, null);
                 });
             }
             if (e.PropertyName == "SaveFolder")
             {
                 Dispatcher.Invoke(() => {
-                    Save = new(Properties.Settings.Default.SaveFolder);
-                    Save.UpdateCharacters();
-                    reloadPage();
-                    checkAdventureTab();
+                    _save = new(Properties.Settings.Default.SaveFolder);
+                    _save.UpdateCharacters();
+                    ReloadPage();
+                    CheckAdventureTab();
                 });
             }
             if (e.PropertyName == "ShowCoopItems")
             {
                 Dispatcher.Invoke(() =>
                 {
-                    Save.UpdateCharacters();
-                    reloadEventGrids();
+                    _save.UpdateCharacters();
+                    ReloadEventGrids();
                     CharacterControl_SelectionChanged(null, null);
                 });
             }
@@ -229,7 +229,7 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 Dispatcher.Invoke(() =>
                 {
-                    reloadEventGrids();
+                    ReloadEventGrids();
                     CharacterControl_SelectionChanged(null, null);
                 });
             }
@@ -246,11 +246,11 @@ namespace RemnantSaveGuardian.Views.Pages
         private void ListViewItem_Selected(object sender, RoutedEventArgs e)
         {
             var item = (ListViewItem)e.Source;
-            if (menuSrcItem != null && !item.Equals(menuSrcItem))
+            if (_menuSrcItem != null && !item.Equals(_menuSrcItem))
             {
-                menuSrcItem.IsSelected = false;
+                _menuSrcItem.IsSelected = false;
             }
-            menuSrcItem = item;
+            _menuSrcItem = item;
         }
         private DataGridTemplateColumn GeneratingColumn(string strHeader, string strProperty, string strStyle, string strSortBy)
         {
@@ -288,7 +288,7 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         #region missingItemsTextColor
         private Brush _missingItemsTextColor;
-        public Brush missingItemsTextColor
+        public Brush MissingItemsTextColor
         {
             get { return _missingItemsTextColor; }
             set { _missingItemsTextColor = value; OnPropertyChanged("missingItemsTextColor"); }
@@ -319,10 +319,10 @@ namespace RemnantSaveGuardian.Views.Pages
                 if (Properties.Settings.Default.MissingItemColor == "Highlight")
                 {
                     var highlight = Brushes.RoyalBlue;
-                    missingItemsTextColor = highlight;
+                    MissingItemsTextColor = highlight;
                 } else {
                     Brush brush = (Brush)FindResource("TextFillColorPrimaryBrush");
-                    missingItemsTextColor = brush;
+                    MissingItemsTextColor = brush;
                 }
             } else if (e.PropertyName == "PossibleItems") {
                 e.Column = GeneratingColumn("Possible Items", "PossibleItems", "lvPossibleItemsStyle", "PossibleItemsString");
@@ -331,31 +331,31 @@ namespace RemnantSaveGuardian.Views.Pages
             e.Column.Header = Loc.T(e.Column.Header.ToString());
         }
 
-        private static string[] ModeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
-        List<TreeListClass> itemModeNode = new List<TreeListClass>();
+        private static string[] _modeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
+        List<TreeListClass> _itemModeNode = new List<TreeListClass>();
         private void CharacterControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //if (CharacterControl.SelectedIndex == -1 && listCharacters.Count > 0) return;
             if (CharacterControl.Items.Count > 0 && CharacterControl.SelectedIndex > -1)
             {
-                checkAdventureTab();
-                applyFilter();
+                CheckAdventureTab();
+                ApplyFilter();
                 //txtMissingItems.Text = string.Join("\n", Save.Characters[CharacterControl.SelectedIndex].GetMissingItems());
 
-                itemModeNode.Clear();
+                _itemModeNode.Clear();
                 List<TreeListClass>[] itemNode = new List<TreeListClass>[3] { new List<TreeListClass>(), new List<TreeListClass>(), new List<TreeListClass>() };
                 List<TreeListClass>[] itemChild = new List<TreeListClass>[20];
-                string[] Modes = { Strings.Normal, Strings.Hardcore, Strings.Survival };
+                string[] modes = { Strings.Normal, Strings.Hardcore, Strings.Survival };
                 for (int i = 0;i <= 2; i++)
                 {
-                    TreeListClass item = new TreeListClass() { Name = Modes[i], Childnode = itemNode[i], Tag = ModeTags[i], IsExpanded = (bool)Properties.Settings.Default[$"{ModeTags[i]}_Expanded"] };
+                    TreeListClass item = new TreeListClass() { Name = modes[i], Childnode = itemNode[i], Tag = _modeTags[i], IsExpanded = (bool)Properties.Settings.Default[$"{_modeTags[i]}_Expanded"] };
                     item.Expanded += GameType_CollapsedExpanded;
-                    itemModeNode.Add(item);
+                    _itemModeNode.Add(item);
                 }
                 var idx = -1;
                 string typeNodeTag = "";
 
-                var missingItems = Save.Dataset.Characters[CharacterControl.SelectedIndex].Profile.MissingItems;
+                var missingItems = _save.Dataset.Characters[CharacterControl.SelectedIndex].Profile.MissingItems;
                 if (!Properties.Settings.Default.ShowCoopItems)
                 {
                     missingItems = missingItems.Where(x => x.ContainsKey("Coop") && x["Coop"] == "True").ToList();
@@ -392,9 +392,9 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
 
                 treeMissingItems.ItemsSource = null;
-                treeMissingItems.ItemsSource = itemModeNode;
+                treeMissingItems.ItemsSource = _itemModeNode;
 
-                foreach (TreeListClass modeNode in itemModeNode)
+                foreach (TreeListClass modeNode in _itemModeNode)
                 {
                     if (modeNode != null)
                     {
@@ -420,10 +420,10 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void checkAdventureTab()
+        private void CheckAdventureTab()
         {
             Dispatcher.Invoke(() => {
-                if (CharacterControl.SelectedIndex > -1 && Save.Dataset.Characters[CharacterControl.SelectedIndex].Save.Adventure != null)
+                if (CharacterControl.SelectedIndex > -1 && _save.Dataset.Characters[CharacterControl.SelectedIndex].Save.Adventure != null)
                 {
                     tabAdventure.IsEnabled = true;
                 }
@@ -437,22 +437,22 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
             });
         }
-        private void reloadPage()
+        private void ReloadPage()
         {
             CharacterControl.ItemsSource = null;
-            CharacterControl.ItemsSource = Save.Dataset.Characters;
-            if (filteredCampaign == null) filteredCampaign = new();
-            if (filteredAdventure == null) filteredAdventure = new();
+            CharacterControl.ItemsSource = _save.Dataset.Characters;
+            if (_filteredCampaign == null) _filteredCampaign = new();
+            if (_filteredAdventure == null) _filteredAdventure = new();
             CharacterControl.SelectedIndex = 0;
             CharacterControl.Items.Refresh();
         }
-        private void reloadEventGrids()
+        private void ReloadEventGrids()
         {
-            var tempDataC = filteredCampaign;
+            var tempDataC = _filteredCampaign;
             CampaignData.ItemsSource = null;
             CampaignData.ItemsSource = tempDataC;
 
-            var tempDataA = filteredAdventure;
+            var tempDataA = _filteredAdventure;
             AdventureData.ItemsSource = null;
             AdventureData.ItemsSource = tempDataA;
         }
@@ -475,15 +475,15 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void CommonCopyItem_Click(object sender, RoutedEventArgs e)
         {
-            if (menuSrcItem == null) { return; }
-            var item = menuSrcItem.Content as LootItem;
+            if (_menuSrcItem == null) { return; }
+            var item = _menuSrcItem.Content as LootItem;
             Clipboard.SetDataObject(item.Name);
         }
 
         private void CommonSearchItem_Click(object sender, RoutedEventArgs e)
         {
-            if (menuSrcItem == null) { return; }
-            var lstItem = menuSrcItem.Content as LootItem;
+            if (_menuSrcItem == null) { return; }
+            var lstItem = _menuSrcItem.Content as LootItem;
             if (lstItem == null) { return; }
             SearchItem(lstItem);
         }
@@ -509,11 +509,11 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private void ExpandAllItem_Click(object sender, RoutedEventArgs e)
         {
-            CollapseExpandAllItems(itemModeNode, true);
+            CollapseExpandAllItems(_itemModeNode, true);
         }
         private void CollapseAllItem_Click(object sender, RoutedEventArgs e)
         {
-            CollapseExpandAllItems(itemModeNode, false);
+            CollapseExpandAllItems(_itemModeNode, false);
         }
         private void CollapseExpandAllItems(List<TreeListClass> lstItems, bool bExpand)
         {
@@ -556,9 +556,9 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void WorldAnalyzerFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
-            applyFilter();
+            ApplyFilter();
         }
-        private bool eventPassesFilter(WorldAnalyzerGridData e)
+        private bool EventPassesFilter(WorldAnalyzerGridData e)
         {
             var filter = WorldAnalyzerFilter.Text.ToLower();
             if (filter.Length == 0)
@@ -579,22 +579,22 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             return false;
         }
-        private void applyFilter()
+        private void ApplyFilter()
         {
             if (CharacterControl.Items.Count == 0 || CharacterControl.SelectedIndex == -1)
             {
                 return;
             }
-            var character = Save.Dataset.Characters[CharacterControl.SelectedIndex];
+            var character = _save.Dataset.Characters[CharacterControl.SelectedIndex];
             if (character == null)
             {
                 return;
             }
-            filteredCampaign.Clear();
-            filteredCampaign.AddRange(FilterGridData(character.Profile, character.Save.Campaign));
-            filteredAdventure.Clear();
-            filteredAdventure.AddRange(FilterGridData(character.Profile, character.Save.Adventure));
-            reloadEventGrids();
+            _filteredCampaign.Clear();
+            _filteredCampaign.AddRange(FilterGridData(character.Profile, character.Save.Campaign));
+            _filteredAdventure.Clear();
+            _filteredAdventure.AddRange(FilterGridData(character.Profile, character.Save.Adventure));
+            ReloadEventGrids();
         }
         private List<WorldAnalyzerGridData> FilterGridData(Profile profile, RolledWorld? world)
         {
@@ -622,7 +622,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             Name = string.Join('\n', location.Connections.Select(Loc.GameT)),
                             Type = Loc.GameT("Connections")
                         };
-                        if (eventPassesFilter(newItem))
+                        if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
                         }
@@ -637,7 +637,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             Name = string.Join('\n', location.WorldStones.Select(Loc.GameT)),
                             Type = Loc.GameT("World Stones")
                         };
-                        if (eventPassesFilter(newItem))
+                        if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
                         }
@@ -653,7 +653,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             Name = Loc.GameT("TraitBook"),
                             Type = Loc.GameT("Item")
                         };
-                        if (eventPassesFilter(newItem))
+                        if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
                         }
@@ -669,7 +669,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             Name = Loc.GameT("Simulacrum"),
                             Type = Loc.GameT("Item")
                         };
-                        if (eventPassesFilter(newItem))
+                        if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
                         }
@@ -695,7 +695,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             Name = Loc.GameT(lg.Name),
                             Type = Loc.GameT(Regex.Replace(lg.Type, @"\b([a-z])", m => m.Value.ToUpper()))
                         };
-                        if (eventPassesFilter(newItem))
+                        if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
                         }

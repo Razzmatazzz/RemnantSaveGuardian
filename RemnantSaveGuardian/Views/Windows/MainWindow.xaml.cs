@@ -139,11 +139,11 @@ namespace RemnantSaveGuardian.Views.Windows
             if (Properties.Settings.Default.EnableOpacity == false) { return; }
             if (Properties.Settings.Default.OnlyInactive == true || Properties.Settings.Default.Opacity == 1)
             {
-                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UXMaterials.Mica);
+                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UxMaterials.Mica);
             }
             else
             {
-                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UXMaterials.None);
+                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UxMaterials.None);
                 Opacity = Properties.Settings.Default.Opacity;
             }
         }
@@ -161,7 +161,7 @@ namespace RemnantSaveGuardian.Views.Windows
             if (Properties.Settings.Default.EnableOpacity == false) { return; }
             if (Properties.Settings.Default.OnlyInactive == true)
             {
-                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UXMaterials.Mica);
+                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UxMaterials.Mica);
                 Opacity = 1;
             }
         }
@@ -180,7 +180,7 @@ namespace RemnantSaveGuardian.Views.Windows
             if (Properties.Settings.Default.EnableOpacity == false) { return; }
             if (Properties.Settings.Default.OnlyInactive == true && Properties.Settings.Default.Opacity < 1)
             {
-                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UXMaterials.None);
+                WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UxMaterials.None);
                 Opacity = Properties.Settings.Default.Opacity;
             }
         }

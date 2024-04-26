@@ -49,22 +49,22 @@ namespace RemnantSaveGuardian.Views.UserControls
     /// </summary>
     public sealed class RollingTextBlockBehavior : Behavior<UIElement>
     {
-        public int rollingSpeed
+        public int RollingSpeed
         {
-            get { return (int)GetValue(rollingSpeedProperty); }
-            set { SetValue(rollingSpeedProperty, value); }
+            get { return (int)GetValue(RollingSpeedProperty); }
+            set { SetValue(RollingSpeedProperty, value); }
         }
-        public static readonly DependencyProperty rollingSpeedProperty = DependencyProperty.Register("rollingSpeed", typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(250));
-        public int rollbackSpeed
+        public static readonly DependencyProperty RollingSpeedProperty = DependencyProperty.Register("RollingSpeed", typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(250));
+        public int RollbackSpeed
         {
-            get { return (int)GetValue(rollbackSpeedProperty); }
-            set { SetValue(rollbackSpeedProperty, value); }
+            get { return (int)GetValue(RollbackSpeedProperty); }
+            set { SetValue(RollbackSpeedProperty, value); }
         }
-        public static readonly DependencyProperty rollbackSpeedProperty = DependencyProperty.Register("rollbackSpeed", typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(1000));
+        public static readonly DependencyProperty RollbackSpeedProperty = DependencyProperty.Register("RollbackSpeed", typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(1000));
 
-        private TextBlock? textBlock;
-        private Storyboard storyBoard = new Storyboard();
-        private DoubleAnimation animation = new DoubleAnimation();
+        private TextBlock? _textBlock;
+        private Storyboard _storyBoard = new Storyboard();
+        private DoubleAnimation _animation = new DoubleAnimation();
 
         protected override void OnAttached()
         {
@@ -80,8 +80,8 @@ namespace RemnantSaveGuardian.Views.UserControls
                 ScrollViewerBehavior.HorizontalOffsetProperty
             };
 
-            Storyboard.SetTargetProperty(animation, new PropertyPath("(0)", propertyChain));
-            storyBoard.Children.Add(animation);
+            Storyboard.SetTargetProperty(_animation, new PropertyPath("(0)", propertyChain));
+            _storyBoard.Children.Add(_animation);
         }
         protected override void OnDetaching()
         {
@@ -103,13 +103,13 @@ namespace RemnantSaveGuardian.Views.UserControls
                     double textWidth = textBlock.ActualWidth - scrollViewer.ActualWidth;
                     double scrollValue = scrollViewer.HorizontalOffset;
                     double scrollWidth = scrollViewer.ScrollableWidth;
-                    if (scrollWidth > 0 && rollingSpeed > 0)
+                    if (scrollWidth > 0 && RollingSpeed > 0)
                     {
-                        double time = (scrollWidth - scrollValue) / scrollWidth * (textWidth / rollingSpeed);
-                        animation.To = scrollWidth;
-                        animation.Duration = TimeSpan.FromSeconds(time);
-                        animation.BeginTime = TimeSpan.FromMilliseconds(200);
-                        storyBoard.Begin(scrollViewer, true);
+                        double time = (scrollWidth - scrollValue) / scrollWidth * (textWidth / RollingSpeed);
+                        _animation.To = scrollWidth;
+                        _animation.Duration = TimeSpan.FromSeconds(time);
+                        _animation.BeginTime = TimeSpan.FromMilliseconds(200);
+                        _storyBoard.Begin(scrollViewer, true);
                     }
                 }
             }
@@ -125,13 +125,13 @@ namespace RemnantSaveGuardian.Views.UserControls
                     double textWidth = textBlock.ActualWidth - scrollViewer.ActualWidth;
                     double scrollValue = scrollViewer.HorizontalOffset;
                     double scrollWidth = scrollViewer.ScrollableWidth;
-                    if (scrollWidth > 0 && rollingSpeed > 0)
+                    if (scrollWidth > 0 && RollingSpeed > 0)
                     {
-                        double time = scrollValue / scrollWidth * (textWidth / rollbackSpeed);
-                        animation.To = 0;
-                        animation.Duration = TimeSpan.FromSeconds(time);
-                        animation.BeginTime = TimeSpan.FromMilliseconds(200);
-                        storyBoard.Begin(scrollViewer, true);
+                        double time = scrollValue / scrollWidth * (textWidth / RollbackSpeed);
+                        _animation.To = 0;
+                        _animation.Duration = TimeSpan.FromSeconds(time);
+                        _animation.BeginTime = TimeSpan.FromMilliseconds(200);
+                        _storyBoard.Begin(scrollViewer, true);
                     }
                 }
             }
@@ -144,7 +144,7 @@ namespace RemnantSaveGuardian.Views.UserControls
                 if (textBlock != null && e.LeftButton == MouseButtonState.Pressed)
                 {
                     var scrollViewer = textBlock.Parent as ScrollViewer;
-                    storyBoard.Pause(scrollViewer);
+                    _storyBoard.Pause(scrollViewer);
                 }
 
                 MouseButton button = MouseButton.Middle;
@@ -169,7 +169,7 @@ namespace RemnantSaveGuardian.Views.UserControls
                 if (textBlock != null)
                 {
                     var scrollViewer = textBlock.Parent as ScrollViewer;
-                    storyBoard.Resume(scrollViewer);
+                    _storyBoard.Resume(scrollViewer);
                 }
 
                 MouseButton button = MouseButton.Middle;

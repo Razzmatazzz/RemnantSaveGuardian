@@ -10,7 +10,7 @@ namespace RemnantSaveGuardian.Helpers
 {
     internal class WindowDwmHelper
     {
-        internal class Win32API
+        internal class Win32Api
         {
             /// <summary>
             /// Determines whether the specified window handle identifies an existing window.
@@ -23,65 +23,65 @@ namespace RemnantSaveGuardian.Helpers
         }
         internal class Utilities
         {
-            private static readonly PlatformID _osPlatform = Environment.OSVersion.Platform;
+            private static readonly PlatformID OsPlatform = Environment.OSVersion.Platform;
 
-            private static readonly Version _osVersion = Environment.OSVersion.Version;
+            private static readonly Version OsVersion = Environment.OSVersion.Version;
 
             /// <summary>
             /// Whether the operating system is NT or newer. 
             /// </summary>
-            public static bool IsNT => _osPlatform == PlatformID.Win32NT;
+            public static bool IsNt => OsPlatform == PlatformID.Win32NT;
 
             /// <summary>
             /// Whether the operating system version is greater than or equal to 6.0.
             /// </summary>
-            public static bool IsOSVistaOrNewer => _osVersion >= new Version(6, 0);
+            public static bool IsOsVistaOrNewer => OsVersion >= new Version(6, 0);
 
             /// <summary>
             /// Whether the operating system version is greater than or equal to 6.1.
             /// </summary>
-            public static bool IsOSWindows7OrNewer => _osVersion >= new Version(6, 1);
+            public static bool IsOsWindows7OrNewer => OsVersion >= new Version(6, 1);
 
             /// <summary>
             /// Whether the operating system version is greater than or equal to 6.2.
             /// </summary>
-            public static bool IsOSWindows8OrNewer => _osVersion >= new Version(6, 2);
+            public static bool IsOsWindows8OrNewer => OsVersion >= new Version(6, 2);
 
             /// <summary>
             /// Whether the operating system version is greater than or equal to 10.0* (build 10240).
             /// </summary>
-            public static bool IsOSWindows10OrNewer => _osVersion.Build >= 10240;
+            public static bool IsOsWindows10OrNewer => OsVersion.Build >= 10240;
 
             /// <summary>
             /// Whether the operating system version is greater than or equal to 10.0* (build 22000).
             /// </summary>
-            public static bool IsOSWindows11OrNewer => _osVersion.Build >= 22000;
+            public static bool IsOsWindows11OrNewer => OsVersion.Build >= 22000;
 
             /// <summary>
             /// Whether the operating system version is greater than or equal to 10.0* (build 22523).
             /// </summary>
-            public static bool IsOSWindows11Insider1OrNewer => _osVersion.Build >= 22523;
+            public static bool IsOsWindows11Insider1OrNewer => OsVersion.Build >= 22523;
 
             /// <summary>
             /// Whether the operating system version is greater than or equal to 10.0* (build 22557).
             /// </summary>
-            public static bool IsOSWindows11Insider2OrNewer => _osVersion.Build >= 22557;
+            public static bool IsOsWindows11Insider2OrNewer => OsVersion.Build >= 22557;
         }
-        internal enum UXMaterials
+        internal enum UxMaterials
         {
             None = BackgroundType.None,
             Mica = BackgroundType.Mica,
             Acrylic = BackgroundType.Acrylic
         }
-        internal static Color transparentColor = Color.FromArgb(0x1, 0x80, 0x80, 0x80);
-        internal static Brush transparentBrush = new SolidColorBrush(transparentColor);
-        internal static bool IsSupported(UXMaterials type)
+        internal static Color TransparentColor = Color.FromArgb(0x1, 0x80, 0x80, 0x80);
+        internal static Brush TransparentBrush = new SolidColorBrush(TransparentColor);
+        internal static bool IsSupported(UxMaterials type)
         {
             return type switch
             {
-                UXMaterials.Mica => Utilities.IsOSWindows11OrNewer,
-                UXMaterials.Acrylic => Utilities.IsOSWindows7OrNewer,
-                UXMaterials.None => true,
+                UxMaterials.Mica => Utilities.IsOsWindows11OrNewer,
+                UxMaterials.Acrylic => Utilities.IsOsWindows7OrNewer,
+                UxMaterials.None => true,
                 _ => false
             };
         }
@@ -89,13 +89,13 @@ namespace RemnantSaveGuardian.Helpers
         {
             return new WindowInteropHelper(window);
         }
-        internal static bool ApplyDwm(Window window, UXMaterials type)
+        internal static bool ApplyDwm(Window window, UxMaterials type)
         {
             IntPtr handle = GetWindow(window).Handle;
 
-            if (type == UXMaterials.Mica && !Utilities.IsOSWindows11Insider1OrNewer)
+            if (type == UxMaterials.Mica && !Utilities.IsOsWindows11Insider1OrNewer)
             {
-                type = UXMaterials.Acrylic;
+                type = UxMaterials.Acrylic;
             }
             
             if (!IsSupported(type))
@@ -104,24 +104,24 @@ namespace RemnantSaveGuardian.Helpers
             if (handle == IntPtr.Zero)
                 return false;
 
-            if (!Win32API.IsWindow(handle))
+            if (!Win32Api.IsWindow(handle))
                 return false;
 
-            if (type == UXMaterials.None)
+            if (type == UxMaterials.None)
             {
                 RestoreBackground(window);
                 return UnsafeNativeMethods.RemoveWindowBackdrop(handle);
             }
             // First release of Windows 11
-            if (!Utilities.IsOSWindows11Insider1OrNewer)
+            if (!Utilities.IsOsWindows11Insider1OrNewer)
             {
-                if (type == UXMaterials.Mica)
+                if (type == UxMaterials.Mica)
                 {
                     RemoveBackground(window);
                     return UnsafeNativeMethods.ApplyWindowLegacyMicaEffect(handle);
                 }
 
-                if (type == UXMaterials.Acrylic)
+                if (type == UxMaterials.Acrylic)
                 {
                     return UnsafeNativeMethods.ApplyWindowLegacyMicaEffect(handle);
                 }
@@ -145,7 +145,7 @@ namespace RemnantSaveGuardian.Helpers
                 return;
 
             // Remove background from visual root
-            window.Background = transparentBrush;
+            window.Background = TransparentBrush;
         }
         internal static void RestoreBackground(Window window)
         {

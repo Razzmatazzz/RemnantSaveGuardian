@@ -8,8 +8,8 @@ namespace RemnantSaveGuardian
     internal static class Logger
     {
         public static event EventHandler<MessageLoggedEventArgs> MessageLogged;
-        private static List<LogMessage> messages = new ();
-        public static List<LogMessage> Messages { get { return messages; } }
+        private static List<LogMessage> _messages = new ();
+        public static List<LogMessage> Messages { get { return _messages; } }
         static Logger()
         {
             if (Properties.Settings.Default.CreateLogFile)
@@ -44,7 +44,7 @@ namespace RemnantSaveGuardian
                 message = "null";
             }
             MessageLogged?.Invoke(null, new (message.ToString(), logType));
-            messages.Add(new(message.ToString(), logType));
+            _messages.Add(new(message.ToString(), logType));
             if (Properties.Settings.Default.CreateLogFile)
             {
                 StreamWriter writer = File.AppendText("log.txt");

@@ -23,16 +23,16 @@ namespace RemnantSaveGuardian.Views.Pages
             Logger.MessageLogged += Logger_MessageLogged;
             foreach (var logMessage in Logger.Messages)
             {
-                addMessage(logMessage.Message, logMessage.LogType);
+                AddMessage(logMessage.Message, logMessage.LogType);
             }
         }
 
         private void Logger_MessageLogged(object? sender, MessageLoggedEventArgs e)
         {
-            addMessage(e.Message, e.LogType);
+            AddMessage(e.Message, e.LogType);
         }
 
-        private void addMessage(string message, LogType logType)
+        private void AddMessage(string message, LogType logType)
         {
             Dispatcher.Invoke(delegate {
                 var infoBar = new InfoBar()

@@ -9,36 +9,36 @@ namespace RemnantSaveGuardian
     {
         struct SaveData
         {
-            internal string name;
-            internal DateTime date;
-            internal bool keep;
-            internal bool active;
+            internal string Name;
+            internal DateTime Date;
+            internal bool Keep;
+            internal bool Active;
         }
 
         public event EventHandler<UpdatedEventArgs> Updated;
-        private SaveData saveData;
-        private SaveData backupData;
-        private bool inTxn = false;
+        private SaveData _saveData;
+        private SaveData _backupData;
+        private bool _inTxn = false;
         //private int[] progression;
         //private List<RemnantCharacter> charData;
-        private string progression;
-        private string savePath;
+        private string _progression;
+        private string _savePath;
 
         public string Name
         {
             get
             {
-                return saveData.name;
+                return _saveData.Name;
             }
             set
             {
                 if (value.Equals(""))
                 {
-                    saveData.name = saveData.date.Ticks.ToString();
+                    _saveData.Name = _saveData.Date.Ticks.ToString();
                 }
                 else
                 {
-                    saveData.name = value;
+                    _saveData.Name = value;
                 }
                 //OnUpdated(new UpdatedEventArgs("Name"));
             }
@@ -47,11 +47,11 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return saveData.date;
+                return _saveData.Date;
             }
             set
             {
-                saveData.date = value;
+                _saveData.Date = value;
                 //OnUpdated(new UpdatedEventArgs("SaveDate"));
             }
         }
@@ -59,20 +59,20 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return string.Join(", ", progression);
+                return string.Join(", ", _progression);
             }
         }
         public bool Keep
         {
             get
             {
-                return saveData.keep;
+                return _saveData.Keep;
             }
             set
             {
-                if (saveData.keep != value)
+                if (_saveData.Keep != value)
                 {
-                    saveData.keep = value;
+                    _saveData.Keep = value;
                     OnUpdated(new UpdatedEventArgs("Keep"));
                 }
             }
@@ -81,11 +81,11 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return saveData.active;
+                return _saveData.Active;
             }
             set
             {
-                saveData.active = value;
+                _saveData.Active = value;
                 //OnUpdated(new UpdatedEventArgs("Active"));
             }
         }
@@ -94,20 +94,20 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return savePath;
+                return _savePath;
             }
         }
 
         //public SaveBackup(DateTime saveDate)
         public SaveBackup(string savePath)
         {
-            this.savePath = savePath;
+            this._savePath = savePath;
 
-            progression = Analyzer.GetProfileStringCombined(this.savePath);
-            saveData = new SaveData();
-            saveData.name = SaveDateTime.Ticks.ToString();
-            saveData.date = SaveDateTime;
-            saveData.keep = false;
+            _progression = Analyzer.GetProfileStringCombined(this._savePath);
+            _saveData = new SaveData();
+            _saveData.Name = SaveDateTime.Ticks.ToString();
+            _saveData.Date = SaveDateTime;
+            _saveData.Keep = false;
         }
 
         /*public void setProgression(List<List<string>> allItemList)
@@ -132,44 +132,44 @@ namespace RemnantSaveGuardian
         // Implements IEditableObject
         void IEditableObject.BeginEdit()
         {
-            if (!inTxn)
+            if (!_inTxn)
             {
-                backupData = saveData;
-                inTxn = true;
+                _backupData = _saveData;
+                _inTxn = true;
             }
         }
 
         void IEditableObject.CancelEdit()
         {
-            if (inTxn)
+            if (_inTxn)
             {
-                saveData = backupData;
-                inTxn = false;
+                _saveData = _backupData;
+                _inTxn = false;
             }
         }
 
         void IEditableObject.EndEdit()
         {
-            if (inTxn)
+            if (_inTxn)
             {
-                if (!backupData.name.Equals(saveData.name))
+                if (!_backupData.Name.Equals(_saveData.Name))
                 {
                     OnUpdated(new UpdatedEventArgs("Name"));
                 }
-                if (!backupData.date.Equals(saveData.date))
+                if (!_backupData.Date.Equals(_saveData.Date))
                 {
                     OnUpdated(new UpdatedEventArgs("SaveDate"));
                 }
-                if (!backupData.keep.Equals(saveData.keep))
+                if (!_backupData.Keep.Equals(_saveData.Keep))
                 {
                     OnUpdated(new UpdatedEventArgs("Keep"));
                 }
-                if (!backupData.active.Equals(saveData.active))
+                if (!_backupData.Active.Equals(_saveData.Active))
                 {
                     OnUpdated(new UpdatedEventArgs("Active"));
                 }
-                backupData = new SaveData();
-                inTxn = false;
+                _backupData = new SaveData();
+                _inTxn = false;
             }
         }
 
@@ -183,7 +183,7 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return File.GetLastWriteTime(Path.Join(savePath, "profile.sav"));
+                return File.GetLastWriteTime(Path.Join(_savePath, "profile.sav"));
             }
         }
     }
