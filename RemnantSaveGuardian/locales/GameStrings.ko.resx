@@ -2508,9 +2508,6 @@
   <data name="IslandJump" xml:space="preserve">
     <value>Island Jump Puzzle</value>
   </data>
-  <data name="IslandJump" xml:space="preserve">
-    <value>Island Jump Puzzle</value>
-  </data>
   <data name="Armor_RedPrinceArmor" xml:space="preserve">
     <value>진홍색 경비병</value>
   </data>
@@ -2519,9 +2516,6 @@
   </data>
   <data name="GardenMaze" xml:space="preserve">
     <value>미로</value>
-  </data>
-  <data name="BurningCity_DLC" xml:space="preserve">
-    <value>천상의 저택</value>
   </data>
   <data name="BurningCity_DLC" xml:space="preserve">
     <value>천상의 저택</value>

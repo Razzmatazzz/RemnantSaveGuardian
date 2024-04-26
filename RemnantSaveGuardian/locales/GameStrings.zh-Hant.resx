@@ -2170,74 +2170,14 @@
 	<data name="MotherMind" xml:space="preserve">
 		<value>靈智之母</value>
 	</data>
-	<data name="Harvester's Reach" xml:space="preserve">
-		<value>收穫者領域</value>
-	</data>
-	<data name="Butcher's Quarter" xml:space="preserve">
-		<value>屠夫區</value>
-	</data>
-	<data name="Postulant's Parlor" xml:space="preserve">
-		<value>發願者的客廳</value>
-	</data>
-	<data name="Astropath's Respite" xml:space="preserve">
-		<value>星語者的嘆息</value>
-	</data>
 	<data name="Armor_Arcanist" xml:space="preserve">
 		<value>迷宮</value>
-	</data>
-	<data name="Harvester's Reach" xml:space="preserve">
-		<value>收穫者領域</value>
-	</data>
-	<data name="Butcher's Quarter" xml:space="preserve">
-		<value>屠夫區</value>
-	</data>
-	<data name="Postulant's Parlor" xml:space="preserve">
-		<value>發願者的客廳</value>
-	</data>
-	<data name="Astropath's Respite" xml:space="preserve">
-		<value>星語者的嘆息</value>
 	</data>
 	<data name="FieryGraveyard" xml:space="preserve">
 		<value>燃燒墓地</value>
 	</data>
-	<data name="Harvester's Reach" xml:space="preserve">
-		<value>收穫者領域</value>
-	</data>
-	<data name="Butcher's Quarter" xml:space="preserve">
-		<value>屠夫區</value>
-	</data>
-	<data name="Postulant's Parlor" xml:space="preserve">
-		<value>發願者的客廳</value>
-	</data>
-	<data name="Astropath's Respite" xml:space="preserve">
-		<value>星語者的嘆息</value>
-	</data>
 	<data name="AsylumHouse" xml:space="preserve">
 		<value>莫洛療養院</value>
-	</data>
-	<data name="Harvester's Reach" xml:space="preserve">
-		<value>收穫者領域</value>
-	</data>
-	<data name="Butcher's Quarter" xml:space="preserve">
-		<value>屠夫區</value>
-	</data>
-	<data name="Postulant's Parlor" xml:space="preserve">
-		<value>發願者的客廳</value>
-	</data>
-	<data name="Astropath's Respite" xml:space="preserve">
-		<value>星語者的嘆息</value>
-	</data>
-	<data name="Harvester's Reach" xml:space="preserve">
-		<value>收穫者領域</value>
-	</data>
-	<data name="Butcher's Quarter" xml:space="preserve">
-		<value>屠夫區</value>
-	</data>
-	<data name="Postulant's Parlor" xml:space="preserve">
-		<value>發願者的客廳</value>
-	</data>
-	<data name="Astropath's Respite" xml:space="preserve">
-		<value>星語者的嘆息</value>
 	</data>
 	<data name="AllFather" xml:space="preserve">
 		<value>{AllFatherStory}</value>
@@ -2422,9 +2362,6 @@
 	<data name="Ring_RingOfAccord" xml:space="preserve">
 		<value>協調指環</value>
 	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
 	<data name="OverworldFog" xml:space="preserve">
 		<value>主世界迷霧</value>
 	</data>
@@ -2442,9 +2379,6 @@
 	</data>
 	<data name="Abyssal Rift" xml:space="preserve">
 		<value>深淵裂隙</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
 	</data>
 	<data name="LabyrinthBackrooms" xml:space="preserve">
 		<value>迷宫後室</value>
@@ -2518,23 +2452,11 @@
 	<data name="Weapon_CoachGun" xml:space="preserve">
 		<value>雙管霰彈槍</value>
 	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
 	<data name="Underworld" xml:space="preserve">
 		<value>地底世界</value>
 	</data>
 	<data name="Underground_Stasis" xml:space="preserve">
 		<value>無形者的地下室</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
 	</data>
 	<data name="Timeless Horizon" xml:space="preserve">
 		<value>永恆地平線</value>
@@ -2545,9 +2467,6 @@
 	<data name="Titan's Reach" xml:space="preserve">
 		<value>泰坦領域</value>
 	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
 	<data name="Train" xml:space="preserve">
 		<value>火車</value>
 	</data>
@@ -2557,65 +2476,14 @@
 	<data name="Wither" xml:space="preserve">
 		<value>凋零</value>
 	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
 	<data name="AshenWasteland" xml:space="preserve">
 		<value>灰燼荒原</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
 	</data>
 	<data name="CorruptedHarbor" xml:space="preserve">
 		<value>腐敗港灣</value>
 	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
 	<data name="Boss" xml:space="preserve">
 		<value>世界王</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
 	</data>
 	<data name="CryptHidden" xml:space="preserve">
 		<value>隱藏的地穴-橫躺棺材</value>
@@ -2626,248 +2494,41 @@
 	<data name="Location" xml:space="preserve">
 		<value>地區</value>
 	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
 	<data name="Mantagora" xml:space="preserve">
 		<value>曼陀羅</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
 	</data>
 	<data name="Extraction" xml:space="preserve">
 		<value>撤離-補給船</value>
 	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
 	<data name="TheCoreStory" xml:space="preserve">
 		<value>保管人核心故事</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
 	</data>
 	<data name="Underground_Infection" xml:space="preserve">
 		<value>孵化體</value>
 	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
 	<data name="ElevatorShaft" xml:space="preserve">
 		<value>電梯井</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
 	</data>
 	<data name="WailingField" xml:space="preserve">
 		<value>慟哭之地</value>
 	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
 	<data name="IAmLegendStory" xml:space="preserve">
 		<value>達拉裟靈魂火種故事</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
 	</data>
 	<data name="Ring_RingOfTheDamned" xml:space="preserve">
 		<value>詛咒之戒</value>
 	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
 	<data name="TowerHeist" xml:space="preserve">
 		<value>星雲電池解謎</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
 	</data>
 	<data name="TheNest" xml:space="preserve">
 		<value>巢穴</value>
 	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
 	<data name="TheTangle" xml:space="preserve">
 		<value>糾纏</value>
 	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
 	<data name="Towers_Test" xml:space="preserve">
 		<value>星語者的嘆息</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
-	</data>
-	<data name="Seeker's Rest" xml:space="preserve">
-		<value>追尋者的休憩</value>
-	</data>
-	<data name="Titan's Reach" xml:space="preserve">
-		<value>泰坦領域</value>
-	</data>
-	<data name="Sentinel's Keep" xml:space="preserve">
-		<value>哨兵要塞</value>
-	</data>
-	<data name="Widow's Court" xml:space="preserve">
-		<value>紅寡婦王庭</value>
-	</data>
-	<data name="Complete N'Erud on HC" xml:space="preserve">
-		<value>在硬核模式下完成涅魯德</value>
 	</data>
 	<data name="VaultoftheFormless" xml:space="preserve">
 		<value>無形者的地下室</value>
