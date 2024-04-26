@@ -887,7 +887,6 @@ namespace RemnantSaveGuardian.Views.Pages
                 return Loc.T(_key);
             }
         }
-        private string _name;
         public LocalizedColumnHeader(string key)
         {
             _key = key;
