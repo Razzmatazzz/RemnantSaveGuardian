@@ -316,13 +316,13 @@ namespace RemnantSaveGuardian.Views.Pages
                 if (RemnantSave.ValidSaveFolder(path))
                 {
                     SaveBackup backup = new(path);
-                    if (backupNames.ContainsKey(backup.SaveDate.Ticks))
+                    if (backupNames.TryGetValue(backup.SaveDate.Ticks, out string? name))
                     {
-                        backup.Name = backupNames[backup.SaveDate.Ticks];
+                        backup.Name = name;
                     }
-                    if (backupKeeps.ContainsKey(backup.SaveDate.Ticks))
+                    if (backupKeeps.TryGetValue(backup.SaveDate.Ticks, out bool keep))
                     {
-                        backup.Keep = backupKeeps[backup.SaveDate.Ticks];
+                        backup.Keep = keep;
                     }
 
                     if (BackupActive(backup))
@@ -435,13 +435,13 @@ namespace RemnantSaveGuardian.Views.Pages
                     Dictionary<long, string> backupNames = GetSavedBackupNames();
                     Dictionary<long, bool> backupKeeps = GetSavedBackupKeeps();
                     SaveBackup backup = new(backupFolder);
-                    if (backupNames.ContainsKey(backup.SaveDate.Ticks))
+                    if (backupNames.TryGetValue(backup.SaveDate.Ticks, out string? name))
                     {
-                        backup.Name = backupNames[backup.SaveDate.Ticks];
+                        backup.Name = name;
                     }
-                    if (backupKeeps.ContainsKey(backup.SaveDate.Ticks))
+                    if (backupKeeps.TryGetValue(backup.SaveDate.Ticks, out bool keep))
                     {
-                        backup.Keep = backupKeeps[backup.SaveDate.Ticks];
+                        backup.Keep = keep;
                     }
                     foreach (SaveBackup saveBackup in _listBackups)
                     {
@@ -799,13 +799,13 @@ namespace RemnantSaveGuardian.Views.Pages
             Dictionary<long, string> backupNames = GetSavedBackupNames();
             Dictionary<long, bool> backupKeeps = GetSavedBackupKeeps();
             SaveBackup backup = new(backupFolder);
-            if (backupNames.ContainsKey(backup.SaveDate.Ticks))
+            if (backupNames.TryGetValue(backup.SaveDate.Ticks, out string? name))
             {
-                backup.Name = backupNames[backup.SaveDate.Ticks];
+                backup.Name = name;
             }
-            if (backupKeeps.ContainsKey(backup.SaveDate.Ticks))
+            if (backupKeeps.TryGetValue(backup.SaveDate.Ticks, out bool keep))
             {
-                backup.Keep = backupKeeps[backup.SaveDate.Ticks];
+                backup.Keep = keep;
             }
             Logger.Success(Loc.T("Import_save_success"));
             _listBackups.Add(backup);
