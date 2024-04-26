@@ -96,8 +96,7 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                TextBlock? textBlock = AssociatedObject as TextBlock;
-                if (textBlock != null)
+                if (AssociatedObject is TextBlock textBlock)
                 {
                     ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
                     double textWidth = textBlock.ActualWidth - scrollViewer.ActualWidth;
@@ -118,8 +117,7 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                TextBlock? textBlock = AssociatedObject as TextBlock;
-                if (textBlock != null)
+                if (AssociatedObject is TextBlock textBlock)
                 {
                     ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
                     double textWidth = textBlock.ActualWidth - scrollViewer.ActualWidth;
@@ -140,8 +138,7 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                TextBlock? textBlock = AssociatedObject as TextBlock;
-                if (textBlock != null && e.LeftButton == MouseButtonState.Pressed)
+                if (AssociatedObject is TextBlock textBlock && e.LeftButton == MouseButtonState.Pressed)
                 {
                     ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
                     _storyBoard.Pause(scrollViewer);
@@ -167,8 +164,7 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                TextBlock? textBlock = AssociatedObject as TextBlock;
-                if (textBlock != null)
+                if (AssociatedObject is TextBlock textBlock)
                 {
                     ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
                     _storyBoard.Resume(scrollViewer);
@@ -227,8 +223,7 @@ namespace RemnantSaveGuardian.Views.UserControls
         }
         private static void OnHorizontalOffsetChanged(DependencyObject target, DependencyPropertyChangedEventArgs e)
         {
-            ScrollViewer? view = target as ScrollViewer;
-            if (view != null)
+            if (target is ScrollViewer view)
             {
                 view.ScrollToHorizontalOffset((double)e.NewValue);
             }

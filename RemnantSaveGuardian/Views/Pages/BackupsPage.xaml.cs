@@ -106,8 +106,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void MenuAnalyze_Click(object sender, RoutedEventArgs e)
         {
-            SaveBackup? backup = dataBackups.SelectedItem as SaveBackup;
-            if (backup == null)
+            if (dataBackups.SelectedItem is not SaveBackup backup)
             {
                 return;
             }
@@ -116,8 +115,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void MenuOpenBackup_Click(object sender, RoutedEventArgs e)
         {
-            SaveBackup? backup = dataBackups.SelectedItem as SaveBackup;
-            if (backup == null)
+            if (dataBackups.SelectedItem is not SaveBackup backup)
             {
                 return;
             }
@@ -196,8 +194,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void ContextBackups_ContextMenuOpening(object sender, ContextMenuEventArgs e)
         {
-            SaveBackup? save = dataBackups.SelectedItem as SaveBackup;
-            if (save == null) {
+            if (dataBackups.SelectedItem is not SaveBackup save) {
                 return;
             }
         }
@@ -658,8 +655,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 return;
             }
 
-            SaveBackup? backup = dataBackups.SelectedItem as SaveBackup;
-            if (backup == null)
+            if (dataBackups.SelectedItem is not SaveBackup backup)
             {
                 Logger.Log(Loc.T("Choose a backup to restore from the list."), LogType.Error);
                 return;
@@ -749,8 +745,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void menuDelete_Click(object sender, RoutedEventArgs e)
         {
-            SaveBackup? backup = dataBackups.SelectedItem as SaveBackup;
-            if (backup == null)
+            if (dataBackups.SelectedItem is not SaveBackup backup)
             {
                 return;
             }

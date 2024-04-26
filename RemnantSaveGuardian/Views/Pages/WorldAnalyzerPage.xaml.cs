@@ -487,8 +487,8 @@ namespace RemnantSaveGuardian.Views.Pages
         private void CommonSearchItem_Click(object sender, RoutedEventArgs e)
         {
             if (_menuSrcItem == null) { return; }
-            LootItem? lstItem = _menuSrcItem.Content as LootItem;
-            if (lstItem == null) { return; }
+
+            if (_menuSrcItem.Content is not LootItem lstItem) { return; }
             SearchItem(lstItem);
         }
 
@@ -547,8 +547,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void treeMissingItems_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            TreeViewItem? item = sender as TreeViewItem;
-            if (item != null)
+            if (sender is TreeViewItem item)
             {
                 TreeListClass? node = (TreeListClass)item.Header;
                 if (node != null) {

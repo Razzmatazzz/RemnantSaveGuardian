@@ -326,8 +326,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void CmbStartPage_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem? selected = cmbStartPage.SelectedItem as ComboBoxItem;
-            if (selected == null)
+            if (cmbStartPage.SelectedItem is not ComboBoxItem selected)
             {
                 return;
             }
