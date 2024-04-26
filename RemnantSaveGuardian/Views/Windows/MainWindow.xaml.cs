@@ -7,8 +7,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Media;
-//using System.Windows.Forms;
 using Wpf.Ui.Common;
 using Wpf.Ui.Controls;
 using Wpf.Ui.Controls.Interfaces;
@@ -26,21 +24,6 @@ namespace RemnantSaveGuardian.Views.Windows
         {
             get;
         }
-
-        #region background
-        private Brush _background;
-        public Brush background
-        {
-            get { return _background; }
-            set {
-                //Avoid WPF-UI override
-                if (_background != value && value.ToString().ToUpper() != "#00FFFFFF")
-                {
-                    _background = value;
-                }
-            }
-        }
-        #endregion
 
         public MainWindow(ViewModels.MainWindowViewModel viewModel, IPageService pageService, INavigationService navigationService)
         {
