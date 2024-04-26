@@ -12,7 +12,7 @@ namespace RemnantSaveGuardian
 {
     internal class UpdateCheck
     {
-        private static readonly string _repo = "Razzmatazzz/RemnantSaveGuardian";
+        private static readonly string Repo = "Razzmatazzz/RemnantSaveGuardian";
         private static readonly HttpClient Client = new();
         private static DateTime _lastUpdateCheck = DateTime.MinValue;
 
@@ -28,7 +28,7 @@ namespace RemnantSaveGuardian
                     return;
                 }
                 _lastUpdateCheck = DateTime.Now;
-                HttpRequestMessage request = new(HttpMethod.Get, $"https://api.github.com/repos/{_repo}/releases/latest");
+                HttpRequestMessage request = new(HttpMethod.Get, $"https://api.github.com/repos/{Repo}/releases/latest");
                 request.Headers.Add("user-agent", "remnant-save-guardian");
                 HttpResponseMessage response = await Client.SendAsync(request);
                 response.EnsureSuccessStatusCode();

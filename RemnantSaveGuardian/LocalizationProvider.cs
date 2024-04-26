@@ -55,8 +55,10 @@ namespace RemnantSaveGuardian
                     LocalizationOptions optionsToUse = options;
                     if (match.Groups.ContainsKey("namespace") && match.Groups["namespace"].Value != "")
                     {
-                        optionsToUse = new LocalizationOptions(options);
-                        optionsToUse["namespace"] = match.Groups["namespace"].Value;
+                        optionsToUse = new LocalizationOptions(options)
+                        {
+                            ["namespace"] = match.Groups["namespace"].Value
+                        };
                     }
                     valueToSub = T(valueToSub, optionsToUse);
                 }

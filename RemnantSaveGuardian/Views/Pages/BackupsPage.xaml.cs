@@ -27,7 +27,7 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         public static event EventHandler<BackupSaveViewedEventArgs>? BackupSaveViewed;
         public static event EventHandler? BackupSaveRestored;
-        private static readonly string _defaultBackupFolder = @$"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\Save Backups\Remnant 2";
+        private static readonly string DefaultBackupFolder = @$"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\Save Backups\Remnant 2";
         private List<SaveBackup> _listBackups;
         //private RemnantSave activeSave;
         private Process? _gameProcess;
@@ -84,11 +84,11 @@ namespace RemnantSaveGuardian.Views.Pages
                 if (Properties.Settings.Default.BackupFolder.Length == 0)
                 {
                     Logger.Log(Loc.T("Backup folder not set; reverting to default."));
-                    if (!Directory.Exists(_defaultBackupFolder))
+                    if (!Directory.Exists(DefaultBackupFolder))
                     {
-                        Directory.CreateDirectory(_defaultBackupFolder);
+                        Directory.CreateDirectory(DefaultBackupFolder);
                     }
-                    Properties.Settings.Default.BackupFolder = _defaultBackupFolder;
+                    Properties.Settings.Default.BackupFolder = DefaultBackupFolder;
                 }
 
                 _listBackups = new List<SaveBackup>();
@@ -246,7 +246,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         DateTime newBackupTime;
                         if (_listBackups.Count > 0)
                         {
-                            latestBackupTime = _listBackups[_listBackups.Count - 1].SaveDate;
+                            latestBackupTime = _listBackups[^1].SaveDate;
                             newBackupTime = latestBackupTime.AddMinutes(Properties.Settings.Default.BackupMinutes);
                         }
                         else
@@ -359,7 +359,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 Logger.Log($"{Loc.T("Backups found")}: {_listBackups.Count}"); 
                 if (_listBackups.Count > 0)
                 {
-                    Logger.Log($"{Loc.T("Last backup save date")}: {_listBackups[_listBackups.Count - 1].SaveDate}");
+                    Logger.Log($"{Loc.T("Last backup save date")}: {_listBackups[^1].SaveDate}");
                 }
                 if (activeBackup != null)
                 {
@@ -611,7 +611,7 @@ namespace RemnantSaveGuardian.Views.Pages
             return templateColumn;
         }
 
-        private void dataBackups_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        private void DataBackups_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             List<string> allowColumns = new() { 
                 "Name",
@@ -743,7 +743,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void menuDelete_Click(object sender, RoutedEventArgs e)
+        private void MenuDelete_Click(object sender, RoutedEventArgs e)
         {
             if (dataBackups.SelectedItem is not SaveBackup backup)
             {
@@ -755,7 +755,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 Content = new TextBlock()
                 {
                     Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {
-                    { "backupName", backup.Name } }) + $"\n{Loc.T("Characters")}: {backup.Progression}\n{Loc.T("Date")}: {backup.SaveDate.ToString()}",
+                    { "backupName", backup.Name } }) + $"\n{Loc.T("Characters")}: {backup.Progression}\n{Loc.T("Date")}: {backup.SaveDate}",
                     TextWrapping = TextWrapping.WrapWithOverflow
                 },
                 ButtonLeftName = Loc.T("Delete")
@@ -787,7 +787,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void dataBackups_Drop(object sender, DragEventArgs e)
+        private void DataBackups_Drop(object sender, DragEventArgs e)
         {
             if (!e.Data.GetDataPresent(DataFormats.FileDrop))
             {

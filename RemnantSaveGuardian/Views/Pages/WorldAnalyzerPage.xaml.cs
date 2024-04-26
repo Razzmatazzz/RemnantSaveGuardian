@@ -335,7 +335,7 @@ namespace RemnantSaveGuardian.Views.Pages
             e.Column.Header = Loc.T(e.Column.Header.ToString());
         }
 
-        private static readonly string[] _modeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
+        private static readonly string[] ModeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
         readonly List<TreeListClass> _itemModeNode = new();
         private void CharacterControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -352,7 +352,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 string[] modes = { Strings.Normal, Strings.Hardcore, Strings.Survival };
                 for (int i = 0;i <= 2; i++)
                 {
-                    TreeListClass item = new() { Name = modes[i], Childnode = itemNode[i], Tag = _modeTags[i], IsExpanded = (bool)Properties.Settings.Default[$"{_modeTags[i]}_Expanded"] };
+                    TreeListClass item = new() { Name = modes[i], Childnode = itemNode[i], Tag = ModeTags[i], IsExpanded = (bool)Properties.Settings.Default[$"{ModeTags[i]}_Expanded"] };
                     item.Expanded += GameType_CollapsedExpanded;
                     _itemModeNode.Add(item);
                 }

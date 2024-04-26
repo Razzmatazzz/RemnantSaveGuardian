@@ -6,12 +6,12 @@ namespace RemnantSaveGuardian
     internal static class SaveWatcher
     {
         public static event EventHandler SaveUpdated;
-        private static readonly FileSystemWatcher _watcher = new ()
+        private static readonly FileSystemWatcher Watcher = new ()
         {
             //NotifyFilter = NotifyFilters.LastWrite,
             Filter = "profile.sav",
         };
-        private static readonly System.Timers.Timer _saveTimer = new()
+        private static readonly System.Timers.Timer SaveTimer = new()
         {
             Interval = 2000,
             AutoReset = false,
@@ -19,11 +19,11 @@ namespace RemnantSaveGuardian
 
         static SaveWatcher()
         {
-            _watcher.Changed += OnSaveFileChanged;
-            _watcher.Created += OnSaveFileChanged;
-            _watcher.Deleted += OnSaveFileChanged;
+            Watcher.Changed += OnSaveFileChanged;
+            Watcher.Created += OnSaveFileChanged;
+            Watcher.Deleted += OnSaveFileChanged;
 
-            _saveTimer.Elapsed += SaveTimer_Elapsed;
+            SaveTimer.Elapsed += SaveTimer_Elapsed;
 
             Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
         }
@@ -50,8 +50,8 @@ namespace RemnantSaveGuardian
                 //multiple times in relatively rapid succession.
                 //This timer is refreshed each time the save is modified,
                 //and a backup only occurs after the timer expires.
-                _saveTimer.Stop();
-                _saveTimer.Start();
+                SaveTimer.Stop();
+                SaveTimer.Start();
             }
             catch (Exception ex)
             {
@@ -63,25 +63,25 @@ namespace RemnantSaveGuardian
         {
             if (Directory.Exists(path))
             {
-                if (_watcher.Path != path)
+                if (Watcher.Path != path)
                 {
-                    _watcher.Path = path;
+                    Watcher.Path = path;
                 }
-                _watcher.EnableRaisingEvents = true;
+                Watcher.EnableRaisingEvents = true;
             }
             else
             {
-                _watcher.EnableRaisingEvents = false;
+                Watcher.EnableRaisingEvents = false;
             }
         }
 
         public static void Pause()
         {
-            _watcher.EnableRaisingEvents = false;
+            Watcher.EnableRaisingEvents = false;
         }
         public static void Resume()
         {
-            _watcher.EnableRaisingEvents = true;
+            Watcher.EnableRaisingEvents = true;
         }
     }
 }

@@ -7,9 +7,8 @@ namespace RemnantSaveGuardian
 {
     internal static class Logger
     {
-        public static event EventHandler<MessageLoggedEventArgs> MessageLogged;
-        private static readonly List<LogMessage> _messages = new ();
-        public static List<LogMessage> Messages { get { return _messages; } }
+        public static event EventHandler<MessageLoggedEventArgs>? MessageLogged;
+
         static Logger()
         {
             if (Properties.Settings.Default.CreateLogFile)
@@ -18,6 +17,8 @@ namespace RemnantSaveGuardian
             }
             Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
         }
+
+        public static List<LogMessage> Messages { get; } = new ();
 
         private static void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
@@ -34,21 +35,18 @@ namespace RemnantSaveGuardian
 
         private static void CreateLog()
         {
-            File.WriteAllText("log.txt", DateTime.Now.ToString() + ": Version " + typeof(MainWindow).Assembly.GetName().Version + "\r\n");
+            File.WriteAllText("log.txt", DateTime.Now + ": Version " + typeof(MainWindow).Assembly.GetName().Version + "\r\n");
         }
 
-        public static void Log(object message, LogType logType)
+        public static void Log(object? message, LogType logType)
         {
-            if (message == null)
-            {
-                message = "null";
-            }
-            MessageLogged?.Invoke(null, new (message.ToString(), logType));
-            _messages.Add(new(message.ToString(), logType));
+            message ??= "null";
+            MessageLogged?.Invoke(null, new(message.ToString() ?? "", logType));
+            Messages.Add(new(message.ToString() ?? "", logType));
             if (Properties.Settings.Default.CreateLogFile)
             {
                 StreamWriter writer = File.AppendText("log.txt");
-                writer.WriteLine(DateTime.Now.ToString() + ": " + message);
+                writer.WriteLine(DateTime.Now + ": " + message);
                 writer.Close();
             }
             //Debug.WriteLine(message);
