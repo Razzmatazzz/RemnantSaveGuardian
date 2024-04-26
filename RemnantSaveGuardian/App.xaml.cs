@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RemnantSaveGuardian.Models;
 using RemnantSaveGuardian.Properties;
 using RemnantSaveGuardian.Services;
 using System.Diagnostics;
@@ -62,8 +61,6 @@ namespace RemnantSaveGuardian
                 services.AddScoped<Views.Pages.SettingsPage>();
                 services.AddScoped<ViewModels.SettingsViewModel>();
 
-                // Configuration
-                services.Configure<AppConfig>(context.Configuration.GetSection(nameof(AppConfig)));
             }).Build();
 
 
