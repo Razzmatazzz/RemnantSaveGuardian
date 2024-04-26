@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text.Json.Nodes;
 using System.Windows;
 using System.Windows.Controls;
+using MessageBox = Wpf.Ui.Controls.MessageBox;
 
 namespace RemnantSaveGuardian
 {
@@ -27,9 +28,9 @@ namespace RemnantSaveGuardian
                     return;
                 }
                 _lastUpdateCheck = DateTime.Now;
-                var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.github.com/repos/{_repo}/releases/latest");
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"https://api.github.com/repos/{_repo}/releases/latest");
                 request.Headers.Add("user-agent", "remnant-save-guardian");
-                var response = await Client.SendAsync(request);
+                HttpResponseMessage response = await Client.SendAsync(request);
                 response.EnsureSuccessStatusCode();
                 JsonNode latestRelease = JsonNode.Parse(await response.Content.ReadAsStringAsync());
 
@@ -38,7 +39,7 @@ namespace RemnantSaveGuardian
                 if (localVersion.CompareTo(remoteVersion) == -1)
                 {
                     NewVersion?.Invoke(null, new() { Version = remoteVersion, Uri = new(latestRelease["html_url"].ToString()) });
-                    var messageBox = new Wpf.Ui.Controls.MessageBox();
+                    MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
                     messageBox.Title = Loc.T("Update available");
                     Hyperlink hyperLink = new()
                     {
@@ -46,7 +47,7 @@ namespace RemnantSaveGuardian
                     };
                     hyperLink.Inlines.Add(Loc.T("Changelog"));
                     hyperLink.RequestNavigate += (o, e) => Process.Start("explorer.exe", e.Uri.ToString());
-                    var txtBlock = new TextBlock()
+                    TextBlock txtBlock = new TextBlock()
                     {
                         Text = Loc.T("The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?",
                             new LocalizationOptions()

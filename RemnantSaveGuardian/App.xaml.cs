@@ -72,8 +72,8 @@ namespace RemnantSaveGuardian
         /// </summary>
         private async void OnStartup(object sender, StartupEventArgs e)
         {
-            var culture = CultureInfo.CurrentCulture;
-            var cultures = EnumerateSupportedCultures();
+            CultureInfo culture = CultureInfo.CurrentCulture;
+            CultureInfo[] cultures = EnumerateSupportedCultures();
             Current.Properties["langs"] = cultures;
             if (!cultures.Contains(culture) && cultures.Contains(culture.Parent))
             {
@@ -98,7 +98,7 @@ namespace RemnantSaveGuardian
             CultureInfo[] culture = CultureInfo.GetCultures(CultureTypes.AllCultures);
             string? exeLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             Debug.Assert(exeLocation != null, nameof(exeLocation) + " != null");
-            var c = culture.Where(cultureInfo => Directory.Exists(Path.Combine(exeLocation, cultureInfo.Name)) && cultureInfo.Name != "").ToArray();
+            CultureInfo[] c = culture.Where(cultureInfo => Directory.Exists(Path.Combine(exeLocation, cultureInfo.Name)) && cultureInfo.Name != "").ToArray();
             return c;
         }
 

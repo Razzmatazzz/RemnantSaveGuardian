@@ -55,7 +55,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     SaveWatcher.SaveUpdated += (sender, eventArgs) => {
                         Dispatcher.Invoke(() =>
                         {
-                            var selectedIndex = CharacterControl.SelectedIndex;
+                            int selectedIndex = CharacterControl.SelectedIndex;
                             _save.UpdateCharacters();
                             ApplyFilter();
                             CharacterControl.Items.Refresh();
@@ -121,7 +121,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void BackupsPage_BackupSaveRestored(object? sender, EventArgs e)
         {
-            var selectedIndex = CharacterControl.SelectedIndex;
+            int selectedIndex = CharacterControl.SelectedIndex;
             _save.UpdateCharacters();
             CharacterControl.Items.Refresh();
             if (selectedIndex >= CharacterControl.Items.Count)
@@ -236,16 +236,16 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private void ListView_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
-            var eBack = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+            MouseWheelEventArgs eBack = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
             eBack.RoutedEvent = MouseWheelEvent;
 
-            var src = e.Source as ListView;
-            var ui = src.Parent as UIElement;
+            ListView? src = e.Source as ListView;
+            UIElement? ui = src.Parent as UIElement;
             ui.RaiseEvent(eBack);
         }
         private void ListViewItem_Selected(object sender, RoutedEventArgs e)
         {
-            var item = (ListViewItem)e.Source;
+            ListViewItem? item = (ListViewItem)e.Source;
             if (_menuSrcItem != null && !item.Equals(_menuSrcItem))
             {
                 _menuSrcItem.IsSelected = false;
@@ -254,9 +254,9 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private DataGridTemplateColumn GeneratingColumn(string strHeader, string strProperty, string strStyle, string strSortBy)
         {
-            var stackPanelFactory = new FrameworkElementFactory(typeof(StackPanel));
+            FrameworkElementFactory stackPanelFactory = new FrameworkElementFactory(typeof(StackPanel));
             stackPanelFactory.SetValue(StackPanel.OrientationProperty, Orientation.Vertical);
-            var listView = new FrameworkElementFactory(typeof(ListView));
+            FrameworkElementFactory listView = new FrameworkElementFactory(typeof(ListView));
 
             Style style = (Style)Resources[strStyle];
             listView.SetValue(StyleProperty, style);
@@ -273,11 +273,11 @@ namespace RemnantSaveGuardian.Views.Pages
 
             stackPanelFactory.AppendChild(listView);
 
-            var dataTemplate = new DataTemplate
+            DataTemplate dataTemplate = new DataTemplate
             {
                 VisualTree = stackPanelFactory
             };
-            var templateColumn = new DataGridTemplateColumn
+            DataGridTemplateColumn templateColumn = new DataGridTemplateColumn
             {
                 Header = strHeader,
                 CanUserSort = true,
@@ -296,7 +296,7 @@ namespace RemnantSaveGuardian.Views.Pages
         #endregion
         private void Data_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            var allowColumns = new List<string>() {
+            List<string> allowColumns = new List<string>() {
                 "Location",
                 "Type",
                 "Name",
@@ -318,7 +318,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 e.Column = GeneratingColumn("Missing Items", "MissingItems", "lvMissingItemsStyle", "MissingItemsString");
                 if (Properties.Settings.Default.MissingItemColor == "Highlight")
                 {
-                    var highlight = Brushes.RoyalBlue;
+                    SolidColorBrush highlight = Brushes.RoyalBlue;
                     MissingItemsTextColor = highlight;
                 } else {
                     Brush brush = (Brush)FindResource("TextFillColorPrimaryBrush");
@@ -352,10 +352,10 @@ namespace RemnantSaveGuardian.Views.Pages
                     item.Expanded += GameType_CollapsedExpanded;
                     _itemModeNode.Add(item);
                 }
-                var idx = -1;
+                int idx = -1;
                 string typeNodeTag = "";
 
-                var missingItems = _save.Dataset.Characters[CharacterControl.SelectedIndex].Profile.MissingItems;
+                List<Dictionary<string, string>> missingItems = _save.Dataset.Characters[CharacterControl.SelectedIndex].Profile.MissingItems;
                 if (!Properties.Settings.Default.ShowCoopItems)
                 {
                     missingItems = missingItems.Where(x => x.ContainsKey("Coop") && x["Coop"] == "True").ToList();
@@ -448,11 +448,11 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private void ReloadEventGrids()
         {
-            var tempDataC = _filteredCampaign;
+            List<WorldAnalyzerGridData> tempDataC = _filteredCampaign;
             CampaignData.ItemsSource = null;
             CampaignData.ItemsSource = tempDataC;
 
-            var tempDataA = _filteredAdventure;
+            List<WorldAnalyzerGridData> tempDataA = _filteredAdventure;
             AdventureData.ItemsSource = null;
             AdventureData.ItemsSource = tempDataA;
         }
@@ -476,14 +476,14 @@ namespace RemnantSaveGuardian.Views.Pages
         private void CommonCopyItem_Click(object sender, RoutedEventArgs e)
         {
             if (_menuSrcItem == null) { return; }
-            var item = _menuSrcItem.Content as LootItem;
+            LootItem? item = _menuSrcItem.Content as LootItem;
             Clipboard.SetDataObject(item.Name);
         }
 
         private void CommonSearchItem_Click(object sender, RoutedEventArgs e)
         {
             if (_menuSrcItem == null) { return; }
-            var lstItem = _menuSrcItem.Content as LootItem;
+            LootItem? lstItem = _menuSrcItem.Content as LootItem;
             if (lstItem == null) { return; }
             SearchItem(lstItem);
         }
@@ -498,13 +498,13 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private void SearchItem_Click(object sender, RoutedEventArgs e)
         {
-            var treeItem = (TreeListClass)treeMissingItems.SelectedItem;
-            var item = new LootItem { Item = (Dictionary<string, string>)treeItem.Tag };
+            TreeListClass? treeItem = (TreeListClass)treeMissingItems.SelectedItem;
+            LootItem item = new LootItem { Item = (Dictionary<string, string>)treeItem.Tag };
             SearchItem(item);
         }
         private void SearchItem(LootItem item)
         {
-            var itemname = item.Name;
+            string itemname = item.Name;
             Process.Start("explorer.exe", $"https://remnant2.wiki.fextralife.com/{itemname}");
         }
         private void ExpandAllItem_Click(object sender, RoutedEventArgs e)
@@ -520,17 +520,17 @@ namespace RemnantSaveGuardian.Views.Pages
             foreach (TreeListClass item in lstItems)
             {
                 item.IsExpanded = bExpand;
-                var child = item.Childnode;
+                List<TreeListClass>? child = item.Childnode;
                 if (child != null && child.Count > 0)
                 {
-                    var node = child[0].Childnode;
+                    List<TreeListClass>? node = child[0].Childnode;
                     if (node != null && node.Count > 0) { CollapseExpandAllItems(child, bExpand); }
                 }
             }
         }
         private void treeMissingItems_ContextMenuOpening(object sender, ContextMenuEventArgs e)
         {
-            var item = (TreeListClass)treeMissingItems.SelectedItem;
+            TreeListClass? item = (TreeListClass)treeMissingItems.SelectedItem;
             if (item != null)
             {
                 menuMissingItemOpenWiki.Visibility = item.Tag.GetType().ToString() != "System.Collections.Generic.Dictionary`2[System.String,System.String]" ? Visibility.Collapsed : Visibility.Visible;
@@ -543,10 +543,10 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void treeMissingItems_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var item = sender as TreeViewItem;
+            TreeViewItem? item = sender as TreeViewItem;
             if (item != null)
             {
-                var node = (TreeListClass)item.Header;
+                TreeListClass? node = (TreeListClass)item.Header;
                 if (node != null) {
                     node.IsSelected = true;
                     e.Handled = true;
@@ -560,7 +560,7 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private bool EventPassesFilter(WorldAnalyzerGridData e)
         {
-            var filter = WorldAnalyzerFilter.Text.ToLower();
+            string filter = WorldAnalyzerFilter.Text.ToLower();
             if (filter.Length == 0)
             {
                 return true;
@@ -585,7 +585,7 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return;
             }
-            var character = _save.Dataset.Characters[CharacterControl.SelectedIndex];
+            Character? character = _save.Dataset.Characters[CharacterControl.SelectedIndex];
             if (character == null)
             {
                 return;
@@ -601,20 +601,20 @@ namespace RemnantSaveGuardian.Views.Pages
             List<WorldAnalyzerGridData> result = new();
             if (world == null) return result;
 
-            var missingIds = profile.MissingItems.Select(x => x["Id"]).ToList();
+            List<string> missingIds = profile.MissingItems.Select(x => x["Id"]).ToList();
 
-            foreach (var zone in world.AllZones)
+            foreach (Zone zone in world.AllZones)
             {
                 if (!Properties.Settings.Default.ShowWard13 && zone.Name == "Ward 13") continue;
                 if (!Properties.Settings.Default.ShowShowLabyrinth && zone.Name == "Labyrinth") continue;
                 if (!Properties.Settings.Default.ShowRootEarth && zone.Name == "Root Earth") continue;
-                foreach (var location in zone.Locations)
+                foreach (Location location in zone.Locations)
                 {
-                    var l = location.World == "Ward 13" ? location.World : $"{location.World}: {location.Name}";
+                    string l = location.World == "Ward 13" ? location.World : $"{location.World}: {location.Name}";
 
                     if (Properties.Settings.Default.ShowConnections && location.Connections is { Count: > 0 })
                     {
-                        var newItem = new WorldAnalyzerGridData
+                        WorldAnalyzerGridData newItem = new WorldAnalyzerGridData
                         {
                             Location = Loc.GameT(l),
                             MissingItems = new(),
@@ -629,7 +629,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                     if (Properties.Settings.Default.ShowWorldStones && location.WorldStones is { Count: > 0 })
                     {
-                        var newItem = new WorldAnalyzerGridData
+                        WorldAnalyzerGridData newItem = new WorldAnalyzerGridData
                         {
                             Location = Loc.GameT(l),
                             MissingItems = new(),
@@ -645,7 +645,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     if (Properties.Settings.Default.ShowTomes && location.TraitBook)
                     {
                         //List<LocalisedLootItem> ll = new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") } } }) };
-                        var newItem = new WorldAnalyzerGridData
+                        WorldAnalyzerGridData newItem = new WorldAnalyzerGridData
                         {
                             Location = Loc.GameT(l),
                             MissingItems = new(),
@@ -661,7 +661,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                     if (Properties.Settings.Default.ShowSimulacrums && location.Simulacrum)
                     {
-                        var newItem = new WorldAnalyzerGridData
+                        WorldAnalyzerGridData newItem = new WorldAnalyzerGridData
                         {
                             Location = Loc.GameT(l),
                             MissingItems = new(),
@@ -675,10 +675,10 @@ namespace RemnantSaveGuardian.Views.Pages
                         }
                     }
                     
-                    foreach (var lg in location.LootGroups)
+                    foreach (LootGroup lg in location.LootGroups)
                     {
 
-                        var items = lg.Items;
+                        List<LootItem> items = lg.Items;
                         if (!Properties.Settings.Default.ShowCoopItems)
                         {
                             items = items.Where(x => x.Item.ContainsKey("Coop") && x.Item["Coop"] == "True").ToList();
@@ -687,7 +687,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         {
                             items = items.Where(x => !x.IsDeleted).ToList();
                         }
-                        var newItem = new WorldAnalyzerGridData
+                        WorldAnalyzerGridData newItem = new WorldAnalyzerGridData
                         {
                             Location = Loc.GameT(l),
                             MissingItems = items.Where(x => missingIds.Contains(x.Item["Id"])).Select(x => new LocalisedLootItem(x)).ToList(),

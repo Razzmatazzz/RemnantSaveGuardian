@@ -35,7 +35,7 @@ namespace RemnantSaveGuardian
             }
             else
             {
-                var winFiles = Directory.GetFiles(path, "container.*");
+                string[] winFiles = Directory.GetFiles(path, "container.*");
                 if (winFiles.Length > 0)
                 {
                     _winSave = new WindowsSave(winFiles[0]);
@@ -95,7 +95,7 @@ namespace RemnantSaveGuardian
             }
             else
             {
-                var winFiles = Directory.GetFiles(folder, "container.*");
+                string[] winFiles = Directory.GetFiles(folder, "container.*");
                 if (winFiles.Length > 0)
                 {
                     return true;
@@ -111,11 +111,11 @@ namespace RemnantSaveGuardian
 
         public static string DefaultSaveFolder()
         {
-            var saveFolder = SHGetKnownFolderPath(FolderidSavedGames, 0) + @"\Remnant2";
+            string saveFolder = SHGetKnownFolderPath(FolderidSavedGames, 0) + @"\Remnant2";
             if (Directory.Exists($@"{saveFolder}\Steam"))
             {
                 saveFolder += @"\Steam";
-                var userFolders = Directory.GetDirectories(saveFolder);
+                string[] userFolders = Directory.GetDirectories(saveFolder);
                 if (userFolders.Length > 0)
                 {
                     return userFolders[0];
@@ -123,7 +123,7 @@ namespace RemnantSaveGuardian
             }
             else
             {
-                var folders = Directory.GetDirectories(saveFolder);
+                string[] folders = Directory.GetDirectories(saveFolder);
                 if (folders.Length > 0)
                 {
                     return folders[0];

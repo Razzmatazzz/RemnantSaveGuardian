@@ -10,17 +10,17 @@ namespace RemnantSaveGuardian
     {
         public static T GetLocalizedValue<T>(string key, LocalizationOptions options)
         {
-            var ns = "Strings";
+            string ns = "Strings";
             if (options.Has("namespace") && options["namespace"] != "")
             {
                 ns = options["namespace"];
             }
-            var currentCulture = WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture;
+            CultureInfo? currentCulture = WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture;
             if (options.Has("locale") && options["locale"] != currentCulture.ToString())
             {
                 WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.SetCurrentThreadCulture = false;
                 WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = new CultureInfo(options["locale"]);
-                var translation = LocExtension.GetLocalizedValue<T>(Assembly.GetCallingAssembly().GetName().Name + $":{ns}:" + key);
+                T? translation = LocExtension.GetLocalizedValue<T>(Assembly.GetCallingAssembly().GetName().Name + $":{ns}:" + key);
                 WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = currentCulture;
                 return translation;
             }
@@ -29,7 +29,7 @@ namespace RemnantSaveGuardian
         }
         public static string T(string key, LocalizationOptions options)
         {
-            var val = GetLocalizedValue<string>(key, options);
+            string? val = GetLocalizedValue<string>(key, options);
             if (val == null || val == "")
             {
                 return key;
@@ -43,16 +43,16 @@ namespace RemnantSaveGuardian
                 }
                 return Regex.Replace(key.Replace("_", " "), "([A-Z0-9]+)", " $1").Trim();*/
             }
-            var matches = new Regex(@"{(?:(?<namespace>\w+?):)?(?<sub>\w+?)}").Matches(val);
+            MatchCollection matches = new Regex(@"{(?:(?<namespace>\w+?):)?(?<sub>\w+?)}").Matches(val);
             foreach (Match match in matches)
             {
-                var valueToSub = match.Groups["sub"].Value;
+                string valueToSub = match.Groups["sub"].Value;
                 if (options.Has(valueToSub) && options[valueToSub] != "")
                 {
                     valueToSub = options[valueToSub];
                 } else
                 {
-                    var optionsToUse = options;
+                    LocalizationOptions optionsToUse = options;
                     if (match.Groups.ContainsKey("namespace") && match.Groups["namespace"].Value != "")
                     {
                         optionsToUse = new LocalizationOptions(options);
@@ -79,7 +79,7 @@ namespace RemnantSaveGuardian
         }
         public static bool Has(string key, LocalizationOptions options)
         {
-            var val = GetLocalizedValue<string>(key, options);
+            string? val = GetLocalizedValue<string>(key, options);
             if (val == null || val == "")
             {
                 return false;
@@ -96,7 +96,7 @@ namespace RemnantSaveGuardian
     { 
         public LocalizationOptions(LocalizationOptions source)
         {
-            foreach (var kvp in source)
+            foreach (KeyValuePair<string, string> kvp in source)
             {
                 Add(kvp.Key, kvp.Value);
             }

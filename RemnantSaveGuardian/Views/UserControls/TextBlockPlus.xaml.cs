@@ -96,10 +96,10 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                var textBlock = AssociatedObject as TextBlock;
+                TextBlock? textBlock = AssociatedObject as TextBlock;
                 if (textBlock != null)
                 {
-                    var scrollViewer = textBlock.Parent as ScrollViewer;
+                    ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
                     double textWidth = textBlock.ActualWidth - scrollViewer.ActualWidth;
                     double scrollValue = scrollViewer.HorizontalOffset;
                     double scrollWidth = scrollViewer.ScrollableWidth;
@@ -118,10 +118,10 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                var textBlock = AssociatedObject as TextBlock;
+                TextBlock? textBlock = AssociatedObject as TextBlock;
                 if (textBlock != null)
                 {
-                    var scrollViewer = textBlock.Parent as ScrollViewer;
+                    ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
                     double textWidth = textBlock.ActualWidth - scrollViewer.ActualWidth;
                     double scrollValue = scrollViewer.HorizontalOffset;
                     double scrollWidth = scrollViewer.ScrollableWidth;
@@ -140,10 +140,10 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                var textBlock = AssociatedObject as TextBlock;
+                TextBlock? textBlock = AssociatedObject as TextBlock;
                 if (textBlock != null && e.LeftButton == MouseButtonState.Pressed)
                 {
-                    var scrollViewer = textBlock.Parent as ScrollViewer;
+                    ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
                     _storyBoard.Pause(scrollViewer);
                 }
 
@@ -154,10 +154,10 @@ namespace RemnantSaveGuardian.Views.UserControls
                 } else if (e.RightButton == MouseButtonState.Pressed) {
                     button = MouseButton.Right;
                 }
-                var eBack = new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, button);
+                MouseButtonEventArgs eBack = new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, button);
                 eBack.RoutedEvent = UIElement.MouseDownEvent;
 
-                var ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
+                TextBlockPlus? ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
                 ui.RaiseEvent(eBack);
             }
         }
@@ -165,10 +165,10 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                var textBlock = AssociatedObject as TextBlock;
+                TextBlock? textBlock = AssociatedObject as TextBlock;
                 if (textBlock != null)
                 {
-                    var scrollViewer = textBlock.Parent as ScrollViewer;
+                    ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
                     _storyBoard.Resume(scrollViewer);
                 }
 
@@ -182,10 +182,10 @@ namespace RemnantSaveGuardian.Views.UserControls
                     button = MouseButton.Right;
                 }
 
-                var eBack = new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, button);
+                MouseButtonEventArgs eBack = new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, button);
                 eBack.RoutedEvent = UIElement.MouseUpEvent;
 
-                var ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
+                TextBlockPlus? ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
                 ui.RaiseEvent(eBack);
             }
         }
@@ -193,10 +193,10 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             e.Handled = true;
 
-            var eBack = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+            MouseWheelEventArgs eBack = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
             eBack.RoutedEvent = UIElement.MouseWheelEvent;
 
-            var ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
+            TextBlockPlus? ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
             ui.RaiseEvent(eBack);
         }
         private DependencyObject VisualUpwardSearch<T>(DependencyObject source)
@@ -221,7 +221,7 @@ namespace RemnantSaveGuardian.Views.UserControls
         }
         private static void OnHorizontalOffsetChanged(DependencyObject target, DependencyPropertyChangedEventArgs e)
         {
-            var view = target as ScrollViewer;
+            ScrollViewer? view = target as ScrollViewer;
             if (view != null)
             {
                 view.ScrollToHorizontalOffset((double)e.NewValue);

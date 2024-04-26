@@ -18,7 +18,7 @@ namespace RemnantSaveGuardian.Helpers
             if (!Enum.IsDefined(typeof(Wpf.Ui.Appearance.ThemeType), value))
                 throw new ArgumentException("ExceptionEnumToBooleanConverterValueMustBeAnEnum");
 
-            var enumValue = Enum.Parse(typeof(Wpf.Ui.Appearance.ThemeType), enumString);
+            object enumValue = Enum.Parse(typeof(Wpf.Ui.Appearance.ThemeType), enumString);
 
             return enumValue.Equals(value);
         }

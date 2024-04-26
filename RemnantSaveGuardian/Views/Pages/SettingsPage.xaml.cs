@@ -9,6 +9,8 @@ using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Common.Interfaces;
 using RemnantSaveGuardian.Helpers;
+using Wpf.Ui.Appearance;
+using MessageBox = Wpf.Ui.Controls.MessageBox;
 
 namespace RemnantSaveGuardian.Views.Pages
 {
@@ -51,7 +53,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                 }
 
-                var langs = Application.Current.Properties["langs"] as CultureInfo[];
+                CultureInfo[]? langs = Application.Current.Properties["langs"] as CultureInfo[];
 
                 cmbSwitchLanguage.ItemsSource = langs.Select(e => e.NativeName);
                 if (Properties.Settings.Default.Language != "")
@@ -60,7 +62,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
                 else
                 {
-                    var culture = Thread.CurrentThread.CurrentCulture;
+                    CultureInfo culture = Thread.CurrentThread.CurrentCulture;
 
                     if (culture.Parent != null || culture.Name != "pt-BR")
                         cmbSwitchLanguage.SelectedItem = culture.Parent.NativeName;
@@ -122,8 +124,8 @@ namespace RemnantSaveGuardian.Views.Pages
             if (e.PropertyName == "Opacity" || e.PropertyName == "OnlyInactive" || e.PropertyName == "Theme")
             {
                 if (Properties.Settings.Default.EnableOpacity == false) { return; }
-                var value = Properties.Settings.Default.Opacity;
-                var mainWindow = Application.Current.MainWindow;
+                float value = Properties.Settings.Default.Opacity;
+                Window? mainWindow = Application.Current.MainWindow;
                 if (value == 1 || (e.PropertyName == "OnlyInactive" && Properties.Settings.Default.OnlyInactive == true))
                 {
                     WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UxMaterials.Mica);
@@ -156,7 +158,7 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private void ChangeTheme(string parameter)
         {
-            var currentTheme = (Wpf.Ui.Appearance.ThemeType)Enum.Parse(typeof(Wpf.Ui.Appearance.ThemeType), Properties.Settings.Default.Theme);
+            ThemeType currentTheme = (Wpf.Ui.Appearance.ThemeType)Enum.Parse(typeof(Wpf.Ui.Appearance.ThemeType), Properties.Settings.Default.Theme);
             switch (parameter)
             {
                 case "Light":
@@ -205,7 +207,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 List<String> backupFiles = Directory.GetDirectories(Properties.Settings.Default.BackupFolder).ToList();
                 if (backupFiles.Count > 0)
                 {
-                    var messageBox = new Wpf.Ui.Controls.MessageBox()
+                    MessageBox messageBox = new Wpf.Ui.Controls.MessageBox()
                     {
                         Title = Loc.T("Move Backups"),
                         Content = Loc.T("Do you want to move your backups to this new folder?"),
@@ -320,12 +322,12 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void cmbStartPage_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selected = cmbStartPage.SelectedItem as ComboBoxItem;
+            ComboBoxItem? selected = cmbStartPage.SelectedItem as ComboBoxItem;
             if (selected == null)
             {
                 return;
             }
-            var startPage = selected.Tag.ToString();
+            string? startPage = selected.Tag.ToString();
             if (startPage == Properties.Settings.Default.StartPage)
             {
                 return;
@@ -337,8 +339,8 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             if (cmbSwitchLanguage.SelectedIndex > -1)
             {
-                var langs = Application.Current.Properties["langs"] as CultureInfo[];
-                var culture = langs[cmbSwitchLanguage.SelectedIndex];
+                CultureInfo[]? langs = Application.Current.Properties["langs"] as CultureInfo[];
+                CultureInfo culture = langs[cmbSwitchLanguage.SelectedIndex];
 
                 Thread.CurrentThread.CurrentCulture = culture;
                 WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = culture;
@@ -352,7 +354,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             if (Properties.Settings.Default.OnlyInactive == true)
             {
-                var mainWindow = Application.Current.MainWindow;
+                Window? mainWindow = Application.Current.MainWindow;
                 mainWindow.Opacity = 1;
                 WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UxMaterials.Mica);
             }

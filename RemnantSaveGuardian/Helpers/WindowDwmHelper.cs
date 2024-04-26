@@ -152,7 +152,7 @@ namespace RemnantSaveGuardian.Helpers
             if (window == null)
                 return;
 
-            var backgroundBrush = window.Resources["ApplicationBackgroundBrush"];
+            object? backgroundBrush = window.Resources["ApplicationBackgroundBrush"];
 
             // Manual fallback
             if (backgroundBrush is not SolidColorBrush)

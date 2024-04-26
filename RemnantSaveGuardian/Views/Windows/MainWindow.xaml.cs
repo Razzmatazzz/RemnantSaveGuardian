@@ -12,6 +12,7 @@ using Wpf.Ui.Controls;
 using Wpf.Ui.Controls.Interfaces;
 using Wpf.Ui.Mvvm.Contracts;
 using WPFLocalizeExtension.Engine;
+using MenuItem = Wpf.Ui.Controls.MenuItem;
 
 namespace RemnantSaveGuardian.Views.Windows
 {
@@ -46,7 +47,7 @@ namespace RemnantSaveGuardian.Views.Windows
 
             if (Properties.Settings.Default.EnableOpacity == true)
             {
-                var binding = new Binding("background");
+                Binding binding = new Binding("background");
                 binding.Mode = BindingMode.TwoWay;
                 SetBinding(BackgroundProperty, binding);
                 AllowsTransparency = true;
@@ -59,7 +60,7 @@ namespace RemnantSaveGuardian.Views.Windows
             {                
                 Logger.MessageLogged += Logger_MessageLogged;
 
-                var theme = Properties.Settings.Default.Theme;
+                string? theme = Properties.Settings.Default.Theme;
                 if (theme == "Light")
                 {
                     Wpf.Ui.Appearance.Theme.Apply(Wpf.Ui.Appearance.ThemeType.Light);
@@ -211,7 +212,7 @@ namespace RemnantSaveGuardian.Views.Windows
 
         private void BackupsPage_BackupSaveViewed(object? sender, BackupSaveViewedEventArgs e)
         {
-            var pageTag = $"world-analyzer-{e.SaveBackup.SaveDate.Ticks}";
+            string pageTag = $"world-analyzer-{e.SaveBackup.SaveDate.Ticks}";
             foreach (NavigationItem nav in ViewModel.NavigationItems)
             {
                 if (nav.PageTag == pageTag)
@@ -220,11 +221,11 @@ namespace RemnantSaveGuardian.Views.Windows
                     return;
                 }
             }
-            var viewM = Activator.CreateInstance(typeof(WorldAnalyzerViewModel)) as WorldAnalyzerViewModel;
+            WorldAnalyzerViewModel? viewM = Activator.CreateInstance(typeof(WorldAnalyzerViewModel)) as WorldAnalyzerViewModel;
             object[] parameters = { viewM, e.SaveBackup.SaveFolderPath };
-            var page = Activator.CreateInstance(typeof(WorldAnalyzerPage), parameters) as WorldAnalyzerPage;
+            WorldAnalyzerPage? page = Activator.CreateInstance(typeof(WorldAnalyzerPage), parameters) as WorldAnalyzerPage;
 
-            var navItem = new NavigationItem()
+            NavigationItem navItem = new NavigationItem()
             {
                 Content = $"{Loc.T("World Analyzer")} - {e.SaveBackup.Name}",
                 ToolTip = $"{Loc.T("World Analyzer")} - {e.SaveBackup.Name}",
@@ -233,7 +234,7 @@ namespace RemnantSaveGuardian.Views.Windows
                 PageType = typeof(WorldAnalyzerPage),
             };
             navItem.ContextMenu = new();
-            var menuItem = new Wpf.Ui.Controls.MenuItem()
+            MenuItem menuItem = new Wpf.Ui.Controls.MenuItem()
             {
                 Header = Loc.T("Close"),
                 Icon = new SymbolIcon() { Symbol = SymbolRegular.Prohibited24 },
@@ -265,9 +266,9 @@ namespace RemnantSaveGuardian.Views.Windows
 
         private void Logger_MessageLogged(object? sender, MessageLoggedEventArgs e)
         {
-            var appearance = ControlAppearance.Info;
-            var symbol = SymbolRegular.Info24;
-            var title = Loc.T("Info");
+            ControlAppearance appearance = ControlAppearance.Info;
+            SymbolRegular symbol = SymbolRegular.Info24;
+            string title = Loc.T("Info");
             if (e.LogType == LogType.Error)
             {
                 appearance = ControlAppearance.Danger;
@@ -376,7 +377,7 @@ namespace RemnantSaveGuardian.Views.Windows
             // Check if game is installed via Epic
             // Epic stores manifests for every installed game withing "C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests"
             // These "Manifests" are in json format, so if one of them is for Remnant, then Remnant is installed with epic
-            var epicManifestFolder = new DirectoryInfo(@"C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests");
+            DirectoryInfo epicManifestFolder = new DirectoryInfo(@"C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests");
             if (epicManifestFolder.Exists) // If Folder don't exist, epic is not installed
             {
                 foreach (FileInfo fi in epicManifestFolder.GetFiles("*.item"))

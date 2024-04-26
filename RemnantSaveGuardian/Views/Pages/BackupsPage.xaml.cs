@@ -12,6 +12,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Input;
 using Wpf.Ui.Common.Interfaces;
+using MessageBox = Wpf.Ui.Controls.MessageBox;
 
 namespace RemnantSaveGuardian.Views.Pages
 {
@@ -36,7 +37,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             get
             {
-                var activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder);
+                RemnantSave activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder);
                 DateTime saveDate = File.GetLastWriteTime(activeSave.SaveProfilePath);
                 for (int i = 0; i < _listBackups.Count; i++)
                 {
@@ -105,7 +106,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void MenuAnalyze_Click(object sender, RoutedEventArgs e)
         {
-            var backup = dataBackups.SelectedItem as SaveBackup;
+            SaveBackup? backup = dataBackups.SelectedItem as SaveBackup;
             if (backup == null)
             {
                 return;
@@ -115,7 +116,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void MenuOpenBackup_Click(object sender, RoutedEventArgs e)
         {
-            var backup = dataBackups.SelectedItem as SaveBackup;
+            SaveBackup? backup = dataBackups.SelectedItem as SaveBackup;
             if (backup == null)
             {
                 return;
@@ -152,7 +153,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void BtnStartGame_Click(object sender, RoutedEventArgs e)
         {
-            var gameDirPath = Properties.Settings.Default.GameFolder;
+            string? gameDirPath = Properties.Settings.Default.GameFolder;
             if (!Directory.Exists(gameDirPath))
             {
                 return;
@@ -195,7 +196,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void ContextBackups_ContextMenuOpening(object sender, ContextMenuEventArgs e)
         {
-            var save = dataBackups.SelectedItem as SaveBackup;
+            SaveBackup? save = dataBackups.SelectedItem as SaveBackup;
             if (save == null) {
                 return;
             }
@@ -203,7 +204,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void DataBackups_CellEditEnding(object? sender, DataGridCellEditEndingEventArgs e)
         {
-            var header = (LocalizedColumnHeader)e.Column.Header;
+            LocalizedColumnHeader? header = (LocalizedColumnHeader)e.Column.Header;
             if (header.Key == "Name" && e.EditAction == DataGridEditAction.Commit)
             {
                 SaveBackup sb = (SaveBackup)e.Row.Item;
@@ -216,8 +217,8 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void DataBackups_BeginningEdit(object? sender, DataGridBeginningEditEventArgs e)
         {
-            var header = (LocalizedColumnHeader)e.Column.Header;
-            var editableColumns = new List<string>() { 
+            LocalizedColumnHeader? header = (LocalizedColumnHeader)e.Column.Header;
+            List<string> editableColumns = new List<string>() { 
                 "Name",
                 "Keep"
             };
@@ -407,7 +408,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private bool BackupActive(SaveBackup saveBackup)
         {
-            var activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder, true);
+            RemnantSave activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder, true);
             if (DateTime.Compare(saveBackup.SaveDate, File.GetLastWriteTime(activeSave.SaveProfilePath)) == 0)
             {
                 return true;
@@ -419,7 +420,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             try
             {
-                var activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder, true);
+                RemnantSave activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder, true);
                 if (!activeSave.Valid)
                 {
                     Logger.Log("Active save is not valid; backup skipped.");
@@ -579,8 +580,8 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private DataGridTemplateColumn GeneratingColumn(string strHeader, bool bEditable)
         {
-            var stackPanelFactory = new FrameworkElementFactory(typeof(StackPanel));
-            var checkBox = new FrameworkElementFactory(typeof(CheckBox));
+            FrameworkElementFactory stackPanelFactory = new FrameworkElementFactory(typeof(StackPanel));
+            FrameworkElementFactory checkBox = new FrameworkElementFactory(typeof(CheckBox));
             
             checkBox.SetValue(HorizontalAlignmentProperty, HorizontalAlignment.Center);
             checkBox.SetBinding(ToggleButton.IsCheckedProperty,
@@ -601,11 +602,11 @@ namespace RemnantSaveGuardian.Views.Pages
             stackPanelFactory.SetValue(WidthProperty, (double)40);
             stackPanelFactory.AppendChild(checkBox);
 
-            var dataTemplate = new DataTemplate
+            DataTemplate dataTemplate = new DataTemplate
             {
                 VisualTree = stackPanelFactory
             };
-            var templateColumn = new DataGridTemplateColumn
+            DataGridTemplateColumn templateColumn = new DataGridTemplateColumn
             {
                 Header = strHeader,
                 CellTemplate = dataTemplate
@@ -615,7 +616,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void dataBackups_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            var allowColumns = new List<string>() { 
+            List<string> allowColumns = new List<string>() { 
                 "Name",
                 "SaveDate",
                 "Progression",
@@ -657,7 +658,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 return;
             }
 
-            var backup = dataBackups.SelectedItem as SaveBackup;
+            SaveBackup? backup = dataBackups.SelectedItem as SaveBackup;
             if (backup == null)
             {
                 Logger.Log(Loc.T("Choose a backup to restore from the list."), LogType.Error);
@@ -671,8 +672,8 @@ namespace RemnantSaveGuardian.Views.Pages
 
             SaveWatcher.Pause();
 
-            var saveDirPath = Properties.Settings.Default.SaveFolder;
-            var backupDirPath = Properties.Settings.Default.BackupFolder;
+            string? saveDirPath = Properties.Settings.Default.SaveFolder;
+            string? backupDirPath = Properties.Settings.Default.BackupFolder;
 
             DirectoryInfo di = new DirectoryInfo(saveDirPath);
             DirectoryInfo buDi = new DirectoryInfo(backupDirPath + "\\" + backup.SaveDate.Ticks);
@@ -728,10 +729,10 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void SaveFolderUnrecognizedFilesCheck()
         {
-            var invalidFiles = new List<string>();
+            List<string> invalidFiles = new List<string>();
             foreach (string file in Directory.GetFiles(Properties.Settings.Default.SaveFolder))
             {
-                var fileName = Path.GetFileName(file);
+                string fileName = Path.GetFileName(file);
                 if (!Regex.Match(fileName, @"^(profile|save_\d+)\.(sav|bak\d?|onl)|steam_autocloud.vdf$").Success)
                 {
                     if (fileName.EndsWith(".sav"))
@@ -748,12 +749,12 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void menuDelete_Click(object sender, RoutedEventArgs e)
         {
-            var backup = dataBackups.SelectedItem as SaveBackup;
+            SaveBackup? backup = dataBackups.SelectedItem as SaveBackup;
             if (backup == null)
             {
                 return;
             }
-            var messageBox = new Wpf.Ui.Controls.MessageBox();
+            MessageBox messageBox = new Wpf.Ui.Controls.MessageBox();
             messageBox.Title = Loc.T("Confirm Delete");
             messageBox.Content = new TextBlock() {
                 Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {
@@ -795,14 +796,14 @@ namespace RemnantSaveGuardian.Views.Pages
                 //Logger.Log(string.Join("\n", e.Data.GetFormats()));
                 return;
             }
-            var draggedFiles = ((string[])e.Data.GetData(DataFormats.FileDrop)).ToList<string>();
+            List<string> draggedFiles = ((string[])e.Data.GetData(DataFormats.FileDrop)).ToList<string>();
             string folder;
             FileAttributes attr = File.GetAttributes(draggedFiles[0]);
             if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
                 folder = draggedFiles[0];
             else
                 folder = Path.GetDirectoryName(draggedFiles[0]);
-            var files = Directory.GetFiles(folder);
+            string[] files = Directory.GetFiles(folder);
             if (!files.Any(file => file.EndsWith("profile.sav")))
             {
                 Logger.Error(Loc.T("No_profile_sav_found_warning"));
@@ -847,7 +848,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void RefreshBackups()
         {
-            var sorting = dataBackups.Items.SortDescriptions.First();
+            SortDescription sorting = dataBackups.Items.SortDescriptions.First();
             dataBackups.ItemsSource = null;
             dataBackups.ItemsSource = _listBackups;
             dataBackups.Items.SortDescriptions.Add(sorting);
