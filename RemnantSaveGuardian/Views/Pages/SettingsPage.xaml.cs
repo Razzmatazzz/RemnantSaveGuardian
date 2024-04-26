@@ -34,14 +34,7 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 //cmbMissingItemColor.DisplayMemberPath = "Content";
                 //cmbMissingItemColor.SelectedValuePath = "Tag";
-                if (Properties.Settings.Default.MissingItemColor == "Highlight")
-                {
-                    cmbMissingItemColor.SelectedIndex = 1;
-                }
-                else
-                {
-                    cmbMissingItemColor.SelectedIndex = 0;
-                }
+                cmbMissingItemColor.SelectedIndex = Properties.Settings.Default.MissingItemColor == "Highlight" ? 1 : 0;
 
                 foreach (ComboBoxItem item in cmbStartPage.Items)
                 {
@@ -51,18 +44,19 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                 }
 
-                CultureInfo[]? langs = Application.Current.Properties["langs"] as CultureInfo[];
+                CultureInfo[]? languages = Application.Current.Properties["langs"] as CultureInfo[];
 
-                cmbSwitchLanguage.ItemsSource = langs.Select(e => e.NativeName);
+                Debug.Assert(languages != null, nameof(languages) + " != null");
+                cmbSwitchLanguage.ItemsSource = languages.Select(e => e.NativeName);
                 if (Properties.Settings.Default.Language != "")
                 {
-                    cmbSwitchLanguage.SelectedItem = langs.First(e => Properties.Settings.Default.Language == e.Name).NativeName;
+                    cmbSwitchLanguage.SelectedItem = languages.First(e => Properties.Settings.Default.Language == e.Name).NativeName;
                 }
                 else
                 {
                     CultureInfo culture = Thread.CurrentThread.CurrentCulture;
 
-                    if (culture.Parent != null || culture.Name != "pt-BR")
+                    if (!string.IsNullOrEmpty(culture.Parent.Name)  || culture.Name != "pt-BR")
                         cmbSwitchLanguage.SelectedItem = culture.Parent.NativeName;
                     else
                         cmbSwitchLanguage.SelectedItem = culture.NativeName;
@@ -105,14 +99,17 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             if (e.PropertyName == "GameFolder")
             {
+                Debug.Assert(txtGameFolder.ContextMenu != null, "txtGameFolder.ContextMenu != null");
                 txtGameFolder.ContextMenu.IsEnabled = Directory.Exists(Properties.Settings.Default.GameFolder) && Properties.Settings.Default.GameFolder.Length > 0;
             }
             if (e.PropertyName == "SaveFolder")
             {
+                Debug.Assert(txtSaveFolder.ContextMenu != null, "txtSaveFolder.ContextMenu != null");
                 txtSaveFolder.ContextMenu.IsEnabled = Directory.Exists(Properties.Settings.Default.SaveFolder) && Properties.Settings.Default.SaveFolder.Length > 0;
             }
             if (e.PropertyName == "BackupFolder")
             {
+                Debug.Assert(txtBackupFolder.ContextMenu != null, "txtBackupFolder.ContextMenu != null");
                 txtBackupFolder.ContextMenu.IsEnabled = Directory.Exists(Properties.Settings.Default.BackupFolder) && Properties.Settings.Default.BackupFolder.Length > 0;
             }
             if (e.PropertyName == "EnableOpacity")
@@ -124,7 +121,8 @@ namespace RemnantSaveGuardian.Views.Pages
                 if (Properties.Settings.Default.EnableOpacity == false) { return; }
                 float value = Properties.Settings.Default.Opacity;
                 Window? mainWindow = Application.Current.MainWindow;
-                if (value == 1 || (e.PropertyName == "OnlyInactive" && Properties.Settings.Default.OnlyInactive == true))
+                Debug.Assert(mainWindow != null, nameof(mainWindow) + " != null");
+                if (Math.Abs(value - 1) < 0.001 || (e.PropertyName == "OnlyInactive" && Properties.Settings.Default.OnlyInactive))
                 {
                     WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UxMaterials.Mica);
                 }
@@ -132,7 +130,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UxMaterials.None);
                 }
-                if (e.PropertyName == "OnlyInactive" && Properties.Settings.Default.OnlyInactive == true)
+                if (e.PropertyName == "OnlyInactive" && Properties.Settings.Default.OnlyInactive)
                 {
                     mainWindow.Opacity = 1;
                 }
@@ -309,7 +307,7 @@ namespace RemnantSaveGuardian.Views.Pages
             Properties.Settings.Default.SaveFolder = folderName;
         }
 
-        private void CmbMissingItemColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CmbMissingItemColor_SelectionChanged(object sender, SelectionChangedEventArgs? e)
         {
             Properties.Settings.Default.MissingItemColor = ((ComboBoxItem)cmbMissingItemColor.SelectedItem).Tag.ToString();
         }
@@ -324,7 +322,7 @@ namespace RemnantSaveGuardian.Views.Pages
             Process.Start("explorer.exe", @$"{path}\");
         }
 
-        private void CmbStartPage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CmbStartPage_SelectionChanged(object sender, SelectionChangedEventArgs? e)
         {
             if (cmbStartPage.SelectedItem is not ComboBoxItem selected)
             {
@@ -338,16 +336,19 @@ namespace RemnantSaveGuardian.Views.Pages
             Properties.Settings.Default.StartPage = startPage;
         }
 
-        private void CmbSwitchLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CmbSwitchLanguage_SelectionChanged(object sender, SelectionChangedEventArgs? e)
         {
             if (cmbSwitchLanguage.SelectedIndex > -1)
             {
                 CultureInfo[]? langs = Application.Current.Properties["langs"] as CultureInfo[];
+                Debug.Assert(langs != null, nameof(langs) + " != null");
                 CultureInfo culture = langs[cmbSwitchLanguage.SelectedIndex];
 
                 Thread.CurrentThread.CurrentCulture = culture;
                 WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = culture;
-                Application.Current.MainWindow.Language = System.Windows.Markup.XmlLanguage.GetLanguage(culture.IetfLanguageTag);
+                Window? mainWindow = Application.Current.MainWindow;
+                Debug.Assert(mainWindow != null, nameof(mainWindow) + " != null");
+                mainWindow.Language = System.Windows.Markup.XmlLanguage.GetLanguage(culture.IetfLanguageTag);
                 Properties.Settings.Default.Language = langs[cmbSwitchLanguage.SelectedIndex].Name;
                 Logger.Success(Loc.T("Language_change_notice_{chosenLanguage}", new() { { "chosenLanguage", culture.DisplayName } }));
             }
@@ -355,9 +356,10 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void SldOpacitySlider_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
         {
-            if (Properties.Settings.Default.OnlyInactive == true)
+            if (Properties.Settings.Default.OnlyInactive)
             {
                 Window? mainWindow = Application.Current.MainWindow;
+                Debug.Assert(mainWindow != null, nameof(mainWindow) + " != null");
                 mainWindow.Opacity = 1;
                 WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UxMaterials.Mica);
             }
