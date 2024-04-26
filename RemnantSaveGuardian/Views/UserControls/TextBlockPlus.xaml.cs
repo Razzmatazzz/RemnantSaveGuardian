@@ -96,7 +96,7 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                var textBlock = this.AssociatedObject as TextBlock;
+                var textBlock = AssociatedObject as TextBlock;
                 if (textBlock != null)
                 {
                     var scrollViewer = textBlock.Parent as ScrollViewer;
@@ -118,7 +118,7 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                var textBlock = this.AssociatedObject as TextBlock;
+                var textBlock = AssociatedObject as TextBlock;
                 if (textBlock != null)
                 {
                     var scrollViewer = textBlock.Parent as ScrollViewer;
@@ -140,7 +140,7 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                var textBlock = this.AssociatedObject as TextBlock;
+                var textBlock = AssociatedObject as TextBlock;
                 if (textBlock != null && e.LeftButton == MouseButtonState.Pressed)
                 {
                     var scrollViewer = textBlock.Parent as ScrollViewer;
@@ -165,7 +165,7 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             if (AssociatedObject is not null)
             {
-                var textBlock = this.AssociatedObject as TextBlock;
+                var textBlock = AssociatedObject as TextBlock;
                 if (textBlock != null)
                 {
                     var scrollViewer = textBlock.Parent as ScrollViewer;

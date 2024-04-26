@@ -28,17 +28,17 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return this.saveData.name;
+                return saveData.name;
             }
             set
             {
                 if (value.Equals(""))
                 {
-                    this.saveData.name = this.saveData.date.Ticks.ToString();
+                    saveData.name = saveData.date.Ticks.ToString();
                 }
                 else
                 {
-                    this.saveData.name = value;
+                    saveData.name = value;
                 }
                 //OnUpdated(new UpdatedEventArgs("Name"));
             }
@@ -47,11 +47,11 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return this.saveData.date;
+                return saveData.date;
             }
             set
             {
-                this.saveData.date = value;
+                saveData.date = value;
                 //OnUpdated(new UpdatedEventArgs("SaveDate"));
             }
         }
@@ -66,13 +66,13 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return this.saveData.keep;
+                return saveData.keep;
             }
             set
             {
-                if (this.saveData.keep != value)
+                if (saveData.keep != value)
                 {
-                    this.saveData.keep = value;
+                    saveData.keep = value;
                     OnUpdated(new UpdatedEventArgs("Keep"));
                 }
             }
@@ -81,11 +81,11 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return this.saveData.active;
+                return saveData.active;
             }
             set
             {
-                this.saveData.active = value;
+                saveData.active = value;
                 //OnUpdated(new UpdatedEventArgs("Active"));
             }
         }
@@ -103,11 +103,11 @@ namespace RemnantSaveGuardian
         {
             this.savePath = savePath;
 
-            this.progression = Analyzer.GetProfileStringCombined(this.savePath);
-            this.saveData = new SaveData();
-            this.saveData.name = this.SaveDateTime.Ticks.ToString();
-            this.saveData.date = this.SaveDateTime;
-            this.saveData.keep = false;
+            progression = Analyzer.GetProfileStringCombined(this.savePath);
+            saveData = new SaveData();
+            saveData.name = SaveDateTime.Ticks.ToString();
+            saveData.date = SaveDateTime;
+            saveData.keep = false;
         }
 
         /*public void setProgression(List<List<string>> allItemList)
@@ -134,7 +134,7 @@ namespace RemnantSaveGuardian
         {
             if (!inTxn)
             {
-                this.backupData = saveData;
+                backupData = saveData;
                 inTxn = true;
             }
         }
@@ -143,7 +143,7 @@ namespace RemnantSaveGuardian
         {
             if (inTxn)
             {
-                this.saveData = backupData;
+                saveData = backupData;
                 inTxn = false;
             }
         }

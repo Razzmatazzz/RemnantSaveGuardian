@@ -30,16 +30,16 @@ namespace RemnantSaveGuardian
 
             if (File.Exists(path + @"\profile.sav"))
             {
-                this.saveType = RemnantSaveType.Normal;
-                this.profileFile = "profile.sav";
+                saveType = RemnantSaveType.Normal;
+                profileFile = "profile.sav";
             }
             else
             {
                 var winFiles = Directory.GetFiles(path, "container.*");
                 if (winFiles.Length > 0)
                 {
-                    this.winSave = new WindowsSave(winFiles[0]);
-                    this.saveType = RemnantSaveType.WindowsStore;
+                    winSave = new WindowsSave(winFiles[0]);
+                    saveType = RemnantSaveType.WindowsStore;
                     profileFile = winSave.Profile;
                 }
                 else
@@ -47,7 +47,7 @@ namespace RemnantSaveGuardian
                     throw new Exception(path + " is not a valid save.");
                 }
             }
-            this.savePath = path;
+            savePath = path;
             if (!skipUpdate)
             {
                 UpdateCharacters();
@@ -58,7 +58,7 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return this.savePath;
+                return savePath;
             }
         }
 
@@ -66,19 +66,19 @@ namespace RemnantSaveGuardian
         {
             get
             {
-                return this.savePath + $@"\{this.profileFile}";
+                return savePath + $@"\{profileFile}";
             }
         }
         public RemnantSaveType SaveType
         {
-            get { return this.saveType; }
+            get { return saveType; }
         }
 
         public bool Valid
         {
             get
             {
-                return this.saveType == RemnantSaveType.Normal || this.winSave.Valid;
+                return saveType == RemnantSaveType.Normal || winSave.Valid;
             }
         }
 

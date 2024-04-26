@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Input;
 using Wpf.Ui.Common.Interfaces;
@@ -102,7 +103,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void MenuAnalyze_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void MenuAnalyze_Click(object sender, RoutedEventArgs e)
         {
             var backup = dataBackups.SelectedItem as SaveBackup;
             if (backup == null)
@@ -112,7 +113,7 @@ namespace RemnantSaveGuardian.Views.Pages
             BackupSaveViewed?.Invoke(this, new() { SaveBackup = backup });
         }
 
-        private void MenuOpenBackup_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void MenuOpenBackup_Click(object sender, RoutedEventArgs e)
         {
             var backup = dataBackups.SelectedItem as SaveBackup;
             if (backup == null)
@@ -149,7 +150,7 @@ namespace RemnantSaveGuardian.Views.Pages
         //    messageBox.ShowDialog();
         //}
 
-        private void BtnStartGame_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void BtnStartGame_Click(object sender, RoutedEventArgs e)
         {
             var gameDirPath = Properties.Settings.Default.GameFolder;
             if (!Directory.Exists(gameDirPath))
@@ -167,29 +168,29 @@ namespace RemnantSaveGuardian.Views.Pages
             Process.Start((remnantExe64.Exists && Environment.Is64BitOperatingSystem) ? remnantExe64.FullName : remnantExe.FullName);
         }
 
-        private void MenuRestoreWorlds_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void MenuRestoreWorlds_Click(object sender, RoutedEventArgs e)
         {
             RestoreBackup("World");
         }
 
-        private void MenuRestoreCharacters_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void MenuRestoreCharacters_Click(object sender, RoutedEventArgs e)
         {
             RestoreBackup("Character");
         }
 
-        private void MenuRestoreAll_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void MenuRestoreAll_Click(object sender, RoutedEventArgs e)
         {
             RestoreBackup();
         }
 
-        private void ContextBackups_Opened(object sender, System.Windows.RoutedEventArgs e)
+        private void ContextBackups_Opened(object sender, RoutedEventArgs e)
         {
             if (dataBackups.SelectedItem == null)
             {
-                contextBackups.Visibility = System.Windows.Visibility.Collapsed;
+                contextBackups.Visibility = Visibility.Collapsed;
                 return;
             }
-            contextBackups.Visibility = System.Windows.Visibility.Visible;
+            contextBackups.Visibility = Visibility.Visible;
         }
 
         private void ContextBackups_ContextMenuOpening(object sender, ContextMenuEventArgs e)
@@ -200,7 +201,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void DataBackups_CellEditEnding(object? sender, System.Windows.Controls.DataGridCellEditEndingEventArgs e)
+        private void DataBackups_CellEditEnding(object? sender, DataGridCellEditEndingEventArgs e)
         {
             var header = (LocalizedColumnHeader)e.Column.Header;
             if (header.Key == "Name" && e.EditAction == DataGridEditAction.Commit)
@@ -213,7 +214,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void DataBackups_BeginningEdit(object? sender, System.Windows.Controls.DataGridBeginningEditEventArgs e)
+        private void DataBackups_BeginningEdit(object? sender, DataGridBeginningEditEventArgs e)
         {
             var header = (LocalizedColumnHeader)e.Column.Header;
             var editableColumns = new List<string>() { 
@@ -223,19 +224,19 @@ namespace RemnantSaveGuardian.Views.Pages
             if (!editableColumns.Contains(header.Key)) e.Cancel = true;
         }
 
-        private void BtnOpenBackupsFolder_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void BtnOpenBackupsFolder_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("explorer.exe", @$"{Properties.Settings.Default.BackupFolder}\");
         }
 
-        private void BtnBackup_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void BtnBackup_Click(object sender, RoutedEventArgs e)
         {
             doBackup();
         }
 
         private void SaveWatcher_SaveUpdated(object? sender, EventArgs e)
         {
-            this.Dispatcher.Invoke(() =>
+            Dispatcher.Invoke(() =>
             {
                 try
                 {
@@ -282,7 +283,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             gameProcess.EnableRaisingEvents = true;
                             gameProcess.Exited += (s, eargs) =>
                             {
-                                this.Dispatcher.Invoke(() =>
+                                Dispatcher.Invoke(() =>
                                 {
                                     btnStartGame.IsEnabled = true;
                                     doBackup();
@@ -300,9 +301,9 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void ResetActiveBackupStatus()
         {
-            this.Dispatcher.Invoke(() =>
+            Dispatcher.Invoke(() =>
             {
-                this.ActiveSaveIsBackedUp = false;
+                ActiveSaveIsBackedUp = false;
 
                 foreach (SaveBackup backup in listBackups)
                 {
@@ -351,7 +352,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     list.Add(backup);
                 }
             }
-            this.Dispatcher.Invoke(() =>
+            Dispatcher.Invoke(() =>
             {
                 listBackups.Clear();
                 listBackups = list;
@@ -476,7 +477,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
                 checkBackupLimit();
                 refreshBackups();
-                this.ActiveSaveIsBackedUp = true;
+                ActiveSaveIsBackedUp = true;
                 Logger.Success($"{Loc.T("Backup completed")} ({saveDate})!");
                 saveFolderUnrecognizedFilesCheck();
             }
@@ -581,8 +582,8 @@ namespace RemnantSaveGuardian.Views.Pages
             var stackPanelFactory = new FrameworkElementFactory(typeof(StackPanel));
             var checkBox = new FrameworkElementFactory(typeof(CheckBox));
             
-            checkBox.SetValue(CheckBox.HorizontalAlignmentProperty, HorizontalAlignment.Center);
-            checkBox.SetBinding(CheckBox.IsCheckedProperty,
+            checkBox.SetValue(HorizontalAlignmentProperty, HorizontalAlignment.Center);
+            checkBox.SetBinding(ToggleButton.IsCheckedProperty,
                 new Binding()
                 {
                     Path = new PropertyPath(strHeader),
@@ -593,11 +594,11 @@ namespace RemnantSaveGuardian.Views.Pages
 
             if (bEditable == false)
             {
-                checkBox.SetValue(CheckBox.CursorProperty, Cursors.No);
-                checkBox.AddHandler(CheckBox.PreviewMouseDownEvent, new MouseButtonEventHandler(CheckBox_PreviewMouseDownEvent));
+                checkBox.SetValue(CursorProperty, Cursors.No);
+                checkBox.AddHandler(PreviewMouseDownEvent, new MouseButtonEventHandler(CheckBox_PreviewMouseDownEvent));
             }
 
-            stackPanelFactory.SetValue(StackPanel.WidthProperty, (double)40);
+            stackPanelFactory.SetValue(WidthProperty, (double)40);
             stackPanelFactory.AppendChild(checkBox);
 
             var dataTemplate = new DataTemplate
@@ -612,7 +613,7 @@ namespace RemnantSaveGuardian.Views.Pages
             return templateColumn;
         }
 
-        private void dataBackups_AutoGeneratingColumn(object sender, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs e)
+        private void dataBackups_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             var allowColumns = new List<string>() { 
                 "Name",
@@ -745,7 +746,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void menuDelete_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void menuDelete_Click(object sender, RoutedEventArgs e)
         {
             var backup = dataBackups.SelectedItem as SaveBackup;
             if (backup == null)
@@ -757,7 +758,7 @@ namespace RemnantSaveGuardian.Views.Pages
             messageBox.Content = new TextBlock() {
                 Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {
                     { "backupName", backup.Name } })+$"\n{Loc.T("Characters")}: {backup.Progression}\n{Loc.T("Date")}: {backup.SaveDate.ToString()}", 
-                TextWrapping = System.Windows.TextWrapping.WrapWithOverflow 
+                TextWrapping = TextWrapping.WrapWithOverflow 
             };
             messageBox.ButtonLeftName = Loc.T("Delete");
             messageBox.ButtonLeftClick += (send, updatedEvent) => {
@@ -787,14 +788,14 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void dataBackups_Drop(object sender, System.Windows.DragEventArgs e)
+        private void dataBackups_Drop(object sender, DragEventArgs e)
         {
-            if (!e.Data.GetDataPresent(System.Windows.DataFormats.FileDrop))
+            if (!e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 //Logger.Log(string.Join("\n", e.Data.GetFormats()));
                 return;
             }
-            var draggedFiles = ((string[])e.Data.GetData(System.Windows.DataFormats.FileDrop)).ToList<string>();
+            var draggedFiles = ((string[])e.Data.GetData(DataFormats.FileDrop)).ToList<string>();
             string folder;
             FileAttributes attr = File.GetAttributes(draggedFiles[0]);
             if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
@@ -826,7 +827,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     continue;
                 }
-                File.Copy(file, $@"{backupFolder}\{System.IO.Path.GetFileName(file)}", true);
+                File.Copy(file, $@"{backupFolder}\{Path.GetFileName(file)}", true);
             }
             Dictionary<long, string> backupNames = getSavedBackupNames();
             Dictionary<long, bool> backupKeeps = getSavedBackupKeeps();
@@ -860,7 +861,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void Default_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
             if(e.PropertyName == "Language")
                 dataBackups.Items.Refresh();

@@ -187,7 +187,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void Default_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "ShowPossibleItems" 
                 || e.PropertyName == "MissingItemColor"
@@ -237,7 +237,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private void ListView_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             var eBack = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
-            eBack.RoutedEvent = UIElement.MouseWheelEvent;
+            eBack.RoutedEvent = MouseWheelEvent;
 
             var src = e.Source as ListView;
             var ui = src.Parent as UIElement;
@@ -258,10 +258,10 @@ namespace RemnantSaveGuardian.Views.Pages
             stackPanelFactory.SetValue(StackPanel.OrientationProperty, Orientation.Vertical);
             var listView = new FrameworkElementFactory(typeof(ListView));
 
-            Style style = (Style)this.Resources[strStyle];
+            Style style = (Style)Resources[strStyle];
             listView.SetValue(StyleProperty, style);
-            listView.SetValue(ContextMenuProperty, this.Resources["CommonContextMenu"]);
-            listView.SetBinding(ListView.ItemsSourceProperty,
+            listView.SetValue(ContextMenuProperty, Resources["CommonContextMenu"]);
+            listView.SetBinding(ItemsControl.ItemsSourceProperty,
                 new Binding()
                 {
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
@@ -541,7 +541,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void treeMissingItems_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void treeMissingItems_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var item = sender as TreeViewItem;
             if (item != null)
@@ -775,7 +775,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         PropertyChagedEventArgs ev = new PropertyChagedEventArgs("IsExpanded", _isexpanded, value);
                         if (Expanded != null)
                         {
-                            this.Expanded(this, ev);
+                            Expanded(this, ev);
                         }
                     }
                 }
@@ -787,8 +787,8 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
             {
-                if (this.PropertyChanged != null)
-                    this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
             public int CompareTo(TreeListClass other)
             {

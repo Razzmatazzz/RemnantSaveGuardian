@@ -59,7 +59,7 @@ namespace RemnantSaveGuardian
                                 }
                             }
                         ) + "\n",
-                        TextWrapping = System.Windows.TextWrapping.WrapWithOverflow,
+                        TextWrapping = TextWrapping.WrapWithOverflow,
                     };
                     txtBlock.Inlines.Add(hyperLink);
                     messageBox.Content = txtBlock;

@@ -98,7 +98,7 @@ namespace RemnantSaveGuardian
         {
             foreach (var kvp in source)
             {
-                this.Add(kvp.Key, kvp.Value);
+                Add(kvp.Key, kvp.Value);
             }
         }
         public LocalizationOptions() { }

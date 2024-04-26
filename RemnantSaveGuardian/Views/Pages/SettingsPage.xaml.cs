@@ -273,7 +273,7 @@ namespace RemnantSaveGuardian.Views.Pages
             Properties.Settings.Default.GameFolder = folderName;
         }
 
-        private void BtnSaveFolder_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void BtnSaveFolder_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             openFolderDialog.SelectedPath = Properties.Settings.Default.SaveFolder;

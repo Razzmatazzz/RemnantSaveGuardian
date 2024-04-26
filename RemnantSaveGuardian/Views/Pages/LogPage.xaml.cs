@@ -54,7 +54,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     infoBar.Severity = InfoBarSeverity.Success;
                 }
                 infoBar.ContextMenu = new System.Windows.Controls.ContextMenu();
-                var menuCopyMessage = new Wpf.Ui.Controls.MenuItem();
+                var menuCopyMessage = new MenuItem();
                 menuCopyMessage.Header = Loc.T("Copy");
                 menuCopyMessage.SymbolIcon = Wpf.Ui.Common.SymbolRegular.Copy24;
                 menuCopyMessage.Click += (s, e) =>

@@ -20,12 +20,12 @@ namespace RemnantSaveGuardian.Views.Windows
     /// </summary>
     public partial class MainWindow : INavigationWindow
     {
-        public ViewModels.MainWindowViewModel ViewModel
+        public MainWindowViewModel ViewModel
         {
             get;
         }
 
-        public MainWindow(ViewModels.MainWindowViewModel viewModel, IPageService pageService, INavigationService navigationService)
+        public MainWindow(MainWindowViewModel viewModel, IPageService pageService, INavigationService navigationService)
         {
             ViewModel = viewModel;
             DataContext = this;
@@ -42,16 +42,16 @@ namespace RemnantSaveGuardian.Views.Windows
 
             navigationService.SetNavigationControl(RootNavigation);
 
-            this.Topmost = Properties.Settings.Default.TopMost;
+            Topmost = Properties.Settings.Default.TopMost;
 
             if (Properties.Settings.Default.EnableOpacity == true)
             {
                 var binding = new Binding("background");
                 binding.Mode = BindingMode.TwoWay;
-                this.SetBinding(BackgroundProperty, binding);
-                this.AllowsTransparency = true;
-                this.WindowStyle = WindowStyle.None;
-                this.ResizeMode = ResizeMode.CanMinimize;
+                SetBinding(BackgroundProperty, binding);
+                AllowsTransparency = true;
+                WindowStyle = WindowStyle.None;
+                ResizeMode = ResizeMode.CanMinimize;
                 WindowDwmHelper.RestoreBackground(this);
             }
 
@@ -144,7 +144,7 @@ namespace RemnantSaveGuardian.Views.Windows
             else
             {
                 WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UXMaterials.None);
-                this.Opacity = Properties.Settings.Default.Opacity;
+                Opacity = Properties.Settings.Default.Opacity;
             }
         }
         protected override void OnActivated(EventArgs e)
@@ -162,7 +162,7 @@ namespace RemnantSaveGuardian.Views.Windows
             if (Properties.Settings.Default.OnlyInactive == true)
             {
                 WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UXMaterials.Mica);
-                this.Opacity = 1;
+                Opacity = 1;
             }
         }
         protected override void OnDeactivated(EventArgs e)
@@ -181,7 +181,7 @@ namespace RemnantSaveGuardian.Views.Windows
             if (Properties.Settings.Default.OnlyInactive == true && Properties.Settings.Default.Opacity < 1)
             {
                 WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UXMaterials.None);
-                this.Opacity = Properties.Settings.Default.Opacity;
+                Opacity = Properties.Settings.Default.Opacity;
             }
         }
         private void UpdateCheck_NewVersion(object? sender, NewVersionEventArgs e)
@@ -409,7 +409,7 @@ namespace RemnantSaveGuardian.Views.Windows
 
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Topmost = Properties.Settings.Default.TopMost;
+            Topmost = Properties.Settings.Default.TopMost;
         }
     }
 }
