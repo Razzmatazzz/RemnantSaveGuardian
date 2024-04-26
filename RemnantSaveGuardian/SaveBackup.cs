@@ -1,7 +1,6 @@
 using System;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
 using lib.remnant2.analyzer;
 
 namespace RemnantSaveGuardian

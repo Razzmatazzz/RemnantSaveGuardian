@@ -8,7 +8,6 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Common.Interfaces;
-using RemnantSaveGuardian.Views.Windows;
 using RemnantSaveGuardian.Helpers;
 
 namespace RemnantSaveGuardian.Views.Pages
