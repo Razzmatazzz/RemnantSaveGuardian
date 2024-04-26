@@ -76,8 +76,7 @@ namespace RemnantSaveGuardian.ViewModels
 
             TrayMenuItems = new ObservableCollection<MenuItem>
             {
-                new MenuItem
-                {
+                new() {
                     Header = Loc.T("Home"),
                     Tag = "tray_home"
                 }

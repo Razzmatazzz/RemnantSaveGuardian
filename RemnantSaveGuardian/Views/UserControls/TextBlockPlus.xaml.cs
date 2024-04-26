@@ -63,8 +63,8 @@ namespace RemnantSaveGuardian.Views.UserControls
         public static readonly DependencyProperty RollbackSpeedProperty = DependencyProperty.Register("RollbackSpeed", typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(1000));
 
         private TextBlock? _textBlock;
-        private Storyboard _storyBoard = new Storyboard();
-        private DoubleAnimation _animation = new DoubleAnimation();
+        private Storyboard _storyBoard = new();
+        private DoubleAnimation _animation = new();
 
         protected override void OnAttached()
         {
@@ -154,8 +154,10 @@ namespace RemnantSaveGuardian.Views.UserControls
                 } else if (e.RightButton == MouseButtonState.Pressed) {
                     button = MouseButton.Right;
                 }
-                MouseButtonEventArgs eBack = new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, button);
-                eBack.RoutedEvent = UIElement.MouseDownEvent;
+                MouseButtonEventArgs eBack = new(e.MouseDevice, e.Timestamp, button)
+                {
+                    RoutedEvent = UIElement.MouseDownEvent
+                };
 
                 TextBlockPlus? ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
                 ui.RaiseEvent(eBack);
@@ -182,8 +184,10 @@ namespace RemnantSaveGuardian.Views.UserControls
                     button = MouseButton.Right;
                 }
 
-                MouseButtonEventArgs eBack = new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, button);
-                eBack.RoutedEvent = UIElement.MouseUpEvent;
+                MouseButtonEventArgs eBack = new(e.MouseDevice, e.Timestamp, button)
+                {
+                    RoutedEvent = UIElement.MouseUpEvent
+                };
 
                 TextBlockPlus? ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
                 ui.RaiseEvent(eBack);
@@ -193,8 +197,10 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             e.Handled = true;
 
-            MouseWheelEventArgs eBack = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
-            eBack.RoutedEvent = UIElement.MouseWheelEvent;
+            MouseWheelEventArgs eBack = new(e.MouseDevice, e.Timestamp, e.Delta)
+            {
+                RoutedEvent = UIElement.MouseWheelEvent
+            };
 
             TextBlockPlus? ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
             ui.RaiseEvent(eBack);

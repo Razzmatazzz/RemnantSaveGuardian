@@ -183,10 +183,12 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void BtnBackupFolder_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            openFolderDialog.SelectedPath = Properties.Settings.Default.BackupFolder;
-            openFolderDialog.Description = Loc.T("Backup Folder");
-            openFolderDialog.UseDescriptionForTitle = true;
+            System.Windows.Forms.FolderBrowserDialog openFolderDialog = new()
+            {
+                SelectedPath = Properties.Settings.Default.BackupFolder,
+                Description = Loc.T("Backup Folder"),
+                UseDescriptionForTitle = true
+            };
             System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
             if (result != System.Windows.Forms.DialogResult.OK)
             {
@@ -207,7 +209,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 List<String> backupFiles = Directory.GetDirectories(Properties.Settings.Default.BackupFolder).ToList();
                 if (backupFiles.Count > 0)
                 {
-                    MessageBox messageBox = new MessageBox()
+                    MessageBox messageBox = new()
                     {
                         Title = Loc.T("Move Backups"),
                         Content = Loc.T("Do you want to move your backups to this new folder?"),
@@ -228,7 +230,7 @@ namespace RemnantSaveGuardian.Views.Pages
                                 continue;
                             }
                             string subFolderName = Path.GetFileName(file);
-                            DirectoryInfo currentBackupFolder = new DirectoryInfo(file);
+                            DirectoryInfo currentBackupFolder = new(file);
                             DirectoryInfo newBackupFolder = Directory.CreateDirectory(Path.Combine(folderName, subFolderName));
 
                             foreach (FileInfo fileInfo in currentBackupFolder.GetFiles())
@@ -252,10 +254,12 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void BtnGameFolder_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            openFolderDialog.SelectedPath = Properties.Settings.Default.GameFolder;
-            openFolderDialog.Description = Loc.T("Game Folder");
-            openFolderDialog.UseDescriptionForTitle = true;
+            System.Windows.Forms.FolderBrowserDialog openFolderDialog = new()
+            {
+                SelectedPath = Properties.Settings.Default.GameFolder,
+                Description = Loc.T("Game Folder"),
+                UseDescriptionForTitle = true
+            };
             System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
             if (result != System.Windows.Forms.DialogResult.OK)
             {
@@ -277,10 +281,12 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void BtnSaveFolder_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            openFolderDialog.SelectedPath = Properties.Settings.Default.SaveFolder;
-            openFolderDialog.Description = Loc.T("Save Folder");
-            openFolderDialog.UseDescriptionForTitle = true;
+            System.Windows.Forms.FolderBrowserDialog openFolderDialog = new()
+            {
+                SelectedPath = Properties.Settings.Default.SaveFolder,
+                Description = Loc.T("Save Folder"),
+                UseDescriptionForTitle = true
+            };
             System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
             if (result != System.Windows.Forms.DialogResult.OK)
             {

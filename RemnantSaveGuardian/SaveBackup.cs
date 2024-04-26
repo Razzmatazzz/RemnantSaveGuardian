@@ -104,10 +104,12 @@ namespace RemnantSaveGuardian
             _savePath = savePath;
 
             _progression = Analyzer.GetProfileStringCombined(_savePath);
-            _saveData = new SaveData();
-            _saveData.Name = SaveDateTime.Ticks.ToString();
-            _saveData.Date = SaveDateTime;
-            _saveData.Keep = false;
+            _saveData = new SaveData
+            {
+                Name = SaveDateTime.Ticks.ToString(),
+                Date = SaveDateTime,
+                Keep = false
+            };
         }
 
         /*public void setProgression(List<List<string>> allItemList)

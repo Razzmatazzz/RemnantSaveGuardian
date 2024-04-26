@@ -47,8 +47,10 @@ namespace RemnantSaveGuardian.Views.Windows
 
             if (Properties.Settings.Default.EnableOpacity == true)
             {
-                Binding binding = new Binding("background");
-                binding.Mode = BindingMode.TwoWay;
+                Binding binding = new("background")
+                {
+                    Mode = BindingMode.TwoWay
+                };
                 SetBinding(BackgroundProperty, binding);
                 AllowsTransparency = true;
                 WindowStyle = WindowStyle.None;
@@ -225,16 +227,16 @@ namespace RemnantSaveGuardian.Views.Windows
             object[] parameters = { viewM, e.SaveBackup.SaveFolderPath };
             WorldAnalyzerPage? page = Activator.CreateInstance(typeof(WorldAnalyzerPage), parameters) as WorldAnalyzerPage;
 
-            NavigationItem navItem = new NavigationItem()
+            NavigationItem navItem = new()
             {
                 Content = $"{Loc.T("World Analyzer")} - {e.SaveBackup.Name}",
                 ToolTip = $"{Loc.T("World Analyzer")} - {e.SaveBackup.Name}",
                 PageTag = pageTag,
                 Icon = SymbolRegular.GlobeClock24,
                 PageType = typeof(WorldAnalyzerPage),
+                ContextMenu = new()
             };
-            navItem.ContextMenu = new();
-            MenuItem menuItem = new MenuItem()
+            MenuItem menuItem = new()
             {
                 Header = Loc.T("Close"),
                 Icon = new SymbolIcon() { Symbol = SymbolRegular.Prohibited24 },
@@ -345,10 +347,10 @@ namespace RemnantSaveGuardian.Views.Windows
                 {
                     Microsoft.Win32.RegistryKey steamRegKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Valve\Steam", false);
                     string steamInstallPath = steamRegKey?.GetValue("SteamPath") as string; // Get install path for steam
-                    DirectoryInfo steamInstallDir = new DirectoryInfo(steamInstallPath);
+                    DirectoryInfo steamInstallDir = new(steamInstallPath);
                     if (steamInstallDir.Exists)
                     {
-                        FileInfo libraryFolders = new FileInfo(@$"{steamInstallDir.FullName}\steamapps\libraryfolders.vdf");
+                        FileInfo libraryFolders = new(@$"{steamInstallDir.FullName}\steamapps\libraryfolders.vdf");
                         // Find Steam-Library, remnant is installed in
                         //
                         string[] libraryFolderContent = File.ReadAllLines(libraryFolders.FullName);
@@ -377,7 +379,7 @@ namespace RemnantSaveGuardian.Views.Windows
             // Check if game is installed via Epic
             // Epic stores manifests for every installed game withing "C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests"
             // These "Manifests" are in json format, so if one of them is for Remnant, then Remnant is installed with epic
-            DirectoryInfo epicManifestFolder = new DirectoryInfo(@"C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests");
+            DirectoryInfo epicManifestFolder = new(@"C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests");
             if (epicManifestFolder.Exists) // If Folder don't exist, epic is not installed
             {
                 foreach (FileInfo fi in epicManifestFolder.GetFiles("*.item"))

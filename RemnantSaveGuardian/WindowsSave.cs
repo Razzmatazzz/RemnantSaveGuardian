@@ -21,7 +21,7 @@ namespace RemnantSaveGuardian
             byte[] byteBuffer = File.ReadAllBytes(Container);
             byte[] profileBytes = new byte[16];
             Array.Copy(byteBuffer, offset, profileBytes, 0, 16);
-            Guid profileGuid = new Guid(profileBytes);
+            Guid profileGuid = new(profileBytes);
             Profile = profileGuid.ToString().ToUpper().Replace("-", "");
             _isValid = File.Exists($@"{folderPath}\{Profile}");
             offset += 160;
@@ -29,7 +29,7 @@ namespace RemnantSaveGuardian
             {
                 byte[] worldBytes = new byte[16];
                 Array.Copy(byteBuffer, offset, worldBytes, 0, 16);
-                Guid worldGuid = new Guid(worldBytes);
+                Guid worldGuid = new(worldBytes);
                 Worlds.Add(folderPath + "\\" + worldGuid.ToString().ToUpper().Replace("-", ""));
                 offset += 160;
             }

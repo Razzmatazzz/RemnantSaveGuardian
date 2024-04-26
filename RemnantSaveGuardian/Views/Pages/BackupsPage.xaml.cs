@@ -37,7 +37,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             get
             {
-                RemnantSave activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder);
+                RemnantSave activeSave = new(Properties.Settings.Default.SaveFolder);
                 DateTime saveDate = File.GetLastWriteTime(activeSave.SaveProfilePath);
                 for (int i = 0; i < _listBackups.Count; i++)
                 {
@@ -97,7 +97,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
                 btnStartGame.IsEnabled = !IsRemnantRunning();
                 Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
-                Task task = new Task(LoadBackups);
+                Task task = new(LoadBackups);
                 task.Start();
             } catch (Exception ex) {
                 Logger.Error($"Error loading backups page: {ex}");
@@ -159,8 +159,8 @@ namespace RemnantSaveGuardian.Views.Pages
                 return;
             }
 
-            FileInfo remnantExe = new FileInfo(gameDirPath + "\\Remnant2.exe");
-            FileInfo remnantExe64 = new FileInfo(gameDirPath + "\\Remnant\\Binaries\\Win64\\Remnant2-Win64-Shipping.exe");
+            FileInfo remnantExe = new(gameDirPath + "\\Remnant2.exe");
+            FileInfo remnantExe64 = new(gameDirPath + "\\Remnant\\Binaries\\Win64\\Remnant2-Win64-Shipping.exe");
             if (!remnantExe64.Exists && !remnantExe.Exists)
             {
                 return;
@@ -218,7 +218,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private void DataBackups_BeginningEdit(object? sender, DataGridBeginningEditEventArgs e)
         {
             LocalizedColumnHeader? header = (LocalizedColumnHeader)e.Column.Header;
-            List<string> editableColumns = new List<string>() { 
+            List<string> editableColumns = new() { 
                 "Name",
                 "Keep"
             };
@@ -327,12 +327,12 @@ namespace RemnantSaveGuardian.Views.Pages
             Dictionary<long, bool> backupKeeps = GetSavedBackupKeeps();
             string[] files = Directory.GetDirectories(Properties.Settings.Default.BackupFolder);
             SaveBackup? activeBackup = null;
-            List<SaveBackup> list = new List<SaveBackup>();
+            List<SaveBackup> list = new();
             for (int i = 0; i < files.Length; i++)
             {
                 if (RemnantSave.ValidSaveFolder(files[i]))
                 {
-                    SaveBackup backup = new SaveBackup(files[i]);
+                    SaveBackup backup = new(files[i]);
                     if (backupNames.ContainsKey(backup.SaveDate.Ticks))
                     {
                         backup.Name = backupNames[backup.SaveDate.Ticks];
@@ -376,7 +376,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private Dictionary<long, string> GetSavedBackupNames()
         {
-            Dictionary<long, string> names = new Dictionary<long, string>();
+            Dictionary<long, string> names = new();
             string savedString = Properties.Settings.Default.BackupName;
             string[] savedNames = savedString.Split(',');
             for (int i = 0; i < savedNames.Length; i++)
@@ -392,7 +392,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private Dictionary<long, bool> GetSavedBackupKeeps()
         {
-            Dictionary<long, bool> keeps = new Dictionary<long, bool>();
+            Dictionary<long, bool> keeps = new();
             string savedString = Properties.Settings.Default.BackupKeep;
             string[] savedKeeps = savedString.Split(',');
             for (int i = 0; i < savedKeeps.Length; i++)
@@ -408,7 +408,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private bool BackupActive(SaveBackup saveBackup)
         {
-            RemnantSave activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder, true);
+            RemnantSave activeSave = new(Properties.Settings.Default.SaveFolder, true);
             if (DateTime.Compare(saveBackup.SaveDate, File.GetLastWriteTime(activeSave.SaveProfilePath)) == 0)
             {
                 return true;
@@ -420,7 +420,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             try
             {
-                RemnantSave activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder, true);
+                RemnantSave activeSave = new(Properties.Settings.Default.SaveFolder, true);
                 if (!activeSave.Valid)
                 {
                     Logger.Log("Active save is not valid; backup skipped.");
@@ -452,7 +452,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     Dictionary<long, string> backupNames = GetSavedBackupNames();
                     Dictionary<long, bool> backupKeeps = GetSavedBackupKeeps();
-                    SaveBackup backup = new SaveBackup(backupFolder);
+                    SaveBackup backup = new(backupFolder);
                     if (backupNames.ContainsKey(backup.SaveDate.Ticks))
                     {
                         backup.Name = backupNames[backup.SaveDate.Ticks];
@@ -496,7 +496,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             if (_listBackups.Count > Properties.Settings.Default.BackupLimit && Properties.Settings.Default.BackupLimit > 0)
             {
-                List<SaveBackup> removeBackups = new List<SaveBackup>();
+                List<SaveBackup> removeBackups = new();
                 int delNum = _listBackups.Count - Properties.Settings.Default.BackupLimit;
                 for (int i = 0; i < _listBackups.Count && delNum > 0; i++)
                 {
@@ -528,7 +528,7 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private void UpdateSavedNames()
         {
-            List<string> savedNames = new List<string>();
+            List<string> savedNames = new();
             for (int i = 0; i < _listBackups.Count; i++)
             {
                 SaveBackup s = _listBackups[i];
@@ -553,7 +553,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void UpdateSavedKeeps()
         {
-            List<string> savedKeeps = new List<string>();
+            List<string> savedKeeps = new();
             for (int i = 0; i < _listBackups.Count; i++)
             {
                 SaveBackup s = _listBackups[i];
@@ -580,8 +580,8 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private DataGridTemplateColumn GeneratingColumn(string strHeader, bool bEditable)
         {
-            FrameworkElementFactory stackPanelFactory = new FrameworkElementFactory(typeof(StackPanel));
-            FrameworkElementFactory checkBox = new FrameworkElementFactory(typeof(CheckBox));
+            FrameworkElementFactory stackPanelFactory = new(typeof(StackPanel));
+            FrameworkElementFactory checkBox = new(typeof(CheckBox));
             
             checkBox.SetValue(HorizontalAlignmentProperty, HorizontalAlignment.Center);
             checkBox.SetBinding(ToggleButton.IsCheckedProperty,
@@ -602,11 +602,11 @@ namespace RemnantSaveGuardian.Views.Pages
             stackPanelFactory.SetValue(WidthProperty, (double)40);
             stackPanelFactory.AppendChild(checkBox);
 
-            DataTemplate dataTemplate = new DataTemplate
+            DataTemplate dataTemplate = new()
             {
                 VisualTree = stackPanelFactory
             };
-            DataGridTemplateColumn templateColumn = new DataGridTemplateColumn
+            DataGridTemplateColumn templateColumn = new()
             {
                 Header = strHeader,
                 CellTemplate = dataTemplate
@@ -616,7 +616,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void dataBackups_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            List<string> allowColumns = new List<string>() { 
+            List<string> allowColumns = new() { 
                 "Name",
                 "SaveDate",
                 "Progression",
@@ -675,8 +675,8 @@ namespace RemnantSaveGuardian.Views.Pages
             string? saveDirPath = Properties.Settings.Default.SaveFolder;
             string? backupDirPath = Properties.Settings.Default.BackupFolder;
 
-            DirectoryInfo di = new DirectoryInfo(saveDirPath);
-            DirectoryInfo buDi = new DirectoryInfo(backupDirPath + "\\" + backup.SaveDate.Ticks);
+            DirectoryInfo di = new(saveDirPath);
+            DirectoryInfo buDi = new(backupDirPath + "\\" + backup.SaveDate.Ticks);
 
             switch (type)
             {
@@ -695,7 +695,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
                     foreach (FileInfo file in buDi.GetFiles("profile.sav"))
                     {
-                        FileInfo oldFile = new FileInfo($"{di.FullName}\\{file.Name}");
+                        FileInfo oldFile = new($"{di.FullName}\\{file.Name}");
                         if (oldFile.Exists) oldFile.Delete();
 
                         file.CopyTo($"{saveDirPath}\\{file.Name}");
@@ -704,7 +704,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 case "World":
                     foreach (FileInfo file in buDi.GetFiles("save_?.sav"))
                     {
-                        FileInfo oldFile = new FileInfo($"{di.FullName}\\{file.Name}");
+                        FileInfo oldFile = new($"{di.FullName}\\{file.Name}");
                         if (oldFile.Exists) oldFile.Delete();
 
                         file.CopyTo($"{saveDirPath}\\{file.Name}");
@@ -729,7 +729,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void SaveFolderUnrecognizedFilesCheck()
         {
-            List<string> invalidFiles = new List<string>();
+            List<string> invalidFiles = new();
             foreach (string file in Directory.GetFiles(Properties.Settings.Default.SaveFolder))
             {
                 string fileName = Path.GetFileName(file);
@@ -754,14 +754,17 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return;
             }
-            MessageBox messageBox = new MessageBox();
-            messageBox.Title = Loc.T("Confirm Delete");
-            messageBox.Content = new TextBlock() {
-                Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {
-                    { "backupName", backup.Name } })+$"\n{Loc.T("Characters")}: {backup.Progression}\n{Loc.T("Date")}: {backup.SaveDate.ToString()}", 
-                TextWrapping = TextWrapping.WrapWithOverflow 
+            MessageBox messageBox = new()
+            {
+                Title = Loc.T("Confirm Delete"),
+                Content = new TextBlock()
+                {
+                    Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {
+                    { "backupName", backup.Name } }) + $"\n{Loc.T("Characters")}: {backup.Progression}\n{Loc.T("Date")}: {backup.SaveDate.ToString()}",
+                    TextWrapping = TextWrapping.WrapWithOverflow
+                },
+                ButtonLeftName = Loc.T("Delete")
             };
-            messageBox.ButtonLeftName = Loc.T("Delete");
             messageBox.ButtonLeftClick += (send, updatedEvent) => {
                 DeleteBackup(backup);
                 Logger.Success(Loc.T("Backup deleted"));
@@ -832,7 +835,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             Dictionary<long, string> backupNames = GetSavedBackupNames();
             Dictionary<long, bool> backupKeeps = GetSavedBackupKeeps();
-            SaveBackup backup = new SaveBackup(backupFolder);
+            SaveBackup backup = new(backupFolder);
             if (backupNames.ContainsKey(backup.SaveDate.Ticks))
             {
                 backup.Name = backupNames[backup.SaveDate.Ticks];

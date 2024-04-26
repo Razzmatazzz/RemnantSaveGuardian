@@ -35,7 +35,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private void AddMessage(string message, LogType logType)
         {
             Dispatcher.Invoke(delegate {
-                InfoBar infoBar = new InfoBar()
+                InfoBar infoBar = new()
                 {
                     Message = message,
                     IsOpen = true,
@@ -54,9 +54,11 @@ namespace RemnantSaveGuardian.Views.Pages
                     infoBar.Severity = InfoBarSeverity.Success;
                 }
                 infoBar.ContextMenu = new System.Windows.Controls.ContextMenu();
-                MenuItem menuCopyMessage = new MenuItem();
-                menuCopyMessage.Header = Loc.T("Copy");
-                menuCopyMessage.SymbolIcon = Wpf.Ui.Common.SymbolRegular.Copy24;
+                MenuItem menuCopyMessage = new()
+                {
+                    Header = Loc.T("Copy"),
+                    SymbolIcon = Wpf.Ui.Common.SymbolRegular.Copy24
+                };
                 menuCopyMessage.Click += (s, e) =>
                 {
                     System.Windows.Clipboard.SetDataObject(message);

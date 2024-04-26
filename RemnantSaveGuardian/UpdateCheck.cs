@@ -28,26 +28,28 @@ namespace RemnantSaveGuardian
                     return;
                 }
                 _lastUpdateCheck = DateTime.Now;
-                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"https://api.github.com/repos/{_repo}/releases/latest");
+                HttpRequestMessage request = new(HttpMethod.Get, $"https://api.github.com/repos/{_repo}/releases/latest");
                 request.Headers.Add("user-agent", "remnant-save-guardian");
                 HttpResponseMessage response = await Client.SendAsync(request);
                 response.EnsureSuccessStatusCode();
                 JsonNode latestRelease = JsonNode.Parse(await response.Content.ReadAsStringAsync());
 
-                Version remoteVersion = new Version(latestRelease["tag_name"].ToString());
+                Version remoteVersion = new(latestRelease["tag_name"].ToString());
                 Version localVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
                 if (localVersion.CompareTo(remoteVersion) == -1)
                 {
                     NewVersion?.Invoke(null, new() { Version = remoteVersion, Uri = new(latestRelease["html_url"].ToString()) });
-                    MessageBox messageBox = new MessageBox();
-                    messageBox.Title = Loc.T("Update available");
+                    MessageBox messageBox = new()
+                    {
+                        Title = Loc.T("Update available")
+                    };
                     Hyperlink hyperLink = new()
                     {
                         NavigateUri = new Uri($"https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/tag/{remoteVersion}")
                     };
                     hyperLink.Inlines.Add(Loc.T("Changelog"));
                     hyperLink.RequestNavigate += (o, e) => Process.Start("explorer.exe", e.Uri.ToString());
-                    TextBlock txtBlock = new TextBlock()
+                    TextBlock txtBlock = new()
                     {
                         Text = Loc.T("The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?",
                             new LocalizationOptions()

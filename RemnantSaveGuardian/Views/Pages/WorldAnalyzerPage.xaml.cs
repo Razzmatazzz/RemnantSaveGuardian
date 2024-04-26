@@ -83,7 +83,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 CampaignData.ItemsSource = _filteredCampaign;
                 AdventureData.ItemsSource = _filteredAdventure;
 
-                Task task = new Task(FirstLoad);
+                Task task = new(FirstLoad);
                 task.Start();
             } catch (Exception ex) {
                 Logger.Error($"Error initializing analzyer page: {ex}");
@@ -166,9 +166,11 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             try
             {
-                System.Windows.Forms.FolderBrowserDialog openFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
-                openFolderDialog.Description = Loc.T("Export save files as plaintext");
-                openFolderDialog.UseDescriptionForTitle = true;
+                System.Windows.Forms.FolderBrowserDialog openFolderDialog = new()
+                {
+                    Description = Loc.T("Export save files as plaintext"),
+                    UseDescriptionForTitle = true
+                };
                 System.Windows.Forms.DialogResult result = openFolderDialog.ShowDialog();
                 if (result != System.Windows.Forms.DialogResult.OK)
                 {
@@ -236,8 +238,10 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private void ListView_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
-            MouseWheelEventArgs eBack = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
-            eBack.RoutedEvent = MouseWheelEvent;
+            MouseWheelEventArgs eBack = new(e.MouseDevice, e.Timestamp, e.Delta)
+            {
+                RoutedEvent = MouseWheelEvent
+            };
 
             ListView? src = e.Source as ListView;
             UIElement? ui = src.Parent as UIElement;
@@ -254,9 +258,9 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private DataGridTemplateColumn GeneratingColumn(string strHeader, string strProperty, string strStyle, string strSortBy)
         {
-            FrameworkElementFactory stackPanelFactory = new FrameworkElementFactory(typeof(StackPanel));
+            FrameworkElementFactory stackPanelFactory = new(typeof(StackPanel));
             stackPanelFactory.SetValue(StackPanel.OrientationProperty, Orientation.Vertical);
-            FrameworkElementFactory listView = new FrameworkElementFactory(typeof(ListView));
+            FrameworkElementFactory listView = new(typeof(ListView));
 
             Style style = (Style)Resources[strStyle];
             listView.SetValue(StyleProperty, style);
@@ -273,11 +277,11 @@ namespace RemnantSaveGuardian.Views.Pages
 
             stackPanelFactory.AppendChild(listView);
 
-            DataTemplate dataTemplate = new DataTemplate
+            DataTemplate dataTemplate = new()
             {
                 VisualTree = stackPanelFactory
             };
-            DataGridTemplateColumn templateColumn = new DataGridTemplateColumn
+            DataGridTemplateColumn templateColumn = new()
             {
                 Header = strHeader,
                 CanUserSort = true,
@@ -296,7 +300,7 @@ namespace RemnantSaveGuardian.Views.Pages
         #endregion
         private void Data_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            List<string> allowColumns = new List<string>() {
+            List<string> allowColumns = new() {
                 "Location",
                 "Type",
                 "Name",
@@ -332,7 +336,7 @@ namespace RemnantSaveGuardian.Views.Pages
         }
 
         private static string[] _modeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
-        List<TreeListClass> _itemModeNode = new List<TreeListClass>();
+        List<TreeListClass> _itemModeNode = new();
         private void CharacterControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //if (CharacterControl.SelectedIndex == -1 && listCharacters.Count > 0) return;
@@ -343,12 +347,12 @@ namespace RemnantSaveGuardian.Views.Pages
                 //txtMissingItems.Text = string.Join("\n", Save.Characters[CharacterControl.SelectedIndex].GetMissingItems());
 
                 _itemModeNode.Clear();
-                List<TreeListClass>[] itemNode = new List<TreeListClass>[3] { new List<TreeListClass>(), new List<TreeListClass>(), new List<TreeListClass>() };
+                List<TreeListClass>[] itemNode = new List<TreeListClass>[3] { new(), new(), new() };
                 List<TreeListClass>[] itemChild = new List<TreeListClass>[20];
                 string[] modes = { Strings.Normal, Strings.Hardcore, Strings.Survival };
                 for (int i = 0;i <= 2; i++)
                 {
-                    TreeListClass item = new TreeListClass() { Name = modes[i], Childnode = itemNode[i], Tag = _modeTags[i], IsExpanded = (bool)Properties.Settings.Default[$"{_modeTags[i]}_Expanded"] };
+                    TreeListClass item = new() { Name = modes[i], Childnode = itemNode[i], Tag = _modeTags[i], IsExpanded = (bool)Properties.Settings.Default[$"{_modeTags[i]}_Expanded"] };
                     item.Expanded += GameType_CollapsedExpanded;
                     _itemModeNode.Add(item);
                 }
@@ -382,7 +386,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         {
                             Logger.Warn($"Not found properties: {typeNodeTag}_Expand");
                         }
-                        TreeListClass item = new TreeListClass() { Name = itemType, Childnode = itemChild[idx], Tag = typeNodeTag, IsExpanded = isExpanded };
+                        TreeListClass item = new() { Name = itemType, Childnode = itemChild[idx], Tag = typeNodeTag, IsExpanded = isExpanded };
                         item.Expanded += GameType_CollapsedExpanded;
                         itemNode[itemMode].Add(item);
                     }
@@ -464,7 +468,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 return "";
             }
             if (item.Tag.GetType().ToString() == "System.Collections.Generic.Dictionary`2[System.String,System.String]") return item.Name;
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
             sb.AppendLine(item.Name + ":");
             foreach (TreeListClass i in item.Childnode)
             {
@@ -499,7 +503,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private void SearchItem_Click(object sender, RoutedEventArgs e)
         {
             TreeListClass? treeItem = (TreeListClass)treeMissingItems.SelectedItem;
-            LootItem item = new LootItem { Item = (Dictionary<string, string>)treeItem.Tag };
+            LootItem item = new() { Item = (Dictionary<string, string>)treeItem.Tag };
             SearchItem(item);
         }
         private void SearchItem(LootItem item)
@@ -614,7 +618,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
                     if (Properties.Settings.Default.ShowConnections && location.Connections is { Count: > 0 })
                     {
-                        WorldAnalyzerGridData newItem = new WorldAnalyzerGridData
+                        WorldAnalyzerGridData newItem = new()
                         {
                             Location = Loc.GameT(l),
                             MissingItems = new(),
@@ -629,7 +633,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                     if (Properties.Settings.Default.ShowWorldStones && location.WorldStones is { Count: > 0 })
                     {
-                        WorldAnalyzerGridData newItem = new WorldAnalyzerGridData
+                        WorldAnalyzerGridData newItem = new()
                         {
                             Location = Loc.GameT(l),
                             MissingItems = new(),
@@ -645,7 +649,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     if (Properties.Settings.Default.ShowTomes && location.TraitBook)
                     {
                         //List<LocalisedLootItem> ll = new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") } } }) };
-                        WorldAnalyzerGridData newItem = new WorldAnalyzerGridData
+                        WorldAnalyzerGridData newItem = new()
                         {
                             Location = Loc.GameT(l),
                             MissingItems = new(),
@@ -661,7 +665,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                     if (Properties.Settings.Default.ShowSimulacrums && location.Simulacrum)
                     {
-                        WorldAnalyzerGridData newItem = new WorldAnalyzerGridData
+                        WorldAnalyzerGridData newItem = new()
                         {
                             Location = Loc.GameT(l),
                             MissingItems = new(),
@@ -687,7 +691,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         {
                             items = items.Where(x => !x.IsDeleted).ToList();
                         }
-                        WorldAnalyzerGridData newItem = new WorldAnalyzerGridData
+                        WorldAnalyzerGridData newItem = new()
                         {
                             Location = Loc.GameT(l),
                             MissingItems = items.Where(x => missingIds.Contains(x.Item["Id"])).Select(x => new LocalisedLootItem(x)).ToList(),
@@ -772,7 +776,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         _isexpanded = value;
                         OnPropertyChanged();
-                        PropertyChagedEventArgs ev = new PropertyChagedEventArgs("IsExpanded", _isexpanded, value);
+                        PropertyChagedEventArgs ev = new("IsExpanded", _isexpanded, value);
                         if (Expanded != null)
                         {
                             Expanded(this, ev);
