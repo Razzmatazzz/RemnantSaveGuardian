@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xaml.Behaviors;
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -12,7 +14,7 @@ namespace RemnantSaveGuardian.Views.UserControls
     /// <summary>
     /// TextBlockPlus Control Interface
     /// </summary>
-    public partial class TextBlockPlus : UserControl
+    public partial class TextBlockPlus
     {
         public TextBlockPlus()
         {
@@ -25,14 +27,14 @@ namespace RemnantSaveGuardian.Views.UserControls
             get => (string)GetValue(TextProperty);
             set => SetValue(TextProperty, value);
         }
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(TextBlockPlus), new PropertyMetadata(""));
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(nameof(Text), typeof(string), typeof(TextBlockPlus), new PropertyMetadata(""));
         [Category("Extend Properties")]
         public int RollingSpeed
         {
             get => (int)GetValue(RollingSpeedProperty);
             set => SetValue(RollingSpeedProperty, value);
         }
-        public static readonly DependencyProperty RollingSpeedProperty = DependencyProperty.Register("RollingSpeed", typeof(int), typeof(TextBlockPlus), new PropertyMetadata(250));
+        public static readonly DependencyProperty RollingSpeedProperty = DependencyProperty.Register(nameof(RollingSpeed), typeof(int), typeof(TextBlockPlus), new PropertyMetadata(250));
 
         [Category("Extend Properties")]
         public int RollbackSpeed
@@ -40,7 +42,7 @@ namespace RemnantSaveGuardian.Views.UserControls
             get => (int)GetValue(RollbackSpeedProperty);
             set => SetValue(RollbackSpeedProperty, value);
         }
-        public static readonly DependencyProperty RollbackSpeedProperty = DependencyProperty.Register("RollbackSpeed", typeof(int), typeof(TextBlockPlus), new PropertyMetadata(1000));
+        public static readonly DependencyProperty RollbackSpeedProperty = DependencyProperty.Register(nameof(RollbackSpeed), typeof(int), typeof(TextBlockPlus), new PropertyMetadata(1000));
         #endregion 
     }
 
@@ -54,15 +56,14 @@ namespace RemnantSaveGuardian.Views.UserControls
             get => (int)GetValue(RollingSpeedProperty);
             set => SetValue(RollingSpeedProperty, value);
         }
-        public static readonly DependencyProperty RollingSpeedProperty = DependencyProperty.Register("RollingSpeed", typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(250));
+        public static readonly DependencyProperty RollingSpeedProperty = DependencyProperty.Register(nameof(RollingSpeed), typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(250));
         public int RollbackSpeed
         {
             get => (int)GetValue(RollbackSpeedProperty);
             set => SetValue(RollbackSpeedProperty, value);
         }
-        public static readonly DependencyProperty RollbackSpeedProperty = DependencyProperty.Register("RollbackSpeed", typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(1000));
+        public static readonly DependencyProperty RollbackSpeedProperty = DependencyProperty.Register(nameof(RollbackSpeed), typeof(int), typeof(RollingTextBlockBehavior), new PropertyMetadata(1000));
 
-        private TextBlock? _textBlock;
         private readonly Storyboard _storyBoard = new();
         private readonly DoubleAnimation _animation = new();
 
@@ -80,7 +81,7 @@ namespace RemnantSaveGuardian.Views.UserControls
                 ScrollViewerBehavior.HorizontalOffsetProperty
             };
 
-            Storyboard.SetTargetProperty(_animation, new PropertyPath("(0)", propertyChain));
+            Storyboard.SetTargetProperty(_animation, new PropertyPath("(0)", propertyChain.Select(x => (object)x).ToArray()));
             _storyBoard.Children.Add(_animation);
         }
         protected override void OnDetaching()
@@ -99,6 +100,7 @@ namespace RemnantSaveGuardian.Views.UserControls
                 if (AssociatedObject is TextBlock textBlock)
                 {
                     ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
+                    Debug.Assert(scrollViewer != null, nameof(scrollViewer) + " != null");
                     double textWidth = textBlock.ActualWidth - scrollViewer.ActualWidth;
                     double scrollValue = scrollViewer.HorizontalOffset;
                     double scrollWidth = scrollViewer.ScrollableWidth;
@@ -120,6 +122,7 @@ namespace RemnantSaveGuardian.Views.UserControls
                 if (AssociatedObject is TextBlock textBlock)
                 {
                     ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
+                    Debug.Assert(scrollViewer != null, nameof(scrollViewer) + " != null");
                     double textWidth = textBlock.ActualWidth - scrollViewer.ActualWidth;
                     double scrollValue = scrollViewer.HorizontalOffset;
                     double scrollWidth = scrollViewer.ScrollableWidth;
@@ -141,6 +144,7 @@ namespace RemnantSaveGuardian.Views.UserControls
                 if (AssociatedObject is TextBlock textBlock && e.LeftButton == MouseButtonState.Pressed)
                 {
                     ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
+                    Debug.Assert(scrollViewer != null, nameof(scrollViewer) + " != null");
                     _storyBoard.Pause(scrollViewer);
                 }
 
@@ -157,6 +161,7 @@ namespace RemnantSaveGuardian.Views.UserControls
                 };
 
                 TextBlockPlus? ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
+                Debug.Assert(ui != null, nameof(ui) + " != null");
                 ui.RaiseEvent(eBack);
             }
         }
@@ -167,6 +172,7 @@ namespace RemnantSaveGuardian.Views.UserControls
                 if (AssociatedObject is TextBlock textBlock)
                 {
                     ScrollViewer? scrollViewer = textBlock.Parent as ScrollViewer;
+                    Debug.Assert(scrollViewer != null, nameof(scrollViewer) + " != null");
                     _storyBoard.Resume(scrollViewer);
                 }
 
@@ -186,6 +192,7 @@ namespace RemnantSaveGuardian.Views.UserControls
                 };
 
                 TextBlockPlus? ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
+                Debug.Assert(ui != null, nameof(ui) + " != null");
                 ui.RaiseEvent(eBack);
             }
         }
@@ -199,21 +206,24 @@ namespace RemnantSaveGuardian.Views.UserControls
             };
 
             TextBlockPlus? ui = VisualUpwardSearch<TextBlockPlus>(AssociatedObject) as TextBlockPlus;
+            Debug.Assert(ui != null, nameof(ui) + " != null");
             ui.RaiseEvent(eBack);
         }
-        private static DependencyObject VisualUpwardSearch<T>(DependencyObject source)
+        private static DependencyObject? VisualUpwardSearch<T>(DependencyObject source)
         {
-            while (source != null && source.GetType() != typeof(T))
+            DependencyObject? obj = source;
+            while (obj != null && obj.GetType() != typeof(T))
             {
-                source = VisualTreeHelper.GetParent(source);
+                obj = VisualTreeHelper.GetParent(obj);
             }
-            return source;
+            return obj;
         }
     }
     public static class ScrollViewerBehavior
     {
         public static readonly DependencyProperty HorizontalOffsetProperty = DependencyProperty.RegisterAttached("HorizontalOffset", typeof(double), typeof(ScrollViewerBehavior), new UIPropertyMetadata(0.0, OnHorizontalOffsetChanged));
-        public static void SetHorizontalOffset(FrameworkElement target, double value)
+        // ReSharper disable UnusedMember.Global
+        public static void SetHorizontalOffset(FrameworkElement target, double value) 
         {
             target.SetValue(HorizontalOffsetProperty, value);
         }
@@ -221,6 +231,7 @@ namespace RemnantSaveGuardian.Views.UserControls
         {
             return (double)target.GetValue(HorizontalOffsetProperty);
         }
+        // ReSharper restore UnusedMember.Global
         private static void OnHorizontalOffsetChanged(DependencyObject target, DependencyPropertyChangedEventArgs e)
         {
             if (target is ScrollViewer view)
