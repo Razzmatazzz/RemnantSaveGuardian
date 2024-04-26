@@ -282,7 +282,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             btnStartGame.IsEnabled = false;
                             _gameProcess = processes[0];
                             _gameProcess.EnableRaisingEvents = true;
-                            _gameProcess.Exited += (s, eargs) =>
+                            _gameProcess.Exited += (_, _) =>
                             {
                                 Dispatcher.Invoke(() =>
                                 {
@@ -765,13 +765,13 @@ namespace RemnantSaveGuardian.Views.Pages
                 },
                 ButtonLeftName = Loc.T("Delete")
             };
-            messageBox.ButtonLeftClick += (send, updatedEvent) => {
+            messageBox.ButtonLeftClick += (_, _) => {
                 DeleteBackup(backup);
                 Logger.Success(Loc.T("Backup deleted"));
                 messageBox.Close();
             };
             messageBox.ButtonRightName = Loc.T("Cancel");
-            messageBox.ButtonRightClick += (send, updatedEvent) => {
+            messageBox.ButtonRightClick += (_, _) => {
                 messageBox.Close();
             };
             messageBox.ShowDialog();

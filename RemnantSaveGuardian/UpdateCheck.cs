@@ -48,7 +48,7 @@ namespace RemnantSaveGuardian
                         NavigateUri = new Uri($"https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/tag/{remoteVersion}")
                     };
                     hyperLink.Inlines.Add(Loc.T("Changelog"));
-                    hyperLink.RequestNavigate += (o, e) => Process.Start("explorer.exe", e.Uri.ToString());
+                    hyperLink.RequestNavigate += (_, e) => Process.Start("explorer.exe", e.Uri.ToString());
                     TextBlock txtBlock = new()
                     {
                         Text = Loc.T("The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?",
@@ -67,7 +67,7 @@ namespace RemnantSaveGuardian
                     txtBlock.Inlines.Add(hyperLink);
                     messageBox.Content = txtBlock;
                     messageBox.ButtonLeftName = Loc.T("Update");
-                    messageBox.ButtonLeftClick += (send, updatedEvent) => {
+                    messageBox.ButtonLeftClick += (_, _) => {
                         UpdateInfoEventArgs args = new()
                         {
                             InstalledVersion = localVersion,
@@ -79,7 +79,7 @@ namespace RemnantSaveGuardian
                         Application.Current.Shutdown();
                     };
                     messageBox.ButtonRightName = Loc.T("Cancel");
-                    messageBox.ButtonRightClick += (send, updatedEvent) => {
+                    messageBox.ButtonRightClick += (_, _) => {
                         messageBox.Close();
                     };
                     messageBox.ShowDialog();

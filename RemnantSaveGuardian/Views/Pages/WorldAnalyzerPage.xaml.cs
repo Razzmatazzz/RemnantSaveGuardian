@@ -52,7 +52,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 _save = new(pathToSaveFiles);
                 if (pathToSaveFiles == Properties.Settings.Default.SaveFolder)
                 {
-                    SaveWatcher.SaveUpdated += (sender, eventArgs) => {
+                    SaveWatcher.SaveUpdated += (_, _) => {
                         Dispatcher.Invoke(() =>
                         {
                             int selectedIndex = CharacterControl.SelectedIndex;

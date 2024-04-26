@@ -127,7 +127,7 @@ namespace RemnantSaveGuardian.Views.Windows
                 {
                     UpdateCheck.CheckForNewVersion();
                 }
-                LocalizeDictionary.Instance.MissingKeyEvent += (s, e) => {
+                LocalizeDictionary.Instance.MissingKeyEvent += (_, _) => {
                     //Logger.Log($"Missing translation for key: {e.Key}");
                 };
             } catch (Exception ex)
@@ -241,7 +241,7 @@ namespace RemnantSaveGuardian.Views.Windows
                 Header = Loc.T("Close"),
                 Icon = new SymbolIcon() { Symbol = SymbolRegular.Prohibited24 },
             };
-            menuItem.Click += (clickSender, clickEvent) => {
+            menuItem.Click += (_, _) => {
                 foreach (NavigationItem nav in ViewModel.NavigationItems)
                 {
                     if (nav.PageTag == pageTag)
@@ -253,7 +253,7 @@ namespace RemnantSaveGuardian.Views.Windows
                 }
             };
             navItem.ContextMenu.Items.Add(menuItem);
-            navItem.Click += (clickSender, clickEvent) =>
+            navItem.Click += (_, clickEvent) =>
             {
                 RootNavigation.Navigate(pageTag);
                 RootNavigation.NavigateExternal(page);

@@ -59,7 +59,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     Header = Loc.T("Copy"),
                     SymbolIcon = Wpf.Ui.Common.SymbolRegular.Copy24
                 };
-                menuCopyMessage.Click += (s, e) =>
+                menuCopyMessage.Click += (_, _) =>
                 {
                     System.Windows.Clipboard.SetDataObject(message);
                 };

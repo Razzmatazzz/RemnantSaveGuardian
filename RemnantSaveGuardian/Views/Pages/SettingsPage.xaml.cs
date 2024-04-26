@@ -216,10 +216,10 @@ namespace RemnantSaveGuardian.Views.Pages
                         ButtonLeftName = "Yes",
                         ButtonRightName = "No",
                     };
-                    messageBox.ButtonRightClick += (s, ev) => {
+                    messageBox.ButtonRightClick += (_, _) => {
                         messageBox.Hide();
                     };
-                    messageBox.ButtonLeftClick += (s, ev) =>
+                    messageBox.ButtonLeftClick += (_, _) =>
                     {
                         foreach (string file in backupFiles)
                         {
