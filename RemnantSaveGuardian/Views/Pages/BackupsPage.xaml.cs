@@ -31,7 +31,6 @@ namespace RemnantSaveGuardian.Views.Pages
         private List<SaveBackup> _listBackups;
         //private RemnantSave activeSave;
         private Process? _gameProcess;
-        public static bool IsDataLoaded;
 
         private bool ActiveSaveIsBackedUp
         {
@@ -39,9 +38,9 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 RemnantSave activeSave = new(Properties.Settings.Default.SaveFolder);
                 DateTime saveDate = File.GetLastWriteTime(activeSave.SaveProfilePath);
-                for (int i = 0; i < _listBackups.Count; i++)
+                foreach (SaveBackup backup in _listBackups)
                 {
-                    DateTime backupDate = _listBackups[i].SaveDate;
+                    DateTime backupDate = backup.SaveDate;
                     if (saveDate.Equals(backupDate))
                     {
                         return true;
@@ -72,6 +71,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
             InitializeComponent();
 
+            _listBackups = new List<SaveBackup>();
             try
             {
                 dataBackups.CanUserDeleteRows = false;
@@ -87,8 +87,6 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                     Properties.Settings.Default.BackupFolder = DefaultBackupFolder;
                 }
-
-                _listBackups = new List<SaveBackup>();
 
                 SaveWatcher.SaveUpdated += SaveWatcher_SaveUpdated;
 
@@ -107,7 +105,7 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return;
             }
-            BackupSaveViewed?.Invoke(this, new() { SaveBackup = backup });
+            BackupSaveViewed?.Invoke(this, new(backup));
         }
 
         private void MenuOpenBackup_Click(object sender, RoutedEventArgs e)
@@ -232,16 +230,14 @@ namespace RemnantSaveGuardian.Views.Pages
                     if (Properties.Settings.Default.AutoBackup)
                     {
                         //Logger.Log($"Save: {File.GetLastWriteTime(e.FullPath)}; Last backup: {File.GetLastWriteTime(listBackups[listBackups.Count - 1].Save.SaveFolderPath + "\\profile.sav")}");
-                        DateTime latestBackupTime;
                         DateTime newBackupTime;
                         if (_listBackups.Count > 0)
                         {
-                            latestBackupTime = _listBackups[^1].SaveDate;
+                            DateTime latestBackupTime = _listBackups[^1].SaveDate;
                             newBackupTime = latestBackupTime.AddMinutes(Properties.Settings.Default.BackupMinutes);
                         }
                         else
                         {
-                            latestBackupTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
                             newBackupTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
                         }
                         if (DateTime.Compare(DateTime.Now, newBackupTime) >= 0)
@@ -315,11 +311,11 @@ namespace RemnantSaveGuardian.Views.Pages
             string[] files = Directory.GetDirectories(Properties.Settings.Default.BackupFolder);
             SaveBackup? activeBackup = null;
             List<SaveBackup> list = new();
-            for (int i = 0; i < files.Length; i++)
+            foreach (string path in files)
             {
-                if (RemnantSave.ValidSaveFolder(files[i]))
+                if (RemnantSave.ValidSaveFolder(path))
                 {
-                    SaveBackup backup = new(files[i]);
+                    SaveBackup backup = new(path);
                     if (backupNames.ContainsKey(backup.SaveDate.Ticks))
                     {
                         backup.Name = backupNames[backup.SaveDate.Ticks];
@@ -357,7 +353,6 @@ namespace RemnantSaveGuardian.Views.Pages
                 }
                 ActiveSaveIsBackedUp = (activeBackup != null);
                 progressRing.Visibility = Visibility.Collapsed;
-                IsDataLoaded = true;
             });
         }
 
@@ -366,12 +361,12 @@ namespace RemnantSaveGuardian.Views.Pages
             Dictionary<long, string> names = new();
             string savedString = Properties.Settings.Default.BackupName;
             string[] savedNames = savedString.Split(',');
-            for (int i = 0; i < savedNames.Length; i++)
+            foreach (string name in savedNames)
             {
-                string[] vals = savedNames[i].Split('=');
-                if (vals.Length == 2)
+                string[] tokens = name.Split('=');
+                if (tokens.Length == 2)
                 {
-                    names.Add(long.Parse(vals[0]), System.Net.WebUtility.UrlDecode(vals[1]));
+                    names.Add(long.Parse(tokens[0]), System.Net.WebUtility.UrlDecode(tokens[1]));
                 }
             }
             return names;
@@ -382,12 +377,12 @@ namespace RemnantSaveGuardian.Views.Pages
             Dictionary<long, bool> keeps = new();
             string savedString = Properties.Settings.Default.BackupKeep;
             string[] savedKeeps = savedString.Split(',');
-            for (int i = 0; i < savedKeeps.Length; i++)
+            foreach (string keep in savedKeeps)
             {
-                string[] vals = savedKeeps[i].Split('=');
-                if (vals.Length == 2)
+                string[] tokens = keep.Split('=');
+                if (tokens.Length == 2)
                 {
-                    keeps.Add(long.Parse(vals[0]), bool.Parse(vals[1]));
+                    keeps.Add(long.Parse(tokens[0]), bool.Parse(tokens[1]));
                 }
             }
             return keeps;
@@ -496,9 +491,9 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                 }
 
-                for (int i = 0; i < removeBackups.Count; i++)
+                foreach (var backup in removeBackups)
                 {
-                    _listBackups.Remove(removeBackups[i]);
+                    _listBackups.Remove(backup);
                 }
             }
         }
@@ -516,47 +511,28 @@ namespace RemnantSaveGuardian.Views.Pages
         private void UpdateSavedNames()
         {
             List<string> savedNames = new();
-            for (int i = 0; i < _listBackups.Count; i++)
+            foreach (var backup in _listBackups)
             {
-                SaveBackup s = _listBackups[i];
-                if (!s.Name.Equals(s.SaveDate.Ticks.ToString()))
+                if (!backup.Name.Equals(backup.SaveDate.Ticks.ToString()))
                 {
-                    savedNames.Add(s.SaveDate.Ticks + "=" + System.Net.WebUtility.UrlEncode(s.Name));
-                }
-                else
-                {
+                    savedNames.Add(backup.SaveDate.Ticks + "=" + System.Net.WebUtility.UrlEncode(backup.Name));
                 }
             }
-            if (savedNames.Count > 0)
-            {
-                Properties.Settings.Default.BackupName = string.Join(",", savedNames.ToArray());
-            }
-            else
-            {
-                Properties.Settings.Default.BackupName = "";
-            }
+            Properties.Settings.Default.BackupName = savedNames.Count > 0 ? string.Join(",", savedNames.ToArray()) : "";
             Properties.Settings.Default.Save();
         }
 
         private void UpdateSavedKeeps()
         {
             List<string> savedKeeps = new();
-            for (int i = 0; i < _listBackups.Count; i++)
+            foreach (var backup in _listBackups)
             {
-                SaveBackup s = _listBackups[i];
-                if (s.Keep)
+                if (backup.Keep)
                 {
-                    savedKeeps.Add(s.SaveDate.Ticks + "=True");
+                    savedKeeps.Add(backup.SaveDate.Ticks + "=True");
                 }
             }
-            if (savedKeeps.Count > 0)
-            {
-                Properties.Settings.Default.BackupKeep = string.Join(",", savedKeeps.ToArray());
-            }
-            else
-            {
-                Properties.Settings.Default.BackupKeep = "";
-            }
+            Properties.Settings.Default.BackupKeep = savedKeeps.Count > 0 ? string.Join(",", savedKeeps.ToArray()) : "";
             Properties.Settings.Default.Save();
         }
 
@@ -610,27 +586,27 @@ namespace RemnantSaveGuardian.Views.Pages
                 "Keep",
                 "Active"
             };
-            if (!allowColumns.Contains(e.Column.Header.ToString()))
+            string header = e.Column.Header.ToString() ?? "";
+            if (!allowColumns.Contains(header))
             {
                 e.Cancel = true;
                 return;
             }
-            if (e.Column.Header.ToString() == "Keep")
-            {
-                e.Column = GeneratingColumn("Keep", true);
-            }
-            if (e.Column.Header.ToString() == "Active")
-            {
-                e.Column = GeneratingColumn("Active", false);
-            }
 
-            e.Column.Header = new LocalizedColumnHeader(e.Column.Header.ToString());
+            e.Column = header switch
+            {
+                "Keep" => GeneratingColumn("Keep", true),
+                "Active" => GeneratingColumn("Active", false),
+                _ => e.Column
+            };
+
+            e.Column.Header = new LocalizedColumnHeader(header);
         }
 
         private static bool IsRemnantRunning()
         {
-            Process[] pname = Process.GetProcessesByName("Remnant2");
-            if (pname.Length == 0)
+            Process[] processName = Process.GetProcessesByName("Remnant2");
+            if (processName.Length == 0)
             {
                 return false;
             }
@@ -709,7 +685,7 @@ namespace RemnantSaveGuardian.Views.Pages
             RefreshBackups();
             Logger.Log(Loc.T("Backup restored"), LogType.Success);
             SaveWatcher.Resume();
-            BackupSaveRestored?.Invoke(this, new());
+            BackupSaveRestored?.Invoke(this, EventArgs.Empty);
             SaveFolderUnrecognizedFilesCheck();
         }
 
@@ -784,13 +760,15 @@ namespace RemnantSaveGuardian.Views.Pages
                 //Logger.Log(string.Join("\n", e.Data.GetFormats()));
                 return;
             }
-            List<string> draggedFiles = ((string[])e.Data.GetData(DataFormats.FileDrop)).ToList<string>();
-            string folder;
+
+            string[]? data = e.Data.GetData(DataFormats.FileDrop) as string[];
+
+            Debug.Assert(data != null, nameof(data) + " != null");
+            List<string> draggedFiles = data.ToList();
             FileAttributes attr = File.GetAttributes(draggedFiles[0]);
-            if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
-                folder = draggedFiles[0];
-            else
-                folder = Path.GetDirectoryName(draggedFiles[0]);
+            string? folder = (attr & FileAttributes.Directory) == FileAttributes.Directory ? draggedFiles[0] : Path.GetDirectoryName(draggedFiles[0]);
+
+            Debug.Assert(folder != null, nameof(folder) + " != null");
             string[] files = Directory.GetFiles(folder);
             if (!files.Any(file => file.EndsWith("profile.sav")))
             {
@@ -859,6 +837,11 @@ namespace RemnantSaveGuardian.Views.Pages
 
     public class BackupSaveViewedEventArgs : EventArgs
     {
+        public BackupSaveViewedEventArgs(SaveBackup saveBackup)
+        {
+            SaveBackup = saveBackup;
+        }
+
         public SaveBackup SaveBackup { get; set; }
     }
 
@@ -873,7 +856,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             _key = key;
         }
-        override public string ToString()
+        public override string ToString()
         {
             return Name;
         }
