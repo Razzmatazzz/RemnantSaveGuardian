@@ -81,7 +81,7 @@ namespace RemnantSaveGuardian
             }
             if (Settings.Default.Language != "")
             {
-                culture = cultures.First(e => e.Name == Settings.Default.Language);
+                culture = cultures.First(x => x.Name == Settings.Default.Language);
             }
 
             Thread.CurrentThread.CurrentCulture = culture;
