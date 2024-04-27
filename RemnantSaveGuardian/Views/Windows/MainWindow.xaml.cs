@@ -2,11 +2,14 @@
 using RemnantSaveGuardian.ViewModels;
 using RemnantSaveGuardian.Views.Pages;
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using RemnantSaveGuardian.Properties;
 using Wpf.Ui.Common;
 using Wpf.Ui.Controls;
 using Wpf.Ui.Controls.Interfaces;
@@ -31,11 +34,11 @@ namespace RemnantSaveGuardian.Views.Windows
             ViewModel = viewModel;
             DataContext = this;
 
-            if (Properties.Settings.Default.UpgradeRequired)
+            if (Settings.Default.UpgradeRequired)
             {
-                Properties.Settings.Default.Upgrade();
-                Properties.Settings.Default.UpgradeRequired = false;
-                Properties.Settings.Default.Save();
+                Settings.Default.Upgrade();
+                Settings.Default.UpgradeRequired = false;
+                Settings.Default.Save();
             }
 
             InitializeComponent();            
@@ -43,9 +46,9 @@ namespace RemnantSaveGuardian.Views.Windows
 
             navigationService.SetNavigationControl(RootNavigation);
 
-            Topmost = Properties.Settings.Default.TopMost;
+            Topmost = Settings.Default.TopMost;
 
-            if (Properties.Settings.Default.EnableOpacity == true)
+            if (Settings.Default.EnableOpacity)
             {
                 Binding binding = new("background")
                 {
@@ -62,20 +65,15 @@ namespace RemnantSaveGuardian.Views.Windows
             {                
                 Logger.MessageLogged += Logger_MessageLogged;
 
-                string? theme = Properties.Settings.Default.Theme;
-                if (theme == "Light")
-                {
-                    Wpf.Ui.Appearance.Theme.Apply(Wpf.Ui.Appearance.ThemeType.Light);
-                }
-                else
-                {
-                    Wpf.Ui.Appearance.Theme.Apply(Wpf.Ui.Appearance.ThemeType.Dark);
-                }
+                string? theme = Settings.Default.Theme;
+                Wpf.Ui.Appearance.Theme.Apply(theme == "Light"
+                    ? Wpf.Ui.Appearance.ThemeType.Light
+                    : Wpf.Ui.Appearance.ThemeType.Dark);
 
-                if (Properties.Settings.Default.SaveFolder.Length == 0)
+                if (Settings.Default.SaveFolder.Length == 0)
                 {
                     Logger.Log("Save folder not set; reverting to default.");
-                    Properties.Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
+                    Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
                     if (!Directory.Exists(RemnantSave.DefaultSaveFolder()))
                     {
                         Logger.Error(Loc.T("Could not find save file location; please set manually"));
@@ -93,26 +91,26 @@ namespace RemnantSaveGuardian.Views.Windows
                         }*/
                     }
                 }
-                else if (!Directory.Exists(Properties.Settings.Default.SaveFolder) && !Properties.Settings.Default.SaveFolder.Equals(RemnantSave.DefaultSaveFolder))
+                else if (!Directory.Exists(Settings.Default.SaveFolder) && !Settings.Default.SaveFolder.Equals(RemnantSave.DefaultSaveFolder()))
                 {
-                    Logger.Log($"Save folder ({Properties.Settings.Default.SaveFolder}) not found; reverting to default.");
-                    Properties.Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
+                    Logger.Log($"Save folder ({Settings.Default.SaveFolder}) not found; reverting to default.");
+                    Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
                 }
-                if (!Directory.Exists(Properties.Settings.Default.SaveFolder))
+                if (!Directory.Exists(Settings.Default.SaveFolder))
                 {
                     Logger.Log("Save folder not found, creating...");
-                    Directory.CreateDirectory(Properties.Settings.Default.SaveFolder);
+                    Directory.CreateDirectory(Settings.Default.SaveFolder);
                 }
-                SaveWatcher.Watch(Properties.Settings.Default.SaveFolder);
+                SaveWatcher.Watch(Settings.Default.SaveFolder);
 
-                if (!Directory.Exists(Properties.Settings.Default.GameFolder))
+                if (!Directory.Exists(Settings.Default.GameFolder))
                 {
                     Logger.Log("Game folder not found...");
                     //this.btnStartGame.IsEnabled = false;
                     //this.btnStartGame.Content = this.FindResource("PlayGrey");
                     //this.backupCMStart.IsEnabled = false;
                     //this.backupCMStart.Icon = this.FindResource("PlayGrey");
-                    if (Properties.Settings.Default.GameFolder == "")
+                    if (Settings.Default.GameFolder == "")
                     {
                         TryToFindGameFolder();
                     }
@@ -123,7 +121,7 @@ namespace RemnantSaveGuardian.Views.Windows
                 RootNavigation.Navigated += RootNavigation_Navigated;
 
                 UpdateCheck.NewVersion += UpdateCheck_NewVersion;
-                if (Properties.Settings.Default.AutoCheckUpdate)
+                if (Settings.Default.AutoCheckUpdate)
                 {
                     UpdateCheck.CheckForNewVersion();
                 }
@@ -139,21 +137,21 @@ namespace RemnantSaveGuardian.Views.Windows
         protected override void OnContentRendered(EventArgs e)
         {
             base.OnContentRendered(e);
-            if (Properties.Settings.Default.EnableOpacity == false) { return; }
-            if (Properties.Settings.Default.OnlyInactive == true || Properties.Settings.Default.Opacity == 1)
+            if (Settings.Default.EnableOpacity == false) { return; }
+            if (Settings.Default.OnlyInactive || Math.Abs(Settings.Default.Opacity - 1) < 0.01)
             {
                 WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UxMaterials.Mica);
             }
             else
             {
                 WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UxMaterials.None);
-                Opacity = Properties.Settings.Default.Opacity;
+                Opacity = Settings.Default.Opacity;
             }
         }
         protected override void OnActivated(EventArgs e)
         {
             base.OnActivated(e);
-            if (Properties.Settings.Default.AutoHideNaviAndTitleBar == true) {
+            if (Settings.Default.AutoHideNaviAndTitleBar) {
                 TitleBar.Visibility = Visibility.Visible;
                 RootNavigation.Visibility = Visibility.Visible;
                 BtnAlwayOnTop.Visibility = Visibility.Visible;
@@ -161,8 +159,8 @@ namespace RemnantSaveGuardian.Views.Windows
                 Border.Margin = new Thickness(0,46,0,0);
                 EventTransfer.Transfer(Visibility.Visible);
             }
-            if (Properties.Settings.Default.EnableOpacity == false) { return; }
-            if (Properties.Settings.Default.OnlyInactive == true)
+            if (Settings.Default.EnableOpacity == false) { return; }
+            if (Settings.Default.OnlyInactive)
             {
                 WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UxMaterials.Mica);
                 Opacity = 1;
@@ -171,7 +169,7 @@ namespace RemnantSaveGuardian.Views.Windows
         protected override void OnDeactivated(EventArgs e)
         {
             base.OnDeactivated(e);
-            if (Properties.Settings.Default.AutoHideNaviAndTitleBar == true)
+            if (Settings.Default.AutoHideNaviAndTitleBar)
             {
                 TitleBar.Visibility = Visibility.Collapsed;
                 RootNavigation.Visibility = Visibility.Collapsed;
@@ -180,11 +178,11 @@ namespace RemnantSaveGuardian.Views.Windows
                 Border.Margin = new Thickness(0);
                 EventTransfer.Transfer(Visibility.Collapsed);
             }
-            if (Properties.Settings.Default.EnableOpacity == false) { return; }
-            if (Properties.Settings.Default.OnlyInactive == true && Properties.Settings.Default.Opacity < 1)
+            if (Settings.Default.EnableOpacity == false) { return; }
+            if (Settings.Default.OnlyInactive && Settings.Default.Opacity < 1)
             {
                 WindowDwmHelper.ApplyDwm(this, WindowDwmHelper.UxMaterials.None);
-                Opacity = Properties.Settings.Default.Opacity;
+                Opacity = Settings.Default.Opacity;
             }
         }
         private void UpdateCheck_NewVersion(object? sender, NewVersionEventArgs e)
@@ -195,21 +193,22 @@ namespace RemnantSaveGuardian.Views.Windows
             });
         }
 
-        private void RootNavigation_Navigated([System.Diagnostics.CodeAnalysis.NotNull] INavigation sender, RoutedNavigationEventArgs e)
+        // ReSharper disable once RedundantNullableFlowAttribute
+        private void RootNavigation_Navigated([NotNull] INavigation sender, RoutedNavigationEventArgs e)
         {
             // first navigation is to the backups page
             // check to see if the user wants to start on another page
             RootNavigation.Navigated -= RootNavigation_Navigated;
-            if (Properties.Settings.Default.StartPage == "backups")
+            if (Settings.Default.StartPage == "backups")
             {
                 return;
             }
-            if (!ViewModel.NavigationItems.Any(nav => (nav as NavigationItem).PageTag == Properties.Settings.Default.StartPage))
+            if (ViewModel.NavigationItems.All(nav => (nav as NavigationItem)?.PageTag != Settings.Default.StartPage))
             {
-                Properties.Settings.Default.StartPage = "backups";
+                Settings.Default.StartPage = "backups";
                 return;
             }
-            RootNavigation.Navigate(Properties.Settings.Default.StartPage);
+            RootNavigation.Navigate(Settings.Default.StartPage);
         }
 
         private void BackupsPage_BackupSaveViewed(object? sender, BackupSaveViewedEventArgs e)
@@ -225,8 +224,11 @@ namespace RemnantSaveGuardian.Views.Windows
                 }
             }
             WorldAnalyzerViewModel? viewM = Activator.CreateInstance(typeof(WorldAnalyzerViewModel)) as WorldAnalyzerViewModel;
+            Debug.Assert(viewM != null, nameof(viewM) + " != null");
             object[] parameters = { viewM, e.SaveBackup.SaveFolderPath };
             WorldAnalyzerPage? page = Activator.CreateInstance(typeof(WorldAnalyzerPage), parameters) as WorldAnalyzerPage;
+            Debug.Assert(page != null, nameof(page) + " != null");
+
 
             NavigationItem navItem = new()
             {
@@ -323,7 +325,7 @@ namespace RemnantSaveGuardian.Views.Windows
         {
             base.OnClosed(e);
 
-            Properties.Settings.Default.Save();
+            Settings.Default.Save();
 
             // Make sure that closing this window will begin the process of closing the application.
             Application.Current.Shutdown();
@@ -331,24 +333,80 @@ namespace RemnantSaveGuardian.Views.Windows
 
         private static void TryToFindGameFolder()
         {
-            if (File.Exists(Properties.Settings.Default.GameFolder + @"\Remnant2.exe"))
+            if (File.Exists(Settings.Default.GameFolder + @"\Remnant2.exe"))
             {
                 return;
             }
 
+            // If Remnant not found or not installed, clear path
+            Settings.Default.GameFolder = "";
+
+            string? steamPath = FindSteamPath();
+            if (steamPath != null)
+            {
+                Settings.Default.GameFolder = steamPath;
+                return;
+            }
+
+            string? epicPath = FindEpicPath(); 
+            if (epicPath != null)
+            {
+                Settings.Default.GameFolder = epicPath;
+            }
+
+            
+            // Check if game is installed via Windows Store
+            // TODO - don't have windows store version
+
+        }
+
+        private static string? FindEpicPath()
+        {
+            // Check if game is installed via Epic
+            // Epic stores manifests for every installed game withing "C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests"
+            // These "Manifests" are in json format, so if one of them is for Remnant, then Remnant is installed with epic
+            DirectoryInfo epicManifestFolder = new(@"C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests");
+            if (epicManifestFolder.Exists) // If Folder don't exist, epic is not installed
+            {
+                foreach (FileInfo fi in epicManifestFolder.GetFiles("*.item"))
+                {
+                    string[] itemContent = File.ReadAllLines(fi.FullName);
+                    if (itemContent.All(t => t.Contains("Remnant II") == false)) continue;
+
+                    string? epicRemnantInstallPathRaw = itemContent.FirstOrDefault(t => t.Contains("\"InstallLocation\""));
+                    string[]? epicRemnantInstallPathRawSplit = epicRemnantInstallPathRaw?.Split('\"');
+                    string? epicRemnantInstallPath = epicRemnantInstallPathRawSplit?[3].Replace(@"\\", @"\");
+
+                    if (epicRemnantInstallPath != null && Directory.Exists(epicRemnantInstallPath))
+                    {
+                        if (File.Exists(@$"{epicRemnantInstallPath}\Remnant2.exe"))
+                        {
+                            return epicRemnantInstallPath;
+                        }
+                    }
+
+                    break;
+                }
+            }
+            return null;
+        }
+
+        private static string? FindSteamPath()
+        {
             // Check if game is installed via Steam
             // In registry, we can see IF the game is installed with steam or not
             // To find the actual game, we need to search within ALL library folders
-            Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Valve\Steam\Apps\1282100", false);
+            Microsoft.Win32.RegistryKey? key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Valve\Steam\Apps\1282100", false);
             if (key != null) // null if remnant is not in steam library (or steam itself is not (or never was) installed)
             {
                 bool? steamRemnantInstalled = null;
-                object keyValue = key.GetValue("Installed"); // Value is true when remnant is installed
+                object? keyValue = key.GetValue("Installed"); // Value is true when remnant is installed
                 if (keyValue != null) steamRemnantInstalled = Convert.ToBoolean(keyValue);
                 if (steamRemnantInstalled.HasValue && steamRemnantInstalled.Value)
                 {
-                    Microsoft.Win32.RegistryKey steamRegKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Valve\Steam", false);
-                    string steamInstallPath = steamRegKey?.GetValue("SteamPath") as string; // Get install path for steam
+                    Microsoft.Win32.RegistryKey? steamRegKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Valve\Steam", false);
+                    if (steamRegKey == null) return null;
+                    if (steamRegKey.GetValue("SteamPath") is not string steamInstallPath) return null;
                     DirectoryInfo steamInstallDir = new(steamInstallPath);
                     if (steamInstallDir.Exists)
                     {
@@ -362,59 +420,27 @@ namespace RemnantSaveGuardian.Views.Windows
                             remnantIndex = libraryFolderContent.Length;
                         }
                         libraryFolderContent = libraryFolderContent.Take(remnantIndex).ToArray();
-                        string steamLibraryPathRaw = libraryFolderContent.LastOrDefault(t => t.Contains("\"path\""));
-                        string[] steamLibraryPathRawSplit = steamLibraryPathRaw?.Split('\"');
-                        string steamLibraryPath = steamLibraryPathRawSplit?[3];
+                        string? steamLibraryPathRaw = libraryFolderContent.LastOrDefault(t => t.Contains("\"path\""));
+                        string[]? steamLibraryPathRawSplit = steamLibraryPathRaw?.Split('\"');
+                        string? steamLibraryPath = steamLibraryPathRawSplit?[3];
                         string steamRemnantInstallPath = @$"{steamLibraryPath?.Replace(@"\\", @"\")}\steamapps\common\Remnant2";
-                        if (Directory.Exists(steamRemnantInstallPath))
+                        if (steamLibraryPath != null && Directory.Exists(steamRemnantInstallPath))
                         {
                             if (File.Exists(@$"{steamRemnantInstallPath}\Remnant2.exe"))
                             {
-                                Properties.Settings.Default.GameFolder = steamRemnantInstallPath;
-                                return;
+                                return steamRemnantInstallPath;
                             }
                         }
                     }
                 }
             }
 
-            // Check if game is installed via Epic
-            // Epic stores manifests for every installed game withing "C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests"
-            // These "Manifests" are in json format, so if one of them is for Remnant, then Remnant is installed with epic
-            DirectoryInfo epicManifestFolder = new(@"C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests");
-            if (epicManifestFolder.Exists) // If Folder don't exist, epic is not installed
-            {
-                foreach (FileInfo fi in epicManifestFolder.GetFiles("*.item"))
-                {
-                    string[] itemContent = File.ReadAllLines(fi.FullName);
-                    if (itemContent.All(t => t.Contains("Remnant II") == false)) continue;
-
-                    string epicRemnantInstallPathRaw = itemContent.FirstOrDefault(t => t.Contains("\"InstallLocation\""));
-                    string[] epicRemnantInstallPathRawSplit = epicRemnantInstallPathRaw?.Split('\"');
-                    string epicRemnantInstallPath = epicRemnantInstallPathRawSplit?[3].Replace(@"\\", @"\");
-
-                    if (Directory.Exists(epicRemnantInstallPath))
-                    {
-                        if (File.Exists(@$"{epicRemnantInstallPath}\Remnant2.exe"))
-                        {
-                            Properties.Settings.Default.GameFolder = epicRemnantInstallPath;
-                            return;
-                        }
-                    }
-
-                    break;
-                }
-            }
-            // Check if game is installed via Windows Store
-            // TODO - don't have windows store version
-
-            // Remnant not found or not installed, clear path
-            Properties.Settings.Default.GameFolder = "";
+            return null;
         }
 
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
-            Topmost = Properties.Settings.Default.TopMost;
+            Topmost = Settings.Default.TopMost;
         }
     }
 }
