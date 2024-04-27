@@ -31,7 +31,7 @@ namespace RemnantSaveGuardian
         public static string T(string key, LocalizationOptions options)
         {
             string val = GetLocalizedValue<string>(key, options);
-            if (val == "")
+            if (string.IsNullOrEmpty(val))
             {
                 return key;
                 /*if (resourceFile != "GameStrings")
