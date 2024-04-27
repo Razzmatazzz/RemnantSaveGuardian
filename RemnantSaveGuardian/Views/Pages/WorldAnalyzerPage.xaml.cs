@@ -680,7 +680,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             possibleItems: items.Select(x => new LocalisedLootItem(x)).ToList(),
                             name: Loc.GameT(lg.Name ?? ""),
                             type: Loc.GameT(Regex.Replace(lg.Type, @"\b([a-z])", m => m.Value.ToUpper()))
-                        );
+                        ){Unknown = lg.Unknown};
                         if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
@@ -805,7 +805,7 @@ namespace RemnantSaveGuardian.Views.Pages
             public List<LocalisedLootItem> MissingItems { get; set; }
             public List<LocalisedLootItem> PossibleItems { get; set; }
             public string MissingItemsString => string.Join("\n", MissingItems.Select(x => x.Name));
-
+            public UnknownData Unknown { get; set; }
             public string PossibleItemsString => string.Join("\n", PossibleItems.Select(x => x.Name));
         }
 

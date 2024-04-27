@@ -90,6 +90,15 @@ namespace RemnantSaveGuardian
         public void UpdateCharacters()
         {
             _remnantDataset = Analyzer.Analyze(_savePath);
+            //if (_remnantDataset.DebugMessages.Count > 0)
+            //{
+            //    Logger.Warn("---- There are analyzer warnings");
+            //    foreach (string message in _remnantDataset.DebugMessages)
+            //    {"s.Name"
+            //        Logger.Warn(message);
+            //    }
+            //    Logger.Warn("---- End of analyzer warnings");
+            //}
         }
 
         public static string DefaultSaveFolder()
