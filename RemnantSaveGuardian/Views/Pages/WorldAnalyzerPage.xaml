@@ -46,6 +46,12 @@
                 <Trigger Property="IsSelected" Value="True">
                     <Setter Property="Foreground" Value="#59F2A6" />
                 </Trigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=Type}" Value="unknown" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Foreground" Value="Red" />
+                </MultiDataTrigger>
             </Style.Triggers>
         </Style>
         <Style x:Key="lvMissingItemsStyle" BasedOn="{StaticResource {x:Type ListView}}" TargetType="ListView">
@@ -118,6 +124,20 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=Unknown}" Value="Event" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Foreground" Value="Red" />
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=Unknown}" Value="WorldDrop" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Foreground" Value="Red" />
+                </MultiDataTrigger>
+            </Style.Triggers>
         </Style>
         <Style x:Key="DataGridStyle" BasedOn="{StaticResource {x:Type DataGrid}}" TargetType="{x:Type DataGrid}">
             <Setter Property="ColumnHeaderStyle">

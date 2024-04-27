@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using lib.remnant2.analyzer.Model;
 using lib.remnant2.analyzer;
@@ -76,13 +77,11 @@ namespace RemnantSaveGuardian
             {
                 return true;
             }
-            else
+
+            string[] winFiles = Directory.GetFiles(folder, "container.*");
+            if (winFiles.Length > 0)
             {
-                string[] winFiles = Directory.GetFiles(folder, "container.*");
-                if (winFiles.Length > 0)
-                {
-                    return true;
-                }
+                return true;
             }
             return false;
         }
@@ -99,6 +98,11 @@ namespace RemnantSaveGuardian
             //    }
             //    Logger.Warn("---- End of analyzer warnings");
             //}
+
+            //var cz = _remnantDataset.Characters.SelectMany(x => x.Save.Campaign.Zones);
+            //var az = _remnantDataset.Characters.Select(x => x.Save).Where(x =>x.Adventure != null).SelectMany(x => x.Adventure!.Zones);
+            //var l = cz.Union(az).SelectMany(x => x.Locations).SelectMany(x => x.LootGroups).Where(x => x is { Type: "World Drop", Items.Count: > 1 }).ToArray();
+
         }
 
         public static string DefaultSaveFolder()
