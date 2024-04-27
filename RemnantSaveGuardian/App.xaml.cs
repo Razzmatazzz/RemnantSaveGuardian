@@ -30,7 +30,7 @@ namespace RemnantSaveGuardian
         private static readonly IHost Host = Microsoft.Extensions.Hosting.Host
             .CreateDefaultBuilder()
             .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)); })
-            .ConfigureServices((context, services) =>
+            .ConfigureServices((_, services) =>
             {
                 // App Host
                 services.AddHostedService<ApplicationHostService>();

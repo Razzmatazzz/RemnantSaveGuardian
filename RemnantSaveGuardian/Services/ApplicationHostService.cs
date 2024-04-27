@@ -25,18 +25,18 @@ namespace RemnantSaveGuardian.Services
         /// Triggered when the application host is ready to start the service.
         /// </summary>
         /// <param name="cancellationToken">Indicates that the start process has been aborted.</param>
-        public async Task StartAsync(CancellationToken cancellationToken)
+        public Task StartAsync(CancellationToken cancellationToken)
         {
-            await HandleActivationAsync();
+            return HandleActivationAsync();
         }
 
         /// <summary>
         /// Triggered when the application host is performing a graceful shutdown.
         /// </summary>
         /// <param name="cancellationToken">Indicates that the shutdown process should no longer be graceful.</param>
-        public async Task StopAsync(CancellationToken cancellationToken)
+        public Task StopAsync(CancellationToken cancellationToken)
         {
-            await Task.CompletedTask;
+            return Task.CompletedTask;
         }
 
         /// <summary>

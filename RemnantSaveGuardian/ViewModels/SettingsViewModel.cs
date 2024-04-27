@@ -3,9 +3,9 @@ using Wpf.Ui.Common.Interfaces;
 
 namespace RemnantSaveGuardian.ViewModels
 {
-    public partial class SettingsViewModel : ObservableObject, INavigationAware
+    public class SettingsViewModel : ObservableObject, INavigationAware
     {
-        private bool _isInitialized = false;
+        private bool _isInitialized;
 
         public void OnNavigatedTo()
         {

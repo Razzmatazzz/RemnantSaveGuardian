@@ -1,16 +1,14 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
 using System.Collections.ObjectModel;
 using Wpf.Ui.Common;
 using Wpf.Ui.Controls;
 using Wpf.Ui.Controls.Interfaces;
-using Wpf.Ui.Mvvm.Contracts;
 
 namespace RemnantSaveGuardian.ViewModels
 {
     public partial class MainWindowViewModel : ObservableObject
     {
-        private bool _isInitialized = false;
+        private bool _isInitialized;
 
         [ObservableProperty]
         private string _applicationTitle = string.Empty;
@@ -24,7 +22,7 @@ namespace RemnantSaveGuardian.ViewModels
         [ObservableProperty]
         private ObservableCollection<MenuItem> _trayMenuItems = new();
 
-        public MainWindowViewModel(INavigationService navigationService)
+        public MainWindowViewModel()
         {
             if (!_isInitialized)
                 InitializeViewModel();

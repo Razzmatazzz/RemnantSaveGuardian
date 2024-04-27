@@ -3,9 +3,9 @@ using Wpf.Ui.Common.Interfaces;
 
 namespace RemnantSaveGuardian.ViewModels
 {
-    public partial class LogViewModel : ObservableObject, INavigationAware
+    public class LogViewModel : ObservableObject, INavigationAware
     {
-        private bool _isInitialized = false;
+        private bool _isInitialized;
 
         public void OnNavigatedTo()
         {

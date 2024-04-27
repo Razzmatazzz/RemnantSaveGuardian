@@ -30,8 +30,8 @@ namespace RemnantSaveGuardian
         }
         public static string T(string key, LocalizationOptions options)
         {
-            string? val = GetLocalizedValue<string>(key, options);
-            if (val == null || val == "")
+            string val = GetLocalizedValue<string>(key, options);
+            if (val == "")
             {
                 return key;
                 /*if (resourceFile != "GameStrings")
@@ -71,28 +71,28 @@ namespace RemnantSaveGuardian
         {
             return T(key, new LocalizationOptions { { "namespace", "Strings" } });
         }
-        public static string GameT(string key, LocalizationOptions options)
-        {
-            options["namespace"] = "GameStrings";
-            return T(key, options);
-        }
+        //public static string GameT(string key, LocalizationOptions options)
+        //{
+        //    options["namespace"] = "GameStrings";
+        //    return T(key, options);
+        //}
         public static string GameT(string key)
         {
             return T(key, new LocalizationOptions { { "namespace", "GameStrings" } });
         }
-        public static bool Has(string key, LocalizationOptions options)
-        {
-            string? val = GetLocalizedValue<string>(key, options);
-            if (val == null || val == "")
-            {
-                return false;
-            }
-            return true;
-        }
-        public static bool GameTHas(string key)
-        {
-            return Has(key, new LocalizationOptions { { "namespace", "GameStrings" } });
-        }
+        //public static bool Has(string key, LocalizationOptions options)
+        //{
+        //    string val = GetLocalizedValue<string>(key, options);
+        //    if (val == "")
+        //    {
+        //        return false;
+        //    }
+        //    return true;
+        //}
+        //public static bool GameTHas(string key)
+        //{
+        //    return Has(key, new LocalizationOptions { { "namespace", "GameStrings" } });
+        //}
     }
 
     public class LocalizationOptions : Dictionary<string, string>
@@ -109,7 +109,7 @@ namespace RemnantSaveGuardian
         public bool Has(string key)
         {
             if (!ContainsKey(key)) return false;
-            return this[key] != null;
+            return true;
         }
     }
 }

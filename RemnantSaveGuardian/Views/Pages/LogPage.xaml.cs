@@ -1,5 +1,6 @@
 ﻿//using System.Drawing;
 using System;
+using System.Globalization;
 using Wpf.Ui.Common.Interfaces;
 using Wpf.Ui.Controls;
 
@@ -39,7 +40,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     Message = message,
                     IsOpen = true,
-                    Title = DateTime.Now.ToString(),
+                    Title = DateTime.Now.ToString(CultureInfo.InvariantCulture),
                 };
                 if (logType == LogType.Error)
                 {
