@@ -109,7 +109,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             System.Threading.Thread.Sleep(500); //Wait for UI render first
             Save.UpdateCharacters();
-            Dispatcher.Invoke(() => { 
+            Dispatcher.Invoke(() => {
                 CharacterControl.SelectedIndex = 0;
                 checkAdventureTab();
                 progressRing.Visibility = Visibility.Collapsed;
@@ -130,7 +130,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel) : this(viewModel, null)
         {
-            
+
         }
 
         #region INotifiedProperty Block
@@ -513,7 +513,7 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 itemname = itemname?.Substring(0, itemname.IndexOf(" ("));
             }
-            Process.Start("explorer.exe", $"https://remnant2.wiki.fextralife.com/{itemname}");
+            Process.Start("explorer.exe", $"https://remnant.wiki/{itemname}");
         }
         private void ExpandAllItem_Click(object sender, RoutedEventArgs e)
         {
