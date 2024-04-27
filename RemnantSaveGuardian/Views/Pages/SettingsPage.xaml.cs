@@ -202,7 +202,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             if (Properties.Settings.Default.BackupFolder.Length > 0 && Directory.Exists(Properties.Settings.Default.BackupFolder))
             {
-                List<string> backupFiles = Directory.GetDirectories(Properties.Settings.Default.BackupFolder).ToList();
+                List<string> backupFiles = [.. Directory.GetDirectories(Properties.Settings.Default.BackupFolder)];
                 if (backupFiles.Count > 0)
                 {
                     MessageBox messageBox = new()

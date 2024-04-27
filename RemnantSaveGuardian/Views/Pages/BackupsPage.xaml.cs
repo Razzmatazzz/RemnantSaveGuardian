@@ -71,7 +71,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
             InitializeComponent();
 
-            _listBackups = new List<SaveBackup>();
+            _listBackups = [];
             try
             {
                 dataBackups.CanUserDeleteRows = false;
@@ -203,10 +203,10 @@ namespace RemnantSaveGuardian.Views.Pages
         private void DataBackups_BeginningEdit(object? sender, DataGridBeginningEditEventArgs e)
         {
             LocalizedColumnHeader? header = (LocalizedColumnHeader)e.Column.Header;
-            List<string> editableColumns = new() { 
+            List<string> editableColumns = [ 
                 "Name",
                 "Keep"
-            };
+            ];
             if (!editableColumns.Contains(header.Key)) e.Cancel = true;
         }
 
@@ -310,7 +310,7 @@ namespace RemnantSaveGuardian.Views.Pages
             Dictionary<long, bool> backupKeeps = GetSavedBackupKeeps();
             string[] files = Directory.GetDirectories(Properties.Settings.Default.BackupFolder);
             SaveBackup? activeBackup = null;
-            List<SaveBackup> list = new();
+            List<SaveBackup> list = [];
             foreach (string path in files)
             {
                 if (RemnantSave.ValidSaveFolder(path))
@@ -358,7 +358,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private static Dictionary<long, string> GetSavedBackupNames()
         {
-            Dictionary<long, string> names = new();
+            Dictionary<long, string> names = [];
             string savedString = Properties.Settings.Default.BackupName;
             string[] savedNames = savedString.Split(',');
             foreach (string name in savedNames)
@@ -374,7 +374,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private static Dictionary<long, bool> GetSavedBackupKeeps()
         {
-            Dictionary<long, bool> keeps = new();
+            Dictionary<long, bool> keeps = [];
             string savedString = Properties.Settings.Default.BackupKeep;
             string[] savedKeeps = savedString.Split(',');
             foreach (string keep in savedKeeps)
@@ -478,7 +478,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             if (_listBackups.Count > Properties.Settings.Default.BackupLimit && Properties.Settings.Default.BackupLimit > 0)
             {
-                List<SaveBackup> removeBackups = new();
+                List<SaveBackup> removeBackups = [];
                 int delNum = _listBackups.Count - Properties.Settings.Default.BackupLimit;
                 for (int i = 0; i < _listBackups.Count && delNum > 0; i++)
                 {
@@ -510,7 +510,7 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private void UpdateSavedNames()
         {
-            List<string> savedNames = new();
+            List<string> savedNames = [];
             foreach (var backup in _listBackups)
             {
                 if (!backup.Name.Equals(backup.SaveDate.Ticks.ToString()))
@@ -518,13 +518,13 @@ namespace RemnantSaveGuardian.Views.Pages
                     savedNames.Add(backup.SaveDate.Ticks + "=" + System.Net.WebUtility.UrlEncode(backup.Name));
                 }
             }
-            Properties.Settings.Default.BackupName = savedNames.Count > 0 ? string.Join(",", savedNames.ToArray()) : "";
+            Properties.Settings.Default.BackupName = savedNames.Count > 0 ? string.Join(",", [.. savedNames]) : "";
             Properties.Settings.Default.Save();
         }
 
         private void UpdateSavedKeeps()
         {
-            List<string> savedKeeps = new();
+            List<string> savedKeeps = [];
             foreach (var backup in _listBackups)
             {
                 if (backup.Keep)
@@ -532,7 +532,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     savedKeeps.Add(backup.SaveDate.Ticks + "=True");
                 }
             }
-            Properties.Settings.Default.BackupKeep = savedKeeps.Count > 0 ? string.Join(",", savedKeeps.ToArray()) : "";
+            Properties.Settings.Default.BackupKeep = savedKeeps.Count > 0 ? string.Join(",", [.. savedKeeps]) : "";
             Properties.Settings.Default.Save();
         }
 
@@ -579,13 +579,13 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void DataBackups_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            List<string> allowColumns = new() { 
+            List<string> allowColumns = [ 
                 "Name",
                 "SaveDate",
                 "Progression",
                 "Keep",
                 "Active"
-            };
+            ];
             string header = e.Column.Header.ToString() ?? "";
             if (!allowColumns.Contains(header))
             {
@@ -691,11 +691,11 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private static void SaveFolderUnrecognizedFilesCheck()
         {
-            List<string> invalidFiles = new();
+            List<string> invalidFiles = [];
             foreach (string file in Directory.GetFiles(Properties.Settings.Default.SaveFolder))
             {
                 string fileName = Path.GetFileName(file);
-                if (!Regex.Match(fileName, @"^(profile|save_\d+)\.(sav|bak\d?|onl)|steam_autocloud.vdf$").Success)
+                if (!SaveFolderRecognizedFiles().Match(fileName).Success)
                 {
                     if (fileName.EndsWith(".sav"))
                     {
@@ -764,7 +764,7 @@ namespace RemnantSaveGuardian.Views.Pages
             string[]? data = e.Data.GetData(DataFormats.FileDrop) as string[];
 
             Debug.Assert(data != null, nameof(data) + " != null");
-            List<string> draggedFiles = data.ToList();
+            List<string> draggedFiles = [.. data];
             FileAttributes attr = File.GetAttributes(draggedFiles[0]);
             string? folder = (attr & FileAttributes.Directory) == FileAttributes.Directory ? draggedFiles[0] : Path.GetDirectoryName(draggedFiles[0]);
 
@@ -775,7 +775,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 Logger.Error(Loc.T("No_profile_sav_found_warning"));
                 return;
             }
-            if (!files.Any(file => Regex.Match(file, @"save_\d.sav$").Success))
+            if (!files.Any(file => WorldSaveFile().Match(file).Success))
             {
                 Logger.Error(Loc.T("No_world_found_warning"));
                 return;
@@ -833,29 +833,24 @@ namespace RemnantSaveGuardian.Views.Pages
             if(e.PropertyName == "Language")
                 dataBackups.Items.Refresh();
         }
+
+        [GeneratedRegex(@"^(profile|save_\d+)\.(sav|bak\d?|onl)|steam_autocloud.vdf$")]
+        private static partial Regex SaveFolderRecognizedFiles();
+        [GeneratedRegex(@"save_\d.sav$")]
+        private static partial Regex WorldSaveFile();
     }
 
-    public class BackupSaveViewedEventArgs : EventArgs
+    public class BackupSaveViewedEventArgs(SaveBackup saveBackup) : EventArgs
     {
-        public BackupSaveViewedEventArgs(SaveBackup saveBackup)
-        {
-            SaveBackup = saveBackup;
-        }
-
-        public SaveBackup SaveBackup { get; set; }
+        public SaveBackup SaveBackup { get; set; } = saveBackup;
     }
 
-    public class LocalizedColumnHeader
+    public class LocalizedColumnHeader(string key)
     {
-        private readonly string _key;
-        public string Key => _key;
+        public string Key => key;
 
-        public string Name => Loc.T(_key);
+        public string Name => Loc.T(key);
 
-        public LocalizedColumnHeader(string key)
-        {
-            _key = key;
-        }
         public override string ToString()
         {
             return Name;

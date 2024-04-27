@@ -2,6 +2,7 @@
 using RemnantSaveGuardian.ViewModels;
 using RemnantSaveGuardian.Views.Pages;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Documents;
 using RemnantSaveGuardian.Properties;
 using Wpf.Ui.Common;
 using Wpf.Ui.Controls;
@@ -225,7 +227,7 @@ namespace RemnantSaveGuardian.Views.Windows
             }
             WorldAnalyzerViewModel? viewM = Activator.CreateInstance(typeof(WorldAnalyzerViewModel)) as WorldAnalyzerViewModel;
             Debug.Assert(viewM != null, nameof(viewM) + " != null");
-            object[] parameters = { viewM, e.SaveBackup.SaveFolderPath };
+            object[] parameters = [viewM, e.SaveBackup.SaveFolderPath];
             WorldAnalyzerPage? page = Activator.CreateInstance(typeof(WorldAnalyzerPage), parameters) as WorldAnalyzerPage;
             Debug.Assert(page != null, nameof(page) + " != null");
 
@@ -272,28 +274,49 @@ namespace RemnantSaveGuardian.Views.Windows
 
         private void Logger_MessageLogged(object? sender, MessageLoggedEventArgs e)
         {
-            ControlAppearance appearance = ControlAppearance.Info;
-            SymbolRegular symbol = SymbolRegular.Info24;
-            string title = Loc.T("Info");
-            if (e.LogType == LogType.Error)
+            Dispatcher.Invoke(() =>
             {
-                appearance = ControlAppearance.Danger;
-                symbol = SymbolRegular.ErrorCircle24;
-                title = Loc.T("Error");
-            }
-            if (e.LogType == LogType.Warning)
-            {
-                appearance = ControlAppearance.Caution;
-                symbol = SymbolRegular.Warning24;
-                title = Loc.T("Warning");
-            }
-            if (e.LogType == LogType.Success)
-            {
-                appearance = ControlAppearance.Success;
-                symbol = SymbolRegular.CheckmarkCircle24;
-                title = Loc.T("Success");
-            }
-            snackbar.Show(title, e.Message, symbol, appearance);
+                ControlAppearance appearance = ControlAppearance.Info;
+                SymbolRegular symbol = SymbolRegular.Info24;
+                string title = Loc.T("Info");
+                if (e.LogType == LogType.Error)
+                {
+                    appearance = ControlAppearance.Danger;
+                    symbol = SymbolRegular.ErrorCircle24;
+                    title = Loc.T("Error");
+                }
+                if (e.LogType == LogType.Warning)
+                {
+                    appearance = ControlAppearance.Caution;
+                    symbol = SymbolRegular.Warning24;
+                    title = Loc.T("Warning");
+                }
+                if (e.LogType == LogType.Success)
+                {
+                    appearance = ControlAppearance.Success;
+                    symbol = SymbolRegular.CheckmarkCircle24;
+                    title = Loc.T("Success");
+                }
+
+                if (!snackbar.IsShown || CompareTitle(title, snackbar.Title) >= 0)
+                {
+                    snackbar.Show(title, e.Message, symbol, appearance);
+                }
+            });
+        }
+
+        private static int CompareTitle(string s1, string s2)
+        {
+            List<string> titles = [
+                "Info",
+                "Success",
+                "Warning",
+                "Error"
+            ];
+
+            if (titles.IndexOf(s1) > titles.IndexOf(s2)) return 1;
+            if (titles.IndexOf(s1) == titles.IndexOf(s2)) return 0;
+            return -1;
         }
 
         #region INavigationWindow methods

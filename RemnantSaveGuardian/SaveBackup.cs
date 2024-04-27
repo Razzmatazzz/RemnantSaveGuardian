@@ -144,13 +144,8 @@ namespace RemnantSaveGuardian
         private DateTime SaveDateTime => File.GetLastWriteTime(Path.Join(_savePath, "profile.sav"));
     }
 
-    public class UpdatedEventArgs : EventArgs
+    public class UpdatedEventArgs(string fieldName) : EventArgs
     {
-        public UpdatedEventArgs(string fieldName)
-        {
-            FieldName = fieldName;
-        }
-
-        public string FieldName { get; }
+        public string FieldName { get; } = fieldName;
     }
 }

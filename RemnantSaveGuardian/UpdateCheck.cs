@@ -103,15 +103,9 @@ namespace RemnantSaveGuardian
         }
     }
 
-    public class NewVersionEventArgs : EventArgs
+    public class NewVersionEventArgs(Version version, Uri uri) : EventArgs
     {
-        public NewVersionEventArgs(Version version, Uri uri)
-        {
-            Version = version;
-            Uri = uri;
-        }
-
-        public Version Version { get; set; }
-        public Uri Uri { get; set; }
+        public Version Version { get; set; } = version;
+        public Uri Uri { get; set; } = uri;
     }
 }

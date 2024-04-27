@@ -78,8 +78,8 @@ namespace RemnantSaveGuardian.Views.Pages
             FontSizeSlider.Value = Properties.Settings.Default.AnalyzerFontSize;
             FontSizeSlider.ValueChanged += FontSizeSlider_ValueChanged;
 
-            _filteredCampaign = new();
-            _filteredAdventure = new();
+            _filteredCampaign = [];
+            _filteredAdventure = [];
             CampaignData.ItemsSource = _filteredCampaign;
             AdventureData.ItemsSource = _filteredAdventure;
 
@@ -293,12 +293,12 @@ namespace RemnantSaveGuardian.Views.Pages
         #endregion
         private void Data_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            List<string> allowColumns = new() {
+            List<string> allowColumns = [
                 "Location",
                 "Type",
                 "Name",
                 "MissingItems",
-            };
+            ];
             if (Properties.Settings.Default.ShowPossibleItems)
             {
                 allowColumns.Add("PossibleItems");
@@ -330,8 +330,8 @@ namespace RemnantSaveGuardian.Views.Pages
             e.Column.Header = Loc.T(header);
         }
 
-        private static readonly string[] ModeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
-        readonly List<TreeListClass> _itemModeNode = new();
+        private static readonly string[] ModeTags = ["treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival"];
+        readonly List<TreeListClass> _itemModeNode = [];
         private void CharacterControl_SelectionChanged(object? sender, SelectionChangedEventArgs? e)
         {
             //if (CharacterControl.SelectedIndex == -1 && listCharacters.Count > 0) return;
@@ -342,9 +342,9 @@ namespace RemnantSaveGuardian.Views.Pages
                 //txtMissingItems.Text = string.Join("\n", Save.Characters[CharacterControl.SelectedIndex].GetMissingItems());
 
                 _itemModeNode.Clear();
-                List<TreeListClass>[] itemNode = { new(), new(), new() };
+                List<TreeListClass>[] itemNode = [[], [], []];
                 List<TreeListClass>?[] itemChild = new List<TreeListClass>[20];
-                string[] modes = { Strings.Normal, Strings.Hardcore, Strings.Survival };
+                string[] modes = [Strings.Normal, Strings.Hardcore, Strings.Survival];
                 for (int i = 0;i <= 2; i++)
                 {
                     TreeListClass item = new() { Name = modes[i], ChildNode = itemNode[i], Tag = ModeTags[i], IsExpanded = (bool)Properties.Settings.Default[$"{ModeTags[i]}_Expanded"] };
@@ -372,7 +372,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         typeNodeTag = $"{modeNode}{itemType}";
                         idx++;
-                        itemChild[idx] = new List<TreeListClass>();
+                        itemChild[idx] = [];
                         bool isExpanded = true;
                         try
                         {
@@ -382,7 +382,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         {
                             Logger.Warn($"Not found properties: {typeNodeTag}_Expand; {ex}");
                         }
-                        TreeListClass item = new() { Name = itemType, ChildNode = itemChild[idx] ?? new List<TreeListClass>(0), Tag = typeNodeTag, IsExpanded = isExpanded };
+                        TreeListClass item = new() { Name = itemType, ChildNode = itemChild[idx] ?? [], Tag = typeNodeTag, IsExpanded = isExpanded };
                         item.Expanded += GameType_CollapsedExpanded;
                         itemNode[itemMode].Add(item);
                     }
@@ -588,7 +588,7 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private List<WorldAnalyzerGridData> FilterGridData(Profile profile, RolledWorld? world)
         {
-            List<WorldAnalyzerGridData> result = new();
+            List<WorldAnalyzerGridData> result = [];
             if (world == null) return result;
 
             List<string> missingIds = profile.MissingItems.Select(x => x["Id"]).ToList();
@@ -606,8 +606,8 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         WorldAnalyzerGridData newItem = new(
                             location: Loc.GameT(l),
-                            missingItems: new(),
-                            possibleItems: new(),
+                            missingItems: [],
+                            possibleItems: [],
                             name: string.Join('\n', location.Connections.Select(Loc.GameT)),
                             type: Loc.GameT("Connections")
                         );
@@ -620,8 +620,8 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         WorldAnalyzerGridData newItem = new(
                             location: Loc.GameT(l),
-                            missingItems: new(),
-                            possibleItems: new(),
+                            missingItems: [],
+                            possibleItems: [],
                             name: string.Join('\n', location.WorldStones.Select(Loc.GameT)),
                             type: Loc.GameT("World Stones")
                         );
@@ -635,7 +635,7 @@ namespace RemnantSaveGuardian.Views.Pages
                         //List<LocalisedLootItem> ll = new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") } } }) };
                         WorldAnalyzerGridData newItem = new(
                             location: Loc.GameT(l),
-                            missingItems: new(),
+                            missingItems: [],
                             possibleItems: location.TraitBookDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") }, { "Id", "Bogus" } } }) },
                             name: Loc.GameT("TraitBook"),
                             type: Loc.GameT("Item")
@@ -650,7 +650,7 @@ namespace RemnantSaveGuardian.Views.Pages
                     {
                         WorldAnalyzerGridData newItem = new(
                             location: Loc.GameT(l),
-                            missingItems: new(),
+                            missingItems: [],
                             possibleItems: location.SimulacrumDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("Simulacrum") }, { "Id", "Bogus" } } }) },
                             name: Loc.GameT("Simulacrum"),
                             type: Loc.GameT("Item")
@@ -741,7 +741,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 set => _tag = value;
             }
             public List<TreeListClass> ChildNode {
-                get => _childNode ?? new List<TreeListClass>(0);
+                get => _childNode ?? [];
                 set => _childNode = value;
             }
             public bool IsSelected {
@@ -776,34 +776,24 @@ namespace RemnantSaveGuardian.Views.Pages
                 return string.Compare(Name, other?.Name, StringComparison.InvariantCulture);
             }
         }
-        public class PropertyChangedEventArgs : EventArgs
+        public class PropertyChangedEventArgs(string propertyName, object oldValue, object newValue) : EventArgs
         {
-            public PropertyChangedEventArgs(string propertyName, object oldValue, object newValue)
-            {
-                PropertyName = propertyName;
-                OldValue = oldValue;
-                NewValue = newValue;
-            }
-            public string PropertyName { get; private set; }
-            public object OldValue { get; private set; }
-            public object NewValue { get; set; }
+            public string PropertyName { get; private set; } = propertyName;
+            public object OldValue { get; private set; } = oldValue;
+            public object NewValue { get; set; } = newValue;
         }
-        public class WorldAnalyzerGridData
+        public class WorldAnalyzerGridData(
+            string location,
+            string type,
+            string name,
+            List<LocalisedLootItem> missingItems,
+            List<LocalisedLootItem> possibleItems)
         {
-            public WorldAnalyzerGridData(string location, string type, string name, List<LocalisedLootItem> missingItems, List<LocalisedLootItem> possibleItems)
-            {
-                Location = location;
-                Type = type;
-                Name = name;
-                MissingItems = missingItems;
-                PossibleItems = possibleItems;
-            }
-
-            public string Location { get; set; }
-            public string Type { get; set; }
-            public string Name { get; set; }
-            public List<LocalisedLootItem> MissingItems { get; set; }
-            public List<LocalisedLootItem> PossibleItems { get; set; }
+            public string Location { get; set; } = location;
+            public string Type { get; set; } = type;
+            public string Name { get; set; } = name;
+            public List<LocalisedLootItem> MissingItems { get; set; } = missingItems;
+            public List<LocalisedLootItem> PossibleItems { get; set; } = possibleItems;
             public string MissingItemsString => string.Join("\n", MissingItems.Select(x => x.Name));
             public UnknownData Unknown { get; set; }
             public string PossibleItemsString => string.Join("\n", PossibleItems.Select(x => x.Name));

@@ -76,10 +76,10 @@ namespace RemnantSaveGuardian.Views.UserControls
             AssociatedObject.MouseUp += AssociatedObject_MouseUp;
             AssociatedObject.PreviewMouseWheel += AssociatedObject_PreviewMouseWheel;
 
-            DependencyProperty[] propertyChain = new DependencyProperty[]
-            {
+            DependencyProperty[] propertyChain =
+            [
                 ScrollViewerBehavior.HorizontalOffsetProperty
-            };
+            ];
 
             Storyboard.SetTargetProperty(_animation, new PropertyPath("(0)", propertyChain.Select(x => (object)x).ToArray()));
             _storyBoard.Children.Add(_animation);

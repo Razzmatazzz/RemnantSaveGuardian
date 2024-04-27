@@ -13,7 +13,7 @@ namespace RemnantSaveGuardian
 
         public WindowsSave(string containerPath)
         {
-            Worlds = new List<string>();
+            Worlds = [];
             Container = containerPath;
             DirectoryInfo directory = new FileInfo(containerPath).Directory ?? 
                 throw new ApplicationException($"Cannot find directory for container path {containerPath}");

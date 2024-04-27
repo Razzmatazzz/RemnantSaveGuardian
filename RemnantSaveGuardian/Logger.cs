@@ -18,7 +18,7 @@ namespace RemnantSaveGuardian
             Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
         }
 
-        public static List<LogMessage> Messages { get; } = new ();
+        public static List<LogMessage> Messages { get; } = [];
 
         private static void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
@@ -38,10 +38,13 @@ namespace RemnantSaveGuardian
             File.WriteAllText("log.txt", DateTime.Now + ": Version " + typeof(MainWindow).Assembly.GetName().Version + "\r\n");
         }
 
-        public static void Log(object? message, LogType logType)
+        public static void Log(object? message, LogType logType, bool silent = false)
         {
             message ??= "null";
-            MessageLogged?.Invoke(null, new(message.ToString() ?? "", logType));
+            if (!silent)
+            {
+                MessageLogged?.Invoke(null, new(message.ToString() ?? "", logType));
+            }
             Messages.Add(new(message.ToString() ?? "", logType));
             if (Properties.Settings.Default.CreateLogFile)
             {
@@ -51,21 +54,30 @@ namespace RemnantSaveGuardian
             }
             //Debug.WriteLine(message);
         }
+        
         public static void Log(object message)
         {
             Log(message, LogType.Normal);
         }
+        
         public static void Success(object message)
         {
             Log(message, LogType.Success);
         }
+        
         public static void Error(object message)
         {
             Log(message, LogType.Error);
         }
+        
         public static void Warn(object message)
         {
             Log(message, LogType.Warning);
+        }
+
+        public static void WarnSilent(string message)
+        {
+            Log(message, LogType.Warning, true);
         }
     }
 
@@ -77,29 +89,18 @@ namespace RemnantSaveGuardian
         Warning,
     }
 
-    public class MessageLoggedEventArgs : EventArgs
+    public class MessageLoggedEventArgs(string message, LogType logType) : EventArgs
     {
-        public string Message { get; set; }
-        public LogType LogType { get; set;}
-        public MessageLoggedEventArgs(string message, LogType logType)
+        public string Message { get; set; } = message;
+        public LogType LogType { get; set;} = logType;
+
+        public MessageLoggedEventArgs(string message) : this(message, LogType.Normal)
         {
-            Message = message;
-            LogType = logType;
-        }
-        public MessageLoggedEventArgs(string message)
-        {
-            Message = message;
-            LogType = LogType.Normal;
         }
     }
-    public class LogMessage
+    public class LogMessage(string message, LogType logType)
     {
-        public string Message { get; set; }
-        public LogType LogType { get; set; }
-        public LogMessage(string message, LogType logType)
-        {
-            Message = message;
-            LogType = logType;
-        }
+        public string Message { get; set; } = message;
+        public LogType LogType { get; set; } = logType;
     }
 }

@@ -14,13 +14,13 @@ namespace RemnantSaveGuardian.ViewModels
         private string _applicationTitle = string.Empty;
 
         [ObservableProperty]
-        private ObservableCollection<INavigationControl> _navigationItems = new();
+        private ObservableCollection<INavigationControl> _navigationItems = [];
 
         [ObservableProperty]
-        private ObservableCollection<INavigationControl> _navigationFooter = new();
+        private ObservableCollection<INavigationControl> _navigationFooter = [];
 
         [ObservableProperty]
-        private ObservableCollection<MenuItem> _trayMenuItems = new();
+        private ObservableCollection<MenuItem> _trayMenuItems = [];
 
         public MainWindowViewModel()
         {
@@ -32,8 +32,8 @@ namespace RemnantSaveGuardian.ViewModels
         {
             ApplicationTitle = "Remnant Save Guardian";
 
-            NavigationItems = new ObservableCollection<INavigationControl>
-            {
+            NavigationItems =
+            [
                 new NavigationItem
                 {
                     Content = Loc.T("Save Backups"),
@@ -50,10 +50,10 @@ namespace RemnantSaveGuardian.ViewModels
                     Icon = SymbolRegular.Globe24,
                     PageType = typeof(Views.Pages.WorldAnalyzerPage)
                 }
-            };
+            ];
 
-            NavigationFooter = new ObservableCollection<INavigationControl>
-            {
+            NavigationFooter =
+            [
                 new NavigationItem
                 {
                     Content = Loc.T("Log"),
@@ -70,15 +70,15 @@ namespace RemnantSaveGuardian.ViewModels
                     Icon = SymbolRegular.Settings24,
                     PageType = typeof(Views.Pages.SettingsPage)
                 }
-            };
+            ];
 
-            TrayMenuItems = new ObservableCollection<MenuItem>
-            {
+            TrayMenuItems =
+            [
                 new() {
                     Header = Loc.T("Home"),
                     Tag = "tray_home"
                 }
-            };
+            ];
 
             _isInitialized = true;
         }

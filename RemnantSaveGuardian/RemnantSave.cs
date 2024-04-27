@@ -88,21 +88,18 @@ namespace RemnantSaveGuardian
 
         public void UpdateCharacters()
         {
+            bool first = _remnantDataset == null;
+         
             _remnantDataset = Analyzer.Analyze(_savePath);
-            //if (_remnantDataset.DebugMessages.Count > 0)
-            //{
-            //    Logger.Warn("---- There are analyzer warnings");
-            //    foreach (string message in _remnantDataset.DebugMessages)
-            //    {"s.Name"
-            //        Logger.Warn(message);
-            //    }
-            //    Logger.Warn("---- End of analyzer warnings");
-            //}
-
-            //var cz = _remnantDataset.Characters.SelectMany(x => x.Save.Campaign.Zones);
-            //var az = _remnantDataset.Characters.Select(x => x.Save).Where(x =>x.Adventure != null).SelectMany(x => x.Adventure!.Zones);
-            //var l = cz.Union(az).SelectMany(x => x.Locations).SelectMany(x => x.LootGroups).Where(x => x is { Type: "World Drop", Items.Count: > 1 }).ToArray();
-
+            if (first && _remnantDataset.DebugMessages.Count > 0)
+            {
+                Logger.WarnSilent("BEGIN Analyser warnings");
+                foreach (string message in _remnantDataset.DebugMessages)
+                {
+                    Logger.WarnSilent(message);
+                }
+                Logger.Warn("There were some analyzer warnings");
+            }
         }
 
         public static string DefaultSaveFolder()
