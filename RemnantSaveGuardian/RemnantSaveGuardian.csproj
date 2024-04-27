@@ -11,6 +11,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\256.ico</ApplicationIcon>
     <AssemblyVersion>1.2.2.0</AssemblyVersion>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
 
   <ItemGroup>
@@ -96,6 +97,10 @@
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
     <ZipDirectory SourceDirectory="$(TargetDir)" Overwrite="True" DestinationFile="$(UserProfile)\Desktop\RemnantSaveGuardian.zip" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo Version: $(AssemblyVersion)" />
   </Target>
 
 </Project>

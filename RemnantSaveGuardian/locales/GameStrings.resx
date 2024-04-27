@@ -2268,4 +2268,52 @@
   <data name="Mod_ChainOfCommand" xml:space="preserve">
     <value>Chain Of Command</value>
   </data>
+  <data name="Trait_Leech" xml:space="preserve">
+    <value>Leech</value>
+  </data>
+  <data name="Trait_Chakra" xml:space="preserve">
+    <value>Chakra</value>
+  </data>
+  <data name="DLC2Story" xml:space="preserve">
+    <value>The Forgotten Kingdom</value>
+  </data>
+  <data name="Amulet_WornDogTags" xml:space="preserve">
+    <value>Worn Dog Tags</value>
+  </data>
+  <data name="Amulet_ZeroDivide" xml:space="preserve">
+    <value>Zero Divide</value>
+  </data>
+  <data name="Amulet_ReedOfTheVaunnt" xml:space="preserve">
+    <value>Reed of the Vaunnt</value>
+  </data>
+  <data name="Amulet_SoulStone" xml:space="preserve">
+    <value>Soul Stone</value>
+  </data>
+  <data name="Amulet_ProfaneSoulStone" xml:space="preserve">
+    <value>Profane Soul Stone</value>
+  </data>
+  <data name="Ziggurat_DLC" xml:space="preserve">
+    <value>Moon Puzzle Room</value>
+  </data>
+  <data name="Amulet_StoneshapersChisel" xml:space="preserve">
+    <value>Stoneshaper's Chisel</value>
+  </data>
+  <data name="Amulet_MoonStone" xml:space="preserve">
+    <value>Moon Stone</value>
+  </data>
+  <data name="Amulet_MagnifyingGlass" xml:space="preserve">
+    <value>Magnifying Glass</value>
+  </data>
+  <data name="Amulet_FragrantThorn" xml:space="preserve">
+    <value>Fragrant Thorn</value>
+  </data>
+  <data name="Amulet_EchoOfTheForest" xml:space="preserve">
+    <value>Echo of the Forest</value>
+  </data>
+  <data name="Amulet_CervineKeepsake" xml:space="preserve">
+    <value>Cervine Keepsake</value>
+  </data>
+  <data name="Island_DLC" xml:space="preserve">
+    <value>Doe Statue</value>
+  </data>
 </root>

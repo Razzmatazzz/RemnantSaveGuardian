@@ -76,7 +76,16 @@
       "OneTrueKing": "Palace of the One True King"
     },
     "DLC2": {
-
+      "RootMadness": "",
+      "Kiln": "",
+      "Island": "Goddess's Rest",
+      "LydusaTemple": "The Bloodless Throne",
+      "TombRaid": "",
+      "ShiftingSoldier": "Earthen Coliseum",
+      "Upper": "The Ancient Canopy",
+      "Unkown2": "Deserted Atelier",
+      "Unkown3": "Luminous Vale",
+      "Unkown4": "Proving Grounds"
     }
   },
   "injectableParents": {
@@ -1212,8 +1221,8 @@
           "name": "/Items/Traits/Core/Siphoner/Trait_Siphoner"
         },
         {
-          "name": "/Items/Traits/Core/Resonance/Trait_Resonance",
-          "notes": "get killed by getting locked in the purge",
+          "name": "/Items/Traits/Core/Leech/Trait_Leech",
+          "notes": "Get killed by getting locked in the purge",
           "coop": true
         }
       ],
@@ -1708,6 +1717,85 @@
         }
       ]
     },
+    "DLC2": {
+      "Amulet_ZeroDivide": [
+        {
+          "name": "/Items/Trinkets/Amulets/ZeroDevide/Amulet_ZeroDivide"
+        }
+      ],
+      "Amulet_WornDogTags": [
+        {
+          "name": "/Items/Trinkets/Amulets/WornDogTags/Amulet_WornDogTags"
+        }
+      ],
+      "Amulet_ReedOfTheVaunnt": [
+        {
+          "name": "/Items/Trinkets/Amulets/ReedOfTheVaunnt/Amulet_ReedOfTheVaunnt"
+        }
+      ],
+      "Amulet_MagnifyingGlass": [
+        {
+          "name": "/Items/Trinkets/Amulets/MagnifyingGlass/Amulet_MagnifyingGlass"
+        }
+      ],
+      "Amulet_FragrantThorn": [
+        {
+          "name": "/Items/Trinkets/Amulets/FragrantThorn/Amulet_FragrantThorn"
+        }
+      ],
+      "Amulet_BeadsOfTheValorous": [
+        {
+          "name": "/Items/Trinkets/Amulets/BeadsOfTheValorous/Amulet_BeadsOfTheValorous"
+        }
+      ],
+      "Ziggurat_DLC": [
+        {
+          "name": "/Items/Trinkets/Amulets/MoonStone/Amulet_MoonStone",
+          "notes": "In the Moon Puzzle Room"
+        }
+      ],
+      "Island_DLC": [
+        {
+          "name": "/Items/Trinkets/Amulets/CervineKeepsake/Amulet_CervineKeepsake",
+          "notes": "In the Deserted Atelier, when you come to the statue of the doe, put on the Red Doe Sigil."
+        }
+      ],
+      "LuminousVale": [],
+      "DLC2Story": [
+        {
+          "name": "/Items/Trinkets/Amulets/ProfaneSoulStone/Amulet_ProfaneSoulStone",
+          "notes": "Submit to The Emissary."
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/SoulStone/Amulet_SoulStone",
+          "notes": "Cleanse the Profane Soul Stone at The Keeper within the Labyrinth"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/StoneshapersChisel/Amulet_StoneshapersChisel",
+          "notes": "Interact with Uuqul when cursed with Touch of Lydusa."
+        },
+        {
+          "name": "/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt1",
+          "notes": "Give to Dwell to receive Echo of the Forest",
+          "ignore": true
+        },
+        {
+          "name": "/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt2",
+          "notes": "Give to Dwell to receive Echo of the Forest",
+          "ignore": true
+        },
+        {
+          "name": "/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt3",
+          "notes": "Give to Dwell to receive Echo of the Forest",
+          "ignore": true
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/EchoOfTheForest/Amulet_EchoOfTheForest",
+          "notes": "Given by Dwell in Ward13 after providing him 3 pieces of Trinity Memento"
+        }
+      ]
+
+    },
     "Story": {
       "AshenWasteland": [
         {
@@ -1779,7 +1867,7 @@
           "name": "/Items/Armor/Base/RelicTesting/DecayedHeart/Relic_Consumable_DecayedHeart"
         },
         {
-          "name": "/Items/Traits/Core/Wayfarer/Trait_Wayfarer"
+          "name": "/Items/Traits/Core/Chakra/Trait_Chakra"
         },
         {
           "name": "/Items/Weapons/Melee/Standard/Claws/DecayedClaws/Weapon_DecayedClaws"
