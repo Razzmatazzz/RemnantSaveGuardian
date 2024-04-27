@@ -548,7 +548,7 @@ namespace RemnantSaveGuardian.Views.Pages
             
             checkBox.SetValue(HorizontalAlignmentProperty, HorizontalAlignment.Center);
             checkBox.SetBinding(ToggleButton.IsCheckedProperty,
-                new Binding()
+                new Binding
                 {
                     Path = new PropertyPath(strHeader),
                     Mode = BindingMode.TwoWay,
@@ -718,7 +718,7 @@ namespace RemnantSaveGuardian.Views.Pages
             MessageBox messageBox = new()
             {
                 Title = Loc.T("Confirm Delete"),
-                Content = new TextBlock()
+                Content = new TextBlock
                 {
                     Text = Loc.T("Are you sure you want to delete backup {backupName}?", new() {
                     { "backupName", backup.Name } }) + $"\n{Loc.T("Characters")}: {backup.Progression}\n{Loc.T("Date")}: {backup.SaveDate}",

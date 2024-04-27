@@ -30,9 +30,10 @@ namespace RemnantSaveGuardian.Views.Pages
             get;
         }
         private RemnantSave _save;
-        private List<WorldAnalyzerGridData> _filteredCampaign;
-        private List<WorldAnalyzerGridData> _filteredAdventure;
-        private ListViewItem _menuSrcItem;
+        private readonly List<WorldAnalyzerGridData> _filteredCampaign;
+        private readonly List<WorldAnalyzerGridData> _filteredAdventure;
+        private ListViewItem? _menuSrcItem;
+
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
             ViewModel = viewModel;
@@ -40,56 +41,53 @@ namespace RemnantSaveGuardian.Views.Pages
             InitializeComponent();
             EventTransfer.Event += ChangeGridVisibility;
 
-            try
+            pathToSaveFiles ??= Properties.Settings.Default.SaveFolder;
+
+            Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
+
+            _save = new(pathToSaveFiles);
+            if (pathToSaveFiles == Properties.Settings.Default.SaveFolder)
             {
-                if (pathToSaveFiles == null)
+                SaveWatcher.SaveUpdated += (_, _) =>
                 {
-                    pathToSaveFiles = Properties.Settings.Default.SaveFolder;
-                }
-
-                Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
-
-                _save = new(pathToSaveFiles);
-                if (pathToSaveFiles == Properties.Settings.Default.SaveFolder)
-                {
-                    SaveWatcher.SaveUpdated += (_, _) => {
-                        Dispatcher.Invoke(() =>
+                    Dispatcher.Invoke(() =>
+                    {
+                        int selectedIndex = CharacterControl.SelectedIndex;
+                        _save.UpdateCharacters();
+                        ApplyFilter();
+                        CharacterControl.Items.Refresh();
+                        if (selectedIndex >= CharacterControl.Items.Count)
                         {
-                            int selectedIndex = CharacterControl.SelectedIndex;
-                            _save.UpdateCharacters();
-                            ApplyFilter();
-                            CharacterControl.Items.Refresh();
-                            if (selectedIndex >= CharacterControl.Items.Count)
-                            {
-                                selectedIndex = 0;
-                            }
-                            CharacterControl.SelectedIndex = selectedIndex;
-                            //CharacterControl_SelectionChanged(null, null);
-                        });
-                    };
-                    Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
-                    BackupsPage.BackupSaveRestored += BackupsPage_BackupSaveRestored;
-                }
-                CharacterControl.ItemsSource = _save.Dataset.Characters;
+                            selectedIndex = 0;
+                        }
 
-                //FontSizeSlider.Value = AdventureData.FontSize;
-                //FontSizeSlider.Minimum = 2.0;
-                //FontSizeSlider.Maximum = AdventureData.FontSize * 2;
-                FontSizeSlider.Value = Properties.Settings.Default.AnalyzerFontSize;
-                FontSizeSlider.ValueChanged += FontSizeSlider_ValueChanged;
-
-                _filteredCampaign = new();
-                _filteredAdventure = new();
-                CampaignData.ItemsSource = _filteredCampaign;
-                AdventureData.ItemsSource = _filteredAdventure;
-
-                Task task = new(FirstLoad);
-                task.Start();
-            } catch (Exception ex) {
-                Logger.Error($"Error initializing analzyer page: {ex}");
+                        CharacterControl.SelectedIndex = selectedIndex;
+                        //CharacterControl_SelectionChanged(null, null);
+                    });
+                };
+                Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
+                BackupsPage.BackupSaveRestored += BackupsPage_BackupSaveRestored;
             }
+
+            Debug.Assert(_save.Dataset != null, "_save.Dataset != null");
+            CharacterControl.ItemsSource = _save.Dataset.Characters;
+
+            //FontSizeSlider.Value = AdventureData.FontSize;
+            //FontSizeSlider.Minimum = 2.0;
+            //FontSizeSlider.Maximum = AdventureData.FontSize * 2;
+            FontSizeSlider.Value = Properties.Settings.Default.AnalyzerFontSize;
+            FontSizeSlider.ValueChanged += FontSizeSlider_ValueChanged;
+
+            _filteredCampaign = new();
+            _filteredAdventure = new();
+            CampaignData.ItemsSource = _filteredCampaign;
+            AdventureData.ItemsSource = _filteredAdventure;
+
+            Task task = new(FirstLoad);
+            task.Start();
         }
-        private void ChangeGridVisibility(Object sender, EventTransfer.MessageArgs message)
+
+        private void ChangeGridVisibility(object? sender, EventTransfer.MessageArgs message)
         {
             OptionGrid.Visibility = (Visibility)message.Message;
             if (message.Message is Visibility.Visible)
@@ -137,11 +135,11 @@ namespace RemnantSaveGuardian.Views.Pages
         }
 
         #region INotifiedProperty Block
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
         #endregion
 
@@ -151,7 +149,7 @@ namespace RemnantSaveGuardian.Views.Pages
             ReloadEventGrids();
         }
 
-        private void GameType_CollapsedExpanded(object sender, PropertyChagedEventArgs e)
+        private void GameType_CollapsedExpanded(object sender, PropertyChangedEventArgs e)
         {
             TreeListClass item = (TreeListClass)sender;
             Properties.Settings.Default[$"{item.Tag}_Expanded"] = item.IsExpanded;
@@ -184,7 +182,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void Default_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        private void Default_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "ShowPossibleItems" 
                 || e.PropertyName == "MissingItemColor"
@@ -239,8 +237,8 @@ namespace RemnantSaveGuardian.Views.Pages
             };
 
             ListView? src = e.Source as ListView;
-            UIElement? ui = src.Parent as UIElement;
-            ui.RaiseEvent(eBack);
+            UIElement? ui = src?.Parent as UIElement;
+            ui?.RaiseEvent(eBack);
         }
         private void ListViewItem_Selected(object sender, RoutedEventArgs e)
         {
@@ -257,11 +255,11 @@ namespace RemnantSaveGuardian.Views.Pages
             stackPanelFactory.SetValue(StackPanel.OrientationProperty, Orientation.Vertical);
             FrameworkElementFactory listView = new(typeof(ListView));
 
-            Style style = (Style)Resources[strStyle];
+            Style style = (Style)Resources[strStyle]!;
             listView.SetValue(StyleProperty, style);
             listView.SetValue(ContextMenuProperty, Resources["CommonContextMenu"]);
             listView.SetBinding(ItemsControl.ItemsSourceProperty,
-                new Binding()
+                new Binding
                 {
                     UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged,
                     Path = new PropertyPath(strProperty),
@@ -286,8 +284,8 @@ namespace RemnantSaveGuardian.Views.Pages
             return templateColumn;
         }
         #region missingItemsTextColor
-        private Brush _missingItemsTextColor;
-        public Brush MissingItemsTextColor
+        private Brush? _missingItemsTextColor;
+        public Brush? MissingItemsTextColor
         {
             get => _missingItemsTextColor;
             set { _missingItemsTextColor = value; OnPropertyChanged("missingItemsTextColor"); }
@@ -327,12 +325,14 @@ namespace RemnantSaveGuardian.Views.Pages
                 e.Column = GeneratingColumn("Possible Items", "PossibleItems", "lvPossibleItemsStyle", "PossibleItemsString");
             }
 
-            e.Column.Header = Loc.T(e.Column.Header.ToString());
+            string? header = e.Column.Header.ToString();
+            Debug.Assert(header != null, nameof(header) + " != null");
+            e.Column.Header = Loc.T(header);
         }
 
         private static readonly string[] ModeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
         readonly List<TreeListClass> _itemModeNode = new();
-        private void CharacterControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CharacterControl_SelectionChanged(object? sender, SelectionChangedEventArgs? e)
         {
             //if (CharacterControl.SelectedIndex == -1 && listCharacters.Count > 0) return;
             if (CharacterControl.Items.Count > 0 && CharacterControl.SelectedIndex > -1)
@@ -342,18 +342,19 @@ namespace RemnantSaveGuardian.Views.Pages
                 //txtMissingItems.Text = string.Join("\n", Save.Characters[CharacterControl.SelectedIndex].GetMissingItems());
 
                 _itemModeNode.Clear();
-                List<TreeListClass>[] itemNode = new List<TreeListClass>[3] { new(), new(), new() };
-                List<TreeListClass>[] itemChild = new List<TreeListClass>[20];
+                List<TreeListClass>[] itemNode = { new(), new(), new() };
+                List<TreeListClass>?[] itemChild = new List<TreeListClass>[20];
                 string[] modes = { Strings.Normal, Strings.Hardcore, Strings.Survival };
                 for (int i = 0;i <= 2; i++)
                 {
-                    TreeListClass item = new() { Name = modes[i], Childnode = itemNode[i], Tag = ModeTags[i], IsExpanded = (bool)Properties.Settings.Default[$"{ModeTags[i]}_Expanded"] };
+                    TreeListClass item = new() { Name = modes[i], ChildNode = itemNode[i], Tag = ModeTags[i], IsExpanded = (bool)Properties.Settings.Default[$"{ModeTags[i]}_Expanded"] };
                     item.Expanded += GameType_CollapsedExpanded;
                     _itemModeNode.Add(item);
                 }
                 int idx = -1;
                 string typeNodeTag = "";
 
+                Debug.Assert(_save.Dataset != null, "_save.Dataset != null");
                 List<Dictionary<string, string>> missingItems = _save.Dataset.Characters[CharacterControl.SelectedIndex].Profile.MissingItems;
                 if (!Properties.Settings.Default.ShowCoopItems)
                 {
@@ -362,8 +363,8 @@ namespace RemnantSaveGuardian.Views.Pages
                 missingItems.Sort(new SortCompare());
                 foreach (Dictionary<string, string> rItem in missingItems)
                 {
-                    int itemMode = rItem.ContainsKey("Hardcore") && rItem["Hardcore"] == "True" ? 1 : 0;
-                    string modeNode = "treeMissing" + (rItem.ContainsKey("Hardcore") && rItem["Hardcore"] == "True" ? "Hardcore" : "Normal");
+                    int itemMode = rItem.TryGetValue("Hardcore", out string? hardcore) && hardcore == "True" ? 1 : 0;
+                    string modeNode = "treeMissing" + (rItem.TryGetValue("Hardcore", out string? treeMissing) && treeMissing == "True" ? "Hardcore" : "Normal");
 
                     string itemType = Regex.Replace(rItem["Type"], @"\b([a-z])", m => m.Value.ToUpper());
 
@@ -379,15 +380,17 @@ namespace RemnantSaveGuardian.Views.Pages
                         }
                         catch (Exception ex)
                         {
-                            Logger.Warn($"Not found properties: {typeNodeTag}_Expand");
+                            Logger.Warn($"Not found properties: {typeNodeTag}_Expand; {ex}");
                         }
-                        TreeListClass item = new() { Name = itemType, Childnode = itemChild[idx], Tag = typeNodeTag, IsExpanded = isExpanded };
+                        TreeListClass item = new() { Name = itemType, ChildNode = itemChild[idx] ?? new List<TreeListClass>(0), Tag = typeNodeTag, IsExpanded = isExpanded };
                         item.Expanded += GameType_CollapsedExpanded;
                         itemNode[itemMode].Add(item);
                     }
 
                     LootItem li = new() { Item = rItem };
-                    itemChild[idx].Add(new TreeListClass() { Name = li.Name, Notes = rItem["Note"], Tag = rItem });
+                    List<TreeListClass>? treeItem = itemChild[idx];
+                    Debug.Assert(treeItem != null, nameof(treeItem) + " != null");
+                    treeItem.Add(new TreeListClass { Name = li.Name, Notes = rItem["Note"], Tag = rItem });
                 }
 
                 treeMissingItems.ItemsSource = null;
@@ -395,33 +398,28 @@ namespace RemnantSaveGuardian.Views.Pages
 
                 foreach (TreeListClass modeNode in _itemModeNode)
                 {
-                    if (modeNode != null)
-                    {
-                        modeNode.Visibility = (modeNode.Childnode.Count == 0 ? Visibility.Collapsed : Visibility.Visible);
-                    }
+                    modeNode.Visibility = (modeNode.ChildNode.Count == 0 ? Visibility.Collapsed : Visibility.Visible);
                 }
                 foreach (List<TreeListClass> categoryNode in itemNode)
                 {
-                    if (categoryNode != null)
+                    foreach (TreeListClass category in categoryNode)
                     {
-                        foreach (TreeListClass category in categoryNode)
-                        {
-                            category.Visibility = (category.Childnode.Count == 0 ? Visibility.Collapsed : Visibility.Visible);
-                        }
-                        categoryNode.Sort();
+                        category.Visibility = (category.ChildNode.Count == 0 ? Visibility.Collapsed : Visibility.Visible);
                     }
+                    categoryNode.Sort();
                 }
-                foreach (List<TreeListClass> typeNode in itemChild) {
-                    if (typeNode != null) {
-                        typeNode.Sort();
-                    }
+                foreach (List<TreeListClass>? typeNode in itemChild)
+                {
+                    typeNode?.Sort();
                 }
             }
         }
 
         private void CheckAdventureTab()
         {
-            Dispatcher.Invoke(() => {
+            Dispatcher.Invoke(() =>
+            {
+                Debug.Assert(_save.Dataset != null, "_save.Dataset != null");
                 if (CharacterControl.SelectedIndex > -1 && _save.Dataset.Characters[CharacterControl.SelectedIndex].Save.Adventure != null)
                 {
                     tabAdventure.IsEnabled = true;
@@ -439,9 +437,8 @@ namespace RemnantSaveGuardian.Views.Pages
         private void ReloadPage()
         {
             CharacterControl.ItemsSource = null;
+            Debug.Assert(_save.Dataset != null, "_save.Dataset != null");
             CharacterControl.ItemsSource = _save.Dataset.Characters;
-            if (_filteredCampaign == null) _filteredCampaign = new();
-            if (_filteredAdventure == null) _filteredAdventure = new();
             CharacterControl.SelectedIndex = 0;
             CharacterControl.Items.Refresh();
         }
@@ -458,14 +455,10 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private static string GetTreeListItem(TreeListClass item)
         {
-            if (item == null)
-            {
-                return "";
-            }
-            if (item.Tag.GetType().ToString() == "System.Collections.Generic.Dictionary`2[System.String,System.String]") return item.Name;
+            if (item.Tag.GetType().ToString() == "System.Collections.Generic.Dictionary`2[System.String,System.String]") return item.Name ?? "";
             StringBuilder sb = new();
             sb.AppendLine(item.Name + ":");
-            foreach (TreeListClass i in item.Childnode)
+            foreach (TreeListClass i in item.ChildNode)
             {
                 sb.AppendLine("\t- " + GetTreeListItem(i));
             }
@@ -475,8 +468,10 @@ namespace RemnantSaveGuardian.Views.Pages
         private void CommonCopyItem_Click(object sender, RoutedEventArgs e)
         {
             if (_menuSrcItem == null) { return; }
-            LootItem? item = _menuSrcItem.Content as LootItem;
-            Clipboard.SetDataObject(item.Name);
+            if (_menuSrcItem.Content is LootItem item)
+            {
+                Clipboard.SetDataObject(item.Name);
+            }
         }
 
         private void CommonSearchItem_Click(object sender, RoutedEventArgs e)
@@ -503,8 +498,7 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private static void SearchItem(LootItem item)
         {
-            string itemname = item.Name;
-            Process.Start("explorer.exe", $"https://remnant2.wiki.fextralife.com/{itemname}");
+            Process.Start("explorer.exe", $"https://remnant2.wiki.fextralife.com/{item.Name}");
         }
         private void ExpandAllItem_Click(object sender, RoutedEventArgs e)
         {
@@ -519,15 +513,15 @@ namespace RemnantSaveGuardian.Views.Pages
             foreach (TreeListClass item in lstItems)
             {
                 item.IsExpanded = bExpand;
-                List<TreeListClass>? child = item.Childnode;
-                if (child != null && child.Count > 0)
+                List<TreeListClass> child = item.ChildNode;
+                if (child.Count > 0)
                 {
-                    List<TreeListClass>? node = child[0].Childnode;
-                    if (node != null && node.Count > 0) { CollapseExpandAllItems(child, bExpand); }
+                    List<TreeListClass> node = child[0].ChildNode;
+                    if (node.Count > 0) { CollapseExpandAllItems(child, bExpand); }
                 }
             }
         }
-        private void treeMissingItems_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+        private void TreeMissingItems_ContextMenuOpening(object sender, ContextMenuEventArgs e)
         {
             TreeListClass? item = (TreeListClass)treeMissingItems.SelectedItem;
             if (item != null)
@@ -540,7 +534,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
         }
 
-        private void treeMissingItems_MouseDown(object sender, MouseButtonEventArgs e)
+        private void TreeMissingItems_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (sender is TreeViewItem item)
             {
@@ -563,15 +557,15 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return true;
             }
-            if (e.MissingItemsString.ToLower().Contains(filter))
+            if (e.MissingItemsString.Contains(filter, StringComparison.CurrentCultureIgnoreCase))
             {
                 return true;
             }
-            if (Properties.Settings.Default.ShowPossibleItems && e.PossibleItemsString.ToLower().Contains(filter))
+            if (Properties.Settings.Default.ShowPossibleItems && e.PossibleItemsString.Contains(filter, StringComparison.CurrentCultureIgnoreCase))
             {
                 return true;
             }
-            if (e.Name.ToLower().Contains(filter))
+            if (e.Name.Contains(filter, StringComparison.CurrentCultureIgnoreCase))
             {
                 return true;
             }
@@ -583,11 +577,9 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 return;
             }
-            Character? character = _save.Dataset.Characters[CharacterControl.SelectedIndex];
-            if (character == null)
-            {
-                return;
-            }
+
+            Debug.Assert(_save.Dataset != null, "_save.Dataset != null");
+            Character character = _save.Dataset.Characters[CharacterControl.SelectedIndex];
             _filteredCampaign.Clear();
             _filteredCampaign.AddRange(FilterGridData(character.Profile, character.Save.Campaign));
             _filteredAdventure.Clear();
@@ -612,14 +604,13 @@ namespace RemnantSaveGuardian.Views.Pages
 
                     if (Properties.Settings.Default.ShowConnections && location.Connections is { Count: > 0 })
                     {
-                        WorldAnalyzerGridData newItem = new()
-                        {
-                            Location = Loc.GameT(l),
-                            MissingItems = new(),
-                            PossibleItems = new(),
-                            Name = string.Join('\n', location.Connections.Select(Loc.GameT)),
-                            Type = Loc.GameT("Connections")
-                        };
+                        WorldAnalyzerGridData newItem = new(
+                            location: Loc.GameT(l),
+                            missingItems: new(),
+                            possibleItems: new(),
+                            name: string.Join('\n', location.Connections.Select(Loc.GameT)),
+                            type: Loc.GameT("Connections")
+                        );
                         if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
@@ -627,14 +618,13 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                     if (Properties.Settings.Default.ShowWorldStones && location.WorldStones is { Count: > 0 })
                     {
-                        WorldAnalyzerGridData newItem = new()
-                        {
-                            Location = Loc.GameT(l),
-                            MissingItems = new(),
-                            PossibleItems = new(),
-                            Name = string.Join('\n', location.WorldStones.Select(Loc.GameT)),
-                            Type = Loc.GameT("World Stones")
-                        };
+                        WorldAnalyzerGridData newItem = new(
+                            location: Loc.GameT(l),
+                            missingItems: new(),
+                            possibleItems: new(),
+                            name: string.Join('\n', location.WorldStones.Select(Loc.GameT)),
+                            type: Loc.GameT("World Stones")
+                        );
                         if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
@@ -643,14 +633,13 @@ namespace RemnantSaveGuardian.Views.Pages
                     if (Properties.Settings.Default.ShowTomes && location.TraitBook)
                     {
                         //List<LocalisedLootItem> ll = new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") } } }) };
-                        WorldAnalyzerGridData newItem = new()
-                        {
-                            Location = Loc.GameT(l),
-                            MissingItems = new(),
-                            PossibleItems = location.TraitBookDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") }, {"Id", "Bogus"} } }) },
-                            Name = Loc.GameT("TraitBook"),
-                            Type = Loc.GameT("Item")
-                        };
+                        WorldAnalyzerGridData newItem = new(
+                            location: Loc.GameT(l),
+                            missingItems: new(),
+                            possibleItems: location.TraitBookDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") }, { "Id", "Bogus" } } }) },
+                            name: Loc.GameT("TraitBook"),
+                            type: Loc.GameT("Item")
+                        );
                         if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
@@ -659,14 +648,13 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                     if (Properties.Settings.Default.ShowSimulacrums && location.Simulacrum)
                     {
-                        WorldAnalyzerGridData newItem = new()
-                        {
-                            Location = Loc.GameT(l),
-                            MissingItems = new(),
-                            PossibleItems = location.SimulacrumDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("Simulacrum") }, { "Id", "Bogus" } } }) },
-                            Name = Loc.GameT("Simulacrum"),
-                            Type = Loc.GameT("Item")
-                        };
+                        WorldAnalyzerGridData newItem = new(
+                            location: Loc.GameT(l),
+                            missingItems: new(),
+                            possibleItems: location.SimulacrumDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("Simulacrum") }, { "Id", "Bogus" } } }) },
+                            name: Loc.GameT("Simulacrum"),
+                            type: Loc.GameT("Item")
+                        );
                         if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
@@ -685,14 +673,14 @@ namespace RemnantSaveGuardian.Views.Pages
                         {
                             items = items.Where(x => !x.IsDeleted).ToList();
                         }
-                        WorldAnalyzerGridData newItem = new()
-                        {
-                            Location = Loc.GameT(l),
-                            MissingItems = items.Where(x => missingIds.Contains(x.Item["Id"])).Select(x => new LocalisedLootItem(x)).ToList(),
-                            PossibleItems = items.Select(x => new LocalisedLootItem(x)).ToList(),
-                            Name = Loc.GameT(lg.Name),
-                            Type = Loc.GameT(Regex.Replace(lg.Type, @"\b([a-z])", m => m.Value.ToUpper()))
-                        };
+
+                        WorldAnalyzerGridData newItem = new(
+                            location: Loc.GameT(l),
+                            missingItems: items.Where(x => missingIds.Contains(x.Item["Id"])).Select(x => new LocalisedLootItem(x)).ToList(),
+                            possibleItems: items.Select(x => new LocalisedLootItem(x)).ToList(),
+                            name: Loc.GameT(lg.Name ?? ""),
+                            type: Loc.GameT(Regex.Replace(lg.Type, @"\b([a-z])", m => m.Value.ToUpper()))
+                        );
                         if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
@@ -721,56 +709,55 @@ namespace RemnantSaveGuardian.Views.Pages
                 if (x == null && y == null) return 0;
                 if (x == null) return -1;
                 if (y == null) return 1;
-                string xmode = x.ContainsKey("Hardcore") && x["Hardcore"] == "True" ? "Hardcore" : "Normal";
-                string ymode = y.ContainsKey("Hardcore") && y["Hardcore"] == "True" ? "Hardcore" : "Normal";
-                if (xmode != ymode)
+                string xMode = x.TryGetValue("Hardcore", out string? xHardcore) && xHardcore == "True" ? "Hardcore" : "Normal";
+                string yMode = y.TryGetValue("Hardcore", out string? yHardcore) && yHardcore == "True" ? "Hardcore" : "Normal";
+                if (xMode != yMode)
                 {
-                    return xmode.CompareTo(ymode);
+                    return string.Compare(xMode, yMode, StringComparison.InvariantCulture);
                 }
                 if (x["Type"] != y["Type"])
                 {
-                    return x["Type"].CompareTo(y["Type"]);
+                    return string.Compare(x["Type"], y["Type"], StringComparison.InvariantCulture);
                 }
-
                 LootItem xi = new() { Item = x };
                 LootItem yi = new() { Item = y };
-                return xi.Name.CompareTo(yi.Name);
+                return string.Compare(xi.Name, yi.Name, StringComparison.InvariantCulture);
             }
         }
         public class TreeListClass : IComparable<TreeListClass>, INotifyPropertyChanged
         {
-            public delegate void EventHandler(object sender, PropertyChagedEventArgs e);
-            public event EventHandler Expanded;
-            public event PropertyChangedEventHandler PropertyChanged;
-            private List<TreeListClass> _childnode;
-            private Object _tag;
-            private bool _isselected;
-            private bool _isexpanded;
+            public delegate void EventHandler(object sender, PropertyChangedEventArgs e);
+            public event EventHandler? Expanded;
+            public event PropertyChangedEventHandler? PropertyChanged;
+            private List<TreeListClass>? _childNode;
+            private object? _tag;
+            private bool _isSelected;
+            private bool _isExpanded;
             private Visibility _visibility;
-            public String Name { get; set; }
-            public String? Notes { get; set; }
-            public Object Tag {
-                get => _tag == null ? new object() : _tag;
+            public string? Name { get; set; }
+            public string? Notes { get; set; }
+            public object Tag {
+                get => _tag ?? new object();
                 set => _tag = value;
             }
-            public List<TreeListClass> Childnode {
-                get => _childnode == null ? new List<TreeListClass>(0) : _childnode;
-                set => _childnode = value;
+            public List<TreeListClass> ChildNode {
+                get => _childNode ?? new List<TreeListClass>(0);
+                set => _childNode = value;
             }
             public bool IsSelected {
-                get => _isselected;
-                set { _isselected = value; OnPropertyChanged(); }
+                get => _isSelected;
+                set { _isSelected = value; OnPropertyChanged(); }
             }
             public bool IsExpanded
             {
-                get => _isexpanded;
+                get => _isExpanded;
                 set
                 {
-                    if (value != _isexpanded)
+                    if (value != _isExpanded)
                     {
-                        _isexpanded = value;
+                        _isExpanded = value;
                         OnPropertyChanged();
-                        PropertyChagedEventArgs ev = new("IsExpanded", _isexpanded, value);
+                        PropertyChangedEventArgs ev = new(nameof(IsExpanded), _isExpanded, value);
                         Expanded?.Invoke(this, ev);
                     }
                 }
@@ -780,18 +767,18 @@ namespace RemnantSaveGuardian.Views.Pages
                 get => _visibility;
                 set { _visibility = value; OnPropertyChanged(); }
             }
-            protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+            protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
             {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
-            public int CompareTo(TreeListClass other)
+            public int CompareTo(TreeListClass? other)
             {
-                return Name.CompareTo(other.Name);
+                return string.Compare(Name, other?.Name, StringComparison.InvariantCulture);
             }
         }
-        public class PropertyChagedEventArgs : EventArgs
+        public class PropertyChangedEventArgs : EventArgs
         {
-            public PropertyChagedEventArgs(string propertyName, object oldValue, object newValue)
+            public PropertyChangedEventArgs(string propertyName, object oldValue, object newValue)
             {
                 PropertyName = propertyName;
                 OldValue = oldValue;
@@ -803,6 +790,15 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         public class WorldAnalyzerGridData
         {
+            public WorldAnalyzerGridData(string location, string type, string name, List<LocalisedLootItem> missingItems, List<LocalisedLootItem> possibleItems)
+            {
+                Location = location;
+                Type = type;
+                Name = name;
+                MissingItems = missingItems;
+                PossibleItems = possibleItems;
+            }
+
             public string Location { get; set; }
             public string Type { get; set; }
             public string Name { get; set; }

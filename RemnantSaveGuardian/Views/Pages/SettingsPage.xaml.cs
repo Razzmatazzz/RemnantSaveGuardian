@@ -202,7 +202,7 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             if (Properties.Settings.Default.BackupFolder.Length > 0 && Directory.Exists(Properties.Settings.Default.BackupFolder))
             {
-                List<String> backupFiles = Directory.GetDirectories(Properties.Settings.Default.BackupFolder).ToList();
+                List<string> backupFiles = Directory.GetDirectories(Properties.Settings.Default.BackupFolder).ToList();
                 if (backupFiles.Count > 0)
                 {
                     MessageBox messageBox = new()
@@ -314,7 +314,7 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private static string GetAssemblyVersion()
         {
-            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? String.Empty;
+            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? string.Empty;
         }
 
         private static void OpenFolder(string path)

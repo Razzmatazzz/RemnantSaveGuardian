@@ -63,7 +63,7 @@ namespace RemnantSaveGuardian
                     TextBlock txtBlock = new()
                     {
                         Text = Loc.T("The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?",
-                            new LocalizationOptions()
+                            new LocalizationOptions
                             {
                                 {
                                     "CurrentVersion", remoteVersion.ToString()

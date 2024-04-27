@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using WPFLocalizeExtension.Extensions;
@@ -44,7 +45,7 @@ namespace RemnantSaveGuardian
                 return Regex.Replace(key.Replace("_", " "), "([A-Z0-9]+)", " $1").Trim();*/
             }
             MatchCollection matches = new Regex(@"{(?:(?<namespace>\w+?):)?(?<sub>\w+?)}").Matches(val);
-            foreach (Match match in matches)
+            foreach (Match match in matches.Cast<Match>())
             {
                 string valueToSub = match.Groups["sub"].Value;
                 if (options.Has(valueToSub) && options[valueToSub] != "")

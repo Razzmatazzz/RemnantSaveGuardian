@@ -13,7 +13,7 @@ namespace RemnantSaveGuardian.ViewModels
         private bool _isInitialized = false;
 
         [ObservableProperty]
-        private string _applicationTitle = String.Empty;
+        private string _applicationTitle = string.Empty;
 
         [ObservableProperty]
         private ObservableCollection<INavigationControl> _navigationItems = new();
@@ -36,7 +36,7 @@ namespace RemnantSaveGuardian.ViewModels
 
             NavigationItems = new ObservableCollection<INavigationControl>
             {
-                new NavigationItem()
+                new NavigationItem
                 {
                     Content = Loc.T("Save Backups"),
                     ToolTip = Loc.T("Save Backups"),
@@ -44,7 +44,7 @@ namespace RemnantSaveGuardian.ViewModels
                     Icon = SymbolRegular.Database24,
                     PageType = typeof(Views.Pages.BackupsPage)
                 },
-                new NavigationItem()
+                new NavigationItem
                 {
                     Content = Loc.T("World Analyzer"),
                     ToolTip = Loc.T("World Analyzer"),
@@ -56,7 +56,7 @@ namespace RemnantSaveGuardian.ViewModels
 
             NavigationFooter = new ObservableCollection<INavigationControl>
             {
-                new NavigationItem()
+                new NavigationItem
                 {
                     Content = Loc.T("Log"),
                     ToolTip = Loc.T("Log"),
@@ -64,7 +64,7 @@ namespace RemnantSaveGuardian.ViewModels
                     Icon = SymbolRegular.Notebook24,
                     PageType = typeof(Views.Pages.LogPage)
                 },
-                new NavigationItem()
+                new NavigationItem
                 {
                     Content = Loc.T("Settings"),
                     ToolTip = Loc.T("Settings"),

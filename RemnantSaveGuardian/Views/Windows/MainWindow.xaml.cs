@@ -242,7 +242,7 @@ namespace RemnantSaveGuardian.Views.Windows
             MenuItem menuItem = new()
             {
                 Header = Loc.T("Close"),
-                Icon = new SymbolIcon() { Symbol = SymbolRegular.Prohibited24 },
+                Icon = new SymbolIcon { Symbol = SymbolRegular.Prohibited24 },
             };
             menuItem.Click += (_, _) => {
                 foreach (INavigationControl navigationControl in ViewModel.NavigationItems)

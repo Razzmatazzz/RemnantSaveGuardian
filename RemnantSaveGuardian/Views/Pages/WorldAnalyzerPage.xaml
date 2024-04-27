@@ -188,10 +188,10 @@
             </TabItem>
             <TabItem Name="tabMissing" Header="{lex:Loc Missing Items}">
                 <Grid>
-                    <TreeView Name="treeMissingItems" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.IsVirtualizing="True" ContextMenuOpening="treeMissingItems_ContextMenuOpening">
+                    <TreeView Name="treeMissingItems" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.IsVirtualizing="True" ContextMenuOpening="TreeMissingItems_ContextMenuOpening">
                         <TreeView.Resources>
                             <Style TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
-                                <EventSetter Event="TreeViewItem.MouseDown" Handler="treeMissingItems_MouseDown"/>
+                                <EventSetter Event="TreeViewItem.MouseDown" Handler="TreeMissingItems_MouseDown"/>
                                 <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
                                 <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded, Mode=TwoWay}" />
                                 <Setter Property="Visibility" Value="{Binding Path=Visibility, Mode=TwoWay}" />
@@ -229,7 +229,7 @@
                             </ContextMenu>
                         </TreeView.ContextMenu>
                         <TreeView.ItemTemplate>
-                            <HierarchicalDataTemplate ItemsSource="{Binding Childnode}">
+                            <HierarchicalDataTemplate ItemsSource="{Binding ChildNode}">
                                 <Grid Width="{Binding ActualWidth, ElementName=treeMissingItems}" Margin="0,0,-80,0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
