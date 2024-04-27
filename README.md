@@ -1,25 +1,43 @@
-# Remnant Save Guardian
-Back up your Remnant 2 saves and view your world rolls.
+# Remnant 2 Save Analyzer
 
-**This project is a work in progress. Lots of features are broken or partially implemented.**
+This is a fork of the excellent [Remnant Save Guardian](https://github.com/Razzmatazzz/RemnantSaveGuardian) originally created by Razzmatazz.
 
-## Installation
-1. Download and install [Microsoft .NET 6.0](https://dotnet.microsoft.com/en-us/download) or greater
-2. Download the [latest release](https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/latest/download/RemnantSaveGuardian.zip)
-3. Unzip the latest release to a folder of your choosing (probably not the same folder where you have the game installed)
-4. Run RemnantSaveGuardian.exe
+## Differences with Remnant Save Guardian
 
-## Screenshots
-![image](https://github.com/Razzmatazzz/RemnantSaveGuardian/assets/35779878/cc428b0b-7573-4128-a2ae-02ef25ebda36)
-![image](https://github.com/Razzmatazzz/RemnantSaveGuardian/assets/35779878/48fc0eae-fc87-47be-bea3-89af08f102a6)
-![image](https://github.com/Razzmatazzz/RemnantSaveGuardian/assets/35779878/45d46b50-f3d2-4341-847e-ae3dd4f6df2c)
+- The underlying save parsing engine is completely different and allows for more fidelity in item detecton
+- Every single item showed by the program has a tooltip that describes how to find it
+- Hide Ward 13, Labyrinth and Root Earth, once you feel you know them by heart
+- Hide Tomes of Knowledge, once you are maxed out, you might not be that much interested in them
+- See connections between locations
+- See World Stones
+- See if a Simulacrum is present in a location
+- Export save as json for geeks only
 
-## Known Issues
-- [Some items are missing from the world analyzer](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/43)
-- [Many events and items do not have well-formatted names](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/45)
-- [Some events not displaying or are erroneously displaying](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/44)
+
+## Potential improvements
+
+This is a list of things that are possible to add with the new engine, but which requrie some additiona work
+
+- See items offered in Cass shop
+- Track objectives progression, e.g. kill x bosses
+
+## Known issues
+
+Most of these issues are unlikely to be fixed, unless someone would like to help:
+
+- This program is a bit slower than RSG due to different parsing engine. On SSD the slowdown is noticable but IMO tolerable
+- Translations might not work as they used, and for the newer content there are none
+- I'm planning on improving this one, if I have the time: "Difficult" items are not working yet: Amulet_GoldenRibbon, Amulet_GunfireSecurityLanyard, Amulet_ParticipationMedal, Amulet_SilverRibbon, Armor_Body_CrimsonGuard, Engram_Archon, Relic_Consumable_QuiltedHeart, Relic_Consumable_RipenedHeart, Ring_BandOfTheFanatic, Ring_BisectedRing, Ring_DowngradedRing, Void_Heart, Weapon_Anguish, Weapon_CrescentMoon
 - [If you are using Norton Antivirus, it may cause weirdness with your game saves and RemnantSaveGuardian](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/70)
 
-Thanks for [crackedmind](https://github.com/crackedmind) for the inflation code to convert saves into partial plaintext. 
+## Save Parsing
 
-Thanks to [AuriCrystal](https://github.com/Auricrystal) for event/item list.
+These are the save parsing libraries being used underneath:
+- <https://github.com/AndrewSav/lib.remnant2.saves> - This parses the save files to an object model
+- <https://github.com/AndrewSav/lib.remnant2.analyzer> - Uses the above to get information about items from the saves
+
+*Note: The object model for and Unreal Engine game save is incredibly complicated, it is not mean for usage out of the game, the way we do it here. It can lead to a lot of subtle usage issue, but it is much better than the original string parsing*
+
+## Acknowledgement
+
+Thanks to all original project contributors!
