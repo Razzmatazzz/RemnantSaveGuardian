@@ -95,7 +95,7 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("Always On Top", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to delete backup {backupName}?.
         /// </summary>
@@ -268,14 +268,14 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto Hide Navigation and TitleBar.
+        ///   Looks up a localized string similar to Auto hide Navigation and TitleBar when inactive.
         /// </summary>
         public static string chkAutoHideNaviAndTitleBar_Content {
             get {
                 return ResourceManager.GetString("chkAutoHideNaviAndTitleBar_Content", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Create log file.
         /// </summary>
@@ -302,7 +302,7 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("chkOnlyInactive_Content", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Window Opacity.
         /// </summary>
@@ -311,7 +311,7 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("chkOpacity_Content", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to (Experimental, might cause instability).
         /// </summary>
@@ -320,7 +320,7 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("chkOpacity_note_Text", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Show co-op items in world analyzer.
         /// </summary>
@@ -356,7 +356,7 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("Close", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Collapse All.
         /// </summary>
@@ -498,6 +498,15 @@ namespace RemnantSaveGuardian.locales {
         public static string export_save_invalid_folder_error {
             get {
                 return ResourceManager.GetString("export_save_invalid_folder_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fextralife Wiki.
+        /// </summary>
+        public static string Fextralife {
+            get {
+                return ResourceManager.GetString("Fextralife", resourceCulture);
             }
         }
         
@@ -689,13 +698,13 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("lblMissingItemColor_Text", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Opacity.
         /// </summary>
         public static string lblOpacitySlider_Text {
             get {
-                return ResourceManager.GetString("lblMissingItemColor_Text", resourceCulture);
+                return ResourceManager.GetString("lblOpacitySlider_Text", resourceCulture);
             }
         }
         
@@ -723,6 +732,24 @@ namespace RemnantSaveGuardian.locales {
         public static string lblSwitchLanguage_Text {
             get {
                 return ResourceManager.GetString("lblSwitchLanguage_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Wiki.
+        /// </summary>
+        public static string lblWiki_Text {
+            get {
+                return ResourceManager.GetString("lblWiki_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which wiki to load for item lookup.
+        /// </summary>
+        public static string lblWiki_ToolTip {
+            get {
+                return ResourceManager.GetString("lblWiki_ToolTip", resourceCulture);
             }
         }
         
@@ -842,13 +869,13 @@ namespace RemnantSaveGuardian.locales {
                 return ResourceManager.GetString("Normal", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Window opacity is changed. You have to restart app for the change to apply..
         /// </summary>
         public static string Opacity_toggle_notice {
             get {
-                return ResourceManager.GetString("Normal", resourceCulture);
+                return ResourceManager.GetString("Opacity_toggle_notice", resourceCulture);
             }
         }
         
@@ -912,6 +939,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Red {
             get {
                 return ResourceManager.GetString("Red", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remnant.wiki.
+        /// </summary>
+        public static string RemnantWiki {
+            get {
+                return ResourceManager.GetString("RemnantWiki", resourceCulture);
             }
         }
         
