@@ -2053,7 +2053,7 @@
     <value>Derelict Lighthouse</value>
   </data>
   <data name="OneTrueKingStory" xml:space="preserve">
-    <value>The One True King</value>
+    <value>The Awakened King</value>
   </data>
   <data name="Quest_Item_DLC_DreamLevel" xml:space="preserve">
     <value>Enter the Dream</value>
@@ -2315,5 +2315,122 @@
   </data>
   <data name="Island_DLC" xml:space="preserve">
     <value>Doe Statue</value>
+  </data>
+  <data name="Ring_TokenOfFavor" xml:space="preserve">
+    <value>Token of Favor</value>
+  </data>
+  <data name="Ring_ThalosEyelet" xml:space="preserve">
+    <value>Thalos Eyelet</value>
+  </data>
+  <data name="Ring_TearOfLydusa" xml:space="preserve">
+    <value>Tear of Lydusa</value>
+  </data>
+  <data name="Ring_SoulFeast" xml:space="preserve">
+    <value>Soul Feast</value>
+  </data>
+  <data name="Ring_SealedResinLoop" xml:space="preserve">
+    <value>Sealed Resin Loop</value>
+  </data>
+  <data name="Amulet_BeadsOfTheValorous" xml:space="preserve">
+    <value>Beads of the Valorous</value>
+  </data>
+  <data name="TombRaid" xml:space="preserve">
+    <value>Deserted Atelier</value>
+  </data>
+  <data name="Ring_BurdenOfTheMesmer" xml:space="preserve">
+    <value>Burden of the Mesmer</value>
+  </data>
+  <data name="Ring_RavagersBargain" xml:space="preserve">
+    <value>Ravager's Bargain</value>
+  </data>
+  <data name="Rothinderahenwalt" xml:space="preserve">
+    <value>Ro'thinderahenwalt</value>
+  </data>
+  <data name="Ring_RallyBand" xml:space="preserve">
+    <value>Rally Band</value>
+  </data>
+  <data name="LuminousValeStory" xml:space="preserve">
+    <value>Story: Luminous Vale</value>
+  </data>
+  <data name="AncientCanopyStory" xml:space="preserve">
+    <value>Story: Ancient Canopy</value>
+  </data>
+  <data name="Ring_BurdenOfTheMason" xml:space="preserve">
+    <value>Burden of the Mason</value>
+  </data>
+  <data name="Ring_MatriarchsRing" xml:space="preserve">
+    <value>Matriarch's Ring</value>
+  </data>
+  <data name="Ring_MarkOfTheDestroyer" xml:space="preserve">
+    <value>Mark of the Destroyer</value>
+  </data>
+  <data name="Ring_LeakingGemstone" xml:space="preserve">
+    <value>Leaking Gemstone</value>
+  </data>
+  <data name="Ring_KolketEyelet" xml:space="preserve">
+    <value>Kolket Eyelet</value>
+  </data>
+  <data name="Ring_GulSignet" xml:space="preserve">
+    <value>Gul Signet</value>
+  </data>
+  <data name="Ring_FloodlitDiamond" xml:space="preserve">
+    <value>Floodlit Diamond</value>
+  </data>
+  <data name="Crypt_DLC" xml:space="preserve">
+    <value>Infested Abyss</value>
+  </data>
+  <data name="FarlornCoastStory" xml:space="preserve">
+    <value>Story: Farlorn Coast</value>
+  </data>
+  <data name="Ring_BlackSpinel" xml:space="preserve">
+    <value>Black Spinel</value>
+  </data>
+  <data name="Ring_BloodlessKingsVow" xml:space="preserve">
+    <value>Bloodless King's Vow</value>
+  </data>
+  <data name="Ring_ClosedLoop" xml:space="preserve">
+    <value>Closed Loop</value>
+  </data>
+  <data name="Ring_ConjurersCircle" xml:space="preserve">
+    <value>onjurer's Circle</value>
+  </data>
+  <data name="Ring_DarkSeaArmadaCrest" xml:space="preserve">
+    <value>Dark Sea Armada Crest</value>
+  </data>
+  <data name="Ring_FeatheryBinding" xml:space="preserve">
+    <value>Feathery Binding</value>
+  </data>
+  <data name="Ring_PanWarBand" xml:space="preserve">
+    <value>Pan War Band</value>
+  </data>
+  <data name="Ring_RingOfOrdnance" xml:space="preserve">
+    <value>Ring of Ordnance</value>
+  </data>
+  <data name="Ring_RingOfSpirits" xml:space="preserve">
+    <value>Ring of Spirits</value>
+  </data>
+  <data name="Armor_TopHat" xml:space="preserve">
+    <value>Dandy Topper</value>
+  </data>
+  <data name="Armor_MudtoothsHat" xml:space="preserve">
+    <value>Mudtooth's Hat</value>
+  </data>
+  <data name="Armor_BloodlessCrown" xml:space="preserve">
+    <value>Bloodless Crown</value>
+  </data>
+  <data name="Armor_Army" xml:space="preserve">
+    <value>Battle</value>
+  </data>
+  <data name="Armor_Invoker" xml:space="preserve">
+    <value>Disciple</value>
+  </data>
+  <data name="Armor_TrueCrimsonCrown" xml:space="preserve">
+    <value>True Crimson Crown</value>
+  </data>
+  <data name="CoastPig" xml:space="preserve">
+    <value>Little George</value>
+  </data>
+  <data name="CoastAtoner" xml:space="preserve">
+    <value>Mangled Atoner</value>
   </data>
 </root>
