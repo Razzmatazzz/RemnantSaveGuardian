@@ -31,6 +31,7 @@ namespace RemnantSaveGuardian.Views.Pages
         private List<RemnantWorldEvent> filteredCampaign;
         private List<RemnantWorldEvent> filteredAdventure;
         private ListViewItem menuSrcItem;
+
         public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel, string? pathToSaveFiles = null)
         {
             ViewModel = viewModel;
@@ -513,7 +514,8 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 itemname = itemname?.Substring(0, itemname.IndexOf(" ("));
             }
-            Process.Start("explorer.exe", $"https://remnant.wiki/{itemname}");
+            string wikiQuery = Properties.Settings.Default.Wiki == "remwiki" ? $"https://remnant.wiki/{itemname}" : $"https://remnant2.wiki.fextralife.com/{itemname}";
+            Process.Start("explorer.exe", wikiQuery);
         }
         private void ExpandAllItem_Click(object sender, RoutedEventArgs e)
         {

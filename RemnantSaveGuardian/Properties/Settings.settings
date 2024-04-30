@@ -128,5 +128,8 @@
     <Setting Name="OnlyInactive" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="Wiki" Type="System.String" Scope="User">
+      <Value Profile="(Default)">remwiki</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
