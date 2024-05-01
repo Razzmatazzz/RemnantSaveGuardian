@@ -1873,6 +1873,14 @@
         {
           "name": "/Items/Archetypes/Invoker/Armor/Armor_Legs_Invoker",
           "notes": "Inside a tunnel in lower Ancient Canopy"
+        },
+        {
+          "name": "/Items/Weapons/Thorn/Weapon_Thorn",
+          "notes": "Climbing towards the Kuri Kuri nest, DO NOT grab the egg after the bird leaves. Return later when you hear the bird."
+        },
+        {
+          "name": "/Items/Weapons/TrinityCrossbow/Weapon_TrinityCrossbow",
+          "notes": "Found in a hidden chamber after collecting all three Trinity Mementos."
         }
       ],
       "TombRaid": [
@@ -1904,6 +1912,9 @@
         },
         {
           "name": "/Items/Trinkets/Rings/ConjurersCircle/Ring_ConjurersCircle"
+        },
+        {
+          "name": "/Items/Weapons/CrystalStaff/Weapon_CrystalStaff"
         }
       ],
       "Rothinderahenwalt": [
@@ -1960,6 +1971,18 @@
           "name": "/Items/Armor/MudtoothsHat/Armor_Head_MudtoothsHat",
           "notes": "Talk to Mudtooth after completing the Forgotten Kingdom storyline.",
           "armorSet": false
+        },
+        {
+          "name": "/Items/Weapons/Flail_Mirage/Weapon_Mirage",
+          "notes": "Light all 5 braziers in Goddess's Rest to open the locked door and offer Cherished Fracture on the shrine."
+        },
+        {
+          "name": "/Items/Weapons/Monolith/Weapon_Monolith",
+          "notes": "Defeat Lydusa while her face is blue."
+        },
+        {
+          "name": "/Items/Weapons/Polygun/Weapon_Polygun",
+          "notes": "Found on an altar hidden in the Labyrinth."
         }
       ]
 
@@ -2183,6 +2206,9 @@
         },
         {
           "name": "/Items/Weapons/Longguns/Standard/Sniper_Rifle/Weapon_SniperRifle"
+        },
+        {
+          "name": "/Items/Weapons/BasicShovel/Weapon_BasicShovel"
         }
       ],
       "Reggie": [

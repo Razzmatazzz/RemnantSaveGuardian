@@ -6136,6 +6136,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shovel.
+        /// </summary>
+        public static string Weapon_BasicShovel {
+            get {
+                return ResourceManager.GetString("Weapon_BasicShovel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blade of Gul.
         /// </summary>
         public static string Weapon_BladeOfGul {
@@ -6249,6 +6258,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Weapon_Crossbow {
             get {
                 return ResourceManager.GetString("Weapon_Crossbow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crystal Staff.
+        /// </summary>
+        public static string Weapon_CrystalStaff {
+            get {
+                return ResourceManager.GetString("Weapon_CrystalStaff", resourceCulture);
             }
         }
         
@@ -6505,11 +6523,29 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mirage.
+        /// </summary>
+        public static string Weapon_Mirage {
+            get {
+                return ResourceManager.GetString("Weapon_Mirage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monarch.
         /// </summary>
         public static string Weapon_Monarch {
             get {
                 return ResourceManager.GetString("Weapon_Monarch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monolith.
+        /// </summary>
+        public static string Weapon_Monolith {
+            get {
+                return ResourceManager.GetString("Weapon_Monolith", resourceCulture);
             }
         }
         
@@ -6564,6 +6600,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Weapon_PlasmaCutter {
             get {
                 return ResourceManager.GetString("Weapon_PlasmaCutter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Polygun.
+        /// </summary>
+        public static string Weapon_Polygun {
+            get {
+                return ResourceManager.GetString("Weapon_Polygun", resourceCulture);
             }
         }
         
@@ -6847,11 +6892,29 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thorn.
+        /// </summary>
+        public static string Weapon_Thorn {
+            get {
+                return ResourceManager.GetString("Weapon_Thorn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Chicago Typewriter.
         /// </summary>
         public static string Weapon_TommyGun {
             get {
                 return ResourceManager.GetString("Weapon_TommyGun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trinity Crossbow.
+        /// </summary>
+        public static string Weapon_TrinityCrossbow {
+            get {
+                return ResourceManager.GetString("Weapon_TrinityCrossbow", resourceCulture);
             }
         }
         

@@ -2433,4 +2433,25 @@
   <data name="CoastAtoner" xml:space="preserve">
     <value>Mangled Atoner</value>
   </data>
+  <data name="Weapon_BasicShovel" xml:space="preserve">
+    <value>Shovel</value>
+  </data>
+  <data name="Weapon_Polygun" xml:space="preserve">
+    <value>Polygun</value>
+  </data>
+  <data name="Weapon_Monolith" xml:space="preserve">
+    <value>Monolith</value>
+  </data>
+  <data name="Weapon_Mirage" xml:space="preserve">
+    <value>Mirage</value>
+  </data>
+  <data name="Weapon_CrystalStaff" xml:space="preserve">
+    <value>Crystal Staff</value>
+  </data>
+  <data name="Weapon_TrinityCrossbow" xml:space="preserve">
+    <value>Trinity Crossbow</value>
+  </data>
+  <data name="Weapon_Thorn" xml:space="preserve">
+    <value>Thorn</value>
+  </data>
 </root>
