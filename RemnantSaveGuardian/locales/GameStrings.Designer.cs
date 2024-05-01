@@ -3958,7 +3958,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to onjurer&apos;s Circle.
+        ///   Looks up a localized string similar to Conjurer&apos;s Circle.
         /// </summary>
         public static string Ring_ConjurersCircle {
             get {
@@ -5340,6 +5340,15 @@ namespace RemnantSaveGuardian.locales {
         public static string RootHorror {
             get {
                 return ResourceManager.GetString("RootHorror", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infested Abyss.
+        /// </summary>
+        public static string RootMadness {
+            get {
+                return ResourceManager.GetString("RootMadness", resourceCulture);
             }
         }
         

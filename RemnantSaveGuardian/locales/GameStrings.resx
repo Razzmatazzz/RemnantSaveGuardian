@@ -2392,7 +2392,7 @@
     <value>Closed Loop</value>
   </data>
   <data name="Ring_ConjurersCircle" xml:space="preserve">
-    <value>onjurer's Circle</value>
+    <value>Conjurer's Circle</value>
   </data>
   <data name="Ring_DarkSeaArmadaCrest" xml:space="preserve">
     <value>Dark Sea Armada Crest</value>
@@ -2498,5 +2498,8 @@
   </data>
   <data name="MetaGem_Spellweaver" xml:space="preserve">
     <value>Spellweaver</value>
+  </data>
+  <data name="RootMadness" xml:space="preserve">
+    <value>Infested Abyss</value>
   </data>
 </root>

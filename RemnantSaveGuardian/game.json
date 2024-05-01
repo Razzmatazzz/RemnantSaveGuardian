@@ -76,7 +76,7 @@
       "OneTrueKing": "Palace of the One True King"
     },
     "DLC2": {
-      "RootMadness": "RootMadness?",
+      "RootMadness": "Infested Abyss",
       "Kiln": "Kiln?",
       "Island": "Goddess's Rest",
       "LydusaTemple": "The Bloodless Throne",
@@ -1619,6 +1619,10 @@
         {
           "name": "/Items/Trinkets/Rings/ElevatedRing/Ring_ElevatedRing",
           "notes": "Forlorn Coast- Mournful Promenade, Use the Elevator at top to get there."
+        },
+        {
+          "name": "/Items/Archetypes/Ritualist/Archetype_Ritualist",
+          "ignore": true
         }
       ],
       "Leywise": [
@@ -1770,17 +1774,6 @@
           "name": "/Items/Trinkets/Rings/SealedResinLoop/Ring_SealedResinLoop"
         }
       ],
-      "Ring_RingOfSpirits": [
-        {
-          "name": "/Items/Trinkets/Rings/RingOfSpirits/Ring_RingOfSpirits"
-        }
-      ],
-      "Ring_PanWarBand": [
-        {
-          "name": "/Items/Trinkets/Rings/PanWarBand/Ring_PanWarBand",
-          "coop": true
-        }
-      ],
       "Ring_RingOfOrdnance": [
         {
           "name": "/Items/Trinkets/Rings/RingOfOrdnance/Ring_RingOfOrdnance"
@@ -1814,6 +1807,29 @@
       "Ring_BlackSpinel": [
         {
           "name": "/Items/Trinkets/Rings/BlackSpinel/Ring_BlackSpinel"
+        }
+      ],
+      "RootMadness": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfSpirits/Ring_RingOfSpirits"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/PanWarBand/Ring_PanWarBand",
+          "coop": true
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/ProfaneSoulStone/Amulet_ProfaneSoulStone",
+          "notes": "Submit to The Emissary."
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ConjurersCircle/Ring_ConjurersCircle"
+        },
+        {
+          "name": "/Items/Weapons/CrystalStaff/Weapon_CrystalStaff"
+        },
+        {
+          "name": "/Items/Gems/Ranged/NearSighted/MetaGem_NearSighted",
+          "notes": "Fight The Emissary"
         }
       ],
       "LuminousValeStory": [
@@ -1889,6 +1905,9 @@
         {
           "name": "/Items/Gems/Ranged/PressurePoint/MetaGem_PressurePoint",
           "notes": "Defeat the Charred Sentry aberration."
+        },
+        {
+          "name": "/Items/Archetypes/Invoker/Engram/Engram_Invoker"
         }
       ],
       "TombRaid": [
@@ -1921,20 +1940,6 @@
         }
       ],
       "Crypt_DLC": [
-        {
-          "name": "/Items/Trinkets/Amulets/ProfaneSoulStone/Amulet_ProfaneSoulStone",
-          "notes": "Submit to The Emissary."
-        },
-        {
-          "name": "/Items/Trinkets/Rings/ConjurersCircle/Ring_ConjurersCircle"
-        },
-        {
-          "name": "/Items/Weapons/CrystalStaff/Weapon_CrystalStaff"
-        },
-        {
-          "name": "/Items/Gems/Ranged/NearSighted/MetaGem_NearSighted",
-          "notes": "Fight The Emissary"
-        }
       ],
       "Rothinderahenwalt": [
         {
