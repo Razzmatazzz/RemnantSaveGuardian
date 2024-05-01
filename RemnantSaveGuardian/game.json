@@ -1887,6 +1887,10 @@
         {
           "name": "/Items/Trinkets/Rings/TokenOfFavor/Ring_TokenOfFavor",
           "notes": "Can be found at the side of the giant deer statue."
+        },
+        {
+          "name": "/Items/Mods/Heatwave/Mod_Heatwave",
+          "notes": "Defeat Cinderclad Monolith"
         }
       ],
       "Ziggurat_DLC": [
@@ -1983,6 +1987,13 @@
         {
           "name": "/Items/Weapons/Polygun/Weapon_Polygun",
           "notes": "Found on an altar hidden in the Labyrinth."
+        },
+        {
+          "name": "/Items/Mods/AbrasiveRounds/Mod_AbrasiveRounds",
+          "notss": "Kill The Stonewarden"
+        },
+        {
+          "name": "/Items/Mods/FlyingBombTrap/Mod_FlyingBombTrap"
         }
       ]
 

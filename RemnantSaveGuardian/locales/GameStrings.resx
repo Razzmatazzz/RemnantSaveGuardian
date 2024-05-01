@@ -2454,4 +2454,13 @@
   <data name="Weapon_Thorn" xml:space="preserve">
     <value>Thorn</value>
   </data>
+  <data name="Mod_Heatwave" xml:space="preserve">
+    <value>Heatwave</value>
+  </data>
+  <data name="Mod_AbrasiveRounds" xml:space="preserve">
+    <value>Abrasive Rounds</value>
+  </data>
+  <data name="Mod_FlyingBombTrap" xml:space="preserve">
+    <value>Flying Bomb Trap</value>
+  </data>
 </root>

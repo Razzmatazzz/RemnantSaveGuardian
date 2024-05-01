@@ -2653,6 +2653,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abrasive Rounds.
+        /// </summary>
+        public static string Mod_AbrasiveRounds {
+            get {
+                return ResourceManager.GetString("Mod_AbrasiveRounds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Astral Burst.
         /// </summary>
         public static string Mod_AstralBurst {
@@ -2761,11 +2770,29 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Flying Bomb Trap.
+        /// </summary>
+        public static string Mod_FlyingBombTrap {
+            get {
+                return ResourceManager.GetString("Mod_FlyingBombTrap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Healing Shot.
         /// </summary>
         public static string Mod_HealingShot {
             get {
                 return ResourceManager.GetString("Mod_HealingShot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heatwave.
+        /// </summary>
+        public static string Mod_Heatwave {
+            get {
+                return ResourceManager.GetString("Mod_Heatwave", resourceCulture);
             }
         }
         
