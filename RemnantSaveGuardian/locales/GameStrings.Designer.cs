@@ -2221,6 +2221,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle Mage.
+        /// </summary>
+        public static string MetaGem_BattleMage {
+            get {
+                return ResourceManager.GetString("MetaGem_BattleMage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bottom Feeder.
         /// </summary>
         public static string MetaGem_BottomFeeder {
@@ -2320,6 +2329,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Far-Sighted.
+        /// </summary>
+        public static string MetaGem_FarSighted {
+            get {
+                return ResourceManager.GetString("MetaGem_FarSighted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Feedback.
         /// </summary>
         public static string MetaGem_Feedback {
@@ -2343,6 +2361,15 @@ namespace RemnantSaveGuardian.locales {
         public static string MetaGem_GhostShell {
             get {
                 return ResourceManager.GetString("MetaGem_GhostShell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gladiator.
+        /// </summary>
+        public static string MetaGem_Gladiator {
+            get {
+                return ResourceManager.GetString("MetaGem_Gladiator", resourceCulture);
             }
         }
         
@@ -2428,6 +2455,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Near-Sighted.
+        /// </summary>
+        public static string MetaGem_NearSighted {
+            get {
+                return ResourceManager.GetString("MetaGem_NearSighted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Opportunist.
         /// </summary>
         public static string MetaGem_Opportunist {
@@ -2442,6 +2478,15 @@ namespace RemnantSaveGuardian.locales {
         public static string MetaGem_Overdrive {
             get {
                 return ResourceManager.GetString("MetaGem_Overdrive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pressure Point.
+        /// </summary>
+        public static string MetaGem_PressurePoint {
+            get {
+                return ResourceManager.GetString("MetaGem_PressurePoint", resourceCulture);
             }
         }
         
@@ -2478,6 +2523,15 @@ namespace RemnantSaveGuardian.locales {
         public static string MetaGem_Resentment {
             get {
                 return ResourceManager.GetString("MetaGem_Resentment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Searing Wounds.
+        /// </summary>
+        public static string MetaGem_SearingWounds {
+            get {
+                return ResourceManager.GetString("MetaGem_SearingWounds", resourceCulture);
             }
         }
         
@@ -2523,6 +2577,15 @@ namespace RemnantSaveGuardian.locales {
         public static string MetaGem_Sleeper {
             get {
                 return ResourceManager.GetString("MetaGem_Sleeper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spellweaver.
+        /// </summary>
+        public static string MetaGem_Spellweaver {
+            get {
+                return ResourceManager.GetString("MetaGem_Spellweaver", resourceCulture);
             }
         }
         
@@ -2577,6 +2640,15 @@ namespace RemnantSaveGuardian.locales {
         public static string MetaGem_TaintedBlade {
             get {
                 return ResourceManager.GetString("MetaGem_TaintedBlade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thousand Cuts.
+        /// </summary>
+        public static string MetaGem_ThousandCuts {
+            get {
+                return ResourceManager.GetString("MetaGem_ThousandCuts", resourceCulture);
             }
         }
         
@@ -3220,6 +3292,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bloodless Heart.
+        /// </summary>
+        public static string Relic_Consumable_BloodlessHeart {
+            get {
+                return ResourceManager.GetString("Relic_Consumable_BloodlessHeart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blooming Heart.
         /// </summary>
         public static string Relic_Consumable_BloomingHeart {
@@ -3297,6 +3378,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Relic_Consumable_PaperHeart {
             get {
                 return ResourceManager.GetString("Relic_Consumable_PaperHeart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profane Heart.
+        /// </summary>
+        public static string Relic_Consumable_ProfaneHeart {
+            get {
+                return ResourceManager.GetString("Relic_Consumable_ProfaneHeart", resourceCulture);
             }
         }
         
@@ -5839,6 +5929,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gifted.
+        /// </summary>
+        public static string Trait_Gifted {
+            get {
+                return ResourceManager.GetString("Trait_Gifted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Glutton.
         /// </summary>
         public static string Trait_Glutton {
@@ -5907,6 +6006,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Trait_Regrowth {
             get {
                 return ResourceManager.GetString("Trait_Regrowth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resolute.
+        /// </summary>
+        public static string Trait_Resolute {
+            get {
+                return ResourceManager.GetString("Trait_Resolute", resourceCulture);
             }
         }
         

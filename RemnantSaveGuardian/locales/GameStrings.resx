@@ -2463,4 +2463,40 @@
   <data name="Mod_FlyingBombTrap" xml:space="preserve">
     <value>Flying Bomb Trap</value>
   </data>
+  <data name="Trait_Gifted" xml:space="preserve">
+    <value>Gifted</value>
+  </data>
+  <data name="MetaGem_FarSighted" xml:space="preserve">
+    <value>Far-Sighted</value>
+  </data>
+  <data name="MetaGem_PressurePoint" xml:space="preserve">
+    <value>Pressure Point</value>
+  </data>
+  <data name="MetaGem_ThousandCuts" xml:space="preserve">
+    <value>Thousand Cuts</value>
+  </data>
+  <data name="MetaGem_NearSighted" xml:space="preserve">
+    <value>Near-Sighted</value>
+  </data>
+  <data name="Relic_Consumable_ProfaneHeart" xml:space="preserve">
+    <value>Profane Heart</value>
+  </data>
+  <data name="Trait_Resolute" xml:space="preserve">
+    <value>Resolute</value>
+  </data>
+  <data name="Relic_Consumable_BloodlessHeart" xml:space="preserve">
+    <value>Bloodless Heart</value>
+  </data>
+  <data name="MetaGem_SearingWounds" xml:space="preserve">
+    <value>Searing Wounds</value>
+  </data>
+  <data name="MetaGem_Gladiator" xml:space="preserve">
+    <value>Gladiator</value>
+  </data>
+  <data name="MetaGem_BattleMage" xml:space="preserve">
+    <value>Battle Mage</value>
+  </data>
+  <data name="MetaGem_Spellweaver" xml:space="preserve">
+    <value>Spellweaver</value>
+  </data>
 </root>

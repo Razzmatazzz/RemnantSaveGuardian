@@ -1832,6 +1832,10 @@
         {
           "name": "/Items/Trinkets/Amulets/WornDogTags/Amulet_WornDogTags",
           "notes": "Return to Private Jack Driver after deciding Lydusa's fate."
+        },
+        {
+          "name": "/Items/Gems/Ranged/FarSighted/MetaGem_FarSighted",
+          "notes": "Defeat the Stonewing Lurker aberration"
         }
       ],
       "AncientCanopyStory": [
@@ -1881,13 +1885,13 @@
         {
           "name": "/Items/Weapons/TrinityCrossbow/Weapon_TrinityCrossbow",
           "notes": "Found in a hidden chamber after collecting all three Trinity Mementos."
+        },
+        {
+          "name": "/Items/Gems/Ranged/PressurePoint/MetaGem_PressurePoint",
+          "notes": "Defeat the Charred Sentry aberration."
         }
       ],
       "TombRaid": [
-        {
-          "name": "/Items/Trinkets/Rings/TokenOfFavor/Ring_TokenOfFavor",
-          "notes": "Can be found at the side of the giant deer statue."
-        },
         {
           "name": "/Items/Mods/Heatwave/Mod_Heatwave",
           "notes": "Defeat Cinderclad Monolith"
@@ -1905,8 +1909,15 @@
       ],
       "Island_DLC": [
         {
+          "name": "/Items/Trinkets/Rings/TokenOfFavor/Ring_TokenOfFavor",
+          "notes": "Can be found at the side of the giant deer statue."
+        },
+        {
           "name": "/Items/Trinkets/Amulets/CervineKeepsake/Amulet_CervineKeepsake",
           "notes": "In the Deserted Atelier, when you come to the statue of the doe, put on the Red Doe Sigil."
+        },
+        {
+          "name": "/Items/Gems/Ranged/ThousandCuts/MetaGem_ThousandCuts"
         }
       ],
       "Crypt_DLC": [
@@ -1919,6 +1930,10 @@
         },
         {
           "name": "/Items/Weapons/CrystalStaff/Weapon_CrystalStaff"
+        },
+        {
+          "name": "/Items/Gems/Ranged/NearSighted/MetaGem_NearSighted",
+          "notes": "Fight The Emissary"
         }
       ],
       "Rothinderahenwalt": [
@@ -1945,6 +1960,10 @@
         {
           "name": "/Items/Trinkets/Amulets/SoulStone/Amulet_SoulStone",
           "notes": "Cleanse the Profane Soul Stone at The Keeper within the Labyrinth"
+        },
+        {
+          "name": "/Items/Relics/ProfaneHeart/Relic_Consumable_ProfaneHeart",
+          "notes": "Refuse to cleanse the Profane Soul Stone at The Keeper within the Labyrinth"
         },
         {
           "name": "/Items/Trinkets/Rings/TearOfLydusa/Ring_TearOfLydusa",
@@ -1994,6 +2013,19 @@
         },
         {
           "name": "/Items/Mods/FlyingBombTrap/Mod_FlyingBombTrap"
+        },
+        {
+          "name": "/Items/Traits/Resolute/Trait_Resolute",
+          "notes": "Destroy fifteen Traveler statues (appear when you die with Lydusa's Curse)"
+        },
+        {
+          "name": "/Items/Relics/BloodlessHeart/Relic_Consumable_BloodlessHeart"
+        },
+        {
+          "name": "/Items/Gems/Ranged/SearingWounds/MetaGem_SearingWounds"
+        },
+        {
+          "name": "/Items/Gems/Melee/Gladiator/MetaGem_Gladiator"
         }
       ]
 
@@ -2469,6 +2501,12 @@
           "name": "/Items/Gems/Ranged/FetidWounds/MetaGem_FetidWounds"
         },
         {
+          "name": "/Items/Gems/Melee/BattleMage/MetaGem_BattleMage"
+        },
+        {
+          "name": "/Items/Gems/Ranged/Spellweaver/MetaGem_Spellweaver"
+        },
+        {
           "name": "/Items/Weapons/Longguns/Special/CorruptedAphelion/Weapon_CorruptedAphelion"
         },
         {
@@ -2559,8 +2597,7 @@
         },
         {
           "name": "/Items/Archetypes/Invoker/PerksAndTraits/Trait_Gifted",
-          "notes": "Unlocked automatically for all archetypes after leveling up the Invoker archetype to 10.",
-          "ignored": true
+          "notes": "Unlocked automatically for all archetypes after leveling up the Invoker archetype to 10."
         },
         {
           "name": "/Items/Traits/Affliction/Trait_Affliction",
