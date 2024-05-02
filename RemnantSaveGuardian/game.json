@@ -1723,7 +1723,7 @@
     "DLC2": {
       "Amulet_ZeroDivide": [
         {
-          "name": "/Items/Trinkets/Amulets/ZeroDevide/Amulet_ZeroDivide"
+          "name": "/Items/Trinkets/Amulets/ZeroDivide/Amulet_ZeroDivide"
         }
       ],
       "Amulet_WornDogTags": [
@@ -1947,7 +1947,7 @@
           "notes": "Proving Grounds Dungeon"
         },
         {
-          "name": "/Items/Trinkets/Rings/FeatheryBinding/Ring_DarkSeaArmadaCrest",
+          "name": "/Items/Trinkets/Rings/DarkSeaArmadaCrest/Ring_DarkSeaArmadaCrest",
           "notes": "At the end of the last gauntlet (4th checkpoint)"
         },
         {
