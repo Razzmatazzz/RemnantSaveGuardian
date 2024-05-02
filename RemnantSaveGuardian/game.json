@@ -78,7 +78,6 @@
     "DLC2": {
       "RootMadness": "Infested Abyss",
       "Kiln": "Deserted Atelier",
-      "Island": "Goddess's Rest",
       "LydusaTemple": "Goddess's Rest",
       "TombRaid": "Proving Grounds",
       "ShiftingSoldier": "Earthen Coliseum",
@@ -1522,7 +1521,7 @@
           "name": "/Items/Trinkets/Amulets/DeathSoakedIdol/Amulet_DeathSoakedIdol"
         }
       ],
-      "ShaedHalls": [
+      "Halls_DLC": [
         {
           "name": "/Items/Trinkets/Rings/ShaedStone/Ring_ShaedStone",
           "notes": "Shoot the invisible golden pot in the reflection you see on the mirrored floor."

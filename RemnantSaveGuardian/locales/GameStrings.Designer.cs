@@ -5758,7 +5758,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Proving Grounds: Gauntlet.
+        ///   Looks up a localized string similar to The Gauntlet.
         /// </summary>
         public static string TombRaid {
             get {
