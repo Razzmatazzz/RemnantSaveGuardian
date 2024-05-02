@@ -2334,8 +2334,8 @@
   <data name="Amulet_BeadsOfTheValorous" xml:space="preserve">
     <value>Beads of the Valorous</value>
   </data>
-  <data name="TombRaid" xml:space="preserve">
-    <value>Deserted Atelier</value>
+  <data name="Kiln" xml:space="preserve">
+    <value>Cinderclad Monolith</value>
   </data>
   <data name="Ring_BurdenOfTheMesmer" xml:space="preserve">
     <value>Burden of the Mesmer</value>
@@ -2375,9 +2375,6 @@
   </data>
   <data name="Ring_FloodlitDiamond" xml:space="preserve">
     <value>Floodlit Diamond</value>
-  </data>
-  <data name="Crypt_DLC" xml:space="preserve">
-    <value>Infested Abyss</value>
   </data>
   <data name="FarlornCoastStory" xml:space="preserve">
     <value>Story: Farlorn Coast</value>
@@ -2501,5 +2498,17 @@
   </data>
   <data name="RootMadness" xml:space="preserve">
     <value>Infested Abyss</value>
+  </data>
+  <data name="TombRaid" xml:space="preserve">
+    <value>Proving Grounds: Gauntlet</value>
+  </data>
+  <data name="ShiftingSoldier" xml:space="preserve">
+    <value>The Stonewarden</value>
+  </data>
+  <data name="Crypt_DLC" xml:space="preserve">
+    <value>The Treasure Room</value>
+  </data>
+  <data name="LydusaTemple" xml:space="preserve">
+    <value>Lydusa's Temple</value>
   </data>
 </root>

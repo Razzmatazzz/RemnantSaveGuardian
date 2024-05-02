@@ -1528,7 +1528,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Infested Abyss.
+        ///   Looks up a localized string similar to The Treasure Room.
         /// </summary>
         public static string Crypt_DLC {
             get {
@@ -2059,6 +2059,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cinderclad Monolith.
+        /// </summary>
+        public static string Kiln {
+            get {
+                return ResourceManager.GetString("Kiln", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Koara Kuri Nest.
         /// </summary>
         public static string KoaraKuriNest {
@@ -2136,6 +2145,15 @@ namespace RemnantSaveGuardian.locales {
         public static string LurkerVents {
             get {
                 return ResourceManager.GetString("LurkerVents", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lydusa&apos;s Temple.
+        /// </summary>
+        public static string LydusaTemple {
+            get {
+                return ResourceManager.GetString("LydusaTemple", resourceCulture);
             }
         }
         
@@ -5434,6 +5452,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Stonewarden.
+        /// </summary>
+        public static string ShiftingSoldier {
+            get {
+                return ResourceManager.GetString("ShiftingSoldier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Broken Cable.
         /// </summary>
         public static string Shockwire {
@@ -5731,7 +5758,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deserted Atelier.
+        ///   Looks up a localized string similar to Proving Grounds: Gauntlet.
         /// </summary>
         public static string TombRaid {
             get {

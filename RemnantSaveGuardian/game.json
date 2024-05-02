@@ -77,14 +77,13 @@
     },
     "DLC2": {
       "RootMadness": "Infested Abyss",
-      "Kiln": "Kiln?",
+      "Kiln": "Deserted Atelier",
       "Island": "Goddess's Rest",
-      "LydusaTemple": "The Bloodless Throne",
+      "LydusaTemple": "Goddess's Rest",
       "TombRaid": "Proving Grounds",
       "ShiftingSoldier": "Earthen Coliseum",
       "Upper": "Ancient Canopy",
-      "Lower": "Luminous Vale",
-      "Unkown4": "Deserted Atelier?"
+      "Lower": "Luminous Vale"
     }
   },
   "injectableParents": {
@@ -1811,13 +1810,6 @@
       ],
       "RootMadness": [
         {
-          "name": "/Items/Trinkets/Rings/RingOfSpirits/Ring_RingOfSpirits"
-        },
-        {
-          "name": "/Items/Trinkets/Rings/PanWarBand/Ring_PanWarBand",
-          "coop": true
-        },
-        {
           "name": "/Items/Trinkets/Amulets/ProfaneSoulStone/Amulet_ProfaneSoulStone",
           "notes": "Submit to The Emissary."
         },
@@ -1907,13 +1899,63 @@
           "notes": "Defeat the Charred Sentry aberration."
         },
         {
-          "name": "/Items/Archetypes/Invoker/Engram/Engram_Invoker"
+          "name": "/Items/Archetypes/Invoker/Engram/Engram_Invoker",
+          "ignore": true
+        }
+      ],
+      "Kiln": [
+        {
+          "name": "/Items/Mods/Heatwave/Mod_Heatwave",
+          "notes": "Defeat Cinderclad Monolith"
+        }
+      ],
+      "LydusaTemple": [
+        {
+          "name": "/Items/Trinkets/Rings/BloodlessKingsVow/Ring_BloodlessKingsVow",
+          "notes": "Acquired by defeating The Bloodless Heir aberration inside Lydusa's Temple"
+        },
+        {
+          "name": "/Items/Armor/BloodlessCrown/Armor_Head_BloodlessCrown",
+          "notes": "After opening the door that requires five braziers, at the Altar by the offering vessel.",
+          "armorSet": false
+        },
+        {
+          "name": "/Items/Gems/Ranged/SearingWounds/MetaGem_SearingWounds"
+        },
+        {
+          "name": "/Items/Relics/BloodlessHeart/Relic_Consumable_BloodlessHeart"
+        },
+        {
+          "name": "/Items/Weapons/Flail_Mirage/Weapon_Mirage",
+          "notes": "Light all 5 braziers in Goddess's Rest to open the locked door and offer Cherished Fracture on the shrine."
         }
       ],
       "TombRaid": [
         {
-          "name": "/Items/Mods/Heatwave/Mod_Heatwave",
-          "notes": "Defeat Cinderclad Monolith"
+          "name": "/Items/Armor/MilitaryUniform/Armor_Head_Army"
+        },
+        {
+          "name": "/Items/Armor/MilitaryUniform/Armor_Body_Army"
+        },
+        {
+          "name": "/Items/Armor/MilitaryUniform/Armor_Gloves_Army"
+        },
+        {
+          "name": "/Items/Armor/MilitaryUniform/Armor_Legs_Army"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/FloodlitDiamond/Ring_FloodlitDiamond",
+          "notes": "Proving Grounds Dungeon"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/FeatheryBinding/Ring_DarkSeaArmadaCrest",
+          "notes": "At the end of the last gauntlet (4th checkpoint)"
+        },
+        {
+          "name": "/Items/Gems/Melee/Gladiator/MetaGem_Gladiator"
+        },
+        {
+          "name": "/Items/Mods/FlyingBombTrap/Mod_FlyingBombTrap"
         }
       ],
       "Ziggurat_DLC": [
@@ -1939,7 +1981,20 @@
           "name": "/Items/Gems/Ranged/ThousandCuts/MetaGem_ThousandCuts"
         }
       ],
+      "ShiftingSoldier": [
+        {
+          "name": "/Items/Mods/AbrasiveRounds/Mod_AbrasiveRounds",
+          "notss": "Kill The Stonewarden"
+        }
+      ],
       "Crypt_DLC": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfSpirits/Ring_RingOfSpirits"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/PanWarBand/Ring_PanWarBand",
+          "coop": true
+        }
       ],
       "Rothinderahenwalt": [
         {
@@ -1955,14 +2010,6 @@
       ],
       "DLC2Story": [
         {
-          "name": "/Items/Trinkets/Rings/FloodlitDiamond/Ring_FloodlitDiamond",
-          "notes": "Proving Grounds Dungeon"
-        },
-        {
-          "name": "/Items/Trinkets/Rings/FeatheryBinding/Ring_DarkSeaArmadaCrest",
-          "notes": "At the end of the last gauntlet (4th checkpoint)"
-        },
-        {
           "name": "/Items/Trinkets/Amulets/SoulStone/Amulet_SoulStone",
           "notes": "Cleanse the Profane Soul Stone at The Keeper within the Labyrinth"
         },
@@ -1975,35 +2022,10 @@
           "notes": "In the area where you fought Lydusa, return after the fight to find the ring."
         },
         {
-          "name": "/Items/Trinkets/Rings/BloodlessKingsVow/Ring_BloodlessKingsVow",
-          "notes": "Acquired by defeating The Bloodless Heir aberration inside Lydusa's Temple"
-        },
-        {
-          "name": "/Items/Armor/BloodlessCrown/Armor_Head_BloodlessCrown",
-          "notes": "After opening the door that requires five braziers, at the Altar by the offering vessel.",
-          "armorSet": false
-        },
-        {
-          "name": "/Items/Armor/MilitaryUniform/Armor_Head_Army"
-        },
-        {
-          "name": "/Items/Armor/MilitaryUniform/Armor_Body_Army"
-        },
-        {
-          "name": "/Items/Armor/MilitaryUniform/Armor_Gloves_Army"
-        },
-        {
-          "name": "/Items/Armor/MilitaryUniform/Armor_Legs_Army"
-        },
-        {
           "name": "/Items/Armor/MudtoothsHat/Armor_Head_MudtoothsHat",
           "notes": "Talk to Mudtooth after completing the Forgotten Kingdom storyline.",
           "armorSet": false
-        },
-        {
-          "name": "/Items/Weapons/Flail_Mirage/Weapon_Mirage",
-          "notes": "Light all 5 braziers in Goddess's Rest to open the locked door and offer Cherished Fracture on the shrine."
-        },
+        }
         {
           "name": "/Items/Weapons/Monolith/Weapon_Monolith",
           "notes": "Defeat Lydusa while her face is blue."
@@ -2013,24 +2035,8 @@
           "notes": "Found on an altar hidden in the Labyrinth."
         },
         {
-          "name": "/Items/Mods/AbrasiveRounds/Mod_AbrasiveRounds",
-          "notss": "Kill The Stonewarden"
-        },
-        {
-          "name": "/Items/Mods/FlyingBombTrap/Mod_FlyingBombTrap"
-        },
-        {
           "name": "/Items/Traits/Resolute/Trait_Resolute",
           "notes": "Destroy fifteen Traveler statues (appear when you die with Lydusa's Curse)"
-        },
-        {
-          "name": "/Items/Relics/BloodlessHeart/Relic_Consumable_BloodlessHeart"
-        },
-        {
-          "name": "/Items/Gems/Ranged/SearingWounds/MetaGem_SearingWounds"
-        },
-        {
-          "name": "/Items/Gems/Melee/Gladiator/MetaGem_Gladiator"
         }
       ]
 
