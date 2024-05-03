@@ -382,7 +382,11 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 string[] tokens = keep.Split('=');
                 if (tokens.Length == 2)
                 {
-                    keeps.Add(long.Parse(tokens[0]), bool.Parse(tokens[1]));
+                    long key = long.Parse(tokens[0]);
+                    if (!keeps.ContainsKey(key))
+                    {
+                        keeps.Add(key, bool.Parse(tokens[1]));
+                    }
                 }
             }
             return keeps;
