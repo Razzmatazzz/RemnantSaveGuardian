@@ -628,16 +628,16 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 if (!Properties.Settings.Default.ShowRootEarth && zone.Name == "Root Earth") continue;
                 foreach (Location location in zone.Locations)
                 {
-                    string l = location.World == "Ward 13" ? location.World : $"{location.World}: {location.Name}";
+                    string l = location.World == "Ward 13" ? Loc.GameT(location.World) : $"{Loc.GameT(location.World)}: {Loc.GameT(location.Name)}";
 
                     if (Properties.Settings.Default.ShowConnections && location.Connections is { Count: > 0 })
                     {
                         WorldAnalyzerGridData newItem = new(
-                            location: Loc.GameT(l),
+                            location: l,
                             missingItems: [],
                             possibleItems: [],
                             name: string.Join('\n', location.Connections.Select(Loc.GameT)),
-                            type: Loc.GameT("Connections")
+                            type: Loc.T("Connections")
                         );
                         if (EventPassesFilter(newItem))
                         {
@@ -647,11 +647,11 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                     if (Properties.Settings.Default.ShowWorldStones && location.WorldStones is { Count: > 0 })
                     {
                         WorldAnalyzerGridData newItem = new(
-                            location: Loc.GameT(l),
+                            location: l,
                             missingItems: [],
                             possibleItems: [],
                             name: string.Join('\n', location.WorldStones.Select(Loc.GameT)),
-                            type: Loc.GameT("World Stones")
+                            type: Loc.T("World Stones")
                         );
                         if (EventPassesFilter(newItem))
                         {
@@ -662,11 +662,11 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                     {
                         //List<LocalisedLootItem> ll = new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") } } }) };
                         WorldAnalyzerGridData newItem = new(
-                            location: Loc.GameT(l),
+                            location: l,
                             missingItems: [],
                             possibleItems: location.TraitBookDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") }, { "Id", "Bogus" } } }) },
                             name: Loc.GameT("TraitBook"),
-                            type: Loc.GameT("Item")
+                            type: Loc.T("Item")
                         );
                         if (EventPassesFilter(newItem))
                         {
@@ -677,11 +677,11 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                     if (Properties.Settings.Default.ShowSimulacrums && location.Simulacrum)
                     {
                         WorldAnalyzerGridData newItem = new(
-                            location: Loc.GameT(l),
+                            location: l,
                             missingItems: [],
                             possibleItems: location.SimulacrumDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("Simulacrum") }, { "Id", "Bogus" } } }) },
                             name: Loc.GameT("Simulacrum"),
-                            type: Loc.GameT("Item")
+                            type: Loc.T("Item")
                         );
                         if (EventPassesFilter(newItem))
                         {
@@ -703,13 +703,18 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                         }
 
                         WorldAnalyzerGridData newItem = new(
-                            location: Loc.GameT(l),
+                            location: l,
                             missingItems: items.Where(x => missingIds.Contains(x.Item["Id"])).Select(x => new LocalisedLootItem(x)).ToList(),
                             possibleItems: items.Select(x => new LocalisedLootItem(x)).ToList(),
                             name: Loc.GameT(lg.Name ?? ""),
-                            type: Loc.GameT(Capitalize().Replace(lg.Type, m => m.Value.ToUpper()))
+                            type: Loc.T(Capitalize().Replace(lg.Type, m => m.Value.ToUpper()))
                         ){Unknown = lg.Unknown};
-                        if (EventPassesFilter(newItem))
+                        if (newItem.Type == "Dungeon" || newItem.Type == "Location")
+                        {
+                            newItem.Name = Loc.GameT(location.Name);
+                        }
+                        bool hasItems = Properties.Settings.Default.ShowPossibleItems || newItem.MissingItems.Count > 0;
+                        if (EventPassesFilter(newItem) && hasItems)
                         {
                             result.Add(newItem);
                         }
