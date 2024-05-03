@@ -83,7 +83,7 @@ namespace Remnant2SaveAnalyzer
                         {
                             InstalledVersion = localVersion,
                             CurrentVersion = remoteVersion.ToString(),
-                            DownloadURL = $"https://github.com/{Repo}/releases/download/{remoteVersion}/Remnant2SaveAnalyzer.zip"
+                            DownloadURL = $"https://github.com/{Repo}/releases/download/{remoteVersion}/Remnant2SaveAnalyzer-{remoteVersion}.zip"
                         };
                         messageBox.Close();
                         AutoUpdater.DownloadUpdate(args);

@@ -6,7 +6,7 @@ name: .NET
 on:
   push:
     tags:
-    - "v[0-9]+.[0-9]+.[0-9]+"
+    - "[0-9]+.[0-9]+.[0-9]+"
   workflow_dispatch:
 
 jobs:
@@ -20,22 +20,19 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Set Version Variable
-      if: ${{ github.ref_type == 'tag' }}
+    - name: Build
+      shell: powershell
+      run: dotnet publish Remnant2SaveAnalyzer\Remnant2SaveAnalyzer.csproj -c Release --self-contained -r win-x64 "/p:Version=$env:TAG" "/p:AssemblyVersion=$env:TAG"
       env:
         TAG: ${{ github.ref_name }}
-      run: echo "VERSION=${TAG#v}" >> $GITHUB_ENV
-    - name: Build
-      run: dotnet publish Remnant2SaveAnalyzer\Remnant2SaveAnalyzer.csproj -c Release --self-contained -r win-x64 /p:Version=$VERSION
-    - name: "Create release archive"
+    - name: Create release archive
       shell: powershell
       run: |
         7z a "Remnant2SaveAnalyzer-$env:TAG.zip" .\Remnant2SaveAnalyzer\bin\Release\net8.0-windows7.0\win-x64\*
       env:
         TAG: ${{ github.ref_name }}
-    - name: "Create Release"
-      uses: softprops/action-gh-release@v1
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
       with:
         files: Remnant2SaveAnalyzer-${{ github.ref_name }}.zip
+        body: "[CHANGELOG.md](CHANGELOG.md)"

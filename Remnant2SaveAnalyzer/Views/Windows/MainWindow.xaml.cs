@@ -191,7 +191,7 @@ namespace Remnant2SaveAnalyzer.Views.Windows
         {
             Dispatcher.Invoke(() =>
             {
-                Logger.Log(Loc.T("New version available!"));
+                Logger.Log(Loc.T($"New version {e.Version} available!"));
             });
         }
 

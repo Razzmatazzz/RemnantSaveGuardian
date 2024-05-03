@@ -9,7 +9,7 @@
     <SatelliteResourceLanguages>en;ru;de;es;fr;it;ja;ko;pt-BR;zh-Hans;zh-Hant</SatelliteResourceLanguages>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\256.ico</ApplicationIcon>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="lib.remnant2.analyzer" Version="0.0.2" />
+    <PackageReference Include="lib.remnant2.analyzer" Version="0.0.3" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
     <PackageReference Include="Serilog" Version="3.1.1" />
     <PackageReference Include="System.IO.Hashing" Version="8.0.0" />
