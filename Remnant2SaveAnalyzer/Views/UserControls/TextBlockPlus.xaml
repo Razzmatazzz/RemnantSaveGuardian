@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Remnant2SaveAnalyzer.Views.UserControls.TextBlockPlus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Remnant2SaveAnalyzer.Views.UserControls"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             x:Name="current"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="400">
+    <StackPanel DataContext="{Binding ElementName=current}">
+        <ScrollViewer Background="Transparent" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+            <TextBlock Text="{Binding Text}" Width="Auto" TextWrapping="NoWrap">
+                <i:Interaction.Behaviors>
+                    <local:RollingTextBlockBehavior RollingSpeed="{Binding RollingSpeed}" RollbackSpeed="{Binding RollbackSpeed}"/>
+                </i:Interaction.Behaviors>
+            </TextBlock>
+        </ScrollViewer>
+    </StackPanel>
+</UserControl>

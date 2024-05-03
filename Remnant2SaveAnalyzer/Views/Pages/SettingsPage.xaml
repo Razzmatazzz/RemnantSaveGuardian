@@ -1,0 +1,277 @@
+﻿<ui:UiPage
+    x:Class="Remnant2SaveAnalyzer.Views.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:Remnant2SaveAnalyzer.Helpers"
+    xmlns:local="clr-namespace:Remnant2SaveAnalyzer.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="SettingsPage"
+    d:DataContext="{d:DesignInstance local:SettingsPage,
+                                     IsDesignTimeCreatable=False}"
+    d:DesignHeight="800"
+    d:DesignWidth="800"
+    d:Background="{DynamicResource ApplicationBackgroundBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    lex:LocalizeDictionary.DesignCulture="en"
+    lex:ResxLocalizationProvider.DefaultAssembly="Remnant2SaveAnalyzer"
+    lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
+    Scrollable="True"
+    xmlns:properties="clr-namespace:Remnant2SaveAnalyzer.Properties">
+    <ui:UiPage.Resources>
+        <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    </ui:UiPage.Resources>
+
+    <StackPanel Margin="23,0" DataContext="{Binding Path=(properties:Settings.Default)}">
+        <ui:CardExpander Margin="0,0,0,0" ExpandDirection="Down" IsExpanded="False">
+            <ui:CardExpander.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                        <ui:SymbolIcon FontSize="24" Margin="0,0,8,0" VerticalAlignment="Center" Symbol="Save24" ClipToBounds="True"/>
+                        <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Medium" Text="{lex:Loc Saves}" />
+                    </StackPanel>
+                    <ui:ToggleSwitch Grid.Column="2" Name="chkAutoBackup" Content="{lex:Loc}" IsChecked="{Binding AutoBackup}" FlowDirection="RightToLeft" Margin="0,0,40,0"/>
+                </Grid>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <WrapPanel>
+                    <ui:NumberBox Name="numBackupMins"  TextWrapping="Wrap" Text="{Binding BackupMinutes}" Width="150" DecimalPlaces="0" ClearButtonEnabled="False"/>
+                    <TextBlock Name="lblBackupMins" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,4,0,0">
+                    <ui:NumberBox Name="numBackupLimit"  TextWrapping="Wrap" Text="{Binding BackupLimit}" Width="150" DecimalPlaces="0" ClearButtonEnabled="False"/>
+                    <TextBlock x:Name="lblBackupLimit" TextWrapping="Wrap" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </WrapPanel>
+                <Grid Margin="0,4,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="4"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="4"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnSaveFolder" Content="{lex:Loc Save Folder}" MinWidth="150" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Click="BtnSaveFolder_Click"/>
+                    <TextBox Name="txtSaveFolder"  TextWrapping="Wrap" Text="{Binding SaveFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Margin="5,0,5,0" HorizontalContentAlignment="Stretch">
+                        <TextBox.ContextMenu>
+                            <ContextMenu>
+                                <ui:MenuItem Header="{lex:Loc Open Folder}" Click="SaveFolderOpen_Click">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon HorizontalAlignment="Left" Symbol="OpenFolder24" />
+                                    </MenuItem.Icon>
+                                </ui:MenuItem>
+                            </ContextMenu>
+                        </TextBox.ContextMenu>
+                    </TextBox>
+                    <Button x:Name="btnBackupFolder" Content="{lex:Loc Backup Folder}" MinWidth="150" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Click="BtnBackupFolder_Click"/>
+                    <TextBox Name="txtBackupFolder" TextWrapping="Wrap" Text="{Binding BackupFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Margin="5,0,5,0">
+                        <TextBox.ContextMenu>
+                            <ContextMenu>
+                                <ui:MenuItem Header="{lex:Loc Open Folder}" Click="BackupFolderOpen_Click">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon HorizontalAlignment="Left" Symbol="OpenFolder24" />
+                                    </MenuItem.Icon>
+                                </ui:MenuItem>
+                            </ContextMenu>
+                        </TextBox.ContextMenu>
+                    </TextBox>
+                    <Button x:Name="btnGameFolder" Content="{lex:Loc Game Folder}" MinWidth="150" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Click="BtnGameFolder_Click"/>
+                    <TextBox Name="txtGameFolder" TextWrapping="Wrap" Text="{Binding GameFolder}" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="4" Grid.Column="1" Margin="5,0,5,0">
+                        <TextBox.ContextMenu>
+                            <ContextMenu>
+                                <ui:MenuItem Header="{lex:Loc Open Folder}" Click="GameFolderOpen_Click">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon HorizontalAlignment="Left" Symbol="OpenFolder24" />
+                                    </MenuItem.Icon>
+                                </ui:MenuItem>
+                            </ContextMenu>
+                        </TextBox.ContextMenu>
+                    </TextBox>
+                </Grid>
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,8,0,0" ExpandDirection="Down" IsExpanded="True">
+            <ui:CardExpander.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                        <ui:SymbolIcon FontSize="24" Margin="0,0,8,0" VerticalAlignment="Center" Symbol="WindowWrench24" />
+                        <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Medium" Text="{lex:Loc Preferences}" />
+                    </StackPanel>
+                    <WrapPanel Grid.Column="2">
+                        <TextBlock Name="lblSwitchLanguage" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" />
+                        <ComboBox Name="cmbSwitchLanguage" VerticalAlignment="Center" Width="Auto" Margin="10,0,40,0" />
+                    </WrapPanel>
+                </Grid>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <WrapPanel>
+                    <ComboBox Name="cmbStartPage" VerticalAlignment="Top" Width="150" SelectionChanged="CmbStartPage_SelectionChanged">
+                        <ComboBoxItem Content="{lex:Loc Save Backups}" Tag="backups"/>
+                        <ComboBoxItem Content="{lex:Loc World Analyzer}" Tag="world-analyzer"/>
+                    </ComboBox>
+                    <TextBlock Name="lblStartPage" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,8,0,0">
+                    <ComboBox Name="cmbWiki" VerticalAlignment="Top" Width="150" SelectionChanged="CmbWiki_SelectionChanged">
+                        <ComboBoxItem Content="{lex:Loc Fextralife}" Tag="fextrawiki"/>
+                        <ComboBoxItem Content="{lex:Loc RemnantWiki}" Tag="remwiki"/>
+                    </ComboBox>
+                    <TextBlock Name="lblWiki" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,8,0,0">
+                    <ComboBox Name="cmbMissingItemColor" VerticalAlignment="Top" Width="150" SelectionChanged="CmbMissingItemColor_SelectionChanged">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="{lex:Loc Text_Normal}" Tag="Normal"/>
+                            <ComboBoxItem Content="{lex:Loc Text_Highlight}" Tag="Highlight"/>
+                        </ComboBox.Items>
+                    </ComboBox>
+                    <TextBlock Name="lblMissingItemColor" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkCreateLogFile" IsChecked="{Binding CreateLogFile}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkAutoHideNaviAndTitleBar" IsChecked="{Binding AutoHideNaviAndTitleBar}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <StackPanel Margin="0,16,0,0">
+                    <WrapPanel>
+                        <ui:ToggleSwitch Name="chkOpacity" Content="{lex:Loc}" IsChecked="{Binding EnableOpacity}"/>
+                        <TextBlock Name="chkOpacity_note" Text="{lex:Loc}" FontSize="12" FontStyle="Italic" Foreground="{ui:ThemeResource SystemFillColorCautionBrush}" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </WrapPanel>
+                    <WrapPanel Name="OpacityPanel"  Margin="48,0,0,0">
+                        <WrapPanel.Style>
+                            <Style TargetType="WrapPanel">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=chkOpacity,Path=IsChecked}" Value="True">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=chkOpacity,Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </WrapPanel.Style>
+                        <Slider Name="sldOpacitySlider" Value="{Binding Opacity, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Minimum="0.2" Maximum="1" LargeChange="0.1" Thumb.DragCompleted="SldOpacitySlider_DragCompleted"/>
+                        <TextBlock Name="lblOpacitySlider" Text="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0" />
+                        <CheckBox Name="chkOnlyInactive" IsChecked="{Binding OnlyInactive, Mode=TwoWay}"  Content="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0" />
+                    </WrapPanel>
+                </StackPanel>
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,8,0,0" ExpandDirection="Down" IsExpanded="False">
+            <ui:CardExpander.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                        <ui:SymbolIcon FontSize="24" Margin="0,0,8,0" VerticalAlignment="Center" Symbol="WindowWrench24" />
+                        <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Medium" Text="{lex:Loc World Analyzer}" />
+                    </StackPanel>
+                </Grid>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowPossibleItems" Content="{lex:Loc}" IsChecked="{Binding ShowPossibleItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowCoopItems" Content="{lex:Loc}" IsChecked="{Binding ShowCoopItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0" IsEnabled="False" Visibility="Collapsed">
+                    <ui:ToggleSwitch Name="chkShowLootedItems" Content="{lex:Loc}" IsChecked="{Binding ShowLootedItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowWard13" IsChecked="{Binding ShowWard13}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowLabyrinth" IsChecked="{Binding ShowShowLabyrinth}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowRootEarth" IsChecked="{Binding ShowRootEarth}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowConnections" IsChecked="{Binding ShowConnections}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowWorldStones" IsChecked="{Binding ShowWorldStones}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowTomes" IsChecked="{Binding ShowTomes}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowSimulacrums" IsChecked="{Binding ShowSimulacrums}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowDlc1" IsChecked="{Binding ShowDlc1}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowDlc2" IsChecked="{Binding ShowDlc2}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkExportCopy" IsChecked="{Binding ExportCopy}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkExportDecoded" IsChecked="{Binding ExportDecoded}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkExportJson" IsChecked="{Binding ExportJson}" Content="{lex:Loc}" />
+                </WrapPanel>
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardAction Margin="0,8,0,0" Icon="CloudSync24" Click="BtnCheckUpdate_Click">
+            <Grid Margin="-6,0,40,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Name="btnCheckUpdate" FontSize="20" FontWeight="Medium" Text="{lex:Loc btnCheckUpdate_Content}" ToolTip="{lex:Loc}" VerticalAlignment="Center" />
+                <ui:ToggleSwitch Grid.Column="3" Name="chkAutoCheckUpdate" Content="{lex:Loc}" IsChecked="{Binding AutoCheckUpdate}" VerticalAlignment="Center" FlowDirection="RightToLeft" />
+            </Grid>
+        </ui:CardAction>
+        <ui:Card Margin="0,8,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <ui:SymbolIcon FontSize="24" Margin="0,0,8,0" VerticalAlignment="Center" Symbol="Color24" />
+                    <TextBlock FontSize="20" FontWeight="Medium" Text="{lex:Loc Theme}" />
+                </StackPanel>
+                <WrapPanel Grid.Column="2">
+                    <RadioButton
+                        Name="radThemeLight"
+                        Content="{lex:Loc Light}"
+                        GroupName="themeSelect"
+                        Checked="RadThemeLight_Checked"/>
+                    <RadioButton
+                        Name="radThemeDark"
+                        Content="{lex:Loc Dark}"
+                        GroupName="themeSelect"
+                        Checked="RadThemeDark_Checked"/>
+                </WrapPanel>
+            </Grid>
+        </ui:Card>
+        <ui:Anchor Name="LinkToRepo" Margin="0,8,0,8" Content="{lex:Loc AboutRSG}" NavigateUri="https://github.com/AndrewSav/Remnant2SaveAnalyzer" />
+    </StackPanel>
+</ui:UiPage>

@@ -1,0 +1,246 @@
+﻿<ui:UiPage
+    x:Class="Remnant2SaveAnalyzer.Views.Pages.WorldAnalyzerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:Remnant2SaveAnalyzer.Views.Pages"
+    xmlns:helpers="clr-namespace:Remnant2SaveAnalyzer.Helpers"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:lex="http://wpflocalizeextension.codeplex.com"
+    xmlns:ctrl="clr-namespace:Remnant2SaveAnalyzer.Views.UserControls"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    lex:LocalizeDictionary.DesignCulture="en"
+    lex:ResxLocalizationProvider.DefaultAssembly="Remnant2SaveAnalyzer"
+    lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+    mc:Ignorable="d"
+    Name="analyzer"
+    d:DesignHeight="450" d:DesignWidth="800"
+    d:Background="{DynamicResource ApplicationBackgroundBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    Title="{lex:Loc World Analyzer}"
+    Scrollable="False">
+    
+    <ui:UiPage.Resources>
+        <helpers:CalculateConverter x:Key="CalculateConverter" />
+        <Style x:Key="lvItemStyle" TargetType="ListViewItem">
+            <EventSetter Event="Selected" Handler="ListViewItem_Selected"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Border x:Name="Border" Padding="0" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ContentPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=Type}" Value="unknown" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Foreground" Value="Red" />
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="lvMissingItemsStyle" BasedOn="{StaticResource {x:Type ListView}}" TargetType="ListView">
+            <Setter Property="FontSize" Value="{Binding ElementName=FontSizeSlider, Path=Value, Mode=OneWay}" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="Margin" Value="5,0,5,0" />
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Border>
+                            <ctrl:TextBlockPlus Text="{Binding Name}" ToolTip="{Binding ItemNotes}">
+                                <ctrl:TextBlockPlus.Style>
+                                    <Style TargetType="ctrl:TextBlockPlus">
+                                        <Setter Property="Cursor" Value="Help" />
+                                        <Style.Triggers>
+                                            <Trigger Property="ToolTip" Value="">
+                                                <Setter Property="ToolTipService.IsEnabled" Value="False" />
+                                                <Setter Property="Cursor" Value="Arrow" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ctrl:TextBlockPlus.Style>
+                            </ctrl:TextBlockPlus>
+                        </Border>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style BasedOn="{StaticResource lvItemStyle}" TargetType="ListViewItem">
+                        <Setter Property="Foreground" Value="{Binding ElementName=analyzer, Path=MissingItemsTextColor, UpdateSourceTrigger=PropertyChanged}" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="lvPossibleItemsStyle" BasedOn="{StaticResource lvMissingItemsStyle}" TargetType="ListView">
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style BasedOn="{StaticResource lvItemStyle}"  TargetType="ListViewItem">
+                        <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}">
+            <Setter Property="FontSize" Value="{Binding ElementName=FontSizeSlider, Path=Value, Mode=OneWay}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DataGridCell">
+                        <Grid Margin="2">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=Unknown}" Value="Event" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Foreground" Value="Red" />
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=Unknown}" Value="WorldDrop" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Foreground" Value="Red" />
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="DataGridStyle" BasedOn="{StaticResource {x:Type DataGrid}}" TargetType="{x:Type DataGrid}">
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource DGridColumnHeader_Style}">
+                        <Setter Property="FontSize" Value="{Binding ElementName=FontSizeSlider, Path=Value, Mode=OneWay, Converter={StaticResource CalculateConverter}, ConverterParameter=-2}" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="CellStyle" Value="{StaticResource DataGridCellStyle}" />
+        </Style>
+        <Style x:Key="menuStyle" BasedOn="{StaticResource {x:Type ContextMenu}}" TargetType="ContextMenu">
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+        <ContextMenu x:Key="CommonContextMenu" StaysOpen="True" Style="{StaticResource menuStyle}">
+            <ui:MenuItem Name="menuAnalyzerOpenWiki" Header="{lex:Loc Open wiki}" Click="CommonSearchItem_Click">
+                <MenuItem.Icon>
+                    <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Link24" />
+                </MenuItem.Icon>
+            </ui:MenuItem>
+            <ui:MenuItem Name="menuAnalyzerCopy" Header="{lex:Loc Copy}" Click="CommonCopyItem_Click">
+                <MenuItem.Icon>
+                    <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Copy24" />
+                </MenuItem.Icon>
+            </ui:MenuItem>
+        </ContextMenu>
+    </ui:UiPage.Resources>
+
+    <Grid Name="tabGrid" Margin="23,0,23,23" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" x:Name="OptionGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <WrapPanel Grid.Column="0" >
+                <TextBlock FontWeight="Medium" Text="{lex:Loc Character}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <ComboBox Name="CharacterControl" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Margin="0,0,5,0" SelectionChanged="CharacterControl_SelectionChanged"/>
+                <Button Name="SavePlaintextButton" ToolTip="{lex:Loc Export save files as plaintext}" Click="SavePlaintextButton_Click">
+                    <ui:SymbolIcon Symbol="ArrowExportUp24"/>
+                </Button>
+            </WrapPanel>
+            <WrapPanel Grid.Column="1">
+                <ui:TextBox Name="WorldAnalyzerFilter" Margin="10,0,0,0" TextWrapping="Wrap" Text="" Width="Auto" HorizontalAlignment="Left" Icon="Filter24" PlaceholderEnabled="True" PlaceholderText="{lex:Loc}" TextChanged="WorldAnalyzerFilter_TextChanged"/>
+            </WrapPanel>
+            <WrapPanel Grid.Column="2" VerticalAlignment="Center" Visibility="Visible">
+                <TextBlock FontWeight="Medium" Text="{lex:Loc Zoom}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <ui:SymbolIcon Symbol="ZoomOut24"/>
+                <Slider Name="FontSizeSlider" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Minimum="6" Value="14" Maximum="30" SmallChange="4" LargeChange="4" TickFrequency="4" TickPlacement="BottomRight" IsSnapToTickEnabled="True"/>
+                <ui:SymbolIcon Symbol="ZoomIn24"/>
+            </WrapPanel>
+        </Grid>
+        <TabControl Name="tabAnalyzer" Grid.Row="1" Margin="0,4,0,0">
+            <TabItem Name="tabCampaign" Header="{lex:Loc Campaign}">
+                <Grid>
+                    <DataGrid Name="CampaignData" IsReadOnly="True" CanUserReorderColumns="False" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
+                    <ui:ProgressRing Name="progressRing" IsIndeterminate="True" Width="80" Height="80" />
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabAdventure" Header="{lex:Loc Adventure}">
+                <Grid>
+                    <DataGrid Name="AdventureData" IsReadOnly="True" CanUserReorderColumns="False" VerticalScrollBarVisibility="Auto" VirtualizingPanel.ScrollUnit="Pixel" AutoGeneratingColumn="Data_AutoGeneratingColumn" Style="{StaticResource DataGridStyle}" />
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabMissing" Header="{lex:Loc Missing Items}">
+                <Grid>
+                    <TreeView Name="treeMissingItems" VirtualizingPanel.ScrollUnit="Pixel" VirtualizingPanel.IsVirtualizing="True" ContextMenuOpening="TreeMissingItems_ContextMenuOpening">
+                        <TreeView.Resources>
+                            <Style TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
+                                <EventSetter Event="TreeViewItem.MouseDown" Handler="TreeMissingItems_MouseDown"/>
+                                <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
+                                <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded, Mode=TwoWay}" />
+                                <Setter Property="Visibility" Value="{Binding Path=Visibility, Mode=TwoWay}" />
+                                <Setter Property="ToolTip" Value="{Binding Path=Notes, Mode=OneWay}" />
+                                <Setter Property="FontSize" Value="{Binding ElementName=FontSizeSlider, Path=Value, Mode=OneWay}" />
+                                <Style.Triggers>
+                                    <Trigger Property="ToolTip" Value="">
+                                        <Setter Property="ToolTipService.IsEnabled" Value="False" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TreeView.Resources>
+                        <TreeView.ContextMenu>
+                            <ContextMenu StaysOpen="True" Style="{StaticResource menuStyle}">
+                                <ui:MenuItem Name="menuMissingItemOpenWiki" Header="{lex:Loc Open wiki}" Click="SearchItem_Click">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Link24" />
+                                    </MenuItem.Icon>
+                                </ui:MenuItem>
+                                <ui:MenuItem Name="menuMissingItemCopy" Header="{lex:Loc Copy}" Click="CopyItem_Click">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon HorizontalAlignment="Left" Symbol="Copy24" />
+                                    </MenuItem.Icon>
+                                </ui:MenuItem>
+                                <ui:MenuItem Header="{lex:Loc Expand All}" Click="ExpandAllItem_Click">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon HorizontalAlignment="Left" Symbol="TextExpand24" />
+                                    </MenuItem.Icon>
+                                </ui:MenuItem>
+                                <ui:MenuItem Header="{lex:Loc Collapse All}" Click="CollapseAllItem_Click">
+                                    <MenuItem.Icon>
+                                        <ui:SymbolIcon HorizontalAlignment="Left" Symbol="ArrowCollapseAll24" />
+                                    </MenuItem.Icon>
+                                </ui:MenuItem>
+                            </ContextMenu>
+                        </TreeView.ContextMenu>
+                        <TreeView.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding ChildNode}">
+                                <Grid Width="{Binding ActualWidth, ElementName=treeMissingItems}" Margin="0,0,-80,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Name}" Grid.Column="0"/>
+                                    <ctrl:TextBlockPlus Text="{Binding Notes}" RollingSpeed="250" RollbackSpeed="1000" Grid.Column="1" Margin="0,0,80,0" />
+                                </Grid>
+                            </HierarchicalDataTemplate>
+                        </TreeView.ItemTemplate>
+                    </TreeView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</ui:UiPage>

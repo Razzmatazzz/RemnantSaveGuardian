@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutRSG" xml:space="preserve">
+    <value>О Remnant 2 Save Analyzer</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Активный</value>
+  </data>
+  <data name="Adventure" xml:space="preserve">
+    <value>Приключение</value>
+  </data>
+  <data name="Backup completed" xml:space="preserve">
+    <value>Резерв завершён</value>
+  </data>
+  <data name="Backup Folder" xml:space="preserve">
+    <value>Папка Резерва</value>
+  </data>
+  <data name="Backup folder not set; reverting to default." xml:space="preserve">
+    <value>Папка резерва не установлена; сброшено по умолчанию.</value>
+  </data>
+  <data name="Backup restored" xml:space="preserve">
+    <value>Резерв восстановлен</value>
+  </data>
+  <data name="Backups folder not found, creating..." xml:space="preserve">
+    <value>Папка резерва не найдено, создание...</value>
+  </data>
+  <data name="Backups found" xml:space="preserve">
+    <value>Резервы найдены</value>
+  </data>
+  <data name="btnBackup_ToolTip" xml:space="preserve">
+    <value>Резерв текущего сохранения</value>
+  </data>
+  <data name="btnCheckUpdate_Content" xml:space="preserve">
+    <value>Проверить сейчас</value>
+  </data>
+  <data name="btnOpenBackupsFolder_ToolTip" xml:space="preserve">
+    <value>Открыть папку резерва</value>
+  </data>
+  <data name="btnStartGame_ToolTip" xml:space="preserve">
+    <value>Запустить игру</value>
+  </data>
+  <data name="Campaign" xml:space="preserve">
+    <value>Кампания</value>
+  </data>
+  <data name="Character" xml:space="preserve">
+    <value>Персонаж</value>
+  </data>
+  <data name="chkAutoBackup_Content" xml:space="preserve">
+    <value>Автоматически резервировать сохранения</value>
+  </data>
+  <data name="chkAutoBackup_ToolTip" xml:space="preserve">
+    <value>Отслеживать сохранения Remnant II и резервировать их при изменении</value>
+  </data>
+  <data name="chkAutoCheckUpdate_Content" xml:space="preserve">
+    <value>Автоматически проверять обновления программы</value>
+  </data>
+  <data name="chkCreateLogFile_Content" xml:space="preserve">
+    <value>Создать файл журнала</value>
+  </data>
+  <data name="chkCreateLogFile_ToolTip" xml:space="preserve">
+    <value>Должен ли создаваться файл log.txt</value>
+  </data>
+  <data name="chkShowPossibleItems_Content" xml:space="preserve">
+    <value>Показывать возможные предметы в анализаторе</value>
+  </data>
+  <data name="Choose a backup to restore from the list." xml:space="preserve">
+    <value>Выберете резерв из списка для восстановления.</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Копия</value>
+  </data>
+  <data name="Could not find save file location; please set manually" xml:space="preserve">
+    <value>Не найдено расположение сохранений; Пожалуйста, укажите вручную</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Тёмная</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Deleting excess backup" xml:space="preserve">
+    <value>Удаление лишних резервов</value>
+  </data>
+  <data name="Do you want to move your backups to this new folder?" xml:space="preserve">
+    <value>Вы хотите переместить свои резервы в эту новую папку?</value>
+  </data>
+  <data name="Error checking for new game info" xml:space="preserve">
+    <value>Ошибка при проверке новой информации об игре</value>
+  </data>
+  <data name="Error checking for new version" xml:space="preserve">
+    <value>Ошибка при проверке новой версии</value>
+  </data>
+  <data name="Exit the game before restoring a save backup." xml:space="preserve">
+    <value>Выйдите из игры перед восстановлением сохраненного резерва.</value>
+  </data>
+  <data name="Export save files as plaintext" xml:space="preserve">
+    <value>Экспортировать сохранение в виде открытого текста</value>
+  </data>
+  <data name="Game Folder" xml:space="preserve">
+    <value>Папка игры</value>
+  </data>
+  <data name="Game info updated." xml:space="preserve">
+    <value>Игровая информация обновлена.</value>
+  </data>
+  <data name="Hardcore" xml:space="preserve">
+    <value>Героический режим</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Инфо</value>
+  </data>
+  <data name="Invalid backup restore type" xml:space="preserve">
+    <value>Недопустимый тип восстановления резерва</value>
+  </data>
+  <data name="Invalid Folder" xml:space="preserve">
+    <value>Недопустимая папка</value>
+  </data>
+  <data name="InvalidBackupFolderNoBackupsInSaves" xml:space="preserve">
+    <value>Недопустимая папка: Папка резерва не может быть в папке сохранений игры.</value>
+  </data>
+  <data name="InvalidGameFolder" xml:space="preserve">
+    <value>Недопустимая папка: Выберите, в которую установлена ваша игра Remnant II.</value>
+  </data>
+  <data name="InvalidSaveFolder" xml:space="preserve">
+    <value>Недопустимая папка: Выберите, где хранятся ваши сохранения Remnant II</value>
+  </data>
+  <data name="InvalidSaveFolderNoSavesInBackups" xml:space="preserve">
+    <value>Недопустимая папка: Пожалуйста, выберите папку, отличную от папки резерва.</value>
+  </data>
+  <data name="Keep" xml:space="preserve">
+    <value>Удержать</value>
+  </data>
+  <data name="Last backup save date" xml:space="preserve">
+    <value>Дата последнего резерва</value>
+  </data>
+  <data name="lblBackupLimit_Text" xml:space="preserve">
+    <value>Максимум резервов (0 для убирания лимита)</value>
+  </data>
+  <data name="lblBackupLimit_ToolTip" xml:space="preserve">
+    <value>Когда количество ваших резервов достигнет этого значения, резервы будут автоматически удалены, начиная с самого старого</value>
+  </data>
+  <data name="lblBackupMins_Text" xml:space="preserve">
+    <value>Минуты между резервами</value>
+  </data>
+  <data name="lblBackupMins_ToolTip" xml:space="preserve">
+    <value>Минимальное количество времени, которое должно пройти с момента последнего резерва, прежде чем будет создан новый резерв</value>
+  </data>
+  <data name="lblMissingItemColor_Content" xml:space="preserve">
+    <value>Цвет отсутствующего предмета в анализаторе мира</value>
+  </data>
+  <data name="lblStartPage_Text" xml:space="preserve">
+    <value>Стартовая страница</value>
+  </data>
+  <data name="lblStartPage_ToolTip" xml:space="preserve">
+    <value>Какую страницу загружать при запуске приложения</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>Светлая</value>
+  </data>
+  <data name="Log" xml:space="preserve">
+    <value>Журнал</value>
+  </data>
+  <data name="menuRestoreAll_Header" xml:space="preserve">
+    <value>Всё</value>
+  </data>
+  <data name="menuRestoreCharacters_Header" xml:space="preserve">
+    <value>Только персонажы</value>
+  </data>
+  <data name="menuRestoreWorlds_Header" xml:space="preserve">
+    <value>Только миры</value>
+  </data>
+  <data name="menuRestore_Header" xml:space="preserve">
+    <value>Восстановить резерв</value>
+  </data>
+  <data name="Missing Items" xml:space="preserve">
+    <value>Отсутствующие предметы</value>
+  </data>
+  <data name="Move Backups" xml:space="preserve">
+    <value>Переместить резервы</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Доступна новая версия!</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Обычный режим</value>
+  </data>
+  <data name="Open Folder" xml:space="preserve">
+    <value>Открыть папку</value>
+  </data>
+  <data name="Open wiki" xml:space="preserve">
+    <value>Открыть Вики</value>
+  </data>
+  <data name="Possible Items" xml:space="preserve">
+    <value>Возможные предметы</value>
+  </data>
+  <data name="Preferences" xml:space="preserve">
+    <value>Предпочтения</value>
+  </data>
+  <data name="processing save file change" xml:space="preserve">
+    <value>обработка изменения файла сохранения</value>
+  </data>
+  <data name="Progression" xml:space="preserve">
+    <value>Выполнение</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Красный</value>
+  </data>
+  <data name="Save Backups" xml:space="preserve">
+    <value>Резервы сохранений</value>
+  </data>
+  <data name="Save file in use; waiting 0.5 seconds and retrying." xml:space="preserve">
+    <value>Файл сохранения используется; подождите 0,5 секунды и повторите попытку.</value>
+  </data>
+  <data name="Save Folder" xml:space="preserve">
+    <value>Папка сохранений</value>
+  </data>
+  <data name="Save plaintext data" xml:space="preserve">
+    <value>Сохранение данных в виде открытого текста</value>
+  </data>
+  <data name="SaveDate" xml:space="preserve">
+    <value>Дата сохранения</value>
+  </data>
+  <data name="Saves" xml:space="preserve">
+    <value>Сохранения</value>
+  </data>
+  <data name="Select a folder other than the game's save folder." xml:space="preserve">
+    <value>Выберите папку, отличную от папки сохранения игры.</value>
+  </data>
+  <data name="setting save file timer" xml:space="preserve">
+    <value>установка таймера файла сохранения</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="Survival" xml:space="preserve">
+    <value>Выживание</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="White" xml:space="preserve">
+    <value>Белый</value>
+  </data>
+  <data name="World Analyzer" xml:space="preserve">
+    <value>Анализатор мира</value>
+  </data>
+  <data name="You must wait 5 minutes between update checks" xml:space="preserve">
+    <value>Вы должны подождать 5 минут между проверками обновлений</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Приближение</value>
+  </data>
+</root>
