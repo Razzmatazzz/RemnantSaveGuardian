@@ -322,24 +322,6 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hide items from The Forgotten Kingdom DLC from Missing Items tab.
-        /// </summary>
-        public static string chkHideDlc1 {
-            get {
-                return ResourceManager.GetString("chkHideDlc1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hide items from The Awakened King DLC from Missing Items tab.
-        /// </summary>
-        public static string chkHideDlc2 {
-            get {
-                return ResourceManager.GetString("chkHideDlc2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Only when inactive.
         /// </summary>
         public static string chkOnlyInactive_Content {
@@ -381,6 +363,24 @@ namespace RemnantSaveGuardian.locales {
         public static string chkShowCoopItems_Content {
             get {
                 return ResourceManager.GetString("chkShowCoopItems_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show items from The Forgotten Kingdom DLC from Missing Items tab.
+        /// </summary>
+        public static string chkShowDlc1 {
+            get {
+                return ResourceManager.GetString("chkShowDlc1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show items from The Awakened King DLC from Missing Items tab.
+        /// </summary>
+        public static string chkShowDlc2 {
+            get {
+                return ResourceManager.GetString("chkShowDlc2", resourceCulture);
             }
         }
         

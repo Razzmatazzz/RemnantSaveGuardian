@@ -220,6 +220,12 @@
                     <ui:ToggleSwitch Name="chkShowSimulacrums" IsChecked="{Binding ShowSimulacrums}" Content="{lex:Loc}" />
                 </WrapPanel>
                 <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowDlc1" IsChecked="{Binding ShowDlc1}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkShowDlc2" IsChecked="{Binding ShowDlc2}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkExportCopy" IsChecked="{Binding ExportCopy}" Content="{lex:Loc}" />
                 </WrapPanel>
                 <WrapPanel Margin="0,16,0,0">
@@ -227,12 +233,6 @@
                 </WrapPanel>
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkExportJson" IsChecked="{Binding ExportJson}" Content="{lex:Loc}" />
-                </WrapPanel>
-                <WrapPanel Margin="0,16,0,0">
-                    <ui:ToggleSwitch Name="chkHideDlc1" IsChecked="{Binding HideDlc1}" Content="{lex:Loc}" />
-                </WrapPanel>
-                <WrapPanel Margin="0,16,0,0">
-                    <ui:ToggleSwitch Name="chkHideDlc2" IsChecked="{Binding HideDlc2}" Content="{lex:Loc}" />
                 </WrapPanel>
             </StackPanel>
         </ui:CardExpander>

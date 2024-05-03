@@ -17,6 +17,7 @@ using lib.remnant2.analyzer.Model;
 using Wpf.Ui.Common.Interfaces;
 using System.Diagnostics.CodeAnalysis;
 using lib.remnant2.analyzer;
+using MessageBox = Wpf.Ui.Controls.MessageBox;
 
 namespace RemnantSaveGuardian.Views.Pages
 {
@@ -161,6 +162,14 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void SavePlaintextButton_Click(object sender, RoutedEventArgs e)
         {
+
+            //if (!Properties.Settings.Default.ExportCopy && 
+            //    !Properties.Settings.Default.ExportDecoded &&
+            //    !Properties.Settings.Default.ExportJson)
+            //{
+            //    return;
+            //}
+            
             try
             {
                 System.Windows.Forms.FolderBrowserDialog openFolderDialog = new()
@@ -198,8 +207,8 @@ namespace RemnantSaveGuardian.Views.Pages
                 || e.PropertyName == "ShowTomes"
                 || e.PropertyName == "ShowSimulacrums"
                 || e.PropertyName == "ShowCoopItems"
-                || e.PropertyName == "HideDlc1"
-                || e.PropertyName == "HideDlc2"
+                || e.PropertyName == "ShowDlc1"
+                || e.PropertyName == "ShowDlc2"
                 )
             {
                 Dispatcher.Invoke(() =>
@@ -358,14 +367,14 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     missingItems = missingItems.Where(x => x.ContainsKey("Coop") && x["Coop"] == "True").ToList();
                 }
-                if (Properties.Settings.Default.HideDlc1)
+                if (!Properties.Settings.Default.ShowDlc1)
                 {
                     missingItems = missingItems.Where(x => 
                         (!x["ProfileId"].Contains("/World_DLC1/") && (x["DropType"] == "Event" || x["DropType"] == "Location")) ||
                         (x["World"] != "World_DLC1" && x["DropType"] == "Vendor")
                     ).ToList();
                 }
-                if (Properties.Settings.Default.HideDlc2)
+                if (!Properties.Settings.Default.ShowDlc2)
                 {
                     missingItems = missingItems.Where(x =>
                         (!x["ProfileId"].Contains("/World_DLC2/") && (x["DropType"] == "Event" || x["DropType"] == "Location")) ||

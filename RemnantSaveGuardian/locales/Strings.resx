@@ -522,10 +522,10 @@
   <data name="RemnantWiki" xml:space="preserve">
     <value>Remnant.wiki</value>
   </data>
-  <data name="chkHideDlc1" xml:space="preserve">
-    <value>Hide items from The Forgotten Kingdom DLC from Missing Items tab</value>
+  <data name="chkShowDlc1" xml:space="preserve">
+    <value>Show items from The Forgotten Kingdom DLC from Missing Items tab</value>
   </data>
-  <data name="chkHideDlc2" xml:space="preserve">
-    <value>Hide items from The Awakened King DLC from Missing Items tab</value>
+  <data name="chkShowDlc2" xml:space="preserve">
+    <value>Show items from The Awakened King DLC from Missing Items tab</value>
   </data>
 </root>

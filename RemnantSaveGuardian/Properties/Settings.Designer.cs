@@ -673,25 +673,25 @@ namespace RemnantSaveGuardian.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool HideDlc1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowDlc1 {
             get {
-                return ((bool)(this["HideDlc1"]));
+                return ((bool)(this["ShowDlc1"]));
             }
             set {
-                this["HideDlc1"] = value;
+                this["ShowDlc1"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool HideDlc2 {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowDlc2 {
             get {
-                return ((bool)(this["HideDlc2"]));
+                return ((bool)(this["ShowDlc2"]));
             }
             set {
-                this["HideDlc2"] = value;
+                this["ShowDlc2"] = value;
             }
         }
     }
