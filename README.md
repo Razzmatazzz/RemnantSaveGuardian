@@ -16,7 +16,7 @@ This is a fork of the excellent [Remnant Save Guardian](https://github.com/Razzm
 
 ## Potential improvements
 
-This is a list of things that are possible to add with the new engine, but which requrie some additiona work
+This is a list of things that are possible to add with the new engine, but which requrie some additional work
 
 - See items offered in Cass shop
 - Track objectives progression, e.g. kill x bosses
