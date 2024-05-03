@@ -528,4 +528,7 @@
   <data name="chkShowDlc2" xml:space="preserve">
     <value>Show items from The Awakened King DLC from Missing Items tab</value>
   </data>
+  <data name="Please select at least one export options in profile" xml:space="preserve">
+    <value>Please select at least one export options in profile</value>
+  </data>
 </root>

@@ -1033,6 +1033,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select at least one export options in profile.
+        /// </summary>
+        public static string Please_select_at_least_one_export_options_in_profile {
+            get {
+                return ResourceManager.GetString("Please select at least one export options in profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Possible Items.
         /// </summary>
         public static string Possible_Items {

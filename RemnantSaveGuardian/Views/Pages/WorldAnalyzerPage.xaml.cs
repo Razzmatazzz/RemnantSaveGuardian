@@ -17,6 +17,8 @@ using lib.remnant2.analyzer.Model;
 using Wpf.Ui.Common.Interfaces;
 using System.Diagnostics.CodeAnalysis;
 using lib.remnant2.analyzer;
+using Wpf.Ui.Common;
+using Clipboard = System.Windows.Clipboard;
 using MessageBox = Wpf.Ui.Controls.MessageBox;
 
 namespace RemnantSaveGuardian.Views.Pages
@@ -163,12 +165,13 @@ namespace RemnantSaveGuardian.Views.Pages
         private void SavePlaintextButton_Click(object sender, RoutedEventArgs e)
         {
 
-            //if (!Properties.Settings.Default.ExportCopy && 
-            //    !Properties.Settings.Default.ExportDecoded &&
-            //    !Properties.Settings.Default.ExportJson)
-            //{
-            //    return;
-            //}
+            if (!Properties.Settings.Default.ExportCopy && 
+                !Properties.Settings.Default.ExportDecoded &&
+                !Properties.Settings.Default.ExportJson)
+            {
+                Logger.Error(Loc.T("Please select at least one export options in profile"));
+                return;
+            }
             
             try
             {
