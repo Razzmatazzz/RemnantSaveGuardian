@@ -5,9 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Remnant2SaveAnalyzer.Properties;
 using Remnant2SaveAnalyzer.Services;
-using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
@@ -97,8 +95,8 @@ namespace Remnant2SaveAnalyzer
         {
             var assembly = Assembly.GetExecutingAssembly();
             var name = assembly.GetName();
-            ResourceManager rm = new ResourceManager($"{name.Name}.locales.Strings", assembly);
-            ResourceManager rm2 = new ResourceManager($"{name.Name}.locales.GameStrings", assembly);
+            ResourceManager rm = new($"{name.Name}.locales.Strings", assembly);
+            ResourceManager rm2 = new($"{name.Name}.locales.GameStrings", assembly);
 
             List<CultureInfo> result = [CultureInfo.GetCultureInfo("en")];
 

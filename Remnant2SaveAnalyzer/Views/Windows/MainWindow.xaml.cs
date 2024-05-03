@@ -10,7 +10,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using Remnant2SaveAnalyzer.Properties;
 using Wpf.Ui.Common;
 using Wpf.Ui.Controls;

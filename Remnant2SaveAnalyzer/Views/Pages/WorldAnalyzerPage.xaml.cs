@@ -17,9 +17,7 @@ using lib.remnant2.analyzer.Model;
 using Wpf.Ui.Common.Interfaces;
 using System.Diagnostics.CodeAnalysis;
 using lib.remnant2.analyzer;
-using Wpf.Ui.Common;
 using Clipboard = System.Windows.Clipboard;
-using MessageBox = Wpf.Ui.Controls.MessageBox;
 
 namespace Remnant2SaveAnalyzer.Views.Pages
 {
@@ -370,21 +368,9 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 {
                     missingItems = missingItems.Where(x => x.ContainsKey("Coop") && x["Coop"] == "True").ToList();
                 }
-                if (!Properties.Settings.Default.ShowDlc1)
-                {
-                    missingItems = missingItems.Where(x => 
-                        (!x["ProfileId"].Contains("/World_DLC1/") && (x["DropType"] == "Event" || x["DropType"] == "Location")) ||
-                        (x["World"] != "World_DLC1" && x["DropType"] == "Vendor")
-                    ).ToList();
-                }
-                if (!Properties.Settings.Default.ShowDlc2)
-                {
-                    missingItems = missingItems.Where(x =>
-                        (!x["ProfileId"].Contains("/World_DLC2/") && (x["DropType"] == "Event" || x["DropType"] == "Location")) ||
-                        (x["World"] != "World_DLC2" && x["DropType"] == "Vendor")
-                    ).ToList();
+                
+                missingItems = FilterAllDlcItems(missingItems, x=>x);
 
-                }
                 missingItems.Sort(new SortCompare());
                 foreach (Dictionary<string, string> rItem in missingItems)
                 {
@@ -438,6 +424,40 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                     typeNode?.Sort();
                 }
             }
+        }
+
+        private static List<T> FilterAllDlcItems<T>(IEnumerable<T> missingItems, Func<T, Dictionary<string, string>> getDbItem)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                missingItems = FilterDlcItems(missingItems, getDbItem, i);
+            }
+            
+            return missingItems.ToList();
+        }
+
+        private static IEnumerable<T> FilterDlcItems<T>(IEnumerable<T> items, Func<T, Dictionary<string, string>> getDbItem, int dlcId)
+        {
+            var dlcs = new[]
+            {
+                new { DlcId = 0, ProfileIdSubstring = "/World_DLC1/", WorldValue = "World_DLC1", ControlValue = Properties.Settings.Default.ShowDlc1 },
+                new { DlcId = 1, ProfileIdSubstring = "/World_DLC2/", WorldValue = "World_DLC2", ControlValue = Properties.Settings.Default.ShowDlc2 }
+
+            };
+
+            var dlc = dlcs.Single(x => x.DlcId == dlcId);
+
+            if (!dlc.ControlValue)
+            {
+                items = items.Where(y =>
+                {
+                    Dictionary<string, string> x = getDbItem(y);
+                    return ((!x.ContainsKey("DropType") || x["DropType"] == "Event" || x["DropType"] == "Location") && !x["ProfileId"].Contains(dlc.ProfileIdSubstring)) ||
+                           ((!x.ContainsKey("DropType") || x["DropType"] == "Vendor") && x["World"] != dlc.WorldValue );
+                });
+            }
+
+            return items;
         }
 
         private void CheckAdventureTab()
@@ -704,8 +724,8 @@ namespace Remnant2SaveAnalyzer.Views.Pages
 
                         WorldAnalyzerGridData newItem = new(
                             location: l,
-                            missingItems: items.Where(x => missingIds.Contains(x.Item["Id"])).Select(x => new LocalisedLootItem(x)).ToList(),
-                            possibleItems: items.Select(x => new LocalisedLootItem(x)).ToList(),
+                            missingItems: FilterAllDlcItems(items.Where(x => missingIds.Contains(x.Item["Id"])), x=>x.Item).Select(x => new LocalisedLootItem(x)).ToList(),
+                            possibleItems: FilterAllDlcItems(items, x=>x.Item).Select(x => new LocalisedLootItem(x)).ToList(),
                             name: Loc.GameT(lg.Name ?? ""),
                             type: Loc.T(Capitalize().Replace(lg.Type, m => m.Value.ToUpper()))
                         ){Unknown = lg.Unknown};
