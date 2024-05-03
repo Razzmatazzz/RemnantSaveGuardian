@@ -44,6 +44,14 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                 }
 
+                foreach (ComboBoxItem item in cmbWiki.Items)
+                {
+                    if (item.Tag.ToString() == Properties.Settings.Default.Wiki)
+                    {
+                        cmbWiki.SelectedItem = item;
+                    }
+                }
+                
                 CultureInfo[]? languages = Application.Current.Properties["langs"] as CultureInfo[];
 
                 Debug.Assert(languages != null, nameof(languages) + " != null");
@@ -363,6 +371,20 @@ namespace RemnantSaveGuardian.Views.Pages
                 mainWindow.Opacity = 1;
                 WindowDwmHelper.ApplyDwm(mainWindow, WindowDwmHelper.UxMaterials.Mica);
             }
+        }
+
+        private void CmbWiki_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbWiki.SelectedItem is not ComboBoxItem selected)
+            {
+                return;
+            }
+            var wiki = selected.Tag.ToString();
+            if (wiki == Properties.Settings.Default.Wiki)
+            {
+                return;
+            }
+            Properties.Settings.Default.Wiki = wiki;
         }
     }
 }

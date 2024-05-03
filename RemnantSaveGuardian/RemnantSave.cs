@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -100,6 +101,17 @@ namespace RemnantSaveGuardian
                 }
                 Logger.Warn("There were some analyzer warnings");
             }
+            /*
+            if (first && _remnantDataset.DebugPerformance.Count > 0)
+            {
+                Logger.WarnSilent("BEGIN Performance metrics");
+                foreach (KeyValuePair<string,TimeSpan> message in _remnantDataset.DebugPerformance)
+                {
+                    Logger.WarnSilent($"{message.Key}; {message.Value}");
+                }
+                Logger.WarnSilent("END Performance metrics");
+            }
+            */
         }
 
         public static string DefaultSaveFolder()

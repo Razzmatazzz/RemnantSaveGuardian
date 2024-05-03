@@ -128,6 +128,13 @@
                     <TextBlock Name="lblStartPage" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
                 </WrapPanel>
                 <WrapPanel Margin="0,8,0,0">
+                    <ComboBox Name="cmbWiki" VerticalAlignment="Top" Width="150" SelectionChanged="CmbWiki_SelectionChanged">
+                        <ComboBoxItem Content="{lex:Loc Fextralife}" Tag="fextrawiki"/>
+                        <ComboBoxItem Content="{lex:Loc RemnantWiki}" Tag="remwiki"/>
+                    </ComboBox>
+                    <TextBlock Name="lblWiki" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,8,0,0">
                     <ComboBox Name="cmbMissingItemColor" VerticalAlignment="Top" Width="150" SelectionChanged="CmbMissingItemColor_SelectionChanged">
                         <ComboBox.Items>
                             <ComboBoxItem Content="{lex:Loc Text_Normal}" Tag="Normal"/>
@@ -220,6 +227,12 @@
                 </WrapPanel>
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkExportJson" IsChecked="{Binding ExportJson}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkHideDlc1" IsChecked="{Binding HideDlc1}" Content="{lex:Loc}" />
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkHideDlc2" IsChecked="{Binding HideDlc2}" Content="{lex:Loc}" />
                 </WrapPanel>
             </StackPanel>
         </ui:CardExpander>

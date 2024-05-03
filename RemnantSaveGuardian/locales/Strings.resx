@@ -510,4 +510,22 @@
   <data name="chkShowLootedItems_Content" xml:space="preserve">
     <value>Show world drops / boss rewards no longer in save because they were already looted</value>
   </data>
+  <data name="Fextralife" xml:space="preserve">
+    <value>Fextralife Wiki</value>
+  </data>
+  <data name="lblWiki_Text" xml:space="preserve">
+    <value>Select Wiki</value>
+  </data>
+  <data name="lblWiki_ToolTip" xml:space="preserve">
+    <value>Which wiki to load for item lookup</value>
+  </data>
+  <data name="RemnantWiki" xml:space="preserve">
+    <value>Remnant.wiki</value>
+  </data>
+  <data name="chkHideDlc1" xml:space="preserve">
+    <value>Hide items from The Forgotten Kingdom DLC from Missing Items tab</value>
+  </data>
+  <data name="chkHideDlc2" xml:space="preserve">
+    <value>Hide items from The Awakened King DLC from Missing Items tab</value>
+  </data>
 </root>

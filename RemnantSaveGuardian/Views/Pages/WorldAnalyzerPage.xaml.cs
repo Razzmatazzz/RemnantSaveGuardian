@@ -193,6 +193,8 @@ namespace RemnantSaveGuardian.Views.Pages
                 || e.PropertyName == "ShowWorldStones"
                 || e.PropertyName == "ShowTomes"
                 || e.PropertyName == "ShowSimulacrums"
+                || e.PropertyName == "HideDlc1"
+                || e.PropertyName == "HideDlc2"
                 )
             {
                 Dispatcher.Invoke(() =>
@@ -360,13 +362,28 @@ namespace RemnantSaveGuardian.Views.Pages
                 {
                     missingItems = missingItems.Where(x => x.ContainsKey("Coop") && x["Coop"] == "True").ToList();
                 }
+                if (Properties.Settings.Default.HideDlc1)
+                {
+                    missingItems = missingItems.Where(x => 
+                        (!x["ProfileId"].Contains("/World_DLC1/") && (x["DropType"] == "Event" || x["DropType"] == "Location")) ||
+                        (x["World"] != "World_DLC1" && x["DropType"] == "Vendor")
+                    ).ToList();
+                }
+                if (Properties.Settings.Default.HideDlc2)
+                {
+                    missingItems = missingItems.Where(x =>
+                        (!x["ProfileId"].Contains("/World_DLC2/") && (x["DropType"] == "Event" || x["DropType"] == "Location")) ||
+                        (x["World"] != "World_DLC2" && x["DropType"] == "Vendor")
+                    ).ToList();
+
+                }
                 missingItems.Sort(new SortCompare());
                 foreach (Dictionary<string, string> rItem in missingItems)
                 {
                     int itemMode = rItem.TryGetValue("Hardcore", out string? hardcore) && hardcore == "True" ? 1 : 0;
                     string modeNode = "treeMissing" + (rItem.TryGetValue("Hardcore", out string? treeMissing) && treeMissing == "True" ? "Hardcore" : "Normal");
 
-                    string itemType = Regex.Replace(rItem["Type"], @"\b([a-z])", m => m.Value.ToUpper());
+                    string itemType = Capitalize().Replace(rItem["Type"], m => m.Value.ToUpper());
 
                     if (!typeNodeTag.Equals($"{modeNode}{itemType}"))
                     {
@@ -498,7 +515,10 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         private static void SearchItem(LootItem item)
         {
-            Process.Start("explorer.exe", $"https://remnant2.wiki.fextralife.com/{item.Name}");
+            string wikiQuery = Properties.Settings.Default.Wiki == "remwiki" ? 
+                $"https://remnant.wiki/{item.Name}" : 
+                $"https://remnant2.wiki.fextralife.com/{item.Name}";
+            Process.Start("explorer.exe", wikiQuery);
         }
         private void ExpandAllItem_Click(object sender, RoutedEventArgs e)
         {
@@ -679,7 +699,7 @@ namespace RemnantSaveGuardian.Views.Pages
                             missingItems: items.Where(x => missingIds.Contains(x.Item["Id"])).Select(x => new LocalisedLootItem(x)).ToList(),
                             possibleItems: items.Select(x => new LocalisedLootItem(x)).ToList(),
                             name: Loc.GameT(lg.Name ?? ""),
-                            type: Loc.GameT(Regex.Replace(lg.Type, @"\b([a-z])", m => m.Value.ToUpper()))
+                            type: Loc.GameT(Capitalize().Replace(lg.Type, m => m.Value.ToUpper()))
                         ){Unknown = lg.Unknown};
                         if (EventPassesFilter(newItem))
                         {
@@ -778,9 +798,11 @@ namespace RemnantSaveGuardian.Views.Pages
         }
         public class PropertyChangedEventArgs(string propertyName, object oldValue, object newValue) : EventArgs
         {
+            // ReSharper disable UnusedMember.Global
             public string PropertyName { get; private set; } = propertyName;
             public object OldValue { get; private set; } = oldValue;
             public object NewValue { get; set; } = newValue;
+            // ReSharper restore UnusedMember.Global
         }
         public class WorldAnalyzerGridData(
             string location,
@@ -789,6 +811,7 @@ namespace RemnantSaveGuardian.Views.Pages
             List<LocalisedLootItem> missingItems,
             List<LocalisedLootItem> possibleItems)
         {
+            // ReSharper disable once UnusedMember.Global
             public string Location { get; set; } = location;
             public string Type { get; set; } = type;
             public string Name { get; set; } = name;
@@ -799,5 +822,7 @@ namespace RemnantSaveGuardian.Views.Pages
             public string PossibleItemsString => string.Join("\n", PossibleItems.Select(x => x.Name));
         }
 
+        [GeneratedRegex(@"\b([a-z])")]
+        private static partial Regex Capitalize();
     }
 }

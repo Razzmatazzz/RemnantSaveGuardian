@@ -161,5 +161,14 @@
     <Setting Name="ShowLootedItems" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="Wiki" Type="System.String" Scope="User">
+      <Value Profile="(Default)">fextrawiki</Value>
+    </Setting>
+    <Setting Name="HideDlc1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="HideDlc2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

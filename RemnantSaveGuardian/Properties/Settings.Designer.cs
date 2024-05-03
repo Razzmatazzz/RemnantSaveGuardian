@@ -658,5 +658,41 @@ namespace RemnantSaveGuardian.Properties {
                 this["ShowLootedItems"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("fextrawiki")]
+        public string Wiki {
+            get {
+                return ((string)(this["Wiki"]));
+            }
+            set {
+                this["Wiki"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HideDlc1 {
+            get {
+                return ((bool)(this["HideDlc1"]));
+            }
+            set {
+                this["HideDlc1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HideDlc2 {
+            get {
+                return ((bool)(this["HideDlc2"]));
+            }
+            set {
+                this["HideDlc2"] = value;
+            }
+        }
     }
 }

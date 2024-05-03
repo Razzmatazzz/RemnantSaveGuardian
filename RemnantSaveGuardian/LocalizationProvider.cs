@@ -7,7 +7,7 @@ using WPFLocalizeExtension.Extensions;
 
 namespace RemnantSaveGuardian
 {
-    internal class Loc
+    internal partial class Loc
     {
         public static T GetLocalizedValue<T>(string key, LocalizationOptions options)
         {
@@ -33,7 +33,8 @@ namespace RemnantSaveGuardian
             string val = GetLocalizedValue<string>(key, options);
             if (string.IsNullOrEmpty(val))
             {
-                return key;
+                val = key;
+                //return key;
                 /*if (resourceFile != "GameStrings")
                 {
                     return key;
@@ -44,7 +45,7 @@ namespace RemnantSaveGuardian
                 }
                 return Regex.Replace(key.Replace("_", " "), "([A-Z0-9]+)", " $1").Trim();*/
             }
-            MatchCollection matches = new Regex(@"{(?:(?<namespace>\w+?):)?(?<sub>\w+?)}").Matches(val);
+            MatchCollection matches = LocalizationSubstitution().Matches(val);
             foreach (Match match in matches.Cast<Match>())
             {
                 string valueToSub = match.Groups["sub"].Value;
@@ -80,6 +81,9 @@ namespace RemnantSaveGuardian
         {
             return T(key, new LocalizationOptions { { "namespace", "GameStrings" } });
         }
+
+        [GeneratedRegex(@"{(?:(?<namespace>\w+?):)?(?<sub>\w+?)}")]
+        private static partial Regex LocalizationSubstitution();
         //public static bool Has(string key, LocalizationOptions options)
         //{
         //    string val = GetLocalizedValue<string>(key, options);

@@ -322,6 +322,24 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide items from The Forgotten Kingdom DLC from Missing Items tab.
+        /// </summary>
+        public static string chkHideDlc1 {
+            get {
+                return ResourceManager.GetString("chkHideDlc1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide items from The Awakened King DLC from Missing Items tab.
+        /// </summary>
+        public static string chkHideDlc2 {
+            get {
+                return ResourceManager.GetString("chkHideDlc2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Only when inactive.
         /// </summary>
         public static string chkOnlyInactive_Content {
@@ -610,6 +628,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fextralife Wiki.
+        /// </summary>
+        public static string Fextralife {
+            get {
+                return ResourceManager.GetString("Fextralife", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Game Folder.
         /// </summary>
         public static string Game_Folder {
@@ -844,6 +871,24 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Wiki.
+        /// </summary>
+        public static string lblWiki_Text {
+            get {
+                return ResourceManager.GetString("lblWiki_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Which wiki to load for item lookup.
+        /// </summary>
+        public static string lblWiki_ToolTip {
+            get {
+                return ResourceManager.GetString("lblWiki_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Light.
         /// </summary>
         public static string Light {
@@ -1029,6 +1074,15 @@ namespace RemnantSaveGuardian.locales {
         public static string Red {
             get {
                 return ResourceManager.GetString("Red", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remnant.wiki.
+        /// </summary>
+        public static string RemnantWiki {
+            get {
+                return ResourceManager.GetString("RemnantWiki", resourceCulture);
             }
         }
         
