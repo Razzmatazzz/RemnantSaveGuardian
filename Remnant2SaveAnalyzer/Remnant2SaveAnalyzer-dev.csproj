@@ -9,7 +9,7 @@
     <SatelliteResourceLanguages>en;ru;de;es;fr;it;ja;ko;pt-BR;zh-Hans;zh-Hant</SatelliteResourceLanguages>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\256.ico</ApplicationIcon>
-    <AssemblyVersion>1.2.2.0</AssemblyVersion>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
     <RootNamespace>Remnant2SaveAnalyzer</RootNamespace>
     <AssemblyName>Remnant2SaveAnalyzer</AssemblyName>
   </PropertyGroup>

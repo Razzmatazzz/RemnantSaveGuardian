@@ -29,7 +29,7 @@ namespace Remnant2SaveAnalyzer
                 }
                 _lastUpdateCheck = DateTime.Now;
                 HttpRequestMessage request = new(HttpMethod.Get, $"https://api.github.com/repos/{Repo}/releases/latest");
-                request.Headers.Add("user-agent", "remnant-save-guardian");
+                request.Headers.Add("user-agent", "remnant2-save-analyzer");
                 HttpResponseMessage response = await Client.SendAsync(request);
                 response.EnsureSuccessStatusCode();
                 string responseString = await response.Content.ReadAsStringAsync();
