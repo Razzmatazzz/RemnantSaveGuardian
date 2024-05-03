@@ -21,6 +21,7 @@ namespace RemnantSaveGuardian
         private readonly string _profileFile;
         private readonly RemnantSaveType _saveType;
         private readonly WindowsSave? _winSave;
+        private readonly object _loadLock = new object();
 
         public static readonly Guid FolderIdSavedGames = new(0x4C5C32FF, 0xBB9D, 0x43B0, 0xB5, 0xB4, 0x2D, 0x72, 0xE5, 0x4E, 0xAA, 0xA4);
         [DllImport("shell32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, PreserveSig = false)]
@@ -89,29 +90,33 @@ namespace RemnantSaveGuardian
 
         public void UpdateCharacters()
         {
-            bool first = _remnantDataset == null;
-         
-            _remnantDataset = Analyzer.Analyze(_savePath);
-            if (first && _remnantDataset.DebugMessages.Count > 0)
+            lock (_loadLock)
             {
-                Logger.WarnSilent("BEGIN Analyser warnings");
-                foreach (string message in _remnantDataset.DebugMessages)
+                bool first = _remnantDataset == null;
+
+                _remnantDataset = Analyzer.Analyze(_savePath, _remnantDataset);
+                if (first && _remnantDataset.DebugMessages.Count > 0)
                 {
-                    Logger.WarnSilent(message);
+                    Logger.WarnSilent("BEGIN Analyser warnings");
+                    foreach (string message in _remnantDataset.DebugMessages)
+                    {
+                        Logger.WarnSilent(message);
+                    }
+
+                    Logger.Warn("There were some analyzer warnings");
                 }
-                Logger.Warn("There were some analyzer warnings");
-            }
-            /*
-            if (first && _remnantDataset.DebugPerformance.Count > 0)
-            {
-                Logger.WarnSilent("BEGIN Performance metrics");
-                foreach (KeyValuePair<string,TimeSpan> message in _remnantDataset.DebugPerformance)
+                /*
+                if (_remnantDataset.DebugPerformance.Count > 0)
                 {
-                    Logger.WarnSilent($"{message.Key}; {message.Value}");
+                    Logger.WarnSilent("BEGIN Performance metrics");
+                    foreach (KeyValuePair<string,TimeSpan> message in _remnantDataset.DebugPerformance)
+                    {
+                        Logger.WarnSilent($"{message.Key}; {message.Value}");
+                    }
+                    Logger.WarnSilent("END Performance metrics");
                 }
-                Logger.WarnSilent("END Performance metrics");
+                */
             }
-            */
         }
 
         public static string DefaultSaveFolder()

@@ -25,6 +25,11 @@ namespace RemnantSaveGuardian.Views.Pages
     /// </summary>
     public partial class WorldAnalyzerPage : INavigableView<ViewModels.WorldAnalyzerViewModel>, INotifyPropertyChanged
     {
+        public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel) : this(viewModel, null)
+        {
+
+        }
+
         public ViewModels.WorldAnalyzerViewModel ViewModel
         {
             get;
@@ -50,10 +55,10 @@ namespace RemnantSaveGuardian.Views.Pages
             {
                 SaveWatcher.SaveUpdated += (_, _) =>
                 {
+                    _save.UpdateCharacters();
                     Dispatcher.Invoke(() =>
                     {
                         int selectedIndex = CharacterControl.SelectedIndex;
-                        _save.UpdateCharacters();
                         ApplyFilter();
                         CharacterControl.Items.Refresh();
                         if (selectedIndex >= CharacterControl.Items.Count)
@@ -119,19 +124,18 @@ namespace RemnantSaveGuardian.Views.Pages
 
         private void BackupsPage_BackupSaveRestored(object? sender, EventArgs e)
         {
-            int selectedIndex = CharacterControl.SelectedIndex;
             _save.UpdateCharacters();
-            CharacterControl.Items.Refresh();
-            if (selectedIndex >= CharacterControl.Items.Count)
+            Dispatcher.Invoke(() =>
             {
-                selectedIndex = 0;
-            }
-            CharacterControl.SelectedIndex = selectedIndex;
-        }
+                int selectedIndex = CharacterControl.SelectedIndex;
+                CharacterControl.Items.Refresh();
+                if (selectedIndex >= CharacterControl.Items.Count)
+                {
+                    selectedIndex = 0;
+                }
 
-        public WorldAnalyzerPage(ViewModels.WorldAnalyzerViewModel viewModel) : this(viewModel, null)
-        {
-            
+                CharacterControl.SelectedIndex = selectedIndex;
+            });
         }
 
         #region INotifiedProperty Block
@@ -193,6 +197,7 @@ namespace RemnantSaveGuardian.Views.Pages
                 || e.PropertyName == "ShowWorldStones"
                 || e.PropertyName == "ShowTomes"
                 || e.PropertyName == "ShowSimulacrums"
+                || e.PropertyName == "ShowCoopItems"
                 || e.PropertyName == "HideDlc1"
                 || e.PropertyName == "HideDlc2"
                 )
@@ -205,20 +210,11 @@ namespace RemnantSaveGuardian.Views.Pages
             }
             if (e.PropertyName == "SaveFolder")
             {
+                _save = new(Properties.Settings.Default.SaveFolder);
+                _save.UpdateCharacters();
                 Dispatcher.Invoke(() => {
-                    _save = new(Properties.Settings.Default.SaveFolder);
-                    _save.UpdateCharacters();
                     ReloadPage();
                     CheckAdventureTab();
-                });
-            }
-            if (e.PropertyName == "ShowCoopItems")
-            {
-                Dispatcher.Invoke(() =>
-                {
-                    _save.UpdateCharacters();
-                    ReloadEventGrids();
-                    CharacterControl_SelectionChanged(null, null);
                 });
             }
 

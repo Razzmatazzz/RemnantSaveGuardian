@@ -36,7 +36,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             get
             {
-                RemnantSave activeSave = new(Properties.Settings.Default.SaveFolder);
+                RemnantSave activeSave = new(Properties.Settings.Default.SaveFolder,true);
                 DateTime saveDate = File.GetLastWriteTime(activeSave.SaveProfilePath);
                 foreach (SaveBackup backup in _listBackups)
                 {
