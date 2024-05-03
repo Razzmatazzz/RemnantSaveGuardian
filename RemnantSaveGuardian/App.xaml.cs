@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RemnantSaveGuardian.Properties;
@@ -8,6 +10,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows;
 using System.Windows.Markup;
@@ -29,7 +32,7 @@ namespace RemnantSaveGuardian
         // https://docs.microsoft.com/dotnet/core/extensions/logging
         private static readonly IHost Host = Microsoft.Extensions.Hosting.Host
             .CreateDefaultBuilder()
-            .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)!); })
+            .ConfigureAppConfiguration(c => { c.SetBasePath(AppContext.BaseDirectory); })
             .ConfigureServices((_, services) =>
             {
                 // App Host
@@ -70,7 +73,7 @@ namespace RemnantSaveGuardian
         private async void OnStartup(object sender, StartupEventArgs e)
         {
             CultureInfo culture = CultureInfo.CurrentCulture;
-            CultureInfo[] cultures = EnumerateSupportedCultures();
+            List<CultureInfo>cultures = EnumerateSupportedCultures();
             Current.Properties["langs"] = cultures;
             if (!cultures.Contains(culture) && cultures.Contains(culture.Parent))
             {
@@ -90,13 +93,27 @@ namespace RemnantSaveGuardian
             await Host.StartAsync();
         }
 
-        private static CultureInfo[] EnumerateSupportedCultures()
+        private static List<CultureInfo> EnumerateSupportedCultures()
         {
-            CultureInfo[] culture = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            string? exeLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            Debug.Assert(exeLocation != null, nameof(exeLocation) + " != null");
-            CultureInfo[] c = culture.Where(cultureInfo => Directory.Exists(Path.Combine(exeLocation, cultureInfo.Name)) && cultureInfo.Name != "").ToArray();
-            return c;
+            var assembly = Assembly.GetExecutingAssembly();
+            var name = assembly.GetName();
+            ResourceManager rm = new ResourceManager($"{name.Name}.locales.Strings", assembly);
+            ResourceManager rm2 = new ResourceManager($"{name.Name}.locales.GameStrings", assembly);
+
+            List<CultureInfo> result = [CultureInfo.GetCultureInfo("en")];
+
+            foreach (CultureInfo ci in CultureInfo.GetCultures(CultureTypes.AllCultures))
+            {
+                if (rm.GetResourceSet(ci, true, false) != null || rm2.GetResourceSet(ci, true, false) != null)
+                {
+                    if (!result.Exists(x => x.Name == ci.Name) && !string.IsNullOrEmpty(ci.Name))
+                    {
+                        result.Add(ci);
+                    }
+                }
+            }
+
+            return result;
         }
 
         /// <summary>

@@ -52,16 +52,9 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                 }
                 
-                CultureInfo[]? languages = Application.Current.Properties["langs"] as CultureInfo[];
+                List<CultureInfo>? languages = Application.Current.Properties["langs"] as List<CultureInfo>;
 
                 Debug.Assert(languages != null, nameof(languages) + " != null");
-
-                if (languages.All(x => x.Name != "en"))
-                {
-                    List<CultureInfo> temp = [.. languages];
-                    temp.Insert(0,CultureInfo.GetCultureInfo("en"));
-                    languages = [.. temp];
-                }
 
                 cmbSwitchLanguage.ItemsSource = languages.Select(e => e.NativeName);
                 if (Properties.Settings.Default.Language != "")
@@ -356,7 +349,7 @@ namespace RemnantSaveGuardian.Views.Pages
         {
             if (cmbSwitchLanguage.SelectedIndex > -1)
             {
-                CultureInfo[]? langs = Application.Current.Properties["langs"] as CultureInfo[];
+                List<CultureInfo>? langs = Application.Current.Properties["langs"] as List<CultureInfo>;
                 Debug.Assert(langs != null, nameof(langs) + " != null");
                 CultureInfo culture = langs[cmbSwitchLanguage.SelectedIndex];
 
