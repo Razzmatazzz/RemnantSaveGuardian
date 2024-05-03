@@ -367,7 +367,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show items from The Forgotten Kingdom DLC from Missing Items tab.
+        ///   Looks up a localized string similar to Show items from The Awakened King DLC from Missing Items tab.
         /// </summary>
         public static string chkShowDlc1 {
             get {
@@ -376,7 +376,7 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show items from The Awakened King DLC from Missing Items tab.
+        ///   Looks up a localized string similar to Show items from The Forgotten Kingdom DLC from Missing Items tab.
         /// </summary>
         public static string chkShowDlc2 {
             get {
