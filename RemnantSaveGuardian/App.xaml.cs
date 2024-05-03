@@ -29,7 +29,7 @@ namespace RemnantSaveGuardian
         // https://docs.microsoft.com/dotnet/core/extensions/logging
         private static readonly IHost Host = Microsoft.Extensions.Hosting.Host
             .CreateDefaultBuilder()
-            .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)); })
+            .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)!); })
             .ConfigureServices((_, services) =>
             {
                 // App Host
