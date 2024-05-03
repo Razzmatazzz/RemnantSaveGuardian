@@ -93,8 +93,4 @@
     </None>
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Release'">
-    <ZipDirectory SourceDirectory="$(TargetDir)" Overwrite="True" DestinationFile="$(UserProfile)\Desktop\RemnantSaveGuardian.zip" />
-  </Target>
-
 </Project>
