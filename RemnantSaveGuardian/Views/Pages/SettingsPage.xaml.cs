@@ -55,6 +55,14 @@ namespace RemnantSaveGuardian.Views.Pages
                 CultureInfo[]? languages = Application.Current.Properties["langs"] as CultureInfo[];
 
                 Debug.Assert(languages != null, nameof(languages) + " != null");
+
+                if (languages.All(x => x.Name != "en"))
+                {
+                    List<CultureInfo> temp = languages.ToList();
+                    temp.Insert(0,CultureInfo.GetCultureInfo("en"));
+                    languages = temp.ToArray();
+                }
+
                 cmbSwitchLanguage.ItemsSource = languages.Select(e => e.NativeName);
                 if (Properties.Settings.Default.Language != "")
                 {
