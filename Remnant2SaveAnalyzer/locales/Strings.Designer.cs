@@ -367,7 +367,7 @@ namespace Remnant2SaveAnalyzer.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show items from The Awakened King DLC from Missing Items tab.
+        ///   Looks up a localized string similar to Show items from The Awakened King DLC.
         /// </summary>
         public static string chkShowDlc1 {
             get {
@@ -376,11 +376,20 @@ namespace Remnant2SaveAnalyzer.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show items from The Forgotten Kingdom DLC from Missing Items tab.
+        ///   Looks up a localized string similar to Show items from The Forgotten Kingdom DLC.
         /// </summary>
         public static string chkShowDlc2 {
             get {
                 return ResourceManager.GetString("chkShowDlc2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show campaign/adventure items with a missing prerequisite that did not roll in the compaign/adventure.
+        /// </summary>
+        public static string chkShowItemsWithNoPrereqs {
+            get {
+                return ResourceManager.GetString("chkShowItemsWithNoPrereqs", resourceCulture);
             }
         }
         

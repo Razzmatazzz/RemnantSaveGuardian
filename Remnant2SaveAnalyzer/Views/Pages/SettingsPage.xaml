@@ -225,6 +225,9 @@
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkShowDlc2" IsChecked="{Binding ShowDlc2}" Content="{lex:Loc}" />
                 </WrapPanel>
+                <WrapPanel Margin="0,16,0,0" Visibility="Collapsed">
+                    <ui:ToggleSwitch Name="chkShowItemsWithNoPrereqs" IsChecked="{Binding ShowItemsWithNoPrerequisites}" Content="{lex:Loc}" />
+                </WrapPanel>
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkExportCopy" IsChecked="{Binding ExportCopy}" Content="{lex:Loc}" />
                 </WrapPanel>

@@ -694,5 +694,17 @@ namespace Remnant2SaveAnalyzer.Properties {
                 this["ShowDlc2"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowItemsWithNoPrerequisites {
+            get {
+                return ((bool)(this["ShowItemsWithNoPrerequisites"]));
+            }
+            set {
+                this["ShowItemsWithNoPrerequisites"] = value;
+            }
+        }
     }
 }

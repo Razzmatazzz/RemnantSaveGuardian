@@ -49,7 +49,7 @@ namespace Remnant2SaveAnalyzer
             if (Properties.Settings.Default.CreateLogFile)
             {
                 StreamWriter writer = File.AppendText("log.txt");
-                writer.WriteLine(DateTime.Now + ": " + message);
+                writer.WriteLine($"{DateTime.Now}[{logType}]: {message}");
                 writer.Close();
             }
             //Debug.WriteLine(message);
@@ -59,7 +59,12 @@ namespace Remnant2SaveAnalyzer
         {
             Log(message, LogType.Normal);
         }
-        
+
+        public static void LogSilent(object message)
+        {
+            Log(message, LogType.Normal, true);
+        }
+
         public static void Success(object message)
         {
             Log(message, LogType.Success);

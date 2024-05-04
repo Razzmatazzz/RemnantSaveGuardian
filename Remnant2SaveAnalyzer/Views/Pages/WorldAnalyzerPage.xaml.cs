@@ -210,6 +210,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 || e.PropertyName == "ShowCoopItems"
                 || e.PropertyName == "ShowDlc1"
                 || e.PropertyName == "ShowDlc2"
+                || e.PropertyName == "ShowItemsWithNoPrerequisites"
                 )
             {
                 Dispatcher.Invoke(() =>
@@ -684,7 +685,12 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                         WorldAnalyzerGridData newItem = new(
                             location: l,
                             missingItems: [],
-                            possibleItems: location.TraitBookDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") }, { "Id", "Bogus" } } }) },
+                            possibleItems: location.TraitBookLooted || Properties.Settings.Default.ShowLootedItems ? []
+                                :
+                                [
+                                    new LocalisedLootItem(new()
+                                        { Item = new() { { "Name", Loc.GameT("TraitBook") }, { "Id", "Bogus" } } })
+                                ],
                             name: Loc.GameT("TraitBook"),
                             type: Loc.T("Item")
                         );
@@ -699,7 +705,14 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                         WorldAnalyzerGridData newItem = new(
                             location: l,
                             missingItems: [],
-                            possibleItems: location.SimulacrumDeleted || Properties.Settings.Default.ShowLootedItems ? new() : new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("Simulacrum") }, { "Id", "Bogus" } } }) },
+                            possibleItems: location.SimulacrumLooted || Properties.Settings.Default.ShowLootedItems ?
+                                [
+                                ]
+                                :
+                                [
+                                    new LocalisedLootItem(new()
+                                        { Item = new() { { "Name", Loc.GameT("Simulacrum") }, { "Id", "Bogus" } } })
+                                ],
                             name: Loc.GameT("Simulacrum"),
                             type: Loc.T("Item")
                         );
@@ -719,16 +732,21 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                         }
                         if (!Properties.Settings.Default.ShowLootedItems)
                         {
-                            items = items.Where(x => !x.IsDeleted).ToList();
+                            items = items.Where(x => !x.IsLooted).ToList();
                         }
 
                         WorldAnalyzerGridData newItem = new(
                             location: l,
-                            missingItems: FilterAllDlcItems(items.Where(x => missingIds.Contains(x.Item["Id"])), x=>x.Item).Select(x => new LocalisedLootItem(x)).ToList(),
-                            possibleItems: FilterAllDlcItems(items, x=>x.Item).Select(x => new LocalisedLootItem(x)).ToList(),
+                            missingItems: FilterAllDlcItems(items
+                                .Where( x => !x.IsPrerequisiteMissing || Properties.Settings.Default.ShowItemsWithNoPrerequisites)
+                                .Where(x => missingIds.Contains(x.Item["Id"])), 
+                                x=>x.Item).Select(x => new LocalisedLootItem(x)).ToList(),
+                            possibleItems: FilterAllDlcItems(items
+                                .Where(x => !x.IsPrerequisiteMissing || Properties.Settings.Default.ShowItemsWithNoPrerequisites), 
+                                x=>x.Item).Select(x => new LocalisedLootItem(x)).ToList(),
                             name: Loc.GameT(lg.Name ?? ""),
                             type: Loc.T(Capitalize().Replace(lg.Type, m => m.Value.ToUpper()))
-                        ){Unknown = lg.Unknown};
+                        ){Unknown = lg.UnknownMarker};
                         if (newItem.Type == "Dungeon" || newItem.Type == "Location")
                         {
                             newItem.Name = Loc.GameT(location.Name);
