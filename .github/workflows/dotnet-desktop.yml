@@ -12,7 +12,7 @@ jobs:
     runs-on: windows-latest
 
     env:
-      Solution_Name: RemnantSaveGuardian.sln
+      Project: RemnantSaveGuardian/RemnantSaveGuardian.csproj
 
     steps:
     - name: Checkout
@@ -33,10 +33,18 @@ jobs:
       run: dotnet test
 
     - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=Release
+      run: msbuild $env:Project /t:Restore /p:Configuration=Release
+
+    - uses: kzrnm/get-net-sdk-project-versions-action@v2
+      id: get-version
+      with:
+        proj-path: ${{ env.Project }}
+
+    - name: publish
+      run: dotnet publish -o "./publish"
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: RemnantSaveGuardian
-        path: $(UserProfile)\Desktop\RemnantSaveGuardian.zip
+        name: 'RemnantSaveGuardian_${{steps.get-version.outputs.assembly-version}}'
+        path: ./publish
