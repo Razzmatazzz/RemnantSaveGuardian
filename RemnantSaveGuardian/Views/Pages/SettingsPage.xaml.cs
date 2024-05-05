@@ -52,6 +52,14 @@ namespace RemnantSaveGuardian.Views.Pages
                     }
                 }
 
+                foreach (ComboBoxItem item in cmbWiki.Items)
+                {
+                    if (item.Tag.ToString() == Properties.Settings.Default.Wiki)
+                    {
+                        cmbWiki.SelectedItem = item;
+                    }
+                }
+
                 var langs = Application.Current.Properties["langs"] as CultureInfo[];
 
                 cmbSwitchLanguage.ItemsSource = langs.Select(e => e.NativeName);
@@ -332,6 +340,21 @@ namespace RemnantSaveGuardian.Views.Pages
                 return;
             }
             Properties.Settings.Default.StartPage = startPage;
+        }
+
+        private void cmbWiki_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selected = cmbWiki.SelectedItem as ComboBoxItem;
+            if (selected == null)
+            {
+                return;
+            }
+            var wiki = selected.Tag.ToString();
+            if (wiki == Properties.Settings.Default.Wiki)
+            {
+                return;
+            }
+            Properties.Settings.Default.Wiki = wiki;
         }
 
         private void cmbSwitchLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -956,18 +956,14 @@ namespace RemnantSaveGuardian
                 foreach (Match eventMatch in eventMatches)
                 {
                     var prevWorld = currentWorld;
-                    currentWorld = eventMatch.Groups["world"].Value;
-                    if (currentWorld == null || excludeWorlds.Contains(currentWorld))
+                    string tmpCurrentWorld = eventMatch.Groups["world"].Value;
+
+                    if (tmpCurrentWorld == null || excludeWorlds.Contains(tmpCurrentWorld))
                     {
                         continue;
                     }
 
-                    if (currentWorld == "World_DLC1" && prevWorld != null)
-                    {
-                        currentWorld = prevWorld;
-
-                    }
-                    var lastTemplate = lastTemplates.ContainsKey(currentWorld) ? lastTemplates[currentWorld] : null;
+                    var lastTemplate = lastTemplates.ContainsKey(tmpCurrentWorld) ? lastTemplates[tmpCurrentWorld] : null;
                     if (lastTemplate != null)
                     {
                         currentMainLocation = lastTemplate.RawName;
@@ -1013,12 +1009,25 @@ namespace RemnantSaveGuardian
                             continue;
                         }
 
+                        currentWorld = tmpCurrentWorld;
+                        if (currentWorld.Contains("_DLC"))
+                        {
+                            if (prevWorld != null)
+                                currentWorld = prevWorld;
+
+                            if (currentSublocation == "Ancient Canopy" || currentSublocation == "Luminous Vale")
+                                currentWorld = "World_Jungle";
+                            if (currentSublocation == "Forlorn Coast")
+                                currentWorld = "World_Fae";
+                        }
+
                         //eventStrings.Add(eventMatch.Value);
                         //var worldEvent = new RemnantWorldEvent(eventMatch);//, currentArea.Groups["location"].Value.Trim());
                         var worldEvent = new RemnantWorldEvent(eventMatch.Value, eventMatch.Groups["eventName"].Value, new() { currentWorld }, eventMatch.Groups["eventType"].Value);
                         worldEvent.TileSet = tileSets;
                         if (areaEvents.FindIndex(e => e.RawName == worldEvent.RawName) != -1)
                         {
+                            currentWorld = prevWorld;
                             continue;
                         }
                         if (currentMainLocation != null)
@@ -1041,14 +1050,16 @@ namespace RemnantSaveGuardian
                         // Add associated events
                         if (worldEvent.RawWorld == "World_Nerud" && worldEvent.RawName.Contains("Story"))
                         {
-                            var cust = new RemnantWorldEvent("TheCustodian", "World_Nerud", "Point of Interest");
+                            var cust = new RemnantWorldEvent("TheCustodian", worldEvent.Locations, "Point of Interest");
                             cust.setMissingItems(character);
-                            areaEvents.Add(cust);
+                            if (areaEvents.FindIndex(e => e.RawName == "TheCustodian") == -1)
+                                areaEvents.Add(cust);
                             if (worldEvent.RawName == "IAmLegendStory")
                             {
                                 var talratha = new RemnantWorldEvent("TalRatha", "World_Nerud", "WorldBoss");
                                 talratha.setMissingItems(character);
-                                areaEvents.Add(talratha);
+                                if (areaEvents.FindIndex(e => e.RawName == "TalRatha") == -1)
+                                    areaEvents.Add(talratha);
                             }
 
                         }
@@ -1058,24 +1069,28 @@ namespace RemnantSaveGuardian
                             RemnantWorldEvent asylumhouse = new RemnantWorldEvent("AsylumHouse", "World_Fae", "Location");
                             asylumhouse.Locations.Add("Asylum");
                             asylumhouse.setMissingItems(character);
-                            areaEvents.Add(asylumhouse);
+                            if (areaEvents.FindIndex(e => e.RawName == "AsylumHouse") == -1)
+                                areaEvents.Add(asylumhouse);
 
                             RemnantWorldEvent abberation = new RemnantWorldEvent("AsylumChainsaw", "World_Fae", "Abberation");
                             abberation.Locations.Add("Asylum");
                             abberation.setMissingItems(character);
-                            areaEvents.Add(abberation);
+                            if (areaEvents.FindIndex(e => e.RawName == "AsylumChainsaw") == -1)
+                                areaEvents.Add(abberation);
 
                             RemnantWorldEvent nightweb = new RemnantWorldEvent("Nightweb", "World_Fae", "Point of Interest");
                             nightweb.Locations.Add("TormentedAsylum");
                             nightweb.setMissingItems(character);
-                            areaEvents.Add(nightweb);
+                            if (areaEvents.FindIndex(e => e.RawName == "Nightweb") == -1)
+                                areaEvents.Add(nightweb);
 
                         }
                         else if (worldEvent.RawName == "FaelinFaerlin")
                         {
                             RemnantWorldEvent faerlin = new RemnantWorldEvent("Faerin", "Faerin", new() { "World_Fae", "Malefic Gallery" }, "Boss");
                             faerlin.setMissingItems(character);
-                            areaEvents.Add(faerlin);
+                            if (areaEvents.FindIndex(e => e.RawName == "Faerin") == -1)
+                                areaEvents.Add(faerlin);
                             //addEventToZones(zoneEvents, faerlin);
                         }
                         // Abberation
@@ -1083,25 +1098,82 @@ namespace RemnantSaveGuardian
                         {
                             RemnantWorldEvent fester = new RemnantWorldEvent("Fester", worldEvent.Locations, "Abberation");
                             fester.setMissingItems(character);
-                            areaEvents.Add(fester);
+                            if (areaEvents.FindIndex(e => e.RawName == "Fester") == -1)
+                                areaEvents.Add(fester);
                         }
                         else if (worldEvent.RawName == "TheLament")
                         {
                             RemnantWorldEvent wither = new RemnantWorldEvent("Wither", worldEvent.Locations, "Abberation");
                             wither.setMissingItems(character);
-                            areaEvents.Add(wither);
+                            if (areaEvents.FindIndex(e => e.RawName == "Wither") == -1)
+                                areaEvents.Add(wither);
                         }
                         else if (worldEvent.RawName == "TheTangle")
                         {
                             RemnantWorldEvent mantagora = new RemnantWorldEvent("Mantagora", worldEvent.Locations, "Abberation");
                             mantagora.setMissingItems(character);
-                            areaEvents.Add(mantagora);
+                            if (areaEvents.FindIndex(e => e.RawName == "Mantagora") == -1)
+                                areaEvents.Add(mantagora);
                         }
                         else if (worldEvent.RawName == "TheCustodian")
                         {
                             var drzyr = new RemnantWorldEvent("DrzyrReplicator", worldEvent.Locations, "Merchant");
                             drzyr.setMissingItems(character);
-                            areaEvents.Add(drzyr);
+                            if (areaEvents.FindIndex(e => e.RawName == "DrzyrReplicator") == -1)
+                                areaEvents.Add(drzyr);
+                        }
+                        else if (worldEvent.RawName == "OneTrueKingStory")
+                        {
+                            // Story-Map
+                            var coast = new RemnantWorldEvent("FarlornCoast", "FarlornCoast", new() { "World_Fae", "Farlorn Coast"}, worldEvent.RawType);
+                            coast.setMissingItems(character);
+                            if (areaEvents.FindIndex(e => e.RawName == "FarlornCoast") == -1)
+                                areaEvents.Add(coast);
+                            // Aberrations
+                            RemnantWorldEvent abberationGeorge = new RemnantWorldEvent("CoastPig", "World_Fae", "Abberation");
+                            abberationGeorge.Locations.Add("Farlorn Coast");
+                            abberationGeorge.setMissingItems(character);
+                            if (areaEvents.FindIndex(e => e.RawName == "CoastPig") == -1)
+                                areaEvents.Add(abberationGeorge);
+
+                            RemnantWorldEvent preacher = new RemnantWorldEvent("Preacher", "World_Fae", "Event");
+                            preacher.Locations.Add("Farlorn Coast");
+                            preacher.setMissingItems(character);
+                            if (areaEvents.FindIndex(e => e.RawName == "Preacher") == -1)
+                                areaEvents.Add(preacher);
+
+                            RemnantWorldEvent abberationAtoner = new RemnantWorldEvent("CoastAtoner", "World_Fae", "Abberation");
+                            abberationAtoner.Locations.Add("Farlorn Coast");
+                            abberationAtoner.setMissingItems(character);
+                            if (areaEvents.FindIndex(e => e.RawName == "CoastAtoner") == -1)
+                                areaEvents.Add(abberationAtoner);
+                            //Merchant
+                            var leywise = new RemnantWorldEvent("Leywise", "Leywise", new() { "World_Fae", "Farlorn Coast" }, "Merchant");
+                            leywise.setMissingItems(character);
+                            if (areaEvents.FindIndex(e => e.RawName == "FarlornCoast") == -1)
+                                areaEvents.Add(leywise);
+                        }
+                        else if (worldEvent.RawName == "DLC2Story")
+                        {
+                            if (currentSublocation == "Ancient Canopy")
+                            {
+                                var upper = new RemnantWorldEvent("AncientCanopy", worldEvent.Locations, worldEvent.RawType);
+                                upper.setMissingItems(character);
+                                if (areaEvents.FindIndex(e => e.RawName == "AncientCanopy") == -1)
+                                    areaEvents.Add(upper);
+
+                                var walt = new RemnantWorldEvent("Rothinderahenwalt", worldEvent.Locations, "Merchant");
+                                walt.setMissingItems(character);
+                                if (areaEvents.FindIndex(e => e.RawName == "Rothinderahenwalt") == -1)
+                                    areaEvents.Add(walt);
+                            }
+                            else if (currentSublocation == "Luminous Vale")
+                            {
+                                var lower = new RemnantWorldEvent("LuminousVale", worldEvent.Locations, worldEvent.RawType);
+                                lower.setMissingItems(character);
+                                if (areaEvents.FindIndex(e => e.RawName == "LuminousVale") == -1)
+                                    areaEvents.Add(lower);
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -1195,6 +1267,10 @@ namespace RemnantSaveGuardian
                     //Logger.Warn($"Injectable world {world} not found in {mode} events");
                     if (world == "World_DLC1")
                         world = "World_Fae";
+                    else if (world == "World_DLC2")
+                        world = "World_Jungle";
+                    else if (world == "World_DLC3")
+                        world = "World_Nerud";
                     else
                         continue;
                 }
@@ -1573,7 +1649,7 @@ namespace RemnantSaveGuardian
                 campaignStart = campaignBlob.LastIndexOf(strCampaignStart);
                 eventBlobs[ProcessMode.Campaign] = campaignBlob.Substring(campaignStart);
             }
-            var adventureMatch = Regex.Match(saveText, @"/Game/World_(?<world>\w+)/Quests/Quest_AdventureMode(_[a-zA-Z]+)?/Quest_AdventureMode(_[a-zA-Z]+)?_\w+.Quest_AdventureMode(_[a-zA-Z]+)?_\w+_C");
+            var adventureMatch = Regex.Match(saveText, @"/Game/World_(?<world>\w+)/Quests/Quest_AdventureMode(_[a-zA-Z0-9]+)?/Quest_AdventureMode(_[a-zA-Z0-9]+)?_\w+.Quest_AdventureMode(_[a-zA-Z0-9]+)?_\w+_C");
             if (adventureMatch.Success)
             {
                 int adventureEnd = adventureMatch.Index;

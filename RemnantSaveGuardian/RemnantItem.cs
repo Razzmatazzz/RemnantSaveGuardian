@@ -12,6 +12,7 @@ namespace RemnantSaveGuardian
             @"/Items/(?<itemType>Archetypes)/\w+/(?<itemName>Archetype_\w+)(?:\.|$)", // archetypes
             @"/Items/Archetypes/(?<archetypeName>\w+)/(?<itemType>\w+)/\w+/(?<itemName>\w+)(?:\.|$)", // perks and skills
             @"/Items/(?<itemType>Traits)/(?<traitType>\w+?/)?\w+?/(?<itemName>\w+)(?:\.|$)", // traits
+            @"/Items/Archetypes/(?<archetypeName>\w+)/PerksAnd(?<itemType>Traits)/(?<itemName>\w+)", // archetype traits dlc2
             @"/Items/Archetypes/(?<armorSet>\w+)/(?<itemType>Armor)/(?<itemName>\w+)(?:\.|$)", // armors
             @"/Items/(?<itemType>Armor)/(?:\w+/)?(?:(?<armorSet>\w+)/)?(?<itemName>\w+)(?:\.|$)", // armor
             @"/Items/(?<itemType>Weapons)/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // weapons

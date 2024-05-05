@@ -2053,7 +2053,7 @@
     <value>Derelict Lighthouse</value>
   </data>
   <data name="OneTrueKingStory" xml:space="preserve">
-    <value>The One True King</value>
+    <value>The Awakened King</value>
   </data>
   <data name="Quest_Item_DLC_DreamLevel" xml:space="preserve">
     <value>Enter the Dream</value>
@@ -2267,5 +2267,248 @@
   </data>
   <data name="Mod_ChainOfCommand" xml:space="preserve">
     <value>Chain Of Command</value>
+  </data>
+  <data name="Trait_Leech" xml:space="preserve">
+    <value>Leech</value>
+  </data>
+  <data name="Trait_Chakra" xml:space="preserve">
+    <value>Chakra</value>
+  </data>
+  <data name="DLC2Story" xml:space="preserve">
+    <value>The Forgotten Kingdom</value>
+  </data>
+  <data name="Amulet_WornDogTags" xml:space="preserve">
+    <value>Worn Dog Tags</value>
+  </data>
+  <data name="Amulet_ZeroDivide" xml:space="preserve">
+    <value>Zero Divide</value>
+  </data>
+  <data name="Amulet_ReedOfTheVaunnt" xml:space="preserve">
+    <value>Reed of the Vaunnt</value>
+  </data>
+  <data name="Amulet_SoulStone" xml:space="preserve">
+    <value>Soul Stone</value>
+  </data>
+  <data name="Amulet_ProfaneSoulStone" xml:space="preserve">
+    <value>Profane Soul Stone</value>
+  </data>
+  <data name="Ziggurat_DLC" xml:space="preserve">
+    <value>Moon Puzzle Room</value>
+  </data>
+  <data name="Amulet_StoneshapersChisel" xml:space="preserve">
+    <value>Stoneshaper's Chisel</value>
+  </data>
+  <data name="Amulet_MoonStone" xml:space="preserve">
+    <value>Moon Stone</value>
+  </data>
+  <data name="Amulet_MagnifyingGlass" xml:space="preserve">
+    <value>Magnifying Glass</value>
+  </data>
+  <data name="Amulet_FragrantThorn" xml:space="preserve">
+    <value>Fragrant Thorn</value>
+  </data>
+  <data name="Amulet_EchoOfTheForest" xml:space="preserve">
+    <value>Echo of the Forest</value>
+  </data>
+  <data name="Amulet_CervineKeepsake" xml:space="preserve">
+    <value>Cervine Keepsake</value>
+  </data>
+  <data name="Island_DLC" xml:space="preserve">
+    <value>Doe Statue</value>
+  </data>
+  <data name="Ring_TokenOfFavor" xml:space="preserve">
+    <value>Token of Favor</value>
+  </data>
+  <data name="Ring_ThalosEyelet" xml:space="preserve">
+    <value>Thalos Eyelet</value>
+  </data>
+  <data name="Ring_TearOfLydusa" xml:space="preserve">
+    <value>Tear of Lydusa</value>
+  </data>
+  <data name="Ring_SoulFeast" xml:space="preserve">
+    <value>Soul Feast</value>
+  </data>
+  <data name="Ring_SealedResinLoop" xml:space="preserve">
+    <value>Sealed Resin Loop</value>
+  </data>
+  <data name="Amulet_BeadsOfTheValorous" xml:space="preserve">
+    <value>Beads of the Valorous</value>
+  </data>
+  <data name="Kiln" xml:space="preserve">
+    <value>Cinderclad Monolith</value>
+  </data>
+  <data name="Ring_BurdenOfTheMesmer" xml:space="preserve">
+    <value>Burden of the Mesmer</value>
+  </data>
+  <data name="Ring_RavagersBargain" xml:space="preserve">
+    <value>Ravager's Bargain</value>
+  </data>
+  <data name="Rothinderahenwalt" xml:space="preserve">
+    <value>Ro'thinderahenwalt</value>
+  </data>
+  <data name="Ring_RallyBand" xml:space="preserve">
+    <value>Rally Band</value>
+  </data>
+  <data name="LuminousValeStory" xml:space="preserve">
+    <value>Story: Luminous Vale</value>
+  </data>
+  <data name="AncientCanopyStory" xml:space="preserve">
+    <value>Story: Ancient Canopy</value>
+  </data>
+  <data name="Ring_BurdenOfTheMason" xml:space="preserve">
+    <value>Burden of the Mason</value>
+  </data>
+  <data name="Ring_MatriarchsRing" xml:space="preserve">
+    <value>Matriarch's Ring</value>
+  </data>
+  <data name="Ring_MarkOfTheDestroyer" xml:space="preserve">
+    <value>Mark of the Destroyer</value>
+  </data>
+  <data name="Ring_LeakingGemstone" xml:space="preserve">
+    <value>Leaking Gemstone</value>
+  </data>
+  <data name="Ring_KolketEyelet" xml:space="preserve">
+    <value>Kolket Eyelet</value>
+  </data>
+  <data name="Ring_GulSignet" xml:space="preserve">
+    <value>Gul Signet</value>
+  </data>
+  <data name="Ring_FloodlitDiamond" xml:space="preserve">
+    <value>Floodlit Diamond</value>
+  </data>
+  <data name="FarlornCoastStory" xml:space="preserve">
+    <value>Story: Farlorn Coast</value>
+  </data>
+  <data name="Ring_BlackSpinel" xml:space="preserve">
+    <value>Black Spinel</value>
+  </data>
+  <data name="Ring_BloodlessKingsVow" xml:space="preserve">
+    <value>Bloodless King's Vow</value>
+  </data>
+  <data name="Ring_ClosedLoop" xml:space="preserve">
+    <value>Closed Loop</value>
+  </data>
+  <data name="Ring_ConjurersCircle" xml:space="preserve">
+    <value>Conjurer's Circle</value>
+  </data>
+  <data name="Ring_DarkSeaArmadaCrest" xml:space="preserve">
+    <value>Dark Sea Armada Crest</value>
+  </data>
+  <data name="Ring_FeatheryBinding" xml:space="preserve">
+    <value>Feathery Binding</value>
+  </data>
+  <data name="Ring_PanWarBand" xml:space="preserve">
+    <value>Pan War Band</value>
+  </data>
+  <data name="Ring_RingOfOrdnance" xml:space="preserve">
+    <value>Ring of Ordnance</value>
+  </data>
+  <data name="Ring_RingOfSpirits" xml:space="preserve">
+    <value>Ring of Spirits</value>
+  </data>
+  <data name="Armor_TopHat" xml:space="preserve">
+    <value>Dandy Topper</value>
+  </data>
+  <data name="Armor_MudtoothsHat" xml:space="preserve">
+    <value>Mudtooth's Hat</value>
+  </data>
+  <data name="Armor_BloodlessCrown" xml:space="preserve">
+    <value>Bloodless Crown</value>
+  </data>
+  <data name="Armor_Army" xml:space="preserve">
+    <value>Battle</value>
+  </data>
+  <data name="Armor_Invoker" xml:space="preserve">
+    <value>Disciple</value>
+  </data>
+  <data name="Armor_TrueCrimsonCrown" xml:space="preserve">
+    <value>True Crimson Crown</value>
+  </data>
+  <data name="CoastPig" xml:space="preserve">
+    <value>Little George</value>
+  </data>
+  <data name="CoastAtoner" xml:space="preserve">
+    <value>Mangled Atoner</value>
+  </data>
+  <data name="Weapon_BasicShovel" xml:space="preserve">
+    <value>Shovel</value>
+  </data>
+  <data name="Weapon_Polygun" xml:space="preserve">
+    <value>Polygun</value>
+  </data>
+  <data name="Weapon_Monolith" xml:space="preserve">
+    <value>Monolith</value>
+  </data>
+  <data name="Weapon_Mirage" xml:space="preserve">
+    <value>Mirage</value>
+  </data>
+  <data name="Weapon_CrystalStaff" xml:space="preserve">
+    <value>Crystal Staff</value>
+  </data>
+  <data name="Weapon_TrinityCrossbow" xml:space="preserve">
+    <value>Trinity Crossbow</value>
+  </data>
+  <data name="Weapon_Thorn" xml:space="preserve">
+    <value>Thorn</value>
+  </data>
+  <data name="Mod_Heatwave" xml:space="preserve">
+    <value>Heatwave</value>
+  </data>
+  <data name="Mod_AbrasiveRounds" xml:space="preserve">
+    <value>Abrasive Rounds</value>
+  </data>
+  <data name="Mod_FlyingBombTrap" xml:space="preserve">
+    <value>Flying Bomb Trap</value>
+  </data>
+  <data name="Trait_Gifted" xml:space="preserve">
+    <value>Gifted</value>
+  </data>
+  <data name="MetaGem_FarSighted" xml:space="preserve">
+    <value>Far-Sighted</value>
+  </data>
+  <data name="MetaGem_PressurePoint" xml:space="preserve">
+    <value>Pressure Point</value>
+  </data>
+  <data name="MetaGem_ThousandCuts" xml:space="preserve">
+    <value>Thousand Cuts</value>
+  </data>
+  <data name="MetaGem_NearSighted" xml:space="preserve">
+    <value>Near-Sighted</value>
+  </data>
+  <data name="Relic_Consumable_ProfaneHeart" xml:space="preserve">
+    <value>Profane Heart</value>
+  </data>
+  <data name="Trait_Resolute" xml:space="preserve">
+    <value>Resolute</value>
+  </data>
+  <data name="Relic_Consumable_BloodlessHeart" xml:space="preserve">
+    <value>Bloodless Heart</value>
+  </data>
+  <data name="MetaGem_SearingWounds" xml:space="preserve">
+    <value>Searing Wounds</value>
+  </data>
+  <data name="MetaGem_Gladiator" xml:space="preserve">
+    <value>Gladiator</value>
+  </data>
+  <data name="MetaGem_BattleMage" xml:space="preserve">
+    <value>Battle Mage</value>
+  </data>
+  <data name="MetaGem_Spellweaver" xml:space="preserve">
+    <value>Spellweaver</value>
+  </data>
+  <data name="RootMadness" xml:space="preserve">
+    <value>Infested Abyss</value>
+  </data>
+  <data name="TombRaid" xml:space="preserve">
+    <value>The Gauntlet</value>
+  </data>
+  <data name="ShiftingSoldier" xml:space="preserve">
+    <value>The Stonewarden</value>
+  </data>
+  <data name="Crypt_DLC" xml:space="preserve">
+    <value>The Treasure Room</value>
+  </data>
+  <data name="LydusaTemple" xml:space="preserve">
+    <value>Lydusa's Temple</value>
   </data>
 </root>

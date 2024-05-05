@@ -74,6 +74,15 @@
       "Impaler": "Glistering Cloister",
       "Witch": "Sunken Haunt",
       "OneTrueKing": "Palace of the One True King"
+    },
+    "DLC2": {
+      "RootMadness": "Infested Abyss",
+      "Kiln": "Deserted Atelier",
+      "LydusaTemple": "Goddess's Rest",
+      "TombRaid": "Proving Grounds",
+      "ShiftingSoldier": "Earthen Coliseum",
+      "Upper": "Ancient Canopy",
+      "Lower": "Luminous Vale"
     }
   },
   "injectableParents": {
@@ -728,6 +737,11 @@
         {
           "name": "/Items/Armor/Base/RelicTesting/TranquilHeart/Relic_Consumable_TranquilHeart",
           "notes": "Give Tormented Heart to Nimue"
+        },
+        {
+          "name": "/Items/Armor/TrueCrimsonCrown/Armor_Head_TrueCrimsonCrown",
+          "notes": "Give Crimson Guard Shroud and Crown of the Red Prince to Nimue",
+          "armorSet": false
         }
       ],
       "BoneHarvesterLair": [
@@ -1209,8 +1223,8 @@
           "name": "/Items/Traits/Core/Siphoner/Trait_Siphoner"
         },
         {
-          "name": "/Items/Traits/Core/Resonance/Trait_Resonance",
-          "notes": "get killed by getting locked in the purge",
+          "name": "/Items/Traits/Core/Leech/Trait_Leech",
+          "notes": "Get killed by getting locked in the purge",
           "coop": true
         }
       ],
@@ -1507,7 +1521,7 @@
           "name": "/Items/Trinkets/Amulets/DeathSoakedIdol/Amulet_DeathSoakedIdol"
         }
       ],
-      "Halls": [
+      "Halls_DLC": [
         {
           "name": "/Items/Trinkets/Rings/ShaedStone/Ring_ShaedStone",
           "notes": "Shoot the invisible golden pot in the reflection you see on the mirrored floor."
@@ -1567,7 +1581,7 @@
           "notes": "Return to dran the woman after destroying both of the totems."
         }
       ],
-      "ForlornCoast": [
+      "FarlornCoastStory": [
         {
           "name": "/Items/Archetypes/Ritualist/Armor/Armor_Head_Ritualist",
           "notes": "Shoot hanging body under the bridge before Nimue."
@@ -1583,25 +1597,80 @@
         {
           "name": "/Items/Archetypes/Ritualist/Armor/Armor_Gloves_Ritualist",
           "notes": "Shoot hanging body under the bridge before Nimue."
+        },
+        {
+          "name": "/Items/Trinkets/Rings/DigestedHogLure/Ring_DigestedHogLure",
+          "notes": "Kill all the hogs by the Anchor statue."
+        },
+        {
+          "name": "/Items/Traits/DarkPact/Trait_DarkPact",
+          "notes": "Shoot all three bells in Forlorn Coast to complete the Bells event."
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BridgeWardensCrest/Ring_BridgeWardensCrest",
+          "notes": "Get to the top of the bridge without killing any fae, then speak to feastmaster elite."
+        },
+        {
+          "name": "/Items/Weapons/Melee/Special/AbyssalHook/Weapon_AbyssalHook",
+          "notes": "It can be found in one of the rooms of the sewer-like area, in the manticore lair."
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ElevatedRing/Ring_ElevatedRing",
+          "notes": "Forlorn Coast- Mournful Promenade, Use the Elevator at top to get there."
+        },
+        {
+          "name": "/Items/Archetypes/Ritualist/Archetype_Ritualist",
+          "ignore": true
+        }
+      ],
+      "Leywise": [
+        {
+          "name": "/Items/Trinkets/Rings/AtonementFold/Ring_AtonementFold",
+          "notes": "Purchase from Leywise."
+        },
+        {
+          "name": "/Items/Trinkets/Rings/WhiteGlassBead/Ring_WhiteGlassBead",
+          "notes": "Bring the feastmaster leftovers to Leywise."
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/IndexOfTheScribe/Amulet_IndexOfTheScribe",
+          "notes": "Bring the Scribes Tome back to Leywise, do NOT open the tome."
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheSciolist/Ring_BurdenOfTheSciolist",
+          "notes": "Open the Scribes Tome and give the medallion to Leywise immediately"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RingOfInfiniteDamage/Ring_RingOfInfiniteDamage",
+          "notes": "Open the Scribes Tome and reject the first time Leywise asks, then give the medallion to Leywise the second time he asks."
+        }
+      ],
+      "CoastPig": [
+        {
+          "name": "/Items/Gems/Melee/Executor/MetaGem_Executor"
+        }
+      ],
+      "Preacher": [
+        {
+          "name": "/Items/Gems/Ranged/Dreadful/MetaGem_Dreadful",
+          "notes": "Dropped by Dire Fiend"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BandOfTheFanatic/Ring_BandOfTheFanatic",
+          "notes": "Wear full Zealot armor, then speak to Preacher after his speech."
+        },
+        {
+          "name": "/Items/Armor/TopHat/Armor_Head_TopHat",
+          "notes": "Shoot the hat off the Preachers head",
+          "armorSet": false
+        }
+      ],
+      "CoastAtoner": [
+        {
+          "name": "/Items/Gems/Ranged/Maelstrom/MetaGem_Maelstrom"
         }
       ],
       "OneTrueKingStory": [
-        {
-          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Head_Ritualist",
-          "notes": "Shoot hanging body under the bridge before Nimue."
-        },
-        {
-          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Body_Ritualist",
-          "notes": "Shoot hanging body under the bridge before Nimue."
-        },
-        {
-          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Legs_Ritualist",
-          "notes": "Shoot hanging body under the bridge before Nimue."
-        },
-        {
-          "name": "/Items/Archetypes/Ritualist/Armor/Armor_Gloves_Ritualist",
-          "notes": "Shoot hanging body under the bridge before Nimue."
-        },
         {
           "name": "/Items/Armor/RedPrinceArmor/Armor_Head_CrimsonGuard",
           "notes": "Kill the one true king, give the red prince 3 coins, then return to the palace."
@@ -1619,44 +1688,8 @@
           "notes": "Kill The One True King, give the red prince 3 coins, then return to the palace."
         },
         {
-          "name": "/Items/Trinkets/Rings/DigestedHogLure/Ring_DigestedHogLure",
-          "notes": "Kill all the hogs by the Anchor statue."
-        },
-        {
-          "name": "/Items/Trinkets/Rings/AtonementFold/Ring_AtonementFold",
-          "notes": "Purchase from Leywise."
-        },
-        {
-          "name": "/Items/Trinkets/Rings/WhiteGlassBead/Ring_WhiteGlassBead",
-          "notes": "Bring the feastmaster leftovers to Leywise."
-        },
-        {
-          "name": "/Items/Traits/DarkPact/Trait_DarkPact",
-          "notes": "Shoot all three bells in Forlorn Coast to complete the Bells event."
-        },
-        {
-          "name": "/Items/Trinkets/Amulets/IndexOfTheScribe/Amulet_IndexOfTheScribe",
-          "notes": "Bring the Scribes Tome back to Leywise, do NOT open the tome."
-        },
-        {
           "name": "/Items/Trinkets/Rings/BurdenOfTheDeparted/Ring_BurdenOfTheDeparted",
           "notes": "Defeat The One True King while having Burden of the Divine equipped."
-        },
-        {
-          "name": "/Items/Trinkets/Rings/BurdenOfTheSciolist/Ring_BurdenOfTheSciolist",
-          "notes": "Open the Scribes Tome and give the medallion to Leywise immediately"
-        },
-        {
-          "name": "/Items/Trinkets/Rings/RingOfInfiniteDamage/Ring_RingOfInfiniteDamage",
-          "notes": "Open the Scribes Tome and reject the first time Leywise asks, then give the medallion to Leywise the second time he asks."
-        },
-        {
-          "name": "/Items/Trinkets/Rings/BandOfTheFanatic/Ring_BandOfTheFanatic",
-          "notes": "Wear full Zealot armor, then speak to Preacher after his speech."
-        },
-        {
-          "name": "/Items/Trinkets/Rings/BridgeWardensCrest/Ring_BridgeWardensCrest",
-          "notes": "Get to the top of the bridge without killing any fae, then speak to feastmaster elite."
         },
         {
           "name": "/Items/Relics/PaperHeart/Relic_Consumable_PaperHeart",
@@ -1669,10 +1702,6 @@
         {
           "name": "/Items/Weapons/Melee/Special/Wrathbringer/Weapon_Wrathbringer",
           "notes": "The One True King Alt kill reward"
-        },
-        {
-          "name": "/Items/Weapons/Melee/Special/AbyssalHook/Weapon_AbyssalHook",
-          "notes": "It can be found in one of the rooms of the sewer-like area, in the manticore lair."
         },
         {
           "name": "/Items/Weapons/Monarch/Blueprints/Weapon_Monarch"
@@ -1688,22 +1717,328 @@
         {
           "name": "/Items/Trinkets/Rings/JewelOfTheBeholden/Ring_JewelOfTheBeholden",
           "notes": "Kill The One True King, then speak to Nimue"
-        },
-        {
-          "name": "/Items/Trinkets/Rings/ElevatedRing/Ring_ElevatedRing",
-          "notes": "Forlorn Coast- Mournful Promenade, Use the Elevator at top to get there."
-        },
-        {
-          "name": "/Items/Gems/Ranged/Dreadful/MetaGem_Dreadful",
-          "notes": "Dropped by Dire Fiend"
-        },
-        {
-          "name": "/Items/Gems/Ranged/Maelstrom/MetaGem_Maelstrom"
-        },
-        {
-          "name": "/Items/Gems/Melee/Executor/MetaGem_Executor"
         }
       ]
+    },
+    "DLC2": {
+      "Amulet_ZeroDivide": [
+        {
+          "name": "/Items/Trinkets/Amulets/ZeroDivide/Amulet_ZeroDivide"
+        }
+      ],
+      "Amulet_WornDogTags": [
+        {
+          "name": "/Items/Trinkets/Amulets/WornDogTags/Amulet_WornDogTags"
+        }
+      ],
+      "Amulet_ReedOfTheVaunnt": [
+        {
+          "name": "/Items/Trinkets/Amulets/ReedOfTheVaunnt/Amulet_ReedOfTheVaunnt"
+        }
+      ],
+      "Amulet_MagnifyingGlass": [
+        {
+          "name": "/Items/Trinkets/Amulets/MagnifyingGlass/Amulet_MagnifyingGlass"
+        }
+      ],
+      "Amulet_FragrantThorn": [
+        {
+          "name": "/Items/Trinkets/Amulets/FragrantThorn/Amulet_FragrantThorn"
+        }
+      ],
+      "Amulet_BeadsOfTheValorous": [
+        {
+          "name": "/Items/Trinkets/Amulets/BeadsOfTheValorous/Amulet_BeadsOfTheValorous"
+        }
+      ],
+      "Ring_ThalosEyelet": [
+        {
+          "name": "/Items/Trinkets/Rings/ThalosEyelet/Ring_ThalosEyelet",
+          "notes": "On a skeleton."
+        }
+      ],
+      "Ring_SoulFeast": [
+        {
+          "name": "/Items/Trinkets/Rings/SoulFeast/Ring_SoulFeast"
+        }
+      ],
+      "Ring_SealedResinLoop": [
+        {
+          "name": "/Items/Trinkets/Rings/SealedResinLoop/Ring_SealedResinLoop"
+        }
+      ],
+      "Ring_SealResinLoop": [
+        {
+          "name": "/Items/Trinkets/Rings/SealedResinLoop/Ring_SealedResinLoop"
+        }
+      ],
+      "Ring_RingOfOrdnance": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfOrdnance/Ring_RingOfOrdnance"
+        }
+      ],
+      "Ring_MatriarchsRing": [
+        {
+          "name": "/Items/Trinkets/Rings/MatriarchsRing/Ring_MatriarchsRing"
+        }
+      ],
+      "Ring_KolketEyelet": [
+        {
+          "name": "/Items/Trinkets/Rings/KolketEyelet/Ring_KolketEyelet"
+        }
+      ],
+      "Ring_LeakingGemstone": [
+        {
+          "name": "/Items/Trinkets/Rings/LeakingGemstone/Ring_LeakingGemstone"
+        }
+      ],
+      "Ring_GulSignet": [
+        {
+          "name": "/Items/Trinkets/Rings/GulSignet/Ring_GulSignet"
+        }
+      ],
+      "Ring_ClosedLoop": [
+        {
+          "name": "/Items/Trinkets/Rings/ClosedLoop/Ring_ClosedLoop"
+        }
+      ],
+      "Ring_BlackSpinel": [
+        {
+          "name": "/Items/Trinkets/Rings/BlackSpinel/Ring_BlackSpinel"
+        }
+      ],
+      "RootMadness": [
+        {
+          "name": "/Items/Trinkets/Amulets/ProfaneSoulStone/Amulet_ProfaneSoulStone",
+          "notes": "Submit to The Emissary."
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ConjurersCircle/Ring_ConjurersCircle"
+        },
+        {
+          "name": "/Items/Weapons/CrystalStaff/Weapon_CrystalStaff"
+        },
+        {
+          "name": "/Items/Gems/Ranged/NearSighted/MetaGem_NearSighted",
+          "notes": "Fight The Emissary"
+        }
+      ],
+      "LuminousValeStory": [
+        {
+          "name": "/Items/Trinkets/Rings/RallyBand/Ring_RallyBand",
+          "notes": "Given by Private Jackson Driver"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheMason/Ring_BurdenOfTheMason",
+          "notes": "Secret Passage within an elevator"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ThalosEyelet/Ring_ThalosEyelet",
+          "notes": "On a skeleton."
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/WornDogTags/Amulet_WornDogTags",
+          "notes": "Return to Private Jack Driver after deciding Lydusa's fate."
+        },
+        {
+          "name": "/Items/Gems/Ranged/FarSighted/MetaGem_FarSighted",
+          "notes": "Defeat the Stonewing Lurker aberration"
+        }
+      ],
+      "AncientCanopyStory": [
+        {
+          "name": "/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt1",
+          "notes": "Give to Dwell to receive Echo of the Forest",
+          "ignore": true
+        },
+        {
+          "name": "/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt2",
+          "notes": "Give to Dwell to receive Echo of the Forest",
+          "ignore": true
+        },
+        {
+          "name": "/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt3",
+          "notes": "Give to Dwell to receive Echo of the Forest",
+          "ignore": true
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/EchoOfTheForest/Amulet_EchoOfTheForest",
+          "notes": "Given by Dwell in Ward13 after providing him 3 pieces of Trinity Memento"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/StoneshapersChisel/Amulet_StoneshapersChisel",
+          "notes": "Interact with Uuqul when cursed with Touch of Lydusa."
+        },
+        {
+          "name": "/Items/Archetypes/Invoker/Armor/Armor_Head_Invoker",
+          "notes": "Inside a tunnel in lower Ancient Canopy"
+        },
+        {
+          "name": "/Items/Archetypes/Invoker/Armor/Armor_Body_Invoker",
+          "notes": "Inside a tunnel in lower Ancient Canopy"
+        },
+        {
+          "name": "/Items/Archetypes/Invoker/Armor/Armor_Gloves_Invoker",
+          "notes": "Inside a tunnel in lower Ancient Canopy"
+        },
+        {
+          "name": "/Items/Archetypes/Invoker/Armor/Armor_Legs_Invoker",
+          "notes": "Inside a tunnel in lower Ancient Canopy"
+        },
+        {
+          "name": "/Items/Weapons/Thorn/Weapon_Thorn",
+          "notes": "Climbing towards the Kuri Kuri nest, DO NOT grab the egg after the bird leaves. Return later when you hear the bird."
+        },
+        {
+          "name": "/Items/Weapons/TrinityCrossbow/Weapon_TrinityCrossbow",
+          "notes": "Found in a hidden chamber after collecting all three Trinity Mementos."
+        },
+        {
+          "name": "/Items/Gems/Ranged/PressurePoint/MetaGem_PressurePoint",
+          "notes": "Defeat the Charred Sentry aberration."
+        },
+        {
+          "name": "/Items/Archetypes/Invoker/Engram/Engram_Invoker",
+          "ignore": true
+        }
+      ],
+      "Kiln": [
+        {
+          "name": "/Items/Mods/Heatwave/Mod_Heatwave",
+          "notes": "Defeat Cinderclad Monolith"
+        }
+      ],
+      "LydusaTemple": [
+        {
+          "name": "/Items/Trinkets/Rings/BloodlessKingsVow/Ring_BloodlessKingsVow",
+          "notes": "Acquired by defeating The Bloodless Heir aberration inside Lydusa's Temple"
+        },
+        {
+          "name": "/Items/Armor/BloodlessCrown/Armor_Head_BloodlessCrown",
+          "notes": "After opening the door that requires five braziers, at the Altar by the offering vessel.",
+          "armorSet": false
+        },
+        {
+          "name": "/Items/Gems/Ranged/SearingWounds/MetaGem_SearingWounds"
+        },
+        {
+          "name": "/Items/Relics/BloodlessHeart/Relic_Consumable_BloodlessHeart"
+        },
+        {
+          "name": "/Items/Weapons/Flail_Mirage/Weapon_Mirage",
+          "notes": "Light all 5 braziers in Goddess's Rest to open the locked door and offer Cherished Fracture on the shrine."
+        }
+      ],
+      "TombRaid": [
+        {
+          "name": "/Items/Armor/MilitaryUniform/Armor_Head_Army"
+        },
+        {
+          "name": "/Items/Armor/MilitaryUniform/Armor_Body_Army"
+        },
+        {
+          "name": "/Items/Armor/MilitaryUniform/Armor_Gloves_Army"
+        },
+        {
+          "name": "/Items/Armor/MilitaryUniform/Armor_Legs_Army"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/FloodlitDiamond/Ring_FloodlitDiamond",
+          "notes": "Proving Grounds Dungeon"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/DarkSeaArmadaCrest/Ring_DarkSeaArmadaCrest",
+          "notes": "At the end of the last gauntlet (4th checkpoint)"
+        },
+        {
+          "name": "/Items/Gems/Melee/Gladiator/MetaGem_Gladiator"
+        },
+        {
+          "name": "/Items/Mods/FlyingBombTrap/Mod_FlyingBombTrap"
+        }
+      ],
+      "Ziggurat_DLC": [
+        {
+          "name": "/Items/Trinkets/Amulets/MoonStone/Amulet_MoonStone",
+          "notes": "In the Moon Puzzle Room"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/MarkOfTheDestroyer/Ring_MarkOfTheDestroyer",
+          "notes": "In the Moon Puzzle Room"
+        }
+      ],
+      "Island_DLC": [
+        {
+          "name": "/Items/Trinkets/Rings/TokenOfFavor/Ring_TokenOfFavor",
+          "notes": "Can be found at the side of the giant deer statue."
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/CervineKeepsake/Amulet_CervineKeepsake",
+          "notes": "In the Deserted Atelier, when you come to the statue of the doe, put on the Red Doe Sigil."
+        },
+        {
+          "name": "/Items/Gems/Ranged/ThousandCuts/MetaGem_ThousandCuts"
+        }
+      ],
+      "ShiftingSoldier": [
+        {
+          "name": "/Items/Mods/AbrasiveRounds/Mod_AbrasiveRounds",
+          "notss": "Kill The Stonewarden"
+        }
+      ],
+      "Crypt_DLC": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfSpirits/Ring_RingOfSpirits"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/PanWarBand/Ring_PanWarBand",
+          "coop": true
+        }
+      ],
+      "Rothinderahenwalt": [
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheMesmer/Ring_BurdenOfTheMesmer"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RavagersBargain/Ring_RavagersBargain"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/FeatheryBinding/Ring_FeatheryBinding",
+          "notes": "Given by Walt after Lydusa has been defeated."
+        }
+      ],
+      "DLC2Story": [
+        {
+          "name": "/Items/Trinkets/Amulets/SoulStone/Amulet_SoulStone",
+          "notes": "Cleanse the Profane Soul Stone at The Keeper within the Labyrinth"
+        },
+        {
+          "name": "/Items/Relics/ProfaneHeart/Relic_Consumable_ProfaneHeart",
+          "notes": "Refuse to cleanse the Profane Soul Stone at The Keeper within the Labyrinth"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/TearOfLydusa/Ring_TearOfLydusa",
+          "notes": "In the area where you fought Lydusa, return after the fight to find the ring."
+        },
+        {
+          "name": "/Items/Armor/MudtoothsHat/Armor_Head_MudtoothsHat",
+          "notes": "Talk to Mudtooth after completing the Forgotten Kingdom storyline.",
+          "armorSet": false
+        },
+        {
+          "name": "/Items/Weapons/Monolith/Weapon_Monolith",
+          "notes": "Defeat Lydusa while her face is blue."
+        },
+        {
+          "name": "/Items/Weapons/Polygun/Weapon_Polygun",
+          "notes": "Found on an altar hidden in the Labyrinth."
+        },
+        {
+          "name": "/Items/Traits/Resolute/Trait_Resolute",
+          "notes": "Destroy fifteen Traveler statues (appear when you die with Lydusa's Curse)"
+        }
+      ]
+
     },
     "Story": {
       "AshenWasteland": [
@@ -1776,7 +2111,7 @@
           "name": "/Items/Armor/Base/RelicTesting/DecayedHeart/Relic_Consumable_DecayedHeart"
         },
         {
-          "name": "/Items/Traits/Core/Wayfarer/Trait_Wayfarer"
+          "name": "/Items/Traits/Core/Chakra/Trait_Chakra"
         },
         {
           "name": "/Items/Weapons/Melee/Standard/Claws/DecayedClaws/Weapon_DecayedClaws"
@@ -1924,6 +2259,9 @@
         },
         {
           "name": "/Items/Weapons/Longguns/Standard/Sniper_Rifle/Weapon_SniperRifle"
+        },
+        {
+          "name": "/Items/Weapons/BasicShovel/Weapon_BasicShovel"
         }
       ],
       "Reggie": [
@@ -2173,6 +2511,12 @@
           "name": "/Items/Gems/Ranged/FetidWounds/MetaGem_FetidWounds"
         },
         {
+          "name": "/Items/Gems/Melee/BattleMage/MetaGem_BattleMage"
+        },
+        {
+          "name": "/Items/Gems/Ranged/Spellweaver/MetaGem_Spellweaver"
+        },
+        {
           "name": "/Items/Weapons/Longguns/Special/CorruptedAphelion/Weapon_CorruptedAphelion"
         },
         {
@@ -2260,6 +2604,10 @@
         },
         {
           "name": "/Items/Armor/Archetype/Explorer/Armor_Legs_Explorer"
+        },
+        {
+          "name": "/Items/Archetypes/Invoker/PerksAndTraits/Trait_Gifted",
+          "notes": "Unlocked automatically for all archetypes after leveling up the Invoker archetype to 10."
         },
         {
           "name": "/Items/Traits/Affliction/Trait_Affliction",

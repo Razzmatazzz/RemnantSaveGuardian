@@ -18,7 +18,7 @@
     xmlns:lex="http://wpflocalizeextension.codeplex.com"
     lex:LocalizeDictionary.DesignCulture="en"
     lex:ResxLocalizationProvider.DefaultAssembly="RemnantSaveGuardian"
-    lex:ResxLocalizationProvider.DefaultDictionary="Strings" 
+    lex:ResxLocalizationProvider.DefaultDictionary="Strings"
     Scrollable="True"
     xmlns:properties="clr-namespace:RemnantSaveGuardian.Properties">
     <ui:UiPage.Resources>
@@ -126,6 +126,13 @@
                         <ComboBoxItem Content="{lex:Loc World Analyzer}" Tag="world-analyzer"/>
                     </ComboBox>
                     <TextBlock Name="lblStartPage" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,8,0,0">
+                    <ComboBox Name="cmbWiki" VerticalAlignment="Top" Width="150" SelectionChanged="cmbWiki_SelectionChanged">
+                        <ComboBoxItem Content="{lex:Loc Fextralife}" Tag="fextrawiki"/>
+                        <ComboBoxItem Content="{lex:Loc RemnantWiki}" Tag="remwiki"/>
+                    </ComboBox>
+                    <TextBlock Name="lblWiki" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
                 </WrapPanel>
                 <WrapPanel Margin="0,8,0,0">
                     <ComboBox Name="cmbMissingItemColor" VerticalAlignment="Top" Width="150" SelectionChanged="CmbMissingItemColor_SelectionChanged">
