@@ -173,5 +173,14 @@
     <Setting Name="ShowItemsWithNoPrerequisites" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="ReportPerformance" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ReportPlayerInfo" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DumpAnalyzerJson" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

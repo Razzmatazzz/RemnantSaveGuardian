@@ -706,5 +706,41 @@ namespace Remnant2SaveAnalyzer.Properties {
                 this["ShowItemsWithNoPrerequisites"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReportPerformance {
+            get {
+                return ((bool)(this["ReportPerformance"]));
+            }
+            set {
+                this["ReportPerformance"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReportPlayerInfo {
+            get {
+                return ((bool)(this["ReportPlayerInfo"]));
+            }
+            set {
+                this["ReportPlayerInfo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DumpAnalyzerJson {
+            get {
+                return ((bool)(this["DumpAnalyzerJson"]));
+            }
+            set {
+                this["DumpAnalyzerJson"] = value;
+            }
+        }
     }
 }

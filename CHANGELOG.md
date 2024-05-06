@@ -1,12 +1,14 @@
 # Changelog
 
-
-## 0.0.4 (unreleased)
+## 0.0.5 (unreleased)
 - Add ability to hide already looted items for those item, where it can be detected - work in progress
 - Add ability to hide items unobtainable in the current run without reroll - work in progress
-- Add more debug logging - work in progress
-- Fixed a few typos
 
+## 0.0.4 (6 May 2024)
+- Add option to log save data for debugging purposes
+- Add option to dump analyzer data structures in json for debugging purposes
+- Add option to log performance metrics for debugging purposes
+- Fixed a few typos
 
 ## 0.0.3 (3 May 2024)
 

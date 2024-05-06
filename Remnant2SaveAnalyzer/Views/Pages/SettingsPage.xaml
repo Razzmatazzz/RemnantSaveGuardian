@@ -275,6 +275,33 @@
                 </WrapPanel>
             </Grid>
         </ui:Card>
+        <ui:CardExpander Margin="0,8,0,0" ExpandDirection="Down" IsExpanded="False">
+            <ui:CardExpander.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                        <ui:SymbolIcon FontSize="24" Margin="0,0,8,0" VerticalAlignment="Center" Symbol="WrenchScrewdriver24" />
+                        <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Medium" Text="{lex:Loc Debug}" />
+                        <TextBlock Name="debug_note" Text="{lex:Loc}" FontSize="12" FontStyle="Italic" Foreground="{ui:ThemeResource SystemFillColorCautionBrush}" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkReportPerformance" Content="{lex:Loc}" IsChecked="{Binding ReportPerformance}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkReportPlayerInfo" Content="{lex:Loc}" IsChecked="{Binding ReportPlayerInfo}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkDumpAnalyzerJson" Content="{lex:Loc}" IsChecked="{Binding DumpAnalyzerJson}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </WrapPanel>
+            </StackPanel>
+        </ui:CardExpander>
         <ui:Anchor Name="LinkToRepo" Margin="0,8,0,8" Content="{lex:Loc AboutRSG}" NavigateUri="https://github.com/AndrewSav/Remnant2SaveAnalyzer" />
     </StackPanel>
 </ui:UiPage>

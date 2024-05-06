@@ -534,4 +534,19 @@
   <data name="chkShowItemsWithNoPrereqs" xml:space="preserve">
     <value>Show campaign/adventure items with a missing prerequisite that did not roll in the compaign/adventure</value>
   </data>
+  <data name="chkDumpAnalyzerJson" xml:space="preserve">
+    <value>Dump Analyzer data structures to analyzer.json </value>
+  </data>
+  <data name="chkReportPerformance" xml:space="preserve">
+    <value>Log Performance metrics</value>
+  </data>
+  <data name="chkReportPlayerInfo" xml:space="preserve">
+    <value>Log Player debug info</value>
+  </data>
+  <data name="Debug" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="debug_note" xml:space="preserve">
+    <value>Enabling these could cause performance degradation and flood the logs</value>
+  </data>
 </root>

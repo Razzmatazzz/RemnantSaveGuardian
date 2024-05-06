@@ -295,6 +295,15 @@ namespace Remnant2SaveAnalyzer.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dump Analyzer data structures to analyzer.json .
+        /// </summary>
+        public static string chkDumpAnalyzerJson {
+            get {
+                return ResourceManager.GetString("chkDumpAnalyzerJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to When exporting, export copies of saves.
         /// </summary>
         public static string chkExportCopy_Content {
@@ -345,6 +354,24 @@ namespace Remnant2SaveAnalyzer.locales {
         public static string chkOpacity_note_Text {
             get {
                 return ResourceManager.GetString("chkOpacity_note_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log Performance metrics.
+        /// </summary>
+        public static string chkReportPerformance {
+            get {
+                return ResourceManager.GetString("chkReportPerformance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log Player debug info.
+        /// </summary>
+        public static string chkReportPlayerInfo {
+            get {
+                return ResourceManager.GetString("chkReportPlayerInfo", resourceCulture);
             }
         }
         
@@ -543,6 +570,24 @@ namespace Remnant2SaveAnalyzer.locales {
         public static string Date {
             get {
                 return ResourceManager.GetString("Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debug.
+        /// </summary>
+        public static string Debug {
+            get {
+                return ResourceManager.GetString("Debug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enabling these could cause performance degradation and flood the logs.
+        /// </summary>
+        public static string debug_note {
+            get {
+                return ResourceManager.GetString("debug_note", resourceCulture);
             }
         }
         

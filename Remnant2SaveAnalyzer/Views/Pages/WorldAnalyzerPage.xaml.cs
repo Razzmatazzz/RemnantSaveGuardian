@@ -188,7 +188,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                     Logger.Error(Loc.T("export_save_invalid_folder_error"));
                     return;
                 }
-                Analyzer.Export(openFolderDialog.SelectedPath, _save.SaveFolderPath, Properties.Settings.Default.ExportCopy, Properties.Settings.Default.ExportDecoded, Properties.Settings.Default.ExportJson);
+                Exporter.Export(openFolderDialog.SelectedPath, _save.SaveFolderPath, Properties.Settings.Default.ExportCopy, Properties.Settings.Default.ExportDecoded, Properties.Settings.Default.ExportJson);
                 Logger.Success(Loc.T($"Exported save files successfully to {openFolderDialog.SelectedPath}"));
             } catch (Exception ex)
             {
