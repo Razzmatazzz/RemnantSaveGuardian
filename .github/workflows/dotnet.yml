@@ -28,7 +28,7 @@ jobs:
     - name: Create release archive
       shell: powershell
       run: |
-        7z a "Remnant2SaveAnalyzer-$env:TAG.zip" .\Remnant2SaveAnalyzer\bin\Release\net8.0-windows7.0\win-x64\*
+        7z a "Remnant2SaveAnalyzer-$env:TAG.zip" .\Remnant2SaveAnalyzer\bin\Release\net8.0-windows7.0\win-x64\publish\*
       env:
         TAG: ${{ github.ref_name }}
     - name: Create Release
