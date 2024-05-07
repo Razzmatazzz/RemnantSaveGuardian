@@ -27,7 +27,25 @@ Most of these issues are unlikely to be fixed, unless someone would like to help
 
 - This program is a bit slower than RSG due to different parsing engine. On SSD the slowdown is noticable but IMO tolerable
 - Translations might not work as they used, and for the newer content there are none
-- I'm planning on improving this one, if I have the time: "Difficult" items are not working yet: Amulet_GoldenRibbon, Amulet_GunfireSecurityLanyard, Amulet_ParticipationMedal, Amulet_SilverRibbon, Armor_Body_CrimsonGuard, Engram_Archon, Relic_Consumable_QuiltedHeart, Relic_Consumable_RipenedHeart, Ring_BandOfTheFanatic, Ring_BisectedRing, Ring_DowngradedRing, Void_Heart, Weapon_Anguish, Weapon_CrescentMoon
+- I'm planning on improving this one, if I have the time: "Difficult" items are not working yet: 
+  - Golden Ribbon
+  - Gunfire Security Lanyard
+  - Participation Medal
+  - Silver Ribbon
+  - CrimsonGuard armor set
+  - Archon
+  - Quilted Heart
+  - Ripened Heart
+  - Band of the Fanatic
+  - Bisected Ring
+  - Downgraded Ring
+  - Void Heart
+  - Anguish
+  - Crescent Moon
+  - Polygun
+  - Profane Heart
+  - Echo of the Forest
+  - Trinity Crossbow
 - [If you are using Norton Antivirus, it may cause weirdness with your game saves and RemnantSaveGuardian](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/70)
 
 ## Save Parsing

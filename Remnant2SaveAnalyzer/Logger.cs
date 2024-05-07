@@ -1,6 +1,7 @@
 ﻿using Remnant2SaveAnalyzer.Views.Windows;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 
 namespace Remnant2SaveAnalyzer
@@ -35,7 +36,7 @@ namespace Remnant2SaveAnalyzer
 
         private static void CreateLog()
         {
-            File.WriteAllText("log.txt", DateTime.Now + ": Version " + typeof(MainWindow).Assembly.GetName().Version + "\r\n");
+            File.WriteAllText("log.txt", DateTime.Now.ToString(CultureInfo.InvariantCulture) + ": Version " + typeof(MainWindow).Assembly.GetName().Version + "\r\n");
         }
 
         public static void Log(object? message, LogType logType, bool silent = false)
@@ -49,7 +50,7 @@ namespace Remnant2SaveAnalyzer
             if (Properties.Settings.Default.CreateLogFile)
             {
                 StreamWriter writer = File.AppendText("log.txt");
-                writer.WriteLine($"{DateTime.Now} [{logType}]: {message}");
+                writer.WriteLine($"{DateTime.Now.ToString(CultureInfo.InvariantCulture)} [{logType}]: {message}");
                 writer.Close();
             }
             //Debug.WriteLine(message);
