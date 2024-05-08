@@ -182,5 +182,8 @@
     <Setting Name="DumpAnalyzerJson" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="LootedItemColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Dim</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

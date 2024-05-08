@@ -508,7 +508,7 @@
     <value>When exporting, export saves in json format</value>
   </data>
   <data name="chkShowLootedItems_Content" xml:space="preserve">
-    <value>Show world drops / boss rewards no longer in save because they were already looted</value>
+    <value>Show looted world drops / boss rewards</value>
   </data>
   <data name="Fextralife" xml:space="preserve">
     <value>Fextralife Wiki</value>
@@ -547,6 +547,15 @@
     <value>Debug</value>
   </data>
   <data name="debug_note" xml:space="preserve">
-    <value>Enabling these could cause performance degradation and flood the logs</value>
+    <value>(Enabling these could cause performance degradation and flood the logs)</value>
+  </data>
+  <data name="lblLootedItemColor" xml:space="preserve">
+    <value>World analyzer looted world drops / boss rewards color</value>
+  </data>
+  <data name="looted_note" xml:space="preserve">
+    <value>(Not all items can be detected as looted)</value>
+  </data>
+  <data name="Text_Dim" xml:space="preserve">
+    <value>Dim</value>
   </data>
 </root>

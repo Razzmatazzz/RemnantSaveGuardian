@@ -430,7 +430,7 @@ namespace Remnant2SaveAnalyzer.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show world drops / boss rewards no longer in save because they were already looted.
+        ///   Looks up a localized string similar to Show looted world drops / boss rewards.
         /// </summary>
         public static string chkShowLootedItems_Content {
             get {
@@ -583,7 +583,7 @@ namespace Remnant2SaveAnalyzer.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enabling these could cause performance degradation and flood the logs.
+        ///   Looks up a localized string similar to (Enabling these could cause performance degradation and flood the logs).
         /// </summary>
         public static string debug_note {
             get {
@@ -880,6 +880,15 @@ namespace Remnant2SaveAnalyzer.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to World analyzer looted world drops / boss rewards color.
+        /// </summary>
+        public static string lblLootedItemColor {
+            get {
+                return ResourceManager.GetString("lblLootedItemColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to World analzyer missing item color.
         /// </summary>
         public static string lblMissingItemColor_Text {
@@ -957,6 +966,15 @@ namespace Remnant2SaveAnalyzer.locales {
         public static string Log {
             get {
                 return ResourceManager.GetString("Log", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Not all items can be detected as looted).
+        /// </summary>
+        public static string looted_note {
+            get {
+                return ResourceManager.GetString("looted_note", resourceCulture);
             }
         }
         
@@ -1245,6 +1263,15 @@ namespace Remnant2SaveAnalyzer.locales {
         public static string Survival {
             get {
                 return ResourceManager.GetString("Survival", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dim.
+        /// </summary>
+        public static string Text_Dim {
+            get {
+                return ResourceManager.GetString("Text_Dim", resourceCulture);
             }
         }
         

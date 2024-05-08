@@ -35,6 +35,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 //cmbMissingItemColor.DisplayMemberPath = "Content";
                 //cmbMissingItemColor.SelectedValuePath = "Tag";
                 cmbMissingItemColor.SelectedIndex = Properties.Settings.Default.MissingItemColor == "Highlight" ? 1 : 0;
+                cmbLootedItemColor.SelectedIndex = Properties.Settings.Default.LootedItemColor == "Dim" ? 1 : 0;
 
                 foreach (ComboBoxItem item in cmbStartPage.Items)
                 {
@@ -386,6 +387,11 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 return;
             }
             Properties.Settings.Default.Wiki = wiki;
+        }
+
+        private void CmbLootedItemColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Properties.Settings.Default.LootedItemColor = ((ComboBoxItem)cmbLootedItemColor.SelectedItem).Tag.ToString();
         }
     }
 }

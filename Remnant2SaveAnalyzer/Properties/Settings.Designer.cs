@@ -742,5 +742,17 @@ namespace Remnant2SaveAnalyzer.Properties {
                 this["DumpAnalyzerJson"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dim")]
+        public string LootedItemColor {
+            get {
+                return ((string)(this["LootedItemColor"]));
+            }
+            set {
+                this["LootedItemColor"] = value;
+            }
+        }
     }
 }

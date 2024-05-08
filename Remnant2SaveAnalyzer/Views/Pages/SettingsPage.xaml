@@ -143,6 +143,16 @@
                     </ComboBox>
                     <TextBlock Name="lblMissingItemColor" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
                 </WrapPanel>
+                <WrapPanel Margin="0,8,0,0">
+                    <ComboBox Name="cmbLootedItemColor" VerticalAlignment="Top" Width="150" SelectionChanged="CmbLootedItemColor_SelectionChanged">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="{lex:Loc Text_Normal}" Tag="Normal"/>
+                            <ComboBoxItem Content="{lex:Loc Text_Dim}" Tag="Dim"/>
+                        </ComboBox.Items>
+                    </ComboBox>
+                    <TextBlock Name="lblLootedItemColor" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                    <TextBlock Name="looted_note" Text="{lex:Loc}" FontSize="12" FontStyle="Italic" Foreground="{ui:ThemeResource SystemFillColorSuccessBrush}" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                </WrapPanel>
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkCreateLogFile" IsChecked="{Binding CreateLogFile}" Content="{lex:Loc}" />
                 </WrapPanel>
@@ -195,8 +205,9 @@
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkShowCoopItems" Content="{lex:Loc}" IsChecked="{Binding ShowCoopItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
                 </WrapPanel>
-                <WrapPanel Margin="0,16,0,0" IsEnabled="False" Visibility="Collapsed">
+                <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkShowLootedItems" Content="{lex:Loc}" IsChecked="{Binding ShowLootedItems}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <TextBlock Name="looted_note2" Text="{lex:Loc looted_note}" FontSize="12" FontStyle="Italic" Foreground="{ui:ThemeResource SystemFillColorSuccessBrush}" VerticalAlignment="Center" Margin="5,0,0,0"/>
                 </WrapPanel>
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkShowWard13" IsChecked="{Binding ShowWard13}" Content="{lex:Loc}" />

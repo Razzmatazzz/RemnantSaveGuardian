@@ -1,8 +1,13 @@
 # Changelog
 
-## 0.0.5 (unreleased)
-- Add ability to hide already looted items for those item, where it can be detected - work in progress
-- Add ability to hide items unobtainable in the current run without reroll - work in progress
+## 0.0.6 (unreleased)
+- Add ability to hide items if they cannot be achived in the current save due to missing prerequisites - work in progress
+
+## 0.0.5 (8 May 2024)
+- Fixed release zip file, it wrongly used to have the release in the "publish" subfolder
+- Dim items in "Possile Items" columns if these items were already looted in the save if possible. This does not work for all items, as not all items appear in saves. Also added an option not to dim
+- Also added an option to completely hide the looted items above in the World Analyzer
+
 
 ## 0.0.4 (6 May 2024)
 - Add option to log save data for debugging purposes

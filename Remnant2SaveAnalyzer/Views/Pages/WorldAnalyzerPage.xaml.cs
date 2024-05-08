@@ -139,14 +139,12 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             });
         }
 
-        #region INotifiedProperty Block
         public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
-        #endregion
 
         private void FontSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -211,6 +209,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 || e.PropertyName == "ShowDlc1"
                 || e.PropertyName == "ShowDlc2"
                 || e.PropertyName == "ShowItemsWithNoPrerequisites"
+                || e.PropertyName == "ShowLootedItems"
                 )
             {
                 Dispatcher.Invoke(() =>
@@ -292,14 +291,14 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             };
             return templateColumn;
         }
-        #region missingItemsTextColor
+
         private Brush? _missingItemsTextColor;
         public Brush? MissingItemsTextColor
         {
             get => _missingItemsTextColor;
             set { _missingItemsTextColor = value; OnPropertyChanged("missingItemsTextColor"); }
         }
-        #endregion
+
         private void Data_AutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             List<string> allowColumns = [
@@ -679,17 +678,20 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                             result.Add(newItem);
                         }
                     }
-                    if (Properties.Settings.Default.ShowTomes && location.TraitBook)
+                    if (Properties.Settings.Default.ShowTomes && location.TraitBook && (Properties.Settings.Default.ShowLootedItems || !location.TraitBookLooted))
                     {
                         //List<LocalisedLootItem> ll = new() { new LocalisedLootItem(new() { Item = new() { { "Name", Loc.GameT("TraitBook") } } }) };
                         WorldAnalyzerGridData newItem = new(
                             location: l,
                             missingItems: [],
-                            possibleItems: location.TraitBookLooted || Properties.Settings.Default.ShowLootedItems ? []
-                                :
+                            possibleItems: 
+                                
                                 [
                                     new LocalisedLootItem(new()
-                                        { Item = new() { { "Name", Loc.GameT("TraitBook") }, { "Id", "Bogus" } } })
+                                    {
+                                        Item = new() { { "Name", Loc.GameT("TraitBook") }, { "Id", "Bogus" }, {"Type", "Tome Of Knowledge"} },
+                                        IsLooted = location.TraitBookLooted
+                                    }, this)
                                 ],
                             name: Loc.GameT("TraitBook"),
                             type: Loc.T("Item")
@@ -700,18 +702,18 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                         }
 
                     }
-                    if (Properties.Settings.Default.ShowSimulacrums && location.Simulacrum)
+                    if (Properties.Settings.Default.ShowSimulacrums && location.Simulacrum && (Properties.Settings.Default.ShowLootedItems || !location.SimulacrumLooted))
                     {
                         WorldAnalyzerGridData newItem = new(
                             location: l,
                             missingItems: [],
-                            possibleItems: location.SimulacrumLooted || Properties.Settings.Default.ShowLootedItems ?
-                                [
-                                ]
-                                :
+                            possibleItems: 
                                 [
                                     new LocalisedLootItem(new()
-                                        { Item = new() { { "Name", Loc.GameT("Simulacrum") }, { "Id", "Bogus" } } })
+                                    {
+                                        Item = new() { { "Name", Loc.GameT("Simulacrum") }, { "Id", "Bogus" }, {"Type", "Simulacrum"} },
+                                        IsLooted = location.SimulacrumLooted,
+                                    }, this)
                                 ],
                             name: Loc.GameT("Simulacrum"),
                             type: Loc.T("Item")
@@ -740,10 +742,10 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                             missingItems: FilterAllDlcItems(items
                                 .Where( x => !x.IsPrerequisiteMissing || Properties.Settings.Default.ShowItemsWithNoPrerequisites)
                                 .Where(x => missingIds.Contains(x.Item["Id"])), 
-                                x=>x.Item).Select(x => new LocalisedLootItem(x)).ToList(),
+                                x=>x.Item).Select(x => new LocalisedLootItem(x, this)).ToList(),
                             possibleItems: FilterAllDlcItems(items
                                 .Where(x => !x.IsPrerequisiteMissing || Properties.Settings.Default.ShowItemsWithNoPrerequisites), 
-                                x=>x.Item).Select(x => new LocalisedLootItem(x)).ToList(),
+                                x=>x.Item).Select(x => new LocalisedLootItem(x, this)).ToList(),
                             name: Loc.GameT(lg.Name ?? ""),
                             type: Loc.T(Capitalize().Replace(lg.Type, m => m.Value.ToUpper()))
                         ){Unknown = lg.UnknownMarker};
@@ -751,26 +753,40 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                         {
                             newItem.Name = Loc.GameT(location.Name);
                         }
-                        bool hasItems = Properties.Settings.Default.ShowPossibleItems || newItem.MissingItems.Count > 0;
-                        if (EventPassesFilter(newItem) && hasItems)
+                        if (EventPassesFilter(newItem))
                         {
                             result.Add(newItem);
                         }
                     }
                 }
             }
+
+            result = result.Where(x=>x.Type == "Connections"
+                || x.Type == "World Stones"
+                || x.MissingItems.Count > 0
+                || Properties.Settings.Default.ShowPossibleItems && x.PossibleItems.Count > 0
+            ).ToList();
+
             return result;
         }
 
         public class LocalisedLootItem : LootItem
         {
+            private readonly WorldAnalyzerPage _parent;
             [SetsRequiredMembers]
-            public LocalisedLootItem(LootItem item)
+            public LocalisedLootItem(LootItem item, WorldAnalyzerPage parent)
             {
+                IsLooted = item.IsLooted;
                 Item = item.Item;
+                _parent = parent;
             }
 
             public override string Name => Item["Id"] == Loc.GameT(Item["Id"]) ? base.Name : Loc.GameT(Item["Id"]);
+
+            // ReSharper disable once UnusedMember.Global
+            public Brush? LootedItemsTextColor => Properties.Settings.Default.LootedItemColor == "Dim" && IsLooted 
+                ? Brushes.DarkGray 
+                : (Brush)_parent.FindResource("TextFillColorPrimaryBrush");
         }
 
         public class SortCompare : IComparer<Dictionary<string, string>>
