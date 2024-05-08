@@ -5,7 +5,7 @@
 
 ## 0.0.5 (8 May 2024)
 - Fixed release zip file, it wrongly used to have the release in the "publish" subfolder
-- Dim items in "Possile Items" columns if these items were already looted in the save if possible. This does not work for all items, as not all items appear in saves. Also added an option not to dim
+- Dim items in "Possible Items" columns if these items were already looted in the save if possible. This does not work for all items, as not all items appear in saves. Also added an option not to dim
 - Also added an option to completely hide the looted items above in the World Analyzer
 
 
