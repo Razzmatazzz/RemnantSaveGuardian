@@ -1,7 +1,11 @@
 # Changelog
 
-## 0.0.6 (unreleased)
+## 0.0.7 (unreleased)
 - Add ability to hide items if they cannot be achived in the current save due to missing prerequisites - work in progress
+
+## 0.0.6 (unreleased)
+- Fixed a crash on World Analyzer tab
+- Made improvements so that next time something like this happens, it at least gives a error
 
 ## 0.0.5 (8 May 2024)
 - Fixed release zip file, it wrongly used to have the release in the "publish" subfolder

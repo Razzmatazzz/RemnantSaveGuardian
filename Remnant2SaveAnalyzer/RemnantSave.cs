@@ -97,7 +97,16 @@ namespace Remnant2SaveAnalyzer
             {
                 bool first = _remnantDataset == null;
 
-                _remnantDataset = Analyzer.Analyze(_savePath, _remnantDataset);
+                try
+                {
+                    _remnantDataset = Analyzer.Analyze(_savePath, _remnantDataset);
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error(ex);
+                    return;
+                }
+
                 if (first)
                 {
                     ReportAnalyzerDebugMessages();

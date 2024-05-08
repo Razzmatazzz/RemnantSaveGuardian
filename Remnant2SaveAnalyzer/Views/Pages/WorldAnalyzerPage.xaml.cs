@@ -75,6 +75,8 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 BackupsPage.BackupSaveRestored += BackupsPage_BackupSaveRestored;
             }
 
+            if (_save.Dataset == null) return;
+
             Debug.Assert(_save.Dataset != null, "_save.Dataset != null");
             CharacterControl.ItemsSource = _save.Dataset.Characters;
 
