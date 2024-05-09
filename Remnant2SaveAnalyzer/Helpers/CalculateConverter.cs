@@ -13,7 +13,7 @@ namespace Remnant2SaveAnalyzer.Helpers
 
             double intX = Math.Round((double)value);
             int intY = int.Parse((string)parameter);
-            return (intX + intY);
+            return intX + intY;
         }
         public object ConvertBack(object? value, Type targetType, object? parameter, System.Globalization.CultureInfo culture)
         {

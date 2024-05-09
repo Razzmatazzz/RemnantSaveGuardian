@@ -411,13 +411,13 @@ namespace Remnant2SaveAnalyzer.Views.Pages
 
                 foreach (TreeListClass modeNode in _itemModeNode)
                 {
-                    modeNode.Visibility = (modeNode.ChildNode.Count == 0 ? Visibility.Collapsed : Visibility.Visible);
+                    modeNode.Visibility = modeNode.ChildNode.Count == 0 ? Visibility.Collapsed : Visibility.Visible;
                 }
                 foreach (List<TreeListClass> categoryNode in itemNode)
                 {
                     foreach (TreeListClass category in categoryNode)
                     {
-                        category.Visibility = (category.ChildNode.Count == 0 ? Visibility.Collapsed : Visibility.Visible);
+                        category.Visibility = category.ChildNode.Count == 0 ? Visibility.Collapsed : Visibility.Visible;
                     }
                     categoryNode.Sort();
                 }

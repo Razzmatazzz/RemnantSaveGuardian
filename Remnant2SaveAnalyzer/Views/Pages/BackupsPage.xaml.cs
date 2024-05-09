@@ -159,7 +159,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 return;
             }
 
-            Process.Start((remnantExe64.Exists && Environment.Is64BitOperatingSystem) ? remnantExe64.FullName : remnantExe.FullName);
+            Process.Start(remnantExe64.Exists && Environment.Is64BitOperatingSystem ? remnantExe64.FullName : remnantExe.FullName);
         }
 
         private void MenuRestoreWorlds_Click(object sender, RoutedEventArgs e)
@@ -248,8 +248,8 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                         {
                             ResetActiveBackupStatus();
 
-                            TimeSpan span = (newBackupTime - DateTime.Now);
-                            Logger.Log(Loc.T("Save change detected; waiting {numMinutes} minutes until next backup", new() { { "numMinutes", $"{Math.Round(span.Minutes + (span.Seconds / 60.0), 2)}" } }));
+                            TimeSpan span = newBackupTime - DateTime.Now;
+                            Logger.Log(Loc.T("Save change detected; waiting {numMinutes} minutes until next backup", new() { { "numMinutes", $"{Math.Round(span.Minutes + span.Seconds / 60.0, 2)}" } }));
                         }
                     }
                     else
@@ -355,7 +355,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 {
                     dataBackups.SelectedItem = activeBackup;
                 }
-                ActiveSaveIsBackedUp = (activeBackup != null);
+                ActiveSaveIsBackedUp = activeBackup != null;
                 progressRing.Visibility = Visibility.Collapsed;
             });
         }
@@ -643,7 +643,6 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             SaveWatcher.Pause();
 
             string? saveDirPath = Properties.Settings.Default.SaveFolder;
-            string? backupDirPath = Properties.Settings.Default.BackupFolder;
 
             DirectoryInfo di = new(saveDirPath);
             DirectoryInfo buDi = new(backup.SaveFolderPath);
