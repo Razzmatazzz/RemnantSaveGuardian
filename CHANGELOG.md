@@ -1,7 +1,9 @@
 # Changelog
 
-## 0.0.7 (unreleased)
+## 0.0.8 (unreleased)
 - Add ability to hide items if they cannot be achived in the current save due to missing prerequisites - work in progress
+
+## 0.0.7 (9 May 2024)
 - Detect Resolute trait aquisition
 - Fix rare crashes with backups pane
 
