@@ -316,6 +316,10 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 if (RemnantSave.ValidSaveFolder(path))
                 {
                     SaveBackup backup = new(path);
+                    if (backup.Progression == null)
+                    {
+                        continue;
+                    }
                     if (backupNames.TryGetValue(backup.SaveDate.Ticks, out string? name))
                     {
                         backup.Name = name;
@@ -642,7 +646,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             string? backupDirPath = Properties.Settings.Default.BackupFolder;
 
             DirectoryInfo di = new(saveDirPath);
-            DirectoryInfo buDi = new(backupDirPath + "\\" + backup.SaveDate.Ticks);
+            DirectoryInfo buDi = new(backup.SaveFolderPath);
 
             switch (type)
             {

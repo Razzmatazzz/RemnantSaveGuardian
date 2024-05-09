@@ -1,7 +1,7 @@
+using lib.remnant2.analyzer;
 using System;
 using System.ComponentModel;
 using System.IO;
-using lib.remnant2.analyzer;
 
 namespace Remnant2SaveAnalyzer
 {
@@ -21,7 +21,6 @@ namespace Remnant2SaveAnalyzer
         private bool _inTxn;
         //private int[] progression;
         //private List<RemnantCharacter> charData;
-        private readonly string _progression;
         private readonly string _savePath;
 
         public string Name
@@ -36,7 +35,7 @@ namespace Remnant2SaveAnalyzer
             set => _saveData.Date = value;
             //OnUpdated(new UpdatedEventArgs("SaveDate"));
         }
-        public string Progression => string.Join(", ", _progression);
+        public string? Progression { get; }
 
         public bool Keep
         {
@@ -64,7 +63,15 @@ namespace Remnant2SaveAnalyzer
         {
             _savePath = savePath;
 
-            _progression = Analyzer.GetProfileStringCombined(_savePath);
+            try
+            {
+                Progression = Analyzer.GetProfileStringCombined(_savePath);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"Could not read profile from backup: {ex}");
+            }
+
             _saveData = new SaveData
             {
                 Name = SaveDateTime.Ticks.ToString(),
