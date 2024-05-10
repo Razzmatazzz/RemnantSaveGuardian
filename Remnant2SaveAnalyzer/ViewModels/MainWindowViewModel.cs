@@ -56,8 +56,8 @@ namespace Remnant2SaveAnalyzer.ViewModels
             [
                 new NavigationItem
                 {
-                    Content = Loc.T("Log"),
-                    ToolTip = Loc.T("Log"),
+                    Content = Loc.T("Normal"),
+                    ToolTip = Loc.T("Normal"),
                     PageTag = "log",
                     Icon = SymbolRegular.Notebook24,
                     PageType = typeof(Views.Pages.LogPage)

@@ -1,7 +1,7 @@
 ﻿namespace Remnant2SaveAnalyzer.Logging;
 
-public class LogMessage(string text, LogType logType)
+public class LogMessage(string text, NotificationType notificationType)
 {
     public string Text { get; set; } = text;
-    public LogType LogType { get; set; } = logType;
+    public NotificationType NotificationType { get; set; } = notificationType;
 }

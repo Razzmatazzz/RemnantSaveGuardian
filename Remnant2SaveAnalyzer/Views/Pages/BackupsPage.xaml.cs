@@ -81,7 +81,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
 
                 if (Properties.Settings.Default.BackupFolder.Length == 0)
                 {
-                    Notifications.Log(Loc.T("Backup folder not set; reverting to default."));
+                    Notifications.Normal(Loc.T("Backup folder not set; reverting to default."));
                     if (!Directory.Exists(DefaultBackupFolder))
                     {
                         Directory.CreateDirectory(DefaultBackupFolder);
@@ -227,10 +227,10 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             {
                 try
                 {
-                    //Notifications.Log($"{DateTime.Now.ToString()} File: {e.FullPath} {e.ChangeType}");
+                    //Notifications.Normal($"{DateTime.Now.ToString()} File: {e.FullPath} {e.ChangeType}");
                     if (Properties.Settings.Default.AutoBackup)
                     {
-                        //Notifications.Log($"Save: {File.GetLastWriteTime(e.FullPath)}; Last backup: {File.GetLastWriteTime(listBackups[listBackups.Count - 1].Save.SaveFolderPath + "\\profile.sav")}");
+                        //Notifications.Normal($"Save: {File.GetLastWriteTime(e.FullPath)}; Last backup: {File.GetLastWriteTime(listBackups[listBackups.Count - 1].Save.SaveFolderPath + "\\profile.sav")}");
                         DateTime newBackupTime;
                         if (_listBackups.Count > 0)
                         {
@@ -250,7 +250,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                             ResetActiveBackupStatus();
 
                             TimeSpan span = newBackupTime - DateTime.Now;
-                            Notifications.Log(Loc.T("Save change detected; waiting {numMinutes} minutes until next backup", new() { { "numMinutes", $"{Math.Round(span.Minutes + span.Seconds / 60.0, 2)}" } }));
+                            Notifications.Normal(Loc.T("Save change detected; waiting {numMinutes} minutes until next backup", new() { { "numMinutes", $"{Math.Round(span.Minutes + span.Seconds / 60.0, 2)}" } }));
                         }
                     }
                     else
@@ -304,7 +304,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             System.Threading.Thread.Sleep(500); //Wait for UI render first
             if (!Directory.Exists(Properties.Settings.Default.BackupFolder))
             {
-                Notifications.Log(Loc.T("Backups folder not found, creating..."));
+                Notifications.Normal(Loc.T("Backups folder not found, creating..."));
                 Directory.CreateDirectory(Properties.Settings.Default.BackupFolder);
             }
             Dictionary<long, string> backupNames = GetSavedBackupNames();
@@ -347,10 +347,10 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 _listBackups = list;
                 dataBackups.ItemsSource = null;
                 dataBackups.ItemsSource = _listBackups;
-                Notifications.Log($"{Loc.T("Backups found")}: {_listBackups.Count}"); 
+                Notifications.Normal($"{Loc.T("Backups found")}: {_listBackups.Count}"); 
                 if (_listBackups.Count > 0)
                 {
-                    Notifications.Log($"{Loc.T("Last backup save date")}: {_listBackups[^1].SaveDate}");
+                    Notifications.Normal($"{Loc.T("Last backup save date")}: {_listBackups[^1].SaveDate}");
                 }
                 if (activeBackup != null)
                 {
@@ -414,7 +414,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 RemnantSave activeSave = new(Properties.Settings.Default.SaveFolder, true);
                 if (!activeSave.Valid)
                 {
-                    Notifications.Log("Active save is not valid; backup skipped.");
+                    Notifications.Normal("Active save is not valid; backup skipped.");
                     return;
                 }
                 int existingSaveIndex = -1;
@@ -477,7 +477,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             {
                 if (ex.Message.Contains("being used by another process"))
                 {
-                    Notifications.Log(Loc.T("Save file in use; waiting 0.5 seconds and retrying."));
+                    Notifications.Normal(Loc.T("Save file in use; waiting 0.5 seconds and retrying."));
                     System.Threading.Thread.Sleep(500);
                     DoBackup();
                 }
@@ -493,7 +493,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 {
                     if (!_listBackups[i].Keep && !_listBackups[i].Active)
                     {
-                        Notifications.Log($"{Loc.T("Deleting excess backup")} {_listBackups[i].Name} ({_listBackups[i].SaveDate})");
+                        Notifications.Normal($"{Loc.T("Deleting excess backup")} {_listBackups[i].Name} ({_listBackups[i].SaveDate})");
                         Directory.Delete($@"{Properties.Settings.Default.BackupFolder}\{_listBackups[i].SaveDate.Ticks}", true);
                         removeBackups.Add(_listBackups[i]);
                         delNum--;
@@ -626,13 +626,13 @@ namespace Remnant2SaveAnalyzer.Views.Pages
         {
             if (IsRemnantRunning())
             {
-                Notifications.Log(Loc.T("Exit the game before restoring a save backup."), LogType.Error);
+                Notifications.Error(Loc.T("Exit the game before restoring a save backup."));
                 return;
             }
 
             if (dataBackups.SelectedItem is not SaveBackup backup)
             {
-                Notifications.Log(Loc.T("Choose a backup to restore from the list."), LogType.Error);
+                Notifications.Error(Loc.T("Choose a backup to restore from the list."));
                 return;
             }
             
@@ -681,7 +681,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                     }
                     break;
                 default:
-                    Notifications.Log($"{Loc.T("Invalid backup restore type")}: {type}", LogType.Error);
+                    Notifications.Error($"{Loc.T("Invalid backup restore type")}: {type}");
                     return;
             }
 
@@ -691,7 +691,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             }
 
             RefreshBackups();
-            Notifications.Log(Loc.T("Backup restored"), LogType.Success);
+            Notifications.Success(Loc.T("Backup restored"));
             SaveWatcher.Resume();
             BackupSaveRestored?.Invoke(this, EventArgs.Empty);
             SaveFolderUnrecognizedFilesCheck();
@@ -765,7 +765,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
         {
             if (!e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                //Notifications.Log(string.Join("\n", e.Data.GetFormats()));
+                //Notifications.Normal(string.Join("\n", e.Data.GetFormats()));
                 return;
             }
 

@@ -295,6 +295,15 @@ namespace Remnant2SaveAnalyzer.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Debug prerequisites.
+        /// </summary>
+        public static string chkDebugPrerequisites {
+            get {
+                return ResourceManager.GetString("chkDebugPrerequisites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dump Analyzer data structures to analyzer.json .
         /// </summary>
         public static string chkDumpAnalyzerJson {
@@ -354,6 +363,15 @@ namespace Remnant2SaveAnalyzer.locales {
         public static string chkOpacity_note_Text {
             get {
                 return ResourceManager.GetString("chkOpacity_note_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report parser warnings.
+        /// </summary>
+        public static string chkReportParserWarnings {
+            get {
+                return ResourceManager.GetString("chkReportParserWarnings", resourceCulture);
             }
         }
         
@@ -880,6 +898,15 @@ namespace Remnant2SaveAnalyzer.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log level.
+        /// </summary>
+        public static string lblLogLevel {
+            get {
+                return ResourceManager.GetString("lblLogLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to World analyzer looted world drops / boss rewards color.
         /// </summary>
         public static string lblLootedItemColor {
@@ -1267,11 +1294,38 @@ namespace Remnant2SaveAnalyzer.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Debug.
+        /// </summary>
+        public static string Text_Debug {
+            get {
+                return ResourceManager.GetString("Text_Debug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dim.
         /// </summary>
         public static string Text_Dim {
             get {
                 return ResourceManager.GetString("Text_Dim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string Text_Error {
+            get {
+                return ResourceManager.GetString("Text_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fatal.
+        /// </summary>
+        public static string Text_Fatal {
+            get {
+                return ResourceManager.GetString("Text_Fatal", resourceCulture);
             }
         }
         
@@ -1285,11 +1339,38 @@ namespace Remnant2SaveAnalyzer.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        public static string Text_Information {
+            get {
+                return ResourceManager.GetString("Text_Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Normal.
         /// </summary>
         public static string Text_Normal {
             get {
                 return ResourceManager.GetString("Text_Normal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verbose.
+        /// </summary>
+        public static string Text_Verbose {
+            get {
+                return ResourceManager.GetString("Text_Verbose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        public static string Text_Warning {
+            get {
+                return ResourceManager.GetString("Text_Warning", resourceCulture);
             }
         }
         

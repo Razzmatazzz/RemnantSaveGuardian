@@ -11,12 +11,12 @@ public class MessageLoggedEventArgs : EventArgs
         Message = message;
     }
 
-    public MessageLoggedEventArgs(string message, LogType type)
+    public MessageLoggedEventArgs(string message, NotificationType type)
     {
         Message = new(message, type);
     }
 
-    public MessageLoggedEventArgs(string message) : this(message, LogType.Normal)
+    public MessageLoggedEventArgs(string message) : this(message, NotificationType.Normal)
     {
     }
 }

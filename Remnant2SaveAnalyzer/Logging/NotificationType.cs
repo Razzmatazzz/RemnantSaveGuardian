@@ -1,6 +1,6 @@
 ﻿namespace Remnant2SaveAnalyzer.Logging;
 
-public enum LogType
+public enum NotificationType
 {
     Normal,
     Success,

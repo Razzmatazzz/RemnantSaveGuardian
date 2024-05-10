@@ -72,7 +72,6 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                         //CharacterControl_SelectionChanged(null, null);
                     });
                 };
-                Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
                 BackupsPage.BackupSaveRestored += BackupsPage_BackupSaveRestored;
             }
 
@@ -223,15 +222,19 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             }
             if (e.PropertyName == "SaveFolder")
             {
-                _save = new(Properties.Settings.Default.SaveFolder);
-                _save.UpdateCharacters();
-                Dispatcher.Invoke(() => {
-                    ReloadPage();
-                    CheckAdventureTab();
+                Task.Run(() =>
+                {
+                    _save = new(Properties.Settings.Default.SaveFolder);
+                    _save.UpdateCharacters();
+                    Dispatcher.Invoke(() =>
+                    {
+                        ReloadPage();
+                        CheckAdventureTab();
+                    });
                 });
             }
 
-            if(e.PropertyName == "Language")
+            if (e.PropertyName == "Language")
             {
                 Dispatcher.Invoke(() =>
                 {
@@ -240,6 +243,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 });
             }
         }
+        
         private void ListView_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             MouseWheelEventArgs eBack = new(e.MouseDevice, e.Timestamp, e.Delta)

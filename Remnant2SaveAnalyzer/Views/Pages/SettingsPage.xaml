@@ -311,6 +311,26 @@
                 <WrapPanel Margin="0,16,0,0">
                     <ui:ToggleSwitch Name="chkDumpAnalyzerJson" Content="{lex:Loc}" IsChecked="{Binding DumpAnalyzerJson}" VerticalAlignment="Center" Margin="0,0,5,0"/>
                 </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkReportParserWarnings" Content="{lex:Loc}" IsChecked="{Binding ReportParserWarnings}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,16,0,0">
+                    <ui:ToggleSwitch Name="chkDebugPrerequisites" Content="{lex:Loc}" IsChecked="{Binding DebugPrerequisites}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </WrapPanel>
+                <WrapPanel Margin="0,8,0,0">
+                    <ComboBox Name="cmbLogLevel" VerticalAlignment="Top" Width="150" SelectionChanged="CmbLogLevel_SelectionChanged">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="{lex:Loc Text_Verbose}" Tag="Verbose"/>
+                            <ComboBoxItem Content="{lex:Loc Text_Debug}" Tag="Debug"/>
+                            <ComboBoxItem Content="{lex:Loc Text_Information}" Tag="Information"/>
+                            <ComboBoxItem Content="{lex:Loc Text_Warning}" Tag="Warning"/>
+                            <ComboBoxItem Content="{lex:Loc Text_Error}" Tag="Error"/>
+                            <ComboBoxItem Content="{lex:Loc Text_Fatal}" Tag="Fatal"/>
+                        </ComboBox.Items>
+                    </ComboBox>
+                    <TextBlock Name="lblLogLevel" Text="{lex:Loc}" ToolTip="{lex:Loc}" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                </WrapPanel>
+
             </StackPanel>
         </ui:CardExpander>
         <ui:Anchor Name="LinkToRepo" Margin="0,8,0,8" Content="{lex:Loc AboutRSG}" NavigateUri="https://github.com/AndrewSav/Remnant2SaveAnalyzer" />

@@ -319,7 +319,7 @@
     <value>Light</value>
   </data>
   <data name="Log" xml:space="preserve">
-    <value>Log</value>
+    <value>Normal</value>
   </data>
   <data name="menuRestoreAll_Header" xml:space="preserve">
     <value>Everything</value>
@@ -557,5 +557,32 @@
   </data>
   <data name="Text_Dim" xml:space="preserve">
     <value>Dim</value>
+  </data>
+  <data name="chkDebugPrerequisites" xml:space="preserve">
+    <value>Debug prerequisites</value>
+  </data>
+  <data name="chkReportParserWarnings" xml:space="preserve">
+    <value>Report parser warnings</value>
+  </data>
+  <data name="lblLogLevel" xml:space="preserve">
+    <value>Log level</value>
+  </data>
+  <data name="Text_Debug" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="Text_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Text_Fatal" xml:space="preserve">
+    <value>Fatal</value>
+  </data>
+  <data name="Text_Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Text_Verbose" xml:space="preserve">
+    <value>Verbose</value>
+  </data>
+  <data name="Text_Warning" xml:space="preserve">
+    <value>Warning</value>
   </data>
 </root>

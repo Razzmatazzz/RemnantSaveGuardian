@@ -9,6 +9,7 @@ using lib.remnant2.analyzer;
 using Newtonsoft.Json;
 using Remnant2SaveAnalyzer.Properties;
 using Remnant2SaveAnalyzer.Logging;
+using Log = Remnant2SaveAnalyzer.Logging.Log;
 
 namespace Remnant2SaveAnalyzer
 {
@@ -25,7 +26,7 @@ namespace Remnant2SaveAnalyzer
         private readonly string _profileFile;
         private readonly RemnantSaveType _saveType;
         private readonly WindowsSave? _winSave;
-        private readonly object _loadLock = new();
+        private static readonly object LoadLock = new();
 
         public static readonly Guid FolderIdSavedGames = new(0x4C5C32FF, 0xBB9D, 0x43B0, 0xB5, 0xB4, 0x2D, 0x72, 0xE5, 0x4E, 0xAA, 0xA4);
         [DllImport("shell32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, PreserveSig = false)]
@@ -95,7 +96,7 @@ namespace Remnant2SaveAnalyzer
 
         public void UpdateCharacters()
         {
-            lock (_loadLock)
+            lock (LoadLock)
             {
                 bool first = _remnantDataset == null;
 
@@ -111,11 +112,7 @@ namespace Remnant2SaveAnalyzer
 
                 if (first)
                 {
-                    //ReportAnalyzerDebugMessages();
-                    //if (Settings.Default.ReportPerformance)
-                    //{
-                    //    ReportAnalyzerPerformanceMetrics();
-                    //}
+                    Log.StartUpFinished();
 
                     if (Settings.Default.ReportPlayerInfo)
                     {
@@ -130,33 +127,6 @@ namespace Remnant2SaveAnalyzer
             }
         }
 
-        /*
-        private void ReportAnalyzerDebugMessages()
-        {
-            if (_remnantDataset is { DebugMessages.Count: > 0 })
-            {
-                logger.Warning("BEGIN Analyser warnings");
-                foreach (string message in _remnantDataset.DebugMessages)
-                {
-                    logger.Warning("  " + message);
-                }
-                Notifications.Warn("There were some analyzer warnings");
-            }
-        }
-
-        private void ReportAnalyzerPerformanceMetrics()
-        {
-            if (_remnantDataset is { DebugPerformance.Count: > 0 })
-            {
-                logger.Information("BEGIN Performance metrics");
-                foreach (KeyValuePair<string, TimeSpan> message in _remnantDataset.DebugPerformance)
-                {
-                    logger.Information($"  {message.Key}; {message.Value}");
-                }
-                logger.Information("END Performance metrics");
-            }
-        }
-        */
         private void DumpAnalyzerJson()
         {
             JsonSerializer serializer = new()
@@ -183,9 +153,9 @@ namespace Remnant2SaveAnalyzer
         {
             Debug.Assert(_remnantDataset != null, nameof(_remnantDataset) + " != null");
 
-            var logger = Logging.Log.Logger
+            var logger = Log.Logger
                 .ForContext<RemnantSave>()
-                .ForContext("RemnantLogCategory", "PlayerInfo");
+                .ForContext(Log.Category, Log.PlayerInfo);
             
 
             logger.Information($"Active character save: save_{_remnantDataset.ActiveCharacterIndex}.sav");

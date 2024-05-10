@@ -74,7 +74,7 @@ namespace Remnant2SaveAnalyzer.Views.Windows
 
                 if (Settings.Default.SaveFolder.Length == 0)
                 {
-                    Notifications.Log("Save folder not set; reverting to default.");
+                    Notifications.Normal("Save folder not set; reverting to default.");
                     Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
                     if (!Directory.Exists(RemnantSave.DefaultSaveFolder()))
                     {
@@ -95,19 +95,19 @@ namespace Remnant2SaveAnalyzer.Views.Windows
                 }
                 else if (!Directory.Exists(Settings.Default.SaveFolder) && !Settings.Default.SaveFolder.Equals(RemnantSave.DefaultSaveFolder()))
                 {
-                    Notifications.Log($"Save folder ({Settings.Default.SaveFolder}) not found; reverting to default.");
+                    Notifications.Normal($"Save folder ({Settings.Default.SaveFolder}) not found; reverting to default.");
                     Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
                 }
                 if (!Directory.Exists(Settings.Default.SaveFolder))
                 {
-                    Notifications.Log("Save folder not found, creating...");
+                    Notifications.Normal("Save folder not found, creating...");
                     Directory.CreateDirectory(Settings.Default.SaveFolder);
                 }
                 SaveWatcher.Watch(Settings.Default.SaveFolder);
 
                 if (!Directory.Exists(Settings.Default.GameFolder))
                 {
-                    Notifications.Log("Game folder not found...");
+                    Notifications.Normal("Game folder not found...");
                     //this.btnStartGame.IsEnabled = false;
                     //this.btnStartGame.Content = this.FindResource("PlayGrey");
                     //this.backupCMStart.IsEnabled = false;
@@ -128,7 +128,7 @@ namespace Remnant2SaveAnalyzer.Views.Windows
                     UpdateCheck.CheckForNewVersion();
                 }
                 LocalizeDictionary.Instance.MissingKeyEvent += (_, _) => {
-                    //Notifications.Log($"Missing translation for key: {e.Key}");
+                    //Notifications.Normal($"Missing translation for key: {e.Key}");
                 };
             } catch (Exception ex)
             {
@@ -191,7 +191,7 @@ namespace Remnant2SaveAnalyzer.Views.Windows
         {
             Dispatcher.Invoke(() =>
             {
-                Notifications.Log(Loc.T($"New version {e.Version} available!"));
+                Notifications.Normal(Loc.T($"New version {e.Version} available!"));
             });
         }
 
@@ -279,19 +279,19 @@ namespace Remnant2SaveAnalyzer.Views.Windows
                 ControlAppearance appearance = ControlAppearance.Info;
                 SymbolRegular symbol = SymbolRegular.Info24;
                 string title = Loc.T("Info");
-                if (e.Message.LogType == LogType.Error)
+                if (e.Message.NotificationType == NotificationType.Error)
                 {
                     appearance = ControlAppearance.Danger;
                     symbol = SymbolRegular.ErrorCircle24;
                     title = Loc.T("Error");
                 }
-                if (e.Message.LogType == LogType.Warning)
+                if (e.Message.NotificationType == NotificationType.Warning)
                 {
                     appearance = ControlAppearance.Caution;
                     symbol = SymbolRegular.Warning24;
                     title = Loc.T("Warning");
                 }
-                if (e.Message.LogType == LogType.Success)
+                if (e.Message.NotificationType == NotificationType.Success)
                 {
                     appearance = ControlAppearance.Success;
                     symbol = SymbolRegular.CheckmarkCircle24;

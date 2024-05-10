@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Common.Interfaces;
@@ -37,6 +38,16 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                 //cmbMissingItemColor.SelectedValuePath = "Tag";
                 cmbMissingItemColor.SelectedIndex = Properties.Settings.Default.MissingItemColor == "Highlight" ? 1 : 0;
                 cmbLootedItemColor.SelectedIndex = Properties.Settings.Default.LootedItemColor == "Dim" ? 1 : 0;
+                cmbLogLevel.SelectedIndex = Properties.Settings.Default.LogLevel switch
+                {
+                    "Verbose" => 0,
+                    "Debug" => 1,
+                    "Information" => 2,
+                    "Warning" => 3,
+                    "Error" => 4,
+                    "Fatal" => 5,
+                    _ => 2
+                };
 
                 foreach (ComboBoxItem item in cmbStartPage.Items)
                 {
@@ -125,7 +136,7 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             }
             if (e.PropertyName == "EnableOpacity")
             {
-                Notifications.Log(Loc.T("Opacity_toggle_notice"));
+                Notifications.Normal(Loc.T("Opacity_toggle_notice"));
             }
             if (e.PropertyName == "Opacity" || e.PropertyName == "OnlyInactive" || e.PropertyName == "Theme")
             {
@@ -393,6 +404,11 @@ namespace Remnant2SaveAnalyzer.Views.Pages
         private void CmbLootedItemColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Properties.Settings.Default.LootedItemColor = ((ComboBoxItem)cmbLootedItemColor.SelectedItem).Tag.ToString();
+        }
+
+        private void CmbLogLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Properties.Settings.Default.LogLevel = ((ComboBoxItem)cmbLogLevel.SelectedItem).Tag.ToString();
         }
     }
 }

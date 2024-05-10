@@ -185,5 +185,14 @@
     <Setting Name="LootedItemColor" Type="System.String" Scope="User">
       <Value Profile="(Default)">Dim</Value>
     </Setting>
+    <Setting Name="ReportParserWarnings" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DebugPrerequisites" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LogLevel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Information</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -70,6 +70,7 @@ namespace Remnant2SaveAnalyzer
         /// </summary>
         private async void OnStartup(object sender, StartupEventArgs e)
         {
+            Logging.Log.InitialiseSerilog();
             CultureInfo culture = CultureInfo.CurrentCulture;
             List<CultureInfo>cultures = EnumerateSupportedCultures();
             Current.Properties["langs"] = cultures;

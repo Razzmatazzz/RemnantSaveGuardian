@@ -25,16 +25,16 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             Notifications.MessageLogged += Logger_MessageLogged;
             foreach (LogMessage logMessage in Notifications.Messages)
             {
-                AddMessage(logMessage.Text, logMessage.LogType);
+                AddMessage(logMessage.Text, logMessage.NotificationType);
             }
         }
 
         private void Logger_MessageLogged(object? sender, MessageLoggedEventArgs e)
         {
-            AddMessage(e.Message.Text, e.Message.LogType);
+            AddMessage(e.Message.Text, e.Message.NotificationType);
         }
 
-        private void AddMessage(string message, LogType logType)
+        private void AddMessage(string message, NotificationType notificationType)
         {
             Dispatcher.Invoke(delegate {
                 InfoBar infoBar = new()
@@ -43,15 +43,15 @@ namespace Remnant2SaveAnalyzer.Views.Pages
                     IsOpen = true,
                     Title = DateTime.Now.ToString(CultureInfo.InvariantCulture),
                 };
-                if (logType == LogType.Error)
+                if (notificationType == NotificationType.Error)
                 {
                     infoBar.Severity = InfoBarSeverity.Error;
                 }
-                if (logType == LogType.Warning)
+                if (notificationType == NotificationType.Warning)
                 {
                     infoBar.Severity = InfoBarSeverity.Warning;
                 }
-                if (logType == LogType.Success)
+                if (notificationType == NotificationType.Success)
                 {
                     infoBar.Severity = InfoBarSeverity.Success;
                 }
