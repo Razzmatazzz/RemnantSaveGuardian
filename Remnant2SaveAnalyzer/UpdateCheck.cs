@@ -7,6 +7,7 @@ using System.Text.Json.Nodes;
 using System.Windows;
 using System.Windows.Controls;
 using MessageBox = Wpf.Ui.Controls.MessageBox;
+using Remnant2SaveAnalyzer.Logging;
 
 namespace Remnant2SaveAnalyzer
 {
@@ -24,7 +25,7 @@ namespace Remnant2SaveAnalyzer
             {
                 if (_lastUpdateCheck.AddMinutes(5) > DateTime.Now)
                 {
-                    Logger.Warn(Loc.T("You must wait 5 minutes between update checks"));
+                    Notifications.Warn(Loc.T("You must wait 5 minutes between update checks"));
                     return;
                 }
                 _lastUpdateCheck = DateTime.Now;
@@ -98,7 +99,7 @@ namespace Remnant2SaveAnalyzer
             }
             catch (Exception ex)
             {
-                Logger.Error($"{Loc.T("Error checking for new version")}: {ex.Message}");
+                Notifications.Error($"{Loc.T("Error checking for new version")}: {ex.Message}");
             }
         }
     }

@@ -1,4 +1,5 @@
 using lib.remnant2.analyzer;
+using Remnant2SaveAnalyzer.Logging;
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -69,7 +70,7 @@ namespace Remnant2SaveAnalyzer
             }
             catch (Exception ex)
             {
-                Logger.Error($"Could not read profile from backup: {ex}");
+                Notifications.Error($"Could not read profile from backup: {ex}");
             }
 
             _saveData = new SaveData

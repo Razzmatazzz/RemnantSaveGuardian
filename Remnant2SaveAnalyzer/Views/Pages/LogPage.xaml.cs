@@ -1,6 +1,7 @@
 ﻿//using System.Drawing;
 using System;
 using System.Globalization;
+using Remnant2SaveAnalyzer.Logging;
 using Wpf.Ui.Common.Interfaces;
 using Wpf.Ui.Controls;
 
@@ -21,16 +22,16 @@ namespace Remnant2SaveAnalyzer.Views.Pages
             ViewModel = viewModel;
 
             InitializeComponent();
-            Logger.MessageLogged += Logger_MessageLogged;
-            foreach (LogMessage logMessage in Logger.Messages)
+            Notifications.MessageLogged += Logger_MessageLogged;
+            foreach (LogMessage logMessage in Notifications.Messages)
             {
-                AddMessage(logMessage.Message, logMessage.LogType);
+                AddMessage(logMessage.Text, logMessage.LogType);
             }
         }
 
         private void Logger_MessageLogged(object? sender, MessageLoggedEventArgs e)
         {
-            AddMessage(e.Message, e.LogType);
+            AddMessage(e.Message.Text, e.Message.LogType);
         }
 
         private void AddMessage(string message, LogType logType)

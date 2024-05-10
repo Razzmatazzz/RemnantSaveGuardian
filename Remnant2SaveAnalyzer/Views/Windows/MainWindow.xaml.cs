@@ -17,6 +17,7 @@ using Wpf.Ui.Controls.Interfaces;
 using Wpf.Ui.Mvvm.Contracts;
 using WPFLocalizeExtension.Engine;
 using MenuItem = Wpf.Ui.Controls.MenuItem;
+using Remnant2SaveAnalyzer.Logging;
 
 namespace Remnant2SaveAnalyzer.Views.Windows
 {
@@ -64,7 +65,7 @@ namespace Remnant2SaveAnalyzer.Views.Windows
 
             try
             {                
-                Logger.MessageLogged += Logger_MessageLogged;
+                Notifications.MessageLogged += Logger_MessageLogged;
 
                 string? theme = Settings.Default.Theme;
                 Wpf.Ui.Appearance.Theme.Apply(theme == "Light"
@@ -73,11 +74,11 @@ namespace Remnant2SaveAnalyzer.Views.Windows
 
                 if (Settings.Default.SaveFolder.Length == 0)
                 {
-                    Logger.Log("Save folder not set; reverting to default.");
+                    Notifications.Log("Save folder not set; reverting to default.");
                     Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
                     if (!Directory.Exists(RemnantSave.DefaultSaveFolder()))
                     {
-                        Logger.Error(Loc.T("Could not find save file location; please set manually"));
+                        Notifications.Error(Loc.T("Could not find save file location; please set manually"));
                         /*if (Directory.Exists(RemnantSave.DefaultWgsSaveFolder))
                         {
                             var dirs = Directory.GetDirectories(RemnantSave.DefaultWgsSaveFolder);
@@ -94,19 +95,19 @@ namespace Remnant2SaveAnalyzer.Views.Windows
                 }
                 else if (!Directory.Exists(Settings.Default.SaveFolder) && !Settings.Default.SaveFolder.Equals(RemnantSave.DefaultSaveFolder()))
                 {
-                    Logger.Log($"Save folder ({Settings.Default.SaveFolder}) not found; reverting to default.");
+                    Notifications.Log($"Save folder ({Settings.Default.SaveFolder}) not found; reverting to default.");
                     Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
                 }
                 if (!Directory.Exists(Settings.Default.SaveFolder))
                 {
-                    Logger.Log("Save folder not found, creating...");
+                    Notifications.Log("Save folder not found, creating...");
                     Directory.CreateDirectory(Settings.Default.SaveFolder);
                 }
                 SaveWatcher.Watch(Settings.Default.SaveFolder);
 
                 if (!Directory.Exists(Settings.Default.GameFolder))
                 {
-                    Logger.Log("Game folder not found...");
+                    Notifications.Log("Game folder not found...");
                     //this.btnStartGame.IsEnabled = false;
                     //this.btnStartGame.Content = this.FindResource("PlayGrey");
                     //this.backupCMStart.IsEnabled = false;
@@ -127,11 +128,11 @@ namespace Remnant2SaveAnalyzer.Views.Windows
                     UpdateCheck.CheckForNewVersion();
                 }
                 LocalizeDictionary.Instance.MissingKeyEvent += (_, _) => {
-                    //Logger.Log($"Missing translation for key: {e.Key}");
+                    //Notifications.Log($"Missing translation for key: {e.Key}");
                 };
             } catch (Exception ex)
             {
-                Logger.Error($"Error loading main window: {ex.Message}");
+                Notifications.Error($"Error loading main window: {ex.Message}");
             }
         }
 
@@ -190,7 +191,7 @@ namespace Remnant2SaveAnalyzer.Views.Windows
         {
             Dispatcher.Invoke(() =>
             {
-                Logger.Log(Loc.T($"New version {e.Version} available!"));
+                Notifications.Log(Loc.T($"New version {e.Version} available!"));
             });
         }
 
@@ -278,19 +279,19 @@ namespace Remnant2SaveAnalyzer.Views.Windows
                 ControlAppearance appearance = ControlAppearance.Info;
                 SymbolRegular symbol = SymbolRegular.Info24;
                 string title = Loc.T("Info");
-                if (e.LogType == LogType.Error)
+                if (e.Message.LogType == LogType.Error)
                 {
                     appearance = ControlAppearance.Danger;
                     symbol = SymbolRegular.ErrorCircle24;
                     title = Loc.T("Error");
                 }
-                if (e.LogType == LogType.Warning)
+                if (e.Message.LogType == LogType.Warning)
                 {
                     appearance = ControlAppearance.Caution;
                     symbol = SymbolRegular.Warning24;
                     title = Loc.T("Warning");
                 }
-                if (e.LogType == LogType.Success)
+                if (e.Message.LogType == LogType.Success)
                 {
                     appearance = ControlAppearance.Success;
                     symbol = SymbolRegular.CheckmarkCircle24;
@@ -299,7 +300,7 @@ namespace Remnant2SaveAnalyzer.Views.Windows
 
                 if (!snackbar.IsShown || CompareTitle(title, snackbar.Title) >= 0)
                 {
-                    snackbar.Show(title, e.Message, symbol, appearance);
+                    snackbar.Show(title, e.Message.Text, symbol, appearance);
                 }
             });
         }

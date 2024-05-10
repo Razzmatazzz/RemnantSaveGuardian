@@ -8,6 +8,7 @@ using lib.remnant2.analyzer.Model;
 using lib.remnant2.analyzer;
 using Newtonsoft.Json;
 using Remnant2SaveAnalyzer.Properties;
+using Remnant2SaveAnalyzer.Logging;
 
 namespace Remnant2SaveAnalyzer
 {
@@ -73,6 +74,7 @@ namespace Remnant2SaveAnalyzer
 
         public static bool ValidSaveFolder(string folder)
         {
+                
             if (!Directory.Exists(folder))
             {
                 return false;
@@ -103,21 +105,21 @@ namespace Remnant2SaveAnalyzer
                 }
                 catch (Exception ex)
                 {
-                    Logger.Error(ex);
+                    Notifications.Error(ex.ToString());
                     return;
                 }
 
                 if (first)
                 {
-                    ReportAnalyzerDebugMessages();
-                    if (Settings.Default.ReportPerformance)
-                    {
-                        ReportAnalyzerPerformanceMetrics();
-                    }
+                    //ReportAnalyzerDebugMessages();
+                    //if (Settings.Default.ReportPerformance)
+                    //{
+                    //    ReportAnalyzerPerformanceMetrics();
+                    //}
 
                     if (Settings.Default.ReportPlayerInfo)
                     {
-                        ReportPlayerInfo();
+                        ReportPlayerInfo(); 
                     }
 
                     if (Settings.Default.DumpAnalyzerJson)
@@ -128,16 +130,17 @@ namespace Remnant2SaveAnalyzer
             }
         }
 
+        /*
         private void ReportAnalyzerDebugMessages()
         {
             if (_remnantDataset is { DebugMessages.Count: > 0 })
             {
-                Logger.WarnSilent("BEGIN Analyser warnings");
+                logger.Warning("BEGIN Analyser warnings");
                 foreach (string message in _remnantDataset.DebugMessages)
                 {
-                    Logger.WarnSilent("  " + message);
+                    logger.Warning("  " + message);
                 }
-                Logger.Warn("There were some analyzer warnings");
+                Notifications.Warn("There were some analyzer warnings");
             }
         }
 
@@ -145,15 +148,15 @@ namespace Remnant2SaveAnalyzer
         {
             if (_remnantDataset is { DebugPerformance.Count: > 0 })
             {
-                Logger.LogSilent("BEGIN Performance metrics");
+                logger.Information("BEGIN Performance metrics");
                 foreach (KeyValuePair<string, TimeSpan> message in _remnantDataset.DebugPerformance)
                 {
-                    Logger.LogSilent($"  {message.Key}; {message.Value}");
+                    logger.Information($"  {message.Key}; {message.Value}");
                 }
-                Logger.LogSilent("END Performance metrics");
+                logger.Information("END Performance metrics");
             }
         }
-
+        */
         private void DumpAnalyzerJson()
         {
             JsonSerializer serializer = new()
@@ -179,10 +182,16 @@ namespace Remnant2SaveAnalyzer
         private void ReportPlayerInfo()
         {
             Debug.Assert(_remnantDataset != null, nameof(_remnantDataset) + " != null");
-            Logger.LogSilent($"Active character save: save_{_remnantDataset.ActiveCharacterIndex}.sav");
+
+            var logger = Logging.Log.Logger
+                .ForContext<RemnantSave>()
+                .ForContext("RemnantLogCategory", "PlayerInfo");
+            
+
+            logger.Information($"Active character save: save_{_remnantDataset.ActiveCharacterIndex}.sav");
 
             // Account Awards ------------------------------------------------------------
-            Logger.LogSilent("BEGIN Account Awards");
+            logger.Information("BEGIN Account Awards");
             foreach (string award in _remnantDataset.AccountAwards)
             {
                 if (award.StartsWith("AccountAward_"))
@@ -190,19 +199,19 @@ namespace Remnant2SaveAnalyzer
                     LootItem? lootItem = ItemDb.GetItemByIdOrDefault(award);
                     if (lootItem == null)
                     {
-                        Logger.WarnSilent($"  UnknownMarker account award: {award}");
+                        logger.Warning($"  UnknownMarker account award: {award}");
                     }
                     else
                     {
-                        Logger.LogSilent($"  Account award: {lootItem.Name}");
+                        logger.Information($"  Account award: {lootItem.Name}");
                     }
                 }
             }
             foreach (Dictionary<string, string> m in ItemDb.Db.Where(x => x["Type"] == "award" && !_remnantDataset.AccountAwards.Exists(y => y == x["Id"])))
             {
-                Logger.LogSilent($"  Missing {Utils.Capitalize(m["Type"])}: {m["Name"]}");
+                logger.Information($"  Missing {Utils.Capitalize(m["Type"])}: {m["Name"]}");
             }
-            Logger.LogSilent("END Account Awards");
+            logger.Information("END Account Awards");
 
             for (int index = 0; index < _remnantDataset.Characters.Count; index++)
             {
@@ -211,16 +220,16 @@ namespace Remnant2SaveAnalyzer
                 int acquired = character.Profile.AcquiredItems;
                 int missing = character.Profile.MissingItems.Count;
                 int total = acquired + missing;
-                Logger.LogSilent($"Character {index+1} (save_{character.Index}), Acquired Items: {acquired}, Missing Items: {missing}, Total: {total}");
-                Logger.LogSilent($"Is Hardcore: {character.Profile.IsHardcore}");
-                Logger.LogSilent($"Trait Rank: {character.Profile.TraitRank}");
-                Logger.LogSilent($"Last Saved Trait Points: {character.Profile.LastSavedTraitPoints}");
-                Logger.LogSilent($"Power Level: {character.Profile.PowerLevel}");
-                Logger.LogSilent($"Item Level: {character.Profile.ItemLevel}");
-                Logger.LogSilent($"Gender: {character.Profile.Gender}");
+                logger.Information($"Character {index+1} (save_{character.Index}), Acquired Items: {acquired}, Missing Items: {missing}, Total: {total}");
+                logger.Information($"Is Hardcore: {character.Profile.IsHardcore}");
+                logger.Information($"Trait Rank: {character.Profile.TraitRank}");
+                logger.Information($"Last Saved Trait Points: {character.Profile.LastSavedTraitPoints}");
+                logger.Information($"Power Level: {character.Profile.PowerLevel}");
+                logger.Information($"Item Level: {character.Profile.ItemLevel}");
+                logger.Information($"Gender: {character.Profile.Gender}");
 
                 // Inventory ------------------------------------------------------------
-                Logger.LogSilent($"BEGIN Inventory, Character {index+1} (save_{character.Index}), mode: inventory");
+                logger.Information($"BEGIN Inventory, Character {index+1} (save_{character.Index}), mode: inventory");
 
                 IEnumerable<LootItem> lootItems = character.Profile.Inventory
                     .Select(ItemDb.GetItemByProfileId)
@@ -232,7 +241,7 @@ namespace Remnant2SaveAnalyzer
                     if (!Utils.IsKnownInventoryItem(Utils.GetNameFromProfileId(s)))
                     {
 
-                        Logger.WarnSilent($"  Inventory item not found in database: {s}");
+                        logger.Warning($"  Inventory item not found in database: {s}");
                     }
                 }
 
@@ -242,122 +251,122 @@ namespace Remnant2SaveAnalyzer
 
                 foreach (IGrouping<string, LootItem> type in itemTypes)
                 {
-                    Logger.LogSilent("  " + Utils.Capitalize(type.Key)+":");
+                    logger.Information("  " + Utils.Capitalize(type.Key)+":");
                     if (!type.Any())
                     {
-                        Logger.LogSilent("    None");
+                        logger.Information("    None");
                     }
                     foreach (LootItem lootItem in type.OrderBy(x => x.Name))
                     {
-                        Logger.LogSilent("    " + lootItem.Name);
+                        logger.Information("    " + lootItem.Name);
                     }
                 }
 
-                Logger.LogSilent($"END Inventory, Character {index+1} (save_{character.Index}), mode: inventory");
+                logger.Information($"END Inventory, Character {index+1} (save_{character.Index}), mode: inventory");
 
 
                 // Campaign ------------------------------------------------------------
-                Logger.LogSilent($"Save play time: {Utils.FormatPlaytime(character.Save.Playtime)}");
+                logger.Information($"Save play time: {Utils.FormatPlaytime(character.Save.Playtime)}");
                 foreach (Zone z in character.Save.Campaign.Zones)
                 {
-                    Logger.LogSilent($"Campaign story: {z.Story}");
+                    logger.Information($"Campaign story: {z.Story}");
                 }
-                Logger.LogSilent($"Campaign difficulty: {character.Save.Campaign.Difficulty}");
-                Logger.LogSilent($"Campaign play time: {Utils.FormatPlaytime(character.Save.Campaign.Playtime)}");
+                logger.Information($"Campaign difficulty: {character.Save.Campaign.Difficulty}");
+                logger.Information($"Campaign play time: {Utils.FormatPlaytime(character.Save.Campaign.Playtime)}");
 
                 // Campaign Quest Inventory ------------------------------------------------------------
-                Logger.LogSilent($"BEGIN Quest inventory, Character {index+1} (save_{character.Index}), mode: campaign");
+                logger.Information($"BEGIN Quest inventory, Character {index+1} (save_{character.Index}), mode: campaign");
                 lootItems = character.Save.Campaign.QuestInventory.Select(ItemDb.GetItemByProfileId).Where(x => x != null).OrderBy(x => x!.Name)!;
                 absent = character.Save.Campaign.QuestInventory.Where(x => ItemDb.GetItemByProfileId(x) == null);
                 foreach (string s in absent)
                 {
-                    Logger.WarnSilent($"  Quest item not found in database: {s}");
+                    logger.Warning($"  Quest item not found in database: {s}");
                 }
 
                 foreach (LootItem lootItem in lootItems)
                 {
-                    Logger.LogSilent("  " + lootItem.Name);
+                    logger.Information("  " + lootItem.Name);
                 }
-                Logger.LogSilent($"END Quest inventory, Character {index+1} (save_{character.Index}), mode: campaign");
+                logger.Information($"END Quest inventory, Character {index+1} (save_{character.Index}), mode: campaign");
 
                 if (character.Save.Adventure != null)
                 {
                     // Adventure ------------------------------------------------------------
-                    Logger.LogSilent($"Adventure story: {character.Save.Adventure.Zones[0].Story}");
-                    Logger.LogSilent($"Adventure difficulty: {character.Save.Adventure.Difficulty}");
-                    Logger.LogSilent($"Adventure play time: {Utils.FormatPlaytime(character.Save.Adventure.Playtime)}");
+                    logger.Information($"Adventure story: {character.Save.Adventure.Zones[0].Story}");
+                    logger.Information($"Adventure difficulty: {character.Save.Adventure.Difficulty}");
+                    logger.Information($"Adventure play time: {Utils.FormatPlaytime(character.Save.Adventure.Playtime)}");
                     
                     // Adventure Quest Inventory ------------------------------------------------------------
-                    Logger.LogSilent($"BEGIN Quest inventory, Character {index+1} (save_{character.Index}), mode: adventure");
+                    logger.Information($"BEGIN Quest inventory, Character {index+1} (save_{character.Index}), mode: adventure");
                     lootItems = character.Save.Adventure.QuestInventory.Select(ItemDb.GetItemByProfileId).Where(x => x != null).OrderBy(x => x!.Name)!;
                     absent = character.Save.Adventure.QuestInventory.Where(x => ItemDb.GetItemByProfileId(x) == null);
                     foreach (string s in absent)
                     {
-                        Logger.WarnSilent($"  Quest item not found in database: {s}");
+                        logger.Warning($"  Quest item not found in database: {s}");
                     }
 
                     foreach (LootItem lootItem in lootItems)
                     {
-                        Logger.LogSilent("  " + lootItem.Name);
+                        logger.Information("  " + lootItem.Name);
                     }
 
-                    Logger.LogSilent($"END Quest inventory, Character {index+1} (save_{character.Index}), mode: adventure");
+                    logger.Information($"END Quest inventory, Character {index+1} (save_{character.Index}), mode: adventure");
                 }
 
                 // Cass shop ------------------------------------------------------------
-                Logger.LogSilent($"BEGIN Cass shop, Character {index+1} (save_{character.Index})");
+                logger.Information($"BEGIN Cass shop, Character {index+1} (save_{character.Index})");
                 foreach (LootItem lootItem in character.Save.CassShop)
                 {
-                    Logger.LogSilent("  " + lootItem.Name);
+                    logger.Information("  " + lootItem.Name);
                 }
-                Logger.LogSilent($"END Cass shop, Character {index+1} (save_{character.Index})");
+                logger.Information($"END Cass shop, Character {index+1} (save_{character.Index})");
 
                 // Quest log ------------------------------------------------------------
-                Logger.LogSilent($"BEGIN Quest log, Character {index+1} (save_{character.Index})");
+                logger.Information($"BEGIN Quest log, Character {index+1} (save_{character.Index})");
                 lootItems = character.Save.QuestCompletedLog
                     .Select(x => ItemDb.GetItemByIdOrDefault($"Quest_{x}")).Where(x => x != null)!;
                 absent = character.Save.QuestCompletedLog.Where(x => ItemDb.GetItemByIdOrDefault($"Quest_{x}") == null);
                 foreach (string s in absent)
                 {
-                    Logger.WarnSilent($"  Quest not found in database: {s}");
+                    logger.Warning($"  Quest not found in database: {s}");
                 }
                 foreach (LootItem lootItem in lootItems)
                 {
-                    Logger.LogSilent($"  {lootItem.Name} ({lootItem.Item["Subtype"]})");
+                    logger.Information($"  {lootItem.Name} ({lootItem.Item["Subtype"]})");
                 }
-                Logger.LogSilent($"END Quest log, Character {index+1} (save_{character.Index})");
+                logger.Information($"END Quest log, Character {index+1} (save_{character.Index})");
 
                 // Achievements ------------------------------------------------------------
-                Logger.LogSilent($"BEGIN Achievements for Character {index+1} (save_{character.Index})");
+                logger.Information($"BEGIN Achievements for Character {index+1} (save_{character.Index})");
                 foreach (ObjectiveProgress objective in character.Profile.Objectives)
                 {
                     if (objective.Type == "achievement")
                     {
-                        Logger.LogSilent($"  {Utils.Capitalize(objective.Type)}: {objective.Description} - {objective.Progress}");
+                        logger.Information($"  {Utils.Capitalize(objective.Type)}: {objective.Description} - {objective.Progress}");
                     }
                 }
 
                 foreach (Dictionary<string, string> m in ItemDb.Db.Where(x => x["Type"] == "achievement" && !character.Profile.Objectives.Exists(y => y.Id == x["Id"])))
                 {
-                    Logger.LogSilent($"  Missing {Utils.Capitalize(m["Type"])}: {m["Name"]}");
+                    logger.Information($"  Missing {Utils.Capitalize(m["Type"])}: {m["Name"]}");
                 }
 
-                Logger.LogSilent($"END Achievements for Character {index+1} (save_{character.Index})");
+                logger.Information($"END Achievements for Character {index+1} (save_{character.Index})");
 
                 // Challenges ------------------------------------------------------------
-                Logger.LogSilent($"BEGIN Challenges for Character {index+1} (save_{character.Index})");
+                logger.Information($"BEGIN Challenges for Character {index+1} (save_{character.Index})");
                 foreach (ObjectiveProgress objective in character.Profile.Objectives)
                 {
                     if (objective.Type == "challenge")
                     {
-                        Logger.LogSilent($"  {Utils.Capitalize(objective.Type)}: {objective.Description} - {objective.Progress}");
+                        logger.Information($"  {Utils.Capitalize(objective.Type)}: {objective.Description} - {objective.Progress}");
                     }
                 }
                 foreach (Dictionary<string, string> m in ItemDb.Db.Where(x => x["Type"] == "challenge" && !character.Profile.Objectives.Exists(y => y.Id == x["Id"])))
                 {
-                    Logger.LogSilent($"  Missing {Utils.Capitalize(m["Type"])}: {m["Name"]}");
+                    logger.Information($"  Missing {Utils.Capitalize(m["Type"])}: {m["Name"]}");
                 }
-                Logger.LogSilent($"END Challenges for Character {index+1} (save_{character.Index})");
+                logger.Information($"END Challenges for Character {index+1} (save_{character.Index})");
             }
         }
 

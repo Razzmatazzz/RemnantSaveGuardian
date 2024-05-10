@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Remnant2SaveAnalyzer.Logging;
 
 namespace Remnant2SaveAnalyzer
 {
@@ -55,7 +56,7 @@ namespace Remnant2SaveAnalyzer
             }
             catch (Exception ex)
             {
-                Logger.Error($"{ex.GetType()} {Loc.T("setting save file timer")}: {ex.Message} ({ex.StackTrace})");
+                Notifications.Error($"{ex.GetType()} {Loc.T("setting save file timer")}: {ex.Message} ({ex.StackTrace})");
             }
         }
 
