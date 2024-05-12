@@ -1744,15 +1744,6 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Story: Farlorn Coast.
-        /// </summary>
-        public static string FarlornCoastStory {
-            get {
-                return ResourceManager.GetString("FarlornCoastStory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Root Nexus.
         /// </summary>
         public static string Flautist {
@@ -1776,6 +1767,15 @@ namespace RemnantSaveGuardian.locales {
         public static string ForgottenPrison {
             get {
                 return ResourceManager.GetString("ForgottenPrison", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Story: Forlorn Coast.
+        /// </summary>
+        public static string ForlornCoastStory {
+            get {
+                return ResourceManager.GetString("ForlornCoastStory", resourceCulture);
             }
         }
         
