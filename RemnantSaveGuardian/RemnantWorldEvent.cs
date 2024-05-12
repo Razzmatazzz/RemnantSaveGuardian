@@ -1125,32 +1125,32 @@ namespace RemnantSaveGuardian
                         else if (worldEvent.RawName == "OneTrueKingStory")
                         {
                             // Story-Map
-                            var coast = new RemnantWorldEvent("FarlornCoast", "FarlornCoast", new() { "World_Fae", "Farlorn Coast"}, worldEvent.RawType);
+                            var coast = new RemnantWorldEvent("ForlornCoast", "ForlornCoast", new() { "World_Fae", "Forlorn Coast"}, worldEvent.RawType);
                             coast.setMissingItems(character);
-                            if (areaEvents.FindIndex(e => e.RawName == "FarlornCoast") == -1)
+                            if (areaEvents.FindIndex(e => e.RawName == "ForlornCoast") == -1)
                                 areaEvents.Add(coast);
                             // Aberrations
                             RemnantWorldEvent abberationGeorge = new RemnantWorldEvent("CoastPig", "World_Fae", "Abberation");
-                            abberationGeorge.Locations.Add("Farlorn Coast");
+                            abberationGeorge.Locations.Add("Forlorn Coast");
                             abberationGeorge.setMissingItems(character);
                             if (areaEvents.FindIndex(e => e.RawName == "CoastPig") == -1)
                                 areaEvents.Add(abberationGeorge);
 
                             RemnantWorldEvent preacher = new RemnantWorldEvent("Preacher", "World_Fae", "Event");
-                            preacher.Locations.Add("Farlorn Coast");
+                            preacher.Locations.Add("Forlorn Coast");
                             preacher.setMissingItems(character);
                             if (areaEvents.FindIndex(e => e.RawName == "Preacher") == -1)
                                 areaEvents.Add(preacher);
 
                             RemnantWorldEvent abberationAtoner = new RemnantWorldEvent("CoastAtoner", "World_Fae", "Abberation");
-                            abberationAtoner.Locations.Add("Farlorn Coast");
+                            abberationAtoner.Locations.Add("Forlorn Coast");
                             abberationAtoner.setMissingItems(character);
                             if (areaEvents.FindIndex(e => e.RawName == "CoastAtoner") == -1)
                                 areaEvents.Add(abberationAtoner);
                             //Merchant
-                            var leywise = new RemnantWorldEvent("Leywise", "Leywise", new() { "World_Fae", "Farlorn Coast" }, "Merchant");
+                            var leywise = new RemnantWorldEvent("Leywise", "Leywise", new() { "World_Fae", "Forlorn Coast" }, "Merchant");
                             leywise.setMissingItems(character);
-                            if (areaEvents.FindIndex(e => e.RawName == "FarlornCoast") == -1)
+                            if (areaEvents.FindIndex(e => e.RawName == "ForlornCoast") == -1)
                                 areaEvents.Add(leywise);
                         }
                         else if (worldEvent.RawName == "DLC2Story")
