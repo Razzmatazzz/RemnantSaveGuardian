@@ -1274,6 +1274,11 @@ namespace RemnantSaveGuardian
                     else
                         continue;
                 }
+                if (!zoneEvents.ContainsKey(world))
+                {
+                    Logger.Warn($"Injectable world {world} not found in {mode} events");
+                    continue;
+                }
                 if (zoneEvents[world].Any(we => we._name == injectable._name))
                 {
                     // injectable already exists
