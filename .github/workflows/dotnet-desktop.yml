@@ -1,0 +1,50 @@
+name: .NET Core Desktop
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+  
+    runs-on: windows-latest
+
+    env:
+      Project: RemnantSaveGuardian/RemnantSaveGuardian.csproj
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v2
+
+    # Just in case there will be some unit tests in future
+    - name: Execute unit tests
+      run: dotnet test
+
+    - name: Restore the application
+      run: msbuild $env:Project /t:Restore /p:Configuration=Release
+
+    - uses: kzrnm/get-net-sdk-project-versions-action@v2
+      id: get-version
+      with:
+        proj-path: ${{ env.Project }}
+
+    - name: publish
+      run: dotnet publish -o "./publish"
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: 'RemnantSaveGuardian_${{steps.get-version.outputs.assembly-version}}'
+        path: ./publish
