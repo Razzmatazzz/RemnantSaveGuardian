@@ -110,9 +110,12 @@ namespace RemnantSaveGuardian
         {
             CultureInfo[] culture = CultureInfo.GetCultures(CultureTypes.AllCultures);
 
-            string exeLocation = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
+            string exeLocation = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path)) ?? "";
 
-            var c = culture.Where(cultureInfo => Directory.Exists(Path.Combine(exeLocation, cultureInfo.Name)) && cultureInfo.Name != "").ToArray();
+            var c = culture.Where(cultureInfo => Directory.Exists(Path.Combine(exeLocation, cultureInfo.Name)) && cultureInfo.Name != "")
+                .Prepend(CultureInfo.GetCultureInfo("en"))
+                .ToArray();
+
             return c;
         }
 

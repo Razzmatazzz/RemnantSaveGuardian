@@ -41,7 +41,7 @@ jobs:
         proj-path: ${{ env.Project }}
 
     - name: publish
-      run: dotnet publish -o "./publish"
+      run: dotnet publish RemnantSaveGuardian/RemnantSaveGuardian.csproj -o "./publish"
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
