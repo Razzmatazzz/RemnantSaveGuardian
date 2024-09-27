@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RemnantSaveGuardian
 {
-    internal static class SaveWatcher
+	internal static class SaveWatcher
     {
         public static event EventHandler SaveUpdated;
         private static FileSystemWatcher watcher = new ()

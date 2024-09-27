@@ -8,15 +8,14 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Common.Interfaces;
-using RemnantSaveGuardian.Views.Windows;
 using RemnantSaveGuardian.Helpers;
 
 namespace RemnantSaveGuardian.Views.Pages
 {
-    /// <summary>
-    /// Interaction logic for SettingsPage.xaml
-    /// </summary>
-    public partial class SettingsPage : INavigableView<ViewModels.SettingsViewModel>
+	/// <summary>
+	/// Interaction logic for SettingsPage.xaml
+	/// </summary>
+	public partial class SettingsPage : INavigableView<ViewModels.SettingsViewModel>
     {
         public ViewModels.SettingsViewModel ViewModel
         {

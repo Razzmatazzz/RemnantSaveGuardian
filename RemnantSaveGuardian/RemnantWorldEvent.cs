@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace RemnantSaveGuardian
 {
-    public class RemnantWorldEvent
+	public class RemnantWorldEvent
     {
         //private string _world;
         private List<string> _locations;

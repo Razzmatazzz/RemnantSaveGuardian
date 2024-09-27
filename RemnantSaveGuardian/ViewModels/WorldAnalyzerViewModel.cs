@@ -1,13 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using RemnantSaveGuardian.Models;
-using System;
-using System.Collections.Generic;
-using System.Windows.Media;
+
 using Wpf.Ui.Common.Interfaces;
 
 namespace RemnantSaveGuardian.ViewModels
 {
-    public partial class WorldAnalyzerViewModel : ObservableObject, INavigationAware
+	public partial class WorldAnalyzerViewModel : ObservableObject, INavigationAware
     {
         private bool _isInitialized = false;
 
