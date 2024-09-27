@@ -1,16 +1,16 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+
 using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
+
 using Wpf.Ui.Common;
 using Wpf.Ui.Controls;
 using Wpf.Ui.Controls.Interfaces;
 using Wpf.Ui.Mvvm.Contracts;
-using WPFLocalizeExtension.Providers;
 
 namespace RemnantSaveGuardian.ViewModels
 {
-    public partial class MainWindowViewModel : ObservableObject
+	public partial class MainWindowViewModel : ObservableObject
     {
         private bool _isInitialized = false;
 

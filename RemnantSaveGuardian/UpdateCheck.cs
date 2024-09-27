@@ -36,6 +36,7 @@ namespace RemnantSaveGuardian
 
                 Version remoteVersion = new Version(latestRelease["tag_name"].ToString());
                 Version localVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                localVersion = new Version(localVersion.Major, localVersion.Minor, localVersion.Build);
                 if (localVersion.CompareTo(remoteVersion) == -1)
                 {
                     NewVersion?.Invoke(null, new() { Version = remoteVersion, Uri = new(latestRelease["html_url"].ToString()) });
@@ -70,7 +71,7 @@ namespace RemnantSaveGuardian
                         {
                             InstalledVersion = localVersion,
                             CurrentVersion = remoteVersion.ToString(),
-                            DownloadURL = $"https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/download/{remoteVersion}/RemnantSaveGuardian.zip"
+                            DownloadURL = $"https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/download/{remoteVersion}/RemnantSaveGuardian_{remoteVersion}.0.zip"
                         };
                         messageBox.Close();
                         AutoUpdater.DownloadUpdate(args);

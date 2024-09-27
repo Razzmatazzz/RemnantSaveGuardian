@@ -1,30 +1,30 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
 using RemnantSaveGuardian.Models;
 using RemnantSaveGuardian.Properties;
 using RemnantSaveGuardian.Services;
+
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Resources;
 using System.Threading;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Threading;
+
 using Wpf.Ui.Mvvm.Contracts;
 using Wpf.Ui.Mvvm.Services;
 
 namespace RemnantSaveGuardian
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App
+	/// <summary>
+	/// Interaction logic for App.xaml
+	/// </summary>
+	public partial class App
     {
         // The.NET Generic Host provides dependency injection, configuration, logging, and other services.
         // https://docs.microsoft.com/dotnet/core/extensions/generic-host

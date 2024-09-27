@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
+
 using WPFLocalizeExtension.Extensions;
 
 namespace RemnantSaveGuardian
 {
-    internal class Loc
+	internal class Loc
     {
         public static T GetLocalizedValue<T>(string key, LocalizationOptions options)
         {

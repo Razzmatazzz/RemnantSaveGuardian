@@ -1,7 +1,7 @@
 ﻿using RemnantSaveGuardian.Helpers;
-using RemnantSaveGuardian.Services;
 using RemnantSaveGuardian.ViewModels;
 using RemnantSaveGuardian.Views.Pages;
+
 using System;
 using System.IO;
 using System.Linq;
@@ -14,14 +14,15 @@ using Wpf.Ui.Common;
 using Wpf.Ui.Controls;
 using Wpf.Ui.Controls.Interfaces;
 using Wpf.Ui.Mvvm.Contracts;
+
 using WPFLocalizeExtension.Engine;
 
 namespace RemnantSaveGuardian.Views.Windows
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : INavigationWindow
+	/// <summary>
+	/// Interaction logic for MainWindow.xaml
+	/// </summary>
+	public partial class MainWindow : INavigationWindow
     {
         public ViewModels.MainWindowViewModel ViewModel
         {

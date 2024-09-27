@@ -1,15 +1,15 @@
 ﻿//using System.Drawing;
 using System;
-using System.Text.RegularExpressions;
+
 using Wpf.Ui.Common.Interfaces;
 using Wpf.Ui.Controls;
 
 namespace RemnantSaveGuardian.Views.Pages
 {
-    /// <summary>
-    /// Interaction logic for LogView.xaml
-    /// </summary>
-    public partial class LogPage : INavigableView<ViewModels.LogViewModel>
+	/// <summary>
+	/// Interaction logic for LogView.xaml
+	/// </summary>
+	public partial class LogPage : INavigableView<ViewModels.LogViewModel>
     {
         public ViewModels.LogViewModel ViewModel
         {
