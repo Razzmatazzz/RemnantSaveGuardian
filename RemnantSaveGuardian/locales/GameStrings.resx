@@ -2511,4 +2511,274 @@
   <data name="LydusaTemple" xml:space="preserve">
     <value>Lydusa's Temple</value>
   </data>
+  <data name = "DLC3Story">
+    <value>The Dark Horizon</value>
+  </data>
+  <data name="AgronomySector" xml:space="preserve">
+    <value>Agronomy Sector</value>
+  </data>
+  <data name="RepairLab" xml:space="preserve">
+    <value>Repair Lab</value>
+  </data>
+  <data name="BicentennialMan" xml:space="preserve">
+    <value>Prototype</value>
+  </data>
+  <data name="WitheredNecropolis" xml:space="preserve">
+    <value>Withered Necropolis</value>
+  </data>
+  <data name="TheCustodianDLC3" xml:space="preserve">
+    <value>The Custodian</value>
+  </data>
+  <data name="TheConvergence" xml:space="preserve">
+    <value>The Convergence</value>
+  </data>
+  <data name="AlepsisTaura" xml:space="preserve">
+    <value>Alepsis Taura</value>
+  </data>
+  <data name = "CargoBelt">
+    <value>Train Platforms</value>
+  </data>
+  <data name = "GasChamber">
+    <value>Gas Chamber Maze</value>
+  </data>
+  <data name = "Overload_DLC">
+    <value>Power Circuit Puzzle</value>
+  </data>
+  <data name = "SecurityDrone_DLC">
+    <value>Security Drone Maze</value>
+  </data>
+  <data name = "ShiftingCitadel">
+    <value>Shifting Citadel</value>
+  </data>
+  <data name = "Tower_DLC">
+    <value>Botanical Research Tower</value>
+  </data>
+  <data name = "Amulet_BrazenAlloy">
+    <value>Brazen Amalgam</value>
+  </data>
+  <data name = "Amulet_CanineKeepsake">
+    <value>Canine Keepsake</value>
+  </data>
+  <data name = "Amulet_CessationBulbel">
+    <value>Cessation Bulbel</value>
+  </data>
+  <data name = "Amulet_ChefMedal">
+    <value>Chef Medal</value>
+  </data>
+  <data name = "Amulet_CrisisCore">
+    <value>Crisis Core</value>
+  </data>
+  <data name = "Amulet_EchoChamber">
+    <value>Echo Chamber</value>
+  </data>
+  <data name = "Amulet_ExhaustValve">
+    <value>Exhaust Valve</value>
+  </data>
+  <data name = "Amulet_HangmansNoose">
+    <value>Hangmans Noose</value>
+  </data>
+  <data name = "Amulet_InsipidTalon">
+    <value>Insipid Talon</value>
+  </data>
+  <data name = "Amulet_OrnateAmulet">
+    <value>Ornate Amulet</value>
+  </data>
+  <data name = "Amulet_QuantumMemory">
+    <value>Quantum Memory</value>
+  </data>
+  <data name = "Amulet_ReactionChain">
+    <value>Reaction Chain</value>
+  </data>
+  <data name = "Amulet_RelayDevice">
+    <value>Relay Device</value>
+  </data>
+  <data name = "Amulet_ShortCircuit">
+    <value>Short Circuit</value>
+  </data>
+  <data name = "Amulet_TimekeepersForfeit">
+    <value>Timekeepers Forfeit</value>
+  </data>
+  <data name = "Amulet_VolatileCartridge">
+    <value>Volatile Cartridge</value>
+  </data>
+  <data name = "Amulet_ZeroHour">
+    <value>Zero Hour</value>
+  </data>
+  <data name = "Armor_NerudWarrior">
+    <value>Phetyr</value>
+  </data>
+  <data name = "Armor_Warden">
+    <value>Warden</value>
+  </data>
+  <data name = "Armor_WeldingGoggles">
+    <value>Welding Goggles</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Warden" xml:space="preserve">
+    <value>Warden</value>
+  </data>
+  <data name = "MetaGem_Detonator">
+    <value>Detonator</value>
+  </data>
+  <data name = "MetaGem_HiddenPower">
+    <value>Hidden Power</value>
+  </data>
+  <data name = "MetaGem_HyperCharger">
+    <value>Hyper Charger</value>
+  </data>
+  <data name = "MetaGem_Insulator">
+    <value>Insulator</value>
+  </data>
+  <data name = "MetaGem_Repercussion">
+    <value>Repercussion</value>
+  </data>
+  <data name = "MetaGem_SuperHeated">
+    <value>Superheated</value>
+  </data>
+  <data name = "MetaGem_VolatileStrike">
+    <value>Volatile Strike</value>
+  </data>
+  <data name = "Mod_HarvesterBots">
+    <value>Harvester Bots</value>
+  </data>
+  <data name = "Mod_ShieldingShot">
+    <value>Shielding Shot</value>
+  </data>
+  <data name = "Mod_Voidlight">
+    <value>Voidlight</value>
+  </data>
+  <data name = "Quest_Hidden_Item_SparkWard13">
+    <value>Rescue Spark</value>
+  </data>
+  <data name = "Relic_Consumable_GossamerHeart">
+    <value>Gossamer Heart</value>
+  </data>
+  <data name = "Relic_Consumable_LatentHeart">
+    <value>Latent Heart</value>
+  </data>
+  <data name = "Ring_BreachAccelerator">
+    <value>Breach Accelerator</value>
+  </data>
+  <data name = "Ring_BurdenOfTheExcavator">
+    <value>Burden of the Excavator</value>
+  </data>
+  <data name = "Ring_BurdenOfTheProtector">
+    <value>Burden of the Protector</value>
+  </data>
+  <data name = "Ring_BypassPrimer">
+    <value>Bypass Primer</value>
+  </data>
+  <data name = "Ring_ClearHalo">
+    <value>Clear Halo</value>
+  </data>
+  <data name = "Ring_CombatShieldGenerator">
+    <value>Combat Shield Generator</value>
+  </data>
+  <data name = "Ring_CustodiansBastion">
+    <value>Custodian's Bastion</value>
+  </data>
+  <data name = "Ring_DemolitionCoil">
+    <value>Demolition Coil</value>
+  </data>
+  <data name = "Ring_DetonatingCord">
+    <value>Detonating Cord</value>
+  </data>
+  <data name = "Ring_DisasterConverter">
+    <value>Disaster Converter</value>
+  </data>
+  <data name = "Ring_EmpoweringLoop">
+    <value>Empowering Loop</value>
+  </data>
+  <data name = "Ring_FeedingTube">
+    <value>Feeding Tube</value>
+  </data>
+  <data name = "Ring_ForceMultiplier">
+    <value>Force Multiplier</value>
+  </data>
+  <data name = "Ring_ImpactAugment">
+    <value>Impact Augment</value>
+  </data>
+  <data name = "Ring_InfinityPocket">
+    <value>Infinity Pocket</value>
+  </data>
+  <data name = "Ring_MortalCoil">
+    <value>Mortal Coil</value>
+  </data>
+  <data name = "Ring_NanoFiberStrand">
+    <value>Nanofiber Strand</value>
+  </data>
+  <data name = "Ring_NightmareSigil">
+    <value>Nightmare Sigil</value>
+  </data>
+  <data name = "Ring_PhantomPain">
+    <value>Ring Of Phantom Pain</value>
+  </data>
+  <data name = "Ring_RingOfAshes">
+    <value>Ring of Ashes</value>
+  </data>
+  <data name = "Ring_RingOfBones">
+    <value>Ring of Bones</value>
+  </data>
+  <data name = "Ring_SecurityHalfMeasure">
+    <value>Security Half-Measure</value>
+  </data>
+  <data name = "Ring_ShieldAlternator">
+    <value>Shield Alternator</value>
+  </data>
+  <data name = "Ring_SiphonFilter">
+    <value>Siphon Filter</value>
+  </data>
+  <data name = "Ring_SpiritAlternator">
+    <value>Spirit Alternator</value>
+  </data>
+  <data name = "Ring_StoneOfRevelation">
+    <value>Stone of Revelation</value>
+  </data>
+  <data name = "Ring_StrandOfSinew">
+    <value>Strand of Sinew</value>
+  </data>
+  <data name = "Ring_SymbolOfRoyalty">
+    <value>Symbol of Royalty</value>
+  </data>
+  <data name = "Ring_ToleranceBand">
+    <value>Tolerance Band</value>
+  </data>
+  <data name = "Ring_TransientCord">
+    <value>Transient Cord</value>
+  </data>
+  <data name = "Ring_WiredInhibitor">
+    <value>Wired Inhibitor</value>
+  </data>
+  <data name = "Trait_Barrier">
+    <value>Barrier</value>
+  </data>
+  <data name = "Trait_Insight">
+    <value>Insight</value>
+  </data>
+  <data name = "Trait_Perception">
+    <value>Perception</value>
+  </data>
+  <data name = "Trait_Preservation">
+    <value>Preservation</value>
+  </data>
+  <data name = "Weapon_BlackGreatsword">
+    <value>Black Greatsword</value>
+  </data>
+  <data name = "Weapon_DarkMatterGauntlets">
+    <value>Dark Matter Guantlets</value>
+  </data>
+  <data name = "Weapon_Genesis">
+    <value>Genesis</value>
+  </data>
+  <data name = "Weapon_HarvesterScythe">
+    <value>Harvester Scythe</value>
+  </data>
+  <data name = "Weapon_Monorail">
+    <value>Monorail</value>
+  </data>
+  <data name = "Weapon_Redeemer">
+    <value>Redeemer</value>
+  </data>
+  <data name = "Weapon_RepairTool">
+    <value>Repair Tool</value>
+  </data>
 </root>

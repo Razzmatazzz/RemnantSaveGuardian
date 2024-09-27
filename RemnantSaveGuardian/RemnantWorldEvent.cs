@@ -1049,10 +1049,12 @@ namespace RemnantSaveGuardian
                         // Add associated events
                         if (worldEvent.RawWorld == "World_Nerud" && worldEvent.RawName.Contains("Story"))
                         {
-                            var cust = new RemnantWorldEvent("TheCustodian", worldEvent.Locations, "Point of Interest");
-                            cust.setMissingItems(character);
-                            if (areaEvents.FindIndex(e => e.RawName == "TheCustodian") == -1)
-                                areaEvents.Add(cust);
+                            if (worldEvent.RawName == "TheCoreStory") {
+                                var cust = new RemnantWorldEvent("TheCustodian", worldEvent.Locations, "Point of Interest");
+                                cust.setMissingItems(character);
+                                if (areaEvents.FindIndex(e => e.RawName == "TheCustodian") == -1)
+                                    areaEvents.Add(cust);
+                            }
                             if (worldEvent.RawName == "IAmLegendStory")
                             {
                                 var talratha = new RemnantWorldEvent("TalRatha", "World_Nerud", "WorldBoss");
@@ -1060,7 +1062,35 @@ namespace RemnantSaveGuardian
                                 if (areaEvents.FindIndex(e => e.RawName == "TalRatha") == -1)
                                     areaEvents.Add(talratha);
                             }
+                            if (worldEvent.RawName == "DLC3Story") {
+                                RemnantWorldEvent agronomy_sector = new RemnantWorldEvent("AgronomySector", "World_Nerud", "Location");
+                                agronomy_sector.setMissingItems(character);
+                                if (areaEvents.FindIndex(e => e.RawName == "AgronomySector") == -1)
+                                    areaEvents.Add(agronomy_sector);
 
+                                RemnantWorldEvent withered_necropolis = new RemnantWorldEvent("WitheredNecropolis", "World_Nerud", "Location");
+                                withered_necropolis.setMissingItems(character);
+                                if (areaEvents.FindIndex(e => e.RawName == "WitheredNecropolis") == -1)
+                                    areaEvents.Add(withered_necropolis);
+
+                                RemnantWorldEvent bicentennial_man = new RemnantWorldEvent("BicentennialMan", "World_Nerud", "Point of Interest");
+                                bicentennial_man.Locations.Add("RepairLab");
+                                bicentennial_man.setMissingItems(character);
+                                if (areaEvents.FindIndex(e => e.RawName == "BicentennialMan") == -1)
+                                    areaEvents.Add(bicentennial_man);
+
+                                var custodian = new RemnantWorldEvent("TheCustodianDLC3", "World_Nerud", "Point of Interest");
+                                custodian.Locations.Add("WitheredNecropolis");
+                                custodian.setMissingItems(character);
+                                if (areaEvents.FindIndex(e => e.RawName == "TheCustodianDLC3") == -1)
+                                    areaEvents.Add(custodian);
+
+                                var alepsis_taura = new RemnantWorldEvent("AlepsisTaura", "World_Nerud", "WorldBoss");
+                                alepsis_taura.Locations.Add("TheConvergence");
+                                alepsis_taura.setMissingItems(character);
+                                if (areaEvents.FindIndex(e => e.RawName == "AlepsisTaura") == -1)
+                                    areaEvents.Add(alepsis_taura);
+                            }
                         }
 
                         if (worldEvent.RawName == "AsylumStory" && worldEvent.RawWorld == "World_Fae")
@@ -1314,7 +1344,7 @@ namespace RemnantSaveGuardian
             if (mode == ProcessMode.Campaign)
             {
                 // Add Ward 13 events
-                List<string> ward13Events = new() { "Ward13", "Cass", "Brabus", "Mudtooth", "Reggie", "Whispers", "McCabe", "Dwell" };
+                List<string> ward13Events = new() { "Ward13", "Cass", "Brabus", "Mudtooth", "Reggie", "Whispers", "McCabe", "Dwell", "Duane", "Spark" };
                 foreach (var eName in ward13Events)
                 {
                     var wardEvent = new RemnantWorldEvent(eName, "World_Earth", "Home");

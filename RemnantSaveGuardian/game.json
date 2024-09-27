@@ -1717,6 +1717,9 @@
         {
           "name": "/Items/Trinkets/Rings/JewelOfTheBeholden/Ring_JewelOfTheBeholden",
           "notes": "Kill The One True King, then speak to Nimue"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/InsipidTalon/Amulet_InsipidTalon"
         }
       ]
     },
@@ -2038,7 +2041,290 @@
           "notes": "Destroy fifteen Traveler statues (appear when you die with Lydusa's Curse)"
         }
       ]
-
+    },
+    "DLC3": {
+      "Amulet_CanineKeepsake": [
+        {
+          "name": "/Items/Trinkets/Amulets/CanineKeepsake/Amulet_CanineKeepsake"
+        }
+      ],
+      "Amulet_CrisisCore": [
+        {
+          "name": "/Items/Trinkets/Amulets/CrisisCore/Amulet_CrisisCore"
+        }
+      ],
+      "Amulet_HangmansNoose": [
+        {
+          "name": "/Items/Trinkets/Amulets/HangmansNoose/Amulet_HangmansNoose"
+        }
+      ],
+      "Amulet_ReactionChain": [
+        {
+          "name": "/Items/Trinkets/Amulets/ReactionChain/Amulet_ReactionChain"
+        }
+      ],
+      "Amulet_ZeroHour": [
+        {
+          "name": "/Items/Trinkets/Amulets/ZeroHour/Amulet_ZeroHour"
+        }
+      ],
+      "MetaGem_ChargedWounds": [
+        {
+          "name": "/Items/Gems/Ranged/ChargedWounds/MetaGem_ChargedWounds"
+        }
+      ],
+      "MetaGem_HiddenPower": [
+        {
+          "name": "/Items/Gems/Ranged/HiddenPower/MetaGem_HiddenPower"
+        }
+      ],
+      "MetaGem_VolatileStrike": [
+        {
+          "name": "/Items/Gems/Melee/VolatileStrike/MetaGem_VolatileStrike"
+        }
+      ],
+      "Mod_HarvesterBots": [
+        {
+          "name": "/Items/Mods/Harvester_Bots/Mod_HarvesterBots"
+        }
+      ],
+      "Mod_Voidlight": [
+        {
+          "name": "/Items/Mods/Voidlight/Mod_Voidlight"
+        }
+      ],
+      "Ring_DemolitionCoil": [
+        {
+          "name": "/Items/Trinkets/Rings/DemolitionCoil/Ring_DemolitionCoil"
+        }
+      ],
+      "Ring_DetonatingCord": [
+        {
+          "name": "/Items/Trinkets/Rings/DetonatingCord/Ring_DetonatingCord"
+        }
+      ],
+      "Ring_EmpoweringLoop": [
+        {
+          "name": "/Items/Trinkets/Rings/EmpoweringLoop/Ring_EmpoweringLoop"
+        }
+      ],
+      "Ring_FeedingTube": [
+        {
+          "name": "/Items/Trinkets/Rings/FeedingTube/Ring_FeedingTube"
+        }
+      ],
+      "Ring_ImpactAugment": [
+        {
+          "name": "/Items/Trinkets/Rings/ImpactAugment/Ring_ImpactAugment"
+        }
+      ],
+      "Ring_InfinityPocket": [
+        {
+          "name": "/Items/Trinkets/Rings/InfinityPocket/Ring_InfinityPocket"
+        }
+      ],
+      "Ring_NanoFiberStrand": [
+        {
+          "name": "/Items/Trinkets/Rings/NanoFiberStrand/Ring_NanoFiberStrand"
+        }
+      ],
+      "Ring_NightmareSigil": [
+        {
+          "name": "/Items/Trinkets/Rings/NightmareSigil/Ring_NightmareSigil"
+        }
+      ],
+      "Ring_RingOfBones": [
+        {
+          "name": "/Items/Trinkets/Rings/RingOfBones/Ring_RingOfBones"
+        }
+      ],
+      "Ring_ShieldAlternator": [
+        {
+          "name": "/Items/Trinkets/Rings/ShieldAlternator/Ring_ShieldAlternator"
+        }
+      ],
+      "Ring_SpiritAlternator": [
+        {
+          "name": "/Items/Trinkets/Rings/SpiritAlternator/Ring_SpiritAlternator"
+        }
+      ],
+      "Ring_StoneOfRevalation": [
+        {
+          "name": "/Items/Trinkets/Rings/StoneOfRevelation/Ring_StoneOfRevelation"
+        }
+      ],
+      "Ring_ToleranceBand": [
+        {
+          "name": "/Items/Trinkets/Rings/ToleranceBand/Ring_ToleranceBand"
+        }
+      ],
+      "Ring_TransientCord": [
+        {
+          "name": "/Items/Trinkets/Rings/TransientCord/Ring_TransientCord"
+        }
+      ],
+      "Trait_Barrier": [
+        {
+          "name": "/Items/Archetypes/Warden/Traits/Trait_Barrier"
+        }
+      ],
+      "Trait_Insight": [
+        {
+          "name": "/Items/Traits/Insight/Trait_Insight"
+        }
+      ],
+      "DLC3Story": [
+        {
+          "name": "/Quests/Quest_Story_DLC3/Items/Quest_Hidden_Item_SparkWard13/Quest_Hidden_Item_SparkWard13",
+          "ignore": false
+        }
+      ],
+      "AgronomySector": [
+        {
+          "name": "/Items/Gems/Ranged/Detonator/MetaGem_Detonator"
+        },
+        {
+          "name": "/Items/Traits/Preservation/Trait_Preservation"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BreachAccelerator/Ring_BreachAccelerator"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/DisasterConverter/Ring_DisasterConverter"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/SecurityHalfMeasure/Ring_SecurityHalfMeasure"
+        },
+        {
+          "name": "/Items/Weapons/HarvesterScythe/Weapon_HarvesterScythe"
+        }
+      ],
+      "RepairLab": [
+      ],
+      "BicentennialMan": [
+        {
+          "name": "/Items/Relics/LatentHeart/Relic_Consumable_LatentHeart"
+        },
+        {
+          "name": "/Items/Weapons/RepairTool/Weapon_RepairTool"
+        }
+      ],
+      "WitheredNecropolis": [
+        {
+          "name": "/Items/Archetypes/Warden/Armor/Armor_Head_Warden"
+        },
+        {
+          "name": "/Items/Archetypes/Warden/Armor/Armor_Body_Warden"
+        },
+        {
+          "name": "/Items/Archetypes/Warden/Armor/Armor_Gloves_Warden"
+        },
+        {
+          "name": "/Items/Archetypes/Warden/Armor/Armor_Legs_Warden"
+        },
+        {
+          "name": "/Items/Archetypes/Warden/Item_HiddenContainer_Material_Engram_Warden"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/RelayDevice/Amulet_RelayDevice"
+        },
+        {
+          "name": "/Items/Weapons/Genesis/Weapon_Genesis"
+        }
+      ],
+      "TheCustodianDLC3": [
+        {
+          "name": "/Items/Trinkets/Rings/CustodiansBastion/Ring_CustodiansBastion"
+        }
+      ],
+      "TheConvergence": [
+      ],
+      "AlepsisTaura": [
+        {
+          "name": "/Items/Weapons/DarkMatterGauntlets/Weapon_DarkMatterGauntlets"
+        },
+        {
+          "name": "/Items/Weapons/Monorail/Weapon_Monorail"
+        }
+      ],
+      "CargoBelt": [
+        {
+          "name": "/Items/Armor/NErudWarrior/Armor_Head_NerudWarrior"
+        },
+        {
+          "name": "/Items/Armor/NErudWarrior/Armor_Body_NerudWarrior"
+        },
+        {
+          "name": "/Items/Armor/NErudWarrior/Armor_Gloves_NerudWarrior"
+        },
+        {
+          "name": "/Items/Armor/NErudWarrior/Armor_Legs_NerudWarrior"
+        },
+        {
+          "name": "/Items/Gems/Melee/HyperCharger/MetaGem_HyperCharger"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/BrazenAlloy/Amulet_BrazenAlloy"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheExcavator/Ring_BurdenOfTheExcavator"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/SiphonFilter/Ring_SiphonFilter"
+        }
+      ],
+      "GasChamber": [
+        {
+          "name": "/Items/Gems/Ranged/SuperHeated/MetaGem_SuperHeated"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/ExhaustValve/Amulet_ExhaustValve"
+        },
+        {
+          "name": "/Items/Traits/Perception/Trait_Perception"
+        }
+      ],
+      "Overload_DLC": [
+        {
+          "name": "/Items/Trinkets/Amulets/ShortCircuit/Amulet_ShortCircuit"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/CombatShieldGenerator/Ring_CombatShieldGenerator"
+        }
+      ],
+      "SecurityDrone_DLC": [
+        {
+          "name": "/Items/Trinkets/Rings/BurdenOfTheProtector/Ring_BurdenOfTheProtector"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/BypassPrimer/Ring_BypassPrimer"
+        }
+      ],
+      "ShiftingCitadel": [
+        {
+          "name": "/Items/Gems/Ranged/Insulator/MetaGem_Insulator"
+        },
+        {
+          "name": "/Items/Mods/ShieldingShot/Mod_ShieldingShot"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/EchoChamber/Amulet_EchoChamber"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ClearHalo/Ring_ClearHalo"
+        }
+      ],
+      "Tower_DLC": [
+        {
+          "name": "/Items/Gems/Ranged/Repercussion/MetaGem_Repercussion"
+        },
+        {
+          "name": "/Items/Relics/GossamerHeart/Relic_Consumable_GossamerHeart"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/QuantumMemory/Amulet_QuantumMemory"
+        }
+      ]
     },
     "Story": {
       "AshenWasteland": [
@@ -2157,6 +2443,9 @@
         {
           "name": "/Items/Armor/Base/RelicTesting/LifelessHeart/Relic_Consumable_LifelessHeart",
           "notes": "eat fruit of death 3 times"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/CessationBulbel/Amulet_CessationBulbel"
         }
       ],
       "Mudtooth": [
@@ -2262,6 +2551,9 @@
         },
         {
           "name": "/Items/Weapons/BasicShovel/Weapon_BasicShovel"
+        },
+        {
+          "name": "/Items/Weapons/BlackGreatsword/Weapon_BlackGreatsword"
         }
       ],
       "Reggie": [
@@ -2313,6 +2605,9 @@
         {
           "name": "/Items/Trinkets/Rings/DevouringLoop/Ring_DevouringLoop",
           "notes": "Purchased from Reggie at Ward 13 after completing the campaign on Apocalypse difficulty."
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RingOfPhantomPain/Ring_PhantomPain"
         }
       ],
       "Cass": [
@@ -2460,6 +2755,10 @@
         },
         {
           "name": "/Items/Trinkets/Rings/AnastasijasInspiration/Ring_AnastasijasInspiration"
+        },
+        {
+          "name": "/Items/Armor/WeldingGoggles/Armor_Head_WeldingGoggles",
+          "armorSet": false
         }
       ],
       "McCabe": [
@@ -2530,6 +2829,43 @@
         },
         {
           "name": "/Items/Weapons/Handguns/Special/CorruptedRunePistol/Weapon_CorruptedRunePistol"
+        }
+      ],
+      "Duane": [
+        {
+          "name": "/Items/Trinkets/Amulets/ChefMedal/Amulet_ChefMedal"
+        }
+      ],
+      "Spark": [
+        {
+          "name": "/Items/Trinkets/Amulets/OrnateAmulet/Amulet_OrnateAmulet"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/TimekeepersForfeit/Amulet_TimekeepersForfeit"
+        },
+        {
+          "name": "/Items/Trinkets/Amulets/VolatileCartridge/Amulet_VolatileCartridge"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/ForceMultiplier/Ring_ForceMultiplier"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/MortalCoil/Ring_MortalCoil"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/RingOfAshes/Ring_RingOfAshes"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/StrandOfSinew/Ring_StrandOfSinew"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/SymbolOfRoyalty/Ring_SymbolOfRoyalty"
+        },
+        {
+          "name": "/Items/Trinkets/Rings/WiredInhibitor/Ring_WiredInhibitor"
+        },
+        {
+          "name": "/Items/Weapons/Redeemer/Weapon_Redeemer"
         }
       ],
       "Labyrinth": [

@@ -12,7 +12,7 @@ namespace RemnantSaveGuardian
             @"/Items/(?<itemType>Archetypes)/\w+/(?<itemName>Archetype_\w+)(?:\.|$)", // archetypes
             @"/Items/Archetypes/(?<archetypeName>\w+)/(?<itemType>\w+)/\w+/(?<itemName>\w+)(?:\.|$)", // perks and skills
             @"/Items/(?<itemType>Traits)/(?<traitType>\w+?/)?\w+?/(?<itemName>\w+)(?:\.|$)", // traits
-            @"/Items/Archetypes/(?<archetypeName>\w+)/PerksAnd(?<itemType>Traits)/(?<itemName>\w+)", // archetype traits dlc2
+            @"/Items/Archetypes/(?<archetypeName>\w+)/(?:PerksAnd)?(?<itemType>Traits)/(?<itemName>\w+)", // archetype traits dlc2 and dlc3
             @"/Items/Archetypes/(?<armorSet>\w+)/(?<itemType>Armor)/(?<itemName>\w+)(?:\.|$)", // armors
             @"/Items/(?<itemType>Armor)/(?:\w+/)?(?:(?<armorSet>\w+)/)?(?<itemName>\w+)(?:\.|$)", // armor
             @"/Items/(?<itemType>Weapons)/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // weapons
@@ -20,7 +20,8 @@ namespace RemnantSaveGuardian
             @"/Items/Armor/(?:\w+/)?(?<itemType>Relic)Testing/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // relics
             @"/Items/(?<itemType>Relic)s/(?:\w+/)+(?<itemName>\w+)(?:\.|$)", // relics
             @"/Items/Materials/(?<itemType>Engrams)/(?<itemName>\w+)(?:\.|$)", // engrams
-            @"/(?<itemType>Quests)/Quest_\w+/Items/(?<itemName>\w+)(?:\.|$)", // quest items
+            @"/Items/Archetypes/(?<archetypeName>Warden)/(?<itemName>Item_HiddenContainer_Material_Engram_Warden)", // warden engram
+            @"/(?<itemType>Quests)/Quest_\w+/Items/(?:Quest_Hidden_Item\w+/)?(?<itemName>\w+)(?:\.|$)", // quest items
             @"/Items/(?<itemType>Materials)/World/\w+/(?<itemName>\w+)(?:\.|$)", // materials
         };
         public static List<string> ItemKeyPatterns { get { return _itemKeyPatterns; } }
@@ -106,7 +107,11 @@ namespace RemnantSaveGuardian
                     continue;
                 }
                 this._key = this._key.Replace(".", "");
-                this._type = nameMatch.Groups["itemType"].Value;
+                if (nameMatch.Groups["archetypeName"].Value == "Warden") {
+                    this._type = "Engrams";
+                } else {
+                    this._type = nameMatch.Groups["itemType"].Value;
+                }
                 this._name = nameMatch.Groups["itemName"].Value;
                 if (nameMatch.Groups.ContainsKey("armorSet"))
                 {
