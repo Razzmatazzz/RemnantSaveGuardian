@@ -71,7 +71,7 @@ namespace RemnantSaveGuardian
                         {
                             InstalledVersion = localVersion,
                             CurrentVersion = remoteVersion.ToString(),
-                            DownloadURL = $"https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/download/{remoteVersion}/RemnantSaveGuardian_{remoteVersion}.0.zip"
+                            DownloadURL = latestRelease["assets"].AsArray()[0]["browser_download_url"].ToString()
                         };
                         messageBox.Close();
                         AutoUpdater.DownloadUpdate(args);
