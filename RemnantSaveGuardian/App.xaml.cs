@@ -11,6 +11,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows;
 using System.Windows.Markup;
@@ -21,10 +22,10 @@ using Wpf.Ui.Mvvm.Services;
 
 namespace RemnantSaveGuardian
 {
-	/// <summary>
-	/// Interaction logic for App.xaml
-	/// </summary>
-	public partial class App
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
+    public partial class App
     {
         // The.NET Generic Host provides dependency injection, configuration, logging, and other services.
         // https://docs.microsoft.com/dotnet/core/extensions/generic-host
@@ -85,7 +86,7 @@ namespace RemnantSaveGuardian
         /// </summary>
         private async void OnStartup(object sender, StartupEventArgs e)
         {
-            var culture = CultureInfo.CurrentCulture;
+            var culture = CultureInfo.GetCultureInfo(GetUserDefaultUILanguage());
             var cultures = EnumerateSupportedCultures();
             Current.Properties["langs"] = cultures;
             if (!cultures.Contains(culture) && cultures.Contains(culture.Parent))
@@ -105,6 +106,9 @@ namespace RemnantSaveGuardian
                 new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(culture.IetfLanguageTag)));
             await _host.StartAsync();
         }
+
+        [DllImport("Kernel32.dll", CharSet = CharSet.Auto)]
+        static extern ushort GetUserDefaultUILanguage();
 
         private CultureInfo[] EnumerateSupportedCultures()
         {
