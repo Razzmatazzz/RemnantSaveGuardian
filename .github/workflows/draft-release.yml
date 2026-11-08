@@ -1,0 +1,91 @@
+name: Draft Release
+
+# Run manually from the Actions tab. Creates (or refreshes) a draft GitHub release from the latest
+# successful build of main. Publishing the draft is left to a maintainer.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write # create and edit releases
+  actions: read # download build artifacts
+
+concurrency:
+  group: draft-release
+  cancel-in-progress: false
+
+jobs:
+  draft-release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+
+    steps:
+      - name: Find latest build of main
+        id: run
+        run: |
+          read -r run_id sha < <(gh run list --workflow dotnet-desktop.yml --branch main --event push --status success \
+            --limit 1 --json databaseId,headSha --jq '.[0] | "\(.databaseId) \(.headSha)"')
+          if [ -z "$run_id" ]; then
+            echo "::error::No successful build of main found."
+            exit 1
+          fi
+          echo "Using build run $run_id ($sha)"
+          echo "id=$run_id" >> "$GITHUB_OUTPUT"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
+      - name: Download build artifact
+        id: artifact
+        env:
+          RUN_ID: ${{ steps.run.outputs.id }}
+        run: |
+          name=$(gh api "repos/$GH_REPO/actions/runs/$RUN_ID/artifacts" \
+            --jq '[.artifacts[] | select(.expired | not) | select(.name | startswith("RemnantSaveGuardian_"))][0].name // empty')
+          if [ -z "$name" ]; then
+            echo "::error::Build run $RUN_ID has no RemnantSaveGuardian artifact (it may have expired)."
+            exit 1
+          fi
+          gh run download "$RUN_ID" --name "$name" --dir app
+
+          # Artifact is named RemnantSaveGuardian_<AssemblyVersion>, e.g. RemnantSaveGuardian_1.4.2.0.
+          version="${name#RemnantSaveGuardian_}"
+          # The in-app update check compares the tag against Major.Minor.Build, so the tag must have exactly three parts.
+          tag=$(echo "$version" | cut -d. -f1-3)
+          if ! [[ "$tag" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Unexpected version '$version' in artifact name '$name'."
+            exit 1
+          fi
+          echo "name=$name" >> "$GITHUB_OUTPUT"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Package
+        env:
+          NAME: ${{ steps.artifact.outputs.name }}
+        run: |
+          (cd app && zip -qr "../$NAME.zip" .)
+          ls -l "$NAME.zip"
+
+      - name: Create or update draft release
+        env:
+          NAME: ${{ steps.artifact.outputs.name }}
+          TAG: ${{ steps.artifact.outputs.tag }}
+          SHA: ${{ steps.run.outputs.sha }}
+        run: |
+          # Draft releases have no tag yet, so look them up in the release list rather than by tag.
+          existing=$(gh api "repos/$GH_REPO/releases" --paginate \
+            --jq ".[] | select(.tag_name == \"$TAG\") | if .draft then \"draft\" else \"published\" end" | head -n1)
+
+          if [ "$existing" = "published" ]; then
+            echo "::warning::Release $TAG is already published. Bump AssemblyVersion in RemnantSaveGuardian.csproj to draft a new release."
+            exit 0
+          fi
+
+          if [ "$existing" = "draft" ]; then
+            # The updater downloads the first asset, so keep the zip as the only one.
+            gh release upload "$TAG" "$NAME.zip" --clobber
+            gh release edit "$TAG" --target "$SHA"
+            echo "Updated draft release $TAG with the build of $SHA."
+          else
+            gh release create "$TAG" "$NAME.zip" --draft --title "$TAG" --target "$SHA" --generate-notes
+            echo "Created draft release $TAG from the build of $SHA."
+          fi

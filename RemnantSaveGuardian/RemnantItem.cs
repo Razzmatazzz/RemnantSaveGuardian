@@ -127,6 +127,11 @@ namespace RemnantSaveGuardian
             }
         }
 
+        public RemnantItem(string nameOrKey, string type) : this(nameOrKey)
+        {
+            this._type = type;
+        }
+
         public override string ToString()
         {
             return Name;

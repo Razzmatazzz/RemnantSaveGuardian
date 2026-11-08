@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using RemnantSaveGuardian.Saves;
 
 namespace RemnantSaveGuardian
 {
@@ -99,7 +100,23 @@ namespace RemnantSaveGuardian
             }
         }
         public string TileSet { get; set; }
+        /// <summary>Tomes of Knowledge and Simulacrums this event spawns, with their pickup state (structured saves only).</summary>
+        public List<LootSpawn> Collectibles { get; } = new();
         public enum ProcessMode { Campaign, Adventure };
+
+        private static readonly (string pathPart, string itemKey)[] CollectibleItems = {
+            ("/Items/Materials/TomeOfKnowledge/Material_TomeOfKnowledge.", "TraitBook"),
+            ("/Items/Materials/Simulacrum/Material_Simulacrum.", "Simulacrum"),
+        };
+
+        public void AddCollectibles(QuestInfo? quest)
+        {
+            if (quest == null)
+            {
+                return;
+            }
+            Collectibles.AddRange(quest.Spawns.Where(spawn => CollectibleItems.Any(c => spawn.ActorPath.Contains(c.pathPart))));
+        }
 
         public RemnantWorldEvent(string key, string name, List<string> locations, string type)
         {
@@ -127,6 +144,11 @@ namespace RemnantSaveGuardian
             if (name.ToLower().Contains("traitbook"))
             {
                 _name = "TraitBook";
+            }
+            if (_name.StartsWith("Simulacrum_") || _name.EndsWith("_Simulacrum"))
+            {
+                // Per-world variants (Fae_Simulacrum, Simulacrum_Jungle, ...) are the same encounter.
+                _name = "Simulacrum";
             }
             if (type == "Sewer")
             {
@@ -158,6 +180,7 @@ namespace RemnantSaveGuardian
         public RemnantWorldEvent(Match match) : this(match.Value, match.Groups["eventName"].Value, new() { match.Groups["world"].Value }, match.Groups["eventType"].Value)
         { }
         public RemnantWorldEvent(Match match, string location) : this(match.Value, match.Groups["eventName"].Value, new() { match.Groups["world"].Value, location }, match.Groups["eventType"].Value) { }
+        public RemnantWorldEvent(QuestRef quest) : this(quest.Value, quest.EventName, new() { quest.World }, quest.EventType) { }
 
         public List<RemnantItem> getPossibleItems()
         {
@@ -187,6 +210,19 @@ namespace RemnantSaveGuardian
                 {
                     mItems.Add(item);
                 }
+            }
+
+            foreach (LootSpawn spawn in Collectibles)
+            {
+                if (spawn.State == LootState.Collected)
+                {
+                    continue;
+                }
+                var itemKey = CollectibleItems.First(c => spawn.ActorPath.Contains(c.pathPart)).itemKey;
+                mItems.Add(new RemnantItem(itemKey, "Materials")
+                {
+                    ItemNotes = spawn.State == LootState.NotSpawned ? Loc.T("Area not visited yet") : Loc.T("Not picked up yet"),
+                });
             }
 
             if (possibleItems.Count == 0 && !GameInfo.Events.ContainsKey(this._name) && !this._name.Equals("TraitBook") && !this.Name.Equals("Simulacrum"))
@@ -921,8 +957,12 @@ namespace RemnantSaveGuardian
 
             }
         }
-        static public void ProcessEvents(RemnantCharacter character, List<Match> areas, Dictionary<ProcessMode, Dictionary<Match, Match>> allInjectables, ProcessMode mode)
+        /// <param name="questNames">
+        /// Names of all quests in the save when it was read as structured data; null when the save was scanned as text.
+        /// </param>
+        static public void ProcessEvents(RemnantCharacter character, List<SaveArea> areas, List<KeyValuePair<QuestRef, QuestRef>> injectables, ProcessMode mode, HashSet<string>? questNames = null)
         {
+            var questEvents = new HashSet<RemnantWorldEvent>();
             Dictionary<string, Dictionary<string, string>> zones = new Dictionary<string, Dictionary<string, string>>();
             Dictionary<string, List<RemnantWorldEvent>> zoneEvents = new Dictionary<string, List<RemnantWorldEvent>>();
             List<RemnantWorldEvent> churchEvents = new List<RemnantWorldEvent>();
@@ -938,24 +978,28 @@ namespace RemnantSaveGuardian
             RemnantWorldEvent lastEventTree;
             //List<string> excludeTypes = new() { "Global", "Earth" };
             List<string> excludeWorlds = new() { "World_Base", "World_Labyrinth" };
+            if (questNames != null)
+            {
+                // Root Earth quests; the Root Earth locations are appended to the campaign separately below.
+                excludeWorlds.Add("Campaign_Main");
+            }
             List<string> excludeEventDetails = new() { "TheHunterDream", "Dranception" };
             var unknownAreaCount = 0;
-            foreach (Match area in areas)
+            foreach (SaveArea area in areas)
             {
                 var areaEvents = new List<RemnantWorldEvent>();
                 currentSublocation = null;
                 string spawnTable = null;
-                var spawnTableMatch = Regex.Match(area.Groups["spawnTable"].Value, @"SpawnTable_[a-zA-Z0-9]+_(?<name>\w+)\d?");
+                var spawnTableMatch = Regex.Match(area.SpawnTable, @"SpawnTable_[a-zA-Z0-9]+_(?<name>\w+)\d?");
                 if (spawnTableMatch.Success)
                 {
                     spawnTable = spawnTableMatch.Groups["name"].Value;
                 }
-                var tileSets = string.Join(" ", area.Groups["tileSet"].Captures.Select(c => c.Value));
-                MatchCollection eventMatches = Regex.Matches(area.Groups["events"].Value, @"/Game/(?<world>(?:World|Campaign)_\w+)/Quests/(?:Quest_)?(?<eventType>[a-zA-Z0-9]+)_(?<eventName>\w+)/(?<details>\w+)\.\w+");
-                foreach (Match eventMatch in eventMatches)
+                var tileSets = area.TileSets;
+                foreach (QuestRef eventMatch in area.Events)
                 {
                     var prevWorld = currentWorld;
-                    string tmpCurrentWorld = eventMatch.Groups["world"].Value;
+                    string tmpCurrentWorld = eventMatch.World;
 
                     if (tmpCurrentWorld == null || excludeWorlds.Contains(tmpCurrentWorld))
                     {
@@ -979,18 +1023,18 @@ namespace RemnantSaveGuardian
                             //Debug.WriteLine(eventMatch.Value);
                             continue;
                         }
-                        if (GameInfo.SubLocations.ContainsKey(eventMatch.Groups["eventName"].Value))
+                        if (GameInfo.SubLocations.ContainsKey(eventMatch.EventName))
                         {
-                            currentSublocation = GameInfo.SubLocations[eventMatch.Groups["eventName"].Value];
+                            currentSublocation = GameInfo.SubLocations[eventMatch.EventName];
                         } else if (currentMainLocation == null)
                         {
-                            currentSublocation = area.Groups["locationName"].Value;
+                            currentSublocation = area.LocationName;
                         }
                         if (currentSublocation == "Consecrated Throne"|| currentSublocation == "Forgotten Null")
                         {
                             continue;
                         }
-                        if (currentSublocation == null && eventMatch.Groups["eventType"].Value != "OverworldPOI")
+                        if (currentSublocation == null && eventMatch.EventType != "OverworldPOI")
                         {
                             if (spawnTable != null)
                             {
@@ -1002,7 +1046,7 @@ namespace RemnantSaveGuardian
                                 currentSublocation = Loc.GameT("Area {areaNumber}", new() { { "areaNumber", unknownAreaCount.ToString() } });
                             }
                         }
-                        if (excludeEventDetails.Any(detailString => eventMatch.Groups["details"].Value.Contains(detailString)))
+                        if (excludeEventDetails.Any(detailString => eventMatch.Details.Contains(detailString)))
                         {
                             //Logger.Log(eventMatch.Value);
                             continue;
@@ -1022,10 +1066,18 @@ namespace RemnantSaveGuardian
 
                         //eventStrings.Add(eventMatch.Value);
                         //var worldEvent = new RemnantWorldEvent(eventMatch);//, currentArea.Groups["location"].Value.Trim());
-                        var worldEvent = new RemnantWorldEvent(eventMatch.Value, eventMatch.Groups["eventName"].Value, new() { currentWorld }, eventMatch.Groups["eventType"].Value);
+                        var worldEvent = new RemnantWorldEvent(eventMatch.Value, eventMatch.EventName, new() { currentWorld }, eventMatch.EventType);
                         worldEvent.TileSet = tileSets;
-                        if (areaEvents.FindIndex(e => e.RawName == worldEvent.RawName) != -1)
+                        worldEvent.AddCollectibles(eventMatch.Quest);
+                        var existingEvent = areaEvents.Find(e => e.RawName == worldEvent.RawName);
+                        if (existingEvent != null)
                         {
+                            if (worldEvent.Collectibles.Count > 0)
+                            {
+                                // e.g. two tome events in one area share a row.
+                                existingEvent.Collectibles.AddRange(worldEvent.Collectibles.Except(existingEvent.Collectibles));
+                                existingEvent.setMissingItems(character);
+                            }
                             currentWorld = prevWorld;
                             continue;
                         }
@@ -1045,6 +1097,7 @@ namespace RemnantSaveGuardian
 
                         worldEvent.setMissingItems(character);
                         areaEvents.Add(worldEvent);
+                        questEvents.Add(worldEvent);
 
                         // Add associated events
                         if (worldEvent.RawWorld == "World_Nerud" && worldEvent.RawName.Contains("Story"))
@@ -1207,7 +1260,7 @@ namespace RemnantSaveGuardian
                     }
                     catch (Exception ex)
                     {
-                        Logger.Error($"Error parsing save event on {area.Groups["events"].Value}: {ex}");
+                        Logger.Error($"Error parsing save event on {area.LocationName}: {ex}");
 
                     }
                 }
@@ -1236,6 +1289,32 @@ namespace RemnantSaveGuardian
                 if (!zoneEvents.ContainsKey(currentWorld))
                 {
                     zoneEvents[currentWorld] = new();
+                }
+                if (questNames != null)
+                {
+                    // Structured saves list every quest, so an event added above for an encounter that is
+                    // also a real quest would be a duplicate, as would a repeat of one already listed
+                    // (quests that span several zones are processed once per zone).
+                    areaEvents.RemoveAll(e => !questEvents.Contains(e) && questNames.Contains(e.RawName));
+                    areaEvents.RemoveAll(e =>
+                    {
+                        var prev = zoneEvents[currentWorld].Find(p => p.RawName == e.RawName && p.Locations.SequenceEqual(e.Locations));
+                        if (prev == null)
+                        {
+                            return false;
+                        }
+                        var newCollectibles = e.Collectibles.Except(prev.Collectibles).ToList();
+                        if (newCollectibles.Count > 0)
+                        {
+                            prev.Collectibles.AddRange(newCollectibles);
+                            prev.setMissingItems(character);
+                        }
+                        return true;
+                    });
+                    if (areaEvents.Count == 0)
+                    {
+                        continue;
+                    }
                 }
                 var exclusiveTypes = new List<string>() {
                     "Boss",
@@ -1286,11 +1365,11 @@ namespace RemnantSaveGuardian
             //File.WriteAllText($"events{character.WorldIndex}-{eventsIndex}.txt", string.Join("\n", eventStrings.ToArray()));
 
             // add in injectables
-            foreach (var injectablePair in allInjectables[mode])
+            foreach (var injectablePair in injectables)
             {
                 var injectable = new RemnantWorldEvent(injectablePair.Key);
                 var parent = new RemnantWorldEvent(injectablePair.Value);
-                var world = injectablePair.Key.Groups["world"].Value;
+                var world = injectablePair.Key.World;
                 if (!zoneEvents.ContainsKey(world))
                 {
                     //Logger.Warn($"Injectable world {world} not found in {mode} events");
@@ -1791,20 +1870,71 @@ namespace RemnantSaveGuardian
                     adventureIndex = 0;
                 }
             }
-            ProcessEvents(character, eventGroupMatches[campaignIndex], injectables, ProcessMode.Campaign);
+            if (eventGroupMatches.Count == 0)
+            {
+                return;
+            }
+            ProcessEvents(character, eventGroupMatches[campaignIndex].Select(LegacyArea).ToList(), LegacyInjectables(injectables, ProcessMode.Campaign), ProcessMode.Campaign);
             //Logger.Log($"{mode}");
             if (adventureIndex != -1)
             {
-                ProcessEvents(character, eventGroupMatches[adventureIndex], injectables, ProcessMode.Adventure);
+                ProcessEvents(character, eventGroupMatches[adventureIndex].Select(LegacyArea).ToList(), LegacyInjectables(injectables, ProcessMode.Adventure), ProcessMode.Adventure);
             }
         }
+
+        private static SaveArea LegacyArea(Match area) => new()
+        {
+            LocationName = area.Groups["locationName"].Value,
+            SpawnTable = area.Groups["spawnTable"].Value,
+            TileSets = string.Join(" ", area.Groups["tileSet"].Captures.Select(c => c.Value)),
+            Events = QuestRef.ParseAll(area.Groups["events"].Value),
+        };
+
+        private static List<KeyValuePair<QuestRef, QuestRef>> LegacyInjectables(Dictionary<ProcessMode, Dictionary<Match, Match>> injectables, ProcessMode mode)
+        {
+            return injectables[mode].Select(pair => new KeyValuePair<QuestRef, QuestRef>(QuestRef.FromMatch(pair.Key), QuestRef.FromMatch(pair.Value))).ToList();
+        }
+
+        /// <summary>
+        /// Builds the character's event lists from the structured world save: each mode's quest tree
+        /// is grouped into the zones the quests were generated in. Injectables are ordinary quests
+        /// placed in a zone, so they need no separate pass.
+        /// </summary>
+        static public void ProcessEvents(RemnantCharacter character, WorldSave world)
+        {
+            var noInjectables = new List<KeyValuePair<QuestRef, QuestRef>>();
+            foreach (var (tree, mode) in new[] { (world.Campaign, ProcessMode.Campaign), (world.Adventure, ProcessMode.Adventure) })
+            {
+                if (tree == null)
+                {
+                    continue;
+                }
+                var areas = SaveArea.FromQuestTree(tree);
+                var questNames = areas.SelectMany(a => a.Events).Select(q => new RemnantWorldEvent(q).RawName).ToHashSet();
+                ProcessEvents(character, areas, noInjectables, mode, questNames);
+            }
+        }
+
         static public void ProcessEvents(RemnantCharacter character)
         {
-            var savetext = RemnantSave.DecompressSaveAsString(character.Save.WorldSaves[character.WorldIndex]);
+            var savePath = character.Save.WorldSaves[character.WorldIndex];
+            var saveData = RemnantSave.DecompressSave(savePath);
     #if DEBUG
-            System.IO.File.WriteAllText(character.Save.WorldSaves[character.WorldIndex].Replace(".sav", ".txt"), savetext);
+            System.IO.File.WriteAllText(savePath.Replace(".sav", ".txt"), System.Text.Encoding.ASCII.GetString(saveData));
     #endif
-            ProcessEvents(character, savetext);
+            WorldSave world;
+            try
+            {
+                world = WorldSave.FromArchive(SaveFile.ReadTopLevelArchive(saveData));
+            }
+            catch (Exception ex)
+            {
+                // Unrecognized layout (e.g. a newer game version): fall back to scanning the save as text.
+                Logger.Warn($"Could not read world save {System.IO.Path.GetFileName(savePath)} as structured data ({ex.Message}); using text search instead.");
+                ProcessEvents(character, System.Text.Encoding.ASCII.GetString(saveData));
+                return;
+            }
+            ProcessEvents(character, world);
         }
 
         private static void addEventToZones(Dictionary <string, List<RemnantWorldEvent>> zoneEvents, RemnantWorldEvent worldEvent)

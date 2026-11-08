@@ -480,4 +480,10 @@
   <data name="lblWiki_ToolTip" xml:space="preserve">
     <value>Which wiki to load for item lookup</value>
   </data>
+  <data name="Area not visited yet" xml:space="preserve">
+    <value>Area not visited yet</value>
+  </data>
+  <data name="Not picked up yet" xml:space="preserve">
+    <value>Not picked up yet</value>
+  </data>
 </root>
