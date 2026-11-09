@@ -169,16 +169,11 @@
 
     private void OnTitleMouseDown(MouseEventArgs e)
     {
-        if (e.Button != 0)
+        // The window decides between a drag and a double-click (see MainWindow.StartTitleBarDrag).
+        if (e.Button == 0)
         {
-            return;
+            State.DragWindow?.Invoke();
         }
-        if (e.Detail >= 2)
-        {
-            State.ToggleMaximizeWindow?.Invoke();
-            return;
-        }
-        State.DragWindow?.Invoke();
     }
 
     private async Task OnNavContextMenu(MouseEventArgs e, NavEntry entry)

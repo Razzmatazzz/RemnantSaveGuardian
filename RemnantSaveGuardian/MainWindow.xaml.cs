@@ -115,20 +115,7 @@ namespace RemnantSaveGuardian
                 UseAeroCaptionButtons = false,
             });
 
-            appState.DragWindow = () =>
-            {
-                try
-                {
-                    if (System.Windows.Input.Mouse.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
-                    {
-                        DragMove(); // also restores a maximized window and supports Aero Snap
-                    }
-                }
-                catch (InvalidOperationException)
-                {
-                    // The button was released before the drag started.
-                }
-            };
+            appState.DragWindow = StartTitleBarDrag;
             appState.MinimizeWindow = () => SystemCommands.MinimizeWindow(this);
             appState.ToggleMaximizeWindow = () =>
             {
@@ -225,6 +212,68 @@ namespace RemnantSaveGuardian
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         [return: System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.Bool)]
         private static extern bool GetMonitorInfo(IntPtr monitor, ref MONITORINFO info);
+
+        private const int WM_NCLBUTTONDOWN = 0x00A1;
+        private const int HTCAPTION = 2;
+        private const int VK_LBUTTON = 0x01;
+        private const int SM_CXDOUBLECLK = 36;
+        private const int SM_CYDOUBLECLK = 37;
+        private long lastTitleBarPress;
+        private POINT lastTitleBarPressPoint;
+
+        /// <summary>
+        /// Called when the left button goes down on the app bar's title area. Hands the drag to the
+        /// system's own title-bar move loop, as if the press were on a real caption: that restores a
+        /// maximized window once it is dragged, and gives Aero Snap. (WPF's DragMove ignores maximized
+        /// windows.) A second press within the double-click time and distance toggles maximize, since
+        /// the move loop swallows the mouse-up the web page would need to see a double-click itself.
+        /// </summary>
+        private void StartTitleBarDrag()
+        {
+            if (!GetCursorPos(out var cursor))
+            {
+                return;
+            }
+            var now = Environment.TickCount64;
+            var isDoubleClick = now - lastTitleBarPress <= GetDoubleClickTime()
+                && Math.Abs(cursor.X - lastTitleBarPressPoint.X) <= GetSystemMetrics(SM_CXDOUBLECLK) / 2
+                && Math.Abs(cursor.Y - lastTitleBarPressPoint.Y) <= GetSystemMetrics(SM_CYDOUBLECLK) / 2;
+            if (isDoubleClick)
+            {
+                lastTitleBarPress = 0;
+                appState.ToggleMaximizeWindow?.Invoke();
+                return;
+            }
+            lastTitleBarPress = now;
+            lastTitleBarPressPoint = cursor;
+
+            // The press reaches us asynchronously from the web view; only start a drag if the button
+            // is still physically down, or the move loop would grab the mouse after a plain click.
+            if ((GetAsyncKeyState(VK_LBUTTON) & 0x8000) == 0)
+            {
+                return;
+            }
+            var hwnd = new System.Windows.Interop.WindowInteropHelper(this).Handle;
+            System.Windows.Input.Mouse.Capture(null);
+            ReleaseCapture();
+            SendMessage(hwnd, WM_NCLBUTTONDOWN, new IntPtr(HTCAPTION), new IntPtr((cursor.Y << 16) | (cursor.X & 0xFFFF)));
+        }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern IntPtr SendMessage(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        [return: System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.Bool)]
+        private static extern bool ReleaseCapture();
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern short GetAsyncKeyState(int key);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern uint GetDoubleClickTime();
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern int GetSystemMetrics(int index);
 
         [System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]
         private struct POINT
