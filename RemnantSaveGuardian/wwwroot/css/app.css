@@ -1,0 +1,299 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    user-select: none;
+}
+
+#app {
+    height: 100%;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    color: black;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+/* Layout: pages fill the area under the app bar and scroll internally. */
+.rsg-main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.rsg-main {
+    box-sizing: border-box;
+}
+
+.rsg-menu-anchor {
+    display: none;
+}
+
+/* World Analyzer zoom slider */
+.rsg-zoom .mud-table-root .mud-table-body .mud-table-cell,
+.rsg-zoom .mud-treeview-item-content,
+.rsg-zoom .mud-treeview-item-content .mud-typography {
+    font-size: var(--rsg-font-size);
+}
+
+.rsg-zoom .mud-table-root .mud-table-head .mud-table-cell {
+    font-size: calc(var(--rsg-font-size) - 2px);
+}
+
+.rsg-page-host {
+    flex: 1 1 auto;
+    min-height: 0;
+    position: relative;
+}
+
+.rsg-page {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 20px 16px 20px;
+    overflow: hidden;
+}
+
+.rsg-page.rsg-hidden {
+    display: none;
+}
+
+.rsg-page.rsg-scroll {
+    overflow-y: auto;
+}
+
+.rsg-fill {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tabs in the World Analyzer fill the remaining height. */
+.rsg-tabs {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.rsg-tabs > .mud-tabs-panels {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.rsg-tabs > .mud-tabs-panels > div {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.rsg-grid {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.rsg-grid .mud-table-container {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+.rsg-grid td {
+    vertical-align: top;
+}
+
+/* Item lists inside the event grid cells. */
+.rsg-item-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.rsg-item {
+    padding: 1px 4px;
+    border-radius: 3px;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.rsg-item.rsg-has-notes {
+    cursor: help;
+}
+
+/* Hover is an underline so it can't be confused with the red selection. */
+.rsg-item:hover {
+    text-decoration: underline;
+}
+
+.rsg-item.rsg-missing-highlight {
+    color: royalblue;
+}
+
+.rsg-item.rsg-selected,
+.rsg-item.rsg-missing-highlight.rsg-selected {
+    color: var(--mud-palette-primary);
+    background-color: color-mix(in srgb, var(--mud-palette-primary) 16%, transparent);
+}
+
+.rsg-tree {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.rsg-tree-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+}
+
+.rsg-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.rsg-log .mud-alert {
+    margin-bottom: 8px;
+}
+
+.rsg-log .mud-alert-message {
+    user-select: text;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.rsg-cell-input .mud-input {
+    font-size: var(--mud-typography-body2-size);
+}
+
+/* Settings rows: fixed-width input followed by its label. */
+.rsg-settings-row > * {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.rsg-log .mud-alert-message {
+    flex: 1 1 auto;
+}
+
+/* Never let focus or scrollIntoView scroll the fixed layout containers. */
+.rsg-main, .rsg-page-host, .rsg-page:not(.rsg-scroll) {
+    overflow: clip;
+}
+
+.mud-dialog a {
+    color: var(--mud-palette-primary);
+    text-decoration: underline;
+}
+
+/* Backups page: highlight while files are dragged over it. */
+.rsg-drop-zone {
+    position: relative;
+}
+
+.rsg-drop-zone.rsg-drag-over::after {
+    content: attr(data-drop-text);
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--mud-palette-primary);
+    background-color: color-mix(in srgb, var(--mud-palette-background) 80%, transparent);
+    border: 2px dashed var(--mud-palette-primary);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+/* The app bar doubles as the window title bar. */
+.rsg-titlebar .mud-toolbar {
+    padding-right: 0;
+}
+
+.rsg-drag-region {
+    height: 100%;
+    min-width: 0;
+    cursor: default;
+}
+
+.rsg-caption-buttons {
+    display: flex;
+    align-self: stretch;
+    margin-left: 4px;
+}
+
+.rsg-caption-button {
+    width: 46px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: default;
+}
+
+.rsg-caption-button:hover {
+    background-color: var(--mud-palette-action-default-hover);
+}
+
+.rsg-caption-button.rsg-caption-close:hover {
+    background-color: #c42b1c;
+    color: white;
+}
+
+/* Scrolling text (see rsg.enableMarquee): clipped with an ellipsis at rest, slides while hovered. */
+.rsg-marquee {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.rsg-marquee-text {
+    display: inline;
+}
+
+.rsg-marquee.rsg-marquee-active {
+    text-overflow: clip;
+}
+
+.rsg-marquee.rsg-marquee-active .rsg-marquee-text {
+    display: inline-block;
+    will-change: transform;
+}
+
+/* MudTooltip wraps item names in the grids; make its root the clipped marquee box. */
+.mud-tooltip-root.rsg-marquee {
+    display: block;
+}

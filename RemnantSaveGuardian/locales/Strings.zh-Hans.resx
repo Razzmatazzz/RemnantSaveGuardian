@@ -471,4 +471,64 @@
   <data name="chkOnlyInactive_Content" xml:space="preserve">
     <value>只在非活动时</value>
   </data>
+  <data name="The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?" xml:space="preserve">
+    <value>Remnant Save Guardian 的最新版本是 {CurrentVersion}，您正在使用的版本是 {LocalVersion}。是否立即更新程序？</value>
+  </data>
+  <data name="Fextralife" xml:space="preserve">
+    <value>Fextralife Wiki</value>
+  </data>
+  <data name="RemnantWiki" xml:space="preserve">
+    <value>Remnant.wiki</value>
+  </data>
+  <data name="lblWiki_Text" xml:space="preserve">
+    <value>选择 Wiki</value>
+  </data>
+  <data name="lblWiki_ToolTip" xml:space="preserve">
+    <value>查询物品时打开的 Wiki</value>
+  </data>
+  <data name="Area not visited yet" xml:space="preserve">
+    <value>尚未访问该区域</value>
+  </data>
+  <data name="Not picked up yet" xml:space="preserve">
+    <value>尚未拾取</value>
+  </data>
+  <data name="btnImportBackup_ToolTip" xml:space="preserve">
+    <value>将存档文件夹导入为备份</value>
+  </data>
+  <data name="Drop_to_import" xml:space="preserve">
+    <value>将存档文件夹或其中的文件拖放到此处，即可导入为备份</value>
+  </data>
+  <data name="Minimize" xml:space="preserve">
+    <value>最小化</value>
+  </data>
+  <data name="Maximize" xml:space="preserve">
+    <value>最大化</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>还原</value>
+  </data>
+  <data name="Changelog" xml:space="preserve">
+    <value>更新日志</value>
+  </data>
+  <data name="Could not delete backup:" xml:space="preserve">
+    <value>无法删除备份：</value>
+  </data>
+  <data name="Could not parse updated game data; check for new version of this app" xml:space="preserve">
+    <value>无法解析更新的游戏数据；请检查本程序是否有新版本</value>
+  </data>
+  <data name="Export_save_success_{folder}" xml:space="preserve">
+    <value>存档文件已成功导出到 {folder}</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Update available" xml:space="preserve">
+    <value>有可用更新</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
 </root>

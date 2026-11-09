@@ -14,11 +14,9 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows;
-using System.Windows.Markup;
 using System.Windows.Threading;
 
-using Wpf.Ui.Mvvm.Contracts;
-using Wpf.Ui.Mvvm.Services;
+using MudBlazor.Services;
 
 namespace RemnantSaveGuardian
 {
@@ -34,37 +32,28 @@ namespace RemnantSaveGuardian
         // https://docs.microsoft.com/dotnet/core/extensions/logging
         private static readonly IHost _host = Host
             .CreateDefaultBuilder()
-            .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)); })
+            .ConfigureAppConfiguration(c => { c.SetBasePath(AppContext.BaseDirectory); })
             .ConfigureServices((context, services) =>
             {
                 // App Host
                 services.AddHostedService<ApplicationHostService>();
 
-                // Page resolver service
-                services.AddSingleton<IPageService, PageService>();
+                // Blazor UI hosted in the main window
+                services.AddWpfBlazorWebView();
+#if DEBUG
+                services.AddBlazorWebViewDeveloperTools();
+#endif
+                services.AddMudServices(config =>
+                {
+                    config.SnackbarConfiguration.PositionClass = MudBlazor.Defaults.Classes.Position.BottomRight;
+                    config.SnackbarConfiguration.VisibleStateDuration = 10000;
+                    config.SnackbarConfiguration.PreventDuplicates = false;
+                });
+                services.AddSingleton<AppState>();
+                services.AddSingleton<BackupService>();
 
-                // Theme manipulation
-                services.AddSingleton<IThemeService, ThemeService>();
-
-                // TaskBar manipulation
-                services.AddSingleton<ITaskBarService, TaskBarService>();
-
-                // Service containing navigation, same as INavigationWindow... but without window
-                services.AddSingleton<INavigationService, NavigationService>();
-
-                // Main window with navigation
-                services.AddScoped<INavigationWindow, Views.Windows.MainWindow>();
-                services.AddScoped<ViewModels.MainWindowViewModel>();
-
-                // Views and ViewModels
-                services.AddScoped<Views.Pages.BackupsPage>();
-                services.AddScoped<ViewModels.BackupsViewModel>();
-                services.AddScoped<Views.Pages.LogPage>();
-                services.AddScoped<ViewModels.LogViewModel>();
-                services.AddScoped<Views.Pages.WorldAnalyzerPage>();
-                services.AddScoped<ViewModels.WorldAnalyzerViewModel>();
-                services.AddScoped<Views.Pages.SettingsPage>();
-                services.AddScoped<ViewModels.SettingsViewModel>();
+                // Main window
+                services.AddSingleton<MainWindow>();
 
                 // Configuration
                 services.Configure<AppConfig>(context.Configuration.GetSection(nameof(AppConfig)));
@@ -78,8 +67,10 @@ namespace RemnantSaveGuardian
         public static T GetService<T>()
             where T : class
         {
-            return _host.Services.GetService(typeof(T)) as T;
+            return (_host.Services.GetService(typeof(T)) as T)!;
         }
+
+        public static IServiceProvider Services => _host.Services;
 
         /// <summary>
         /// Occurs when the application is loading.
@@ -99,11 +90,8 @@ namespace RemnantSaveGuardian
             }
 
             Thread.CurrentThread.CurrentCulture = culture;
-            WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = culture;
-
-            FrameworkElement.LanguageProperty.OverrideMetadata(
-                typeof(FrameworkElement),
-                new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(culture.IetfLanguageTag)));
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            Loc.Culture = culture;
             await _host.StartAsync();
         }
 
@@ -114,7 +102,7 @@ namespace RemnantSaveGuardian
         {
             CultureInfo[] culture = CultureInfo.GetCultures(CultureTypes.AllCultures);
 
-            string exeLocation = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path)) ?? "";
+            string exeLocation = AppContext.BaseDirectory;
 
             var c = culture.Where(cultureInfo => Directory.Exists(Path.Combine(exeLocation, cultureInfo.Name)) && cultureInfo.Name != "")
                 .Prepend(CultureInfo.GetCultureInfo("en"))
@@ -138,7 +126,8 @@ namespace RemnantSaveGuardian
         /// </summary>
         private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
-            // For more info see https://docs.microsoft.com/en-us/dotnet/api/system.windows.application.dispatcherunhandledexception?view=windowsdesktop-6.0
+            Logger.Error($"Unhandled error: {e.Exception}");
+            e.Handled = true;
         }
     }
 }

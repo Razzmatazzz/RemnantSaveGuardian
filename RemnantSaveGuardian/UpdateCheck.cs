@@ -1,11 +1,8 @@
 ﻿using AutoUpdaterDotNET;
 using System;
-using System.Windows.Documents;
-using System.Diagnostics;
 using System.Net.Http;
 using System.Text.Json.Nodes;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace RemnantSaveGuardian
 {
@@ -15,6 +12,10 @@ namespace RemnantSaveGuardian
         private static readonly HttpClient client = new();
         private static DateTime lastUpdateCheck = DateTime.MinValue;
 
+        /// <summary>
+        /// Raised when a newer release is available. The UI shows the update dialog in response
+        /// and calls <see cref="ApplyUpdate"/> if the user accepts.
+        /// </summary>
         public static event EventHandler<NewVersionEventArgs>? NewVersion;
 
         public static async void CheckForNewVersion()
@@ -32,56 +33,21 @@ namespace RemnantSaveGuardian
                 request.Headers.Add("user-agent", "remnant-save-guardian");
                 var response = await client.SendAsync(request);
                 response.EnsureSuccessStatusCode();
-                JsonNode latestRelease = JsonNode.Parse(await response.Content.ReadAsStringAsync());
+                JsonNode latestRelease = JsonNode.Parse(await response.Content.ReadAsStringAsync())!;
 
-                Version remoteVersion = new Version(latestRelease["tag_name"].ToString());
-                Version localVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                Version remoteVersion = new Version(latestRelease["tag_name"]!.ToString());
+                Version localVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version!;
                 localVersion = new Version(localVersion.Major, localVersion.Minor, localVersion.Build);
                 if (localVersion.CompareTo(remoteVersion) == -1)
                 {
-                    NewVersion?.Invoke(null, new() { Version = remoteVersion, Uri = new(latestRelease["html_url"].ToString()) });
-                    var messageBox = new Wpf.Ui.Controls.MessageBox();
-                    messageBox.Title = Loc.T("Update available");
-                    Hyperlink hyperLink = new()
+                    NewVersion?.Invoke(null, new()
                     {
-                        NavigateUri = new Uri($"https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/tag/{remoteVersion}")
-                    };
-                    hyperLink.Inlines.Add(Loc.T("Changelog"));
-                    hyperLink.RequestNavigate += (o, e) => Process.Start("explorer.exe", e.Uri.ToString());
-                    var txtBlock = new TextBlock()
-                    {
-                        Text = Loc.T("The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?",
-                            new LocalizationOptions()
-                            {
-                                {
-                                    "CurrentVersion", remoteVersion.ToString()
-                                },
-                                {
-                                    "LocalVersion", localVersion.ToString()
-                                }
-                            }
-                        ) + "\n",
-                        TextWrapping = System.Windows.TextWrapping.WrapWithOverflow,
-                    };
-                    txtBlock.Inlines.Add(hyperLink);
-                    messageBox.Content = txtBlock;
-                    messageBox.ButtonLeftName = Loc.T("Update");
-                    messageBox.ButtonLeftClick += (send, updatedEvent) => {
-                        UpdateInfoEventArgs args = new()
-                        {
-                            InstalledVersion = localVersion,
-                            CurrentVersion = remoteVersion.ToString(),
-                            DownloadURL = latestRelease["assets"].AsArray()[0]["browser_download_url"].ToString()
-                        };
-                        messageBox.Close();
-                        AutoUpdater.DownloadUpdate(args);
-                        Application.Current.Shutdown();
-                    };
-                    messageBox.ButtonRightName = Loc.T("Cancel");
-                    messageBox.ButtonRightClick += (send, updatedEvent) => {
-                        messageBox.Close();
-                    };
-                    messageBox.ShowDialog();
+                        Version = remoteVersion,
+                        LocalVersion = localVersion,
+                        Uri = new(latestRelease["html_url"]!.ToString()),
+                        ChangelogUri = new Uri($"https://github.com/{repo}/releases/tag/{remoteVersion}"),
+                        DownloadUrl = latestRelease["assets"]!.AsArray()[0]!["browser_download_url"]!.ToString(),
+                    });
                 }
             }
             catch (Exception ex)
@@ -89,15 +55,31 @@ namespace RemnantSaveGuardian
                 Logger.Error($"{Loc.T("Error checking for new version")}: {ex.Message}");
             }
         }
+
+        /// <summary>Downloads and installs the release described by <paramref name="update"/>, then exits.</summary>
+        public static void ApplyUpdate(NewVersionEventArgs update)
+        {
+            UpdateInfoEventArgs args = new()
+            {
+                InstalledVersion = update.LocalVersion,
+                CurrentVersion = update.Version.ToString(),
+                DownloadURL = update.DownloadUrl,
+            };
+            AutoUpdater.DownloadUpdate(args);
+            Application.Current.Shutdown();
+        }
     }
 
     public class NewVersionEventArgs : EventArgs
     {
-        public Version Version { get; set; }
-        public Uri Uri { get; set; }
+        public Version Version { get; set; } = new();
+        public Version LocalVersion { get; set; } = new();
+        public Uri Uri { get; set; } = null!;
+        public Uri ChangelogUri { get; set; } = null!;
+        public string DownloadUrl { get; set; } = "";
     }
     public class UpdateCheckErrorEventArgs : EventArgs
     {
-        public Exception Exception { get; set; }
+        public Exception Exception { get; set; } = null!;
     }
 }

@@ -1,0 +1,192 @@
+@* Save Backups page: list, rename, keep, restore, analyze, open, delete and import backups. *@
+@implements IDisposable
+@inject BackupService Backups
+@inject AppState State
+@inject IDialogService DialogService
+
+@* Files or folders dropped here are imported as backups (see rsg.enableFileDrop and MainWindow). *@
+<div class="rsg-drop-zone rsg-fill" data-drop-text="@Loc.T("Drop_to_import")">
+<div class="d-flex align-center gap-1 mb-2">
+    <MudTooltip Text="@Loc.T("btnBackup_ToolTip")">
+        <MudIconButton Icon="@Icons.Material.Filled.Save" Disabled="@(!Backups.CanBackup)" OnClick="@Backups.DoBackup" />
+    </MudTooltip>
+    <MudTooltip Text="@Loc.T("btnOpenBackupsFolder_ToolTip")">
+        <MudIconButton Icon="@Icons.Material.Filled.FolderOpen" OnClick="@Backups.OpenBackupsFolder" />
+    </MudTooltip>
+    <MudTooltip Text="@Loc.T("btnImportBackup_ToolTip")">
+        <MudIconButton Icon="@Icons.Material.Filled.DriveFolderUpload" OnClick="ImportBackup" />
+    </MudTooltip>
+    @if (GameFolderValid)
+    {
+        <MudTooltip Text="@Loc.T("btnStartGame_ToolTip")">
+            <MudIconButton Icon="@Icons.Material.Filled.PlayArrow" Disabled="@Backups.GameRunning" OnClick="@Backups.StartGame" />
+        </MudTooltip>
+    }
+</div>
+
+<MudDataGrid T="SaveBackup" Items="@Backups.Backups.OrderByDescending(b => b.SaveDate)" Class="rsg-grid" Dense="true" Hover="true" FixedHeader="true" Height="100%"
+             Loading="@(!Backups.IsLoaded)" SortMode="SortMode.Single" ReadOnly="true"
+             RowClick="@(e => selected = e.Item)" RowContextMenuClick="OnRowContextMenu"
+             RowStyleFunc="RowStyle">
+    <Columns>
+        <TemplateColumn T="SaveBackup" Title="@Loc.T("Name")" SortBy="@(b => b.Name)">
+            <CellTemplate>
+                <MudTextField T="string" Value="@context.Item.Name" ValueChanged="@(v => Backups.Rename(context.Item, v))"
+                              Underline="false" Margin="Margin.Dense" Variant="Variant.Text" Class="mt-0 rsg-cell-input" />
+            </CellTemplate>
+        </TemplateColumn>
+        <PropertyColumn Property="b => b.SaveDate" Title="@Loc.T("SaveDate")" Format="G" />
+        <PropertyColumn Property="b => b.Progression" Title="@Loc.T("Progression")" />
+        <TemplateColumn T="SaveBackup" Title="@Loc.T("Keep")" SortBy="@(b => b.Keep)">
+            <CellTemplate>
+                <MudCheckBox T="bool" Value="@context.Item.Keep" ValueChanged="@(v => Backups.SetKeep(context.Item, v))" Dense="true" />
+            </CellTemplate>
+        </TemplateColumn>
+        <TemplateColumn T="SaveBackup" Title="@Loc.T("Active")" SortBy="@(b => b.Active)">
+            <CellTemplate>
+                <MudCheckBox T="bool" Value="@context.Item.Active" ReadOnly="true" Dense="true" Style="cursor: not-allowed" />
+            </CellTemplate>
+        </TemplateColumn>
+        <TemplateColumn T="SaveBackup" Sortable="false" CellStyle="width: 1%">
+            <CellTemplate>
+                <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Size="Size.Small" OnClick="@(e => OpenMenu(e, context.Item))" />
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+    <NoRecordsContent>
+        <MudText Typo="Typo.body2">@Loc.T("Backups found"): 0</MudText>
+    </NoRecordsContent>
+</MudDataGrid>
+</div>
+
+<CursorMenu @ref="menu">
+    <MudMenu Label="@Loc.T("menuRestore_Header")" StartIcon="@Icons.Material.Filled.Restore" Dense="true">
+        <MudMenuItem Icon="@Icons.Material.Filled.Star" OnClick="@(() => Backups.RestoreBackup(selected, "All"))">@Loc.T("menuRestoreAll_Header")</MudMenuItem>
+        <MudMenuItem Icon="@Icons.Material.Filled.Public" OnClick="@(() => Backups.RestoreBackup(selected, "World"))">@Loc.T("menuRestoreWorlds_Header")</MudMenuItem>
+        <MudMenuItem Icon="@Icons.Material.Filled.Person" OnClick="@(() => Backups.RestoreBackup(selected, "Character"))">@Loc.T("menuRestoreCharacters_Header")</MudMenuItem>
+    </MudMenu>
+    <MudMenuItem Icon="@Icons.Material.Filled.TravelExplore" OnClick="AnalyzeSelected">@Loc.T("World Analyzer")</MudMenuItem>
+    <MudMenuItem Icon="@Icons.Material.Filled.FolderOpen" OnClick="OpenSelectedFolder">@Loc.T("Open Folder")</MudMenuItem>
+    <MudMenuItem Icon="@Icons.Material.Filled.Delete" OnClick="DeleteSelected">@Loc.T("Delete")</MudMenuItem>
+</CursorMenu>
+
+@code {
+    private SaveBackup? selected;
+    private CursorMenu? menu;
+    private bool selectedActiveOnLoad;
+
+    private static bool GameFolderValid => Settings.Default.GameFolder.Length > 0 && System.IO.Directory.Exists(Settings.Default.GameFolder);
+
+    protected override void OnInitialized()
+    {
+        Backups.Changed += OnChanged;
+        Loc.CultureChanged += OnChanged;
+        SelectActiveBackup();
+    }
+
+    private void OnChanged(object? sender, EventArgs e)
+    {
+        InvokeAsync(() =>
+        {
+            SelectActiveBackup();
+            StateHasChanged();
+        });
+    }
+
+    /// <summary>Selects the backup of the active save once, after the list first loads.</summary>
+    private void SelectActiveBackup()
+    {
+        if (selectedActiveOnLoad || !Backups.IsLoaded)
+        {
+            return;
+        }
+        selectedActiveOnLoad = true;
+        selected = Backups.Backups.FirstOrDefault(b => b.Active);
+    }
+
+    private string RowStyle(SaveBackup backup, int index)
+    {
+        var style = backup == selected ? "background-color: var(--mud-palette-action-default-hover);" : "";
+        if (backup.Active)
+        {
+            style += "font-weight: 600;";
+        }
+        return style;
+    }
+
+    private async Task OnRowContextMenu(DataGridRowClickEventArgs<SaveBackup> e)
+    {
+        await OpenMenu(e.MouseEventArgs, e.Item);
+    }
+
+    private async Task OpenMenu(MouseEventArgs e, SaveBackup backup)
+    {
+        selected = backup;
+        if (menu != null)
+        {
+            await menu.OpenAsync(e);
+        }
+    }
+
+    private void AnalyzeSelected()
+    {
+        if (selected != null)
+        {
+            State.OpenBackupAnalyzer(selected);
+        }
+    }
+
+    private void OpenSelectedFolder()
+    {
+        if (selected != null)
+        {
+            Backups.OpenBackupFolder(selected);
+        }
+    }
+
+    private async Task DeleteSelected()
+    {
+        var backup = selected;
+        if (backup == null)
+        {
+            return;
+        }
+        var message = Loc.T("Are you sure you want to delete backup {backupName}?", new() { { "backupName", backup.Name } })
+            + $"\n{Loc.T("Characters")}: {string.Join(", ", backup.Save.Characters)}\n{Loc.T("Date")}: {backup.SaveDate}";
+        var result = await DialogService.ShowMessageBoxAsync(new MessageBoxOptions
+        {
+            Title = Loc.T("Confirm Delete"),
+            MarkupMessage = new MarkupString(System.Net.WebUtility.HtmlEncode(message).Replace("\n", "<br/>")),
+            YesText = Loc.T("Delete"),
+            CancelText = Loc.T("Cancel"),
+        });
+        if (result == true)
+        {
+            Backups.DeleteBackup(backup);
+            if (selected == backup)
+            {
+                selected = null;
+            }
+        }
+    }
+
+    private void ImportBackup()
+    {
+        using var dialog = new System.Windows.Forms.FolderBrowserDialog
+        {
+            Description = Loc.T("btnImportBackup_ToolTip"),
+            UseDescriptionForTitle = true,
+        };
+        if (dialog.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+        {
+            return;
+        }
+        Backups.ImportBackup(dialog.SelectedPath);
+    }
+
+    public void Dispose()
+    {
+        Backups.Changed -= OnChanged;
+        Loc.CultureChanged -= OnChanged;
+    }
+}

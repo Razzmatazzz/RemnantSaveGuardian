@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Hosting;
 using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using Wpf.Ui.Mvvm.Contracts;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace RemnantSaveGuardian.Services
 {
@@ -14,47 +14,26 @@ namespace RemnantSaveGuardian.Services
     public class ApplicationHostService : IHostedService
     {
         private readonly IServiceProvider _serviceProvider;
-        private INavigationWindow _navigationWindow;
 
         public ApplicationHostService(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
         }
 
-        /// <summary>
-        /// Triggered when the application host is ready to start the service.
-        /// </summary>
-        /// <param name="cancellationToken">Indicates that the start process has been aborted.</param>
-        public async Task StartAsync(CancellationToken cancellationToken)
+        public Task StartAsync(CancellationToken cancellationToken)
         {
-            await HandleActivationAsync();
-        }
-
-        /// <summary>
-        /// Triggered when the application host is performing a graceful shutdown.
-        /// </summary>
-        /// <param name="cancellationToken">Indicates that the shutdown process should no longer be graceful.</param>
-        public async Task StopAsync(CancellationToken cancellationToken)
-        {
-            await Task.CompletedTask;
-        }
-
-        /// <summary>
-        /// Creates main window during activation.
-        /// </summary>
-        private async Task HandleActivationAsync()
-        {
-            await Task.CompletedTask;
-
-            if (!Application.Current.Windows.OfType<Views.Windows.MainWindow>().Any())
+            if (!Application.Current.Windows.OfType<MainWindow>().Any())
             {
-                _navigationWindow = (_serviceProvider.GetService(typeof(INavigationWindow)) as INavigationWindow)!;
-                _navigationWindow!.ShowWindow();
-
-                _navigationWindow.Navigate(typeof(Views.Pages.BackupsPage));
+                var window = _serviceProvider.GetRequiredService<MainWindow>();
+                Application.Current.MainWindow = window;
+                window.Show();
             }
+            return Task.CompletedTask;
+        }
 
-            await Task.CompletedTask;
+        public Task StopAsync(CancellationToken cancellationToken)
+        {
+            return Task.CompletedTask;
         }
     }
 }

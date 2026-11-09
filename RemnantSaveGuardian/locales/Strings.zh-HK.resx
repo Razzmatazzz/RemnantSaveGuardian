@@ -492,4 +492,133 @@
 	<data name="Type" xml:space="preserve">
 		<value>類型</value>
 	</data>
+  <data name="Backup deleted" xml:space="preserve">
+    <value>備份已刪除</value>
+  </data>
+  <data name="chkShowCoopItems_Content" xml:space="preserve">
+    <value>在分析器中顯示多人遊戲才能取得的物品</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="Collapse All" xml:space="preserve">
+    <value>全部摺疊</value>
+  </data>
+  <data name="Error exporting save files: {errorMessage}" xml:space="preserve">
+    <value>匯出存檔文件時出錯：{errorMessage}</value>
+  </data>
+  <data name="Expand All" xml:space="preserve">
+    <value>全部展開</value>
+  </data>
+  <data name="export_save_invalid_folder_error" xml:space="preserve">
+    <value>無法匯出到存檔文件夾或包含存檔備份的文件夾。</value>
+  </data>
+  <data name="Import_failed_backup_exists" xml:space="preserve">
+    <value>無法匯入存檔；已存在相同時間戳記的備份</value>
+  </data>
+  <data name="Import_save_success" xml:space="preserve">
+    <value>存檔已成功匯入備份</value>
+  </data>
+  <data name="lblMissingItemColor_Text" xml:space="preserve">
+    <value>世界資源分析器中未取得物品的顏色</value>
+  </data>
+  <data name="No_profile_sav_found_warning" xml:space="preserve">
+    <value>文件中必須包含 profile.sav</value>
+  </data>
+  <data name="No_world_found_warning" xml:space="preserve">
+    <value>文件中必須包含至少一個 save_#.sav 文件</value>
+  </data>
+  <data name="Unexpected_event_group_number_warning_{numberOfEventGroups}" xml:space="preserve">
+    <value>世界資源分析器找到 {numberOfEventGroups} 組事件，但最多只應有 2 組，結果可能不正確。</value>
+  </data>
+  <data name="lblSwitchLanguage_Text" xml:space="preserve">
+    <value>選擇語言</value>
+  </data>
+  <data name="Language_change_notice_{chosenLanguage}" xml:space="preserve">
+    <value>語言已更改為「{chosenLanguage}」。可能需要重新啟動程式才能完全生效。</value>
+  </data>
+  <data name="Unrecognized_save_files_warning_{fileList}" xml:space="preserve">
+    <value>在存檔文件夾中發現無法識別的文件：{fileList}。這些文件可能會干擾世界資源分析器。</value>
+  </data>
+  <data name="Always On Top" xml:space="preserve">
+    <value>總是置頂</value>
+  </data>
+  <data name="chkAutoHideNaviAndTitleBar_Content" xml:space="preserve">
+    <value>視窗非使用中時自動隱藏導覽列和標題列</value>
+  </data>
+  <data name="chkOpacity_Content" xml:space="preserve">
+    <value>視窗透明度</value>
+  </data>
+  <data name="chkOpacity_note_Text" xml:space="preserve">
+    <value>（實驗性功能，可能造成程式不穩定）</value>
+  </data>
+  <data name="Opacity_toggle_notice" xml:space="preserve">
+    <value>視窗透明度設定已更改，必須重新啟動程式才能生效。</value>
+  </data>
+  <data name="lblOpacitySlider_Text" xml:space="preserve">
+    <value>不透明度</value>
+  </data>
+  <data name="chkOnlyInactive_Content" xml:space="preserve">
+    <value>僅在非使用中時</value>
+  </data>
+  <data name="The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?" xml:space="preserve">
+    <value>Remnant Save Guardian 的最新版本是 {CurrentVersion}，您正在使用的版本是 {LocalVersion}。是否立即更新程式？</value>
+  </data>
+  <data name="Fextralife" xml:space="preserve">
+    <value>Fextralife Wiki</value>
+  </data>
+  <data name="RemnantWiki" xml:space="preserve">
+    <value>Remnant.wiki</value>
+  </data>
+  <data name="lblWiki_Text" xml:space="preserve">
+    <value>選擇 Wiki</value>
+  </data>
+  <data name="lblWiki_ToolTip" xml:space="preserve">
+    <value>查詢物品時開啟的 Wiki</value>
+  </data>
+  <data name="Area not visited yet" xml:space="preserve">
+    <value>尚未造訪該區域</value>
+  </data>
+  <data name="Not picked up yet" xml:space="preserve">
+    <value>尚未拾取</value>
+  </data>
+  <data name="btnImportBackup_ToolTip" xml:space="preserve">
+    <value>將存檔文件夾匯入為備份</value>
+  </data>
+  <data name="Drop_to_import" xml:space="preserve">
+    <value>將存檔文件夾或其中的文件拖放到此處，即可匯入為備份</value>
+  </data>
+  <data name="Minimize" xml:space="preserve">
+    <value>最小化</value>
+  </data>
+  <data name="Maximize" xml:space="preserve">
+    <value>最大化</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>還原</value>
+  </data>
+  <data name="Changelog" xml:space="preserve">
+    <value>更新日誌</value>
+  </data>
+  <data name="Could not delete backup:" xml:space="preserve">
+    <value>無法刪除備份：</value>
+  </data>
+  <data name="Could not parse updated game data; check for new version of this app" xml:space="preserve">
+    <value>無法解析更新的遊戲資料；請檢查本程式是否有新版本</value>
+  </data>
+  <data name="Export_save_success_{folder}" xml:space="preserve">
+    <value>存檔文件已成功匯出到 {folder}</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Update available" xml:space="preserve">
+    <value>有可用更新</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
 </root>

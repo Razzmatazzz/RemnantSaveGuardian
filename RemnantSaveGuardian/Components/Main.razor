@@ -1,0 +1,249 @@
+@* Root component: theme, navigation, snackbar notifications and the update dialog. *@
+@implements IDisposable
+@inject AppState State
+@inject ISnackbar Snackbar
+@inject IDialogService DialogService
+@inject IJSRuntime JS
+
+<MudThemeProvider Theme="theme" IsDarkMode="IsDarkMode" />
+<MudPopoverProvider />
+<MudDialogProvider CloseOnEscapeKey="true" />
+<MudSnackbarProvider />
+
+<MudLayout>
+    @if (State.ChromeVisible)
+    {
+        @* The app bar is the window's title bar: drag, double-click to maximize, right-click for the system menu. *@
+        <MudAppBar Dense="true" Elevation="1" Class="rsg-titlebar">
+            <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@(() => drawerOpen = !drawerOpen)" />
+            <div class="d-flex align-center flex-grow-1 rsg-ellipsis rsg-drag-region"
+                 @onmousedown="OnTitleMouseDown" @oncontextmenu="@(() => State.ShowSystemMenu?.Invoke())">
+                <MudImage Src="img/applicationIcon-256.png" Width="24" Height="24" Class="mx-2" />
+                <MudText Typo="Typo.h6" Class="rsg-ellipsis">@State.ActiveEntry?.Title</MudText>
+                <MudText Typo="Typo.caption" Class="ml-3 rsg-ellipsis" Style="opacity: 0.6">Remnant Save Guardian</MudText>
+            </div>
+            <MudTooltip Text="@Loc.T("Always On Top")">
+                <MudToggleIconButton Toggled="@Settings.Default.TopMost"
+                                     ToggledChanged="@(v => Settings.Default.TopMost = v)"
+                                     Icon="@Icons.Material.Outlined.PushPin"
+                                     ToggledIcon="@Icons.Material.Filled.PushPin"
+                                     Color="Color.Inherit"
+                                     ToggledColor="Color.Warning" />
+            </MudTooltip>
+            <div class="rsg-caption-buttons">
+                <button class="rsg-caption-button" title="@Loc.T("Minimize")" @onclick="@(() => State.MinimizeWindow?.Invoke())">
+                    <MudIcon Icon="@Icons.Material.Filled.Remove" Size="Size.Small" />
+                </button>
+                <button class="rsg-caption-button" title="@(State.WindowMaximized ? Loc.T("Restore") : Loc.T("Maximize"))" @onclick="@(() => State.ToggleMaximizeWindow?.Invoke())">
+                    <MudIcon Icon="@(State.WindowMaximized ? Icons.Material.Filled.FilterNone : Icons.Material.Filled.CropSquare)" Size="Size.Small" />
+                </button>
+                <button class="rsg-caption-button rsg-caption-close" title="@Loc.T("Close")" @onclick="@(() => State.CloseWindow?.Invoke())">
+                    <MudIcon Icon="@Icons.Material.Filled.Close" Size="Size.Small" />
+                </button>
+            </div>
+        </MudAppBar>
+        <MudDrawer @bind-Open="drawerOpen" Variant="DrawerVariant.Mini" ClipMode="DrawerClipMode.Always" Elevation="1">
+            <MudNavMenu Class="d-flex flex-column" Style="height: 100%">
+                @foreach (var entry in State.MainItems.Concat(State.BackupAnalyzers))
+                {
+                    @NavItem(entry)
+                }
+                <MudSpacer />
+                <MudDivider />
+                @foreach (var entry in State.FooterItems)
+                {
+                    @NavItem(entry)
+                }
+            </MudNavMenu>
+        </MudDrawer>
+    }
+    <MudMainContent Class="@($"rsg-main {(State.ChromeVisible ? "" : "pt-0")}")">
+        <div class="rsg-page-host">
+            @foreach (var entry in State.AllItems.Where(e => State.Visited.Contains(e.Key)))
+            {
+                var active = entry.Key == State.ActiveKey;
+                <div @key="entry.Key" class="@($"rsg-page {(active ? "" : "rsg-hidden")} {(entry.Key is AppState.SettingsKey or AppState.LogKey ? "rsg-scroll" : "")}")">
+                    @switch (entry.Key)
+                    {
+                        case AppState.BackupsKey:
+                            <BackupsPage />
+                            break;
+                        case AppState.LogKey:
+                            <LogPage />
+                            break;
+                        case AppState.SettingsKey:
+                            <SettingsPage />
+                            break;
+                        default:
+                            <WorldAnalyzerPage SavePath="@entry.SavePath" />
+                            break;
+                    }
+                </div>
+            }
+        </div>
+    </MudMainContent>
+</MudLayout>
+
+<CursorMenu @ref="navMenu">
+    <MudMenuItem Icon="@Icons.Material.Filled.Block" OnClick="CloseContextEntry">@Loc.T("Close")</MudMenuItem>
+</CursorMenu>
+
+@code {
+    private readonly MudTheme theme = new()
+    {
+        // Accent colours come from the app icon's crimson gradient (#51040E to #B80419). The dark theme
+        // uses a lighter red of the same hue so text and outlines stay readable on the dark background.
+        PaletteDark = new PaletteDark
+        {
+            Primary = "#F2536A",
+            PrimaryContrastText = "#FFFFFF",
+            Secondary = "#B80419",
+            AppbarBackground = "#1a1a27",
+            Background = "#1a1a27",
+            DrawerBackground = "#1f1f2e",
+            Surface = "#24243a",
+        },
+        PaletteLight = new PaletteLight
+        {
+            Primary = "#B80419",
+            PrimaryContrastText = "#FFFFFF",
+            Secondary = "#850414",
+            AppbarBackground = "#f3f3f3",
+            AppbarText = "#202020",
+        },
+    };
+
+    private bool drawerOpen = false;
+    private CursorMenu? navMenu;
+    private string? contextEntryKey;
+
+    private static bool IsDarkMode => Settings.Default.Theme != "Light";
+
+    private RenderFragment NavItem(NavEntry entry) => __builder =>
+    {
+        var active = entry.Key == State.ActiveKey;
+        <MudTooltip Text="@entry.Title" Placement="Placement.Right" Disabled="@drawerOpen" RootStyle="display:block">
+            <div @oncontextmenu="@(e => OnNavContextMenu(e, entry))">
+                <MudNavLink Icon="@entry.Icon" Class="@(active ? "active" : "")" OnClick="@(() => State.Navigate(entry.Key))">
+                    <span class="rsg-ellipsis">@entry.Title</span>
+                </MudNavLink>
+            </div>
+        </MudTooltip>
+    };
+
+    protected override void OnInitialized()
+    {
+        State.Changed += OnStateChanged;
+        Logger.MessageLogged += Logger_MessageLogged;
+        UpdateCheck.NewVersion += UpdateCheck_NewVersion;
+        Settings.Default.PropertyChanged += Settings_PropertyChanged;
+        Loc.CultureChanged += OnCultureChanged;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            return;
+        }
+        await JS.InvokeVoidAsync("rsg.suppressContextMenu");
+        await JS.InvokeVoidAsync("rsg.enableFileDrop");
+        await JS.InvokeVoidAsync("rsg.enableMarquee");
+        if (Settings.Default.AutoCheckUpdate)
+        {
+            UpdateCheck.CheckForNewVersion();
+        }
+    }
+
+    private void OnStateChanged(object? sender, EventArgs e) => InvokeAsync(StateHasChanged);
+
+    private void OnCultureChanged(object? sender, EventArgs e) => InvokeAsync(StateHasChanged);
+
+    private void Settings_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName is "Theme" or "TopMost")
+        {
+            InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private void OnTitleMouseDown(MouseEventArgs e)
+    {
+        if (e.Button != 0)
+        {
+            return;
+        }
+        if (e.Detail >= 2)
+        {
+            State.ToggleMaximizeWindow?.Invoke();
+            return;
+        }
+        State.DragWindow?.Invoke();
+    }
+
+    private async Task OnNavContextMenu(MouseEventArgs e, NavEntry entry)
+    {
+        if (!entry.Closable || navMenu == null)
+        {
+            return;
+        }
+        contextEntryKey = entry.Key;
+        await navMenu.OpenAsync(e);
+    }
+
+    private void CloseContextEntry()
+    {
+        if (contextEntryKey != null)
+        {
+            State.CloseBackupAnalyzer(contextEntryKey);
+        }
+    }
+
+    private void Logger_MessageLogged(object? sender, MessageLoggedEventArgs e)
+    {
+        var severity = e.LogType switch
+        {
+            LogType.Error => Severity.Error,
+            LogType.Warning => Severity.Warning,
+            LogType.Success => Severity.Success,
+            _ => Severity.Info,
+        };
+        InvokeAsync(() => Snackbar.Add(e.Message, severity));
+    }
+
+    private void UpdateCheck_NewVersion(object? sender, NewVersionEventArgs e)
+    {
+        InvokeAsync(() => ShowUpdateDialog(e));
+    }
+
+    private async Task ShowUpdateDialog(NewVersionEventArgs update)
+    {
+        var text = Loc.T("The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?",
+            new LocalizationOptions
+            {
+                { "CurrentVersion", update.Version.ToString() },
+                { "LocalVersion", update.LocalVersion.ToString() },
+            });
+        var html = $"{System.Net.WebUtility.HtmlEncode(text)}<br/><br/><a href=\"{update.ChangelogUri}\" target=\"_blank\">{System.Net.WebUtility.HtmlEncode(Loc.T("Changelog"))}</a>";
+        var result = await DialogService.ShowMessageBoxAsync(new MessageBoxOptions
+        {
+            Title = Loc.T("Update available"),
+            MarkupMessage = new MarkupString(html),
+            YesText = Loc.T("Update"),
+            CancelText = Loc.T("Cancel"),
+        });
+        if (result == true)
+        {
+            UpdateCheck.ApplyUpdate(update);
+        }
+    }
+
+    public void Dispose()
+    {
+        State.Changed -= OnStateChanged;
+        Logger.MessageLogged -= Logger_MessageLogged;
+        UpdateCheck.NewVersion -= UpdateCheck_NewVersion;
+        Settings.Default.PropertyChanged -= Settings_PropertyChanged;
+        Loc.CultureChanged -= OnCultureChanged;
+    }
+}

@@ -1,0 +1,68 @@
+@* Grid of world events (Location / Type / Name / Missing Items / Possible Items). *@
+
+<MudDataGrid T="RemnantWorldEvent" Items="@Items" Class="rsg-grid" Dense="true" Hover="true" FixedHeader="true" Height="100%"
+             SortMode="SortMode.Single" ReadOnly="true" Virtualize="false">
+    <Columns>
+        <PropertyColumn Property="e => e.Location" Title="@Loc.T("Location")" />
+        <PropertyColumn Property="e => e.Type" Title="@Loc.T("Type")" />
+        <PropertyColumn Property="e => e.Name" Title="@Loc.T("Name")" />
+        <TemplateColumn T="RemnantWorldEvent" Title="@Loc.T("Missing Items")" SortBy="@(e => e.MissingItemsString)">
+            <CellTemplate>
+                @ItemList(context.Item.MissingItems, HighlightMissing)
+            </CellTemplate>
+        </TemplateColumn>
+        @if (ShowPossibleItems)
+        {
+            <TemplateColumn T="RemnantWorldEvent" Title="@Loc.T("Possible Items")" SortBy="@(e => e.PossibleItemsString)">
+                <CellTemplate>
+                    @ItemList(context.Item.PossibleItems, false)
+                </CellTemplate>
+            </TemplateColumn>
+        }
+    </Columns>
+</MudDataGrid>
+
+@code {
+    [Parameter, EditorRequired]
+    public IReadOnlyList<RemnantWorldEvent> Items { get; set; } = Array.Empty<RemnantWorldEvent>();
+
+    [Parameter]
+    public bool ShowPossibleItems { get; set; }
+
+    [Parameter]
+    public bool HighlightMissing { get; set; }
+
+    [Parameter]
+    public RemnantItem? SelectedItem { get; set; }
+
+    [Parameter]
+    public EventCallback<RemnantItem> SelectedItemChanged { get; set; }
+
+    /// <summary>Raised when an item is right-clicked.</summary>
+    [Parameter]
+    public EventCallback<(MouseEventArgs Args, RemnantItem Item)> OnItemContextMenu { get; set; }
+
+    private RenderFragment ItemList(List<RemnantItem> items, bool highlight) => __builder =>
+    {
+        <ul class="rsg-item-list">
+            @foreach (var item in items)
+            {
+                var hasNotes = !string.IsNullOrEmpty(item.ItemNotes);
+                var css = $"rsg-item {(highlight ? "rsg-missing-highlight" : "")} {(hasNotes ? "rsg-has-notes" : "")} {(ReferenceEquals(item, SelectedItem) ? "rsg-selected" : "")}";
+                <li class="@css" @onclick="@(() => SelectedItemChanged.InvokeAsync(item))"
+                    @oncontextmenu="@(async e => { await SelectedItemChanged.InvokeAsync(item); await OnItemContextMenu.InvokeAsync((e, item)); })">
+                    @if (hasNotes)
+                    {
+                        <MudTooltip Text="@item.ItemNotes" Placement="Placement.Top" Delay="300" RootClass="rsg-marquee">
+                            <span class="rsg-marquee-text">@item.Name</span>
+                        </MudTooltip>
+                    }
+                    else
+                    {
+                        <span class="rsg-marquee"><span class="rsg-marquee-text">@item.Name</span></span>
+                    }
+                </li>
+            }
+        </ul>
+    };
+}

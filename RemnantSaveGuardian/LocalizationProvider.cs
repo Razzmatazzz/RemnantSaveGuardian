@@ -1,14 +1,36 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
-using System.Reflection;
+using System.Resources;
 using System.Text.RegularExpressions;
-
-using WPFLocalizeExtension.Extensions;
 
 namespace RemnantSaveGuardian
 {
-	internal class Loc
+    internal class Loc
     {
+        private static CultureInfo _culture = CultureInfo.CurrentUICulture;
+
+        /// <summary>The culture used for all UI strings.</summary>
+        public static CultureInfo Culture
+        {
+            get => _culture;
+            set
+            {
+                _culture = value;
+                locales.Strings.Culture = value;
+                locales.GameStrings.Culture = value;
+                CultureChanged?.Invoke(null, EventArgs.Empty);
+            }
+        }
+
+        /// <summary>Raised after <see cref="Culture"/> changes, so the UI can re-render.</summary>
+        public static event EventHandler? CultureChanged;
+
+        private static ResourceManager GetResourceManager(string ns)
+        {
+            return ns == "GameStrings" ? locales.GameStrings.ResourceManager : locales.Strings.ResourceManager;
+        }
+
         public static T GetLocalizedValue<T>(string key, LocalizationOptions options)
         {
             var ns = "Strings";
@@ -16,17 +38,25 @@ namespace RemnantSaveGuardian
             {
                 ns = options["namespace"];
             }
-            var currentCulture = WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture;
-            if (options.Has("locale") && options["locale"] != currentCulture.ToString())
+            var culture = Culture;
+            if (options.Has("locale") && options["locale"] != culture.ToString())
             {
-                WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.SetCurrentThreadCulture = false;
-                WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = new CultureInfo(options["locale"]);
-                var translation = LocExtension.GetLocalizedValue<T>(Assembly.GetCallingAssembly().GetName().Name + $":{ns}:" + key);
-                WPFLocalizeExtension.Engine.LocalizeDictionary.Instance.Culture = currentCulture;
-                return translation;
+                culture = new CultureInfo(options["locale"]);
             }
-            //Debug.WriteLine($"{ns}:{key}");
-            return LocExtension.GetLocalizedValue<T>(Assembly.GetCallingAssembly().GetName().Name + $":{ns}:" + key);
+            if (key == null)
+            {
+                return default!;
+            }
+            object? value;
+            try
+            {
+                value = GetResourceManager(ns).GetObject(key, culture);
+            }
+            catch (MissingManifestResourceException)
+            {
+                value = null;
+            }
+            return value is T typed ? typed : default!;
         }
         public static string T(string key, LocalizationOptions options)
         {
@@ -34,15 +64,6 @@ namespace RemnantSaveGuardian
             if (val == null || val == "")
             {
                 return key;
-                /*if (resourceFile != "GameStrings")
-                {
-                    return key;
-                }
-                if (key == null)
-                {
-                    return key;
-                }
-                return Regex.Replace(key.Replace("_", " "), "([A-Z0-9]+)", " $1").Trim();*/
             }
             var matches = new Regex(@"{(?:(?<namespace>\w+?):)?(?<sub>\w+?)}").Matches(val);
             foreach (Match match in matches)
@@ -94,7 +115,7 @@ namespace RemnantSaveGuardian
     }
 
     public class LocalizationOptions : Dictionary<string, string>
-    { 
+    {
         public LocalizationOptions(LocalizationOptions source)
         {
             foreach (var kvp in source)

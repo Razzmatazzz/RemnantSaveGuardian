@@ -486,4 +486,49 @@
   <data name="Not picked up yet" xml:space="preserve">
     <value>Not picked up yet</value>
   </data>
+  <data name="btnImportBackup_ToolTip" xml:space="preserve">
+    <value>Import a save folder as a backup</value>
+  </data>
+  <data name="Drop_to_import" xml:space="preserve">
+    <value>Drop a save folder or one of its files to import it as a backup</value>
+  </data>
+  <data name="Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="Changelog" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
+  <data name="Could not delete backup:" xml:space="preserve">
+    <value>Could not delete backup:</value>
+  </data>
+  <data name="Could not parse updated game data; check for new version of this app" xml:space="preserve">
+    <value>Could not parse updated game data; check for new version of this app</value>
+  </data>
+  <data name="Export_save_success_{folder}" xml:space="preserve">
+    <value>Exported save files successfully to {folder}</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Update available" xml:space="preserve">
+    <value>Update available</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
 </root>

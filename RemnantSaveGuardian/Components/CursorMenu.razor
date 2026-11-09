@@ -1,0 +1,22 @@
+@* A context menu that opens at the mouse position, e.g. from an @oncontextmenu handler. *@
+<MudMenu @ref="menu" PositionAtCursor="true" Dense="true" ActivationEvent="MouseEvent.RightClick">
+    <ActivatorContent><span class="rsg-menu-anchor"></span></ActivatorContent>
+    <ChildContent>@ChildContent</ChildContent>
+</MudMenu>
+
+@code {
+    private MudMenu? menu;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    public Task OpenAsync(MouseEventArgs args)
+    {
+        return menu?.OpenMenuAsync(args) ?? Task.CompletedTask;
+    }
+
+    public Task CloseAsync()
+    {
+        return menu?.CloseMenuAsync() ?? Task.CompletedTask;
+    }
+}
