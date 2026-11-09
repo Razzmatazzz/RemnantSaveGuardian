@@ -4,10 +4,11 @@ Back up your Remnant 2 saves and view your world rolls.
 **This project is a work in progress. Lots of features are broken or partially implemented.**
 
 ## Installation
-1. Download and install [Microsoft .NET 8.0](https://dotnet.microsoft.com/en-us/download) or greater
-2. Download the [latest release](https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/latest/)
-3. Unzip the latest release to a folder of your choosing (probably not the same folder where you have the game installed)
-4. Run RemnantSaveGuardian.exe
+1. Download and install the [.NET 10.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) or greater
+2. Make sure the [Microsoft Edge WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) is installed (it is included with Windows 11 and most up-to-date Windows 10 installs). Windows 10 version 1809 or later is required.
+3. Download the [latest release](https://github.com/Razzmatazzz/RemnantSaveGuardian/releases/latest/)
+4. Unzip the latest release to a folder of your choosing (probably not the same folder where you have the game installed)
+5. Run RemnantSaveGuardian.exe
 
 ## Screenshots
 ![image](https://github.com/Razzmatazzz/RemnantSaveGuardian/assets/35779878/cc428b0b-7573-4128-a2ae-02ef25ebda36)

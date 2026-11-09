@@ -372,4 +372,166 @@
   <data name="Zoom" xml:space="preserve">
     <value>Приближение</value>
   </data>
+  <data name="Are you sure you want to delete backup {backupName}?" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить резерв {backupName}?</value>
+  </data>
+  <data name="Backup deleted" xml:space="preserve">
+    <value>Резерв удалён</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Characters" xml:space="preserve">
+    <value>Персонажи</value>
+  </data>
+  <data name="chkShowCoopItems_Content" xml:space="preserve">
+    <value>Показывать кооперативные предметы в анализаторе мира</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="Confirm Delete" xml:space="preserve">
+    <value>Подтвердите удаление</value>
+  </data>
+  <data name="Collapse All" xml:space="preserve">
+    <value>Свернуть всё</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="Error exporting save files: {errorMessage}" xml:space="preserve">
+    <value>Ошибка при экспорте сохранений: {errorMessage}</value>
+  </data>
+  <data name="Expand All" xml:space="preserve">
+    <value>Развернуть всё</value>
+  </data>
+  <data name="export_save_invalid_folder_error" xml:space="preserve">
+    <value>Нельзя экспортировать в папку сохранений или в папку с резервами.</value>
+  </data>
+  <data name="Import_failed_backup_exists" xml:space="preserve">
+    <value>Не удалось импортировать сохранение: резерв с такой отметкой времени уже существует</value>
+  </data>
+  <data name="Import_save_success" xml:space="preserve">
+    <value>Сохранение успешно импортировано в резервы</value>
+  </data>
+  <data name="lblMissingItemColor_Text" xml:space="preserve">
+    <value>Цвет отсутствующего предмета в анализаторе мира</value>
+  </data>
+  <data name="No_profile_sav_found_warning" xml:space="preserve">
+    <value>Файлы должны содержать profile.sav</value>
+  </data>
+  <data name="No_world_found_warning" xml:space="preserve">
+    <value>Файлы должны содержать хотя бы один файл save_#.sav</value>
+  </data>
+  <data name="Save change detected; waiting {numMinutes} minutes until next backup" xml:space="preserve">
+    <value>Обнаружено изменение сохранения; следующий резерв через {numMinutes} мин.</value>
+  </data>
+  <data name="Text_Highlight" xml:space="preserve">
+    <value>Выделенный</value>
+  </data>
+  <data name="Text_Normal" xml:space="preserve">
+    <value>Обычный</value>
+  </data>
+  <data name="Unexpected_event_group_number_warning_{numberOfEventGroups}" xml:space="preserve">
+    <value>Анализатор мира нашёл групп событий: {numberOfEventGroups}, но ожидает не более 2. Что-то может работать неправильно.</value>
+  </data>
+  <data name="WorldAnalyzerFilter_PlaceholderText" xml:space="preserve">
+    <value>Фильтр по событиям или предметам</value>
+  </data>
+  <data name="lblSwitchLanguage_Text" xml:space="preserve">
+    <value>Выбор языка</value>
+  </data>
+  <data name="Language_change_notice_{chosenLanguage}" xml:space="preserve">
+    <value>Язык изменён на {chosenLanguage}. Возможно, для полного применения изменений потребуется перезапустить приложение.</value>
+  </data>
+  <data name="Unrecognized_save_files_warning_{fileList}" xml:space="preserve">
+    <value>В папке сохранений найдены неизвестные файлы: {fileList}. Они могут мешать работе анализатора мира.</value>
+  </data>
+  <data name="Always On Top" xml:space="preserve">
+    <value>Поверх всех окон</value>
+  </data>
+  <data name="chkAutoHideNaviAndTitleBar_Content" xml:space="preserve">
+    <value>Скрывать навигацию и заголовок окна, когда оно неактивно</value>
+  </data>
+  <data name="chkOpacity_Content" xml:space="preserve">
+    <value>Прозрачность окна</value>
+  </data>
+  <data name="chkOpacity_note_Text" xml:space="preserve">
+    <value>(Экспериментально, может работать нестабильно)</value>
+  </data>
+  <data name="Opacity_toggle_notice" xml:space="preserve">
+    <value>Прозрачность окна изменена. Перезапустите приложение, чтобы изменения вступили в силу.</value>
+  </data>
+  <data name="lblOpacitySlider_Text" xml:space="preserve">
+    <value>Непрозрачность</value>
+  </data>
+  <data name="chkOnlyInactive_Content" xml:space="preserve">
+    <value>Только когда неактивно</value>
+  </data>
+  <data name="The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?" xml:space="preserve">
+    <value>Последняя версия Remnant Save Guardian — {CurrentVersion}. У вас установлена версия {LocalVersion}. Обновить приложение сейчас?</value>
+  </data>
+  <data name="Fextralife" xml:space="preserve">
+    <value>Fextralife Wiki</value>
+  </data>
+  <data name="RemnantWiki" xml:space="preserve">
+    <value>Remnant.wiki</value>
+  </data>
+  <data name="lblWiki_Text" xml:space="preserve">
+    <value>Выбор вики</value>
+  </data>
+  <data name="lblWiki_ToolTip" xml:space="preserve">
+    <value>Какую вики открывать при поиске предмета</value>
+  </data>
+  <data name="Area not visited yet" xml:space="preserve">
+    <value>Область ещё не посещена</value>
+  </data>
+  <data name="Not picked up yet" xml:space="preserve">
+    <value>Ещё не подобрано</value>
+  </data>
+  <data name="btnImportBackup_ToolTip" xml:space="preserve">
+    <value>Импортировать папку сохранений как резерв</value>
+  </data>
+  <data name="Drop_to_import" xml:space="preserve">
+    <value>Перетащите сюда папку сохранений или один из её файлов, чтобы импортировать её как резерв</value>
+  </data>
+  <data name="Minimize" xml:space="preserve">
+    <value>Свернуть</value>
+  </data>
+  <data name="Maximize" xml:space="preserve">
+    <value>Развернуть</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Восстановить</value>
+  </data>
+  <data name="Changelog" xml:space="preserve">
+    <value>Список изменений</value>
+  </data>
+  <data name="Could not delete backup:" xml:space="preserve">
+    <value>Не удалось удалить резерв:</value>
+  </data>
+  <data name="Could not parse updated game data; check for new version of this app" xml:space="preserve">
+    <value>Не удалось прочитать обновлённые данные игры; проверьте, нет ли новой версии приложения</value>
+  </data>
+  <data name="Export_save_success_{folder}" xml:space="preserve">
+    <value>Сохранения успешно экспортированы в {folder}</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Локация</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="Update available" xml:space="preserve">
+    <value>Доступно обновление</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
 </root>

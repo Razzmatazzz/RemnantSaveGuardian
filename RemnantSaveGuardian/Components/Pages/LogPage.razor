@@ -1,0 +1,69 @@
+@* Log page: every message logged this session, newest first. *@
+@implements IDisposable
+
+<div class="rsg-log">
+    @foreach (var message in messages)
+    {
+        <MudAlert Severity="@ToSeverity(message.LogType)" Variant="Variant.Text" Dense="true" NoIcon="false"
+                  ShowCloseIcon="false">
+            <div class="d-flex align-start gap-2">
+                <div class="flex-grow-1">
+                    <MudText Typo="Typo.caption" Style="opacity: 0.8">@message.Timestamp.ToString()</MudText>
+                    <div>@message.Message</div>
+                </div>
+                <MudTooltip Text="@Loc.T("Copy")">
+                    <MudIconButton Icon="@Icons.Material.Filled.ContentCopy" Size="Size.Small" OnClick="@(() => Copy(message))" />
+                </MudTooltip>
+            </div>
+        </MudAlert>
+    }
+</div>
+
+@code {
+    private List<LogMessage> messages = new();
+
+    protected override void OnInitialized()
+    {
+        Logger.MessageLogged += Logger_MessageLogged;
+        Loc.CultureChanged += OnCultureChanged;
+        Reload();
+    }
+
+    private void Reload()
+    {
+        lock (Logger.Messages)
+        {
+            messages = Logger.Messages.AsEnumerable().Reverse().ToList();
+        }
+    }
+
+    private void Logger_MessageLogged(object? sender, MessageLoggedEventArgs e)
+    {
+        InvokeAsync(() =>
+        {
+            Reload();
+            StateHasChanged();
+        });
+    }
+
+    private void OnCultureChanged(object? sender, EventArgs e) => InvokeAsync(StateHasChanged);
+
+    private static Severity ToSeverity(LogType logType) => logType switch
+    {
+        LogType.Error => Severity.Error,
+        LogType.Warning => Severity.Warning,
+        LogType.Success => Severity.Success,
+        _ => Severity.Info,
+    };
+
+    private static void Copy(LogMessage message)
+    {
+        System.Windows.Clipboard.SetDataObject(message.Message);
+    }
+
+    public void Dispose()
+    {
+        Logger.MessageLogged -= Logger_MessageLogged;
+        Loc.CultureChanged -= OnCultureChanged;
+    }
+}

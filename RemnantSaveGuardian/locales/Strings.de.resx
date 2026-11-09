@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutRSG" xml:space="preserve">
+    <value>Über Remnant Save Guardian</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
+  <data name="Adventure" xml:space="preserve">
+    <value>Abenteuer</value>
+  </data>
+  <data name="Are you sure you want to delete backup {backupName}?" xml:space="preserve">
+    <value>Möchtest du die Sicherung {backupName} wirklich löschen?</value>
+  </data>
+  <data name="Backup completed" xml:space="preserve">
+    <value>Sicherung abgeschlossen</value>
+  </data>
+  <data name="Backup deleted" xml:space="preserve">
+    <value>Sicherung gelöscht</value>
+  </data>
+  <data name="Backup Folder" xml:space="preserve">
+    <value>Sicherungsordner</value>
+  </data>
+  <data name="Backup folder not set; reverting to default." xml:space="preserve">
+    <value>Kein Sicherungsordner festgelegt; Standard wird verwendet.</value>
+  </data>
+  <data name="Backup restored" xml:space="preserve">
+    <value>Sicherung wiederhergestellt</value>
+  </data>
+  <data name="Backups folder not found, creating..." xml:space="preserve">
+    <value>Sicherungsordner nicht gefunden, wird erstellt...</value>
+  </data>
+  <data name="Backups found" xml:space="preserve">
+    <value>Gefundene Sicherungen</value>
+  </data>
+  <data name="btnBackup_ToolTip" xml:space="preserve">
+    <value>Aktuellen Spielstand sichern</value>
+  </data>
+  <data name="btnCheckUpdate_Content" xml:space="preserve">
+    <value>Jetzt prüfen</value>
+  </data>
+  <data name="btnOpenBackupsFolder_ToolTip" xml:space="preserve">
+    <value>Sicherungsordner öffnen</value>
+  </data>
+  <data name="btnStartGame_ToolTip" xml:space="preserve">
+    <value>Spiel starten</value>
+  </data>
+  <data name="Campaign" xml:space="preserve">
+    <value>Kampagne</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="Character" xml:space="preserve">
+    <value>Charakter</value>
+  </data>
+  <data name="Characters" xml:space="preserve">
+    <value>Charaktere</value>
+  </data>
+  <data name="chkAutoBackup_Content" xml:space="preserve">
+    <value>Spielstände automatisch sichern</value>
+  </data>
+  <data name="chkAutoBackup_ToolTip" xml:space="preserve">
+    <value>Remnant-Spielstände überwachen und bei Änderungen sichern</value>
+  </data>
+  <data name="chkAutoCheckUpdate_Content" xml:space="preserve">
+    <value>Automatisch nach Programm-Updates suchen</value>
+  </data>
+  <data name="chkCreateLogFile_Content" xml:space="preserve">
+    <value>Protokolldatei erstellen</value>
+  </data>
+  <data name="chkCreateLogFile_ToolTip" xml:space="preserve">
+    <value>Ob eine Datei log.txt erstellt werden soll</value>
+  </data>
+  <data name="chkShowCoopItems_Content" xml:space="preserve">
+    <value>Koop-Gegenstände in der Weltanalyse anzeigen</value>
+  </data>
+  <data name="chkShowPossibleItems_Content" xml:space="preserve">
+    <value>Spalte „Mögliche Gegenstände“ in der Analyse anzeigen</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="Choose a backup to restore from the list." xml:space="preserve">
+    <value>Wähle eine Sicherung aus der Liste, die wiederhergestellt werden soll.</value>
+  </data>
+  <data name="Confirm Delete" xml:space="preserve">
+    <value>Löschen bestätigen</value>
+  </data>
+  <data name="Collapse All" xml:space="preserve">
+    <value>Alle einklappen</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="Could not find save file location; please set manually" xml:space="preserve">
+    <value>Speicherort der Spielstände nicht gefunden; bitte manuell festlegen</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Dunkel</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="Deleting excess backup" xml:space="preserve">
+    <value>Überzählige Sicherung wird gelöscht</value>
+  </data>
+  <data name="Do you want to move your backups to this new folder?" xml:space="preserve">
+    <value>Möchtest du deine Sicherungen in diesen neuen Ordner verschieben?</value>
+  </data>
+  <data name="Error checking for new game info" xml:space="preserve">
+    <value>Fehler beim Prüfen auf neue Spielinformationen</value>
+  </data>
+  <data name="Error checking for new version" xml:space="preserve">
+    <value>Fehler beim Prüfen auf eine neue Version</value>
+  </data>
+  <data name="Error exporting save files: {errorMessage}" xml:space="preserve">
+    <value>Fehler beim Exportieren der Spielstände: {errorMessage}</value>
+  </data>
+  <data name="Exit the game before restoring a save backup." xml:space="preserve">
+    <value>Beende das Spiel, bevor du eine Sicherung wiederherstellst.</value>
+  </data>
+  <data name="Expand All" xml:space="preserve">
+    <value>Alle ausklappen</value>
+  </data>
+  <data name="Export save files as plaintext" xml:space="preserve">
+    <value>Spielstände exportieren</value>
+  </data>
+  <data name="export_save_invalid_folder_error" xml:space="preserve">
+    <value>Du kannst nicht in deinen Spielstandordner oder in einen Ordner mit Sicherungen exportieren.</value>
+  </data>
+  <data name="Game Folder" xml:space="preserve">
+    <value>Spielordner</value>
+  </data>
+  <data name="Game info updated." xml:space="preserve">
+    <value>Spielinformationen aktualisiert.</value>
+  </data>
+  <data name="Hardcore" xml:space="preserve">
+    <value>Hardcore</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Import_failed_backup_exists" xml:space="preserve">
+    <value>Spielstand konnte nicht importiert werden; eine Sicherung mit diesem Zeitstempel existiert bereits</value>
+  </data>
+  <data name="Import_save_success" xml:space="preserve">
+    <value>Spielstand erfolgreich in die Sicherungen importiert</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Invalid backup restore type" xml:space="preserve">
+    <value>Ungültige Art der Wiederherstellung</value>
+  </data>
+  <data name="Invalid Folder" xml:space="preserve">
+    <value>Ungültiger Ordner</value>
+  </data>
+  <data name="InvalidBackupFolderNoBackupsInSaves" xml:space="preserve">
+    <value>Ungültiger Ordner: Der Sicherungsordner darf nicht der Spielstandordner des Spiels sein.</value>
+  </data>
+  <data name="InvalidGameFolder" xml:space="preserve">
+    <value>Ungültiger Ordner: Wähle den Ordner, in dem Remnant II installiert ist.</value>
+  </data>
+  <data name="InvalidSaveFolder" xml:space="preserve">
+    <value>Ungültiger Ordner: Wähle den Ordner, in dem deine Remnant II-Spielstände gespeichert sind</value>
+  </data>
+  <data name="InvalidSaveFolderNoSavesInBackups" xml:space="preserve">
+    <value>Ungültiger Ordner: Bitte wähle einen anderen Ordner als den Sicherungsordner.</value>
+  </data>
+  <data name="Keep" xml:space="preserve">
+    <value>Behalten</value>
+  </data>
+  <data name="Last backup save date" xml:space="preserve">
+    <value>Datum der letzten Sicherung</value>
+  </data>
+  <data name="lblBackupLimit_Text" xml:space="preserve">
+    <value>Zu behaltende Sicherungen (0 für unbegrenzt)</value>
+  </data>
+  <data name="lblBackupLimit_ToolTip" xml:space="preserve">
+    <value>Wenn die Anzahl deiner Sicherungen diesen Wert erreicht, werden Sicherungen automatisch gelöscht, beginnend mit der ältesten</value>
+  </data>
+  <data name="lblBackupMins_Text" xml:space="preserve">
+    <value>Minuten zwischen Sicherungen</value>
+  </data>
+  <data name="lblBackupMins_ToolTip" xml:space="preserve">
+    <value>Mindestzeit, die seit der letzten Sicherung vergangen sein muss, bevor eine neue Sicherung erstellt wird</value>
+  </data>
+  <data name="lblMissingItemColor_Text" xml:space="preserve">
+    <value>Farbe fehlender Gegenstände in der Weltanalyse</value>
+  </data>
+  <data name="lblStartPage_Text" xml:space="preserve">
+    <value>Startseite</value>
+  </data>
+  <data name="lblStartPage_ToolTip" xml:space="preserve">
+    <value>Welche Seite beim Programmstart geladen wird</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>Hell</value>
+  </data>
+  <data name="Log" xml:space="preserve">
+    <value>Protokoll</value>
+  </data>
+  <data name="menuRestoreAll_Header" xml:space="preserve">
+    <value>Alles</value>
+  </data>
+  <data name="menuRestoreCharacters_Header" xml:space="preserve">
+    <value>Nur Charaktere</value>
+  </data>
+  <data name="menuRestoreWorlds_Header" xml:space="preserve">
+    <value>Nur Welten</value>
+  </data>
+  <data name="menuRestore_Header" xml:space="preserve">
+    <value>Sicherung wiederherstellen</value>
+  </data>
+  <data name="Missing Items" xml:space="preserve">
+    <value>Fehlende Gegenstände</value>
+  </data>
+  <data name="Move Backups" xml:space="preserve">
+    <value>Sicherungen verschieben</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="New version available!" xml:space="preserve">
+    <value>Neue Version verfügbar!</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="No_profile_sav_found_warning" xml:space="preserve">
+    <value>Die Dateien müssen eine profile.sav enthalten</value>
+  </data>
+  <data name="No_world_found_warning" xml:space="preserve">
+    <value>Die Dateien müssen mindestens eine save_#.sav-Datei enthalten</value>
+  </data>
+  <data name="Open Folder" xml:space="preserve">
+    <value>Ordner öffnen</value>
+  </data>
+  <data name="Open wiki" xml:space="preserve">
+    <value>Wiki öffnen</value>
+  </data>
+  <data name="Possible Items" xml:space="preserve">
+    <value>Mögliche Gegenstände</value>
+  </data>
+  <data name="Preferences" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="processing save file change" xml:space="preserve">
+    <value>beim Verarbeiten einer Spielstandänderung</value>
+  </data>
+  <data name="Progression" xml:space="preserve">
+    <value>Fortschritt</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Rot</value>
+  </data>
+  <data name="Save Backups" xml:space="preserve">
+    <value>Spielstandsicherungen</value>
+  </data>
+  <data name="Save change detected; waiting {numMinutes} minutes until next backup" xml:space="preserve">
+    <value>Spielstandänderung erkannt; nächste Sicherung in {numMinutes} Minuten</value>
+  </data>
+  <data name="Save file in use; waiting 0.5 seconds and retrying." xml:space="preserve">
+    <value>Spielstand wird verwendet; neuer Versuch in 0,5 Sekunden.</value>
+  </data>
+  <data name="Save Folder" xml:space="preserve">
+    <value>Spielstandordner</value>
+  </data>
+  <data name="Save plaintext data" xml:space="preserve">
+    <value>Klartextdaten speichern</value>
+  </data>
+  <data name="SaveDate" xml:space="preserve">
+    <value>Speicherdatum</value>
+  </data>
+  <data name="Saves" xml:space="preserve">
+    <value>Spielstände</value>
+  </data>
+  <data name="Select a folder other than the game's save folder." xml:space="preserve">
+    <value>Wähle einen anderen Ordner als den Spielstandordner des Spiels.</value>
+  </data>
+  <data name="setting save file timer" xml:space="preserve">
+    <value>beim Setzen des Spielstand-Timers</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="Survival" xml:space="preserve">
+    <value>Überleben</value>
+  </data>
+  <data name="Text_Highlight" xml:space="preserve">
+    <value>Hervorgehoben</value>
+  </data>
+  <data name="Text_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Design</value>
+  </data>
+  <data name="Unexpected_event_group_number_warning_{numberOfEventGroups}" xml:space="preserve">
+    <value>Die Weltanalyse hat {numberOfEventGroups} Ereignisgruppen gefunden, erwartet aber höchstens 2. Möglicherweise funktioniert nicht alles wie vorgesehen.</value>
+  </data>
+  <data name="White" xml:space="preserve">
+    <value>Weiß</value>
+  </data>
+  <data name="World Analyzer" xml:space="preserve">
+    <value>Weltanalyse</value>
+  </data>
+  <data name="WorldAnalyzerFilter_PlaceholderText" xml:space="preserve">
+    <value>Nach Ereignissen oder Gegenständen filtern</value>
+  </data>
+  <data name="You must wait 5 minutes between update checks" xml:space="preserve">
+    <value>Zwischen zwei Update-Prüfungen müssen 5 Minuten vergehen</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="lblSwitchLanguage_Text" xml:space="preserve">
+    <value>Sprache wählen</value>
+  </data>
+  <data name="Language_change_notice_{chosenLanguage}" xml:space="preserve">
+    <value>Sprache auf {chosenLanguage} geändert. Eventuell musst du das Programm neu starten, damit die Änderung vollständig wirksam wird.</value>
+  </data>
+  <data name="Unrecognized_save_files_warning_{fileList}" xml:space="preserve">
+    <value>Unbekannte Dateien im Spielstandordner gefunden: {fileList}. Diese Dateien können die Weltanalyse stören.</value>
+  </data>
+  <data name="Always On Top" xml:space="preserve">
+    <value>Immer im Vordergrund</value>
+  </data>
+  <data name="chkAutoHideNaviAndTitleBar_Content" xml:space="preserve">
+    <value>Navigation und Titelleiste ausblenden, wenn das Fenster inaktiv ist</value>
+  </data>
+  <data name="chkOpacity_Content" xml:space="preserve">
+    <value>Fenstertransparenz</value>
+  </data>
+  <data name="chkOpacity_note_Text" xml:space="preserve">
+    <value>(Experimentell, kann zu Instabilität führen)</value>
+  </data>
+  <data name="Opacity_toggle_notice" xml:space="preserve">
+    <value>Die Fenstertransparenz wurde geändert. Starte das Programm neu, damit die Änderung wirksam wird.</value>
+  </data>
+  <data name="lblOpacitySlider_Text" xml:space="preserve">
+    <value>Deckkraft</value>
+  </data>
+  <data name="chkOnlyInactive_Content" xml:space="preserve">
+    <value>Nur wenn inaktiv</value>
+  </data>
+  <data name="The latest version of Remnant Save Guardian is {CurrentVersion}. You are using version {LocalVersion}. Do you want to upgrade the application now?" xml:space="preserve">
+    <value>Die neueste Version von Remnant Save Guardian ist {CurrentVersion}. Du verwendest Version {LocalVersion}. Möchtest du das Programm jetzt aktualisieren?</value>
+  </data>
+  <data name="Fextralife" xml:space="preserve">
+    <value>Fextralife Wiki</value>
+  </data>
+  <data name="RemnantWiki" xml:space="preserve">
+    <value>Remnant.wiki</value>
+  </data>
+  <data name="lblWiki_Text" xml:space="preserve">
+    <value>Wiki wählen</value>
+  </data>
+  <data name="lblWiki_ToolTip" xml:space="preserve">
+    <value>Welches Wiki beim Nachschlagen von Gegenständen geöffnet wird</value>
+  </data>
+  <data name="Area not visited yet" xml:space="preserve">
+    <value>Gebiet noch nicht besucht</value>
+  </data>
+  <data name="Not picked up yet" xml:space="preserve">
+    <value>Noch nicht aufgehoben</value>
+  </data>
+  <data name="btnImportBackup_ToolTip" xml:space="preserve">
+    <value>Einen Spielstandordner als Sicherung importieren</value>
+  </data>
+  <data name="Drop_to_import" xml:space="preserve">
+    <value>Lege einen Spielstandordner oder eine seiner Dateien hier ab, um ihn als Sicherung zu importieren</value>
+  </data>
+  <data name="Minimize" xml:space="preserve">
+    <value>Minimieren</value>
+  </data>
+  <data name="Maximize" xml:space="preserve">
+    <value>Maximieren</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Wiederherstellen</value>
+  </data>
+  <data name="Changelog" xml:space="preserve">
+    <value>Änderungsprotokoll</value>
+  </data>
+  <data name="Could not delete backup:" xml:space="preserve">
+    <value>Sicherung konnte nicht gelöscht werden:</value>
+  </data>
+  <data name="Could not parse updated game data; check for new version of this app" xml:space="preserve">
+    <value>Aktualisierte Spieldaten konnten nicht gelesen werden; prüfe, ob es eine neue Version dieses Programms gibt</value>
+  </data>
+  <data name="Export_save_success_{folder}" xml:space="preserve">
+    <value>Spielstände erfolgreich nach {folder} exportiert</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Ort</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="Update available" xml:space="preserve">
+    <value>Update verfügbar</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+</root>

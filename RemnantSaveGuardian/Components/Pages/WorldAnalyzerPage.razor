@@ -1,0 +1,552 @@
+@* World Analyzer: per-character campaign/adventure events and the missing-items tree.
+   SavePath is null for the live save folder, or a backup folder. *@
+@using System.Diagnostics
+@using System.IO
+@using System.Text
+@using System.Text.RegularExpressions
+@using RemnantSaveGuardian.locales
+@implements IDisposable
+@inject AppState State
+
+@if (State.ChromeVisible)
+{
+    <div class="d-flex flex-wrap align-center gap-3 mb-1">
+        <div class="d-flex align-center gap-1">
+            <MudSelect T="int" Value="@selectedIndex" ValueChanged="OnCharacterChanged" Label="@Loc.T("Character")"
+                       Dense="true" Margin="Margin.Dense" Variant="Variant.Outlined" Style="min-width: 260px" Disabled="@(loading || characters.Count == 0)">
+                @for (var i = 0; i < characters.Count; i++)
+                {
+                    var index = i;
+                    <MudSelectItem T="int" Value="@index">@characters[index].ToString()</MudSelectItem>
+                }
+            </MudSelect>
+            <MudTooltip Text="@Loc.T("Export save files as plaintext")">
+                <MudIconButton Icon="@Icons.Material.Filled.Upload" OnClick="ExportPlaintext" Disabled="@loading" />
+            </MudTooltip>
+        </div>
+        <MudTextField T="string" Value="@filter" ValueChanged="OnFilterChanged" Immediate="true" DebounceInterval="150"
+                      Placeholder="@Loc.T("WorldAnalyzerFilter_PlaceholderText")" Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.FilterList" Clearable="true"
+                      Margin="Margin.Dense" Variant="Variant.Outlined" Style="min-width: 220px" Class="flex-grow-1 mt-0" />
+        <div class="d-flex align-center gap-1" style="width: 300px">
+            <MudText Typo="Typo.body2" Style="font-weight: 500; white-space: nowrap">@Loc.T("Zoom")</MudText>
+            <MudIcon Icon="@Icons.Material.Filled.ZoomOut" Size="Size.Small" />
+            <MudSlider T="int" Value="@fontSize" ValueChanged="OnFontSizeChanged" Min="6" Max="30" Step="4" TickMarks="true" Size="Size.Small" Class="flex-grow-1" />
+            <MudIcon Icon="@Icons.Material.Filled.ZoomIn" Size="Size.Small" />
+        </div>
+    </div>
+}
+
+<div class="rsg-fill rsg-zoom" style="@($"--rsg-font-size: {fontSize}px")">
+    @if (loading)
+    {
+        <div class="d-flex justify-center align-center" style="height: 100%">
+            <MudProgressCircular Indeterminate="true" Size="Size.Large" />
+        </div>
+    }
+    else
+    {
+        <MudTabs @bind-ActivePanelIndex="tabIndex" Class="rsg-tabs" Elevation="0" ApplyEffectsToContainer="true"
+                 TabPanelsClass="rsg-fill pt-2" HideSlider="@(!State.ChromeVisible)">
+            <MudTabPanel Text="@Loc.T("Campaign")">
+                <EventGrid Items="@filteredCampaign" ShowPossibleItems="@Settings.Default.ShowPossibleItems"
+                           HighlightMissing="@HighlightMissing" @bind-SelectedItem="selectedItem" OnItemContextMenu="OpenItemMenu" />
+            </MudTabPanel>
+            <MudTabPanel Text="@Loc.T("Adventure")" Disabled="@(!HasAdventure)">
+                <EventGrid Items="@filteredAdventure" ShowPossibleItems="@Settings.Default.ShowPossibleItems"
+                           HighlightMissing="@HighlightMissing" @bind-SelectedItem="selectedItem" OnItemContextMenu="OpenItemMenu" />
+            </MudTabPanel>
+            <MudTabPanel Text="@Loc.T("Missing Items")">
+                <div class="rsg-tree" @oncontextmenu="OpenTreeMenuBackground">
+                    <MudTreeView T="TreeNode" @bind-SelectedValue="selectedNode" Hover="true" Dense="true" ExpandOnClick="true">
+                        @foreach (var mode in treeModes.Where(m => m.Children.Count > 0))
+                        {
+                            @TreeItem(mode)
+                        }
+                    </MudTreeView>
+                </div>
+            </MudTabPanel>
+        </MudTabs>
+    }
+</div>
+
+<CursorMenu @ref="itemMenu">
+    <MudMenuItem Icon="@Icons.Material.Filled.Link" OnClick="SearchSelectedItem">@Loc.T("Open wiki")</MudMenuItem>
+    <MudMenuItem Icon="@Icons.Material.Filled.ContentCopy" OnClick="CopySelectedItem">@Loc.T("Copy")</MudMenuItem>
+</CursorMenu>
+
+<CursorMenu @ref="treeMenu">
+    @if (selectedNode?.Item != null)
+    {
+        <MudMenuItem Icon="@Icons.Material.Filled.Link" OnClick="SearchSelectedNode">@Loc.T("Open wiki")</MudMenuItem>
+    }
+    @if (selectedNode != null)
+    {
+        <MudMenuItem Icon="@Icons.Material.Filled.ContentCopy" OnClick="CopySelectedNode">@Loc.T("Copy")</MudMenuItem>
+    }
+    <MudMenuItem Icon="@Icons.Material.Filled.UnfoldMore" OnClick="@(() => SetAllExpanded(true))">@Loc.T("Expand All")</MudMenuItem>
+    <MudMenuItem Icon="@Icons.Material.Filled.UnfoldLess" OnClick="@(() => SetAllExpanded(false))">@Loc.T("Collapse All")</MudMenuItem>
+</CursorMenu>
+
+@code {
+    [Parameter]
+    public string? SavePath { get; set; }
+
+    private RemnantSave? save;
+    private List<RemnantCharacter> characters = new();
+    private int selectedIndex = -1;
+    private string filter = "";
+    private int fontSize = 14;
+    private int tabIndex;
+    private bool loading = true;
+    private List<RemnantWorldEvent> filteredCampaign = new();
+    private List<RemnantWorldEvent> filteredAdventure = new();
+    private RemnantItem? selectedItem;
+    private TreeNode? selectedNode;
+    private List<TreeNode> treeModes = new();
+    private CursorMenu? itemMenu;
+    private CursorMenu? treeMenu;
+    private int loadGeneration;
+
+    private bool IsLiveSave => SavePath == null || SavePath == Settings.Default.SaveFolder;
+    private static bool HighlightMissing => Settings.Default.MissingItemColor == "Highlight";
+    private RemnantCharacter? Character => selectedIndex >= 0 && selectedIndex < characters.Count ? characters[selectedIndex] : null;
+    private bool HasAdventure => Character != null && Character.AdventureEvents.Count > 0;
+
+    private static readonly string[] ModeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
+
+    /// <summary>A node of the missing-items tree: a mode, an item type, or an item.</summary>
+    private class TreeNode : IComparable<TreeNode>
+    {
+        public string Name { get; set; } = "";
+        public string? Notes { get; set; }
+        /// <summary>Settings key prefix used to remember whether the node is expanded; null for items.</summary>
+        public string? Tag { get; set; }
+        public RemnantItem? Item { get; set; }
+        public List<TreeNode> Children { get; } = new();
+        public bool Expanded { get; set; }
+
+        public int CompareTo(TreeNode? other) => string.Compare(Name, other?.Name, StringComparison.CurrentCulture);
+    }
+
+    protected override void OnInitialized()
+    {
+        fontSize = Math.Clamp(Settings.Default.AnalyzerFontSize, 6, 30);
+        Settings.Default.PropertyChanged += Settings_PropertyChanged;
+        Loc.CultureChanged += OnCultureChanged;
+        if (IsLiveSave)
+        {
+            SaveWatcher.SaveUpdated += SaveWatcher_SaveUpdated;
+            State.BackupSaveRestored += OnBackupSaveRestored;
+        }
+        _ = LoadAsync(newSave: true);
+    }
+
+    /// <summary>Parses the save in the background, then refreshes the page.</summary>
+    private async Task LoadAsync(bool newSave)
+    {
+        var generation = ++loadGeneration;
+        var keepIndex = selectedIndex;
+        loading = true;
+        StateHasChanged();
+        try
+        {
+            var path = SavePath ?? Settings.Default.SaveFolder;
+            var target = newSave || save == null ? null : save;
+            var loaded = await Task.Run(() =>
+            {
+                var s = target ?? new RemnantSave(path);
+                s.UpdateCharacters();
+                return (save: s, characters: s.Characters.ToList());
+            });
+            if (generation != loadGeneration)
+            {
+                return;
+            }
+            save = loaded.save;
+            characters = loaded.characters;
+            selectedIndex = keepIndex >= 0 && keepIndex < characters.Count && !newSave ? keepIndex : (characters.Count > 0 ? 0 : -1);
+        }
+        catch (Exception ex)
+        {
+            Logger.Error($"Error initializing analzyer page: {ex}");
+            characters = new();
+            selectedIndex = -1;
+        }
+        loading = false;
+        RefreshCharacter();
+        StateHasChanged();
+    }
+
+    private void SaveWatcher_SaveUpdated(object? sender, EventArgs e) => InvokeAsync(() => LoadAsync(newSave: false));
+
+    private void OnBackupSaveRestored(object? sender, EventArgs e) => InvokeAsync(() => LoadAsync(newSave: false));
+
+    private void OnCultureChanged(object? sender, EventArgs e) => InvokeAsync(() =>
+    {
+        RefreshCharacter();
+        StateHasChanged();
+    });
+
+    private void Settings_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        switch (e.PropertyName)
+        {
+            case "ShowPossibleItems":
+            case "MissingItemColor":
+                InvokeAsync(() =>
+                {
+                    RefreshCharacter();
+                    StateHasChanged();
+                });
+                break;
+            case "SaveFolder":
+                if (SavePath == null)
+                {
+                    InvokeAsync(() => LoadAsync(newSave: true));
+                }
+                break;
+            case "ShowCoopItems":
+                InvokeAsync(() => LoadAsync(newSave: false));
+                break;
+        }
+    }
+
+    private void OnCharacterChanged(int index)
+    {
+        selectedIndex = index;
+        RefreshCharacter();
+    }
+
+    private void OnFilterChanged(string? value)
+    {
+        filter = value ?? "";
+        ApplyFilter();
+    }
+
+    private void OnFontSizeChanged(int value)
+    {
+        fontSize = value;
+        Settings.Default.AnalyzerFontSize = value;
+    }
+
+    private void RefreshCharacter()
+    {
+        if (!HasAdventure && tabIndex == 1)
+        {
+            tabIndex = 0;
+        }
+        ApplyFilter();
+        BuildMissingItemsTree();
+    }
+
+    private bool EventPassesFilter(RemnantWorldEvent e)
+    {
+        var f = filter.ToLower();
+        if (f.Length == 0)
+        {
+            return true;
+        }
+        if (e.MissingItemsString.ToLower().Contains(f))
+        {
+            return true;
+        }
+        if (Settings.Default.ShowPossibleItems && e.PossibleItemsString.ToLower().Contains(f))
+        {
+            return true;
+        }
+        return e.Name.ToLower().Contains(f);
+    }
+
+    private void ApplyFilter()
+    {
+        var character = Character;
+        if (character == null)
+        {
+            filteredCampaign = new();
+            filteredAdventure = new();
+            return;
+        }
+        filteredCampaign = character.CampaignEvents.FindAll(EventPassesFilter);
+        filteredAdventure = character.AdventureEvents.FindAll(EventPassesFilter);
+    }
+
+    private class SortCompare : IComparer<RemnantItem>
+    {
+        public int Compare(RemnantItem? x, RemnantItem? y)
+        {
+            if (x!.ItemMode != y!.ItemMode)
+            {
+                return x.ItemMode.CompareTo(y.ItemMode);
+            }
+            return x.RawType.CompareTo(y.RawType);
+        }
+    }
+
+    private static bool GetExpandedSetting(string tag, bool fallback)
+    {
+        try
+        {
+            return (bool)Settings.Default[$"{tag}_Expanded"];
+        }
+        catch (Exception)
+        {
+            return fallback;
+        }
+    }
+
+    private void BuildMissingItemsTree()
+    {
+        selectedNode = null;
+        treeModes = new();
+        var character = Character;
+        if (character == null)
+        {
+            return;
+        }
+        string[] modes = { Strings.Normal, Strings.Hardcore, Strings.Survival };
+        for (int i = 0; i <= 2; i++)
+        {
+            treeModes.Add(new TreeNode { Name = modes[i], Tag = ModeTags[i], Expanded = GetExpandedSetting(ModeTags[i], true) });
+        }
+
+        var missing = character.GetMissingItems();
+        missing.Sort(new SortCompare());
+        TreeNode? typeNode = null;
+        string typeNodeTag = "";
+        foreach (RemnantItem rItem in missing)
+        {
+            string modeTag = ModeTags[(int)rItem.ItemMode];
+            if (typeNode == null || !typeNodeTag.Equals($"{modeTag}{rItem.RawType}"))
+            {
+                typeNodeTag = $"{modeTag}{rItem.RawType}";
+                typeNode = new TreeNode { Name = rItem.Type, Tag = typeNodeTag, Expanded = GetExpandedSetting(typeNodeTag, true) };
+                treeModes[(int)rItem.ItemMode].Children.Add(typeNode);
+            }
+            typeNode.Children.Add(new TreeNode { Name = rItem.Name, Notes = rItem.ItemNotes, Item = rItem });
+        }
+        foreach (var mode in treeModes)
+        {
+            mode.Children.Sort();
+            foreach (var type in mode.Children)
+            {
+                type.Children.Sort();
+            }
+        }
+    }
+
+    private void OnNodeExpandedChanged(TreeNode node, bool expanded)
+    {
+        node.Expanded = expanded;
+        if (node.Tag != null)
+        {
+            try
+            {
+                Settings.Default[$"{node.Tag}_Expanded"] = expanded;
+            }
+            catch (Exception)
+            {
+                // No setting exists for this item type; the state is only kept for this session.
+            }
+        }
+    }
+
+    private RenderFragment TreeItem(TreeNode node) => __builder =>
+    {
+        if (node.Item != null)
+        {
+            <MudTreeViewItem T="TreeNode" Value="@node">
+                <BodyContent>
+                    <div class="rsg-tree-row" title="@(node.Notes ?? "")" style="@(string.IsNullOrEmpty(node.Notes) ? "" : "cursor: help")"
+                         @oncontextmenu="@(e => OpenTreeMenu(e, node))" @oncontextmenu:stopPropagation="true">
+                        <span class="rsg-marquee"><span class="rsg-marquee-text">@node.Name</span></span>
+                        <span class="rsg-marquee mud-text-secondary"><span class="rsg-marquee-text">@node.Notes</span></span>
+                    </div>
+                </BodyContent>
+            </MudTreeViewItem>
+        }
+        else
+        {
+            <MudTreeViewItem T="TreeNode" Value="@node" Expanded="@node.Expanded" ExpandedChanged="@(v => OnNodeExpandedChanged(node, v))">
+                <BodyContent>
+                    <div class="rsg-tree-row" @oncontextmenu="@(e => OpenTreeMenu(e, node))" @oncontextmenu:stopPropagation="true">
+                        <span class="rsg-ellipsis" style="font-weight: 500">@node.Name</span>
+                    </div>
+                </BodyContent>
+                <ChildContent>
+                    @foreach (var child in node.Children)
+                    {
+                        @TreeItem(child)
+                    }
+                </ChildContent>
+            </MudTreeViewItem>
+        }
+    };
+
+    private void SetAllExpanded(bool expanded)
+    {
+        foreach (var mode in treeModes)
+        {
+            OnNodeExpandedChanged(mode, expanded);
+            foreach (var type in mode.Children)
+            {
+                OnNodeExpandedChanged(type, expanded);
+            }
+        }
+    }
+
+    private async Task OpenItemMenu((MouseEventArgs Args, RemnantItem Item) e)
+    {
+        selectedItem = e.Item;
+        if (itemMenu != null)
+        {
+            await itemMenu.OpenAsync(e.Args);
+        }
+    }
+
+    private async Task OpenTreeMenu(MouseEventArgs e, TreeNode node)
+    {
+        selectedNode = node;
+        if (treeMenu != null)
+        {
+            await treeMenu.OpenAsync(e);
+        }
+    }
+
+    private async Task OpenTreeMenuBackground(MouseEventArgs e)
+    {
+        selectedNode = null;
+        if (treeMenu != null)
+        {
+            await treeMenu.OpenAsync(e);
+        }
+    }
+
+    private static string GetTreeListItem(TreeNode? item)
+    {
+        if (item == null)
+        {
+            return "";
+        }
+        if (item.Item != null) return item.Name;
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine(item.Name + ":");
+        foreach (TreeNode i in item.Children)
+        {
+            sb.AppendLine("\t- " + GetTreeListItem(i));
+        }
+        return sb.ToString();
+    }
+
+    private void CopySelectedItem()
+    {
+        if (selectedItem != null)
+        {
+            System.Windows.Clipboard.SetDataObject(selectedItem.Name);
+        }
+    }
+
+    private void SearchSelectedItem()
+    {
+        if (selectedItem != null)
+        {
+            SearchItem(selectedItem);
+        }
+    }
+
+    private void CopySelectedNode()
+    {
+        if (selectedNode != null)
+        {
+            System.Windows.Clipboard.SetDataObject(GetTreeListItem(selectedNode));
+        }
+    }
+
+    private void SearchSelectedNode()
+    {
+        if (selectedNode?.Item != null)
+        {
+            SearchItem(selectedNode.Item);
+        }
+    }
+
+    private static void SearchItem(RemnantItem item)
+    {
+        var itemname = item.Name;
+        if (!Loc.Culture.ToString().StartsWith("en"))
+        {
+            itemname = item.RawName;
+            var setFound = false;
+            if (item.RawType == "Armor")
+            {
+                var armorMatch = Regex.Match(itemname, @"\w+_(?<armorPart>(?:Head|Body|Gloves|Legs))_\w+");
+                if (armorMatch.Success)
+                {
+                    itemname = itemname.Replace($"{armorMatch.Groups["armorPart"].Value}_", "");
+                    setFound = true;
+                }
+            }
+            itemname = Loc.GameT(itemname, new() { { "locale", "en-US" } });
+            if (setFound)
+            {
+                itemname += " (";
+            }
+        }
+
+        if (item.RawType == "Armor" && item.IsArmorSet)
+        {
+            itemname = itemname?.Substring(0, itemname.IndexOf("(")) + "Set";
+        }
+        else if (item.RawType == "Armor")
+        {
+            itemname = itemname?.Substring(0, itemname.IndexOf(" ("));
+        }
+        string wikiQuery = Settings.Default.Wiki == "remwiki" ? $"https://remnant.wiki/{itemname}" : $"https://remnant2.wiki.fextralife.com/{itemname}";
+        Process.Start("explorer.exe", wikiQuery);
+    }
+
+    private void ExportPlaintext()
+    {
+        if (save == null)
+        {
+            return;
+        }
+        try
+        {
+            using var openFolderDialog = new System.Windows.Forms.FolderBrowserDialog
+            {
+                Description = Loc.T("Export save files as plaintext"),
+                UseDescriptionForTitle = true,
+            };
+            if (openFolderDialog.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+            {
+                return;
+            }
+            if (openFolderDialog.SelectedPath == Settings.Default.SaveFolder || openFolderDialog.SelectedPath == save.SaveFolderPath)
+            {
+                Logger.Error(Loc.T("export_save_invalid_folder_error"));
+                return;
+            }
+            File.WriteAllText($@"{openFolderDialog.SelectedPath}\profile.txt", save.GetProfileData());
+            File.Copy(save.SaveProfilePath, $@"{openFolderDialog.SelectedPath}\profile.sav", true);
+            foreach (var filePath in save.WorldSaves)
+            {
+                File.WriteAllText($@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\")).Replace(".sav", ".txt")}", RemnantSave.DecompressSaveAsString(filePath));
+                File.Copy(filePath, $@"{openFolderDialog.SelectedPath}\{filePath.Substring(filePath.LastIndexOf(@"\"))}", true);
+            }
+            Logger.Success(Loc.T("Export_save_success_{folder}", new() { { "folder", openFolderDialog.SelectedPath } }));
+        }
+        catch (Exception ex)
+        {
+            Logger.Error(Loc.T("Error exporting save files: {errorMessage}", new() { { "errorMessage", ex.Message } }));
+        }
+    }
+
+    public void Dispose()
+    {
+        Settings.Default.PropertyChanged -= Settings_PropertyChanged;
+        Loc.CultureChanged -= OnCultureChanged;
+        SaveWatcher.SaveUpdated -= SaveWatcher_SaveUpdated;
+        State.BackupSaveRestored -= OnBackupSaveRestored;
+    }
+}

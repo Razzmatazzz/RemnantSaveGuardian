@@ -1,5 +1,4 @@
-﻿using RemnantSaveGuardian.Views.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -34,7 +33,7 @@ namespace RemnantSaveGuardian
 
         private static void CreateLog()
         {
-            File.WriteAllText("log.txt", DateTime.Now.ToString() + ": Version " + typeof(MainWindow).Assembly.GetName().Version + "\r\n");
+            File.WriteAllText("log.txt", DateTime.Now.ToString() + ": Version " + typeof(Logger).Assembly.GetName().Version + "\r\n");
         }
 
         public static void Log(object message, LogType logType)
@@ -43,8 +42,11 @@ namespace RemnantSaveGuardian
             {
                 message = "null";
             }
+            lock (messages)
+            {
+                messages.Add(new(message.ToString(), logType));
+            }
             MessageLogged?.Invoke(null, new (message.ToString(), logType));
-            messages.Add(new(message.ToString(), logType));
             if (Properties.Settings.Default.CreateLogFile)
             {
                 StreamWriter writer = File.AppendText("log.txt");
@@ -98,10 +100,12 @@ namespace RemnantSaveGuardian
     {
         public string Message { get; set; }
         public LogType LogType { get; set; }
+        public DateTime Timestamp { get; set; }
         public LogMessage(string message, LogType logType)
         {
             Message = message;
             LogType = logType;
+            Timestamp = DateTime.Now;
         }
     }
 }

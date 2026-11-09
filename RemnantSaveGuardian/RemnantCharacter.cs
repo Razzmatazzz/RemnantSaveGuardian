@@ -94,7 +94,7 @@ namespace RemnantSaveGuardian
             {
                 if (ex.Message.Contains("being used by another process"))
                 {
-                    if (Views.Pages.BackupsPage.isDataLoaded == true)
+                    if (App.GetService<Services.BackupService>()?.IsLoaded == true)
                     {
                         Logger.Warn(Loc.T("Save file in use; waiting 0.5 seconds and retrying."));
                     }

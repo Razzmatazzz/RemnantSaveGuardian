@@ -1,0 +1,299 @@
+@* Settings page. Values are read from and written to Properties.Settings.Default. *@
+@using System.Globalization
+@using System.IO
+@implements IDisposable
+@inject IDialogService DialogService
+
+<MudExpansionPanels MultiExpansion="true" Elevation="1">
+    <MudExpansionPanel>
+        <TitleContent>
+            <div class="d-flex align-center">
+                <MudIcon Icon="@Icons.Material.Filled.Save" Class="mr-3" />
+                <MudText Typo="Typo.h6">@Loc.T("Saves")</MudText>
+                <MudSpacer />
+                <div @onclick:stopPropagation="true" class="mr-4">
+                    <MudTooltip Text="@Loc.T("chkAutoBackup_ToolTip")">
+                        <MudSwitch T="bool" Value="@S.AutoBackup" ValueChanged="@(v => S.AutoBackup = v)" Color="Color.Primary"
+                                   Label="@Loc.T("chkAutoBackup_Content")" LabelPlacement="Placement.Start" />
+                    </MudTooltip>
+                </div>
+            </div>
+        </TitleContent>
+        <ChildContent>
+            <div class="d-flex align-center gap-4 mb-2 rsg-settings-row">
+                <MudNumericField T="int" Value="@S.BackupMinutes" ValueChanged="@(v => S.BackupMinutes = v)" Min="0" Margin="Margin.Dense" Variant="Variant.Outlined" Style="width: 150px" />
+                <MudTooltip Text="@Loc.T("lblBackupMins_ToolTip")"><MudText>@Loc.T("lblBackupMins_Text")</MudText></MudTooltip>
+            </div>
+            <div class="d-flex align-center gap-4 mb-4 rsg-settings-row">
+                <MudNumericField T="int" Value="@S.BackupLimit" ValueChanged="@(v => S.BackupLimit = v)" Min="0" Margin="Margin.Dense" Variant="Variant.Outlined" Style="width: 150px" />
+                <MudTooltip Text="@Loc.T("lblBackupLimit_ToolTip")"><MudText>@Loc.T("lblBackupLimit_Text")</MudText></MudTooltip>
+            </div>
+            @FolderRow(Loc.T("Save Folder"), S.SaveFolder, ChooseSaveFolder)
+            @FolderRow(Loc.T("Backup Folder"), S.BackupFolder, ChooseBackupFolder)
+            @FolderRow(Loc.T("Game Folder"), S.GameFolder, ChooseGameFolder)
+        </ChildContent>
+    </MudExpansionPanel>
+
+    <MudExpansionPanel Expanded="true">
+        <TitleContent>
+            <div class="d-flex align-center">
+                <MudIcon Icon="@Icons.Material.Filled.Tune" Class="mr-3" />
+                <MudText Typo="Typo.h6">@Loc.T("Preferences")</MudText>
+                <MudSpacer />
+                <div @onclick:stopPropagation="true" class="d-flex align-center gap-2 mr-4">
+                    <MudText Typo="Typo.body2">@Loc.T("lblSwitchLanguage_Text")</MudText>
+                    <MudSelect T="string" Value="@CurrentLanguageName" ValueChanged="OnLanguageChanged" Dense="true" Margin="Margin.Dense" Variant="Variant.Outlined" Style="min-width: 180px">
+                        @foreach (var lang in Languages)
+                        {
+                            <MudSelectItem T="string" Value="@lang.Name">@lang.NativeName</MudSelectItem>
+                        }
+                    </MudSelect>
+                </div>
+            </div>
+        </TitleContent>
+        <ChildContent>
+            <div class="d-flex align-center gap-4 mb-2 rsg-settings-row">
+                <MudSelect T="string" Value="@S.StartPage" ValueChanged="@(v => S.StartPage = v)" Dense="true" Margin="Margin.Dense" Variant="Variant.Outlined" Style="width: 200px">
+                    <MudSelectItem T="string" Value="@AppState.BackupsKey">@Loc.T("Save Backups")</MudSelectItem>
+                    <MudSelectItem T="string" Value="@AppState.WorldAnalyzerKey">@Loc.T("World Analyzer")</MudSelectItem>
+                </MudSelect>
+                <MudTooltip Text="@Loc.T("lblStartPage_ToolTip")"><MudText>@Loc.T("lblStartPage_Text")</MudText></MudTooltip>
+            </div>
+            <div class="d-flex align-center gap-4 mb-2 rsg-settings-row">
+                <MudSelect T="string" Value="@S.Wiki" ValueChanged="@(v => S.Wiki = v)" Dense="true" Margin="Margin.Dense" Variant="Variant.Outlined" Style="width: 200px">
+                    <MudSelectItem T="string" Value="@("fextrawiki")">@Loc.T("Fextralife")</MudSelectItem>
+                    <MudSelectItem T="string" Value="@("remwiki")">@Loc.T("RemnantWiki")</MudSelectItem>
+                </MudSelect>
+                <MudTooltip Text="@Loc.T("lblWiki_ToolTip")"><MudText>@Loc.T("lblWiki_Text")</MudText></MudTooltip>
+            </div>
+            <div class="d-flex align-center gap-4 mb-2 rsg-settings-row">
+                <MudSelect T="string" Value="@(S.MissingItemColor == "Highlight" ? "Highlight" : "Normal")" ValueChanged="@(v => S.MissingItemColor = v)" Dense="true" Margin="Margin.Dense" Variant="Variant.Outlined" Style="width: 200px">
+                    <MudSelectItem T="string" Value="@("Normal")">@Loc.T("Text_Normal")</MudSelectItem>
+                    <MudSelectItem T="string" Value="@("Highlight")">@Loc.T("Text_Highlight")</MudSelectItem>
+                </MudSelect>
+                <MudText>@Loc.T("lblMissingItemColor_Text")</MudText>
+            </div>
+            <MudStack Spacing="0" Class="mt-2">
+                <MudSwitch T="bool" Value="@S.ShowPossibleItems" ValueChanged="@(v => S.ShowPossibleItems = v)" Color="Color.Primary" Label="@Loc.T("chkShowPossibleItems_Content")" />
+                <MudSwitch T="bool" Value="@S.ShowCoopItems" ValueChanged="@(v => S.ShowCoopItems = v)" Color="Color.Primary" Label="@Loc.T("chkShowCoopItems_Content")" />
+                <MudTooltip Text="@Loc.T("chkCreateLogFile_ToolTip")" RootStyle="width: fit-content">
+                    <MudSwitch T="bool" Value="@S.CreateLogFile" ValueChanged="@(v => S.CreateLogFile = v)" Color="Color.Primary" Label="@Loc.T("chkCreateLogFile_Content")" />
+                </MudTooltip>
+                <MudSwitch T="bool" Value="@S.AutoHideNaviAndTitleBar" ValueChanged="@(v => S.AutoHideNaviAndTitleBar = v)" Color="Color.Primary" Label="@Loc.T("chkAutoHideNaviAndTitleBar_Content")" />
+                <div class="d-flex align-center">
+                    <MudSwitch T="bool" Value="@S.EnableOpacity" ValueChanged="@(v => S.EnableOpacity = v)" Color="Color.Primary" Label="@Loc.T("chkOpacity_Content")" />
+                    <MudText Typo="Typo.caption" Color="Color.Warning" Class="ml-2" Style="font-style: italic">@Loc.T("chkOpacity_note_Text")</MudText>
+                </div>
+                @if (S.EnableOpacity)
+                {
+                    <div class="d-flex align-center gap-4 ml-12">
+                        <MudSlider T="float" Value="@S.Opacity" ValueChanged="@(v => S.Opacity = v)" Min="0.2f" Max="1f" Step="0.05f" Style="width: 150px" />
+                        <MudText>@Loc.T("lblOpacitySlider_Text")</MudText>
+                        <MudCheckBox T="bool" Value="@S.OnlyInactive" ValueChanged="@(v => S.OnlyInactive = v)" Label="@Loc.T("chkOnlyInactive_Content")" />
+                    </div>
+                }
+            </MudStack>
+        </ChildContent>
+    </MudExpansionPanel>
+</MudExpansionPanels>
+
+<MudPaper Class="d-flex align-center pa-4 mt-2" Elevation="1">
+    <MudButton StartIcon="@Icons.Material.Filled.CloudSync" Size="Size.Large" OnClick="@UpdateCheck.CheckForNewVersion">
+        @Loc.T("btnCheckUpdate_Content")
+    </MudButton>
+    <MudSpacer />
+    <MudSwitch T="bool" Value="@S.AutoCheckUpdate" ValueChanged="@(v => S.AutoCheckUpdate = v)" Color="Color.Primary"
+               Label="@Loc.T("chkAutoCheckUpdate_Content")" LabelPlacement="Placement.Start" Class="mr-4" />
+</MudPaper>
+
+<MudPaper Class="d-flex align-center pa-4 mt-2" Elevation="1">
+    <MudIcon Icon="@Icons.Material.Filled.Palette" Class="mr-3" />
+    <MudText Typo="Typo.h6">@Loc.T("Theme")</MudText>
+    <MudSpacer />
+    <MudRadioGroup T="string" Value="@(S.Theme == "Light" ? "Light" : "Dark")" ValueChanged="@(v => S.Theme = v)">
+        <MudRadio T="string" Value="@("Light")" Color="Color.Primary">@Loc.T("Light")</MudRadio>
+        <MudRadio T="string" Value="@("Dark")" Color="Color.Primary">@Loc.T("Dark")</MudRadio>
+    </MudRadioGroup>
+</MudPaper>
+
+<MudLink Href="https://github.com/Razzmatazzz/RemnantSaveGuardian" Target="_blank" Class="d-block my-3">
+    @Loc.T("AboutRSG") @AssemblyVersion
+</MudLink>
+
+@code {
+    private static Properties.Settings S => Settings.Default;
+
+    private static CultureInfo[] Languages =>
+        (System.Windows.Application.Current.Properties["langs"] as CultureInfo[]) ?? new[] { CultureInfo.GetCultureInfo("en") };
+
+    private static string AssemblyVersion => System.Reflection.Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? string.Empty;
+
+    private RenderFragment FolderRow(string label, string path, Action choose) => __builder =>
+    {
+        <div class="d-flex align-center gap-2 mb-2">
+            <MudButton Variant="Variant.Outlined" OnClick="@choose" Style="min-width: 170px; justify-content: flex-start">@label</MudButton>
+            <MudTextField T="string" Value="@path" ReadOnly="true" Margin="Margin.Dense" Variant="Variant.Outlined" Class="mt-0"
+                          Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.FolderOpen"
+                          OnAdornmentClick="@(() => OpenFolder(path))" AdornmentAriaLabel="@Loc.T("Open Folder")"
+                          Disabled="@(path.Length == 0 || !Directory.Exists(path))" />
+        </div>
+    };
+
+    /// <summary>The culture name of the selected language, matching an entry in <see cref="Languages"/>.</summary>
+    private string CurrentLanguageName
+    {
+        get
+        {
+            var langs = Languages;
+            if (S.Language != "" && langs.Any(l => l.Name == S.Language))
+            {
+                return S.Language;
+            }
+            var culture = Loc.Culture;
+            if (langs.Any(l => l.Name == culture.Name))
+            {
+                return culture.Name;
+            }
+            return langs.FirstOrDefault(l => l.Name == culture.Parent.Name)?.Name ?? langs[0].Name;
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        S.PropertyChanged += Settings_PropertyChanged;
+        Loc.CultureChanged += OnCultureChanged;
+    }
+
+    private void Settings_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e) => InvokeAsync(StateHasChanged);
+
+    private void OnCultureChanged(object? sender, EventArgs e) => InvokeAsync(StateHasChanged);
+
+    private void OnLanguageChanged(string name)
+    {
+        var culture = Languages.FirstOrDefault(l => l.Name == name);
+        if (culture == null)
+        {
+            return;
+        }
+        System.Threading.Thread.CurrentThread.CurrentCulture = culture;
+        CultureInfo.DefaultThreadCurrentCulture = culture;
+        S.Language = culture.Name;
+        Loc.Culture = culture;
+        Logger.Success(Loc.T("Language_change_notice_{chosenLanguage}", new() { { "chosenLanguage", culture.NativeName } }));
+    }
+
+    private static void OpenFolder(string path)
+    {
+        System.Diagnostics.Process.Start("explorer.exe", @$"{path}\");
+    }
+
+    private static string? PickFolder(string current, string description)
+    {
+        using var dialog = new System.Windows.Forms.FolderBrowserDialog
+        {
+            SelectedPath = current,
+            Description = description,
+            UseDescriptionForTitle = true,
+        };
+        return dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK ? dialog.SelectedPath : null;
+    }
+
+    private async void ChooseBackupFolder()
+    {
+        var folderName = PickFolder(S.BackupFolder, Loc.T("Backup Folder"));
+        if (folderName == null)
+        {
+            return;
+        }
+        if (folderName.Equals(S.SaveFolder))
+        {
+            Logger.Warn(Loc.T("InvalidBackupFolderNoBackupsInSaves"));
+            return;
+        }
+        if (folderName.Equals(S.BackupFolder))
+        {
+            return;
+        }
+        if (S.BackupFolder.Length > 0 && Directory.Exists(S.BackupFolder))
+        {
+            List<string> backupFiles = Directory.GetDirectories(S.BackupFolder).ToList();
+            if (backupFiles.Count > 0)
+            {
+                var move = await DialogService.ShowMessageBoxAsync(Loc.T("Move Backups"), Loc.T("Do you want to move your backups to this new folder?"), Loc.T("Yes"), Loc.T("No"));
+                if (move == true)
+                {
+                    try
+                    {
+                        foreach (string file in backupFiles)
+                        {
+                            FileAttributes attr = File.GetAttributes(file);
+                            if ((attr & FileAttributes.Directory) != FileAttributes.Directory)
+                            {
+                                // skip anything that's not a folder
+                                continue;
+                            }
+                            string subFolderName = Path.GetFileName(file);
+                            DirectoryInfo currentBackupFolder = new DirectoryInfo(file);
+                            DirectoryInfo newBackupFolder = Directory.CreateDirectory(Path.Combine(folderName, subFolderName));
+
+                            foreach (FileInfo fileInfo in currentBackupFolder.GetFiles())
+                            {
+                                fileInfo.CopyTo(Path.Combine(newBackupFolder.FullName, fileInfo.Name), true);
+                            }
+
+                            Directory.SetCreationTime(Path.Combine(folderName, subFolderName), Directory.GetCreationTime(file));
+                            Directory.SetLastWriteTime(Path.Combine(folderName, subFolderName), Directory.GetCreationTime(file));
+                            Directory.Delete(file, true);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.Error($"Error moving backups: {ex.Message}");
+                    }
+                }
+            }
+        }
+        S.BackupFolder = folderName;
+    }
+
+    private void ChooseGameFolder()
+    {
+        var folderName = PickFolder(S.GameFolder, Loc.T("Game Folder"));
+        if (folderName == null)
+        {
+            return;
+        }
+        if (!File.Exists(folderName + "\\Remnant2.exe"))
+        {
+            Logger.Warn(Loc.T("InvalidGameFolder"));
+            return;
+        }
+        S.GameFolder = folderName;
+    }
+
+    private void ChooseSaveFolder()
+    {
+        var folderName = PickFolder(S.SaveFolder, Loc.T("Save Folder"));
+        if (folderName == null)
+        {
+            return;
+        }
+        if (folderName.Equals(S.BackupFolder))
+        {
+            Logger.Warn(Loc.T("InvalidSaveFolderNoSavesInBackups"));
+            return;
+        }
+        if (!RemnantSave.ValidSaveFolder(folderName))
+        {
+            Logger.Warn(Loc.T("InvalidSaveFolder"));
+            return;
+        }
+        S.SaveFolder = folderName;
+    }
+
+    public void Dispose()
+    {
+        S.PropertyChanged -= Settings_PropertyChanged;
+        Loc.CultureChanged -= OnCultureChanged;
+    }
+}

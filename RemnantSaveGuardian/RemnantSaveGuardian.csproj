@@ -1,14 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows10.0.17763.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>RemnantSaveGuardian</RootNamespace>
     <SatelliteResourceLanguages>en;ru;de;es;fr;it;ja;ko;pt-BR;zh-Hans;zh-Hant</SatelliteResourceLanguages>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\256.ico</ApplicationIcon>
-    <AssemblyVersion>1.5.0.0</AssemblyVersion>
+    <Version>2.0.0</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
   </PropertyGroup>
 
@@ -17,12 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
-    <PackageReference Include="WPF-UI" Version="2.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-    <PackageReference Include="WPFLocalizeExtension" Version="3.10.0" />
-    <PackageReference Include="Autoupdater.NET.Official" Version="1.8.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="10.0.120" />
+    <PackageReference Include="MudBlazor" Version="9.12.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.14" />
+    <PackageReference Include="Autoupdater.NET.Official" Version="1.9.3" />
   </ItemGroup>
 
   <ItemGroup>
