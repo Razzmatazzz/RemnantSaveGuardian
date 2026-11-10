@@ -363,3 +363,7 @@ MigrationBackup/
 FodyWeavers.xsd
 
 secrets/
+
+# Remnant 2 pak AES key used by tools/GameStringsGenerator
+aes.key
+gamestrings-report.tsv

@@ -162,7 +162,7 @@
     <comment />
   </data>
 	<data name="Amulet_DaredevilsCharm" xml:space="preserve">
-    <value>夜魔俠魅力</value>
+    <value>勇者神符</value>
     <comment />
   </data>
 	<data name="Amulet_DeathsEmbrace" xml:space="preserve">
@@ -341,6 +341,9 @@
     <value>銀絲帶</value>
     <comment />
   </data>
+	<data name="Amulet_SoulAnchor" xml:space="preserve">
+    <value>靈魂之錨</value>
+  </data>
 	<data name="Amulet_SpiritWispAmulet" xml:space="preserve">
     <value>魂光項鍊</value>
     <comment />
@@ -390,7 +393,7 @@
     <comment />
   </data>
 	<data name="Armor_Engineer" xml:space="preserve">
-    <value>技師</value>
+    <value>工程師</value>
     <comment />
   </data>
 	<data name="Armor_Explorer" xml:space="preserve">
@@ -721,6 +724,9 @@
     <value>動量</value>
     <comment />
   </data>
+	<data name="MetaGem_Opportunist" xml:space="preserve">
+    <value>投機者</value>
+  </data>
 	<data name="MetaGem_Overdrive" xml:space="preserve">
     <value>過載</value>
     <comment />
@@ -970,7 +976,7 @@
     <comment />
   </data>
 	<data name="Ring_AkariWarBand" xml:space="preserve">
-    <value>阿卡里戰爭指環</value>
+    <value>阿卡裡戰爭指環</value>
     <comment />
   </data>
 	<data name="Ring_AlchemyStone" xml:space="preserve">
@@ -1000,6 +1006,9 @@
 	<data name="Ring_BandBand" xml:space="preserve">
     <value>團隊指環</value>
     <comment />
+  </data>
+	<data name="Ring_BandOfAccord" xml:space="preserve">
+    <value>協調指環</value>
   </data>
 	<data name="Ring_BisectedRing" xml:space="preserve">
     <value>平分戒指</value>
@@ -1382,7 +1391,7 @@
     <comment />
   </data>
 	<data name="Ring_RockOfAnguish" xml:space="preserve">
-    <value>痛苦之石</value>
+    <value>痛苦之岩</value>
     <comment />
   </data>
 	<data name="Ring_RustedHeirloom" xml:space="preserve">
@@ -1414,11 +1423,11 @@
     <comment />
   </data>
 	<data name="Ring_SoulLink" xml:space="preserve">
-    <value>靈魂連線</value>
+    <value>靈魂連接</value>
     <comment />
   </data>
 	<data name="Ring_SpiritStone" xml:space="preserve">
-    <value>靈石</value>
+    <value>精神之石</value>
     <comment />
   </data>
 	<data name="Ring_StockpileCharger" xml:space="preserve">
@@ -1622,7 +1631,7 @@
     <comment />
   </data>
 	<data name="Trait_ArcaneStrike" xml:space="preserve">
-    <value>奧術打擊</value>
+    <value>奧術攻擊</value>
     <comment />
   </data>
 	<data name="Trait_Barkskin" xml:space="preserve">
@@ -1682,7 +1691,7 @@
     <comment />
   </data>
 	<data name="Trait_Recovery" xml:space="preserve">
-    <value>回覆</value>
+    <value>回復</value>
     <comment />
   </data>
 	<data name="Trait_Regrowth" xml:space="preserve">
@@ -1742,7 +1751,7 @@
     <comment />
   </data>
 	<data name="Ward13" xml:space="preserve">
-    <value>13號實驗區</value>
+    <value>13 號實驗區</value>
     <comment />
   </data>
 	<data name="Weapon_Aphelion" xml:space="preserve">
@@ -1813,6 +1822,9 @@
     <value>裂神者</value>
     <comment />
   </data>
+	<data name="Weapon_Hammer" xml:space="preserve">
+    <value>廢鐵錘</value>
+  </data>
 	<data name="Weapon_Hellfire" xml:space="preserve">
     <value>地獄火</value>
     <comment />
@@ -1868,6 +1880,12 @@
 	<data name="Weapon_RedDoeStaff" xml:space="preserve">
     <value>紅鹿法杖</value>
     <comment />
+  </data>
+	<data name="Weapon_Repeater" xml:space="preserve">
+    <value>連發手槍</value>
+  </data>
+	<data name="Weapon_Repulsor" xml:space="preserve">
+    <value>反擊者</value>
   </data>
 	<data name="Weapon_RoyalBroadsword" xml:space="preserve">
     <value>皇家闊劍</value>
@@ -1985,7 +2003,7 @@
 		<value>項鍊</value>
 	</data>
 	<data name="Armor" xml:space="preserve">
-		<value>防具</value>
+		<value>護甲</value>
 	</data>
 	<data name="BoneHarvesterLair" xml:space="preserve">
 		<value>下水道的怪物</value>
