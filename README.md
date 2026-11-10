@@ -16,9 +16,6 @@ Back up your Remnant 2 saves and view your world rolls.
 ![image](https://github.com/Razzmatazzz/RemnantSaveGuardian/assets/35779878/45d46b50-f3d2-4341-847e-ae3dd4f6df2c)
 
 ## Known Issues
-- [Some items are missing from the world analyzer](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/43)
-- [Many events and items do not have well-formatted names](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/45)
-- [Some events not displaying or are erroneously displaying](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/44)
 - [If you are using Norton Antivirus, it may cause weirdness with your game saves and RemnantSaveGuardian](https://github.com/Razzmatazzz/RemnantSaveGuardian/issues/70)
 
 Thanks for [crackedmind](https://github.com/crackedmind) for the inflation code to convert saves into partial plaintext. 
