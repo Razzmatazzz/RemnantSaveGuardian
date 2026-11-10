@@ -1254,7 +1254,7 @@
   <data name="Ring_LeakingGemstone" xml:space="preserve">
     <value>누출된 원석</value>
   </data>
-  <data name="Ring_LighthouseKeepersRing" xml:space="preserve">
+  <data name="Ring_LightHouseKeepersRing" xml:space="preserve">
     <value>등대 수호자의 반지</value>
   </data>
   <data name="Ring_MarkOfTheDestroyer" xml:space="preserve">
@@ -2841,9 +2841,6 @@
   <data name="Amulet_BrewmastersCork" xml:space="preserve">
     <value>양조기술자의 코르크</value>
   </data>
-  <data name="Amulet_BirthrightoftheLost" xml:space="preserve">
-    <value>잃어버린 자의 생득권</value>
-  </data>
   <data name="Amulet_DeathSoakedIdol" xml:space="preserve">
     <value>죽음이 깃든 우상</value>
   </data>
@@ -2880,9 +2877,6 @@
   <data name="Ring_JewelOfTheBeholden" xml:space="preserve">
     <value>빚진 자들의 보석</value>
   </data>
-  <data name="Ring_LightHouseKeepersRing" xml:space="preserve">
-    <value>등대 수호자의 반지</value>
-  </data>
   <data name="Ring_PowerComplex" xml:space="preserve">
     <value>파워 콤플렉스</value>
   </data>
@@ -2912,12 +2906,6 @@
   </data>
   <data name="Ring_OfferingStone" xml:space="preserve">
     <value>공양석</value>
-  </data>
-  <data name="Ring_ShadowofMisery" xml:space="preserve">
-    <value>비참의 그림자</value>
-  </data>
-  <data name="Ring_RingoftheCastaway" xml:space="preserve">
-    <value>조난자의 반지</value>
   </data>
   <data name="Ring_BitterMemento" xml:space="preserve">
     <value>비통한 기념물</value>
@@ -2970,9 +2958,6 @@
   <data name="IslandJump" xml:space="preserve">
     <value>Island Jump Puzzle</value>
   </data>
-  <data name="IslandJump" xml:space="preserve">
-    <value>Island Jump Puzzle</value>
-  </data>
   <data name="Armor_RedPrinceArmor" xml:space="preserve">
     <value>진홍색 경비병</value>
   </data>
@@ -2981,9 +2966,6 @@
   </data>
   <data name="GardenMaze" xml:space="preserve">
     <value>미로</value>
-  </data>
-  <data name="BurningCity_DLC" xml:space="preserve">
-    <value>천상의 저택</value>
   </data>
   <data name="BurningCity_DLC" xml:space="preserve">
     <value>천상의 저택</value>

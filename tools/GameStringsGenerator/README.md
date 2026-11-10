@@ -49,6 +49,15 @@ The neutral `GameStrings.resx` (English) is the list of entries. For each one:
    (e.g. "Rupture Canon" → "Rupture Cannon") without renaming anything. The English names are
    also used to build wiki links, so check that changed names still match wiki page titles.
 
+Each run also tidies the files:
+
+- **Key casing.** Resx lookups are case-sensitive and the app looks items up by their game asset
+  name, so a key that matches a game asset except for case is renamed to the game's casing in every
+  file (e.g. `Ring_LighthouseKeepersRing` → `Ring_LightHouseKeepersRing`). Update
+  `GameStrings.Designer.cs` to match, or let Visual Studio regenerate it.
+- **Duplicates.** Repeated entries, including names that differ from an English key only in case,
+  are collapsed into one, keeping a non-empty value.
+
 Entries whose English value contains `{placeholders}` are skipped. Entries the game has no text for,
 or that can't be matched (mostly location and event names the app made up), keep their
 hand-written translations. The game's Traditional Chinese (`zh-Hant`) localization is only partial,
