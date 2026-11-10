@@ -1263,6 +1263,9 @@
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Rock of Anguish</value>
   </data>
+  <data name="Ring_Rotward" xml:space="preserve">
+    <value>Rotward</value>
+  </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>Rusted Heirloom</value>
   </data>

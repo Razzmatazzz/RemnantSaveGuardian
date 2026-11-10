@@ -1627,6 +1627,9 @@
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Камень пыток</value>
   </data>
+  <data name="Ring_Rotward" xml:space="preserve">
+    <value>Кольцо гнили</value>
+  </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>Ржавая драгоценность</value>
   </data>

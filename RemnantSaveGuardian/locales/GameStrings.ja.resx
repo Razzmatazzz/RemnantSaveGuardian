@@ -1636,6 +1636,9 @@
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>苦悩の岩</value>
   </data>
+  <data name="Ring_Rotward" xml:space="preserve">
+    <value>ロットワード</value>
+  </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>錆びた家宝</value>
   </data>

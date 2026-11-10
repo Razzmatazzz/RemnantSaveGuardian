@@ -1555,6 +1555,9 @@
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Stein des Kummers</value>
   </data>
+  <data name="Ring_Rotward" xml:space="preserve">
+    <value>Ring der Fäulnisabwehr</value>
+  </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>Verrostetes Erbstück</value>
   </data>

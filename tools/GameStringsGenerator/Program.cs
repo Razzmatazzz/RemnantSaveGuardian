@@ -183,7 +183,7 @@ foreach (var file in resxFiles)
             d.SetAttributeValue("name", newName);
             renamed++;
         }
-    var removed = RemoveDuplicates(doc.Root!, canonicalKeys);
+    var removed = RemoveDuplicates(doc.Root!, canonicalKeys, ref renamed);
     var dataByName = doc.Root!.Elements("data").Where(d => d.Attribute("type") == null)
         .ToDictionary(d => (string)d.Attribute("name")!);
     int added = 0, changed = 0, same = 0, missing = 0, conflicts = 0;
@@ -298,8 +298,10 @@ static List<(string Name, string Value)> ReadStrings(XDocument doc) =>
 // Removes repeated <data> entries. Entries with the same name are duplicates, and so are names that
 // differ only in case from a key in the neutral resx (only the neutral casing is ever looked up).
 // Keeps the entry with the neutral casing that has a value, else the first with a value, else the
-// first, and gives it the neutral casing. Returns how many entries were removed.
-static int RemoveDuplicates(XElement root, Dictionary<string, string> canonicalKeys)
+// first, and gives it the neutral casing. A lone entry whose name differs from a neutral key only in
+// case is renamed too, since it would never be found. Returns how many entries were removed; adds
+// the number of renamed entries to `renamed`.
+static int RemoveDuplicates(XElement root, Dictionary<string, string> canonicalKeys, ref int renamed)
 {
     var removed = 0;
     string GroupKey(XElement d)
@@ -309,12 +311,17 @@ static int RemoveDuplicates(XElement root, Dictionary<string, string> canonicalK
     }
     static bool HasValue(XElement d) => !string.IsNullOrWhiteSpace((string?)d.Element("value"));
     var groups = root.Elements("data").Where(d => d.Attribute("type") == null)
-        .GroupBy(GroupKey, StringComparer.Ordinal).Where(g => g.Count() > 1).ToList();
+        .GroupBy(GroupKey, StringComparer.Ordinal)
+        .Where(g => g.Count() > 1 || (string)g.First().Attribute("name")! != g.Key).ToList();
     foreach (var g in groups)
     {
         var keep = g.FirstOrDefault(d => (string)d.Attribute("name")! == g.Key && HasValue(d))
                    ?? g.FirstOrDefault(HasValue) ?? g.First();
-        keep.SetAttributeValue("name", g.Key);
+        if ((string)keep.Attribute("name")! != g.Key)
+        {
+            keep.SetAttributeValue("name", g.Key);
+            renamed++;
+        }
         foreach (var dup in g.Where(d => d != keep))
         {
             if (dup.PreviousNode is XText ws && string.IsNullOrWhiteSpace(ws.Value)) ws.Remove();

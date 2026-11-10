@@ -56,7 +56,12 @@ Each run also tidies the files:
   file (e.g. `Ring_LighthouseKeepersRing` → `Ring_LightHouseKeepersRing`). Update
   `GameStrings.Designer.cs` to match, or let Visual Studio regenerate it.
 - **Duplicates.** Repeated entries, including names that differ from an English key only in case,
-  are collapsed into one, keeping a non-empty value.
+  are collapsed into one, keeping a non-empty value. A single translation whose name differs from
+  the English key only in case is renamed to match, since it would otherwise never be found.
+
+Keys that aren't in the English file can't be checked this way. Location names, for example, are
+looked up by their English display name (`game.json` `subLocations` values, or names read from the
+save file), so those keys must use the game's own capitalization, e.g. "Tower of the Unseen".
 
 Entries whose English value contains `{placeholders}` are skipped. Entries the game has no text for,
 or that can't be matched (mostly location and event names the app made up), keep their

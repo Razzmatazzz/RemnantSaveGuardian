@@ -1582,6 +1582,9 @@
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Rocha da Angústia</value>
   </data>
+  <data name="Ring_Rotward" xml:space="preserve">
+    <value>Guarda da Peste</value>
+  </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>Herança Enferrujada</value>
   </data>

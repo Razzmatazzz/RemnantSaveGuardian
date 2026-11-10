@@ -1797,7 +1797,7 @@
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>비통의 돌</value>
   </data>
-  <data name="Ring_RotWard" xml:space="preserve">
+  <data name="Ring_Rotward" xml:space="preserve">
     <value>로트워드</value>
   </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
@@ -2127,7 +2127,7 @@
   <data name="Tower" xml:space="preserve">
     <value>The Elevator</value>
   </data>
-  <data name="Tower of the unseen" xml:space="preserve">
+  <data name="Tower of the Unseen" xml:space="preserve">
     <value>보이지 않는 것의 타워</value>
   </data>
   <data name="TowerHeist" xml:space="preserve">

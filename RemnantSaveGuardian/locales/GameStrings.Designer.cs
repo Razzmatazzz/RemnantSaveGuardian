@@ -4903,6 +4903,15 @@ namespace RemnantSaveGuardian.locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rotward.
+        /// </summary>
+        public static string Ring_Rotward {
+            get {
+                return ResourceManager.GetString("Ring_Rotward", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Sagestone.
         /// </summary>
         public static string Ring_Sagestone {

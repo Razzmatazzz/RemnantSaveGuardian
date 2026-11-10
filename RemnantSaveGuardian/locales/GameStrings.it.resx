@@ -1594,6 +1594,9 @@
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Pietra dell'angoscia</value>
   </data>
+  <data name="Ring_Rotward" xml:space="preserve">
+    <value>Guardia della putrefazione</value>
+  </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>Cimelio arrugginito</value>
   </data>

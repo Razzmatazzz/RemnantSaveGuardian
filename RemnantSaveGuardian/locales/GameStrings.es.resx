@@ -1591,6 +1591,9 @@
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Roca del Tormento</value>
   </data>
+  <data name="Ring_Rotward" xml:space="preserve">
+    <value>Salvaguarda de podredumbre</value>
+  </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>Reliquia oxidada</value>
   </data>

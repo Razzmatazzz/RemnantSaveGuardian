@@ -1737,6 +1737,9 @@
 	<data name="Ring_RockOfAnguish_Notes" xml:space="preserve">
     <value>{Cass65_Notes}</value>
   </data>
+	<data name="Ring_Rotward" xml:space="preserve">
+    <value>腐坏之区</value>
+  </data>
 	<data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>锈蚀传家宝</value>
   </data>
@@ -2025,7 +2028,7 @@
 	<data name="ThreeMenMorris" xml:space="preserve">
     <value>发愿者</value>
   </data>
-	<data name="Threshold Of The Unknown" xml:space="preserve">
+	<data name="Threshold of the Unknown" xml:space="preserve">
     <value>未知的启示</value>
   </data>
 	<data name="Tiller's Rest" xml:space="preserve">
@@ -2046,7 +2049,7 @@
 	<data name="TowerHeist" xml:space="preserve">
     <value>工程无人机阿尔法</value>
   </data>
-	<data name="Tower Of The Unseen" xml:space="preserve">
+	<data name="Tower of the Unseen" xml:space="preserve">
     <value>不可见之塔</value>
   </data>
 	<data name="Towers" xml:space="preserve">
@@ -2181,7 +2184,7 @@
 	<data name="Underworld_TheClaw" xml:space="preserve">
     <value>巨型机械爪</value>
   </data>
-	<data name="Vault Of The Formless" xml:space="preserve">
+	<data name="Vault of the Formless" xml:space="preserve">
     <value>无形者的地下室</value>
   </data>
 	<data name="Void Vessel Facility" xml:space="preserve">
