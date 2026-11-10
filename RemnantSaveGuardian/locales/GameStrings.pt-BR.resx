@@ -1432,7 +1432,7 @@
   <data name="Ring_LeakingGemstone" xml:space="preserve">
     <value>Joia Escoante</value>
   </data>
-  <data name="Ring_LighthouseKeepersRing" xml:space="preserve">
+  <data name="Ring_LightHouseKeepersRing" xml:space="preserve">
     <value>Anel da Sentinela do Farol</value>
   </data>
   <data name="Ring_LithicSignet" xml:space="preserve">
@@ -1581,6 +1581,9 @@
   </data>
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Rocha da Angústia</value>
+  </data>
+  <data name="Ring_Rotward" xml:space="preserve">
+    <value>Guarda da Peste</value>
   </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>Herança Enferrujada</value>

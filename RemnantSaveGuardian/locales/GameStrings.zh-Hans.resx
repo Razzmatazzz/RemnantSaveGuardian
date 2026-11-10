@@ -570,9 +570,6 @@
 	<data name="Briella's Reverie" xml:space="preserve">
     <value>布瑞拉的梦</value>
   </data>
-	<data name="Briella's Garden" xml:space="preserve">
-    <value>布瑞拉的花园</value>
-  </data>
 	<data name="BrokenTomb" xml:space="preserve">
     <value>旷野潜行者/枝节弓箭手</value>
   </data>
@@ -1620,7 +1617,7 @@
 	<data name="Ring_KineticCycleStone" xml:space="preserve">
     <value>动能环之石</value>
   </data>
-	<data name="Ring_LighthouseKeepersRing" xml:space="preserve">
+	<data name="Ring_LightHouseKeepersRing" xml:space="preserve">
     <value>灯塔守卫的戒指</value>
   </data>
 	<data name="Ring_LithicSignet" xml:space="preserve">
@@ -1739,6 +1736,9 @@
   </data>
 	<data name="Ring_RockOfAnguish_Notes" xml:space="preserve">
     <value>{Cass65_Notes}</value>
+  </data>
+	<data name="Ring_Rotward" xml:space="preserve">
+    <value>腐坏之区</value>
   </data>
 	<data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>锈蚀传家宝</value>
@@ -1989,9 +1989,6 @@
 	<data name="The Withering Weald" xml:space="preserve">
     <value>枯萎原野</value>
   </data>
-	<data name="Astropath's Respite" xml:space="preserve">
-    <value>星语者的喘息</value>
-  </data>
 	<data name="TheChimney" xml:space="preserve">
     <value>烟囱</value>
   </data>
@@ -2004,47 +2001,20 @@
 	<data name="TheCustodian" xml:space="preserve">
     <value>保管人</value>
   </data>
-	<data name="The Dappled Glade" xml:space="preserve">
-    <value>斑驳林地</value>
-  </data>
 	<data name="TheDreamlessSleep" xml:space="preserve">
     <value>静滞舱</value>
-  </data>
-	<data name="The Expanding Glade" xml:space="preserve">
-    <value>扩张的林地</value>
   </data>
 	<data name="TheFarWoods" xml:space="preserve">
     <value>遥远森林</value>
   </data>
-	<data name="The Great Bole" xml:space="preserve">
-    <value>巨树</value>
-  </data>
-	<data name="The Great Hall" xml:space="preserve">
-    <value>大厅</value>
-  </data>
-	<data name="The Great Sewers" xml:space="preserve">
-    <value>巨型下水道</value>
-  </data>
-	<data name="The Hatchery" xml:space="preserve">
-    <value>孵化体</value>
-  </data>
 	<data name="TheHunter" xml:space="preserve">
     <value>女猎人</value>
-  </data>
-	<data name="The Lament" xml:space="preserve">
-    <value>挽歌</value>
-  </data>
-	<data name="The Nameless Nest" xml:space="preserve">
-    <value>无名巢穴</value>
   </data>
 	<data name="TheNest" xml:space="preserve">
     <value>断手</value>
   </data>
 	<data name="The Phantom Wasteland" xml:space="preserve">
     <value>幽影荒原</value>
-  </data>
-	<data name="The Putrid Domain" xml:space="preserve">
-    <value>腐烂领域</value>
   </data>
 	<data name="The Red Throne" xml:space="preserve">
     <value>红王座</value>
@@ -2055,13 +2025,10 @@
 	<data name="TheTangle" xml:space="preserve">
     <value>{ImperialGardens}</value>
   </data>
-	<data name="The Twisted Chantry" xml:space="preserve">
-    <value>扭曲教堂</value>
-  </data>
 	<data name="ThreeMenMorris" xml:space="preserve">
     <value>发愿者</value>
   </data>
-	<data name="Threshold Of The Unknown" xml:space="preserve">
+	<data name="Threshold of the Unknown" xml:space="preserve">
     <value>未知的启示</value>
   </data>
 	<data name="Tiller's Rest" xml:space="preserve">
@@ -2082,7 +2049,7 @@
 	<data name="TowerHeist" xml:space="preserve">
     <value>工程无人机阿尔法</value>
   </data>
-	<data name="Tower Of The Unseen" xml:space="preserve">
+	<data name="Tower of the Unseen" xml:space="preserve">
     <value>不可见之塔</value>
   </data>
 	<data name="Towers" xml:space="preserve">
@@ -2217,7 +2184,7 @@
 	<data name="Underworld_TheClaw" xml:space="preserve">
     <value>巨型机械爪</value>
   </data>
-	<data name="Vault Of The Formless" xml:space="preserve">
+	<data name="Vault of the Formless" xml:space="preserve">
     <value>无形者的地下室</value>
   </data>
 	<data name="Void Vessel Facility" xml:space="preserve">
@@ -2876,9 +2843,6 @@
   </data>
 	<data name="Ring_JewelOfTheBeholden_Notes" xml:space="preserve">
     <value>直接击杀独一真皇，然后与尼姆埃交谈</value>
-  </data>
-	<data name="Ring_LightHouseKeepersRing" xml:space="preserve">
-    <value>灯塔守卫的戒指</value>
   </data>
 	<data name="Ring_OfferingStone" xml:space="preserve">
     <value>祭品之石</value>

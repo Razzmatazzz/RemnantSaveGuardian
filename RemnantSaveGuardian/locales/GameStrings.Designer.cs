@@ -4473,9 +4473,9 @@ namespace RemnantSaveGuardian.locales {
         /// <summary>
         ///   Looks up a localized string similar to Lighthouse Keeper&apos;s Ring.
         /// </summary>
-        public static string Ring_LighthouseKeepersRing {
+        public static string Ring_LightHouseKeepersRing {
             get {
-                return ResourceManager.GetString("Ring_LighthouseKeepersRing", resourceCulture);
+                return ResourceManager.GetString("Ring_LightHouseKeepersRing", resourceCulture);
             }
         }
         
@@ -4902,6 +4902,15 @@ namespace RemnantSaveGuardian.locales {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Rotward.
+        /// </summary>
+        public static string Ring_Rotward {
+            get {
+                return ResourceManager.GetString("Ring_Rotward", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Sagestone.
         /// </summary>

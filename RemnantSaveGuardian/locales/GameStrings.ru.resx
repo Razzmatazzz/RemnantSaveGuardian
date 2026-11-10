@@ -1474,7 +1474,7 @@
   <data name="Ring_LeakingGemstone" xml:space="preserve">
     <value>Протекающий камень</value>
   </data>
-  <data name="Ring_LighthouseKeepersRing" xml:space="preserve">
+  <data name="Ring_LightHouseKeepersRing" xml:space="preserve">
     <value>Кольцо смотрителя маяка</value>
   </data>
   <data name="Ring_LithicSignet" xml:space="preserve">
@@ -1626,6 +1626,9 @@
   </data>
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Камень пыток</value>
+  </data>
+  <data name="Ring_Rotward" xml:space="preserve">
+    <value>Кольцо гнили</value>
   </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>Ржавая драгоценность</value>

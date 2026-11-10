@@ -1438,7 +1438,7 @@
   <data name="Ring_LeakingGemstone" xml:space="preserve">
     <value>Gema goteante</value>
   </data>
-  <data name="Ring_LighthouseKeepersRing" xml:space="preserve">
+  <data name="Ring_LightHouseKeepersRing" xml:space="preserve">
     <value>Anillo del farero</value>
   </data>
   <data name="Ring_LithicSignet" xml:space="preserve">
@@ -1590,6 +1590,9 @@
   </data>
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Roca del Tormento</value>
+  </data>
+  <data name="Ring_Rotward" xml:space="preserve">
+    <value>Salvaguarda de podredumbre</value>
   </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>Reliquia oxidada</value>

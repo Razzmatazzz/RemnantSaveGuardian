@@ -1402,7 +1402,7 @@
   <data name="Ring_LeakingGemstone" xml:space="preserve">
     <value>Ring des auslaufenden Edelsteins</value>
   </data>
-  <data name="Ring_LighthouseKeepersRing" xml:space="preserve">
+  <data name="Ring_LightHouseKeepersRing" xml:space="preserve">
     <value>Ring des Leuchtturmwächters</value>
   </data>
   <data name="Ring_LithicSignet" xml:space="preserve">
@@ -1554,6 +1554,9 @@
   </data>
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Stein des Kummers</value>
+  </data>
+  <data name="Ring_Rotward" xml:space="preserve">
+    <value>Ring der Fäulnisabwehr</value>
   </data>
   <data name="Ring_RustedHeirloom" xml:space="preserve">
     <value>Verrostetes Erbstück</value>

@@ -84,6 +84,28 @@ var assetsByName = provider.Files.Keys
 // ---- Resolve each resx entry to localization keys ----------------------------------------------------
 var neutralPath = Path.Combine(localesDir, "GameStrings.resx");
 var neutral = ReadStrings(XDocument.Load(neutralPath));
+
+// The app looks strings up by the game's asset names, and resx lookups are case-sensitive. If a key
+// matches a game asset except for case (e.g. Ring_LighthouseKeepersRing vs the game's
+// Ring_LightHouseKeepersRing), rename it to the game's casing in every file.
+var renames = new Dictionary<string, string>(StringComparer.Ordinal);
+if (!opts.SkipEnglish)
+{
+    var neutralNames = neutral.Select(n => n.Name).ToHashSet(StringComparer.Ordinal);
+    foreach (var (name, _) in neutral)
+    {
+        if (!assetsByName.TryGetValue(name, out var paths)) continue;
+        var assetNames = paths.Select(p => Path.GetFileNameWithoutExtension(p)).Distinct(StringComparer.Ordinal).ToList();
+        if (assetNames.Contains(name, StringComparer.Ordinal) || assetNames.Count != 1) continue;
+        if (!neutralNames.Contains(assetNames[0])) renames[name] = assetNames[0];
+    }
+    neutral = neutral.Select(n => (renames.GetValueOrDefault(n.Name, n.Name), n.Value)).ToList();
+    foreach (var (from, to) in renames) Console.WriteLine($"Renaming key {from} -> {to} (game casing)");
+}
+// Canonical casing of every key, for collapsing case-variant duplicates in the language files.
+var canonicalKeys = neutral.Select(n => n.Name).Distinct(StringComparer.OrdinalIgnoreCase)
+    .ToDictionary(n => n, n => n, StringComparer.OrdinalIgnoreCase);
+
 var resolved = new Dictionary<string, Resolution>();
 var report = new List<string> { "key\tstatus\tmethod\tresx_english\tgame_english\tloc_keys" };
 
@@ -154,8 +176,16 @@ foreach (var file in resxFiles)
     }
 
     var doc = XDocument.Load(file, LoadOptions.PreserveWhitespace);
+    var renamed = 0;
+    foreach (var d in doc.Root!.Elements("data"))
+        if (renames.TryGetValue((string)d.Attribute("name")!, out var newName))
+        {
+            d.SetAttributeValue("name", newName);
+            renamed++;
+        }
+    var removed = RemoveDuplicates(doc.Root!, canonicalKeys, ref renamed);
     var dataByName = doc.Root!.Elements("data").Where(d => d.Attribute("type") == null)
-        .GroupBy(d => (string)d.Attribute("name")!).ToDictionary(g => g.Key, g => g.First());
+        .ToDictionary(d => (string)d.Attribute("name")!);
     int added = 0, changed = 0, same = 0, missing = 0, conflicts = 0;
 
     foreach (var (name, r) in resolved)
@@ -187,8 +217,8 @@ foreach (var file in resxFiles)
         }
     }
 
-    summary.Add($"{lang,-8} added {added,4}, changed {changed,4}, unchanged {same,4}, not in game {missing,4}, conflicting {conflicts,3}");
-    if ((added > 0 || changed > 0) && !opts.DryRun) SaveResx(doc, file);
+    summary.Add($"{lang,-8} added {added,4}, changed {changed,4}, unchanged {same,4}, not in game {missing,4}, conflicting {conflicts,3}, duplicates removed {removed,3}, keys renamed {renamed}");
+    if ((added > 0 || changed > 0 || removed > 0 || renamed > 0) && !opts.DryRun) SaveResx(doc, file);
 }
 
 var ok = report.Count(l => l.Contains("\tok\t"));
@@ -264,6 +294,43 @@ static List<(string Name, string Value)> ReadStrings(XDocument doc) =>
         .Where(d => d.Attribute("type") == null && d.Attribute("mimetype") == null)
         .Select(d => ((string)d.Attribute("name")!, (string?)d.Element("value") ?? ""))
         .ToList();
+
+// Removes repeated <data> entries. Entries with the same name are duplicates, and so are names that
+// differ only in case from a key in the neutral resx (only the neutral casing is ever looked up).
+// Keeps the entry with the neutral casing that has a value, else the first with a value, else the
+// first, and gives it the neutral casing. A lone entry whose name differs from a neutral key only in
+// case is renamed too, since it would never be found. Returns how many entries were removed; adds
+// the number of renamed entries to `renamed`.
+static int RemoveDuplicates(XElement root, Dictionary<string, string> canonicalKeys, ref int renamed)
+{
+    var removed = 0;
+    string GroupKey(XElement d)
+    {
+        var name = (string)d.Attribute("name")!;
+        return canonicalKeys.TryGetValue(name, out var canonical) ? canonical : name;
+    }
+    static bool HasValue(XElement d) => !string.IsNullOrWhiteSpace((string?)d.Element("value"));
+    var groups = root.Elements("data").Where(d => d.Attribute("type") == null)
+        .GroupBy(GroupKey, StringComparer.Ordinal)
+        .Where(g => g.Count() > 1 || (string)g.First().Attribute("name")! != g.Key).ToList();
+    foreach (var g in groups)
+    {
+        var keep = g.FirstOrDefault(d => (string)d.Attribute("name")! == g.Key && HasValue(d))
+                   ?? g.FirstOrDefault(HasValue) ?? g.First();
+        if ((string)keep.Attribute("name")! != g.Key)
+        {
+            keep.SetAttributeValue("name", g.Key);
+            renamed++;
+        }
+        foreach (var dup in g.Where(d => d != keep))
+        {
+            if (dup.PreviousNode is XText ws && string.IsNullOrWhiteSpace(ws.Value)) ws.Remove();
+            dup.Remove();
+            removed++;
+        }
+    }
+    return removed;
+}
 
 // Inserts a new <data> entry before the first existing entry that sorts after it, reusing the
 // indentation in front of the neighbouring entry so existing lines are left untouched.
