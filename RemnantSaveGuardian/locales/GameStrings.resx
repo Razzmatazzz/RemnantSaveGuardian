@@ -658,7 +658,7 @@
     <value>Materials</value>
   </data>
   <data name="Material_ThaenLeaf" xml:space="preserve">
-    <value>ThaenLeaf</value>
+    <value>Thaen Leaf</value>
   </data>
   <data name="McCabe" xml:space="preserve">
     <value>McCabe</value>
@@ -766,7 +766,7 @@
     <value>Helix</value>
   </data>
   <data name="Mod_Hotshot" xml:space="preserve">
-    <value>Hotshot</value>
+    <value>Hot Shot</value>
   </data>
   <data name="Mod_Overflow" xml:space="preserve">
     <value>Overflow</value>
@@ -1012,7 +1012,7 @@
     <value>Burden of the Divine</value>
   </data>
   <data name="Ring_BurdenOfTheFollower" xml:space="preserve">
-    <value>Burden of the Follower</value>
+    <value>Burden Of The Follower</value>
   </data>
   <data name="Ring_BurdenOfTheGambler" xml:space="preserve">
     <value>Burden of the Gambler</value>
@@ -1285,7 +1285,7 @@
     <value>Singed Ring</value>
   </data>
   <data name="Ring_SlayersCrest" xml:space="preserve">
-    <value>Slayers Crest</value>
+    <value>Slayer's Crest</value>
   </data>
   <data name="Ring_SoulLink" xml:space="preserve">
     <value>Soul Link</value>
@@ -1312,7 +1312,7 @@
     <value>Stream Coupler</value>
   </data>
   <data name="Ring_StrongArmBand" xml:space="preserve">
-    <value>Ring Of The Damned</value>
+    <value>Ring of the Damned</value>
   </data>
   <data name="Ring_SubterfugeLink" xml:space="preserve">
     <value>Subterfuge Link</value>
@@ -1717,7 +1717,7 @@
     <value>Rusty Lever Action</value>
   </data>
   <data name="Weapon_LMG" xml:space="preserve">
-    <value>XMG57 Bonesaw</value>
+    <value>XMG57 "Bonesaw"</value>
   </data>
   <data name="Weapon_Magnum" xml:space="preserve">
     <value>Silverback Model 500</value>
@@ -1762,7 +1762,7 @@
     <value>Rune Pistol</value>
   </data>
   <data name="Weapon_RuptureCannon" xml:space="preserve">
-    <value>Rupture Canon</value>
+    <value>Rupture Cannon</value>
   </data>
   <data name="Weapon_Sagittarius" xml:space="preserve">
     <value>Sagittarius</value>
@@ -1894,7 +1894,7 @@
     <value>Slayer</value>
   </data>
   <data name="MetaGem_WeaponLord" xml:space="preserve">
-    <value>Weapon Lord</value>
+    <value>Weaponlord</value>
   </data>
   <data name="RedDoeStatue" xml:space="preserve">
     <value>Red Doe Statue</value>
@@ -1924,7 +1924,7 @@
     <value>Rebellion Spear</value>
   </data>
   <data name="Weapon_Repeater" xml:space="preserve">
-    <value>Repeater pistol</value>
+    <value>Repeater Pistol</value>
   </data>
   <data name="Weapon_MachinePistol" xml:space="preserve">
     <value>Tech 22</value>
@@ -1993,28 +1993,28 @@
     <value>Steel Scythe</value>
   </data>
   <data name="Amulet_BirthrightOfTheLost" xml:space="preserve">
-    <value>Birthright Of The Lost</value>
+    <value>Birthright of the Lost</value>
   </data>
   <data name="Amulet_BrewmastersCork" xml:space="preserve">
-    <value>Brewmasters Cork</value>
+    <value>Brewmaster's Cork</value>
   </data>
   <data name="Amulet_CostOfBetrayal" xml:space="preserve">
-    <value>Cost Of Betrayal</value>
+    <value>Cost of Betrayal</value>
   </data>
   <data name="Amulet_DeathSoakedIdol" xml:space="preserve">
     <value>Death-Soaked Idol</value>
   </data>
   <data name="Amulet_GiftOfEuphoria" xml:space="preserve">
-    <value>Gift Of Euphoria</value>
+    <value>Gift of Euphoria</value>
   </data>
   <data name="Amulet_GiftOfMelancholy" xml:space="preserve">
-    <value>Gift Of Melancholy</value>
+    <value>Gift of Melancholy</value>
   </data>
   <data name="Amulet_GiftOfTheUnbound" xml:space="preserve">
-    <value>Gift Of The Unbound</value>
+    <value>Gift of the Unbound</value>
   </data>
   <data name="Amulet_IndexOfTheScribe" xml:space="preserve">
-    <value>Index Of The Scribe</value>
+    <value>Index of the Scribe</value>
   </data>
   <data name="Amulet_LegacyProtocol" xml:space="preserve">
     <value>Legacy Protocol</value>
@@ -2035,7 +2035,7 @@
     <value>Zealot</value>
   </data>
   <data name="Impaler" xml:space="preserve">
-    <value>Bruin, Blade of The King</value>
+    <value>Bruin, Blade of the King</value>
   </data>
   <data name="GardenMaze" xml:space="preserve">
     <value>The Maze</value>
@@ -2134,13 +2134,13 @@
     <value>Atonement Fold</value>
   </data>
   <data name="Ring_BandOfTheFanatic" xml:space="preserve">
-    <value>Band Of The Fanatic</value>
+    <value>Band of the Fanatic</value>
   </data>
   <data name="Ring_BitterMemento" xml:space="preserve">
     <value>Bitter Memento</value>
   </data>
   <data name="Ring_BridgeWardensCrest" xml:space="preserve">
-    <value>Bridge Wardens Crest</value>
+    <value>Bridge Warden's Crest</value>
   </data>
   <data name="Ring_BrawlersPride" xml:space="preserve">
     <value>Brawler's Pride</value>
@@ -2149,7 +2149,7 @@
     <value>Burden of the Departed</value>
   </data>
   <data name="Ring_BurdenOfTheSciolist" xml:space="preserve">
-    <value>Burden Of The Sciolist</value>
+    <value>Burden of the Sciolist</value>
   </data>
   <data name="Ring_CrimsonDreamstone" xml:space="preserve">
     <value>Crimson Dreamstone</value>
@@ -2164,7 +2164,7 @@
     <value>Elevated Ring</value>
   </data>
   <data name="Ring_JewelOfTheBeholden" xml:space="preserve">
-    <value>Jewel Of The Beholden</value>
+    <value>Jewel of the Beholden</value>
   </data>
   <data name="Ring_LighthouseKeepersRing" xml:space="preserve">
     <value>Lighthouse Keeper's Ring</value>
@@ -2179,16 +2179,16 @@
     <value>Power Complex</value>
   </data>
   <data name="Ring_RingOfInfiniteDamage" xml:space="preserve">
-    <value>Ring Of Infinite Damage</value>
+    <value>Ring of Infinite Damage</value>
   </data>
   <data name="Ring_RingOfTheCastaway" xml:space="preserve">
-    <value>Ring Of The Castaway</value>
+    <value>Ring of the Castaway</value>
   </data>
   <data name="Ring_RingOfTheVain" xml:space="preserve">
-    <value>Ring Of The Vain</value>
+    <value>Ring of the Vain</value>
   </data>
   <data name="Ring_ShadowOfMisery" xml:space="preserve">
-    <value>Shadow Of Misery</value>
+    <value>Shadow of Misery</value>
   </data>
   <data name="Ring_ShaedStone" xml:space="preserve">
     <value>Shaed Stone</value>
@@ -2200,7 +2200,7 @@
     <value>Wood Ring</value>
   </data>
   <data name="Ring_RedRingOfDeath" xml:space="preserve">
-    <value>Red Ring Of Death</value>
+    <value>Red Ring of Death</value>
   </data>
   <data name="Ring_WhiteGlassBead" xml:space="preserve">
     <value>White Glass Bead</value>
@@ -2230,7 +2230,7 @@
     <value>Opportunist</value>
   </data>
   <data name="MetaGem_SequencedShot" xml:space="preserve">
-    <value>SequencedShot</value>
+    <value>Sequenced Shot</value>
   </data>
   <data name="MetaGem_Shocker" xml:space="preserve">
     <value>Shocker</value>
@@ -2266,7 +2266,7 @@
     <value>A'Taerii Booster</value>
   </data>
   <data name="Mod_ChainOfCommand" xml:space="preserve">
-    <value>Chain Of Command</value>
+    <value>Chain of Command</value>
   </data>
   <data name="Trait_Leech" xml:space="preserve">
     <value>Leech</value>
@@ -2401,7 +2401,7 @@
     <value>Pan War Band</value>
   </data>
   <data name="Ring_RingOfOrdnance" xml:space="preserve">
-    <value>Ring of Ordnance</value>
+    <value>Ring Of Ordnance</value>
   </data>
   <data name="Ring_RingOfSpirits" xml:space="preserve">
     <value>Ring of Spirits</value>
@@ -2511,7 +2511,7 @@
   <data name="LydusaTemple" xml:space="preserve">
     <value>Lydusa's Temple</value>
   </data>
-  <data name = "DLC3Story">
+  <data name="DLC3Story">
     <value>The Dark Horizon</value>
   </data>
   <data name="AgronomySector" xml:space="preserve">
@@ -2535,250 +2535,250 @@
   <data name="AlepsisTaura" xml:space="preserve">
     <value>Alepsis Taura</value>
   </data>
-  <data name = "CargoBelt">
+  <data name="CargoBelt">
     <value>Train Platforms</value>
   </data>
-  <data name = "GasChamber">
+  <data name="GasChamber">
     <value>Gas Chamber Maze</value>
   </data>
-  <data name = "Overload_DLC">
+  <data name="Overload_DLC">
     <value>Power Circuit Puzzle</value>
   </data>
-  <data name = "SecurityDrone_DLC">
+  <data name="SecurityDrone_DLC">
     <value>Security Drone Maze</value>
   </data>
-  <data name = "ShiftingCitadel">
+  <data name="ShiftingCitadel">
     <value>Shifting Citadel</value>
   </data>
-  <data name = "Tower_DLC">
+  <data name="Tower_DLC">
     <value>Botanical Research Tower</value>
   </data>
-  <data name = "Amulet_BrazenAlloy">
+  <data name="Amulet_BrazenAlloy">
     <value>Brazen Amalgam</value>
   </data>
-  <data name = "Amulet_CanineKeepsake">
+  <data name="Amulet_CanineKeepsake">
     <value>Canine Keepsake</value>
   </data>
-  <data name = "Amulet_CessationBulbel">
+  <data name="Amulet_CessationBulbel">
     <value>Cessation Bulbel</value>
   </data>
-  <data name = "Amulet_ChefMedal">
+  <data name="Amulet_ChefMedal">
     <value>Chef Medal</value>
   </data>
-  <data name = "Amulet_CrisisCore">
+  <data name="Amulet_CrisisCore">
     <value>Crisis Core</value>
   </data>
-  <data name = "Amulet_EchoChamber">
+  <data name="Amulet_EchoChamber">
     <value>Echo Chamber</value>
   </data>
-  <data name = "Amulet_ExhaustValve">
+  <data name="Amulet_ExhaustValve">
     <value>Exhaust Valve</value>
   </data>
-  <data name = "Amulet_HangmansNoose">
-    <value>Hangmans Noose</value>
+  <data name="Amulet_HangmansNoose">
+    <value>Hangman's Noose</value>
   </data>
-  <data name = "Amulet_InsipidTalon">
+  <data name="Amulet_InsipidTalon">
     <value>Insipid Talon</value>
   </data>
-  <data name = "Amulet_OrnateAmulet">
+  <data name="Amulet_OrnateAmulet">
     <value>Ornate Amulet</value>
   </data>
-  <data name = "Amulet_QuantumMemory">
+  <data name="Amulet_QuantumMemory">
     <value>Quantum Memory</value>
   </data>
-  <data name = "Amulet_ReactionChain">
+  <data name="Amulet_ReactionChain">
     <value>Reaction Chain</value>
   </data>
-  <data name = "Amulet_RelayDevice">
+  <data name="Amulet_RelayDevice">
     <value>Relay Device</value>
   </data>
-  <data name = "Amulet_ShortCircuit">
+  <data name="Amulet_ShortCircuit">
     <value>Short Circuit</value>
   </data>
-  <data name = "Amulet_TimekeepersForfeit">
-    <value>Timekeepers Forfeit</value>
+  <data name="Amulet_TimekeepersForfeit">
+    <value>Timekeeper's Forfeit</value>
   </data>
-  <data name = "Amulet_VolatileCartridge">
+  <data name="Amulet_VolatileCartridge">
     <value>Volatile Cartridge</value>
   </data>
-  <data name = "Amulet_ZeroHour">
+  <data name="Amulet_ZeroHour">
     <value>Zero Hour</value>
   </data>
-  <data name = "Armor_NerudWarrior">
+  <data name="Armor_NerudWarrior">
     <value>Phetyr</value>
   </data>
-  <data name = "Armor_Warden">
+  <data name="Armor_Warden">
     <value>Warden</value>
   </data>
-  <data name = "Armor_WeldingGoggles">
+  <data name="Armor_WeldingGoggles">
     <value>Welding Goggles</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Warden" xml:space="preserve">
     <value>Warden</value>
   </data>
-  <data name = "MetaGem_Detonator">
+  <data name="MetaGem_Detonator">
     <value>Detonator</value>
   </data>
-  <data name = "MetaGem_HiddenPower">
+  <data name="MetaGem_HiddenPower">
     <value>Hidden Power</value>
   </data>
-  <data name = "MetaGem_HyperCharger">
+  <data name="MetaGem_HyperCharger">
     <value>Hyper Charger</value>
   </data>
-  <data name = "MetaGem_Insulator">
+  <data name="MetaGem_Insulator">
     <value>Insulator</value>
   </data>
-  <data name = "MetaGem_Repercussion">
+  <data name="MetaGem_Repercussion">
     <value>Repercussion</value>
   </data>
-  <data name = "MetaGem_SuperHeated">
+  <data name="MetaGem_SuperHeated">
     <value>Superheated</value>
   </data>
-  <data name = "MetaGem_VolatileStrike">
+  <data name="MetaGem_VolatileStrike">
     <value>Volatile Strike</value>
   </data>
-  <data name = "Mod_HarvesterBots">
+  <data name="Mod_HarvesterBots">
     <value>Harvester Bots</value>
   </data>
-  <data name = "Mod_ShieldingShot">
+  <data name="Mod_ShieldingShot">
     <value>Shielding Shot</value>
   </data>
-  <data name = "Mod_Voidlight">
+  <data name="Mod_Voidlight">
     <value>Voidlight</value>
   </data>
-  <data name = "Quest_Hidden_Item_SparkWard13">
+  <data name="Quest_Hidden_Item_SparkWard13">
     <value>Rescue Spark</value>
   </data>
-  <data name = "Relic_Consumable_GossamerHeart">
+  <data name="Relic_Consumable_GossamerHeart">
     <value>Gossamer Heart</value>
   </data>
-  <data name = "Relic_Consumable_LatentHeart">
+  <data name="Relic_Consumable_LatentHeart">
     <value>Latent Heart</value>
   </data>
-  <data name = "Ring_BreachAccelerator">
+  <data name="Ring_BreachAccelerator">
     <value>Breach Accelerator</value>
   </data>
-  <data name = "Ring_BurdenOfTheExcavator">
+  <data name="Ring_BurdenOfTheExcavator">
     <value>Burden of the Excavator</value>
   </data>
-  <data name = "Ring_BurdenOfTheProtector">
+  <data name="Ring_BurdenOfTheProtector">
     <value>Burden of the Protector</value>
   </data>
-  <data name = "Ring_BypassPrimer">
+  <data name="Ring_BypassPrimer">
     <value>Bypass Primer</value>
   </data>
-  <data name = "Ring_ClearHalo">
+  <data name="Ring_ClearHalo">
     <value>Clear Halo</value>
   </data>
-  <data name = "Ring_CombatShieldGenerator">
+  <data name="Ring_CombatShieldGenerator">
     <value>Combat Shield Generator</value>
   </data>
-  <data name = "Ring_CustodiansBastion">
+  <data name="Ring_CustodiansBastion">
     <value>Custodian's Bastion</value>
   </data>
-  <data name = "Ring_DemolitionCoil">
+  <data name="Ring_DemolitionCoil">
     <value>Demolition Coil</value>
   </data>
-  <data name = "Ring_DetonatingCord">
+  <data name="Ring_DetonatingCord">
     <value>Detonating Cord</value>
   </data>
-  <data name = "Ring_DisasterConverter">
+  <data name="Ring_DisasterConverter">
     <value>Disaster Converter</value>
   </data>
-  <data name = "Ring_EmpoweringLoop">
+  <data name="Ring_EmpoweringLoop">
     <value>Empowering Loop</value>
   </data>
-  <data name = "Ring_FeedingTube">
+  <data name="Ring_FeedingTube">
     <value>Feeding Tube</value>
   </data>
-  <data name = "Ring_ForceMultiplier">
+  <data name="Ring_ForceMultiplier">
     <value>Force Multiplier</value>
   </data>
-  <data name = "Ring_ImpactAugment">
+  <data name="Ring_ImpactAugment">
     <value>Impact Augment</value>
   </data>
-  <data name = "Ring_InfinityPocket">
+  <data name="Ring_InfinityPocket">
     <value>Infinity Pocket</value>
   </data>
-  <data name = "Ring_MortalCoil">
+  <data name="Ring_MortalCoil">
     <value>Mortal Coil</value>
   </data>
-  <data name = "Ring_NanoFiberStrand">
+  <data name="Ring_NanoFiberStrand">
     <value>Nanofiber Strand</value>
   </data>
-  <data name = "Ring_NightmareSigil">
+  <data name="Ring_NightmareSigil">
     <value>Nightmare Sigil</value>
   </data>
-  <data name = "Ring_PhantomPain">
+  <data name="Ring_PhantomPain">
     <value>Ring Of Phantom Pain</value>
   </data>
-  <data name = "Ring_RingOfAshes">
+  <data name="Ring_RingOfAshes">
     <value>Ring of Ashes</value>
   </data>
-  <data name = "Ring_RingOfBones">
-    <value>Ring of Bones</value>
+  <data name="Ring_RingOfBones">
+    <value>Ring Of Bones</value>
   </data>
-  <data name = "Ring_SecurityHalfMeasure">
+  <data name="Ring_SecurityHalfMeasure">
     <value>Security Half-Measure</value>
   </data>
-  <data name = "Ring_ShieldAlternator">
+  <data name="Ring_ShieldAlternator">
     <value>Shield Alternator</value>
   </data>
-  <data name = "Ring_SiphonFilter">
+  <data name="Ring_SiphonFilter">
     <value>Siphon Filter</value>
   </data>
-  <data name = "Ring_SpiritAlternator">
+  <data name="Ring_SpiritAlternator">
     <value>Spirit Alternator</value>
   </data>
-  <data name = "Ring_StoneOfRevelation">
+  <data name="Ring_StoneOfRevelation">
     <value>Stone of Revelation</value>
   </data>
-  <data name = "Ring_StrandOfSinew">
+  <data name="Ring_StrandOfSinew">
     <value>Strand of Sinew</value>
   </data>
-  <data name = "Ring_SymbolOfRoyalty">
+  <data name="Ring_SymbolOfRoyalty">
     <value>Symbol of Royalty</value>
   </data>
-  <data name = "Ring_ToleranceBand">
+  <data name="Ring_ToleranceBand">
     <value>Tolerance Band</value>
   </data>
-  <data name = "Ring_TransientCord">
+  <data name="Ring_TransientCord">
     <value>Transient Cord</value>
   </data>
-  <data name = "Ring_WiredInhibitor">
+  <data name="Ring_WiredInhibitor">
     <value>Wired Inhibitor</value>
   </data>
-  <data name = "Trait_Barrier">
+  <data name="Trait_Barrier">
     <value>Barrier</value>
   </data>
-  <data name = "Trait_Insight">
+  <data name="Trait_Insight">
     <value>Insight</value>
   </data>
-  <data name = "Trait_Perception">
+  <data name="Trait_Perception">
     <value>Perception</value>
   </data>
-  <data name = "Trait_Preservation">
+  <data name="Trait_Preservation">
     <value>Preservation</value>
   </data>
-  <data name = "Weapon_BlackGreatsword">
+  <data name="Weapon_BlackGreatsword">
     <value>Black Greatsword</value>
   </data>
-  <data name = "Weapon_DarkMatterGauntlets">
-    <value>Dark Matter Guantlets</value>
+  <data name="Weapon_DarkMatterGauntlets">
+    <value>Dark Matter Gauntlets</value>
   </data>
-  <data name = "Weapon_Genesis">
+  <data name="Weapon_Genesis">
     <value>Genesis</value>
   </data>
-  <data name = "Weapon_HarvesterScythe">
+  <data name="Weapon_HarvesterScythe">
     <value>Harvester Scythe</value>
   </data>
-  <data name = "Weapon_Monorail">
+  <data name="Weapon_Monorail">
     <value>Monorail</value>
   </data>
-  <data name = "Weapon_Redeemer">
+  <data name="Weapon_Redeemer">
     <value>Redeemer</value>
   </data>
-  <data name = "Weapon_RepairTool">
+  <data name="Weapon_RepairTool">
     <value>Repair Tool</value>
   </data>
 </root>

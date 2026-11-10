@@ -406,7 +406,7 @@
     <value>无重之重</value>
   </data>
 	<data name="Archon" xml:space="preserve">
-    <value>执政官(心痕)</value>
+    <value>执政官</value>
   </data>
 	<data name="Area {areaNumber}" xml:space="preserve">
     <value>区域{areaNumber}</value>
@@ -415,34 +415,34 @@
     <value>护甲</value>
   </data>
 	<data name="Armor_Alchemist" xml:space="preserve">
-    <value>学者套装</value>
+    <value>炼金术师</value>
   </data>
 	<data name="Armor_Arcanist" xml:space="preserve">
-    <value>迷宫套装</value>
+    <value>迷宫</value>
   </data>
 	<data name="Armor_Archon" xml:space="preserve">
-    <value>执政官套装</value>
+    <value>执政官</value>
   </data>
 	<data name="Armor_Body" xml:space="preserve">
-    <value>身体</value>
+    <value>躯干</value>
   </data>
 	<data name="Armor_Body_Leto2_Notes" xml:space="preserve">
     <value>{Armor_Head_Leto2_Notes}</value>
   </data>
 	<data name="Armor_Challenger" xml:space="preserve">
-    <value>斗士套装</value>
+    <value>斗士</value>
   </data>
 	<data name="Armor_Engineer" xml:space="preserve">
-    <value>技师套装</value>
+    <value>工程师</value>
   </data>
 	<data name="Armor_Explorer" xml:space="preserve">
-    <value>探索者套装</value>
+    <value>探索者</value>
   </data>
 	<data name="Armor_FaeRoyalGuard" xml:space="preserve">
     <value>翡族皇家套装</value>
   </data>
 	<data name="Armor_Gloves" xml:space="preserve">
-    <value>手部</value>
+    <value>手套</value>
   </data>
 	<data name="Armor_Gloves_Leto2_Notes" xml:space="preserve">
     <value>{Armor_Head_Leto2_Notes}</value>
@@ -484,7 +484,7 @@
     <value>磁石王冠</value>
   </data>
 	<data name="Armor_Medic" xml:space="preserve">
-    <value>战地医务兵套装</value>
+    <value>战地医生</value>
   </data>
 	<data name="Armor_PilotsHelm" xml:space="preserve">
     <value>领航员头盔</value>
@@ -502,7 +502,7 @@
     <value>空间工作者套装</value>
   </data>
 	<data name="Armor_Summoner" xml:space="preserve">
-    <value>长老套装</value>
+    <value>召唤师</value>
   </data>
 	<data name="Armor_Void" xml:space="preserve">
     <value>虚空</value>
@@ -598,7 +598,7 @@
     <value>预兆教堂</value>
   </data>
 	<data name="Challenger" xml:space="preserve">
-    <value>挑战者(心痕)</value>
+    <value>挑战者</value>
   </data>
 	<data name="CharnelHouse" xml:space="preserve">
     <value>卑鄙犬魔</value>
@@ -667,7 +667,7 @@
     <value>恩达瑞亚的终结</value>
   </data>
 	<data name="Engineer" xml:space="preserve">
-    <value>工程师(心痕)</value>
+    <value>工程师</value>
   </data>
 	<data name="Engrams" xml:space="preserve">
     <value>心痕</value>
@@ -751,7 +751,7 @@
     <value>枪手</value>
   </data>
 	<data name="Handler" xml:space="preserve">
-    <value>驯兽师(心痕)</value>
+    <value>驯兽师</value>
   </data>
 	<data name="Hardcore" xml:space="preserve">
     <value>硬核</value>
@@ -811,49 +811,49 @@
     <value>物品</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Alchemist" xml:space="preserve">
-    <value>炼金术师(心痕)</value>
+    <value>炼金术师</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Archon" xml:space="preserve">
-    <value>执政官(心痕)</value>
+    <value>执政官</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Challenger" xml:space="preserve">
-    <value>挑战者(心痕)</value>
+    <value>挑战者</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Challenger_Notes" xml:space="preserve">
     <value>从老雷那里购买旧金属工具</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Engineer" xml:space="preserve">
-    <value>工程师(心痕)</value>
+    <value>工程师</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Gunslinger" xml:space="preserve">
-    <value>枪手(心痕)</value>
+    <value>枪手</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Gunslinger_Notes" xml:space="preserve">
     <value>{Amulet_GunslingersCharm_Notes}</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Handler" xml:space="preserve">
-    <value>驯兽师(心痕)</value>
+    <value>驯兽师</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Handler_Notes" xml:space="preserve">
     <value>从泥牙那里购买古老哨子</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Hunter" xml:space="preserve">
-    <value>猎人(心痕)</value>
+    <value>猎人</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Hunter_Notes" xml:space="preserve">
     <value>从布拉巴斯那里购买锈蚀奖章</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Invader" xml:space="preserve">
-    <value>入侵者(心痕)</value>
+    <value>入侵者</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Medic" xml:space="preserve">
-    <value>医务兵(心痕)</value>
+    <value>医务兵</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Medic_Notes" xml:space="preserve">
     <value>从诺拉那里购买医务兵饰针</value>
   </data>
 	<data name="Item_HiddenContainer_Material_Engram_Summoner" xml:space="preserve">
-    <value>召唤师(心痕)</value>
+    <value>召唤师</value>
   </data>
 	<data name="Jungle" xml:space="preserve">
     <value>丛林</value>
@@ -907,7 +907,7 @@
     <value>曼陀罗</value>
   </data>
 	<data name="ManyFaces" xml:space="preserve">
-    <value>机器人/腐化者</value>
+    <value>腐化者</value>
   </data>
 	<data name="Materials" xml:space="preserve">
     <value>材料</value>
@@ -1024,7 +1024,7 @@
     <value>小Boss</value>
   </data>
 	<data name="Mods" xml:space="preserve">
-    <value>改装</value>
+    <value>改装配件</value>
   </data>
 	<data name="Mod_AstralBurst" xml:space="preserve">
     <value>星辰爆裂</value>
@@ -1087,7 +1087,7 @@
     <value>废料射击</value>
   </data>
 	<data name="Mod_Skewer" xml:space="preserve">
-    <value>穿刺者2.0</value>
+    <value>穿刺者 2.0</value>
   </data>
 	<data name="Mod_SongOfEafir" xml:space="preserve">
     <value>伊菲尔之歌</value>
@@ -1231,7 +1231,7 @@
     <value>红王子</value>
   </data>
 	<data name="Reggie" xml:space="preserve">
-    <value>老雷</value>
+    <value>雷吉</value>
   </data>
 	<data name="Relic" xml:space="preserve">
     <value>圣物</value>
@@ -1501,7 +1501,7 @@
     <value>密硅戒指</value>
   </data>
 	<data name="Ring_DevouringLoop" xml:space="preserve">
-    <value>吞噬戒指</value>
+    <value>吞噬指环</value>
   </data>
 	<data name="Ring_DevouringLoop_Notes" xml:space="preserve">
     <value>在末日难度下完成战役后在老雷那里购买（进战役后打通前不进冒险）</value>
@@ -1576,7 +1576,7 @@
     <value>蝇量刺痛</value>
   </data>
 	<data name="Ring_FocusedJewel" xml:space="preserve">
-    <value>凝神珠宝</value>
+    <value>聚焦碎片</value>
   </data>
 	<data name="Ring_FrivolousBand" xml:space="preserve">
     <value>忽略指环</value>
@@ -1620,6 +1620,9 @@
 	<data name="Ring_KineticCycleStone" xml:space="preserve">
     <value>动能环之石</value>
   </data>
+	<data name="Ring_LighthouseKeepersRing" xml:space="preserve">
+    <value>灯塔守卫的戒指</value>
+  </data>
 	<data name="Ring_LithicSignet" xml:space="preserve">
     <value>石质印章</value>
   </data>
@@ -1648,7 +1651,7 @@
     <value>微压缩器</value>
   </data>
 	<data name="Ring_MomentumDriver" xml:space="preserve">
-    <value>动量驱动(戒指)</value>
+    <value>动量驱动</value>
   </data>
 	<data name="Ring_OutcastRing" xml:space="preserve">
     <value>放逐者戒指</value>
@@ -2035,7 +2038,7 @@
     <value>无名巢穴</value>
   </data>
 	<data name="TheNest" xml:space="preserve">
-    <value>巢穴</value>
+    <value>断手</value>
   </data>
 	<data name="The Phantom Wasteland" xml:space="preserve">
     <value>幽影荒原</value>
@@ -2224,7 +2227,7 @@
     <value>莱米尔</value>
   </data>
 	<data name="Ward13" xml:space="preserve">
-    <value>13号实验区</value>
+    <value>13 号实验区</value>
   </data>
 	<data name="Weapons" xml:space="preserve">
     <value>武器</value>
@@ -2335,10 +2338,10 @@
     <value>锈蚀杠杆步枪</value>
   </data>
 	<data name="Weapon_LMG" xml:space="preserve">
-    <value>XMG57“骨锯”</value>
+    <value>XMG57 “骨锯”</value>
   </data>
 	<data name="Weapon_Magnum" xml:space="preserve">
-    <value>银背500型</value>
+    <value>银背 500 型</value>
   </data>
 	<data name="Weapon_Merciless" xml:space="preserve">
     <value>无情</value>
@@ -2407,10 +2410,10 @@
     <value>双管</value>
   </data>
 	<data name="Weapon_Shotgun" xml:space="preserve">
-    <value>霰弹枪</value>
+    <value>福特的猎枪</value>
   </data>
 	<data name="Weapon_SMG" xml:space="preserve">
-    <value>MP60-R</value>
+    <value>MP60—R</value>
   </data>
 	<data name="Weapon_SMG_Notes" xml:space="preserve">
     <value>货船</value>
@@ -2545,7 +2548,7 @@
     <value>指节拂尘</value>
   </data>
 	<data name="Weapon_AutoShotgun" xml:space="preserve">
-    <value>AS-10 "斗牛犬"</value>
+    <value>AS-10 “斗牛犬”</value>
   </data>
 	<data name="Weapon_SniperRifle" xml:space="preserve">
     <value>寡妇制造者</value>
@@ -2575,7 +2578,7 @@
     <value>投机者</value>
   </data>
 	<data name="MetaGem_SequencedShot" xml:space="preserve">
-    <value>鬼魅甲壳</value>
+    <value>连续射击</value>
   </data>
 	<data name="MetaGem_Shocker" xml:space="preserve">
     <value>震颤者</value>
@@ -2989,7 +2992,7 @@
     <value>布鲁恩，国王之刃</value>
   </data>
 	<data name="OneTrueKingStory" xml:space="preserve">
-    <value>独一真皇</value>
+    <value>真皇的苏醒</value>
   </data>
 	<data name="SewerChamber" xml:space="preserve">
     <value>被玷污的祭坛</value>
@@ -3178,8 +3181,7 @@
 		<value>祭祀者</value>
 	</data>
 	<data name="Item_Material_Engram_Ritualist" xml:space="preserve">
-		<value>祭祀者
-祭祀者</value>
+		<value>祭祀者</value>
 	</data>
 	<data name="SentinelsKeep" xml:space="preserve">
 		<value>哨兵要塞</value>

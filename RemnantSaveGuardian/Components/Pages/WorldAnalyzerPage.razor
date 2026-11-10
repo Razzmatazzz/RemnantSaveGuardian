@@ -501,6 +501,8 @@
         {
             itemname = itemname?.Substring(0, itemname.IndexOf(" ("));
         }
+        // Game names can contain quotes (XMG57 "Bonesaw"); wiki page titles don't.
+        itemname = itemname?.Replace("\"", "");
         string wikiQuery = Settings.Default.Wiki == "remwiki" ? $"https://remnant.wiki/{itemname}" : $"https://remnant2.wiki.fextralife.com/{itemname}";
         Process.Start("explorer.exe", wikiQuery);
     }
