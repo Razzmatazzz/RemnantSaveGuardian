@@ -1,9 +1,19 @@
 @* Grid of world events (Location / Type / Name / Missing Items / Possible Items). *@
 
 <MudDataGrid T="RemnantWorldEvent" Items="@Items" Class="rsg-grid" Dense="true" Hover="true" FixedHeader="true" Height="100%"
-             SortMode="SortMode.Single" ReadOnly="true" Virtualize="false">
+             SortMode="SortMode.Single" ReadOnly="true" Virtualize="false" RowClassFunc="@RowClass">
     <Columns>
-        <PropertyColumn Property="e => e.Location" Title="@Loc.T("Location")" />
+        <TemplateColumn T="RemnantWorldEvent" Title="@Loc.T("Location")" SortBy="@(e => e.Location)">
+            <CellTemplate>
+                @if (context.Item.IsInZone(CurrentLocation))
+                {
+                    <MudTooltip Text="@Loc.T("CurrentLocation_Tooltip")" Placement="Placement.Top" Delay="300">
+                        <MudIcon Icon="@Icons.Material.Filled.Place" Size="Size.Small" Color="Color.Primary" Class="rsg-current-location-icon" />
+                    </MudTooltip>
+                }
+                @context.Item.Location
+            </CellTemplate>
+        </TemplateColumn>
         <PropertyColumn Property="e => e.Type" Title="@Loc.T("Type")" />
         <PropertyColumn Property="e => e.Name" Title="@Loc.T("Name")" />
         <TemplateColumn T="RemnantWorldEvent" Title="@Loc.T("Missing Items")" SortBy="@(e => e.MissingItemsString)">
@@ -31,6 +41,12 @@
 
     [Parameter]
     public bool HighlightMissing { get; set; }
+
+    /// <summary>English label of the zone the character is in; its events are highlighted.</summary>
+    [Parameter]
+    public string? CurrentLocation { get; set; }
+
+    private string RowClass(RemnantWorldEvent e, int index) => e.IsInZone(CurrentLocation) ? "rsg-current-location" : "";
 
     [Parameter]
     public RemnantItem? SelectedItem { get; set; }

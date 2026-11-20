@@ -297,3 +297,17 @@ html, body {
 .mud-tooltip-root.rsg-marquee {
     display: block;
 }
+
+/* World Analyzer: events in the zone the character was last in. */
+.rsg-grid tr.rsg-current-location > td {
+    background-color: color-mix(in srgb, var(--mud-palette-primary) 12%, transparent);
+}
+
+.rsg-grid tr.rsg-current-location > td:first-child {
+    box-shadow: inset 3px 0 0 var(--mud-palette-primary);
+}
+
+.rsg-current-location-icon {
+    vertical-align: text-bottom;
+    margin-right: 2px;
+}

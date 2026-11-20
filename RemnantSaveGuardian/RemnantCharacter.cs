@@ -17,6 +17,13 @@ namespace RemnantSaveGuardian
         public List<RemnantWorldEvent> AdventureEvents { get; }
         public RemnantSave Save { get; }
         public int WorldIndex { get; } = -1;
+        /// <summary>English label of the zone the character was last in (last checkpoint), per mode; null if unknown.</summary>
+        public string? CampaignLocation { get; set; }
+        public string? AdventureLocation { get; set; }
+        /// <summary>The mode the character last played, if the save says so.</summary>
+        public ProcessMode? ActiveMode { get; set; }
+
+        public string? GetLocation(ProcessMode mode) => mode == ProcessMode.Campaign ? CampaignLocation : AdventureLocation;
 
         public int Progression
         {

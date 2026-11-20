@@ -74,6 +74,13 @@ namespace RemnantSaveGuardian.Saves
         /// <summary>Zones in save order.</summary>
         public IReadOnlyList<ZoneInfo> Zones { get; }
         public IReadOnlyDictionary<int, QuestInfo> QuestsById { get; }
+        /// <summary>Save slot of this mode's root quest (compared with <see cref="WorldSave.LastActiveRootSlot"/>).</summary>
+        public int? SlotId { get; init; }
+        /// <summary>Zone of the last checkpoint the player rested at in this mode.</summary>
+        public int? LastCheckpointZoneId { get; init; }
+
+        /// <summary>The zone the player was last in for this mode, if it is part of this tree.</summary>
+        public ZoneInfo? CurrentZone => LastCheckpointZoneId is int id ? Zones.FirstOrDefault(z => z.Id == id) : null;
     }
 
     /// <summary>Structured view of a world save (save_N.sav).</summary>
@@ -93,6 +100,13 @@ namespace RemnantSaveGuardian.Saves
         public IReadOnlyDictionary<string, byte[]> ContainerBlobs { get; }
         public QuestTree? Campaign { get; private set; }
         public QuestTree? Adventure { get; private set; }
+        /// <summary>Slot of the mode the character last played (campaign is usually 0, adventure 1).</summary>
+        public int? LastActiveRootSlot { get; private set; }
+
+        /// <summary>The mode the character last played, or null if it can't be told.</summary>
+        public QuestTree? ActiveTree => LastActiveRootSlot is int slot
+            ? new[] { Campaign, Adventure }.FirstOrDefault(t => t?.SlotId == slot)
+            : null;
 
         public static WorldSave Load(string path) => FromArchive(SaveFile.Load(path));
 
@@ -113,7 +127,10 @@ namespace RemnantSaveGuardian.Saves
                 }
             }
 
-            var save = new WorldSave(archive, containers);
+            var save = new WorldSave(archive, containers)
+            {
+                LastActiveRootSlot = root.Properties.GetInt("LastActiveRootSlot"),
+            };
             if (!containers.TryGetValue(MainContainerKey, out var mainBlob))
             {
                 throw new SaveFormatException("World save has no main level container.");
@@ -165,7 +182,12 @@ namespace RemnantSaveGuardian.Saves
                     quests.Add(ReadQuest(actor, obj));
                 }
             }
-            return new QuestTree(rootQuest, quests, zones);
+            var rootProps = rootActor.Root!.Properties;
+            return new QuestTree(rootQuest, quests, zones)
+            {
+                SlotId = rootProps.GetInt("SlotID"),
+                LastCheckpointZoneId = rootProps.GetInt("LastCheckpointZoneID"),
+            };
         }
 
         private static QuestInfo ReadQuest(PersistenceActor actor, UObject obj)

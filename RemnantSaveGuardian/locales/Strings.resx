@@ -213,6 +213,12 @@
   <data name="Could not find save file location; please set manually" xml:space="preserve">
     <value>Could not find save file location; please set manually</value>
   </data>
+  <data name="Current location" xml:space="preserve">
+    <value>Current location</value>
+  </data>
+  <data name="CurrentLocation_Tooltip" xml:space="preserve">
+    <value>Zone of the last checkpoint, read from the save</value>
+  </data>
   <data name="Dark" xml:space="preserve">
     <value>Dark</value>
   </data>
