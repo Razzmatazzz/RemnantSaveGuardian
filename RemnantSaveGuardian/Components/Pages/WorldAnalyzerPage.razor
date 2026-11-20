@@ -24,6 +24,14 @@
                 <MudIconButton Icon="@Icons.Material.Filled.Upload" OnClick="ExportPlaintext" Disabled="@loading" />
             </MudTooltip>
         </div>
+        @if (!loading && CurrentLocationText is string currentLocation)
+        {
+            <MudTooltip Text="@Loc.T("CurrentLocation_Tooltip")">
+                <MudChip T="string" Icon="@Icons.Material.Filled.Place" Color="Color.Primary" Variant="Variant.Outlined" Size="Size.Small" Class="ma-0">
+                    @Loc.T("Current location"): @currentLocation
+                </MudChip>
+            </MudTooltip>
+        }
         <MudTextField T="string" Value="@filter" ValueChanged="OnFilterChanged" Immediate="true" DebounceInterval="150"
                       Placeholder="@Loc.T("WorldAnalyzerFilter_PlaceholderText")" Adornment="Adornment.Start"
                       AdornmentIcon="@Icons.Material.Filled.FilterList" Clearable="true"
@@ -50,11 +58,13 @@
                  TabPanelsClass="rsg-fill pt-2" HideSlider="@(!State.ChromeVisible)">
             <MudTabPanel Text="@Loc.T("Campaign")">
                 <EventGrid Items="@filteredCampaign" ShowPossibleItems="@Settings.Default.ShowPossibleItems"
-                           HighlightMissing="@HighlightMissing" @bind-SelectedItem="selectedItem" OnItemContextMenu="OpenItemMenu" />
+                           HighlightMissing="@HighlightMissing" CurrentLocation="@Character?.CampaignLocation"
+                           @bind-SelectedItem="selectedItem" OnItemContextMenu="OpenItemMenu" />
             </MudTabPanel>
             <MudTabPanel Text="@Loc.T("Adventure")" Disabled="@(!HasAdventure)">
                 <EventGrid Items="@filteredAdventure" ShowPossibleItems="@Settings.Default.ShowPossibleItems"
-                           HighlightMissing="@HighlightMissing" @bind-SelectedItem="selectedItem" OnItemContextMenu="OpenItemMenu" />
+                           HighlightMissing="@HighlightMissing" CurrentLocation="@Character?.AdventureLocation"
+                           @bind-SelectedItem="selectedItem" OnItemContextMenu="OpenItemMenu" />
             </MudTabPanel>
             <MudTabPanel Text="@Loc.T("Missing Items")">
                 <div class="rsg-tree" @oncontextmenu="OpenTreeMenuBackground">
@@ -112,6 +122,19 @@
     private static bool HighlightMissing => Settings.Default.MissingItemColor == "Highlight";
     private RemnantCharacter? Character => selectedIndex >= 0 && selectedIndex < characters.Count ? characters[selectedIndex] : null;
     private bool HasAdventure => Character != null && Character.AdventureEvents.Count > 0;
+
+    /// <summary>"Zone (Mode)" for the zone the character was last in, or null if the save doesn't say.</summary>
+    private string? CurrentLocationText
+    {
+        get
+        {
+            if (Character?.ActiveMode is not RemnantCharacter.ProcessMode mode || Character.GetLocation(mode) is not string zone)
+            {
+                return null;
+            }
+            return $"{Loc.GameT(zone)} ({Loc.T(mode.ToString())})";
+        }
+    }
 
     private static readonly string[] ModeTags = { "treeMissingNormal", "treeMissingHardcore", "treeMissingSurvival" };
 

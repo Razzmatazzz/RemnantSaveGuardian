@@ -42,6 +42,21 @@ namespace RemnantSaveGuardian
                 return Loc.GameT(_type);
             }
         }
+
+        /// <summary>True if the event is in the zone with this English label (as stored in the save).</summary>
+        public bool IsInZone(string? zoneLabel)
+        {
+            if (string.IsNullOrEmpty(zoneLabel))
+            {
+                return false;
+            }
+            var zone = NormalizeZoneName(zoneLabel);
+            return _locations.Skip(1).Any(loc => NormalizeZoneName(loc) == zone);
+        }
+
+        // game.json and the save don't always agree on a leading "The" or the apostrophe style.
+        private static string NormalizeZoneName(string name) =>
+            Regex.Replace(name.Replace('’', '\'').Trim(), @"^The\s+", "", RegexOptions.IgnoreCase).ToLowerInvariant();
         public string Name
         {
             get
@@ -1909,6 +1924,19 @@ namespace RemnantSaveGuardian
                 {
                     continue;
                 }
+                var location = string.IsNullOrEmpty(tree.CurrentZone?.Label) ? null : tree.CurrentZone.Label;
+                if (mode == ProcessMode.Campaign)
+                {
+                    character.CampaignLocation = location;
+                }
+                else
+                {
+                    character.AdventureLocation = location;
+                }
+                if (tree == world.ActiveTree)
+                {
+                    character.ActiveMode = mode == ProcessMode.Campaign ? RemnantCharacter.ProcessMode.Campaign : RemnantCharacter.ProcessMode.Adventure;
+                }
                 var areas = SaveArea.FromQuestTree(tree);
                 var questNames = areas.SelectMany(a => a.Events).Select(q => new RemnantWorldEvent(q).RawName).ToHashSet();
                 ProcessEvents(character, areas, noInjectables, mode, questNames);
@@ -1919,6 +1947,10 @@ namespace RemnantSaveGuardian
         {
             var savePath = character.Save.WorldSaves[character.WorldIndex];
             var saveData = RemnantSave.DecompressSave(savePath);
+            // Only the structured reader knows where the player is.
+            character.CampaignLocation = null;
+            character.AdventureLocation = null;
+            character.ActiveMode = null;
     #if DEBUG
             System.IO.File.WriteAllText(savePath.Replace(".sav", ".txt"), System.Text.Encoding.ASCII.GetString(saveData));
     #endif
