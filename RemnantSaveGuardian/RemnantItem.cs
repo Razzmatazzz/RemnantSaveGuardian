@@ -84,7 +84,16 @@ namespace RemnantSaveGuardian
             }
         }
         public RemnantItemMode ItemMode { get; set; }
-        public string ItemNotes { get; set; }
+        private string _notes = "";
+        /// <summary>
+        /// How to get the item. Set to the English text from game.json; read in the current language
+        /// when GameStrings has "{RawName}_Notes", so a language change applies without a restart.
+        /// </summary>
+        public string ItemNotes
+        {
+            get => _notes.Length > 0 && Loc.GameTHas($"{RawName}_Notes") ? Loc.GameT($"{RawName}_Notes") : _notes;
+            set => _notes = value ?? "";
+        }
         public bool Coop { get; set;  }
         public string TileSet { get; set; }
         public bool IsArmorSet { get; set; }
