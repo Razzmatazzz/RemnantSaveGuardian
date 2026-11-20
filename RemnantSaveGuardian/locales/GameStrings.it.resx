@@ -58,11 +58,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Abandoned Ruins" xml:space="preserve">
+    <value>Rovine abbandonate</value>
+  </data>
   <data name="AbandonedRuins" xml:space="preserve">
     <value>Rovine abbandonate</value>
   </data>
   <data name="AboveBelow" xml:space="preserve">
     <value>Il Carnefice</value>
+  </data>
+  <data name="Abyssal Rift" xml:space="preserve">
+    <value>Fessura abissale</value>
+  </data>
+  <data name="Agronomy Sector" xml:space="preserve">
+    <value>Settore di agronomia</value>
   </data>
   <data name="AgronomySector" xml:space="preserve">
     <value>Settore di agronomia</value>
@@ -382,6 +391,9 @@
   <data name="Amulet_ZeroHour" xml:space="preserve">
     <value>Ora zero</value>
   </data>
+  <data name="Ancient Canopy" xml:space="preserve">
+    <value>Chioma antica</value>
+  </data>
   <data name="Archon" xml:space="preserve">
     <value>Arconte</value>
   </data>
@@ -448,8 +460,14 @@
   <data name="Armor_WeldingGoggles" xml:space="preserve">
     <value>Occhiali da saldatore</value>
   </data>
+  <data name="Ashen Wasteland" xml:space="preserve">
+    <value>Desolazione cinerea</value>
+  </data>
   <data name="AshenWasteland" xml:space="preserve">
     <value>Desolazione cinerea</value>
+  </data>
+  <data name="Astropath's Respite" xml:space="preserve">
+    <value>Riposo dell'Astropatico</value>
   </data>
   <data name="AsylumChainsaw" xml:space="preserve">
     <value>Segaccio</value>
@@ -457,14 +475,29 @@
   <data name="AsylumStory" xml:space="preserve">
     <value>Il manicomio</value>
   </data>
+  <data name="Athenaeum Wek" xml:space="preserve">
+    <value>Ateneo dei Wek</value>
+  </data>
+  <data name="Bairn's Crossing" xml:space="preserve">
+    <value>Crocevia del bambino</value>
+  </data>
   <data name="BairnsCrossing" xml:space="preserve">
     <value>Crocevia del bambino</value>
   </data>
   <data name="Base" xml:space="preserve">
     <value>Terra</value>
   </data>
+  <data name="Beatific Gallery" xml:space="preserve">
+    <value>Galleria beatifica</value>
+  </data>
+  <data name="Beatific Palace" xml:space="preserve">
+    <value>Palazzo beatifico</value>
+  </data>
   <data name="BeatificPalace" xml:space="preserve">
     <value>Palazzo beatifico</value>
+  </data>
+  <data name="Blackened Citadel" xml:space="preserve">
+    <value>Cittadella nera</value>
   </data>
   <data name="BloatKing" xml:space="preserve">
     <value>Re gonfio</value>
@@ -472,8 +505,20 @@
   <data name="BloodMoon" xml:space="preserve">
     <value>Altare della Luna di Sangue</value>
   </data>
+  <data name="Bloodmoon Altar" xml:space="preserve">
+    <value>Altare della Luna di Sangue</value>
+  </data>
+  <data name="Briella's Garden" xml:space="preserve">
+    <value>Giardino di Briella</value>
+  </data>
+  <data name="Briella's Reverie" xml:space="preserve">
+    <value>Fantasticheria di Briella</value>
+  </data>
   <data name="BriellasGarden" xml:space="preserve">
     <value>Giardino di Briella</value>
+  </data>
+  <data name="Brocwithe Quarter" xml:space="preserve">
+    <value>Distretto Brocwithe</value>
   </data>
   <data name="BurningCity" xml:space="preserve">
     <value>Maniero etereo</value>
@@ -481,8 +526,14 @@
   <data name="BurningCity_DLC" xml:space="preserve">
     <value>Maniero etereo</value>
   </data>
+  <data name="Butcher's Quarter" xml:space="preserve">
+    <value>Distretto del macellaio</value>
+  </data>
   <data name="ButchersQuarter" xml:space="preserve">
     <value>Distretto del macellaio</value>
+  </data>
+  <data name="Cathedral of Omens" xml:space="preserve">
+    <value>Cattedrale dei presagi</value>
   </data>
   <data name="CathedralOfSeasons" xml:space="preserve">
     <value>Cattedrale dei presagi</value>
@@ -490,17 +541,35 @@
   <data name="Challenger" xml:space="preserve">
     <value>Sfidante</value>
   </data>
+  <data name="Chamber of the Faithless" xml:space="preserve">
+    <value>Camera dei Senzafede</value>
+  </data>
   <data name="CharnelHouse" xml:space="preserve">
     <value>Barghest l'ignobile</value>
   </data>
   <data name="CoastAtoner" xml:space="preserve">
     <value>Penitente straziato</value>
   </data>
+  <data name="Consecrated Throne" xml:space="preserve">
+    <value>Trono consacrato</value>
+  </data>
+  <data name="Corrupted Harbor" xml:space="preserve">
+    <value>Approdo corrotto</value>
+  </data>
   <data name="CorruptedHarbor" xml:space="preserve">
     <value>Approdo corrotto</value>
   </data>
+  <data name="Cotton's Kiln" xml:space="preserve">
+    <value>Essiccatoio per cotone</value>
+  </data>
   <data name="CottonsKiln" xml:space="preserve">
     <value>Essiccatoio per cotone</value>
+  </data>
+  <data name="Council Chamber" xml:space="preserve">
+    <value>Camera del Consiglio</value>
+  </data>
+  <data name="Council Tribunal" xml:space="preserve">
+    <value>Tribunale del Consiglio</value>
   </data>
   <data name="CouncilChamber" xml:space="preserve">
     <value>Camera del Consiglio</value>
@@ -508,17 +577,41 @@
   <data name="CustodianEye" xml:space="preserve">
     <value>L'occhio del Guardiano</value>
   </data>
+  <data name="Dark Conduit" xml:space="preserve">
+    <value>Il conduttore oscuro</value>
+  </data>
   <data name="DarkConduit" xml:space="preserve">
     <value>Il conduttore oscuro</value>
   </data>
+  <data name="Derelict Lighthouse" xml:space="preserve">
+    <value>Faro abbandonato</value>
+  </data>
+  <data name="Deserted Atelier" xml:space="preserve">
+    <value>Laboratorio abbandonato</value>
+  </data>
+  <data name="Detritus Foundry" xml:space="preserve">
+    <value>Fonderia di detriti</value>
+  </data>
+  <data name="Dormant N'Erudian Facility" xml:space="preserve">
+    <value>Struttura N'erudiana inattiva</value>
+  </data>
   <data name="DormantNErudianFacility" xml:space="preserve">
     <value>Struttura N'erudiana inattiva</value>
+  </data>
+  <data name="Dran's Dream" xml:space="preserve">
+    <value>Sogno dei Dran</value>
   </data>
   <data name="DranGrenadier" xml:space="preserve">
     <value>Gwendil, la non bruciata</value>
   </data>
   <data name="DrzyrReplicator" xml:space="preserve">
     <value>Replicatore Drzyr</value>
+  </data>
+  <data name="Earthen Coliseum" xml:space="preserve">
+    <value>Arena litica</value>
+  </data>
+  <data name="Endaira's End" xml:space="preserve">
+    <value>Fine di Endaira</value>
   </data>
   <data name="EndairasEnd" xml:space="preserve">
     <value>Fine di Endaira</value>
@@ -528,6 +621,9 @@
   </data>
   <data name="Engrams" xml:space="preserve">
     <value>Engrammi</value>
+  </data>
+  <data name="Ethereal Manor" xml:space="preserve">
+    <value>Maniero etereo</value>
   </data>
   <data name="Explorer" xml:space="preserve">
     <value>Esploratore</value>
@@ -544,8 +640,20 @@
   <data name="FaeWarriorRing" xml:space="preserve">
     <value>Anello del guerriero Fae</value>
   </data>
+  <data name="Faithless Thicket" xml:space="preserve">
+    <value>Boschetto empio</value>
+  </data>
   <data name="Flautist" xml:space="preserve">
     <value>Nexus dei Root</value>
+  </data>
+  <data name="Forgotten Field" xml:space="preserve">
+    <value>Campo dimenticato</value>
+  </data>
+  <data name="Forgotten Null" xml:space="preserve">
+    <value>Nulla dimenticato</value>
+  </data>
+  <data name="Forgotten Prison" xml:space="preserve">
+    <value>Prigione dimenticata</value>
   </data>
   <data name="ForgottenField" xml:space="preserve">
     <value>Campo dimenticato</value>
@@ -553,11 +661,26 @@
   <data name="ForgottenPrison" xml:space="preserve">
     <value>Prigione dimenticata</value>
   </data>
+  <data name="Forlorn Coast" xml:space="preserve">
+    <value>Costa desolata</value>
+  </data>
+  <data name="Forsaken Quarter" xml:space="preserve">
+    <value>Distretto abbandonato</value>
+  </data>
   <data name="Gems" xml:space="preserve">
     <value>Mutatori</value>
   </data>
+  <data name="Gilded Chambers" xml:space="preserve">
+    <value>Camere dorate</value>
+  </data>
   <data name="GildedChambers" xml:space="preserve">
     <value>Camere dorate</value>
+  </data>
+  <data name="Glistering Cloister" xml:space="preserve">
+    <value>Monastero scintillante</value>
+  </data>
+  <data name="Goddess's Rest" xml:space="preserve">
+    <value>Recesso della dea</value>
   </data>
   <data name="GoldenHall_Nimue" xml:space="preserve">
     <value>Ritirata di Nimue</value>
@@ -567,6 +690,9 @@
   </data>
   <data name="Handler" xml:space="preserve">
     <value>Domatore</value>
+  </data>
+  <data name="Harvester's Reach" xml:space="preserve">
+    <value>Distesa della mietitrice</value>
   </data>
   <data name="HarvestersReach" xml:space="preserve">
     <value>Distesa della mietitrice</value>
@@ -580,14 +706,23 @@
   <data name="Impaler" xml:space="preserve">
     <value>Bruin, Lama del Re</value>
   </data>
+  <data name="Imperial Gardens" xml:space="preserve">
+    <value>Giardini Imperiali</value>
+  </data>
   <data name="ImperialGardens" xml:space="preserve">
     <value>Giardini Imperiali</value>
   </data>
   <data name="IndignantFetish" xml:space="preserve">
     <value>Feticcio indignato</value>
   </data>
+  <data name="Infested Abyss" xml:space="preserve">
+    <value>Abisso infestato</value>
+  </data>
   <data name="Invader" xml:space="preserve">
     <value>Invasore</value>
+  </data>
+  <data name="Ironborough" xml:space="preserve">
+    <value>Distretto del ferro</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Alchemist" xml:space="preserve">
     <value>Alchimista</value>
@@ -625,11 +760,23 @@
   <data name="Item_Material_Engram_Ritualist" xml:space="preserve">
     <value>Ritualista</value>
   </data>
+  <data name="Kaeula's Rest" xml:space="preserve">
+    <value>Riposo di Kaeula</value>
+  </data>
   <data name="KaeulasRest" xml:space="preserve">
     <value>Riposo di Kaeula</value>
   </data>
+  <data name="Koara Kuri Nest" xml:space="preserve">
+    <value>Nido di koara kuri</value>
+  </data>
   <data name="KoaraKuriNest" xml:space="preserve">
     <value>Nido di koara kuri</value>
+  </data>
+  <data name="Laemir's Lyceum" xml:space="preserve">
+    <value>Liceo di Laemir</value>
+  </data>
+  <data name="Lemark District" xml:space="preserve">
+    <value>Distretto di Lemark</value>
   </data>
   <data name="LemarkDistrict" xml:space="preserve">
     <value>Distretto di Lemark</value>
@@ -640,8 +787,20 @@
   <data name="Lighthouse" xml:space="preserve">
     <value>Faro abbandonato</value>
   </data>
+  <data name="Logistics Bridge" xml:space="preserve">
+    <value>Ponte logistico</value>
+  </data>
+  <data name="Luminous Vale" xml:space="preserve">
+    <value>Valle luminosa</value>
+  </data>
   <data name="Main" xml:space="preserve">
     <value>Terra</value>
+  </data>
+  <data name="Malefic Gallery" xml:space="preserve">
+    <value>Galleria maligna</value>
+  </data>
+  <data name="Malefic Palace" xml:space="preserve">
+    <value>Palazzo malefico</value>
   </data>
   <data name="MaleficGallery" xml:space="preserve">
     <value>Galleria maligna</value>
@@ -955,8 +1114,14 @@
   <data name="Mod_Witchfire" xml:space="preserve">
     <value>Fuoco stregato</value>
   </data>
+  <data name="Morrow Parish" xml:space="preserve">
+    <value>Parrocchia di Morrow</value>
+  </data>
   <data name="MotherMind" xml:space="preserve">
     <value>Mente Madre</value>
+  </data>
+  <data name="Mucid Terrarium" xml:space="preserve">
+    <value>Terrario mucido</value>
   </data>
   <data name="Mudtooth" xml:space="preserve">
     <value>Dente di fango</value>
@@ -967,20 +1132,41 @@
   <data name="NerudGuardian" xml:space="preserve">
     <value>Sha'Hala: Guardiano spettrale di N'erud</value>
   </data>
+  <data name="Nimue's Retreat" xml:space="preserve">
+    <value>Ritirata di Nimue</value>
+  </data>
   <data name="NimuesRetreat" xml:space="preserve">
     <value>Ritirata di Nimue</value>
   </data>
   <data name="Oink" xml:space="preserve">
     <value>Gola</value>
   </data>
+  <data name="Oracle's Refuge" xml:space="preserve">
+    <value>Rifugio dell'Oracolo</value>
+  </data>
   <data name="OraclesRefuge" xml:space="preserve">
     <value>Rifugio dell'Oracolo</value>
+  </data>
+  <data name="Palace of the One True King" xml:space="preserve">
+    <value>Palazzo dell'Unico Vero Re</value>
+  </data>
+  <data name="Pathway of the Fallen" xml:space="preserve">
+    <value>Sentiero dei caduti</value>
   </data>
   <data name="Phantom" xml:space="preserve">
     <value>L'Astropatico</value>
   </data>
+  <data name="Phantom Wasteland" xml:space="preserve">
+    <value>Desolazione fantasma</value>
+  </data>
+  <data name="Postulant's Parlor" xml:space="preserve">
+    <value>Salotto del Postulante</value>
+  </data>
   <data name="PostulantsParlor" xml:space="preserve">
     <value>Salotto del Postulante</value>
+  </data>
+  <data name="Proving Grounds" xml:space="preserve">
+    <value>Banco di prova</value>
   </data>
   <data name="Quest_Global_TheHunterDream_Template01" xml:space="preserve">
     <value>Palazzo beatifico</value>
@@ -999,6 +1185,9 @@
   </data>
   <data name="Quest_Story_Empress_Zone01_Template01" xml:space="preserve">
     <value>Il Trono rosso</value>
+  </data>
+  <data name="Ravager's Lair" xml:space="preserve">
+    <value>L'antro del Predone</value>
   </data>
   <data name="RavagersLair" xml:space="preserve">
     <value>L'antro del Predone</value>
@@ -1087,8 +1276,14 @@
   <data name="RemainsBelow" xml:space="preserve">
     <value>Spirito inquieto</value>
   </data>
+  <data name="Repair Lab" xml:space="preserve">
+    <value>Laboratorio di riparazione</value>
+  </data>
   <data name="RepairLab" xml:space="preserve">
     <value>Laboratorio di riparazione</value>
+  </data>
+  <data name="Retreat's Horizon" xml:space="preserve">
+    <value>Orizzonte del rifugio</value>
   </data>
   <data name="Ring_AcidStone" xml:space="preserve">
     <value>Pietra acida</value>
@@ -1762,6 +1957,9 @@
   <data name="Ritualist" xml:space="preserve">
     <value>Ritualista</value>
   </data>
+  <data name="Root Nexus" xml:space="preserve">
+    <value>Nexus dei Root</value>
+  </data>
   <data name="RootEarthAshenWasteland" xml:space="preserve">
     <value>Desolazione cinerea</value>
   </data>
@@ -1780,11 +1978,23 @@
   <data name="Sarcophagus" xml:space="preserve">
     <value>Putrefazione</value>
   </data>
+  <data name="Seeker's Rest" xml:space="preserve">
+    <value>Rifugio del Cercatore</value>
+  </data>
+  <data name="Sentinel's Keep" xml:space="preserve">
+    <value>Fortezza della sentinella</value>
+  </data>
   <data name="SentinelsKeep" xml:space="preserve">
     <value>Fortezza della sentinella</value>
   </data>
   <data name="SewerChamber" xml:space="preserve">
     <value>Altare profanato</value>
+  </data>
+  <data name="Sewers" xml:space="preserve">
+    <value>Fogne</value>
+  </data>
+  <data name="Shattered Gallery" xml:space="preserve">
+    <value>Galleria distrutta</value>
   </data>
   <data name="ShatteredGallery" xml:space="preserve">
     <value>Galleria distrutta</value>
@@ -1792,8 +2002,14 @@
   <data name="ShiftingSoldier" xml:space="preserve">
     <value>Il Guardiano di pietra</value>
   </data>
+  <data name="Spectrum Nexus" xml:space="preserve">
+    <value>Nexus spettrale</value>
+  </data>
   <data name="SpectrumNexus" xml:space="preserve">
     <value>Nexus spettrale</value>
+  </data>
+  <data name="Stagnant Manufactory" xml:space="preserve">
+    <value>Fabbrica stagnante</value>
   </data>
   <data name="StoreRoom" xml:space="preserve">
     <value>La progenie</value>
@@ -1801,8 +2017,89 @@
   <data name="Summoner" xml:space="preserve">
     <value>Evocatore</value>
   </data>
+  <data name="Sunken Haunt" xml:space="preserve">
+    <value>Covo inabissato</value>
+  </data>
+  <data name="Terminus Station" xml:space="preserve">
+    <value>Capolinea</value>
+  </data>
   <data name="TerminusStation" xml:space="preserve">
     <value>Capolinea</value>
+  </data>
+  <data name="The Backrooms" xml:space="preserve">
+    <value>Le Backrooms</value>
+  </data>
+  <data name="The Bloodless Throne" xml:space="preserve">
+    <value>Il trono del senza sangue</value>
+  </data>
+  <data name="The Chimney" xml:space="preserve">
+    <value>Il camino</value>
+  </data>
+  <data name="The Convergence" xml:space="preserve">
+    <value>La convergenza</value>
+  </data>
+  <data name="The Dappled Glade" xml:space="preserve">
+    <value>La Radura screziata</value>
+  </data>
+  <data name="The Dark Conduit" xml:space="preserve">
+    <value>Il conduttore oscuro</value>
+  </data>
+  <data name="The Eon Vault" xml:space="preserve">
+    <value>La cripta degli eoni</value>
+  </data>
+  <data name="The Expanding Glade" xml:space="preserve">
+    <value>La radura crescente</value>
+  </data>
+  <data name="The Far Woods" xml:space="preserve">
+    <value>I Boschi Distanti</value>
+  </data>
+  <data name="The Forbidden Grove" xml:space="preserve">
+    <value>Il Bosco proibito</value>
+  </data>
+  <data name="The Forgotten Commune" xml:space="preserve">
+    <value>La comunità dimenticata</value>
+  </data>
+  <data name="The Great Bole" xml:space="preserve">
+    <value>Il grande tronco</value>
+  </data>
+  <data name="The Great Hall" xml:space="preserve">
+    <value>La grande sala</value>
+  </data>
+  <data name="The Great Sewers" xml:space="preserve">
+    <value>Le grandi fogne</value>
+  </data>
+  <data name="The Hatchery" xml:space="preserve">
+    <value>L'incubatrice</value>
+  </data>
+  <data name="The Labyrinth" xml:space="preserve">
+    <value>Il Labirinto</value>
+  </data>
+  <data name="The Lament" xml:space="preserve">
+    <value>Il lamento</value>
+  </data>
+  <data name="The Nameless Nest" xml:space="preserve">
+    <value>Il nido senza nome</value>
+  </data>
+  <data name="The Phantom Wasteland" xml:space="preserve">
+    <value>Desolazione fantasma</value>
+  </data>
+  <data name="The Putrid Domain" xml:space="preserve">
+    <value>Il Dominio putrido</value>
+  </data>
+  <data name="The Red Throne" xml:space="preserve">
+    <value>Il Trono rosso</value>
+  </data>
+  <data name="The Tormented Asylum" xml:space="preserve">
+    <value>Il manicomio tormentato</value>
+  </data>
+  <data name="The Twisted Chantry" xml:space="preserve">
+    <value>La cappella contorta</value>
+  </data>
+  <data name="The Widow's Court" xml:space="preserve">
+    <value>La Corte della Vedova</value>
+  </data>
+  <data name="The Withering Weald" xml:space="preserve">
+    <value>I Boschi Morenti</value>
   </data>
   <data name="TheAstroPathsRespite" xml:space="preserve">
     <value>Riposo dell'Astropatico</value>
@@ -1864,17 +2161,29 @@
   <data name="TheTwistedChantry" xml:space="preserve">
     <value>La cappella contorta</value>
   </data>
+  <data name="Threshold of the Unknown" xml:space="preserve">
+    <value>Soglia dell'ignoto</value>
+  </data>
   <data name="ThresholdOfTheUnknown" xml:space="preserve">
     <value>Soglia dell'ignoto</value>
   </data>
+  <data name="Tiller's Rest" xml:space="preserve">
+    <value>Rifugio del coltivatore</value>
+  </data>
   <data name="TillersRest" xml:space="preserve">
     <value>Rifugio del coltivatore</value>
+  </data>
+  <data name="Timeless Horizon" xml:space="preserve">
+    <value>Orizzonte senza tempo</value>
   </data>
   <data name="TombRaid" xml:space="preserve">
     <value>La sfida</value>
   </data>
   <data name="TormentedAsylum" xml:space="preserve">
     <value>Il manicomio tormentato</value>
+  </data>
+  <data name="Tower of the Unseen" xml:space="preserve">
+    <value>Torre dell'invisibile</value>
   </data>
   <data name="TowerHeist" xml:space="preserve">
     <value>D.I. Alfa</value>
@@ -2014,11 +2323,23 @@
   <data name="Trait_Wayfarer" xml:space="preserve">
     <value>Viandante</value>
   </data>
+  <data name="Twilight Vale" xml:space="preserve">
+    <value>Valle crepuscolare</value>
+  </data>
+  <data name="Vault of the Formless" xml:space="preserve">
+    <value>Cripta del Senzaforma</value>
+  </data>
   <data name="VaultOfTheFormless" xml:space="preserve">
     <value>Cripta del Senzaforma</value>
   </data>
+  <data name="Void Vessel Facility" xml:space="preserve">
+    <value>Struttura della nave del vuoto</value>
+  </data>
   <data name="VoidVesselFacility" xml:space="preserve">
     <value>Struttura della nave del vuoto</value>
+  </data>
+  <data name="Walk of Remembrance" xml:space="preserve">
+    <value>Percorso della memoria</value>
   </data>
   <data name="Weapons" xml:space="preserve">
     <value>ARMI</value>
@@ -2313,6 +2634,9 @@
   </data>
   <data name="Witch" xml:space="preserve">
     <value>Strega inabissata</value>
+  </data>
+  <data name="Withered Necropolis" xml:space="preserve">
+    <value>Necropoli appassita</value>
   </data>
   <data name="WitheredNecropolis" xml:space="preserve">
     <value>Necropoli appassita</value>
