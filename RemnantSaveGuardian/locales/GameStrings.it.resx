@@ -58,11 +58,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="/Items/Archetypes/Invoker/Engram/Engram_Invoker" xml:space="preserve">
+    <value>Invocatore</value>
+  </data>
+  <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt1" xml:space="preserve">
+    <value>Nota di Walt (1)</value>
+  </data>
+  <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt1_Notes" xml:space="preserve">
+    <value>Consegnare a Dwell per ricevere l'Eco della foresta.</value>
+  </data>
+  <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt2" xml:space="preserve">
+    <value>Nota di Walt (2)</value>
+  </data>
+  <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt2_Notes" xml:space="preserve">
+    <value>Consegnare a Dwell per ricevere l'Eco della foresta.</value>
+  </data>
+  <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt3" xml:space="preserve">
+    <value>Nota di Walt (3)</value>
+  </data>
+  <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt3_Notes" xml:space="preserve">
+    <value>Consegnare a Dwell per ricevere l'Eco della foresta.</value>
+  </data>
   <data name="AbandonedRuins" xml:space="preserve">
     <value>Rovine abbandonate</value>
   </data>
+  <data name="Abberation" xml:space="preserve">
+    <value>Aberrazione</value>
+  </data>
+  <data name="Abomination" xml:space="preserve">
+    <value>Abominio</value>
+  </data>
   <data name="AboveBelow" xml:space="preserve">
     <value>Il Carnefice</value>
+  </data>
+  <data name="AdventureMode" xml:space="preserve">
+    <value>Modalità Avventura</value>
   </data>
   <data name="AgronomySector" xml:space="preserve">
     <value>Settore di agronomia</value>
@@ -73,8 +103,14 @@
   <data name="AlepsisTaura" xml:space="preserve">
     <value>Alepsis-Taura</value>
   </data>
+  <data name="AllFatherStory" xml:space="preserve">
+    <value>Palazzo e Giullare</value>
+  </data>
   <data name="Amulet_AbrasiveWhetstone" xml:space="preserve">
     <value>Cote abrasiva</value>
+  </data>
+  <data name="Amulet_AbrasiveWhetstone_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13. Il mercante ha una probabilità casuale di averlo in vendita.</value>
   </data>
   <data name="Amulet_AnkhOfPower" xml:space="preserve">
     <value>Ankh del potere</value>
@@ -94,14 +130,23 @@
   <data name="Amulet_BrokenPocketWatch" xml:space="preserve">
     <value>Orologio da taschino rotto</value>
   </data>
+  <data name="Amulet_BrokenPocketWatch_Notes" xml:space="preserve">
+    <value>Acquistabile da Cass al Ward 13. Il mercante ha una probabilità casuale di avere questo oggetto in vendita.</value>
+  </data>
   <data name="Amulet_ButchersFetish" xml:space="preserve">
     <value>Feticcio del boia</value>
+  </data>
+  <data name="Amulet_ButchersFetish_Notes" xml:space="preserve">
+    <value>Si acquista da Reggie al Ward 13 dopo aver completato la campagna a difficoltà Veterano.</value>
   </data>
   <data name="Amulet_CanineKeepsake" xml:space="preserve">
     <value>Cimelio del canide</value>
   </data>
   <data name="Amulet_CervineKeepsake" xml:space="preserve">
     <value>Cimelio del cervide</value>
+  </data>
+  <data name="Amulet_CervineKeepsake_Notes" xml:space="preserve">
+    <value>Nel Laboratorio abbandonato, giunti alla statua della cerva, indossare il Sigillo della Cerva rossa.</value>
   </data>
   <data name="Amulet_CessationBulbel" xml:space="preserve">
     <value>Bulbo di cessazione</value>
@@ -121,11 +166,17 @@
   <data name="Amulet_CostOfBetrayal" xml:space="preserve">
     <value>Prezzo del tradimento</value>
   </data>
+  <data name="Amulet_CostOfBetrayal_Notes" xml:space="preserve">
+    <value>Sparare al cadavere di uno dei membri del Consiglio morti.</value>
+  </data>
   <data name="Amulet_CrisisCore" xml:space="preserve">
     <value>Nucleo di crisi</value>
   </data>
   <data name="Amulet_DaredevilsCharm" xml:space="preserve">
     <value>Amuleto del Temerario</value>
+  </data>
+  <data name="Amulet_DaredevilsCharm_Notes" xml:space="preserve">
+    <value>Si acquista da Reggie al Ward 13 dopo aver completato la campagna a qualsiasi difficoltà in modalità Hardcore.</value>
   </data>
   <data name="Amulet_DeathsEmbrace" xml:space="preserve">
     <value>Abbraccio della morte</value>
@@ -136,6 +187,9 @@
   <data name="Amulet_DecayedMargin" xml:space="preserve">
     <value>Margine decomposto</value>
   </data>
+  <data name="Amulet_DecayedMargin_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13. Il mercante ha una probabilità casuale di averlo in vendita.</value>
+  </data>
   <data name="Amulet_DetonationTrigger" xml:space="preserve">
     <value>Innesco per esplosivi</value>
   </data>
@@ -145,14 +199,23 @@
   <data name="Amulet_DownwardSpiral" xml:space="preserve">
     <value>Spirale discendente</value>
   </data>
+  <data name="Amulet_DownwardSpiral_Notes" xml:space="preserve">
+    <value>Si trova nella località Il camino su Yaesha, nascosto a metà della scalinata durante l'evento Ascensore di cristallo.</value>
+  </data>
   <data name="Amulet_EchoChamber" xml:space="preserve">
     <value>Cassa di risonanza</value>
   </data>
   <data name="Amulet_EchoOfTheForest" xml:space="preserve">
     <value>Eco della foresta</value>
   </data>
+  <data name="Amulet_EchoOfTheForest_Notes" xml:space="preserve">
+    <value>Dato da Dwell al Ward 13 dopo avergli consegnato 3 pezzi del Cimelio della Trinità.</value>
+  </data>
   <data name="Amulet_EffigyPendant" xml:space="preserve">
     <value>Ciondolo dell'effigie</value>
+  </data>
+  <data name="Amulet_EffigyPendant_Notes" xml:space="preserve">
+    <value>All'interno di un forziere chiuso a chiave</value>
   </data>
   <data name="Amulet_EffluviumEnhancer" xml:space="preserve">
     <value>Intensificatore di esalazioni</value>
@@ -178,14 +241,26 @@
   <data name="Amulet_FullMoonCirclet" xml:space="preserve">
     <value>Anellino della luna piena</value>
   </data>
+  <data name="Amulet_FullMoonCirclet_Notes" xml:space="preserve">
+    <value>Si trova nella località Giardini Imperiali su Yaesha, in una stanza nascosta sotto una botola contrassegnata da uno stemma dorato a forma di luna piena. La botola si apre solo durante l'evento Luna di Sangue.</value>
+  </data>
   <data name="Amulet_GiftOfEuphoria" xml:space="preserve">
     <value>Dono dell'euforia</value>
+  </data>
+  <data name="Amulet_GiftOfEuphoria_Notes" xml:space="preserve">
+    <value>Ricompensa del medaglione d'oro.</value>
   </data>
   <data name="Amulet_GiftOfMelancholy" xml:space="preserve">
     <value>Dono della malinconia</value>
   </data>
+  <data name="Amulet_GiftOfMelancholy_Notes" xml:space="preserve">
+    <value>Ricompensa dello Shaed del Medaglione</value>
+  </data>
   <data name="Amulet_GiftOfTheUnbound" xml:space="preserve">
     <value>Dono del senza-vincoli</value>
+  </data>
+  <data name="Amulet_GiftOfTheUnbound_Notes" xml:space="preserve">
+    <value>Accettare di uccidere Nimue, ma uccidere invece l'Unico Vero Re e tornare da Nimue.</value>
   </data>
   <data name="Amulet_GoldenRibbon" xml:space="preserve">
     <value>Nastro dorato</value>
@@ -196,6 +271,9 @@
   <data name="Amulet_GunslingersCharm" xml:space="preserve">
     <value>Ciondolo della pistolera</value>
   </data>
+  <data name="Amulet_GunslingersCharm_Notes" xml:space="preserve">
+    <value>Ricompensa per aver parlato con Dente di fango al Ward 13 fino a esaurire il suo secondo gruppo di storie, in modalità campagna. Il secondo gruppo di storie diventa disponibile dopo aver completato il secondo bioma della campagna.</value>
+  </data>
   <data name="Amulet_HallowedEgg" xml:space="preserve">
     <value>Uovo consacrato</value>
   </data>
@@ -205,8 +283,14 @@
   <data name="Amulet_Hyperconductor" xml:space="preserve">
     <value>Iperconduttore</value>
   </data>
+  <data name="Amulet_Hyperconductor_Notes" xml:space="preserve">
+    <value>Si trova nella località Capolinea su N'erud, nascosto in un cunicolo a sinistra di una scala, durante l'evento Il treno.</value>
+  </data>
   <data name="Amulet_IndexOfTheScribe" xml:space="preserve">
     <value>Indice dello scriba</value>
+  </data>
+  <data name="Amulet_IndexOfTheScribe_Notes" xml:space="preserve">
+    <value>Riportare il Tomo dello scriba a Leywise, senza aprire il tomo.</value>
   </data>
   <data name="Amulet_IndignantFetish" xml:space="preserve">
     <value>Feticcio indignato</value>
@@ -223,6 +307,9 @@
   <data name="Amulet_JestersBell" xml:space="preserve">
     <value>Campana del giullare</value>
   </data>
+  <data name="Amulet_JestersBell_Notes" xml:space="preserve">
+    <value>Usare l'emote dell'applauso mentre il Giullare si esibisce.</value>
+  </data>
   <data name="Amulet_KineticShieldExchanger" xml:space="preserve">
     <value>Scambiatore di scudo cinetico</value>
   </data>
@@ -238,6 +325,9 @@
   <data name="Amulet_LetosAmulet" xml:space="preserve">
     <value>Amuleto di Leto</value>
   </data>
+  <data name="Amulet_LetosAmulet_Notes" xml:space="preserve">
+    <value>Si acquista da Reggie al Ward 13 dopo aver eseguito 100 schivate fallite indossando il set di armatura tipo 2 di Leto.</value>
+  </data>
   <data name="Amulet_MagnifyingGlass" xml:space="preserve">
     <value>Lente d'ingrandimento</value>
   </data>
@@ -247,8 +337,14 @@
   <data name="Amulet_MoonStone" xml:space="preserve">
     <value>Pietra lunare</value>
   </data>
+  <data name="Amulet_MoonStone_Notes" xml:space="preserve">
+    <value>Nella stanza dell'enigma della luna.</value>
+  </data>
   <data name="Amulet_NavigatorsPendant" xml:space="preserve">
     <value>Ciondolo del navigatore</value>
+  </data>
+  <data name="Amulet_NavigatorsPendant_Notes" xml:space="preserve">
+    <value>Farsi divorare mentre si indossa il Ciondolo del navigatore arrugginito.</value>
   </data>
   <data name="Amulet_NeckboneNecklace" xml:space="preserve">
     <value>Collana di osso cervicale</value>
@@ -262,20 +358,38 @@
   <data name="Amulet_NightmareSpiral" xml:space="preserve">
     <value>Spirale da incubo</value>
   </data>
+  <data name="Amulet_NightmareSpiral_Notes" xml:space="preserve">
+    <value>Si acquista da Reggie al Ward 13 dopo aver sconfitto tutti i boss almeno una volta.</value>
+  </data>
   <data name="Amulet_NightweaversGrudge" xml:space="preserve">
     <value>Rancore della Tessitenebre</value>
+  </data>
+  <data name="Amulet_NightweaversGrudge_Notes" xml:space="preserve">
+    <value>Ricompensa per aver offerto il Rasoio di Kolket, trovato nella località Il lamento su Yaesha, all'evento Tela della Tessitenebre (Nightweaver's Web) nella località Il manicomio tormentato su Losomn. Va fatto in una campagna in cui sono state generate entrambe le località.</value>
   </data>
   <data name="Amulet_NimuesRibbon" xml:space="preserve">
     <value>Nastro di Nimue</value>
   </data>
+  <data name="Amulet_NimuesRibbon_Notes" xml:space="preserve">
+    <value>Consegnare il Nastro d'argento e il Nastro dorato a Nimue.</value>
+  </data>
   <data name="Amulet_OneEyedJokerIdol" xml:space="preserve">
     <value>Idolo del giullare monocolo</value>
+  </data>
+  <data name="Amulet_OneEyedJokerIdol_Notes" xml:space="preserve">
+    <value>Porte delle carte del Giullare - porta con la maschera</value>
   </data>
   <data name="Amulet_OneTrueKingSigil" xml:space="preserve">
     <value>Sigillo dell'Unico Vero Re</value>
   </data>
+  <data name="Amulet_OneTrueKingSigil_Notes" xml:space="preserve">
+    <value>Consegnare il Sigillo di Faerin e il Sigillo di Faelin a Nimue.</value>
+  </data>
   <data name="Amulet_OnyxPendulum" xml:space="preserve">
     <value>Pendolo di onice</value>
+  </data>
+  <data name="Amulet_OnyxPendulum_Notes" xml:space="preserve">
+    <value>Si acquista da Reggie al Ward 13 dopo aver completato la campagna a difficoltà Incubo.</value>
   </data>
   <data name="Amulet_OrnateAmulet" xml:space="preserve">
     <value>Amuleto ornato</value>
@@ -283,8 +397,14 @@
   <data name="Amulet_ParticipationMedal" xml:space="preserve">
     <value>Medaglia di partecipazione</value>
   </data>
+  <data name="Amulet_ParticipationMedal_Notes" xml:space="preserve">
+    <value>Morire per mano di un boss 10 volte a difficoltà Apocalisse.</value>
+  </data>
   <data name="Amulet_ProfaneSoulStone" xml:space="preserve">
     <value>Pietra dell'anima profana</value>
+  </data>
+  <data name="Amulet_ProfaneSoulStone_Notes" xml:space="preserve">
+    <value>Sottomettersi all'Emissario.</value>
   </data>
   <data name="Amulet_QuantumMemory" xml:space="preserve">
     <value>Memoria quantistica</value>
@@ -300,6 +420,9 @@
   </data>
   <data name="Amulet_RedDoeSigil" xml:space="preserve">
     <value>Sigillo della Cerva rossa</value>
+  </data>
+  <data name="Amulet_RedDoeSigil_Notes" xml:space="preserve">
+    <value>Ricompensa per aver consegnato il Scrigno ornato (chiuso), trovato nella Corte della Vedova su Yaesha, all'Imperatrice eterna presso Il Trono rosso su Yaesha.</value>
   </data>
   <data name="Amulet_ReedOfTheVaunnt" xml:space="preserve">
     <value>Ancia dei Vaunnt</value>
@@ -319,6 +442,9 @@
   <data name="Amulet_ShadeBloomCrystal" xml:space="preserve">
     <value>Cristallo fiore di Shaed</value>
   </data>
+  <data name="Amulet_ShadeBloomCrystal_Notes" xml:space="preserve">
+    <value>Sul mucchio di ossa dove siede il Giullare, nel Palazzo beatifico</value>
+  </data>
   <data name="Amulet_ShockDevice" xml:space="preserve">
     <value>Dispositivo elettrico</value>
   </data>
@@ -337,6 +463,9 @@
   <data name="Amulet_SoulStone" xml:space="preserve">
     <value>Pietra dell'anima</value>
   </data>
+  <data name="Amulet_SoulStone_Notes" xml:space="preserve">
+    <value>Purificare la Pietra dell'anima profana presso il Custode (The Keeper) nel Labirinto.</value>
+  </data>
   <data name="Amulet_SpiritWispAmulet" xml:space="preserve">
     <value>Amuleto del fuoco spirituale</value>
   </data>
@@ -345,6 +474,9 @@
   </data>
   <data name="Amulet_StoneshapersChisel" xml:space="preserve">
     <value>Scalpello del plasmapietra</value>
+  </data>
+  <data name="Amulet_StoneshapersChisel_Notes" xml:space="preserve">
+    <value>Interagire con Uuqul quando si è afflitti dal Tocco di Lydusa.</value>
   </data>
   <data name="Amulet_TalismanOfTheSun" xml:space="preserve">
     <value>Talismano del sole</value>
@@ -358,11 +490,17 @@
   <data name="Amulet_TwistedIdol" xml:space="preserve">
     <value>Idolo contorto</value>
   </data>
+  <data name="Amulet_TwistedIdol_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13. Il mercante ha una probabilità casuale di averlo in vendita.</value>
+  </data>
   <data name="Amulet_VengeanceIdol" xml:space="preserve">
     <value>Idolo vendicatore</value>
   </data>
   <data name="Amulet_VoidIdol" xml:space="preserve">
     <value>Idolo del vuoto</value>
+  </data>
+  <data name="Amulet_VoidIdol_Notes" xml:space="preserve">
+    <value>Si crea al Replicatore Drzyr nella località Pinnacolo dell'ascensione su N'erud. Richiede l'oggetto Eco dell'essenza splendente, ottenuto dopo aver sconfitto Tal'Ratha. Il Replicatore Drzyr si trova in un passaggio nascosto nella torre del Protettore.</value>
   </data>
   <data name="Amulet_VolatileCartridge" xml:space="preserve">
     <value>Cartuccia esplosiva</value>
@@ -376,11 +514,26 @@
   <data name="Amulet_WornDogTags" xml:space="preserve">
     <value>Piastrine logore</value>
   </data>
+  <data name="Amulet_WornDogTags_Notes" xml:space="preserve">
+    <value>Tornare dal soldato Jack Driver dopo aver deciso il destino di Lydusa.</value>
+  </data>
   <data name="Amulet_ZeroDivide" xml:space="preserve">
     <value>Divisione paradossale</value>
   </data>
   <data name="Amulet_ZeroHour" xml:space="preserve">
     <value>Ora zero</value>
+  </data>
+  <data name="Amulets" xml:space="preserve">
+    <value>Amuleti</value>
+  </data>
+  <data name="AncientCanopyStory" xml:space="preserve">
+    <value>Storia: Chioma antica</value>
+  </data>
+  <data name="Archetype_Ritualist" xml:space="preserve">
+    <value>Ritualista</value>
+  </data>
+  <data name="Archetypes" xml:space="preserve">
+    <value>Archetipi</value>
   </data>
   <data name="Archon" xml:space="preserve">
     <value>Arconte</value>
@@ -394,14 +547,32 @@
   <data name="Armor_Archon" xml:space="preserve">
     <value>Arconte</value>
   </data>
+  <data name="Armor_Army" xml:space="preserve">
+    <value>Da battaglia</value>
+  </data>
   <data name="Armor_BloodlessCrown" xml:space="preserve">
     <value>Corona del senza sangue</value>
   </data>
   <data name="Armor_Body" xml:space="preserve">
     <value>Corpo</value>
   </data>
+  <data name="Armor_Body_CrimsonGuard_Notes" xml:space="preserve">
+    <value>Uccidere l'Unico Vero Re, dare 3 monete al Principe rosso, poi tornare al palazzo.</value>
+  </data>
+  <data name="Armor_Body_Invoker_Notes" xml:space="preserve">
+    <value>In un tunnel nella parte inferiore della Chioma antica.</value>
+  </data>
+  <data name="Armor_Body_Leto2_Notes" xml:space="preserve">
+    <value>Portale della nave cargo.</value>
+  </data>
+  <data name="Armor_Body_Ritualist_Notes" xml:space="preserve">
+    <value>Sparare al corpo appeso sotto il ponte prima di Nimue.</value>
+  </data>
   <data name="Armor_Challenger" xml:space="preserve">
     <value>Colosso</value>
+  </data>
+  <data name="Armor_CrimsonGuard" xml:space="preserve">
+    <value>Guardia cremisi</value>
   </data>
   <data name="Armor_Engineer" xml:space="preserve">
     <value>Ingegnere</value>
@@ -409,14 +580,89 @@
   <data name="Armor_Explorer" xml:space="preserve">
     <value>Esploratore</value>
   </data>
+  <data name="Armor_FaeRoyalGuard" xml:space="preserve">
+    <value>Guardia regale dei Fae</value>
+  </data>
   <data name="Armor_Gloves" xml:space="preserve">
     <value>Guanti</value>
+  </data>
+  <data name="Armor_Gloves_CrimsonGuard_Notes" xml:space="preserve">
+    <value>Uccidere l'Unico Vero Re, dare 3 monete al Principe rosso, poi tornare al palazzo.</value>
+  </data>
+  <data name="Armor_Gloves_Invoker_Notes" xml:space="preserve">
+    <value>Dentro un tunnel nella parte bassa della Chioma antica.</value>
+  </data>
+  <data name="Armor_Gloves_Leto2_Notes" xml:space="preserve">
+    <value>Portale della nave da carico</value>
+  </data>
+  <data name="Armor_Gloves_Ritualist_Notes" xml:space="preserve">
+    <value>Sparare al corpo impiccato sotto il ponte prima di Nimue.</value>
+  </data>
+  <data name="Armor_Gunslinger" xml:space="preserve">
+    <value>Mezzogiorno</value>
+  </data>
+  <data name="Armor_Handler" xml:space="preserve">
+    <value>Addestratore</value>
   </data>
   <data name="Armor_Head" xml:space="preserve">
     <value>Testa</value>
   </data>
+  <data name="Armor_Head_BloodlessCrown_Notes" xml:space="preserve">
+    <value>Dopo aver aperto la porta che richiede cinque bracieri, sull'altare accanto al vaso delle offerte.</value>
+  </data>
+  <data name="Armor_Head_CrimsonGuard_Notes" xml:space="preserve">
+    <value>Uccidere l'Unico Vero Re, dare 3 monete al Principe rosso, poi tornare al palazzo.</value>
+  </data>
+  <data name="Armor_Head_Invoker_Notes" xml:space="preserve">
+    <value>In un tunnel nella parte inferiore della Chioma antica.</value>
+  </data>
+  <data name="Armor_Head_Leto2_Notes" xml:space="preserve">
+    <value>Portale della nave cargo.</value>
+  </data>
+  <data name="Armor_Head_LodestoneCrown_Notes" xml:space="preserve">
+    <value>Sulla barca, nella stanza chiusa a chiave di Kolket</value>
+  </data>
+  <data name="Armor_Head_MudtoothsHat_Notes" xml:space="preserve">
+    <value>Parlare con Dente di fango dopo aver completato la storia del Regno dimenticato.</value>
+  </data>
+  <data name="Armor_Head_RedPrince_Notes" xml:space="preserve">
+    <value>Uccidere con il Pugnale dell'Assassino.</value>
+  </data>
+  <data name="Armor_Head_Ritualist_Notes" xml:space="preserve">
+    <value>Sparare al corpo appeso sotto il ponte prima di Nimue.</value>
+  </data>
+  <data name="Armor_Head_TopHat_Notes" xml:space="preserve">
+    <value>Far saltare con uno sparo il cappello dalla testa del Predicatore.</value>
+  </data>
+  <data name="Armor_Head_TrueCrimsonCrown_Notes" xml:space="preserve">
+    <value>Consegnare il Manto spettrale della guardia cremisi e la Corona del Principe rosso a Nimue.</value>
+  </data>
+  <data name="Armor_Hunter" xml:space="preserve">
+    <value>Predatore notturno</value>
+  </data>
+  <data name="Armor_Invader" xml:space="preserve">
+    <value>Dendroide</value>
+  </data>
+  <data name="Armor_Invoker" xml:space="preserve">
+    <value>Discepolo</value>
+  </data>
   <data name="Armor_Legs" xml:space="preserve">
     <value>Gambe</value>
+  </data>
+  <data name="Armor_Legs_CrimsonGuard_Notes" xml:space="preserve">
+    <value>Uccidere l'Unico Vero Re, dare 3 monete al Principe rosso, poi tornare al palazzo.</value>
+  </data>
+  <data name="Armor_Legs_Invoker_Notes" xml:space="preserve">
+    <value>In un tunnel nella parte inferiore della Chioma antica.</value>
+  </data>
+  <data name="Armor_Legs_Leto2_Notes" xml:space="preserve">
+    <value>Portale della nave cargo.</value>
+  </data>
+  <data name="Armor_Legs_Ritualist_Notes" xml:space="preserve">
+    <value>Sparare al corpo appeso sotto il ponte prima di Nimue.</value>
+  </data>
+  <data name="Armor_Leto2" xml:space="preserve">
+    <value>Tipo 2 di Leto</value>
   </data>
   <data name="Armor_LodestoneCrown" xml:space="preserve">
     <value>Corona di magnetite</value>
@@ -430,8 +676,23 @@
   <data name="Armor_PilotsHelm" xml:space="preserve">
     <value>Elmo del navigatore</value>
   </data>
+  <data name="Armor_Radiant" xml:space="preserve">
+    <value>Radioso</value>
+  </data>
   <data name="Armor_RedPrince" xml:space="preserve">
     <value>Corona del Principe rosso</value>
+  </data>
+  <data name="Armor_RedPrinceArmor" xml:space="preserve">
+    <value>Guardia cremisi</value>
+  </data>
+  <data name="Armor_RedWidow" xml:space="preserve">
+    <value>Vedova rossa</value>
+  </data>
+  <data name="Armor_Ritualist" xml:space="preserve">
+    <value>Zelota</value>
+  </data>
+  <data name="Armor_SpaceWorker" xml:space="preserve">
+    <value>Operaio spaziale</value>
   </data>
   <data name="Armor_Summoner" xml:space="preserve">
     <value>Evocatore</value>
@@ -442,6 +703,9 @@
   <data name="Armor_TrueCrimsonCrown" xml:space="preserve">
     <value>Vera corona cremisi</value>
   </data>
+  <data name="Armor_Void" xml:space="preserve">
+    <value>Vuoto</value>
+  </data>
   <data name="Armor_Warden" xml:space="preserve">
     <value>Guardia</value>
   </data>
@@ -451,8 +715,14 @@
   <data name="AshenWasteland" xml:space="preserve">
     <value>Desolazione cinerea</value>
   </data>
+  <data name="Asylum" xml:space="preserve">
+    <value>Il manicomio</value>
+  </data>
   <data name="AsylumChainsaw" xml:space="preserve">
     <value>Segaccio</value>
+  </data>
+  <data name="AsylumHouse" xml:space="preserve">
+    <value>Il manicomio</value>
   </data>
   <data name="AsylumStory" xml:space="preserve">
     <value>Il manicomio</value>
@@ -466,14 +736,32 @@
   <data name="BeatificPalace" xml:space="preserve">
     <value>Palazzo beatifico</value>
   </data>
+  <data name="BicentennialMan" xml:space="preserve">
+    <value>Prototipo</value>
+  </data>
+  <data name="BlackAndWhite" xml:space="preserve">
+    <value>Le fiamme</value>
+  </data>
+  <data name="BlackHole" xml:space="preserve">
+    <value>Anomalia gravitazionale</value>
+  </data>
   <data name="BloatKing" xml:space="preserve">
     <value>Re gonfio</value>
   </data>
   <data name="BloodMoon" xml:space="preserve">
     <value>Altare della Luna di Sangue</value>
   </data>
+  <data name="BoneHarvesterLair" xml:space="preserve">
+    <value>Mostro nello scarico</value>
+  </data>
+  <data name="Boss" xml:space="preserve">
+    <value>Boss</value>
+  </data>
   <data name="BriellasGarden" xml:space="preserve">
     <value>Giardino di Briella</value>
+  </data>
+  <data name="BrokenTomb" xml:space="preserve">
+    <value>Predatore della foresta/Arciere nodoso</value>
   </data>
   <data name="BurningCity" xml:space="preserve">
     <value>Maniero etereo</value>
@@ -484,6 +772,9 @@
   <data name="ButchersQuarter" xml:space="preserve">
     <value>Distretto del macellaio</value>
   </data>
+  <data name="CargoBelt" xml:space="preserve">
+    <value>Banchine del treno</value>
+  </data>
   <data name="CathedralOfSeasons" xml:space="preserve">
     <value>Cattedrale dei presagi</value>
   </data>
@@ -493,8 +784,14 @@
   <data name="CharnelHouse" xml:space="preserve">
     <value>Barghest l'ignobile</value>
   </data>
+  <data name="ClockTower" xml:space="preserve">
+    <value>La torre dell'orologio</value>
+  </data>
   <data name="CoastAtoner" xml:space="preserve">
     <value>Penitente straziato</value>
+  </data>
+  <data name="CoastPig" xml:space="preserve">
+    <value>Piccolo George</value>
   </data>
   <data name="CorruptedHarbor" xml:space="preserve">
     <value>Approdo corrotto</value>
@@ -504,6 +801,15 @@
   </data>
   <data name="CouncilChamber" xml:space="preserve">
     <value>Camera del Consiglio</value>
+  </data>
+  <data name="CrimsonHarvest" xml:space="preserve">
+    <value>L'incendio</value>
+  </data>
+  <data name="Crypt_DLC" xml:space="preserve">
+    <value>La stanza del tesoro</value>
+  </data>
+  <data name="CryptHidden" xml:space="preserve">
+    <value>Passaggio nascosto della cripta</value>
   </data>
   <data name="CustodianEye" xml:space="preserve">
     <value>L'occhio del Guardiano</value>
@@ -517,8 +823,20 @@
   <data name="DranGrenadier" xml:space="preserve">
     <value>Gwendil, la non bruciata</value>
   </data>
+  <data name="DranOracle" xml:space="preserve">
+    <value>Oracolo dei Dran</value>
+  </data>
+  <data name="DranStarter" xml:space="preserve">
+    <value>Città dei Dran</value>
+  </data>
   <data name="DrzyrReplicator" xml:space="preserve">
     <value>Replicatore Drzyr</value>
+  </data>
+  <data name="ElevatorShaft" xml:space="preserve">
+    <value>Pozzo dell'ascensore</value>
+  </data>
+  <data name="EmpressStory" xml:space="preserve">
+    <value>L'Imperatrice eterna</value>
   </data>
   <data name="EndairasEnd" xml:space="preserve">
     <value>Fine di Endaira</value>
@@ -529,8 +847,17 @@
   <data name="Engrams" xml:space="preserve">
     <value>Engrammi</value>
   </data>
+  <data name="Event" xml:space="preserve">
+    <value>Evento</value>
+  </data>
   <data name="Explorer" xml:space="preserve">
     <value>Esploratore</value>
+  </data>
+  <data name="Extermination" xml:space="preserve">
+    <value>Quarantena</value>
+  </data>
+  <data name="Extraction" xml:space="preserve">
+    <value>Nave di rifornimento</value>
   </data>
   <data name="FaeArchon" xml:space="preserve">
     <value>Magistro Dullain</value>
@@ -541,8 +868,14 @@
   <data name="FaeShamanRing" xml:space="preserve">
     <value>Anello dello Sciamano Fae</value>
   </data>
+  <data name="FaeStarter" xml:space="preserve">
+    <value>Sale dorate</value>
+  </data>
   <data name="FaeWarriorRing" xml:space="preserve">
     <value>Anello del guerriero Fae</value>
+  </data>
+  <data name="FieryGraveyard" xml:space="preserve">
+    <value>Cimitero in fiamme</value>
   </data>
   <data name="Flautist" xml:space="preserve">
     <value>Nexus dei Root</value>
@@ -552,6 +885,15 @@
   </data>
   <data name="ForgottenPrison" xml:space="preserve">
     <value>Prigione dimenticata</value>
+  </data>
+  <data name="ForlornCoastStory" xml:space="preserve">
+    <value>Storia: Costa desolata</value>
+  </data>
+  <data name="GardenMaze" xml:space="preserve">
+    <value>Il dedalo</value>
+  </data>
+  <data name="GasChamber" xml:space="preserve">
+    <value>Labirinto della camera a gas</value>
   </data>
   <data name="Gems" xml:space="preserve">
     <value>Mutatori</value>
@@ -565,6 +907,9 @@
   <data name="Gunslinger" xml:space="preserve">
     <value>Pistolero</value>
   </data>
+  <data name="Halls_DLC" xml:space="preserve">
+    <value>Pavimento a specchio</value>
+  </data>
   <data name="Handler" xml:space="preserve">
     <value>Domatore</value>
   </data>
@@ -574,8 +919,20 @@
   <data name="Hatchery" xml:space="preserve">
     <value>Capostipite</value>
   </data>
+  <data name="HiddenChamber" xml:space="preserve">
+    <value>Camera nascosta</value>
+  </data>
+  <data name="HiddenMaze" xml:space="preserve">
+    <value>Dedalo</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Base</value>
+  </data>
   <data name="Hunter" xml:space="preserve">
     <value>Cacciatore</value>
+  </data>
+  <data name="IAmLegendStory" xml:space="preserve">
+    <value>Storia: N'erud</value>
   </data>
   <data name="Impaler" xml:space="preserve">
     <value>Bruin, Lama del Re</value>
@@ -586,8 +943,23 @@
   <data name="IndignantFetish" xml:space="preserve">
     <value>Feticcio indignato</value>
   </data>
+  <data name="Injectable" xml:space="preserve">
+    <value>Evento casuale</value>
+  </data>
   <data name="Invader" xml:space="preserve">
     <value>Invasore</value>
+  </data>
+  <data name="IronGiant" xml:space="preserve">
+    <value>Sala di navigazione</value>
+  </data>
+  <data name="Island_DLC" xml:space="preserve">
+    <value>Statua della Cerva</value>
+  </data>
+  <data name="IslandJump" xml:space="preserve">
+    <value>Enigma dei salti sull'isola</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>Oggetto</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Alchemist" xml:space="preserve">
     <value>Alchimista</value>
@@ -598,23 +970,38 @@
   <data name="Item_HiddenContainer_Material_Engram_Challenger" xml:space="preserve">
     <value>Sfidante</value>
   </data>
+  <data name="Item_HiddenContainer_Material_Engram_Challenger_Notes" xml:space="preserve">
+    <value>Creato da Wallace al Ward 13. Richiede l'oggetto Antico attrezzo metallico, acquistabile da Reggie al Ward 13.</value>
+  </data>
   <data name="Item_HiddenContainer_Material_Engram_Engineer" xml:space="preserve">
     <value>Ingegnere</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Gunslinger" xml:space="preserve">
     <value>Pistolero</value>
   </data>
+  <data name="Item_HiddenContainer_Material_Engram_Gunslinger_Notes" xml:space="preserve">
+    <value>Creato da Wallace al Ward 13. Richiede il Tamburo usurato, acquistabile da Dente di fango al Ward 13 dopo aver esaurito il suo secondo gruppo di storie.</value>
+  </data>
   <data name="Item_HiddenContainer_Material_Engram_Handler" xml:space="preserve">
     <value>Domatore</value>
   </data>
+  <data name="Item_HiddenContainer_Material_Engram_Handler_Notes" xml:space="preserve">
+    <value>Creato da Wallace al Ward 13. Richiede l'oggetto Vecchio fischietto (Old Whistle), acquistato da Dente di fango al Ward 13.</value>
+  </data>
   <data name="Item_HiddenContainer_Material_Engram_Hunter" xml:space="preserve">
     <value>Cacciatore</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Hunter_Notes" xml:space="preserve">
+    <value>Creato da Wallace al Ward 13. Richiede l'oggetto Medaglia arrugginita, acquistabile da Brabus al Ward 13.</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Invader" xml:space="preserve">
     <value>Invasore</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Medic" xml:space="preserve">
     <value>Medico</value>
+  </data>
+  <data name="Item_HiddenContainer_Material_Engram_Medic_Notes" xml:space="preserve">
+    <value>Acquistare la Spilla da medico da Norah.</value>
   </data>
   <data name="Item_HiddenContainer_Material_Engram_Summoner" xml:space="preserve">
     <value>Evocatore</value>
@@ -628,8 +1015,26 @@
   <data name="KaeulasRest" xml:space="preserve">
     <value>Riposo di Kaeula</value>
   </data>
+  <data name="Kiln" xml:space="preserve">
+    <value>Monolito Cinderclad</value>
+  </data>
+  <data name="KoaraKuri" xml:space="preserve">
+    <value>Nido di koara kuri</value>
+  </data>
   <data name="KoaraKuriNest" xml:space="preserve">
     <value>Nido di koara kuri</value>
+  </data>
+  <data name="Labyrinth" xml:space="preserve">
+    <value>Il Labirinto</value>
+  </data>
+  <data name="LabyrinthBackrooms" xml:space="preserve">
+    <value>Le Backrooms</value>
+  </data>
+  <data name="LabyrinthStory" xml:space="preserve">
+    <value>Il Labirinto</value>
+  </data>
+  <data name="LaemirsLyceum" xml:space="preserve">
+    <value>Liceo di Laemir</value>
   </data>
   <data name="LemarkDistrict" xml:space="preserve">
     <value>Distretto di Lemark</value>
@@ -639,6 +1044,18 @@
   </data>
   <data name="Lighthouse" xml:space="preserve">
     <value>Faro abbandonato</value>
+  </data>
+  <data name="LivingStone" xml:space="preserve">
+    <value>Angeli piangenti</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Luogo</value>
+  </data>
+  <data name="LuminousValeStory" xml:space="preserve">
+    <value>Storia: Valle luminosa</value>
+  </data>
+  <data name="LydusaTemple" xml:space="preserve">
+    <value>Tempio di Lydusa</value>
   </data>
   <data name="Main" xml:space="preserve">
     <value>Terra</value>
@@ -655,8 +1072,14 @@
   <data name="Material_ThaenLeaf" xml:space="preserve">
     <value>Foglia del Thaen</value>
   </data>
+  <data name="McCabe" xml:space="preserve">
+    <value>Ava McCabe</value>
+  </data>
   <data name="Medic" xml:space="preserve">
     <value>Medico</value>
+  </data>
+  <data name="Merchant" xml:space="preserve">
+    <value>Mercante</value>
   </data>
   <data name="MetaGem_Bandit" xml:space="preserve">
     <value>Bandito</value>
@@ -667,11 +1090,23 @@
   <data name="MetaGem_BattleMage" xml:space="preserve">
     <value>Mago da battaglia</value>
   </data>
+  <data name="MetaGem_BottomFeeder" xml:space="preserve">
+    <value>Spirito profittatore</value>
+  </data>
+  <data name="MetaGem_BottomFeeder_Notes" xml:space="preserve">
+    <value>Rilascio casuale dalle aberrazioni</value>
+  </data>
   <data name="MetaGem_BottomHeavy" xml:space="preserve">
     <value>Sbilanciamento inferiore</value>
   </data>
+  <data name="MetaGem_BottomHeavy_Notes" xml:space="preserve">
+    <value>Drop casuale dalle aberrazioni.</value>
+  </data>
   <data name="MetaGem_Bulletweaver" xml:space="preserve">
     <value>Tessiproiettili</value>
+  </data>
+  <data name="MetaGem_ChargedWounds" xml:space="preserve">
+    <value>Ferite cariche</value>
   </data>
   <data name="MetaGem_DeadlyCalm" xml:space="preserve">
     <value>Calma mortale</value>
@@ -688,8 +1123,14 @@
   <data name="MetaGem_Dreadful" xml:space="preserve">
     <value>Terribile</value>
   </data>
+  <data name="MetaGem_Dreadful_Notes" xml:space="preserve">
+    <value>Rilasciato dal Dire Fiend.</value>
+  </data>
   <data name="MetaGem_Edgelord" xml:space="preserve">
     <value>Arrotino</value>
+  </data>
+  <data name="MetaGem_Edgelord_Notes" xml:space="preserve">
+    <value>Rilascio casuale dalle aberrazioni</value>
   </data>
   <data name="MetaGem_Executor" xml:space="preserve">
     <value>Esecutrice</value>
@@ -703,6 +1144,9 @@
   <data name="MetaGem_FarSighted" xml:space="preserve">
     <value>Lungimirante</value>
   </data>
+  <data name="MetaGem_FarSighted_Notes" xml:space="preserve">
+    <value>Sconfiggere l'aberrazione Stonewing Lurker.</value>
+  </data>
   <data name="MetaGem_Feedback" xml:space="preserve">
     <value>Retroazione</value>
   </data>
@@ -712,11 +1156,17 @@
   <data name="MetaGem_GhostShell" xml:space="preserve">
     <value>Guscio fantasma</value>
   </data>
+  <data name="MetaGem_GhostShell_Notes" xml:space="preserve">
+    <value>Ricompensa per aver interagito con il Frutto del Thaen marcio, che si trova nella Corte della Vedova su Yaesha alla fine di un passaggio segreto. Per sbloccare il passaggio, indossare l'amuleto Sigillo della Cerva rossa davanti alla statua del Predone e della Cerva rossa.</value>
+  </data>
   <data name="MetaGem_Gladiator" xml:space="preserve">
     <value>Gladiatore</value>
   </data>
   <data name="MetaGem_Guts" xml:space="preserve">
     <value>Grinta</value>
+  </data>
+  <data name="MetaGem_Guts_Notes" xml:space="preserve">
+    <value>Tornare dalla donna Dran dopo aver distrutto entrambi i totem.</value>
   </data>
   <data name="MetaGem_Harmonizer" xml:space="preserve">
     <value>Armonizzatore</value>
@@ -730,14 +1180,23 @@
   <data name="MetaGem_Ingenuity" xml:space="preserve">
     <value>Ingegno</value>
   </data>
+  <data name="MetaGem_Ingenuity_Notes" xml:space="preserve">
+    <value>Drop casuale dalle aberrazioni.</value>
+  </data>
   <data name="MetaGem_Insulator" xml:space="preserve">
     <value>Isolante</value>
   </data>
   <data name="MetaGem_KillSwitch" xml:space="preserve">
     <value>Arresto totale</value>
   </data>
+  <data name="MetaGem_KillSwitch_Notes" xml:space="preserve">
+    <value>Drop casuale dalle aberrazioni.</value>
+  </data>
   <data name="MetaGem_Latency" xml:space="preserve">
     <value>Latenza</value>
+  </data>
+  <data name="MetaGem_Latency_Notes" xml:space="preserve">
+    <value>Rilascio casuale dalle aberrazioni</value>
   </data>
   <data name="MetaGem_Lithely" xml:space="preserve">
     <value>Agilmente</value>
@@ -745,17 +1204,29 @@
   <data name="MetaGem_Misfortune" xml:space="preserve">
     <value>Sfortuna</value>
   </data>
+  <data name="MetaGem_Misfortune_Notes" xml:space="preserve">
+    <value>Porte delle carte del giullare: porta con le corna del diavolo.</value>
+  </data>
   <data name="MetaGem_Momentum" xml:space="preserve">
     <value>Slancio</value>
   </data>
   <data name="MetaGem_NearSighted" xml:space="preserve">
     <value>Miope</value>
   </data>
+  <data name="MetaGem_NearSighted_Notes" xml:space="preserve">
+    <value>Affrontare l'Emissario.</value>
+  </data>
   <data name="MetaGem_Opportunist" xml:space="preserve">
     <value>Opportunista</value>
   </data>
+  <data name="MetaGem_Opportunist_Notes" xml:space="preserve">
+    <value>Rilascio casuale dalle aberrazioni</value>
+  </data>
   <data name="MetaGem_PressurePoint" xml:space="preserve">
     <value>Punto di pressione</value>
+  </data>
+  <data name="MetaGem_PressurePoint_Notes" xml:space="preserve">
+    <value>Sconfiggere l'aberrazione Charred Sentry.</value>
   </data>
   <data name="MetaGem_Prophecy" xml:space="preserve">
     <value>Profezia</value>
@@ -778,8 +1249,17 @@
   <data name="MetaGem_SequencedShot" xml:space="preserve">
     <value>Colpo sequenziato</value>
   </data>
+  <data name="MetaGem_SequencedShot_Notes" xml:space="preserve">
+    <value>Drop casuale dalle aberrazioni.</value>
+  </data>
+  <data name="MetaGem_ShieldBreaker" xml:space="preserve">
+    <value>Attacco schermato</value>
+  </data>
   <data name="MetaGem_Shocker" xml:space="preserve">
     <value>Folgoratrice</value>
+  </data>
+  <data name="MetaGem_Shocker_Notes" xml:space="preserve">
+    <value>Rilascio casuale dalle aberrazioni</value>
   </data>
   <data name="MetaGem_Slayer" xml:space="preserve">
     <value>Uccisore</value>
@@ -793,11 +1273,17 @@
   <data name="MetaGem_SpiritHealer" xml:space="preserve">
     <value>Guaritrice di spiriti</value>
   </data>
+  <data name="MetaGem_SpiritHealer_Notes" xml:space="preserve">
+    <value>Drop casuale dalle aberrazioni.</value>
+  </data>
   <data name="MetaGem_Steadfast" xml:space="preserve">
     <value>Costante</value>
   </data>
   <data name="MetaGem_Stormbringer" xml:space="preserve">
     <value>Portatempesta</value>
+  </data>
+  <data name="MetaGem_Stormbringer_Notes" xml:space="preserve">
+    <value>Drop casuale dalle aberrazioni.</value>
   </data>
   <data name="MetaGem_Striker" xml:space="preserve">
     <value>Picchiatore</value>
@@ -820,6 +1306,9 @@
   <data name="MetaGem_TopHeavy" xml:space="preserve">
     <value>Sbilanciamento superiore</value>
   </data>
+  <data name="MetaGem_TopHeavy_Notes" xml:space="preserve">
+    <value>Rilascio casuale dalle aberrazioni</value>
+  </data>
   <data name="MetaGem_Transference" xml:space="preserve">
     <value>Proiezione</value>
   </data>
@@ -840,6 +1329,21 @@
   </data>
   <data name="MetaGem_WeaponLord" xml:space="preserve">
     <value>Signore delle armi</value>
+  </data>
+  <data name="Miniboss" xml:space="preserve">
+    <value>Miniboss</value>
+  </data>
+  <data name="Mod_Familiar_Notes" xml:space="preserve">
+    <value>Versione del mondo onirico.</value>
+  </data>
+  <data name="Mod_Heatwave_Notes" xml:space="preserve">
+    <value>Sconfiggere il Monolito Cinderclad.</value>
+  </data>
+  <data name="Mod_KnightGuard_Notes" xml:space="preserve">
+    <value>Indossare la Corona del Principe rosso nella stanza della Sala dorata (Golden Hall).</value>
+  </data>
+  <data name="Mod_Overflow_Notes" xml:space="preserve">
+    <value>Creato da McCabe al Ward 13. Richiede l'oggetto Circuito di intensificazione, che si trova nella località Desolazione fantasma/Pinnacolo dell'ascensione su N'erud, in una stanza segreta sotto l'NPC Protettore. Una volta nella stanza segreta, prendere l'ascensore a destra per scendere, poi cercare subito un cunicolo sulla destra.</value>
   </data>
   <data name="Mods" xml:space="preserve">
     <value>Mod</value>
@@ -967,23 +1471,62 @@
   <data name="NerudGuardian" xml:space="preserve">
     <value>Sha'Hala: Guardiano spettrale di N'erud</value>
   </data>
+  <data name="NightWeaver" xml:space="preserve">
+    <value>Tessitenebre</value>
+  </data>
+  <data name="Nightweb" xml:space="preserve">
+    <value>Tela della Tessitenebre</value>
+  </data>
   <data name="NimuesRetreat" xml:space="preserve">
     <value>Ritirata di Nimue</value>
+  </data>
+  <data name="OilField" xml:space="preserve">
+    <value>Giacimento petrolifero</value>
   </data>
   <data name="Oink" xml:space="preserve">
     <value>Gola</value>
   </data>
+  <data name="OneTrueKing" xml:space="preserve">
+    <value>L'Unico Vero Re</value>
+  </data>
   <data name="OraclesRefuge" xml:space="preserve">
     <value>Rifugio dell'Oracolo</value>
+  </data>
+  <data name="Overload_DLC" xml:space="preserve">
+    <value>Enigma del circuito elettrico</value>
+  </data>
+  <data name="OverworldFog" xml:space="preserve">
+    <value>Nebbia del mondo</value>
+  </data>
+  <data name="OverworldPOI" xml:space="preserve">
+    <value>Punto d'interesse</value>
   </data>
   <data name="Phantom" xml:space="preserve">
     <value>L'Astropatico</value>
   </data>
+  <data name="Point of Interest" xml:space="preserve">
+    <value>Punto d'interesse</value>
+  </data>
   <data name="PostulantsParlor" xml:space="preserve">
     <value>Salotto del Postulante</value>
   </data>
+  <data name="Preacher" xml:space="preserve">
+    <value>Predicatore</value>
+  </data>
+  <data name="Quest" xml:space="preserve">
+    <value>Missione</value>
+  </data>
   <data name="Quest_Global_TheHunterDream_Template01" xml:space="preserve">
     <value>Palazzo beatifico</value>
+  </data>
+  <data name="Quest_Hidden_Item_SparkWard13" xml:space="preserve">
+    <value>Salva Scintilla</value>
+  </data>
+  <data name="Quest_Item_DLC_DreamLevel" xml:space="preserve">
+    <value>Entra nel sogno</value>
+  </data>
+  <data name="Quest_Item_DLC_DreamLevel_Notes" xml:space="preserve">
+    <value>Usare la Fuga liquida nel Maniero, poi fuggire dal sogno attraverso il cristallo.</value>
   </data>
   <data name="Quest_Item_Extermination_AICore" xml:space="preserve">
     <value>Nucleo mnemonico II</value>
@@ -1000,8 +1543,26 @@
   <data name="Quest_Story_Empress_Zone01_Template01" xml:space="preserve">
     <value>Il Trono rosso</value>
   </data>
+  <data name="Quest_Story_OTK" xml:space="preserve">
+    <value>Losomn: Costa desolata</value>
+  </data>
+  <data name="Quests" xml:space="preserve">
+    <value>Missioni</value>
+  </data>
+  <data name="Ravager" xml:space="preserve">
+    <value>Predone corrotto</value>
+  </data>
   <data name="RavagersLair" xml:space="preserve">
     <value>L'antro del Predone</value>
+  </data>
+  <data name="RavagerStory" xml:space="preserve">
+    <value>Predone e Cerva</value>
+  </data>
+  <data name="Ravenous" xml:space="preserve">
+    <value>Il banchetto</value>
+  </data>
+  <data name="RedDoeStatue" xml:space="preserve">
+    <value>Statua della Cerva rossa</value>
   </data>
   <data name="Relic" xml:space="preserve">
     <value>Reliquia</value>
@@ -1015,8 +1576,14 @@
   <data name="Relic_Consumable_BrokenHeart" xml:space="preserve">
     <value>Cuore infranto</value>
   </data>
+  <data name="Relic_Consumable_BrokenHeart_Notes" xml:space="preserve">
+    <value>Uccidere Nimue.</value>
+  </data>
   <data name="Relic_Consumable_ConstrainedHeart" xml:space="preserve">
     <value>Cuore costretto</value>
+  </data>
+  <data name="Relic_Consumable_ConstrainedHeart_Notes" xml:space="preserve">
+    <value>Acquistabile da Cass al Ward 13 dopo aver sconfitto 12 boss del mondo a qualsiasi difficoltà.</value>
   </data>
   <data name="Relic_Consumable_CrystalHeart" xml:space="preserve">
     <value>Cuore di cristallo</value>
@@ -1027,8 +1594,14 @@
   <data name="Relic_Consumable_DivertingHeart" xml:space="preserve">
     <value>Cuore divergente</value>
   </data>
+  <data name="Relic_Consumable_DivertingHeart_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13 dopo aver sconfitto 30 boss del mondo a qualsiasi difficoltà.</value>
+  </data>
   <data name="Relic_Consumable_EnlargedHeart" xml:space="preserve">
     <value>Cuore ingrossato</value>
+  </data>
+  <data name="Relic_Consumable_EnlargedHeart_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13 dopo aver completato 5 biomi. - Nota dell'editore: si discute se il requisito effettivo sia completare 5 biomi o sbloccarne 5, cioè raggiungere Terra dei Root nella campagna. Se hai buone ragioni per ritenere corretto uno dei due requisiti, apri pure una issue nel repository GitHub.</value>
   </data>
   <data name="Relic_Consumable_GossamerHeart" xml:space="preserve">
     <value>Cuore di tela</value>
@@ -1039,11 +1612,20 @@
   <data name="Relic_Consumable_LifelessHeart" xml:space="preserve">
     <value>Cuore senza vita</value>
   </data>
+  <data name="Relic_Consumable_LifelessHeart_Notes" xml:space="preserve">
+    <value>Mangiare il frutto della morte 3 volte.</value>
+  </data>
   <data name="Relic_Consumable_PaperHeart" xml:space="preserve">
     <value>Cuore di carta</value>
   </data>
+  <data name="Relic_Consumable_PaperHeart_Notes" xml:space="preserve">
+    <value>Trovare il libro dello scriba e prendere il medaglione al suo interno, poi aprire la porta nel palazzo.</value>
+  </data>
   <data name="Relic_Consumable_ProfaneHeart" xml:space="preserve">
     <value>Cuore profano</value>
+  </data>
+  <data name="Relic_Consumable_ProfaneHeart_Notes" xml:space="preserve">
+    <value>Rifiutare di purificare la Pietra dell'anima profana presso il Custode (The Keeper) nel Labirinto</value>
   </data>
   <data name="Relic_Consumable_PulsingHeart" xml:space="preserve">
     <value>Cuore pulsante</value>
@@ -1060,6 +1642,9 @@
   <data name="Relic_Consumable_RipenedHeart" xml:space="preserve">
     <value>Cuore maturo</value>
   </data>
+  <data name="Relic_Consumable_RipenedHeart_Notes" xml:space="preserve">
+    <value>Ricompensa dell'evento Albero dei frutti del Thaen al Ward 13, dopo aver piantato l'oggetto missione Seme del Thaen nel terreno del giardino del Ward 13. Il Seme del Thaen si ottiene interagendo con l'oggetto missione Scrigno ornato e inserendo l'oggetto missione Chiave ornata, entrambi reperibili nella località La Corte della Vedova su Yaesha. Il giocatore deve far crescere e raccogliere il consumabile Frutto del Thaen celestiale per un totale di 3 volte prima che possa crescere il Cuore maturo. Ogni frutto impiega un numero fisso di ore reali per crescere.</value>
+  </data>
   <data name="Relic_Consumable_RunedHeart" xml:space="preserve">
     <value>Cuore runico</value>
   </data>
@@ -1072,14 +1657,26 @@
   <data name="Relic_Consumable_SiphonHeart" xml:space="preserve">
     <value>Cuore assorbente</value>
   </data>
+  <data name="Relic_Consumable_SiphonHeart_Notes" xml:space="preserve">
+    <value>Consegnare l'Essenza splendente al Protettore.</value>
+  </data>
   <data name="Relic_Consumable_TormentedHeart" xml:space="preserve">
     <value>Cuore tormentato</value>
+  </data>
+  <data name="Relic_Consumable_TormentedHeart_Notes" xml:space="preserve">
+    <value>Ricompensa per aver offerto l'oggetto Codice di comando, trovato nella località Orizzonte senza tempo su N'erud, all'evento Tela della Tessitenebre (Nightweaver's Web) nella località Il manicomio tormentato su Losomn. Va fatto in una campagna in cui sono uscite entrambe le località.</value>
   </data>
   <data name="Relic_Consumable_TranquilHeart" xml:space="preserve">
     <value>Cuore sereno</value>
   </data>
+  <data name="Relic_Consumable_TranquilHeart_Notes" xml:space="preserve">
+    <value>Consegnare il Cuore tormentato a Nimue.</value>
+  </data>
   <data name="Relic_Consumable_UnsulliedHeart" xml:space="preserve">
     <value>Cuore immacolato</value>
+  </data>
+  <data name="Relic_Consumable_UnsulliedHeart_Notes" xml:space="preserve">
+    <value>Indossare il Sigillo dell'Unico Vero Re (amuleto) e sia il Sigillo di Faerin che il Sigillo di Faelin (anelli) nel cortile del Palazzo.</value>
   </data>
   <data name="Relic_Consumable_VoidHeart" xml:space="preserve">
     <value>Cuore vacuo</value>
@@ -1096,6 +1693,9 @@
   <data name="Ring_AkariWarBand" xml:space="preserve">
     <value>Anello da guerra degli Akari</value>
   </data>
+  <data name="Ring_AkariWarBand_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13. Il mercante ha una probabilità casuale di averlo in vendita.</value>
+  </data>
   <data name="Ring_AlchemyStone" xml:space="preserve">
     <value>Pietra alchemica</value>
   </data>
@@ -1104,6 +1704,9 @@
   </data>
   <data name="Ring_AmberMoonstone" xml:space="preserve">
     <value>Pietra di luna ambrata</value>
+  </data>
+  <data name="Ring_AmberMoonstone_Notes" xml:space="preserve">
+    <value>Acquistabile da Cass al Ward 13. Il mercante ha una probabilità casuale di avere questo oggetto in vendita.</value>
   </data>
   <data name="Ring_AnastasijasInspiration" xml:space="preserve">
     <value>Ispirazione di Anastasia</value>
@@ -1114,17 +1717,29 @@
   <data name="Ring_AssassinsSeal" xml:space="preserve">
     <value>Sigillo dell'Assassino</value>
   </data>
+  <data name="Ring_AssassinsSeal_Notes" xml:space="preserve">
+    <value>Uccidere i membri del Consiglio.</value>
+  </data>
   <data name="Ring_ATaeriiBooster" xml:space="preserve">
     <value>Amplificatore di A'Taerii</value>
   </data>
   <data name="Ring_AtonementFold" xml:space="preserve">
     <value>Chiesa dell'espiazione</value>
   </data>
+  <data name="Ring_AtonementFold_Notes" xml:space="preserve">
+    <value>Si acquista da Leywise.</value>
+  </data>
   <data name="Ring_BandBand" xml:space="preserve">
     <value>Anello della banda</value>
   </data>
+  <data name="Ring_BandOfAccord_Notes" xml:space="preserve">
+    <value>Acquistabile da Reggie al Ward 13 dopo aver eseguito l'emote Batti il cinque in coop.</value>
+  </data>
   <data name="Ring_BandOfTheFanatic" xml:space="preserve">
     <value>Anello del fanatico</value>
+  </data>
+  <data name="Ring_BandOfTheFanatic_Notes" xml:space="preserve">
+    <value>Indossare l'armatura completa da Zelota, poi parlare con il Predicatore dopo il suo sermone.</value>
   </data>
   <data name="Ring_BerserkersCrest" xml:space="preserve">
     <value>Stemma del Berserker</value>
@@ -1135,8 +1750,14 @@
   <data name="Ring_BitterMemento" xml:space="preserve">
     <value>Cimelio amaro</value>
   </data>
+  <data name="Ring_BitterMemento_Notes" xml:space="preserve">
+    <value>Offrire il Medaglione-chiave della memoria alla Tela della Tessitenebre (Nightweaver's Web).</value>
+  </data>
   <data name="Ring_BlackCatBand" xml:space="preserve">
     <value>Fascia del gatto nero</value>
+  </data>
+  <data name="Ring_BlackCatBand_Notes" xml:space="preserve">
+    <value>Acquistabile da Reggie al Ward 13 dopo essere morti 15 volte.</value>
   </data>
   <data name="Ring_BlackoutRing" xml:space="preserve">
     <value>Anello dell'oscurità</value>
@@ -1153,11 +1774,17 @@
   <data name="Ring_BlessedRing" xml:space="preserve">
     <value>Anello benedetto</value>
   </data>
+  <data name="Ring_BlessedRing_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13. Il mercante ha una probabilità casuale di averlo in vendita.</value>
+  </data>
   <data name="Ring_BloodJewel" xml:space="preserve">
     <value>Gioiello del sangue</value>
   </data>
   <data name="Ring_BloodlessKingsVow" xml:space="preserve">
     <value>Giuramento del re senza sangue</value>
+  </data>
+  <data name="Ring_BloodlessKingsVow_Notes" xml:space="preserve">
+    <value>Si ottiene sconfiggendo l'aberrazione Erede senza sangue (The Bloodless Heir) all'interno del Tempio di Lydusa</value>
   </data>
   <data name="Ring_BloodTingedRing" xml:space="preserve">
     <value>Anello insanguinato</value>
@@ -1168,6 +1795,9 @@
   <data name="Ring_BraidedThorns" xml:space="preserve">
     <value>Rovi intrecciati</value>
   </data>
+  <data name="Ring_BraidedThorns_Notes" xml:space="preserve">
+    <value>Acquistabile da Cass al Ward 13. Il mercante ha una probabilità casuale di avere questo oggetto in vendita.</value>
+  </data>
   <data name="Ring_BrawlersPride" xml:space="preserve">
     <value>Orgoglio dell'attaccabrighe</value>
   </data>
@@ -1177,17 +1807,32 @@
   <data name="Ring_BridgeWardensCrest" xml:space="preserve">
     <value>Stemma della guardia del ponte</value>
   </data>
+  <data name="Ring_BridgeWardensCrest_Notes" xml:space="preserve">
+    <value>Raggiungere la cima del ponte senza uccidere nessun Fae, poi parlare con il maestro dei banchetti élite.</value>
+  </data>
   <data name="Ring_BrightSteelRing" xml:space="preserve">
     <value>Anello d'acciaio opaco</value>
+  </data>
+  <data name="Ring_BrightSteelRing_Notes" xml:space="preserve">
+    <value>Si acquista da Reggie al Ward 13 dopo aver completato 15 biomi a qualsiasi difficoltà.</value>
   </data>
   <data name="Ring_BurdenOfTheAudacious" xml:space="preserve">
     <value>Fardello dell'audace</value>
   </data>
+  <data name="Ring_BurdenOfTheAudacious_Notes" xml:space="preserve">
+    <value>Acquistabile da Cass al Ward 13. Il mercante ha una probabilità casuale di avere questo oggetto in vendita.</value>
+  </data>
   <data name="Ring_BurdenOfTheDeparted" xml:space="preserve">
     <value>Fardello dei defunti</value>
   </data>
+  <data name="Ring_BurdenOfTheDeparted_Notes" xml:space="preserve">
+    <value>Sconfiggere l'Unico Vero Re con il Fardello del divino equipaggiato.</value>
+  </data>
   <data name="Ring_BurdenOfTheDestroyer" xml:space="preserve">
     <value>Fardello del distruttore</value>
+  </data>
+  <data name="Ring_BurdenOfTheDestroyer_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13. Il mercante ha una probabilità casuale di averlo in vendita.</value>
   </data>
   <data name="Ring_BurdenOfTheDivine" xml:space="preserve">
     <value>Fardello del divino</value>
@@ -1201,11 +1846,17 @@
   <data name="Ring_BurdenOfTheGambler" xml:space="preserve">
     <value>Fardello del Giocatore d'azzardo</value>
   </data>
+  <data name="Ring_BurdenOfTheGambler_Notes" xml:space="preserve">
+    <value>Acquistabile da Cass al Ward 13. Il mercante ha una probabilità casuale di avere questo oggetto in vendita.</value>
+  </data>
   <data name="Ring_BurdenOfTheMariner" xml:space="preserve">
     <value>Fardello del marinaio</value>
   </data>
   <data name="Ring_BurdenOfTheMason" xml:space="preserve">
     <value>Fardello dello scultore</value>
+  </data>
+  <data name="Ring_BurdenOfTheMason_Notes" xml:space="preserve">
+    <value>Passaggio segreto all'interno di un ascensore.</value>
   </data>
   <data name="Ring_BurdenOfTheMesmer" xml:space="preserve">
     <value>Fardello del Mesmer</value>
@@ -1218,6 +1869,9 @@
   </data>
   <data name="Ring_BurdenOfTheSciolist" xml:space="preserve">
     <value>Fardello del nozionista</value>
+  </data>
+  <data name="Ring_BurdenOfTheSciolist_Notes" xml:space="preserve">
+    <value>Aprire il Tomo dello scriba e consegnare subito il medaglione a Leywise</value>
   </data>
   <data name="Ring_BurdenOfTheStargazer" xml:space="preserve">
     <value>Fardello del sognatore</value>
@@ -1234,6 +1888,9 @@
   <data name="Ring_CatalogersJewel" xml:space="preserve">
     <value>Gioiello del catalogatore</value>
   </data>
+  <data name="Ring_CatalogersJewel_Notes" xml:space="preserve">
+    <value>Vicino all'ingresso delle Grandi fogne nel Palazzo beatifico.</value>
+  </data>
   <data name="Ring_CelerityStone" xml:space="preserve">
     <value>Pietra della celerità</value>
   </data>
@@ -1249,6 +1906,9 @@
   <data name="Ring_CompulsionLoop" xml:space="preserve">
     <value>Anello della compulsione</value>
   </data>
+  <data name="Ring_CompulsionLoop_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13. Il mercante ha una probabilità casuale di averlo in vendita.</value>
+  </data>
   <data name="Ring_ConjurersCircle" xml:space="preserve">
     <value>Anello dell'incantatore</value>
   </data>
@@ -1261,17 +1921,29 @@
   <data name="Ring_CrimsonDreamstone" xml:space="preserve">
     <value>Pietra dei sogni cremisi</value>
   </data>
+  <data name="Ring_CrimsonDreamstone_Notes" xml:space="preserve">
+    <value>Usare la Fuga liquida nel Maniero.</value>
+  </data>
   <data name="Ring_CustodiansBastion" xml:space="preserve">
     <value>Bastione del Protettore</value>
   </data>
   <data name="Ring_DarkSeaArmadaCrest" xml:space="preserve">
     <value>Stemma dell'armata del Mare scuro</value>
   </data>
+  <data name="Ring_DarkSeaArmadaCrest_Notes" xml:space="preserve">
+    <value>Alla fine dell'ultima sfida (4° checkpoint).</value>
+  </data>
   <data name="Ring_DeadKingsMemento" xml:space="preserve">
     <value>Cimelio del Re morto</value>
   </data>
+  <data name="Ring_DeadKingsMemento_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13. Il mercante ha una probabilità casuale di averlo in vendita.</value>
+  </data>
   <data name="Ring_DeceiversBand" xml:space="preserve">
     <value>Anello dell'ingannatore</value>
+  </data>
+  <data name="Ring_DeceiversBand_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13. Il mercante ha una probabilità casuale di averlo in vendita.</value>
   </data>
   <data name="Ring_DeepPocketRing" xml:space="preserve">
     <value>Anello delle tasche gonfie</value>
@@ -1291,14 +1963,23 @@
   <data name="Ring_DevouringLoop" xml:space="preserve">
     <value>Anello divorato</value>
   </data>
+  <data name="Ring_DevouringLoop_Notes" xml:space="preserve">
+    <value>Acquistabile da Reggie al Ward 13 dopo aver completato la campagna a difficoltà Apocalisse.</value>
+  </data>
   <data name="Ring_DigestedHogLure" xml:space="preserve">
     <value>Esca per cinghiali digerita</value>
+  </data>
+  <data name="Ring_DigestedHogLure_Notes" xml:space="preserve">
+    <value>Uccidere tutti i cinghiali vicino alla statua dell'Ancora.</value>
   </data>
   <data name="Ring_DisasterConverter" xml:space="preserve">
     <value>Convertitore di disastri</value>
   </data>
   <data name="Ring_DowngradedRing" xml:space="preserve">
     <value>Abbraccio di Sha'Hala</value>
+  </data>
+  <data name="Ring_DowngradedRing_Notes" xml:space="preserve">
+    <value>Ricompensa per aver parlato con il Protettore nella località Pinnacolo dell'ascensione su N'erud, dopo aver sconfitto Sha'Hala.</value>
   </data>
   <data name="Ring_DrakestonePearl" xml:space="preserve">
     <value>Perla di dracopietra</value>
@@ -1309,6 +1990,9 @@
   <data name="Ring_DranScavengerSigil" xml:space="preserve">
     <value>Anello del rovistatore Dran</value>
   </data>
+  <data name="Ring_DranScavengerSigil_Notes" xml:space="preserve">
+    <value>Acquistabile da Reggie al Ward 13 dopo aver sconfitto un boss del mondo di Losomn a qualsiasi difficoltà in modalità Hardcore.</value>
+  </data>
   <data name="Ring_DreadFont" xml:space="preserve">
     <value>Fonte del terrore</value>
   </data>
@@ -1318,11 +2002,17 @@
   <data name="Ring_DrzyrSniperSigil" xml:space="preserve">
     <value>Sigillo del cecchino Drzyr</value>
   </data>
+  <data name="Ring_DrzyrSniperSigil_Notes" xml:space="preserve">
+    <value>Si acquista da Reggie al Ward 13 dopo aver sconfitto un boss del mondo di N'erud a qualsiasi difficoltà in modalità Hardcore.</value>
+  </data>
   <data name="Ring_DyingEmber" xml:space="preserve">
     <value>Brace morente</value>
   </data>
   <data name="Ring_ElevatedRing" xml:space="preserve">
     <value>Anello portentoso</value>
+  </data>
+  <data name="Ring_ElevatedRing_Notes" xml:space="preserve">
+    <value>Costa desolata - Mournful Promenade: per arrivarci usare l'ascensore in cima.</value>
   </data>
   <data name="Ring_EmpoweringLoop" xml:space="preserve">
     <value>Anello rinvigorente</value>
@@ -1363,6 +2053,9 @@
   <data name="Ring_FeatheryBinding" xml:space="preserve">
     <value>Vincolo piumato</value>
   </data>
+  <data name="Ring_FeatheryBinding_Notes" xml:space="preserve">
+    <value>Consegnato da Walt dopo aver sconfitto Lydusa.</value>
+  </data>
   <data name="Ring_FeedbackLoop" xml:space="preserve">
     <value>Anello della retroazione</value>
   </data>
@@ -1374,6 +2067,9 @@
   </data>
   <data name="Ring_FloodlitDiamond" xml:space="preserve">
     <value>Diamante illuminato</value>
+  </data>
+  <data name="Ring_FloodlitDiamond_Notes" xml:space="preserve">
+    <value>Dungeon Banco di prova.</value>
   </data>
   <data name="Ring_FlyweightsSting" xml:space="preserve">
     <value>Pungiglione del peso mosca</value>
@@ -1387,6 +2083,9 @@
   <data name="Ring_FrivolousBand" xml:space="preserve">
     <value>Anello frivolo</value>
   </data>
+  <data name="Ring_FrivolousBand_Notes" xml:space="preserve">
+    <value>Ricompensa per aver parlato con Bedel dei Vaunnt nella località Il Bosco proibito su Yaesha, dopo aver rianimato la Cerva rossa durante la boss fight contro il Predone corrotto. Al primo incontro con Bedel nel Bosco proibito bisogna scegliere opzioni di dialogo divertenti/sarcastiche e accettare la sua missione prima di rianimare la Cerva. Poi, parlandogli di nuovo, quando chiede se la Cerva è stata salvata bisogna scegliere l'opzione di dialogo "Forse..." ("Maybe...").</value>
+  </data>
   <data name="Ring_GalvanizedResupplyBand" xml:space="preserve">
     <value>Anello galvanizzato dei rifornimenti</value>
   </data>
@@ -1395,6 +2094,9 @@
   </data>
   <data name="Ring_GeneratingBand" xml:space="preserve">
     <value>Fascia generatrice</value>
+  </data>
+  <data name="Ring_GeneratingBand_Notes" xml:space="preserve">
+    <value>Si trova nelle località L'incubatrice, Struttura della nave del vuoto, Cripta del Senzaforma o Il Dominio putrido su N'erud durante l'evento Stanza allagata. Una volta iniziato l'evento, si ha una sola possibilità di raccogliere gli oggetti nella stanza prima che si riempia d'acqua.</value>
   </data>
   <data name="Ring_GroundingStone" xml:space="preserve">
     <value>Pietra di messa a terra</value>
@@ -1407,6 +2109,9 @@
   </data>
   <data name="Ring_GunslingersRing" xml:space="preserve">
     <value>Anello della pistolera</value>
+  </data>
+  <data name="Ring_GunslingersRing_Notes" xml:space="preserve">
+    <value>Ricompensa per aver parlato con Dente di fango al Ward 13 fino a esaurire il suo primo gruppo di storie, in modalità campagna.</value>
   </data>
   <data name="Ring_HardcoreMetalBand" xml:space="preserve">
     <value>Anello di metallo indurito</value>
@@ -1432,6 +2137,9 @@
   <data name="Ring_JewelOfTheBeholden" xml:space="preserve">
     <value>Gioiello del riconoscente</value>
   </data>
+  <data name="Ring_JewelOfTheBeholden_Notes" xml:space="preserve">
+    <value>Uccidere l'Unico Vero Re, poi parlare con Nimue</value>
+  </data>
   <data name="Ring_KineticCycleStone" xml:space="preserve">
     <value>Pietra del ciclo cinetico</value>
   </data>
@@ -1447,8 +2155,14 @@
   <data name="Ring_LithicSignet" xml:space="preserve">
     <value>Sigillo litico</value>
   </data>
+  <data name="Ring_LithicSignet_Notes" xml:space="preserve">
+    <value>Si trova nelle località Il lamento, La cappella contorta o Il camino su Yaesha, alla fine di un passaggio nascosto. Per aprirlo, trovare una stanza con 4 statue di guerrieri Pan e sparare ai cristalli sulla loro fronte: al centro della stanza si aprirà una scalinata nascosta.</value>
+  </data>
   <data name="Ring_LodestoneRing" xml:space="preserve">
     <value>Anello di magnetite</value>
+  </data>
+  <data name="Ring_LodestoneRing_Notes" xml:space="preserve">
+    <value>Ricompensa per aver parlato con Bedel dei Vaunnt nel Bosco proibito su Yaesha indossando la Corona di magnetite.</value>
   </data>
   <data name="Ring_LowYieldRecoveryRing" xml:space="preserve">
     <value>Anello del recupero a bassa resa</value>
@@ -1456,11 +2170,17 @@
   <data name="Ring_MarkOfTheDestroyer" xml:space="preserve">
     <value>Marchio del distruttore</value>
   </data>
+  <data name="Ring_MarkOfTheDestroyer_Notes" xml:space="preserve">
+    <value>Nella stanza dell'enigma della luna</value>
+  </data>
   <data name="Ring_MatriarchsRing" xml:space="preserve">
     <value>Anello della matriarca</value>
   </data>
   <data name="Ring_MechanicsCog" xml:space="preserve">
     <value>Ingranaggio meccanico</value>
+  </data>
+  <data name="Ring_MechanicsCog_Notes" xml:space="preserve">
+    <value>Acquistabile da Cass al Ward 13. Il mercante ha una probabilità casuale di avere questo oggetto in vendita.</value>
   </data>
   <data name="Ring_MetalDriver" xml:space="preserve">
     <value>Conduttore metallico</value>
@@ -1495,6 +2215,9 @@
   <data name="Ring_PanMageSigil" xml:space="preserve">
     <value>Cristallo degli Ahanae</value>
   </data>
+  <data name="Ring_PanMageSigil_Notes" xml:space="preserve">
+    <value>Si acquista da Reggie al Ward 13 dopo aver sconfitto un boss del mondo di Yaesha a qualsiasi difficoltà in modalità Hardcore.</value>
+  </data>
   <data name="Ring_PanWarBand" xml:space="preserve">
     <value>Fascia da guerra dei Pan</value>
   </data>
@@ -1519,8 +2242,14 @@
   <data name="Ring_ProvisionerRing" xml:space="preserve">
     <value>Anello dell'approvvigionatore</value>
   </data>
+  <data name="Ring_ProvisionerRing_Notes" xml:space="preserve">
+    <value>Si acquista da Reggie al Ward 13 dopo aver sconfitto la Sentinella del Labirinto a qualsiasi difficoltà in modalità Hardcore.</value>
+  </data>
   <data name="Ring_RallyBand" xml:space="preserve">
     <value>Fascia dell'adunata</value>
+  </data>
+  <data name="Ring_RallyBand_Notes" xml:space="preserve">
+    <value>Consegnato dal soldato semplice Jackson Driver.</value>
   </data>
   <data name="Ring_RavagersBargain" xml:space="preserve">
     <value>Accordo del Predone</value>
@@ -1536,6 +2265,9 @@
   </data>
   <data name="Ring_ReserveBoostingGem" xml:space="preserve">
     <value>Gemma potenzia-riserve</value>
+  </data>
+  <data name="Ring_RingOfAccord" xml:space="preserve">
+    <value>Anello dell'armonia</value>
   </data>
   <data name="Ring_RingOfAshes" xml:space="preserve">
     <value>Anello delle ceneri</value>
@@ -1555,14 +2287,26 @@
   <data name="Ring_RingOfFlawedBeauty" xml:space="preserve">
     <value>Anello della bellezza imperfetta</value>
   </data>
+  <data name="Ring_RingOfFlawedBeauty_Notes" xml:space="preserve">
+    <value>Si acquista da Cass al Ward 13. Il mercante ha una probabilità casuale di averlo in vendita.</value>
+  </data>
   <data name="Ring_RingOfGrace" xml:space="preserve">
     <value>Anello della grazia</value>
+  </data>
+  <data name="Ring_RingOfGrace_Notes" xml:space="preserve">
+    <value>Dare la Cavigliera di Dria (Dria's Anklet) a Riewen</value>
   </data>
   <data name="Ring_RingOfInfiniteDamage" xml:space="preserve">
     <value>Anello del danno infinito</value>
   </data>
+  <data name="Ring_RingOfInfiniteDamage_Notes" xml:space="preserve">
+    <value>Aprire il Tomo dello scriba e rifiutare la prima volta che Leywise lo chiede, poi consegnargli il medaglione la seconda volta che lo chiede.</value>
+  </data>
   <data name="Ring_RingOfOmens" xml:space="preserve">
     <value>Anello dei presagi</value>
+  </data>
+  <data name="Ring_RingOfOmens_Notes" xml:space="preserve">
+    <value>Trovato nella Cattedrale dei presagi su Yaesha, dietro una botola rossa sul pavimento, dopo aver risolto l'enigma della Luna di Sangue. La botola si apre solo durante l'evento della Luna di Sangue.</value>
   </data>
   <data name="Ring_RingOfOrdnance" xml:space="preserve">
     <value>Anello degli ordigni</value>
@@ -1572,6 +2316,9 @@
   </data>
   <data name="Ring_RingOfRetribution" xml:space="preserve">
     <value>Anello della punizione</value>
+  </data>
+  <data name="Ring_RingOfRetribution_Notes" xml:space="preserve">
+    <value>Ricompensa per aver offerto l'oggetto Cavigliera di Dria (Dria's Anklet), trovato nella località Distesa della mietitrice su Losomn, all'evento Tela della Tessitenebre (Nightweaver's Web) nella località Il manicomio tormentato su Losomn. Si può fare in qualsiasi modalità in cui sono uscite entrambe le località.</value>
   </data>
   <data name="Ring_RingOfSpirits" xml:space="preserve">
     <value>Anello degli spiriti</value>
@@ -1593,6 +2340,9 @@
   </data>
   <data name="Ring_RockOfAnguish" xml:space="preserve">
     <value>Pietra dell'angoscia</value>
+  </data>
+  <data name="Ring_RockOfAnguish_Notes" xml:space="preserve">
+    <value>Acquistabile da Cass al Ward 13. Il mercante ha una probabilità casuale di avere questo oggetto in vendita.</value>
   </data>
   <data name="Ring_Rotward" xml:space="preserve">
     <value>Guardia della putrefazione</value>
@@ -1623,6 +2373,9 @@
   </data>
   <data name="Ring_ShaedStone" xml:space="preserve">
     <value>Pietra dello Shaed</value>
+  </data>
+  <data name="Ring_ShaedStone_Notes" xml:space="preserve">
+    <value>Sparare al vaso d'oro invisibile nel riflesso visibile sul pavimento a specchio.</value>
   </data>
   <data name="Ring_ShardBandedRing" xml:space="preserve">
     <value>Anello con fascia di frammenti</value>
@@ -1699,17 +2452,29 @@
   <data name="Ring_TarnishedRing" xml:space="preserve">
     <value>Anello ossidato</value>
   </data>
+  <data name="Ring_TarnishedRing_Notes" xml:space="preserve">
+    <value>Ricompensa per aver parlato con Earl al Ward 13 e ascoltato la sua storia del coniglio. Lo si trova addormentato a letto oppure sulla passerella sopra il mercante Whispers. Mentre dorme non parla, e quando è sveglio all'inizio potrebbe essere restio a raccontare la sua storia.</value>
+  </data>
   <data name="Ring_TearOfKaeula" xml:space="preserve">
     <value>Lacrima di Kaeula</value>
   </data>
+  <data name="Ring_TearOfKaeula_Notes" xml:space="preserve">
+    <value>Si trova nella località Riposo di Kaeula su Yaesha, ai piedi di una statua, sotto una cascata.</value>
+  </data>
   <data name="Ring_TearOfLydusa" xml:space="preserve">
     <value>Lacrima di Lydusa</value>
+  </data>
+  <data name="Ring_TearOfLydusa_Notes" xml:space="preserve">
+    <value>Tornare nell'area in cui si è affrontata Lydusa dopo lo scontro per trovare l'anello.</value>
   </data>
   <data name="Ring_TempestConduit" xml:space="preserve">
     <value>Conduttore della tempesta</value>
   </data>
   <data name="Ring_ThalosEyelet" xml:space="preserve">
     <value>Occhiello di Thalos</value>
+  </data>
+  <data name="Ring_ThalosEyelet_Notes" xml:space="preserve">
+    <value>Su uno scheletro.</value>
   </data>
   <data name="Ring_TightlyWoundCoil" xml:space="preserve">
     <value>Spirale stretta</value>
@@ -1719,6 +2484,9 @@
   </data>
   <data name="Ring_TokenOfFavor" xml:space="preserve">
     <value>Pegno del favore</value>
+  </data>
+  <data name="Ring_TokenOfFavor_Notes" xml:space="preserve">
+    <value>Si trova accanto alla statua del cervo gigante.</value>
   </data>
   <data name="Ring_ToleranceBand" xml:space="preserve">
     <value>Fascia della tolleranza</value>
@@ -1741,6 +2509,9 @@
   <data name="Ring_WhiteGlassBead" xml:space="preserve">
     <value>Perla di vetro bianca</value>
   </data>
+  <data name="Ring_WhiteGlassBead_Notes" xml:space="preserve">
+    <value>Portare gli avanzi del maestro dei banchetti a Leywise.</value>
+  </data>
   <data name="Ring_WhitePawnStamp" xml:space="preserve">
     <value>Anello del pedone bianco</value>
   </data>
@@ -1759,8 +2530,20 @@
   <data name="Ring_ZoheesRing" xml:space="preserve">
     <value>Anello di Zohee</value>
   </data>
+  <data name="Rings" xml:space="preserve">
+    <value>Anelli</value>
+  </data>
+  <data name="RisingTides" xml:space="preserve">
+    <value>Fogna allagata</value>
+  </data>
   <data name="Ritualist" xml:space="preserve">
     <value>Ritualista</value>
+  </data>
+  <data name="Rookery" xml:space="preserve">
+    <value>La corvaia</value>
+  </data>
+  <data name="RootCultist" xml:space="preserve">
+    <value>Legion</value>
   </data>
   <data name="RootEarthAshenWasteland" xml:space="preserve">
     <value>Desolazione cinerea</value>
@@ -1780,8 +2563,17 @@
   <data name="Sarcophagus" xml:space="preserve">
     <value>Putrefazione</value>
   </data>
+  <data name="SecurityDrone_DLC" xml:space="preserve">
+    <value>Labirinto del drone di sicurezza</value>
+  </data>
   <data name="SentinelsKeep" xml:space="preserve">
     <value>Fortezza della sentinella</value>
+  </data>
+  <data name="SewageFacility" xml:space="preserve">
+    <value>La stanza allagata</value>
+  </data>
+  <data name="Sewer_DLC" xml:space="preserve">
+    <value>Buco nella fogna</value>
   </data>
   <data name="SewerChamber" xml:space="preserve">
     <value>Altare profanato</value>
@@ -1789,14 +2581,41 @@
   <data name="ShatteredGallery" xml:space="preserve">
     <value>Galleria distrutta</value>
   </data>
+  <data name="ShiftingCitadel" xml:space="preserve">
+    <value>Cittadella mutevole</value>
+  </data>
   <data name="ShiftingSoldier" xml:space="preserve">
     <value>Il Guardiano di pietra</value>
+  </data>
+  <data name="Shockwire" xml:space="preserve">
+    <value>Cavo spezzato</value>
+  </data>
+  <data name="Shrewd" xml:space="preserve">
+    <value>Astuto</value>
+  </data>
+  <data name="SideD" xml:space="preserve">
+    <value>Dungeon</value>
+  </data>
+  <data name="Siege" xml:space="preserve">
+    <value>Assedio</value>
+  </data>
+  <data name="SilverGold" xml:space="preserve">
+    <value>Le statue</value>
+  </data>
+  <data name="Simulacrum" xml:space="preserve">
+    <value>Simulacro</value>
   </data>
   <data name="SpectrumNexus" xml:space="preserve">
     <value>Nexus spettrale</value>
   </data>
+  <data name="StasisSiege" xml:space="preserve">
+    <value>Porta del glifo della Casata dei Lythla</value>
+  </data>
   <data name="StoreRoom" xml:space="preserve">
     <value>La progenie</value>
+  </data>
+  <data name="Story" xml:space="preserve">
+    <value>Storia</value>
   </data>
   <data name="Summoner" xml:space="preserve">
     <value>Evocatore</value>
@@ -1807,8 +2626,14 @@
   <data name="TheAstroPathsRespite" xml:space="preserve">
     <value>Riposo dell'Astropatico</value>
   </data>
+  <data name="TheBackrooms" xml:space="preserve">
+    <value>Le Backrooms</value>
+  </data>
   <data name="TheChimney" xml:space="preserve">
     <value>Il camino</value>
+  </data>
+  <data name="TheClaw" xml:space="preserve">
+    <value>L'Artiglio</value>
   </data>
   <data name="TheConvergence" xml:space="preserve">
     <value>La convergenza</value>
@@ -1821,6 +2646,9 @@
   </data>
   <data name="TheDappledGlade" xml:space="preserve">
     <value>La Radura screziata</value>
+  </data>
+  <data name="TheDreamlessSleep" xml:space="preserve">
+    <value>Capsula di stasi</value>
   </data>
   <data name="TheExpandingGlade" xml:space="preserve">
     <value>La radura crescente</value>
@@ -1861,8 +2689,14 @@
   <data name="TheRedThrone" xml:space="preserve">
     <value>Il Trono rosso</value>
   </data>
+  <data name="TheSafe" xml:space="preserve">
+    <value>Cassaforte chiusa</value>
+  </data>
   <data name="TheTwistedChantry" xml:space="preserve">
     <value>La cappella contorta</value>
+  </data>
+  <data name="ThreeMenMorris" xml:space="preserve">
+    <value>Il Postulante</value>
   </data>
   <data name="ThresholdOfTheUnknown" xml:space="preserve">
     <value>Soglia dell'ignoto</value>
@@ -1876,14 +2710,80 @@
   <data name="TormentedAsylum" xml:space="preserve">
     <value>Il manicomio tormentato</value>
   </data>
+  <data name="Tower" xml:space="preserve">
+    <value>L'ascensore</value>
+  </data>
+  <data name="Tower_DLC" xml:space="preserve">
+    <value>Torre di ricerca botanica</value>
+  </data>
   <data name="TowerHeist" xml:space="preserve">
     <value>D.I. Alfa</value>
   </data>
   <data name="TowerOfTheUnseen" xml:space="preserve">
     <value>Torre dell'invisibile</value>
   </data>
+  <data name="Towers_ElevatorShaft" xml:space="preserve">
+    <value>Pozzo dell'ascensore</value>
+  </data>
+  <data name="TownTurnedToDust" xml:space="preserve">
+    <value>L'uomo nelle fogne</value>
+  </data>
   <data name="Train" xml:space="preserve">
     <value>Il treno</value>
+  </data>
+  <data name="Trait_Affliction_Notes" xml:space="preserve">
+    <value>Si sblocca automaticamente per tutti gli archetipi dopo aver portato l'archetipo Ritualista al livello 10.</value>
+  </data>
+  <data name="Trait_AmmoReserves_Notes" xml:space="preserve">
+    <value>Sbloccato automaticamente per tutti gli archetipi dopo aver portato l'archetipo Pistolero al livello 10.</value>
+  </data>
+  <data name="Trait_DarkPact_Notes" xml:space="preserve">
+    <value>Sparare a tutte e tre le campane nella Costa desolata per completare l'evento delle Campane.</value>
+  </data>
+  <data name="Trait_FlashCaster_Notes" xml:space="preserve">
+    <value>Si sblocca automaticamente per tutti gli archetipi dopo aver portato l'archetipo Arconte al livello 10.</value>
+  </data>
+  <data name="Trait_Fortify_Notes" xml:space="preserve">
+    <value>Sbloccato automaticamente per tutti gli archetipi dopo aver portato l'archetipo Ingegnere al livello 10.</value>
+  </data>
+  <data name="Trait_Gifted_Notes" xml:space="preserve">
+    <value>Si sblocca automaticamente per tutti gli archetipi dopo aver portato l'archetipo Invocatore al livello 10.</value>
+  </data>
+  <data name="Trait_Kinship_Notes" xml:space="preserve">
+    <value>Si sblocca automaticamente per tutti gli archetipi dopo aver portato l'archetipo Domatore al livello 10.</value>
+  </data>
+  <data name="Trait_Leech_Notes" xml:space="preserve">
+    <value>Farsi uccidere restando intrappolati durante l'epurazione.</value>
+  </data>
+  <data name="Trait_Longshot_Notes" xml:space="preserve">
+    <value>Si sblocca automaticamente per tutti gli archetipi dopo aver portato l'archetipo Cacciatore al livello 10.</value>
+  </data>
+  <data name="Trait_Potency_Notes" xml:space="preserve">
+    <value>Si sblocca automaticamente per tutti gli archetipi dopo aver portato l'archetipo Alchimista al livello 10.</value>
+  </data>
+  <data name="Trait_Regrowth_Notes" xml:space="preserve">
+    <value>Sbloccato automaticamente per tutti gli archetipi dopo aver portato l'archetipo Ricrescita al livello 10.</value>
+  </data>
+  <data name="Trait_Resolute_Notes" xml:space="preserve">
+    <value>Distruggere quindici statue del Viaggiatore (compaiono quando si muore con la Maledizione di Lydusa).</value>
+  </data>
+  <data name="Trait_Revivalist_Notes" xml:space="preserve">
+    <value>Si sblocca automaticamente dopo aver rianimato un compagno di squadra 15 volte.</value>
+  </data>
+  <data name="Trait_Scholar_Notes" xml:space="preserve">
+    <value>Sbloccato automaticamente dopo aver sconfitto il boss Annihilation a qualsiasi difficoltà.</value>
+  </data>
+  <data name="Trait_StrongBack_Notes" xml:space="preserve">
+    <value>Si sblocca automaticamente per tutti gli archetipi dopo aver portato l'archetipo Sfidante al livello 10.</value>
+  </data>
+  <data name="Trait_Swiftness_Notes" xml:space="preserve">
+    <value>Si sblocca automaticamente per tutti gli archetipi dopo aver portato l'archetipo Esploratore al livello 10.</value>
+  </data>
+  <data name="Trait_Triage_Notes" xml:space="preserve">
+    <value>Sbloccato automaticamente per tutti gli archetipi dopo aver portato l'archetipo Medico al livello 10.</value>
+  </data>
+  <data name="Trait_Untouchable_Notes" xml:space="preserve">
+    <value>Si sblocca automaticamente per tutti gli archetipi dopo aver portato l'archetipo Invasore al livello 10.</value>
   </data>
   <data name="TraitBook" xml:space="preserve">
     <value>Tomo della conoscenza</value>
@@ -2014,11 +2914,98 @@
   <data name="Trait_Wayfarer" xml:space="preserve">
     <value>Viandante</value>
   </data>
+  <data name="Underworld_TheClaw" xml:space="preserve">
+    <value>L'Artiglio</value>
+  </data>
   <data name="VaultOfTheFormless" xml:space="preserve">
     <value>Cripta del Senzaforma</value>
   </data>
   <data name="VoidVesselFacility" xml:space="preserve">
     <value>Struttura della nave del vuoto</value>
+  </data>
+  <data name="WailingField" xml:space="preserve">
+    <value>Il Laemir</value>
+  </data>
+  <data name="Weapon_AbyssalHook_Notes" xml:space="preserve">
+    <value>Si trova in una delle stanze della zona simile a una fogna, nella tana della manticora.</value>
+  </data>
+  <data name="Weapon_Anguish_Notes" xml:space="preserve">
+    <value>Entrare nel Sogno finale e trovare i Dran in ogni mondo.</value>
+  </data>
+  <data name="Weapon_AssassinsDagger_Notes" xml:space="preserve">
+    <value>Consegnare il pugnale della Camera del Consiglio a Nimue.</value>
+  </data>
+  <data name="Weapon_CrescentMoon_Notes" xml:space="preserve">
+    <value>Usare l'Acchiappasogni su Nimue mentre dorme</value>
+  </data>
+  <data name="Weapon_Dreamcatcher_Notes" xml:space="preserve">
+    <value>Ricompensa per aver offerto la Statuetta di pietra della Tessitenebre, trovata nella località Il manicomio tormentato su Losomn, all'evento Tela della Tessitenebre (Nightweaver's Web) nella località Il manicomio tormentato su Losomn. Si può fare in qualsiasi modalità in cui sono state generate entrambe le località.</value>
+  </data>
+  <data name="Weapon_FeralJudgment_Notes" xml:space="preserve">
+    <value>Creato da McCabe al Ward 13. Richiede la Mandibola del Predone, ottenuta con l'uccisione alternativa del boss Predone corrotto nell'Antro del Predone su Yaesha. Per l'uccisione alternativa, sparare al Predone per avviare lo scontro, uccidere la Cerva rossa prima che il Predone riesca a divorarla e poi uccidere il boss Predone.</value>
+  </data>
+  <data name="Weapon_HerosSword_Notes" xml:space="preserve">
+    <value>Si acquista da Brabus al Ward 13 dopo aver completato la campagna a difficoltà Incubo.</value>
+  </data>
+  <data name="Weapon_Meridian_Notes" xml:space="preserve">
+    <value>Attendere 90 minuti che l'acqua salga.</value>
+  </data>
+  <data name="Weapon_Mirage_Notes" xml:space="preserve">
+    <value>Accendere tutti e 5 i bracieri nel Recesso della dea per aprire la porta chiusa e offrire la Frattura preziosa sul santuario.</value>
+  </data>
+  <data name="Weapon_Monolith_Notes" xml:space="preserve">
+    <value>Sconfiggere Lydusa mentre il suo volto è blu.</value>
+  </data>
+  <data name="Weapon_Polygun_Notes" xml:space="preserve">
+    <value>Si trova su un altare nascosto nel Labirinto.</value>
+  </data>
+  <data name="Weapon_RebellionSpear_Notes" xml:space="preserve">
+    <value>Ricompensa di Bedel dei Vaunnt per aver salvato la Cerva durante lo scontro con il boss Predone corrotto.</value>
+  </data>
+  <data name="Weapon_Repulsor_Notes" xml:space="preserve">
+    <value>Si acquista da Brabus al Ward 13 dopo aver completato la campagna a difficoltà Incubo.</value>
+  </data>
+  <data name="Weapon_RunePistol_Notes" xml:space="preserve">
+    <value>Ricompensa per aver offerto il Medaglione famelico, trovato nella località La grande sala su Losomn, all'evento Tela della Tessitenebre (Nightweaver's Web) nella località Il manicomio tormentato su Losomn. Si può fare in qualsiasi modalità in cui sono state generate entrambe le località.</value>
+  </data>
+  <data name="Weapon_Savior_Notes" xml:space="preserve">
+    <value>Si acquista da Brabus al Ward 13 dopo aver completato la campagna a difficoltà Veterano in modalità Hardcore.</value>
+  </data>
+  <data name="Weapon_SMG_Notes" xml:space="preserve">
+    <value>Nave cargo.</value>
+  </data>
+  <data name="Weapon_Smolder_Notes" xml:space="preserve">
+    <value>Acquistabile da Brabus al Ward 13 dopo aver completato la campagna a difficoltà Veterano.</value>
+  </data>
+  <data name="Weapon_Sparkfire_Notes" xml:space="preserve">
+    <value>Fuori dal faro, lungo il sentiero, dietro una roccia c'è una porta segreta: interagire con l'oggetto per ottenere la chiave che apre la porta.</value>
+  </data>
+  <data name="Weapon_SpectralBlade_Notes" xml:space="preserve">
+    <value>Non inserire il Codice di comando</value>
+  </data>
+  <data name="Weapon_Sporebloom_Notes" xml:space="preserve">
+    <value>Acquistabile da Brabus al Ward 13 dopo aver completato la campagna a difficoltà Veterano.</value>
+  </data>
+  <data name="Weapon_Starkiller_Notes" xml:space="preserve">
+    <value>Si acquista da Brabus al Ward 13 dopo aver completato la campagna a difficoltà Apocalisse.</value>
+  </data>
+  <data name="Weapon_TalRatha_Hammer_Notes" xml:space="preserve">
+    <value>Farsi divorare da Tal Ratha</value>
+  </data>
+  <data name="Weapon_Thorn_Notes" xml:space="preserve">
+    <value>Arrampicandosi verso il nido dei Kuri Kuri, NON prendere l'uovo dopo che l'uccello se n'è andato. Tornare più tardi, quando si sente l'uccello.</value>
+  </data>
+  <data name="Weapon_TommyGun_Notes" xml:space="preserve">
+    <value>Portale della nave cargo.</value>
+  </data>
+  <data name="Weapon_TrinityCrossbow_Notes" xml:space="preserve">
+    <value>Si trova in una camera nascosta dopo aver raccolto tutti e tre i Cimeli della Trinità.</value>
+  </data>
+  <data name="Weapon_WorldsEdge_Notes" xml:space="preserve">
+    <value>Acquistabile da Brabus al Ward 13 dopo aver completato la campagna a difficoltà Apocalisse.</value>
+  </data>
+  <data name="Weapon_Wrathbringer_Notes" xml:space="preserve">
+    <value>Ricompensa per l'uccisione alternativa dell'Unico Vero Re.</value>
   </data>
   <data name="Weapons" xml:space="preserve">
     <value>ARMI</value>
@@ -2311,6 +3298,9 @@
   <data name="WidowsCourt" xml:space="preserve">
     <value>La Corte della Vedova</value>
   </data>
+  <data name="WindHollow" xml:space="preserve">
+    <value>Torre del flauto</value>
+  </data>
   <data name="Witch" xml:space="preserve">
     <value>Strega inabissata</value>
   </data>
@@ -2337,5 +3327,11 @@
   </data>
   <data name="Armor_Arcanist" xml:space="preserve">
     <value>Labirinto</value>
+  </data>
+  <data name="WorldBoss" xml:space="preserve">
+    <value>Boss del mondo</value>
+  </data>
+  <data name="Ziggurat_DLC" xml:space="preserve">
+    <value>Stanza dell'enigma lunare</value>
   </data>
 </root>
