@@ -50,7 +50,7 @@ namespace RemnantSaveGuardian
             {
                 if (Properties.Settings.Default.SaveFolder.Length == 0)
                 {
-                    Logger.Log("Save folder not set; reverting to default.");
+                    Logger.Log(Loc.T("Save folder not set; reverting to default."));
                     Properties.Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
                     if (!Directory.Exists(RemnantSave.DefaultSaveFolder()))
                     {
@@ -59,19 +59,19 @@ namespace RemnantSaveGuardian
                 }
                 else if (!Directory.Exists(Properties.Settings.Default.SaveFolder) && !Properties.Settings.Default.SaveFolder.Equals(RemnantSave.DefaultSaveFolder()))
                 {
-                    Logger.Log($"Save folder ({Properties.Settings.Default.SaveFolder}) not found; reverting to default.");
+                    Logger.Log(Loc.T("Save folder ({folder}) not found; reverting to default.", new() { { "folder", Properties.Settings.Default.SaveFolder } }));
                     Properties.Settings.Default.SaveFolder = RemnantSave.DefaultSaveFolder();
                 }
                 if (!Directory.Exists(Properties.Settings.Default.SaveFolder))
                 {
-                    Logger.Log("Save folder not found, creating...");
+                    Logger.Log(Loc.T("Save folder not found, creating..."));
                     Directory.CreateDirectory(Properties.Settings.Default.SaveFolder);
                 }
                 SaveWatcher.Watch(Properties.Settings.Default.SaveFolder);
 
                 if (!Directory.Exists(Properties.Settings.Default.GameFolder))
                 {
-                    Logger.Log("Game folder not found...");
+                    Logger.Log(Loc.T("Game folder not found..."));
                     if (Properties.Settings.Default.GameFolder == "")
                     {
                         TryToFindGameFolder();

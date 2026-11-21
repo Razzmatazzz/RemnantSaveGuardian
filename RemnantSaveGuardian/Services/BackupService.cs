@@ -336,7 +336,7 @@ namespace RemnantSaveGuardian.Services
                 var activeSave = new RemnantSave(Properties.Settings.Default.SaveFolder);
                 if (!activeSave.Valid)
                 {
-                    Logger.Log("Active save is not valid; backup skipped.");
+                    Logger.Log(Loc.T("Active save is not valid; backup skipped."));
                     return;
                 }
                 int existingSaveIndex = -1;

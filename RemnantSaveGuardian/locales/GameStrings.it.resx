@@ -58,11 +58,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="/Items/Archetypes/Invoker/Engram/Engram_Invoker" xml:space="preserve">
+    <value>Invocatore</value>
+  </data>
+  <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt1" xml:space="preserve">
+    <value>Nota di Walt (1)</value>
+  </data>
   <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt1_Notes" xml:space="preserve">
     <value>Consegnare a Dwell per ricevere l'Eco della foresta.</value>
   </data>
+  <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt2" xml:space="preserve">
+    <value>Nota di Walt (2)</value>
+  </data>
   <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt2_Notes" xml:space="preserve">
     <value>Consegnare a Dwell per ricevere l'Eco della foresta.</value>
+  </data>
+  <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt3" xml:space="preserve">
+    <value>Nota di Walt (3)</value>
   </data>
   <data name="/Quests/Quest_Story_DLC2/LoreItem_BP/Pan_Interactive_Note_Walt3_Notes" xml:space="preserve">
     <value>Consegnare a Dwell per ricevere l'Eco della foresta.</value>
@@ -72,6 +84,9 @@
   </data>
   <data name="Abberation" xml:space="preserve">
     <value>Aberrazione</value>
+  </data>
+  <data name="Abomination" xml:space="preserve">
+    <value>Abominio</value>
   </data>
   <data name="AboveBelow" xml:space="preserve">
     <value>Il Carnefice</value>
@@ -514,6 +529,12 @@
   <data name="AncientCanopyStory" xml:space="preserve">
     <value>Storia: Chioma antica</value>
   </data>
+  <data name="Archetype_Ritualist" xml:space="preserve">
+    <value>Ritualista</value>
+  </data>
+  <data name="Archetypes" xml:space="preserve">
+    <value>Archetipi</value>
+  </data>
   <data name="Archon" xml:space="preserve">
     <value>Arconte</value>
   </data>
@@ -700,6 +721,9 @@
   <data name="AsylumChainsaw" xml:space="preserve">
     <value>Segaccio</value>
   </data>
+  <data name="AsylumHouse" xml:space="preserve">
+    <value>Il manicomio</value>
+  </data>
   <data name="AsylumStory" xml:space="preserve">
     <value>Il manicomio</value>
   </data>
@@ -729,6 +753,9 @@
   </data>
   <data name="BoneHarvesterLair" xml:space="preserve">
     <value>Mostro nello scarico</value>
+  </data>
+  <data name="Boss" xml:space="preserve">
+    <value>Boss</value>
   </data>
   <data name="BriellasGarden" xml:space="preserve">
     <value>Giardino di Briella</value>
@@ -781,6 +808,9 @@
   <data name="Crypt_DLC" xml:space="preserve">
     <value>La stanza del tesoro</value>
   </data>
+  <data name="CryptHidden" xml:space="preserve">
+    <value>Passaggio nascosto della cripta</value>
+  </data>
   <data name="CustodianEye" xml:space="preserve">
     <value>L'occhio del Guardiano</value>
   </data>
@@ -801,6 +831,9 @@
   </data>
   <data name="DrzyrReplicator" xml:space="preserve">
     <value>Replicatore Drzyr</value>
+  </data>
+  <data name="ElevatorShaft" xml:space="preserve">
+    <value>Pozzo dell'ascensore</value>
   </data>
   <data name="EmpressStory" xml:space="preserve">
     <value>L'Imperatrice eterna</value>
@@ -840,6 +873,9 @@
   </data>
   <data name="FaeWarriorRing" xml:space="preserve">
     <value>Anello del guerriero Fae</value>
+  </data>
+  <data name="FieryGraveyard" xml:space="preserve">
+    <value>Cimitero in fiamme</value>
   </data>
   <data name="Flautist" xml:space="preserve">
     <value>Nexus dei Root</value>
@@ -894,6 +930,9 @@
   </data>
   <data name="Hunter" xml:space="preserve">
     <value>Cacciatore</value>
+  </data>
+  <data name="IAmLegendStory" xml:space="preserve">
+    <value>Storia: N'erud</value>
   </data>
   <data name="Impaler" xml:space="preserve">
     <value>Bruin, Lama del Re</value>
@@ -979,8 +1018,20 @@
   <data name="Kiln" xml:space="preserve">
     <value>Monolito Cinderclad</value>
   </data>
+  <data name="KoaraKuri" xml:space="preserve">
+    <value>Nido di koara kuri</value>
+  </data>
   <data name="KoaraKuriNest" xml:space="preserve">
     <value>Nido di koara kuri</value>
+  </data>
+  <data name="Labyrinth" xml:space="preserve">
+    <value>Il Labirinto</value>
+  </data>
+  <data name="LabyrinthBackrooms" xml:space="preserve">
+    <value>Le Backrooms</value>
+  </data>
+  <data name="LabyrinthStory" xml:space="preserve">
+    <value>Il Labirinto</value>
   </data>
   <data name="LaemirsLyceum" xml:space="preserve">
     <value>Liceo di Laemir</value>
@@ -1053,6 +1104,9 @@
   </data>
   <data name="MetaGem_Bulletweaver" xml:space="preserve">
     <value>Tessiproiettili</value>
+  </data>
+  <data name="MetaGem_ChargedWounds" xml:space="preserve">
+    <value>Ferite cariche</value>
   </data>
   <data name="MetaGem_DeadlyCalm" xml:space="preserve">
     <value>Calma mortale</value>
@@ -1276,6 +1330,9 @@
   <data name="MetaGem_WeaponLord" xml:space="preserve">
     <value>Signore delle armi</value>
   </data>
+  <data name="Miniboss" xml:space="preserve">
+    <value>Miniboss</value>
+  </data>
   <data name="Mod_Familiar_Notes" xml:space="preserve">
     <value>Versione del mondo onirico.</value>
   </data>
@@ -1414,14 +1471,23 @@
   <data name="NerudGuardian" xml:space="preserve">
     <value>Sha'Hala: Guardiano spettrale di N'erud</value>
   </data>
+  <data name="NightWeaver" xml:space="preserve">
+    <value>Tessitenebre</value>
+  </data>
   <data name="Nightweb" xml:space="preserve">
     <value>Tela della Tessitenebre</value>
   </data>
   <data name="NimuesRetreat" xml:space="preserve">
     <value>Ritirata di Nimue</value>
   </data>
+  <data name="OilField" xml:space="preserve">
+    <value>Giacimento petrolifero</value>
+  </data>
   <data name="Oink" xml:space="preserve">
     <value>Gola</value>
+  </data>
+  <data name="OneTrueKing" xml:space="preserve">
+    <value>L'Unico Vero Re</value>
   </data>
   <data name="OraclesRefuge" xml:space="preserve">
     <value>Rifugio dell'Oracolo</value>
@@ -1443,6 +1509,9 @@
   </data>
   <data name="PostulantsParlor" xml:space="preserve">
     <value>Salotto del Postulante</value>
+  </data>
+  <data name="Preacher" xml:space="preserve">
+    <value>Predicatore</value>
   </data>
   <data name="Quest" xml:space="preserve">
     <value>Missione</value>
@@ -1479,6 +1548,9 @@
   </data>
   <data name="Quests" xml:space="preserve">
     <value>Missioni</value>
+  </data>
+  <data name="Ravager" xml:space="preserve">
+    <value>Predone corrotto</value>
   </data>
   <data name="RavagersLair" xml:space="preserve">
     <value>L'antro del Predone</value>
@@ -2467,6 +2539,9 @@
   <data name="Ritualist" xml:space="preserve">
     <value>Ritualista</value>
   </data>
+  <data name="Rookery" xml:space="preserve">
+    <value>La corvaia</value>
+  </data>
   <data name="RootCultist" xml:space="preserve">
     <value>Legion</value>
   </data>
@@ -2515,6 +2590,9 @@
   <data name="Shockwire" xml:space="preserve">
     <value>Cavo spezzato</value>
   </data>
+  <data name="Shrewd" xml:space="preserve">
+    <value>Astuto</value>
+  </data>
   <data name="SideD" xml:space="preserve">
     <value>Dungeon</value>
   </data>
@@ -2523,6 +2601,9 @@
   </data>
   <data name="SilverGold" xml:space="preserve">
     <value>Le statue</value>
+  </data>
+  <data name="Simulacrum" xml:space="preserve">
+    <value>Simulacro</value>
   </data>
   <data name="SpectrumNexus" xml:space="preserve">
     <value>Nexus spettrale</value>
@@ -2545,8 +2626,14 @@
   <data name="TheAstroPathsRespite" xml:space="preserve">
     <value>Riposo dell'Astropatico</value>
   </data>
+  <data name="TheBackrooms" xml:space="preserve">
+    <value>Le Backrooms</value>
+  </data>
   <data name="TheChimney" xml:space="preserve">
     <value>Il camino</value>
+  </data>
+  <data name="TheClaw" xml:space="preserve">
+    <value>L'Artiglio</value>
   </data>
   <data name="TheConvergence" xml:space="preserve">
     <value>La convergenza</value>

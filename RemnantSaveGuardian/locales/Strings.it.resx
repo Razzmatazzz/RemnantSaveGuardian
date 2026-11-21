@@ -123,6 +123,9 @@
   <data name="Active" xml:space="preserve">
     <value>Attivo</value>
   </data>
+  <data name="Active save is not valid; backup skipped." xml:space="preserve">
+    <value>Il salvataggio attivo non è valido; backup saltato.</value>
+  </data>
   <data name="Adventure" xml:space="preserve">
     <value>Avventura</value>
   </data>
@@ -251,6 +254,9 @@
   </data>
   <data name="Game Folder" xml:space="preserve">
     <value>Cartella del gioco</value>
+  </data>
+  <data name="Game folder not found..." xml:space="preserve">
+    <value>Cartella del gioco non trovata...</value>
   </data>
   <data name="Game info updated." xml:space="preserve">
     <value>Informazioni sul gioco aggiornate.</value>
@@ -386,6 +392,15 @@
   </data>
   <data name="Save Folder" xml:space="preserve">
     <value>Cartella dei salvataggi</value>
+  </data>
+  <data name="Save folder ({folder}) not found; reverting to default." xml:space="preserve">
+    <value>Cartella dei salvataggi ({folder}) non trovata; uso quella predefinita.</value>
+  </data>
+  <data name="Save folder not found, creating..." xml:space="preserve">
+    <value>Cartella dei salvataggi non trovata, la creo...</value>
+  </data>
+  <data name="Save folder not set; reverting to default." xml:space="preserve">
+    <value>Cartella dei salvataggi non impostata; uso quella predefinita.</value>
   </data>
   <data name="Save plaintext data" xml:space="preserve">
     <value>Salva i dati come testo</value>
