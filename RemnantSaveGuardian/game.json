@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 19,
   "mainLocations": [
     "Quest_Global_TheHunterDream_Template01",
     "Quest_Story_AllFather_DranCity1_Template",
@@ -1507,7 +1507,7 @@
           "name": "/Items/Trinkets/Rings/WoodRing/Ring_WoodRing"
         }
       ],
-      "BurningCity": [
+      "BurningCity_DLC": [
         {
           "name": "/Quests/Quest_Event_Dranception/Items/Quest_Item_DLC_DreamLevel",
           "ignore": false,
@@ -1527,7 +1527,7 @@
           "notes": "Shoot the invisible golden pot in the reflection you see on the mirrored floor."
         }
       ],
-      "Sewer": [
+      "Sewer_DLC": [
         {
           "name": "/Items/Trinkets/Rings/RingOfTheCastaway/Ring_RingOfTheCastaway"
         }
