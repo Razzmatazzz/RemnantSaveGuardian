@@ -1507,7 +1507,7 @@
           "name": "/Items/Trinkets/Rings/WoodRing/Ring_WoodRing"
         }
       ],
-      "BurningCity": [
+      "BurningCity_DLC": [
         {
           "name": "/Quests/Quest_Event_Dranception/Items/Quest_Item_DLC_DreamLevel",
           "ignore": false,
